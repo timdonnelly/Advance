@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DecayFunction Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/DecayFunction" class="dashAnchor"></a>
+    <a title="DecayFunction Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Advance Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/storehouse/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Advance Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        DecayFunction Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Animations.html">Animations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Advanceable.html">Advanceable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AnimationType.html">AnimationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyValueAnimation.html">AnyValueAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DecayAnimation.html">DecayAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringAnimation.html">SpringAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ValueAnimationType.html">ValueAnimationType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Timing Functions.html">Timing Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TimingFunctionType.html">TimingFunctionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LinearTimingFunction.html">LinearTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReversedTimingFunction.html">ReversedTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnitBezier.html">UnitBezier</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Animation Helpers.html">Animation Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Animatable.html">Animatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Animator.html">Animator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimatorContext.html">AnimatorContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/AnimatorResult.html">AnimatorResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/AnimatorState.html">AnimatorState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Loop.html">Loop</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Loop.html">Loop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoopSubscription.html">LoopSubscription</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Dynamics.html">Dynamics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/DecayFunction.html">DecayFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DynamicSolver.html">DynamicSolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DynamicFunctionType.html">DynamicFunctionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Spring.html">Spring</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringFunction.html">SpringFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringConfiguration.html">SpringConfiguration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Events.html">Events</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Event.html">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EventState.html">EventState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Vectors.html">Vectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Interpolatable.html">Interpolatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Vectors.html#/s:7Advance6Scalar">Scalar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VectorConvertible.html">VectorConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VectorMathCapable.html">VectorMathCapable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VectorType.html">VectorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Vector1.html">Vector1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Vectors.html#/s:7Advance7Vector1">Vector1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Vector2.html">Vector2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Vector3.html">Vector3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Vector4.html">Vector4</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CAMediaTimingFunction.html">CAMediaTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGVector.html">CGVector</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Functions.html">Other Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1mFTSdVS_7Vector3_S0_">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1mFTVS_7Vector3S0__S0_">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1mFTSdVS_7Vector4_S0_">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1mFTVS_7Vector2S0__S0_">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1mFTSdVS_7Vector2_S0_">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1mFTVS_7Vector4S0__S0_">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2meFTRVS_7Vector4S0__T_">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2meFTRVS_7Vector3S0__T_">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2meFTRVS_7Vector2S0__T_">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1pFTVS_7Vector2S0__S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1pFTVS_7Vector4S0__S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1pFTVS_7Vector3S0__S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2peFTRVS_7Vector3S0__T_">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2peFTRVS_7Vector4S0__T_">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2peFTRVS_7Vector2S0__T_">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1sFTVS_7Vector2S0__S0_">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1sFTVS_7Vector4S0__S0_">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1sFTVS_7Vector3S0__S0_">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2seFTRVS_7Vector4S0__T_">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2seFTRVS_7Vector2S0__T_">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2seFTRVS_7Vector3S0__T_">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1dFTVS_7Vector2S0__S0_">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1dFTVS_7Vector4S0__S0_">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi1dFTVS_7Vector3S0__S0_">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2deFTRVS_7Vector3S0__T_">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2deFTRVS_7Vector4S0__T_">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2deFTRVS_7Vector2S0__T_">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2eeFTVS_7Vector3S0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2eeFTVS_7Vector4S0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2eeFTVS_7Vector2S0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2eeFTVS_10UnitBezierS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:ZF7Advanceoi2eeFTOS_13AnimatorStateS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Typealiases.html">Other Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:E7AdvanceV12CoreGraphics7CGFloat6Vector">Vector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:E7AdvanceVSC6CGSize6Vector">Vector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:E7AdvanceSd6Vector">Vector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:E7AdvanceVSC6CGRect6Vector">Vector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:E7AdvanceVSC7CGPoint6Vector">Vector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:E7AdvanceVSC8CGVector6Vector">Vector</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>DecayFunction</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DecayFunction</span><span class="o">&lt;</span><span class="kt">Vector</span><span class="p">:</span> <span class="kt">VectorType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">DynamicFunctionType</span></code></pre>
+
+                </div>
+              </div>
+            <p>Gradually reduces velocity until it equals <code>Vector.zero</code>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV7Advance13DecayFunction9thresholdSd"></a>
+                    <a name="//apple_ref/swift/Property/threshold" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7Advance13DecayFunction9thresholdSd">threshold</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>How close to 0 each component of the velocity must be before the
+simulation is allowed to settle.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt">Scalar</span> <span class="o">=</span> <span class="mf">0.1</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV7Advance13DecayFunction4dragSd"></a>
+                    <a name="//apple_ref/swift/Property/drag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV7Advance13DecayFunction4dragSd">drag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>How much to erode the velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">drag</span><span class="p">:</span> <span class="kt">Scalar</span> <span class="o">=</span> <span class="mf">3.0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV7Advance13DecayFunctioncuRq_S_10VectorType_FMGS0_q__FT_GS0_q__"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV7Advance13DecayFunctioncuRq_S_10VectorType_FMGS0_q__FT_GS0_q__">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new <code><a href="../Structs/DecayFunction.html">DecayFunction</a></code> instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV7Advance13DecayFunction12accelerationuRq_S_10VectorType_FGS0_q__FTq_8velocityq__q_"></a>
+                    <a name="//apple_ref/swift/Method/acceleration(_:velocity:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV7Advance13DecayFunction12accelerationuRq_S_10VectorType_FGS0_q__FTq_8velocityq__q_">acceleration(_:velocity:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculates acceleration for a given state of the simulation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">acceleration</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">,</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Vector</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV7Advance13DecayFunction9canSettleuRq_S_10VectorType_FGS0_q__FTq_8velocityq__Sb"></a>
+                    <a name="//apple_ref/swift/Method/canSettle(_:velocity:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV7Advance13DecayFunction9canSettleuRq_S_10VectorType_FGS0_q__FTq_8velocityq__Sb">canSettle(_:velocity:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>true</code> if the simulation can become settled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">canSettle</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">,</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV7Advance13DecayFunction12settledValueuRq_S_10VectorType_FGS0_q__FTq_8velocityq__q_"></a>
+                    <a name="//apple_ref/swift/Method/settledValue(_:velocity:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV7Advance13DecayFunction12settledValueuRq_S_10VectorType_FGS0_q__FTq_8velocityq__q_">settledValue(_:velocity:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value to settle on.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">settledValue</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">,</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Vector</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2016 <a class="link" href="http://www.storehouse.co" target="_blank" rel="external">Storehouse Media Inc</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
