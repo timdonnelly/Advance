@@ -169,7 +169,7 @@ public protocol AnimationType: Advanceable {
 }
 ```
 
-Animations have a finite length (defined by each implimentation). When the animation is complete, it returns `true` for the `finished` property.
+Animations have a finite length (defined by each implementation). When the animation is complete, it returns `true` for the `finished` property.
 
 ##### `ValueAnimationType` protocol
 Inherits from `AnimationType`.
