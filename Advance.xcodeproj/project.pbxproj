@@ -72,13 +72,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		22168B501C7A42B100BAE519 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 22F74AA41C7674BB004C6E4C;
-			remoteInfo = AnimationSample;
-		};
 		22F74ABD1C767797004C6E4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
@@ -508,7 +501,6 @@
 			);
 			dependencies = (
 				5D39CEEE1C6E983100DFCF86 /* PBXTargetDependency */,
-				22168B511C7A42B100BAE519 /* PBXTargetDependency */,
 			);
 			name = AdvanceTests;
 			productName = AdvanceTests;
@@ -664,11 +656,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		22168B511C7A42B100BAE519 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 22F74AA41C7674BB004C6E4C /* AdvanceSample */;
-			targetProxy = 22168B501C7A42B100BAE519 /* PBXContainerItemProxy */;
-		};
 		22F74ABE1C767797004C6E4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5D39CEE01C6E983100DFCF86 /* Advance */;
