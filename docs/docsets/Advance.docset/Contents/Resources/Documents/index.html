@@ -482,7 +482,7 @@
 <span class="p">}</span>
 </code></pre>
 
-<p>Animations have a finite length (defined by each implimentation). When the animation is complete, it returns <code>true</code> for the <code>finished</code> property.</p>
+<p>Animations have a finite length (defined by each implementation). When the animation is complete, it returns <code>true</code> for the <code>finished</code> property.</p>
 <a href='#code_valueanimationtype_code_protocol' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='code_valueanimationtype_code_protocol'><code>ValueAnimationType</code> protocol</h5>
 
 <p>Inherits from <code>AnimationType</code>.</p>
@@ -531,9 +531,14 @@
 <p><em>Suggestions / pull requests / etc are welcome!</em></p>
 <a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='usage'>Usage</h3>
 
-<p>To use Advance as a framework, simply add the <code>Advance.xcodeproj</code> to your project and add <code>Advance.framework</code> as an <q>Embedded Binary</q> to your application target (under General in target settings). From there, add <code>import Advance</code> to your code and you&rsquo;re good to go.</p>
+<p>There are several ways to integrate Advance into your project.</p>
 
-<p>Advance also supports Carthage (add <code>github &quot;storehouse/Advance&quot;</code> to your <code>Cartfile</code>) and Swift Package Manager.</p>
+<ul>
+<li><p>Manually, as a framework: simply add the <code>Advance.xcodeproj</code> to your project and add <code>Advance.framework</code> as an <q>Embedded Binary</q> to your application target (under General in target settings). From there, add <code>import Advance</code> to your code and you&rsquo;re good to go.</p></li>
+<li><p>Swift Package Manager (experimental).</p></li>
+<li><p>Carthage: add <code>github &quot;storehouse/Advance&quot; &quot;master&quot;</code> to your <code>Cartfile</code>.</p></li>
+<li><p>CocoaPods: add <code>pod &#39;Advance&#39;, &#39;~&gt; 0.9&#39;</code> to your <code>Podfile</code>.</p></li>
+</ul>
 <a href='#documentation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='documentation'>Documentation</h3>
 
 <p>API documentation is <a href="http://storehouse.github.io/Advance/docs">available here</a>.</p>
