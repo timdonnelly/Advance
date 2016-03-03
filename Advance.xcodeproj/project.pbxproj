@@ -52,7 +52,7 @@
 		5DB1A4A01C876AD1000CF9EE /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
 		5DB1A4A21C876AD1000CF9EE /* DynamicFunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunctionType.swift */; };
-		5DB1A4A31C876AD1000CF9EE /* DynamicSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSimulation.swift */; };
+		5DB1A4A31C876AD1000CF9EE /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
 		5DB1A4A41C876AD1000CF9EE /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
 		5DB1A4A51C876AD1000CF9EE /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
 		5DB1A4A61C876AD1000CF9EE /* CGFloat+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat+VectorConvertible.swift */; };
@@ -158,7 +158,7 @@
 		5DB1A47A1C876AD1000CF9EE /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecayFunction.swift; sourceTree = "<group>"; };
 		5DB1A47D1C876AD1000CF9EE /* DynamicFunctionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFunctionType.swift; sourceTree = "<group>"; };
-		5DB1A47E1C876AD1000CF9EE /* DynamicSimulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicSimulation.swift; sourceTree = "<group>"; };
+		5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicSolver.swift; sourceTree = "<group>"; };
 		5DB1A47F1C876AD1000CF9EE /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
 		5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringFunction.swift; sourceTree = "<group>"; };
 		5DB1A4821C876AD1000CF9EE /* CGFloat+VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+VectorConvertible.swift"; sourceTree = "<group>"; };
@@ -317,7 +317,7 @@
 				5DB1A4741C876AD1000CF9EE /* Events */,
 				5DB1A4761C876AD1000CF9EE /* Extensions */,
 				5DB1A4791C876AD1000CF9EE /* Loop */,
-				5DB1A47B1C876AD1000CF9EE /* Simulation */,
+				5DB1A47B1C876AD1000CF9EE /* Dynamics */,
 				5DB1A4811C876AD1000CF9EE /* VectorConvertible */,
 				5DB1A4891C876AD1000CF9EE /* Vectors */,
 			);
@@ -405,15 +405,16 @@
 			path = Loop;
 			sourceTree = "<group>";
 		};
-		5DB1A47B1C876AD1000CF9EE /* Simulation */ = {
+		5DB1A47B1C876AD1000CF9EE /* Dynamics */ = {
 			isa = PBXGroup;
 			children = (
 				5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */,
 				5DB1A47D1C876AD1000CF9EE /* DynamicFunctionType.swift */,
-				5DB1A47E1C876AD1000CF9EE /* DynamicSimulation.swift */,
+				5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */,
 				5DB1A47F1C876AD1000CF9EE /* Spring.swift */,
 				5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */,
 			);
+			name = Dynamics;
 			path = Simulation;
 			sourceTree = "<group>";
 		};
@@ -639,7 +640,7 @@
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
 				5DB1A4A21C876AD1000CF9EE /* DynamicFunctionType.swift in Sources */,
 				5DB1A49B1C876AD1000CF9EE /* Animator.swift in Sources */,
-				5DB1A4A31C876AD1000CF9EE /* DynamicSimulation.swift in Sources */,
+				5DB1A4A31C876AD1000CF9EE /* DynamicSolver.swift in Sources */,
 				5DB1A4AA1C876AD1000CF9EE /* CGVector+VectorConvertible.swift in Sources */,
 				5DB1A4961C876AD1000CF9EE /* TimingFunctionType.swift in Sources */,
 				5DB1A49E1C876AD1000CF9EE /* CAMediaTimingFunction.swift in Sources */,
