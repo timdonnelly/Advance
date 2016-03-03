@@ -1,4 +1,5 @@
 language: objective-c
 osx_image: xcode7.2
-script: xcrun xcodebuild -project Advance.xcodeproj -scheme Advance test
-after_success: bash <(curl -s https://codecov.io/bash)
+xcode_project: Advance.xcodeproj 
+xcode_scheme: Advance
+#after_success: bash <(curl -s https://codecov.io/bash)
