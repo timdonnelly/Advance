@@ -231,7 +231,7 @@ There are several ways to integrate Advance into your project.
 
 * Swift Package Manager (experimental).
 
-* Carthage: add `github "storehouse/Advance"` to your `Cartfile`.
+* Carthage: add `github "storehouse/Advance" "master"` to your `Cartfile`.
 
 * CocoaPods: add `pod 'Advance', '~> 0.9'` to your `Podfile`.
 
