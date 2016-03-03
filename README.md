@@ -224,9 +224,16 @@ With that said, the majority of the framework is implemented as a set of protoco
 *Suggestions / pull requests / etc are welcome!*
 
 ### Usage
-To use Advance as a framework, simply add the `Advance.xcodeproj` to your project and add `Advance.framework` as an "Embedded Binary" to your application target (under General in target settings). From there, add `import Advance` to your code and you're good to go.
 
-Advance also supports Carthage (add `github "storehouse/Advance"` to your `Cartfile`) and Swift Package Manager.
+There are several ways to integrate Advance into your project.
+
+* Manually, as a framework: simply add the `Advance.xcodeproj` to your project and add `Advance.framework` as an "Embedded Binary" to your application target (under General in target settings). From there, add `import Advance` to your code and you're good to go.
+
+* Swift Package Manager (experimental).
+
+* Carthage: add `github "storehouse/Advance"` to your `Cartfile`.
+
+* CocoaPods: add `pod 'Advance', '~> 0.9'` to your `Podfile`.
 
 ### Documentation
 API documentation is [available here](http://storehouse.github.io/Advance/docs).
