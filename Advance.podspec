@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.license      = "BSD 2-clause \"Simplified\" License"
 
-  s.author       = "Storehouse", "Tim Donnelly"
+  s.authors      = "Storehouse", "Tim Donnelly"
   s.social_media_url = 'http://twitter.com/storehousehq'
 
   s.source       = { :git => "https://github.com/storehouse/Advance.git", :tag => "0.9" }
