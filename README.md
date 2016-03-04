@@ -1,5 +1,5 @@
 <br/><img src="https://github.com/storehouse/Advance/raw/master/Assets/logo.png" width="302">
-
+[![codebeat](https://codebeat.co/badges/72507b4e-813f-4518-ae12-826fe6ef9dcd)](https://codebeat.co/projects/github-com-storehouse-advance)
 A powerful animation framework for iOS.
 
 ---
