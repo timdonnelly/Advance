@@ -6,7 +6,7 @@ import Advance
 
 
 var f = SpringFunction(target: 0.0)
-var sim = DynamicSimulation(function: f, value: 0.0)
+var sim = DynamicSolver(function: f, value: 0.0)
 
 sim.velocity = 800.0
 
