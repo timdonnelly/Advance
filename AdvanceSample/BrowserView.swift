@@ -122,7 +122,6 @@ class BrowserItem: NSObject {
             gestureInProgress = true
             centerWhenGestureBegan = center.value
             transformWhenGestureBegan = transform.value
-            center.reset(center.value)
             transform.reset(transform.value)
         case .Changed:
             var t = transformWhenGestureBegan
