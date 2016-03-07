@@ -516,7 +516,7 @@ time-advancable animation.</p>
                         <p>Given a starting velocity, <code>DecayAnimation</code> will slowly bring the value
 to a stop (where <code>velocity</code> == <code>Value.zero</code>).</p>
 
-<p><code>DecayAnimation</code> uses a <code>DynamicSimulation</code> containing a <code><a href="Structs/DecayFunction.html">DecayFunction</a></code>
+<p><code>DecayAnimation</code> uses a <code><a href="Structs/DynamicSolver.html">DynamicSolver</a></code> containing a <code><a href="Structs/DecayFunction.html">DecayFunction</a></code>
 internally.</p>
 
                         <a href="Structs/DecayAnimation.html" class="slightly-smaller">See more</a>
@@ -558,7 +558,7 @@ the properties in &lsquo;configuration&rsquo; to customize the way the spring wi
 change the value as the simulation advances. The animation is finished
 when the spring has come to rest at its target value.</p>
 
-<p>SpringAnimation instances use a <code>DynamicSimulation</code> containing a
+<p>SpringAnimation instances use a <code><a href="Structs/DynamicSolver.html">DynamicSolver</a></code> containing a
 <code><a href="Structs/SpringFunction.html">SpringFunction</a></code> internally to perform the spring calculations.</p>
 
                         <a href="Structs/SpringAnimation.html" class="slightly-smaller">See more</a>
