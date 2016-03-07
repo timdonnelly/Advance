@@ -241,6 +241,7 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
     
     public func translationVelocityInView(view: UIView?) -> CGPoint {
         guard active else { return CGPoint.zero }
+        guard lastUpdateDuration > 0.0 else { return CGPoint.zero }
         let current = currentState.convertedToView(view)
         let previous = previousState.convertedToView(view)
         var vel = current.center - previous.center
@@ -256,6 +257,7 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
     
     public var rotationVelocity: CGFloat {
         guard active else { return 0.0 }
+        guard lastUpdateDuration > 0.0 else { return 0.0 }
         let delta = cumulativeAngle - previousCumulativeAngle
         return delta / CGFloat(lastUpdateDuration)
     }
@@ -266,7 +268,8 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
     }
     
     public var scaleVelocity: CGFloat {
-        guard active else { return 1.0 }
+        guard active else { return 0.0 }
+        guard lastUpdateDuration > 0.0 else { return 0.0 }
         let current = currentState.distanceBetween / initialState.distanceBetween
         let previous = previousState.distanceBetween / initialState.distanceBetween
         return ((current - previous) / CGFloat(lastUpdateDuration))
