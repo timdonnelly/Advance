@@ -36,7 +36,7 @@
 /// change the value as the simulation advances. The animation is finished
 /// when the spring has come to rest at its target value.
 ///
-/// SpringAnimation instances use a `DynamicSimulation` containing a
+/// SpringAnimation instances use a `DynamicSolver` containing a
 /// `SpringFunction` internally to perform the spring calculations.
 public struct SpringAnimation<Value: VectorConvertible>: ValueAnimationType {
     

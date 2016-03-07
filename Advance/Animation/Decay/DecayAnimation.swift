@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /// Given a starting velocity, `DecayAnimation` will slowly bring the value
 /// to a stop (where `velocity` == `Value.zero`).
 ///
-/// `DecayAnimation` uses a `DynamicSimulation` containing a `DecayFunction`
+/// `DecayAnimation` uses a `DynamicSolver` containing a `DecayFunction`
 /// internally.
 public struct DecayAnimation<Value: VectorConvertible>: ValueAnimationType {
     
