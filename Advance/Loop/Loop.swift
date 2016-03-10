@@ -38,10 +38,11 @@ public final class Loop {
     
     private var currentAnimationTime: Double = 0.0
     
-    private lazy var displayLink: CADisplayLink = {
-        let link = CADisplayLink(target: self, selector: "displayLinkDidFire:")
-        link.paused = true
-        link.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+    private lazy var displayLink: DisplayLink = {
+        let link = DisplayLink()
+        link.callback = { [unowned self] (frame) in
+            self.displayLinkDidFire(frame)
+        }
         return link
     }()
     
@@ -88,12 +89,12 @@ public final class Loop {
         displayLink.paused = true
     }
     
-    dynamic private func displayLinkDidFire(displayLink: CADisplayLink) {
+    private func displayLinkDidFire(frame: DisplayLink.Frame) {
         
-        let timestamp = max(displayLink.timestamp, currentAnimationTime)
+        let timestamp = max(frame.timestamp, currentAnimationTime)
         
         if currentAnimationTime == 0.0 {
-            currentAnimationTime = timestamp - displayLink.duration
+            currentAnimationTime = timestamp - frame.duration
         }
         
         let elapsed = timestamp - currentAnimationTime

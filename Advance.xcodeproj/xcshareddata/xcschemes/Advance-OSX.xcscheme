@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D39CEE01C6E983100DFCF86"
+               BlueprintIdentifier = "5D3A2F301C9209EE0071F08F"
                BuildableName = "Advance.framework"
-               BlueprintName = "Advance"
+               BlueprintName = "Advance-OSX"
                ReferencedContainer = "container:Advance.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D39CEEA1C6E983100DFCF86"
-               BuildableName = "Advance.xctest"
-               BlueprintName = "AdvanceTests"
+               BlueprintIdentifier = "5DE959EF1C9392E1008487A8"
+               BuildableName = "AdvanceTests-OSX.xctest"
+               BlueprintName = "AdvanceTests-OSX"
                ReferencedContainer = "container:Advance.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D39CEE01C6E983100DFCF86"
+            BlueprintIdentifier = "5D3A2F301C9209EE0071F08F"
             BuildableName = "Advance.framework"
-            BlueprintName = "Advance"
+            BlueprintName = "Advance-OSX"
             ReferencedContainer = "container:Advance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D39CEE01C6E983100DFCF86"
+            BlueprintIdentifier = "5D3A2F301C9209EE0071F08F"
             BuildableName = "Advance.framework"
-            BlueprintName = "Advance"
+            BlueprintName = "Advance-OSX"
             ReferencedContainer = "container:Advance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D39CEE01C6E983100DFCF86"
+            BlueprintIdentifier = "5D3A2F301C9209EE0071F08F"
             BuildableName = "Advance.framework"
-            BlueprintName = "Advance"
+            BlueprintName = "Advance-OSX"
             ReferencedContainer = "container:Advance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
