@@ -1,6 +1,6 @@
 <br/><img src="https://github.com/storehouse/Advance/raw/master/Assets/logo.png" width="302">
 
-A powerful animation framework for iOS.
+A powerful animation framework for iOS and OS X.
 
 ---
 
