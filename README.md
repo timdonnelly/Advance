@@ -21,7 +21,7 @@ You can accomplish amazing things with Advance. But you should be sensitive to t
 *If you simply want to animate the basic properties of a view, it's probably best to stick with UIView animations / Core Animation. It is able to run your animations on a high priority background thread and is not as sensitive to blocking the main thread.*
 
 ##### Requirements
-* iOS 8+
+* iOS 8+ or OS X 10.10+
 * Swift 2+
 
 
@@ -213,8 +213,6 @@ Advance classes are **not** thread safe, and expect to be used from the main thr
 With that said, the majority of the framework is implemented as a set of protocols and value types. Because value semantics are implicitly safe to pass between threads, you can safely accomplish many things asynchronously. You just need to be sure that classes such as `Animator`, `Animatable`, and `Spring` are accessed from the main thread only.
 
 ### Status
-- **Platforms:** Advance is currently iOS only, but I would like to add support for additional platforms. It likely works out of the box on tvOS, but it has not been tested. OS X support should also be fairly trivial, though it will take some additions to `Loop` (`CADisplayLink` is unavailable).
-
 - **Tests:** More tests are needed. Test coverage is provided for some of the core types, but it is not yet comprehensive enough.
 
 - **Documentation:** Nearly every type is briefly commented, but expanding the documentation to include discussion and examples where appropriate is a goal of the project.
