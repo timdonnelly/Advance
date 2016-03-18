@@ -17,7 +17,11 @@ class DisplayLinkTests : XCTestCase {
     func testCallback() {
         let exp = expectationWithDescription("callback")
         
+        var fulfilled = false
+        
         displayLink.callback = { (frame) in
+            guard fulfilled == false else { return }
+            fulfilled = true
             exp.fulfill()
         }
         

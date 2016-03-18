@@ -22,8 +22,56 @@
 		223E49751C76C9510048CAB6 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49741C76C9510048CAB6 /* SpringView.swift */; };
 		226A752C1C84153E00A7F1FB /* GravitySimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752B1C84153E00A7F1FB /* GravitySimulation.swift */; };
 		226A752E1C84206D00A7F1FB /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
+		228E20421C9CB99D0058ADA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
+		228E20431C9CB99D0058ADA1 /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */; };
+		228E20441C9CB99D0058ADA1 /* CGFloat+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat+VectorConvertible.swift */; };
+		228E20451C9CB99D0058ADA1 /* AnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */; };
+		228E20461C9CB99D0058ADA1 /* VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */; };
+		228E20471C9CB99D0058ADA1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48D1C876AD1000CF9EE /* Vector3.swift */; };
+		228E20481C9CB99D0058ADA1 /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */; };
+		228E20491C9CB99D0058ADA1 /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
+		228E204A1C9CB99D0058ADA1 /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
+		228E204B1C9CB99D0058ADA1 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4631C876AD1000CF9EE /* Animatable.swift */; };
+		228E204C1C9CB99D0058ADA1 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
+		228E204D1C9CB99D0058ADA1 /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */; };
+		228E204E1C9CB99D0058ADA1 /* ValueAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4701C876AD1000CF9EE /* ValueAnimationType.swift */; };
+		228E204F1C9CB99D0058ADA1 /* CGSize+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4851C876AD1000CF9EE /* CGSize+VectorConvertible.swift */; };
+		228E20501C9CB99D0058ADA1 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
+		228E20511C9CB99D0058ADA1 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48C1C876AD1000CF9EE /* Vector2.swift */; };
+		228E20521C9CB99D0058ADA1 /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48E1C876AD1000CF9EE /* Vector4.swift */; };
+		228E20531C9CB99D0058ADA1 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4661C876AD1000CF9EE /* AnimationType.swift */; };
+		228E20541C9CB99D0058ADA1 /* DecayAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */; };
+		228E20551C9CB99D0058ADA1 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */; };
+		228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
+		228E20571C9CB99D0058ADA1 /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* VectorType.swift */; };
+		228E20581C9CB99D0058ADA1 /* Double+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double+VectorConvertible.swift */; };
+		228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */; };
+		228E205A1C9CB99D0058ADA1 /* CGRect+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect+VectorConvertible.swift */; };
+		228E205B1C9CB99D0058ADA1 /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
+		228E205C1C9CB99D0058ADA1 /* CGPoint+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint+VectorConvertible.swift */; };
+		228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48B1C876AD1000CF9EE /* Vector1.swift */; };
+		228E205E1C9CB99D0058ADA1 /* DynamicFunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunctionType.swift */; };
+		228E205F1C9CB99D0058ADA1 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
+		228E20601C9CB99D0058ADA1 /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
+		228E20611C9CB99D0058ADA1 /* CGVector+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector+VectorConvertible.swift */; };
+		228E20621C9CB99D0058ADA1 /* TimingFunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46A1C876AD1000CF9EE /* TimingFunctionType.swift */; };
+		228E20631C9CB99D0058ADA1 /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
+		228E20641C9CB99D0058ADA1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Event.swift */; };
+		228E20731C9CB9B00058ADA1 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */; };
+		228E20741C9CB9B00058ADA1 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
+		228E20751C9CB9B00058ADA1 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
+		228E20761C9CB9B00058ADA1 /* VectorTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5A1C7A547300BAE519 /* VectorTypeTests.swift */; };
+		228E20771C9CB9B00058ADA1 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5C1C7A5E3500BAE519 /* BasicAnimationTests.swift */; };
+		228E20781C9CB9B00058ADA1 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* EventTests.swift */; };
+		228E20791C9CB9B00058ADA1 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F471C80DAA00039B9BB /* VectorConvenienceTests.swift */; };
+		228E207B1C9CB9B00058ADA1 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D39CEE11C6E983100DFCF86 /* Advance.framework */; };
+		228E20891C9CBA490058ADA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E20881C9CBA490058ADA1 /* AppDelegate.swift */; };
+		228E208B1C9CBA490058ADA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E208A1C9CBA490058ADA1 /* ViewController.swift */; };
+		228E20901C9CBA490058ADA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228E208F1C9CBA490058ADA1 /* Assets.xcassets */; };
 		2299A6831C7D35FE009DE78C /* DirectManipulationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2299A6821C7D35FE009DE78C /* DirectManipulationGestureRecognizer.swift */; };
 		22B8E9831C7713FF0010EF5A /* Advance.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D39CEE11C6E983100DFCF86 /* Advance.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22DA152A1C9CBD0100A70551 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228E206B1C9CB99D0058ADA1 /* Advance.framework */; };
+		22DA152B1C9CBD0100A70551 /* Advance.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 228E206B1C9CB99D0058ADA1 /* Advance.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22F74AA81C7674BB004C6E4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F74AA71C7674BB004C6E4C /* AppDelegate.swift */; };
 		22F74AAF1C7674BB004C6E4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F74AAE1C7674BB004C6E4C /* Assets.xcassets */; };
 		22F74AB21C7674BB004C6E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F74AB01C7674BB004C6E4C /* LaunchScreen.storyboard */; };
@@ -124,6 +172,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		228E206F1C9CB9B00058ADA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D39CEE01C6E983100DFCF86;
+			remoteInfo = Advance;
+		};
+		228E20711C9CB9B00058ADA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22F74AA41C7674BB004C6E4C;
+			remoteInfo = AdvanceSample;
+		};
+		228E20991C9CBBC30058ADA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 228E20851C9CBA490058ADA1;
+			remoteInfo = "AdvanceSample-tvOS";
+		};
+		22DA152C1C9CBD0100A70551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 228E20401C9CB99D0058ADA1;
+			remoteInfo = "Advance-tvOS";
+		};
 		22F74ABD1C767797004C6E4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
@@ -179,6 +255,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22DA152E1C9CBD0100A70551 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				22DA152B1C9CBD0100A70551 /* Advance.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D3A2F791C9255B30071F08F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,6 +295,15 @@
 		223E49741C76C9510048CAB6 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
 		226A752B1C84153E00A7F1FB /* GravitySimulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravitySimulation.swift; sourceTree = "<group>"; };
 		226A752D1C84206D00A7F1FB /* GravityFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityFunction.swift; sourceTree = "<group>"; };
+		228E206B1C9CB99D0058ADA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		228E20801C9CB9B00058ADA1 /* AdvanceTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdvanceTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		228E20861C9CBA490058ADA1 /* AdvanceSample-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AdvanceSample-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		228E20881C9CBA490058ADA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		228E208A1C9CBA490058ADA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		228E208F1C9CBA490058ADA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		228E20911C9CBA490058ADA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228E20961C9CBAF70058ADA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228E20981C9CBB9B0058ADA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2299A6821C7D35FE009DE78C /* DirectManipulationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectManipulationGestureRecognizer.swift; sourceTree = "<group>"; };
 		22F74AA51C7674BB004C6E4C /* AdvanceSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvanceSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F74AA71C7674BB004C6E4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +371,29 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		228E20651C9CB99D0058ADA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228E207A1C9CB9B00058ADA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228E207B1C9CB9B00058ADA1 /* Advance.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228E20831C9CBA490058ADA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DA152A1C9CBD0100A70551 /* Advance.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22F74AA21C7674BB004C6E4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,6 +472,34 @@
 			name = Springs;
 			sourceTree = "<group>";
 		};
+		228E20871C9CBA490058ADA1 /* AdvanceSample-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				228E20881C9CBA490058ADA1 /* AppDelegate.swift */,
+				228E208A1C9CBA490058ADA1 /* ViewController.swift */,
+				228E208F1C9CBA490058ADA1 /* Assets.xcassets */,
+				228E20911C9CBA490058ADA1 /* Info.plist */,
+			);
+			path = "AdvanceSample-tvOS";
+			sourceTree = "<group>";
+		};
+		228E20951C9CBA7A0058ADA1 /* Advance-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				228E20961C9CBAF70058ADA1 /* Info.plist */,
+			);
+			name = "Advance-tvOS";
+			path = "../Advance-tvOS";
+			sourceTree = "<group>";
+		};
+		228E20971C9CBB300058ADA1 /* AdvanceTests-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				228E20981C9CBB9B0058ADA1 /* Info.plist */,
+			);
+			path = "AdvanceTests-tvOS";
+			sourceTree = "<group>";
+		};
 		22F74AA61C7674BB004C6E4C /* AdvanceSample-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,11 +535,13 @@
 			children = (
 				5DA94F491C80DEEB0039B9BB /* Playground.playground */,
 				5DB1A4611C876AD1000CF9EE /* Advance */,
-				5D39CF281C6E9B2E00DFCF86 /* Resources */,
-				5D39CEEF1C6E983100DFCF86 /* AdvanceTests-iOS */,
-				5DE959F11C9392E1008487A8 /* AdvanceTests-OSX */,
 				22F74AA61C7674BB004C6E4C /* AdvanceSample-iOS */,
 				5D3A2F691C92559B0071F08F /* AdvanceSample-OSX */,
+				228E20871C9CBA490058ADA1 /* AdvanceSample-tvOS */,
+				5D39CEEF1C6E983100DFCF86 /* AdvanceTests-iOS */,
+				5DE959F11C9392E1008487A8 /* AdvanceTests-OSX */,
+				228E20971C9CBB300058ADA1 /* AdvanceTests-tvOS */,
+				5D39CF281C6E9B2E00DFCF86 /* Resources */,
 				5D39CEE21C6E983100DFCF86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -406,6 +555,9 @@
 				5D3A2F311C9209EE0071F08F /* Advance.framework */,
 				5D3A2F681C92559B0071F08F /* AdvanceSample-OSX.app */,
 				5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */,
+				228E206B1C9CB99D0058ADA1 /* Advance.framework */,
+				228E20801C9CB9B00058ADA1 /* AdvanceTests-tvOS.xctest */,
+				228E20861C9CBA490058ADA1 /* AdvanceSample-tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,6 +580,7 @@
 		5D39CF281C6E9B2E00DFCF86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				228E20951C9CBA7A0058ADA1 /* Advance-tvOS */,
 				5DE95A051C93963A008487A8 /* Advance-iOS */,
 				5D3A2F321C9209EE0071F08F /* Advance-OSX */,
 			);
@@ -614,6 +767,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		228E20661C9CB99D0058ADA1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D39CEDE1C6E983100DFCF86 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,6 +791,63 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		228E20401C9CB99D0058ADA1 /* Advance-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228E20681C9CB99D0058ADA1 /* Build configuration list for PBXNativeTarget "Advance-tvOS" */;
+			buildPhases = (
+				228E20411C9CB99D0058ADA1 /* Sources */,
+				228E20651C9CB99D0058ADA1 /* Frameworks */,
+				228E20661C9CB99D0058ADA1 /* Headers */,
+				228E20671C9CB99D0058ADA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Advance-tvOS";
+			productName = Advance;
+			productReference = 228E206B1C9CB99D0058ADA1 /* Advance.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		228E206D1C9CB9B00058ADA1 /* AdvanceTests-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228E207D1C9CB9B00058ADA1 /* Build configuration list for PBXNativeTarget "AdvanceTests-tvOS" */;
+			buildPhases = (
+				228E20721C9CB9B00058ADA1 /* Sources */,
+				228E207A1C9CB9B00058ADA1 /* Frameworks */,
+				228E207C1C9CB9B00058ADA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				228E206E1C9CB9B00058ADA1 /* PBXTargetDependency */,
+				228E20701C9CB9B00058ADA1 /* PBXTargetDependency */,
+				228E209A1C9CBBC30058ADA1 /* PBXTargetDependency */,
+			);
+			name = "AdvanceTests-tvOS";
+			productName = AdvanceTests;
+			productReference = 228E20801C9CB9B00058ADA1 /* AdvanceTests-tvOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		228E20851C9CBA490058ADA1 /* AdvanceSample-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228E20921C9CBA490058ADA1 /* Build configuration list for PBXNativeTarget "AdvanceSample-tvOS" */;
+			buildPhases = (
+				228E20821C9CBA490058ADA1 /* Sources */,
+				228E20831C9CBA490058ADA1 /* Frameworks */,
+				228E20841C9CBA490058ADA1 /* Resources */,
+				22DA152E1C9CBD0100A70551 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22DA152D1C9CBD0100A70551 /* PBXTargetDependency */,
+			);
+			name = "AdvanceSample-tvOS";
+			productName = "AdvanceSample-tvOS";
+			productReference = 228E20861C9CBA490058ADA1 /* AdvanceSample-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		22F74AA41C7674BB004C6E4C /* AdvanceSample-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22F74AB61C7674BB004C6E4C /* Build configuration list for PBXNativeTarget "AdvanceSample-iOS" */;
@@ -749,10 +966,16 @@
 		5D39CED81C6E983100DFCF86 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Storehouse Media Inc";
 				TargetAttributes = {
+					228E206D1C9CB9B00058ADA1 = {
+						TestTargetID = 228E20851C9CBA490058ADA1;
+					};
+					228E20851C9CBA490058ADA1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					22F74AA41C7674BB004C6E4C = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -789,16 +1012,41 @@
 			projectRoot = "";
 			targets = (
 				5D39CEE01C6E983100DFCF86 /* Advance-iOS */,
+				228E20401C9CB99D0058ADA1 /* Advance-tvOS */,
 				5D3A2F301C9209EE0071F08F /* Advance-OSX */,
 				5D39CEEA1C6E983100DFCF86 /* AdvanceTests-iOS */,
+				228E206D1C9CB9B00058ADA1 /* AdvanceTests-tvOS */,
 				5DE959EF1C9392E1008487A8 /* AdvanceTests-OSX */,
 				22F74AA41C7674BB004C6E4C /* AdvanceSample-iOS */,
 				5D3A2F671C92559B0071F08F /* AdvanceSample-OSX */,
+				228E20851C9CBA490058ADA1 /* AdvanceSample-tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		228E20671C9CB99D0058ADA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228E207C1C9CB9B00058ADA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228E20841C9CBA490058ADA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228E20901C9CBA490058ADA1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22F74AA31C7674BB004C6E4C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -848,6 +1096,71 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		228E20411C9CB99D0058ADA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228E20421C9CB99D0058ADA1 /* Loop.swift in Sources */,
+				228E20431C9CB99D0058ADA1 /* Interpolatable.swift in Sources */,
+				228E20441C9CB99D0058ADA1 /* CGFloat+VectorConvertible.swift in Sources */,
+				228E20451C9CB99D0058ADA1 /* AnimatorContext.swift in Sources */,
+				228E20461C9CB99D0058ADA1 /* VectorConvertible.swift in Sources */,
+				228E20471C9CB99D0058ADA1 /* Vector3.swift in Sources */,
+				228E20481C9CB99D0058ADA1 /* UnitBezier.swift in Sources */,
+				228E20491C9CB99D0058ADA1 /* Advanceable.swift in Sources */,
+				228E204A1C9CB99D0058ADA1 /* SpringFunction.swift in Sources */,
+				228E204B1C9CB99D0058ADA1 /* Animatable.swift in Sources */,
+				228E204C1C9CB99D0058ADA1 /* DisplayLink.swift in Sources */,
+				228E204D1C9CB99D0058ADA1 /* BasicAnimation.swift in Sources */,
+				228E204E1C9CB99D0058ADA1 /* ValueAnimationType.swift in Sources */,
+				228E204F1C9CB99D0058ADA1 /* CGSize+VectorConvertible.swift in Sources */,
+				228E20501C9CB99D0058ADA1 /* Spring.swift in Sources */,
+				228E20511C9CB99D0058ADA1 /* Vector2.swift in Sources */,
+				228E20521C9CB99D0058ADA1 /* Vector4.swift in Sources */,
+				228E20531C9CB99D0058ADA1 /* AnimationType.swift in Sources */,
+				228E20541C9CB99D0058ADA1 /* DecayAnimation.swift in Sources */,
+				228E20551C9CB99D0058ADA1 /* SpringAnimation.swift in Sources */,
+				228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */,
+				228E20571C9CB99D0058ADA1 /* VectorType.swift in Sources */,
+				228E20581C9CB99D0058ADA1 /* Double+VectorConvertible.swift in Sources */,
+				228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */,
+				228E205A1C9CB99D0058ADA1 /* CGRect+VectorConvertible.swift in Sources */,
+				228E205B1C9CB99D0058ADA1 /* VectorMathCapable.swift in Sources */,
+				228E205C1C9CB99D0058ADA1 /* CGPoint+VectorConvertible.swift in Sources */,
+				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
+				228E205E1C9CB99D0058ADA1 /* DynamicFunctionType.swift in Sources */,
+				228E205F1C9CB99D0058ADA1 /* Animator.swift in Sources */,
+				228E20601C9CB99D0058ADA1 /* DynamicSolver.swift in Sources */,
+				228E20611C9CB99D0058ADA1 /* CGVector+VectorConvertible.swift in Sources */,
+				228E20621C9CB99D0058ADA1 /* TimingFunctionType.swift in Sources */,
+				228E20631C9CB99D0058ADA1 /* CAMediaTimingFunction.swift in Sources */,
+				228E20641C9CB99D0058ADA1 /* Event.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228E20721C9CB9B00058ADA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228E20731C9CB9B00058ADA1 /* CAMediaTimingFunctionTests.swift in Sources */,
+				228E20741C9CB9B00058ADA1 /* UnitBezierTests.swift in Sources */,
+				228E20751C9CB9B00058ADA1 /* DisplayLinkTests.swift in Sources */,
+				228E20761C9CB9B00058ADA1 /* VectorTypeTests.swift in Sources */,
+				228E20771C9CB9B00058ADA1 /* BasicAnimationTests.swift in Sources */,
+				228E20781C9CB9B00058ADA1 /* EventTests.swift in Sources */,
+				228E20791C9CB9B00058ADA1 /* VectorConvenienceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		228E20821C9CBA490058ADA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228E208B1C9CBA490058ADA1 /* ViewController.swift in Sources */,
+				228E20891C9CBA490058ADA1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22F74AA11C7674BB004C6E4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -997,6 +1310,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		228E206E1C9CB9B00058ADA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D39CEE01C6E983100DFCF86 /* Advance-iOS */;
+			targetProxy = 228E206F1C9CB9B00058ADA1 /* PBXContainerItemProxy */;
+		};
+		228E20701C9CB9B00058ADA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22F74AA41C7674BB004C6E4C /* AdvanceSample-iOS */;
+			targetProxy = 228E20711C9CB9B00058ADA1 /* PBXContainerItemProxy */;
+		};
+		228E209A1C9CBBC30058ADA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 228E20851C9CBA490058ADA1 /* AdvanceSample-tvOS */;
+			targetProxy = 228E20991C9CBBC30058ADA1 /* PBXContainerItemProxy */;
+		};
+		22DA152D1C9CBD0100A70551 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 228E20401C9CB99D0058ADA1 /* Advance-tvOS */;
+			targetProxy = 22DA152C1C9CBD0100A70551 /* PBXContainerItemProxy */;
+		};
 		22F74ABE1C767797004C6E4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5D39CEE01C6E983100DFCF86 /* Advance-iOS */;
@@ -1049,6 +1382,114 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		228E20691C9CB99D0058ADA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Advance-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_NAME = Advance;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		228E206A1C9CB99D0058ADA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Advance-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_NAME = Advance;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		228E207E1C9CB9B00058ADA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "AdvanceTests-tvOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdvanceSample-tvOS.app/AdvanceSample-tvOS";
+			};
+			name = Debug;
+		};
+		228E207F1C9CB9B00058ADA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "AdvanceTests-tvOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdvanceSample-tvOS.app/AdvanceSample-tvOS";
+			};
+			name = Release;
+		};
+		228E20931C9CBA490058ADA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AdvanceSample-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		228E20941C9CBA490058ADA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AdvanceSample-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
 		22F74AB41C7674BB004C6E4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1345,6 +1786,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		228E20681C9CB99D0058ADA1 /* Build configuration list for PBXNativeTarget "Advance-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228E20691C9CB99D0058ADA1 /* Debug */,
+				228E206A1C9CB99D0058ADA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		228E207D1C9CB9B00058ADA1 /* Build configuration list for PBXNativeTarget "AdvanceTests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228E207E1C9CB9B00058ADA1 /* Debug */,
+				228E207F1C9CB9B00058ADA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		228E20921C9CBA490058ADA1 /* Build configuration list for PBXNativeTarget "AdvanceSample-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228E20931C9CBA490058ADA1 /* Debug */,
+				228E20941C9CBA490058ADA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22F74AB61C7674BB004C6E4C /* Build configuration list for PBXNativeTarget "AdvanceSample-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,6 +1,6 @@
 <br/><img src="https://github.com/storehouse/Advance/raw/master/Assets/logo.png" width="302">
 
-A powerful animation framework for iOS and OS X.
+A powerful animation framework for iOS, tvOS, and OS X.
 
 ---
 
@@ -21,7 +21,7 @@ You can accomplish amazing things with Advance. But you should be sensitive to t
 *If you simply want to animate the basic properties of a view, it's probably best to stick with UIView animations / Core Animation. It is able to run your animations on a high priority background thread and is not as sensitive to blocking the main thread.*
 
 ##### Requirements
-* iOS 8+ or OS X 10.10+
+* iOS 8+, tvOS 9+, or OS X 10.10+
 * Swift 2+
 
 
