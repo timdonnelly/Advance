@@ -16,4 +16,5 @@ Pod::Spec.new do |s|
   s.source_files = "Advance/**/*.swift"
 
   s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.10"
 end
