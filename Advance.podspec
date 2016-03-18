@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "Advance"
   s.version      = "0.9"
-  s.summary      = "A powerful animation framework for iOS."
+  s.summary      = "A powerful animation framework for iOS and OS X."
   s.description  = "Advance is a pure Swift framework that enables advanced animations and physics-based interactions."
 
   s.homepage     = "https://github.com/storehouse/Advance"
