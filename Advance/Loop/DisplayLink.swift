@@ -28,7 +28,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import Foundation
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import QuartzCore
 #elseif os(OSX)
 import CoreVideo
@@ -51,7 +51,7 @@ func ==(lhs: DisplayLink.Frame, rhs: DisplayLink.Frame) -> Bool {
 }
 
 
-#if os(iOS) // iOS support using CADisplayLink --------------------------------------------------------
+#if os(iOS) || os(tvOS) // iOS support using CADisplayLink --------------------------------------------------------
 
 /// DisplayLink is used to hook into screen refreshes.
 internal final class DisplayLink {
