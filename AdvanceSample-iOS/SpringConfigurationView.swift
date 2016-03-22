@@ -56,8 +56,8 @@ class SpringConfigurationView: UIView {
         addSubview(tensionSlider)
         addSubview(dampingSlider)
         
-        tensionSlider.slider.addTarget(self, action: "changed", forControlEvents: .ValueChanged)
-        dampingSlider.slider.addTarget(self, action: "changed", forControlEvents: .ValueChanged)
+        tensionSlider.slider.addTarget(self, action: #selector(changed), forControlEvents: .ValueChanged)
+        dampingSlider.slider.addTarget(self, action: #selector(changed), forControlEvents: .ValueChanged)
         
         tensionSlider.slider.minimumValue = 1.0
         tensionSlider.slider.maximumValue = 400.0

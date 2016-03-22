@@ -32,7 +32,7 @@ import Foundation
 public protocol ValueAnimationType: AnimationType {
     
     /// The type of value to be animated.
-    typealias Value: VectorConvertible
+    associatedtype Value: VectorConvertible
     
     /// The current value of the animation.
     var value: Value { get }

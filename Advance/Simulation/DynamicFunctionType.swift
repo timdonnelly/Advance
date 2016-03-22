@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /// Conforming types implement a dynamic function that models changes to
 /// a vector over time.
 public protocol DynamicFunctionType {
-    typealias Vector: VectorType
+    associatedtype Vector: VectorType
     
     /// The computed acceleration for a given simulation state.
     ///

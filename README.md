@@ -22,7 +22,7 @@ You can accomplish amazing things with Advance. But you should be sensitive to t
 
 ##### Requirements
 * iOS 8+, tvOS 9+, or OS X 10.10+
-* Swift 2+
+* Swift 2.2+
 
 
 ### Examples

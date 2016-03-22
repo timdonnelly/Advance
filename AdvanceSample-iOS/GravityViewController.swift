@@ -68,7 +68,7 @@ class GravityViewController: DemoViewController {
         note = "Long press to add gravity."
         
         recognizer.minimumPressDuration = 0.3
-        recognizer.addTarget(self, action: "press:")
+        recognizer.addTarget(self, action: #selector(press(_:)))
         recognizer.enabled = false
         contentView.addGestureRecognizer(recognizer)
         
@@ -78,7 +78,7 @@ class GravityViewController: DemoViewController {
         resetButton.tintColor = UIColor(red: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0)
         resetButton.layer.borderColor = UIColor(red: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0).CGColor
         resetButton.layer.borderWidth = 1.0
-        resetButton.addTarget(self, action: "reset", forControlEvents: .TouchUpInside)
+        resetButton.addTarget(self, action: #selector(reset), forControlEvents: .TouchUpInside)
         resetButton.alpha = 0.0
         view.addSubview(resetButton)
         

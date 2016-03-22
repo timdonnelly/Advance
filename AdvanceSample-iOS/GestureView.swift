@@ -44,7 +44,7 @@ final class GestureView: UIView {
         
         backgroundColor = UIColor(red: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0)
         
-        recognizer.addTarget(self, action: "manipulate:")
+        recognizer.addTarget(self, action: #selector(manipulate(_:)))
         addGestureRecognizer(recognizer)
         
         animatableCenter.changed.observe { [weak self] (c) -> Void in

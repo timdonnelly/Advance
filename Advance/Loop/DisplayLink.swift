@@ -77,7 +77,7 @@ internal final class DisplayLink {
     
     /// Creates a new paused DisplayLink instance.
     init() {
-        displayLink = CADisplayLink(target: target, selector: "frame:")
+        displayLink = CADisplayLink(target: target, selector: #selector(DisplayLinkTarget.frame(_:)))
         displayLink.paused = true
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
         

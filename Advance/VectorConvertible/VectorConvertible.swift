@@ -31,7 +31,7 @@ public protocol VectorConvertible: Equatable, Interpolatable {
     
     /// The concrete VectorType implementation that can represent the 
     /// conforming type.
-    typealias Vector: VectorType
+    associatedtype Vector: VectorType
     
     /// Creates a new instance from a vector.
     init(vector: Vector)

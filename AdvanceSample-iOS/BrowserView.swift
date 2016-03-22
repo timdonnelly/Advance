@@ -89,13 +89,13 @@ class BrowserItem: NSObject {
             self.browserView?.setNeedsLayout()
         }
         
-        tapRecognizer.addTarget(self, action: "tap")
+        tapRecognizer.addTarget(self, action: #selector(tap))
         view.addGestureRecognizer(tapRecognizer)
         
-        recognizer.addTarget(self, action: "gesture:")
+        recognizer.addTarget(self, action: #selector(gesture(_:)))
         view.addGestureRecognizer(recognizer)
         
-        panRecognizer.addTarget(self, action: "pan:")
+        panRecognizer.addTarget(self, action: #selector(pan(_:)))
         panRecognizer.delegate = self
         view.addGestureRecognizer(panRecognizer)
     }
@@ -299,7 +299,7 @@ class BrowserView: UIView {
             self.setNeedsLayout()
         }
         
-        panRecognizer.addTarget(self, action: "pan:")
+        panRecognizer.addTarget(self, action: #selector(pan(_:)))
         panRecognizer.delegate = self
         addGestureRecognizer(panRecognizer)
     }

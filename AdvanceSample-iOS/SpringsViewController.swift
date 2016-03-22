@@ -53,7 +53,7 @@ class SpringsViewController: DemoViewController {
         view.backgroundColor = UIColor.whiteColor()
         
         view.addGestureRecognizer(tapRecognizer)
-        tapRecognizer.addTarget(self, action: "tap:")
+        tapRecognizer.addTarget(self, action: #selector(tap(_:)))
         tapRecognizer.enabled = false
         
         springView.bounds = CGRect(x: 0.0, y: 0.0, width: 24.0, height: 24.0)

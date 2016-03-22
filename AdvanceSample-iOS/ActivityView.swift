@@ -121,7 +121,7 @@ public final class ActivityView: UIView {
         didSet {
             guard flashing != oldValue else { return }
             if flashing {
-                let t = NSTimer(timeInterval: 1.0, target: self, selector: "flash", userInfo: nil, repeats: true)
+                let t = NSTimer(timeInterval: 1.0, target: self, selector: #selector(flash), userInfo: nil, repeats: true)
                 NSRunLoop.mainRunLoop().addTimer(t, forMode: NSRunLoopCommonModes)
                 flashTimer = t
                 flash()

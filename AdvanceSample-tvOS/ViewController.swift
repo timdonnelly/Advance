@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
         
-        panRecognizer.addTarget(self, action: "pan:")
+        panRecognizer.addTarget(self, action: #selector(pan(_:)))
         view.addGestureRecognizer(panRecognizer)
     
     
