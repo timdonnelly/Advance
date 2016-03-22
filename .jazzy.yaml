@@ -11,7 +11,7 @@ exclude: []
 
 copyright: '© 2016 [Storehouse Media Inc](http://www.storehouse.co).'
 
-# swift_version: 2.2
+swift_version: 2.2
 
 custom_categories:
   - name: Animations
