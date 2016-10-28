@@ -30,14 +30,14 @@ import Cocoa
 import Advance
 
 
-final class SpringView : NSView {
+final class SpringView : NSView, CALayerDelegate {
     let centerSpring = Spring(value: CGPoint.zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         wantsLayer = true
         
-        layer?.backgroundColor = NSColor(calibratedRed: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0).CGColor
+        layer?.backgroundColor = NSColor(calibratedRed: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0).cgColor
         layer?.delegate = self
         
         let t = arc4random_uniform(120 - 20) + 20
@@ -55,7 +55,7 @@ final class SpringView : NSView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSublayersOfLayer(layer: CALayer) {
+    func layoutSublayers(of layer: CALayer) {
         layer.cornerRadius = min(bounds.width, bounds.height) / 2.0
     }
 }

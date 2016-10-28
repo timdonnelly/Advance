@@ -42,12 +42,12 @@ public struct AnyValueAnimation<Value: VectorConvertible>: ValueAnimationType {
     public let finished: Bool
     
     // Captures the underlying animation and allows us to advance it.
-    private let advanceFunction: (Double) -> AnyValueAnimation<Value>
+    fileprivate let advanceFunction: (Double) -> AnyValueAnimation<Value>
     
     /// Creates a new type-erased animation.
     ///
     /// - parameter animation: The animation to be type erased.
-    public init<A: ValueAnimationType where A.Value == Value>(animation: A) {
+    public init<A: ValueAnimationType>(animation: A) where A.Value == Value {
         value = animation.value
         velocity = animation.velocity
         finished = animation.finished
@@ -61,7 +61,7 @@ public struct AnyValueAnimation<Value: VectorConvertible>: ValueAnimationType {
     /// Advances the animation.
     ///
     /// - parameter elapsed: The time (in seconds) to advance the animation.
-    public mutating func advance(time: Double) {
+    public mutating func advance(_ time: Double) {
         self = advanceFunction(time)
     }
 }

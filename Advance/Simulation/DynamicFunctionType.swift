@@ -37,17 +37,17 @@ public protocol DynamicFunctionType {
     /// - parameter velocity: The current velocity of the simulation.
     /// - returns: A vector containing the acceleration (in units per second)
     ///   based on `value` and `velocity`.
-    func acceleration(value: Vector, velocity: Vector) -> Vector
+    func acceleration(_ value: Vector, velocity: Vector) -> Vector
     
     /// Returns `true` if the simulation should be allowed to enter its settled
     /// state. For example, a decay function may check that `velocity` is below
     /// a minimum threshold.
-    func canSettle(value: Vector, velocity: Vector) -> Bool
+    func canSettle(_ value: Vector, velocity: Vector) -> Bool
     
     /// Returns the value for the simulation as it enters the settled state.
     ///
     /// - parameter value: The current value of the simulation.
     /// - parameter velocity: The current velocity of the simulation.
     /// - returns: The value that the simulation will settle on.
-    func settledValue(value: Vector, velocity: Vector) -> Vector
+    func settledValue(_ value: Vector, velocity: Vector) -> Vector
 }

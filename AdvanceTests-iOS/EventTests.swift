@@ -7,8 +7,8 @@ class EventTests : XCTestCase {
         let payload = 123
         let event = Event<Int>()
         
-        let exp1 = expectationWithDescription("non-keyed")
-        let exp2 = expectationWithDescription("keyed")
+        let exp1 = expectation(description: "non-keyed")
+        let exp2 = expectation(description: "keyed")
         
         event.observe { (p) -> Void in
             XCTAssertEqual(p, payload)
@@ -23,7 +23,7 @@ class EventTests : XCTestCase {
         event.fire(payload)
         XCTAssertFalse(event.closed)
         
-        waitForExpectationsWithTimeout(3.0) { (error) -> Void in
+        waitForExpectations(timeout: 3.0) { (error) -> Void in
             guard error == nil else { XCTFail(); return }
         }
     }
@@ -31,7 +31,7 @@ class EventTests : XCTestCase {
     func testClosing() {
         let payload = 123
         let event = Event<Int>()
-        let exp = expectationWithDescription("exp")
+        let exp = expectation(description: "exp")
         
         event.observe { (p) -> Void in
             XCTAssertEqual(p, payload)
@@ -41,7 +41,7 @@ class EventTests : XCTestCase {
         event.close(payload)
         XCTAssertTrue(event.closed)
         
-        waitForExpectationsWithTimeout(3.0) { (error) -> Void in
+        waitForExpectations(timeout: 3.0) { (error) -> Void in
             guard error == nil else { XCTFail(); return }
         }
     }

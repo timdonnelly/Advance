@@ -52,7 +52,7 @@ public protocol VectorType: Equatable, Interpolatable, VectorMathCapable {
     ///   corresponding component in this vector.
     /// - parameter max: Each component in the output vector will be `<=` the
     ///   corresponding component in this vector.
-    func clamped(min min: Self, max: Self) -> Self
+    func clamped(min: Self, max: Self) -> Self
     
     /// Clamps in place.
     mutating func clamp(min: Self, max: Self)
@@ -63,7 +63,7 @@ public extension VectorType {
     
     /// Returns a vector where each component is clamped by the corresponding
     /// components in `min` and `max`.
-    public func clamped(min min: Self, max: Self) -> Self {
+    public func clamped(min: Self, max: Self) -> Self {
         var result = self
         for i in 0..<Self.length {
             if result[i] < min[i] { result[i] = min[i] }

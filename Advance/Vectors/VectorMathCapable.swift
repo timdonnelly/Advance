@@ -32,29 +32,29 @@ import simd
 /// Conforming types implement functions for basic vector arithmetic.
 public protocol VectorMathCapable {
     /// Product.
-    func *(lhs: Self, rhs: Self) -> Self
+    static func *(lhs: Self, rhs: Self) -> Self
     
     /// Product (in place).
-    func *=(inout lhs: Self, rhs: Self)
+    static func *=(lhs: inout Self, rhs: Self)
     
     /// Quotient.
-    func /(lhs: Self, rhs: Self) -> Self
+    static func /(lhs: Self, rhs: Self) -> Self
     
     /// Quotient (in place).
-    func /=(inout lhs: Self, rhs: Self)
+    static func /=(lhs: inout Self, rhs: Self)
     
     /// Sum.
-    func +(lhs: Self, rhs: Self) -> Self
+    static func +(lhs: Self, rhs: Self) -> Self
     
     /// Sum (in place).
-    func +=(inout lhs: Self, rhs: Self)
+    static func +=(lhs: inout Self, rhs: Self)
     
     /// Difference.
-    func -(lhs: Self, rhs: Self) -> Self
+    static func -(lhs: Self, rhs: Self) -> Self
     
     /// Difference (in place).
-    func -=(inout lhs: Self, rhs: Self)
+    static func -=(lhs: inout Self, rhs: Self)
     
     /// Scalar-Vector product.
-    func *(lhs: Scalar, rhs: Self) -> Self
+    static func *(lhs: Scalar, rhs: Self) -> Self
 }

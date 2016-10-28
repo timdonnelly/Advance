@@ -47,9 +47,9 @@ class DemoViewController: UIViewController {
     
     let contentView = UIView()
     
-    private let titleLabel = UILabel()
+    fileprivate let titleLabel = UILabel()
     
-    private let noteLabel = UILabel()
+    fileprivate let noteLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,19 +57,19 @@ class DemoViewController: UIViewController {
         
         contentView.alpha = 0.4
         contentView.layer.allowsGroupOpacity = false
-        contentView.userInteractionEnabled = false
+        contentView.isUserInteractionEnabled = false
         contentView.frame = view.bounds
         view.addSubview(contentView)
         
-        titleLabel.font = UIFont.systemFontOfSize(32.0, weight: UIFontWeightMedium)
-        titleLabel.textColor = UIColor.darkGrayColor()
-        titleLabel.textAlignment = .Center
+        titleLabel.font = UIFont.systemFont(ofSize: 32.0, weight: UIFontWeightMedium)
+        titleLabel.textColor = UIColor.darkGray
+        titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
         view.addSubview(titleLabel)
         
-        noteLabel.font = UIFont.systemFontOfSize(16.0, weight: UIFontWeightThin)
-        noteLabel.textColor = UIColor.darkGrayColor()
-        noteLabel.textAlignment = .Center
+        noteLabel.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightThin)
+        noteLabel.textColor = UIColor.darkGray
+        noteLabel.textAlignment = .center
         noteLabel.numberOfLines = 0
         noteLabel.alpha = 0.0
         view.addSubview(noteLabel)
@@ -79,27 +79,27 @@ class DemoViewController: UIViewController {
         didSet {
             guard fullScreen != oldValue else { return }
             
-            UIView.animateWithDuration(0.4) {
+            UIView.animate(withDuration: 0.4, animations: {
                 if self.fullScreen {
                     self.didEnterFullScreen()
                 } else {
                     self.didLeaveFullScreen()
                 }
-            }
+            }) 
         }
     }
     
     func didEnterFullScreen() {
         noteLabel.alpha = 1.0
         contentView.alpha = 1.0
-        contentView.userInteractionEnabled = true
+        contentView.isUserInteractionEnabled = true
         titleLabel.alpha = 0.0
     }
     
     func didLeaveFullScreen() {
         noteLabel.alpha = 0.0
         contentView.alpha = 0.5
-        contentView.userInteractionEnabled = false
+        contentView.isUserInteractionEnabled = false
         titleLabel.alpha = 1.0
     }
     
@@ -108,7 +108,7 @@ class DemoViewController: UIViewController {
         
         contentView.frame = view.bounds
         
-        let labelHeight = noteLabel.sizeThatFits(CGSize(width: view.bounds.width-64.0, height: CGFloat.max)).height
+        let labelHeight = noteLabel.sizeThatFits(CGSize(width: view.bounds.width-64.0, height: CGFloat.greatestFiniteMagnitude)).height
         var labelFrame = CGRect.zero
         labelFrame.origin.x = 32.0
         labelFrame.origin.y = 32.0
@@ -116,7 +116,7 @@ class DemoViewController: UIViewController {
         labelFrame.size.height = labelHeight
         noteLabel.frame = labelFrame
         
-        let titleHeight = titleLabel.sizeThatFits(CGSize(width: view.bounds.width-64.0, height: CGFloat.max)).height
+        let titleHeight = titleLabel.sizeThatFits(CGSize(width: view.bounds.width-64.0, height: CGFloat.greatestFiniteMagnitude)).height
         var titleFrame = CGRect.zero
         titleFrame.origin.x = 32.0
         titleFrame.origin.y = 32.0

@@ -34,10 +34,10 @@ final class GestureView: UIView {
     let animatableCenter = Animatable(value: CGPoint.zero)
     ;let animatableTransform = Animatable(value: SimpleTransform())
     
-    private var centerWhenGestureBegan = CGPoint.zero
-    private var transformWhenGestureBegan = SimpleTransform.zero
+    fileprivate var centerWhenGestureBegan = CGPoint.zero
+    fileprivate var transformWhenGestureBegan = SimpleTransform.zero
     
-    private let recognizer = DirectManipulationGestureRecognizer()
+    fileprivate let recognizer = DirectManipulationGestureRecognizer()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,13 +66,13 @@ final class GestureView: UIView {
         }
     }
     
-    private dynamic func manipulate(recognizer: DirectManipulationGestureRecognizer) {
+    fileprivate dynamic func manipulate(_ recognizer: DirectManipulationGestureRecognizer) {
         switch recognizer.state {
-        case .Began:
+        case .began:
             
             // Take the anchor point into consideration
-            let gestureLocation = recognizer.locationInView(self)
-            let newCenter = superview!.convertPoint(gestureLocation, fromView: self)
+            let gestureLocation = recognizer.location(in: self)
+            let newCenter = superview!.convert(gestureLocation, from: self)
             animatableCenter.value = newCenter
             
             var anchorPoint = gestureLocation
@@ -85,7 +85,7 @@ final class GestureView: UIView {
             centerWhenGestureBegan = animatableCenter.value
             transformWhenGestureBegan = animatableTransform.value
             break
-        case .Changed:
+        case .changed:
             var t = transformWhenGestureBegan
             t.rotation += recognizer.rotation
             t.scale *= recognizer.scale
@@ -97,10 +97,10 @@ final class GestureView: UIView {
             animatableCenter.value = center
             
             break
-        case .Ended, .Cancelled:
+        case .ended, .cancelled:
             // Reset the anchor point
             let mid = CGPoint(x: bounds.midX, y: bounds.midY)
-            let newCenter = superview!.convertPoint(mid, fromView: self)
+            let newCenter = superview!.convert(mid, from: self)
             animatableCenter.value = newCenter
             layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             

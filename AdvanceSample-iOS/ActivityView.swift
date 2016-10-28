@@ -33,8 +33,8 @@ import Advance
 
 public final class ActivityView: UIView {
     
-    private static let points: [CGPoint] = {
-        var points: [CGPoint] = Array(count: 10, repeatedValue: CGPoint.zero)
+    fileprivate static let points: [CGPoint] = {
+        var points: [CGPoint] = Array(repeating: CGPoint.zero, count: 10)
         points[0] = CGPoint(x: 0.5, y: 0.0)
         points[1] = CGPoint(x: 0.20928571428571, y: 0.16642857142857)
         points[2] = CGPoint(x: 0.79071428571429, y: 0.16642857142857)
@@ -48,7 +48,7 @@ public final class ActivityView: UIView {
         return points
     }()
     
-    private let segments: [ActivitySegment] = {
+    fileprivate let segments: [ActivitySegment] = {
         var segments: [ActivitySegment] = []
         segments.append(ActivitySegment(firstPoint: points[1], secondPoint: points[0]))
         segments.append(ActivitySegment(firstPoint: points[0], secondPoint: points[2]))
@@ -67,7 +67,7 @@ public final class ActivityView: UIView {
         return segments
     }()
     
-    private let visibilitySprings: [Spring<CGFloat>] = {
+    fileprivate let visibilitySprings: [Spring<CGFloat>] = {
         return (0...13).map {_ in
             let s = Spring(value: CGFloat(1.0))
             s.configuration.threshold = 0.001
@@ -77,7 +77,7 @@ public final class ActivityView: UIView {
         }
     }()
     
-    private var segmentLayers: [CAShapeLayer] = {
+    fileprivate var segmentLayers: [CAShapeLayer] = {
         return (0...13).map {_ in
             let sl = CAShapeLayer()
             var actions: [String: AnyObject] = [:]
@@ -90,23 +90,23 @@ public final class ActivityView: UIView {
         }
     }()
     
-    private var strokeColor: UIColor {
-        return color.colorWithAlphaComponent(0.6)
+    fileprivate var strokeColor: UIColor {
+        return color.withAlphaComponent(0.6)
     }
     
-    private var flashStrokeColor: UIColor {
+    fileprivate var flashStrokeColor: UIColor {
         return color
     }
     
-    private let lineWidth = CGFloat(1.0)
-    private let flashLineWidth = CGFloat(2.0)
+    fileprivate let lineWidth = CGFloat(1.0)
+    fileprivate let flashLineWidth = CGFloat(2.0)
     
-    private var flashTimer: NSTimer? = nil
+    fileprivate var flashTimer: Timer? = nil
     
     public var color = UIColor(red: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0) {
         didSet {
             for sl in segmentLayers {
-                sl.strokeColor = strokeColor.CGColor
+                sl.strokeColor = strokeColor.cgColor
             }
         }
     }
@@ -121,8 +121,8 @@ public final class ActivityView: UIView {
         didSet {
             guard flashing != oldValue else { return }
             if flashing {
-                let t = NSTimer(timeInterval: 1.0, target: self, selector: #selector(flash), userInfo: nil, repeats: true)
-                NSRunLoop.mainRunLoop().addTimer(t, forMode: NSRunLoopCommonModes)
+                let t = Timer(timeInterval: 1.0, target: self, selector: #selector(flash), userInfo: nil, repeats: true)
+                RunLoop.main.add(t, forMode: RunLoopMode.commonModes)
                 flashTimer = t
                 flash()
             } else {
@@ -135,7 +135,7 @@ public final class ActivityView: UIView {
     required override public init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         layer.allowsGroupOpacity = false
         
         for vs in visibilitySprings {
@@ -145,7 +145,7 @@ public final class ActivityView: UIView {
         }
         
         for sl in segmentLayers {
-            sl.strokeColor = strokeColor.CGColor
+            sl.strokeColor = strokeColor.cgColor
             sl.lineWidth = lineWidth
             layer.addSublayer(sl)
         }
@@ -163,21 +163,21 @@ public final class ActivityView: UIView {
             let sl = segmentLayers[i]
             let visibility = visibilitySprings[i].value
             sl.frame = bounds
-            sl.path = s.path(bounds.size, visibility: visibility).CGPath
+            sl.path = s.path(bounds.size, visibility: visibility).cgPath
             sl.opacity = Float(visibility)
         }
     }
     
-    override public func sizeThatFits(size: CGSize) -> CGSize {
+    override public func sizeThatFits(_ size: CGSize) -> CGSize {
         return CGSize(width: 40.0, height: 40.0)
     }
     
-    public func resetAssembledAmount(assembledAmount: CGFloat) {
+    public func resetAssembledAmount(_ assembledAmount: CGFloat) {
         self.assembledAmount = assembledAmount
         updateSegmentVisibility(false)
     }
     
-    func updateSegmentVisibility(animated: Bool) {
+    func updateSegmentVisibility(_ animated: Bool) {
         for i in 0..<segments.count {
             let positionInArray = CGFloat(i) / CGFloat(segments.count-1)
             
@@ -197,39 +197,39 @@ public final class ActivityView: UIView {
         }
     }
 
-    private dynamic func flash() {
+    fileprivate dynamic func flash() {
         for i in 0..<segmentLayers.count {
-            let t = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * 0.04 * Double(i)))
-            dispatch_after(t, dispatch_get_main_queue(), { 
+            let t = DispatchTime.now() + Double(Int64(Double(NSEC_PER_SEC) * 0.04 * Double(i))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: t, execute: { 
                 self.flashSegment(i)
             })
         }
     }
     
-    private func flashSegment(index: Int) {
+    fileprivate func flashSegment(_ index: Int) {
         let sl = segmentLayers[index]
         
         CATransaction.begin()
         
         let c = CAKeyframeAnimation(keyPath: "strokeColor")
-        c.values = [strokeColor.CGColor, flashStrokeColor.CGColor, strokeColor.CGColor]
+        c.values = [strokeColor.cgColor, flashStrokeColor.cgColor, strokeColor.cgColor]
         c.keyTimes = [0.0, 0.3, 1.0]
         c.calculationMode = kCAAnimationCubic
         c.duration = 0.5
-        sl.addAnimation(c, forKey: "flashStrokeColor")
+        sl.add(c, forKey: "flashStrokeColor")
         
         let s = CAKeyframeAnimation(keyPath: "lineWidth")
         s.values = [lineWidth, flashLineWidth, lineWidth]
         s.keyTimes = [0.0, 0.3, 1.0]
         s.calculationMode = kCAAnimationCubic
         s.duration = 0.5
-        sl.addAnimation(s, forKey: "flashLineWidth")
+        sl.add(s, forKey: "flashLineWidth")
         
         CATransaction.commit()
     }
 }
 
-private func quadEaseInOut(t: CGFloat) -> CGFloat {
+private func quadEaseInOut(_ t: CGFloat) -> CGFloat {
     var result = t / 0.5
     if (result < 1.0) {
         return 0.5*result*result
@@ -256,7 +256,7 @@ private struct ActivitySegment {
     
     let initialRotation = ((CGFloat(arc4random() % 100) / 100.0) * CGFloat(M_PI))
     
-    func path(size: CGSize, visibility: CGFloat) -> UIBezierPath {
+    func path(_ size: CGSize, visibility: CGFloat) -> UIBezierPath {
         var p1 = initialPosition
         var p2 = initialPosition
         
@@ -272,8 +272,8 @@ private struct ActivitySegment {
         p1.y -= midY
         p2.y -= midY
         
-        p1 = CGPointApplyAffineTransform(p1, CGAffineTransformMakeRotation(rotation))
-        p2 = CGPointApplyAffineTransform(p2, CGAffineTransformMakeRotation(rotation))
+        p1 = p1.applying(CGAffineTransform(rotationAngle: rotation))
+        p2 = p2.applying(CGAffineTransform(rotationAngle: rotation))
         
         p1.x += midX
         p2.x += midX
@@ -287,8 +287,8 @@ private struct ActivitySegment {
         p2.y *= size.height
         
         let p = UIBezierPath()
-        p.moveToPoint(p1)
-        p.addLineToPoint(p2)
+        p.move(to: p1)
+        p.addLine(to: p2)
         
         return p
     }

@@ -30,7 +30,7 @@ import Cocoa
 import Advance
 
 
-final class SpringContainerView : NSView {
+final class SpringContainerView : NSView, CALayerDelegate {
     
     @IBOutlet var tensionSlider: NSSlider!
     @IBOutlet var dampingSlider: NSSlider!
@@ -40,7 +40,7 @@ final class SpringContainerView : NSView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         wantsLayer = true
-        layer?.backgroundColor = NSColor.whiteColor().CGColor
+        layer?.backgroundColor = NSColor.white.cgColor
         layer?.delegate = self
         
         addSubview(springView)
@@ -53,18 +53,18 @@ final class SpringContainerView : NSView {
         dampingSlider.doubleValue = springView.centerSpring.configuration.damping
     }
     
-    override func mouseDown(theEvent: NSEvent) {
+    override func mouseDown(with theEvent: NSEvent) {
         var point = theEvent.locationInWindow
         point.x -= (springView.bounds.width / 2.0)
         point.y -= (springView.bounds.height / 2.0)
         springView.centerSpring.target = point
     }
     
-    @IBAction func tensionChanged(sender: AnyObject) {
+    @IBAction func tensionChanged(_ sender: AnyObject) {
         springView.centerSpring.configuration.tension = tensionSlider.doubleValue
     }
     
-    @IBAction func dampingSlider(sender: AnyObject) {
+    @IBAction func dampingSlider(_ sender: AnyObject) {
         springView.centerSpring.configuration.damping = dampingSlider.doubleValue
     }
 }

@@ -15,7 +15,7 @@ class DisplayLinkTests : XCTestCase {
     }
     
     func testCallback() {
-        let exp = expectationWithDescription("callback")
+        let exp = expectation(description: "callback")
         
         var fulfilled = false
         
@@ -27,7 +27,7 @@ class DisplayLinkTests : XCTestCase {
         
         displayLink.paused = false
         
-        waitForExpectationsWithTimeout(0.5) { (error) -> Void in
+        waitForExpectations(timeout: 0.5) { (error) -> Void in
             guard error == nil else { XCTFail(); return }
         }
     }
@@ -37,17 +37,17 @@ class DisplayLinkTests : XCTestCase {
         
         var gotCallback = false
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
             self.displayLink.paused = true
             self.displayLink.callback = { (frame) in
                 gotCallback = true
             }
         }
         
-        let timeoutDate = NSDate(timeIntervalSinceNow: 1.0)
+        let timeoutDate = Date(timeIntervalSinceNow: 1.0)
         
         repeat {
-            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: timeoutDate)
+            RunLoop.current.run(mode: RunLoopMode.defaultRunLoopMode, before: timeoutDate)
             if timeoutDate.timeIntervalSinceNow <= 0.0 {
                 break
             }
@@ -57,7 +57,7 @@ class DisplayLinkTests : XCTestCase {
     }
 
     func testTimestamp() {
-        let exp = expectationWithDescription("callback")
+        let exp = expectation(description: "callback")
         
         var callbacks = 0
         var lastTimestamp: Double = 0
@@ -75,7 +75,7 @@ class DisplayLinkTests : XCTestCase {
         
         displayLink.paused = false
         
-        waitForExpectationsWithTimeout(0.5) { (error) -> Void in
+        waitForExpectations(timeout: 0.5) { (error) -> Void in
             guard error == nil else { XCTFail(); return }
         }
     }

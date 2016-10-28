@@ -31,76 +31,76 @@ import Advance
 
 
 private enum GravitySimulationNode: Advanceable {
-    case Static(Vector2)
-    case Decay(DynamicSolver<DecayFunction<Vector2>>)
-    case Pull(DynamicSolver<GravityFunction>)
+    case `static`(Vector2)
+    case decay(DynamicSolver<DecayFunction<Vector2>>)
+    case pull(DynamicSolver<GravityFunction>)
     
     var value: Vector2 {
         switch self {
-        case .Static(let v):
+        case .static(let v):
             return v
-        case .Decay(let d):
+        case .decay(let d):
             return d.value
-        case .Pull(let s):
+        case .pull(let s):
             return s.value
         }
     }
     
     var velocity: Vector2 {
         switch self {
-        case .Static(_):
+        case .static(_):
             return Vector2.zero
-        case .Decay(let d):
+        case .decay(let d):
             return d.velocity
-        case .Pull(let s):
+        case .pull(let s):
             return s.velocity
         }
     }
     
-    mutating func advance(elapsed: Double) {
+    mutating func advance(_ elapsed: Double) {
         switch self {
-        case .Static(_):
+        case .static(_):
             break
-        case .Decay(var sim):
+        case .decay(var sim):
             sim.advance(elapsed)
-            self = sim.settled ? .Static(sim.value) : .Decay(sim)
-        case .Pull(var sim):
+            self = sim.settled ? .`static`(sim.value) : .decay(sim)
+        case .pull(var sim):
             sim.advance(elapsed)
-            self = sim.settled ? .Static(sim.value) : .Pull(sim)
+            self = sim.settled ? .`static`(sim.value) : .pull(sim)
         }
     }
     
     var settled: Bool {
         switch self {
-        case .Static(_):
+        case .static(_):
             return true
-        case .Pull(_), .Decay(_):
+        case .pull(_), .decay(_):
             return false
         }
     }
     
-    mutating func pullTo(point: CGPoint) {
-        if case var .Pull(sim) = self {
+    mutating func pullTo(_ point: CGPoint) {
+        if case var .pull(sim) = self {
             sim.function.target = point.vector
-            self = .Pull(sim)
+            self = .pull(sim)
             return
         }
         
         let f = GravityFunction(target: point.vector)
         let solver = DynamicSolver(function: f, value: value, velocity: velocity)
-        self = .Pull(solver)
+        self = .pull(solver)
     }
     
-    mutating func decay() {
-        guard case let .Pull(sim) = self else { return }
+    mutating func getDecay() {
+        guard case let .pull(sim) = self else { return }
         
         let f = DecayFunction<Vector2>()
         let solver = DynamicSolver(function: f, value: sim.value, velocity: sim.velocity)
-        self = .Decay(solver)
+        self = .decay(solver)
     }
     
-    mutating func reset(to: CGPoint) {
-        self = .Static(to.vector)
+    mutating func reset(_ to: CGPoint) {
+        self = .static(to.vector)
     }
 }
 
@@ -114,15 +114,15 @@ struct GravitySimulation: Advanceable {
         for r in 0..<rows {
             nodes.append([])
             for _ in 0..<cols {
-                let node = GravitySimulationNode.Static(Vector2(0.0, 0.0))
+                let node = GravitySimulationNode.static(Vector2(0.0, 0.0))
                 nodes[r].append(node)
             }
         }
     }
     
-    private var nodes: [[GravitySimulationNode]] = []
+    fileprivate var nodes: [[GravitySimulationNode]] = []
     
-    mutating func reset(layoutBounds: CGRect) {
+    mutating func reset(_ layoutBounds: CGRect) {
         target = nil
         
         let rowHeight = (layoutBounds.size.height / CGFloat(rows-1))
@@ -144,23 +144,23 @@ struct GravitySimulation: Advanceable {
         }
     }
     
-    private mutating func updateNodes() {
+    fileprivate mutating func updateNodes() {
         for r in 0..<rows {
             for c in 0..<cols {
                 if let t = target {
                     nodes[r][c].pullTo(t)
                 } else {
-                    nodes[r][c].decay()
+                    nodes[r][c].getDecay()
                 }
             }
         }
     }
     
-    func getPosition(row: Int, col: Int) -> CGPoint {
-        return CGPoint(vector: nodes[row][col].value)
+    func getPosition(_ row: Int, col: Int) -> CGPoint {
+      return CGPoint(vector: nodes[row][col].value)
     }
     
-    mutating func advance(elapsed: Double) {
+    mutating func advance(_ elapsed: Double) {
         for r in 0..<rows {
             for c in 0..<cols {
                 nodes[r][c].advance(elapsed)

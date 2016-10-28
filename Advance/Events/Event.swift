@@ -30,35 +30,35 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 public enum EventState<T> {
     
     /// The event is active and accepting new payloads.
-    case Active
+    case active
     
     /// The event is closed. Subsequent calls to `fire(payload:)` will be ignored.
-    case Closed(T)
+    case closed(T)
 }
 
 /// A simple EventType implementation.
 public final class Event<T> {
     
     /// The current state of the event.
-    private (set) public var state = EventState<T>.Active
+    fileprivate (set) public var state = EventState<T>.active
     
     public typealias PayloadType = T
     public typealias Observer = (PayloadType) -> Void
     
-    private var observers: [Observer] = []
-    private var keyedObservers: [String:Observer] = [:]
+    fileprivate var observers: [Observer] = []
+    fileprivate var keyedObservers: [String:Observer] = [:]
     
     /// Returns `true` if the event state is `Closed`.
     public var closed: Bool {
-        if case .Active = state {
+        if case .active = state {
             return false
         } else {
             return true
         }
     }
     
-    private var closedValue: T? {
-        if case let .Closed(v) = state {
+    fileprivate var closedValue: T? {
+        if case let .closed(v) = state {
             return v
         }
         return nil
@@ -69,7 +69,7 @@ public final class Event<T> {
     /// If the event has been closed, this has no effect.
     ///
     /// - parameter payload: A value to be passed to each observer.
-    public func fire(payload: T) {
+    public func fire(_ payload: T) {
         guard closed == false else { return }
         deliver(payload)
     }
@@ -83,13 +83,13 @@ public final class Event<T> {
     /// Adding an observer after an event is closed will simply call the
     /// observer synchronously with the payload that the event was closed
     /// with.
-    public func close(payload: T) {
+    public func close(_ payload: T) {
         guard closed == false else { return }
-        state = .Closed(payload)
+        state = .closed(payload)
         deliver(payload)
     }
     
-    private func deliver(payload: T) {
+    fileprivate func deliver(_ payload: T) {
         for o in observers {
             o(payload)
         }
@@ -106,7 +106,7 @@ public final class Event<T> {
     ///
     /// - parameter observer: A closure that will be executed when this event
     ///   is fired.
-    public func observe(observer: Observer) {
+    public func observe(_ observer: @escaping Observer) {
         guard closed == false else {
             observer(closedValue!)
             return
@@ -125,7 +125,7 @@ public final class Event<T> {
     ///   is fired.
     /// - parameter key: A string that identifies this observer, which can
     ///   be used to remove the observer.
-    public func observe(observer: Observer, key: String) {
+    public func observe(_ observer: @escaping Observer, key: String) {
         guard closed == false else {
             observer(closedValue!)
             return
@@ -139,7 +139,7 @@ public final class Event<T> {
     /// - parameter key: A string that identifies the observer to be removed.
     ///   If an observer does not exist for the given key, the method returns
     ///   without impact.
-    public func unobserve(key: String) {
-        keyedObservers.removeValueForKey(key)
+    public func unobserve(_ key: String) {
+        keyedObservers.removeValue(forKey: key)
     }
 }

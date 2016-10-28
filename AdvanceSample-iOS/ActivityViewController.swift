@@ -48,7 +48,7 @@ class ActivityViewController: DemoViewController {
         slider.minimumValue = 0.0
         slider.maximumValue = 1.0
         slider.value = 1.0
-        slider.addTarget(self, action: #selector(sliderChanged), forControlEvents: .ValueChanged)
+        slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
         slider.minimumTrackTintColor = UIColor(red: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0)
     }
     
