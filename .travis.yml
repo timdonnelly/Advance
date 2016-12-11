@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode8.1
 script:
-  - xctool -project Advance.xcodeproj -scheme 'Advance-iOS' -configuration Debug -sdk iphonesimulator -arch i386 test
-  - xctool -project Advance.xcodeproj -scheme 'Advance-OSX' -configuration Debug test
+  - xcodebuild -project Advance.xcodeproj -scheme 'Advance-iOS' -configuration Debug -sdk iphonesimulator test -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.1'
+  - xcodebuild -project Advance.xcodeproj -scheme 'Advance-OSX' -configuration Debug test
