@@ -41,7 +41,7 @@
 public struct SpringAnimation<Value: VectorConvertible>: ValueAnimationType {
     
     // The underlying spring simulation.
-    private var solver: DynamicSolver<SpringFunction<Value.Vector>>
+    fileprivate var solver: DynamicSolver<SpringFunction<Value.Vector>>
     
     /// Creates a new `SpringAnimation` instance.
     ///
@@ -57,7 +57,7 @@ public struct SpringAnimation<Value: VectorConvertible>: ValueAnimationType {
     /// Advances the animation.
     ///
     /// - parameter elapsed: The time (in seconds) to advance the animation.
-    public mutating func advance(elapsed: Double) {
+    public mutating func advance(_ elapsed: Double) {
         solver.advance(elapsed)
     }
     
@@ -104,7 +104,7 @@ public extension Animatable {
     /// - parameter configuration: A spring configuration instance to use.
     /// - parameter completion: A closure that will be called at the end of the
     ///   animation.
-    public func springTo(to: Value, initialVelocity: Value? = nil, configuration: SpringConfiguration = SpringConfiguration(), completion: Completion? = nil) {
+    public func springTo(_ to: Value, initialVelocity: Value? = nil, configuration: SpringConfiguration = SpringConfiguration(), completion: Completion? = nil) {
         var a = SpringAnimation(from: value, target: to, velocity: initialVelocity ?? velocity)
         a.configuration = configuration
         animate(a, completion: completion)
@@ -118,7 +118,7 @@ public extension VectorConvertible {
     /// - parameter to: The value to animate to.
     /// - parameter callback: A closure that will be called at each step of the animation.
     /// - returns: The animator instance that is powering the animation.
-    public func springTo(to: Self, configuration: SpringConfiguration, callback: (Self) -> Void) -> Animator<SpringAnimation<Self>> {
+    public func springTo(_ to: Self, configuration: SpringConfiguration, callback: @escaping (Self) -> Void) -> Animator<SpringAnimation<Self>> {
         var a = SpringAnimation(from: self, target: to, velocity: Self.zero)
         a.configuration = configuration
         let animator = AnimatorContext.shared.animate(a)

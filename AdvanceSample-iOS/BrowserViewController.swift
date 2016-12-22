@@ -69,16 +69,16 @@ final class BrowserViewController: UIViewController {
 
         
         
-        backgroundImageView.contentMode = .ScaleAspectFill
+        backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.image = UIImage(named: "background")
         view.addSubview(backgroundImageView)
         
-        blurredBackgroundImageView.contentMode = .ScaleAspectFill
+        blurredBackgroundImageView.contentMode = .scaleAspectFill
         blurredBackgroundImageView.image = UIImage(named: "background-blurred")
         blurredBackgroundImageView.alpha = 0.0
         view.addSubview(blurredBackgroundImageView)
         
-        backgroundDimmingView.backgroundColor = UIColor.blackColor()
+        backgroundDimmingView.backgroundColor = UIColor.black
         backgroundDimmingView.alpha = 0.3
         view.addSubview(backgroundDimmingView)
         
@@ -107,41 +107,41 @@ final class BrowserViewController: UIViewController {
         browserView.frame = view.bounds
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 }
 
 extension BrowserViewController: BrowserViewDelegate {
-    func browserView(browserView: BrowserView, didShowItem item: BrowserItem) {
+    func browserView(_ browserView: BrowserView, didShowItem item: BrowserItem) {
         guard let item = item as? DemoItem else { fatalError() }
-        assert(item.viewController.parentViewController != self)
+        assert(item.viewController.parent != self)
         addChildViewController(item.viewController)
         item.viewController.view.frame = item.view.bounds
         item.view.addSubview(item.viewController.view)
-        item.viewController.didMoveToParentViewController(self)
+        item.viewController.didMove(toParentViewController: self)
     }
     
-    func browserView(browserView: BrowserView, didHideItem item: BrowserItem) {
+    func browserView(_ browserView: BrowserView, didHideItem item: BrowserItem) {
         guard let item = item as? DemoItem else { fatalError() }
-        assert(item.viewController.parentViewController == self)
-        item.viewController.willMoveToParentViewController(nil)
+        assert(item.viewController.parent == self)
+        item.viewController.willMove(toParentViewController: nil)
         item.viewController.view.removeFromSuperview()
         item.viewController.removeFromParentViewController()
     }
     
-    func browserView(browserView: BrowserView, didEnterFullScreenForItem item: BrowserItem) {
+    func browserView(_ browserView: BrowserView, didEnterFullScreenForItem item: BrowserItem) {
         guard let item = item as? DemoItem else { fatalError() }
         item.viewController.fullScreen = true
 
     }
     
-    func browserView(browserView: BrowserView, didLeaveFullScreenForItem item: BrowserItem) {
+    func browserView(_ browserView: BrowserView, didLeaveFullScreenForItem item: BrowserItem) {
         guard let item = item as? DemoItem else { fatalError() }
         item.viewController.fullScreen = false
     }
     
-    func browserViewDidScroll(browserView: BrowserView) {
+    func browserViewDidScroll(_ browserView: BrowserView) {
         var blurAmount = browserView.currentIndex
         blurAmount = min(blurAmount, 1.0)
         blurAmount = max(blurAmount, 0.0)

@@ -30,7 +30,7 @@ import Foundation
 import UIKit
 
 protocol SpringConfigurationViewDelegate: class {
-    func springConfigurationViewDidChange(view: SpringConfigurationView)
+    func springConfigurationViewDidChange(_ view: SpringConfigurationView)
 }
 
 
@@ -48,16 +48,16 @@ class SpringConfigurationView: UIView {
         set { dampingSlider.slider.value = Float(newValue) }
     }
     
-    private let tensionSlider = LabeledSliderView()
-    private let dampingSlider = LabeledSliderView()
+    fileprivate let tensionSlider = LabeledSliderView()
+    fileprivate let dampingSlider = LabeledSliderView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(tensionSlider)
         addSubview(dampingSlider)
         
-        tensionSlider.slider.addTarget(self, action: #selector(changed), forControlEvents: .ValueChanged)
-        dampingSlider.slider.addTarget(self, action: #selector(changed), forControlEvents: .ValueChanged)
+        tensionSlider.slider.addTarget(self, action: #selector(changed), for: .valueChanged)
+        dampingSlider.slider.addTarget(self, action: #selector(changed), for: .valueChanged)
         
         tensionSlider.slider.minimumValue = 1.0
         tensionSlider.slider.maximumValue = 400.0
@@ -76,7 +76,7 @@ class SpringConfigurationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func sizeThatFits(size: CGSize) -> CGSize {
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
         var s = CGSize.zero
         s.width = size.width
         s.height += tensionSlider.sizeThatFits(size).height
@@ -96,7 +96,7 @@ class SpringConfigurationView: UIView {
         dampingSlider.frame = CGRect(x: 0.0, y: tensionSlider.frame.maxY, width: bounds.width, height: dampingSize.height)
     }
     
-    private dynamic func changed() {
+    fileprivate dynamic func changed() {
         delegate?.springConfigurationViewDidChange(self)
     }
 }
@@ -121,8 +121,8 @@ private class LabeledSliderView: UIView {
         set { label.text = newValue }
     }
     
-    private let label: UILabel
-    private let slider: UISlider
+    fileprivate let label: UILabel
+    fileprivate let slider: UISlider
     
     override init(frame: CGRect) {
         label = UILabel()
@@ -132,7 +132,7 @@ private class LabeledSliderView: UIView {
         slider.minimumTrackTintColor = UIColor(red: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0)
         
         label.text = "Untitled"
-        label.textColor = UIColor.darkGrayColor()
+        label.textColor = UIColor.darkGray
         
         addSubview(label)
         addSubview(slider)
@@ -142,13 +142,13 @@ private class LabeledSliderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private override func sizeThatFits(size: CGSize) -> CGSize {
+    fileprivate override func sizeThatFits(_ size: CGSize) -> CGSize {
         var s = size
         s.height = 44.0
         return s
     }
     
-    private override func layoutSubviews() {
+    fileprivate override func layoutSubviews() {
         super.layoutSubviews()
         
         var labelSize = label.sizeThatFits(bounds.size)

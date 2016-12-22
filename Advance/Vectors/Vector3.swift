@@ -97,14 +97,14 @@ extension Vector3: VectorType {
     }
     
     /// Interpolate between the given values.
-    public func interpolatedTo(to: Vector3, alpha: Scalar) -> Vector3 {
+    public func interpolatedTo(_ to: Vector3, alpha: Scalar) -> Vector3 {
         var result = self
         result.interpolateTo(to, alpha: alpha)
         return result
     }
     
     /// Interpolate between the given values.
-    public mutating func interpolateTo(to: Vector3, alpha: Scalar) {
+    public mutating func interpolateTo(_ to: Vector3, alpha: Scalar) {
         x += alpha * (to.x - x)
         y += alpha * (to.y - y)
         z += alpha * (to.z - z)
@@ -124,7 +124,7 @@ public func *(lhs: Vector3, rhs: Vector3) -> Vector3 {
 }
 
 /// Product (in place).
-public func *=(inout lhs: Vector3, rhs: Vector3) {
+public func *=(lhs: inout Vector3, rhs: Vector3) {
     lhs = lhs * rhs
 }
 
@@ -134,7 +134,7 @@ public func /(lhs: Vector3, rhs: Vector3) -> Vector3 {
 }
 
 /// Quotient (in place).
-public func /=(inout lhs: Vector3, rhs: Vector3) {
+public func /=(lhs: inout Vector3, rhs: Vector3) {
     lhs = lhs / rhs
 }
 
@@ -144,7 +144,7 @@ public func +(lhs: Vector3, rhs: Vector3) -> Vector3 {
 }
 
 /// Sum (in place).
-public func +=(inout lhs: Vector3, rhs: Vector3) {
+public func +=(lhs: inout Vector3, rhs: Vector3) {
     lhs = lhs + rhs
 }
 
@@ -154,7 +154,7 @@ public func -(lhs: Vector3, rhs: Vector3) -> Vector3 {
 }
 
 /// Difference (in place).
-public func -=(inout lhs: Vector3, rhs: Vector3) {
+public func -=(lhs: inout Vector3, rhs: Vector3) {
     lhs = lhs - rhs
 }
 

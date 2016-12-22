@@ -43,7 +43,7 @@ struct GravityFunction: DynamicFunctionType {
         self.target = target
     }
     
-    func acceleration(value: Vector, velocity: Vector) -> Vector {
+    func acceleration(_ value: Vector, velocity: Vector) -> Vector {
         
         let delta = target - value
         let heading = atan2(delta.y, delta.x)
@@ -59,7 +59,7 @@ struct GravityFunction: DynamicFunctionType {
         return result
     }
     
-    func canSettle(value: Vector, velocity: Vector) -> Bool {
+    func canSettle(_ value: Vector, velocity: Vector) -> Bool {
         let min = Vector(scalar: -threshold)
         let max = Vector(scalar: threshold)
         
@@ -75,7 +75,7 @@ struct GravityFunction: DynamicFunctionType {
         return true
     }
     
-    func settledValue(value: Vector, velocity: Vector) -> Vector {
+    func settledValue(_ value: Vector, velocity: Vector) -> Vector {
         return target
     }
 }

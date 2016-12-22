@@ -37,7 +37,7 @@ public protocol TimingFunctionType {
     /// - parameter x: The input time (ranges between 0.0 and 1.0).
     /// - parameter epsilon: The required precision of the result (where `x * epsilon` is the maximum time segment to be evaluated).
     /// - returns: The resulting output time.
-    func solveForTime(x: Scalar, epsilon: Scalar) -> Scalar
+    func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar
 }
 
 /// Returns the input time, unmodified.
@@ -47,7 +47,7 @@ public struct LinearTimingFunction: TimingFunctionType {
     public init(){}
     
     /// Solves for time `x`.
-    public func solveForTime(x: Scalar, epsilon: Scalar) -> Scalar {
+    public func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar {
         return x
     }
 }
@@ -58,7 +58,7 @@ public struct ReversedTimingFunction: TimingFunctionType {
     public init(){}
     
     /// Solves for time `x`.
-    public func solveForTime(x: Scalar, epsilon: Scalar) -> Scalar {
+    public func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar {
         return 1.0 - x
     }
 }
@@ -67,7 +67,7 @@ public struct ReversedTimingFunction: TimingFunctionType {
 extension UnitBezier: TimingFunctionType {
     
     /// Solves for time `x`.
-    public func solveForTime(x: Scalar, epsilon: Scalar) -> Scalar {
+    public func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar {
         return solve(x, epsilon: epsilon)
     }
 }
@@ -77,38 +77,38 @@ public extension UnitBezier {
     /// A set of preset bezier curves.
     public enum Preset {
         /// Equivalent to `kCAMediaTimingFunctionDefault`.
-        case Default
+        case `default`
         
         /// Equivalent to `kCAMediaTimingFunctionEaseIn`.
-        case EaseIn
+        case easeIn
         
         /// Equivalent to `kCAMediaTimingFunctionEaseOut`.
-        case EaseOut
+        case easeOut
         
         /// Equivalent to `kCAMediaTimingFunctionEaseInEaseOut`.
-        case EaseInEaseOut
+        case easeInEaseOut
         
         /// No easing.
-        case Linear
+        case linear
         
         /// Inspired by the default curve in Google Material Design.
-        case SwiftOut
+        case swiftOut
     }
     
     /// Initializes a UnitBezier with a preset.
     public init(preset: Preset) {
         switch preset {
-        case .Default:
+        case .default:
             self = UnitBezier(p1x: 0.25, p1y: 0.1, p2x: 0.25, p2y: 1.0)
-        case .EaseIn:
+        case .easeIn:
             self =  UnitBezier(p1x: 0.42, p1y: 0.0, p2x: 1.0, p2y: 1.0)
-        case .EaseOut:
+        case .easeOut:
             self =  UnitBezier(p1x: 0.0, p1y: 0.0, p2x: 0.58, p2y: 1.0)
-        case .EaseInEaseOut:
+        case .easeInEaseOut:
             self =  UnitBezier(p1x: 0.42, p1y: 0.0, p2x: 0.58, p2y: 1.0)
-        case .Linear:
+        case .linear:
             self =  UnitBezier(p1x: 0.0, p1y: 0.0, p2x: 1.0, p2y: 1.0)
-        case .SwiftOut:
+        case .swiftOut:
             self =  UnitBezier(p1x: 0.4, p1y: 0.0, p2x: 0.2, p2y: 1.0)
         }
     }

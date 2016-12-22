@@ -33,6 +33,6 @@ public protocol Advanceable {
     ///
     /// - parameter elapsed: The length of time that the animation should
     ///   be advanced by.
-    mutating func advance(elapsed: Double)
+    mutating func advance(_ elapsed: Double)
     
 }

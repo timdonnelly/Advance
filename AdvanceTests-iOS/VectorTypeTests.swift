@@ -99,7 +99,7 @@ struct VectorTester<T: VectorType> {
         
         XCTAssert(Scalar(2.0) * v2 == T(scalar: 2.0 * s2))
         
-        func testInPlaceMath(function: (inout T, T) -> Void, expectedValue: T) {
+        func testInPlaceMath(_ function: (inout T, T) -> Void, expectedValue: T) {
             var m = v1
             function(&m, v2)
             XCTAssert(m == expectedValue)

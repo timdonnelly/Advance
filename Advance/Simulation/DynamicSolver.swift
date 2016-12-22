@@ -50,7 +50,7 @@ public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
     // rate). The math required to solve most functions is easy for modern
     // CPUs, but it's worth experimenting with this value if solver calculations
     // ever become a performance bottleneck.
-    private let tickTime: Double = 0.008
+    fileprivate let tickTime: Double = 0.008
     
     /// The function driving the simulation.
     public var function: F {
@@ -63,18 +63,18 @@ public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
     }
     
     // Tracks the delta between external and internal time.
-    private var timeAccumulator: Double = 0.0
+    fileprivate var timeAccumulator: Double = 0.0
     
     /// Returns `true` if the solver has settled and does not currently
     /// need to be advanced on each frame.
-    private (set) public var settled: Bool = false
+    fileprivate (set) public var settled: Bool = false
     
     // The current state of the solver.
-    private var simulationState: DynamicSolverState<F.Vector>
+    fileprivate var simulationState: DynamicSolverState<F.Vector>
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    private var interpolatedState: DynamicSolverState<F.Vector>
+    fileprivate var interpolatedState: DynamicSolverState<F.Vector>
     
     /// Creates a new `DynamicSolver` instance.
     ///
@@ -88,7 +88,7 @@ public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
         settleIfPossible()
     }
     
-    private mutating func settleIfPossible() {
+    fileprivate mutating func settleIfPossible() {
         guard settled == false else { return }
         if function.canSettle(simulationState.value, velocity: simulationState.velocity) {
             simulationState.value = function.settledValue(simulationState.value, velocity: simulationState.velocity)
@@ -102,7 +102,7 @@ public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
     ///
     /// - parameter elapsed: The duration by which to advance the simulation
     ///   in seconds.
-    public mutating func advance(elapsed: Double) {
+    public mutating func advance(_ elapsed: Double) {
         guard settled == false else { return }
         
         // Limit to 10 physics ticks per update, should never come close.
@@ -183,7 +183,7 @@ private extension DynamicSolverState {
     typealias Derivative = DynamicSolverState<Vector>
     
     /// RK4 Integration.
-    func integrate<F: DynamicFunctionType where F.Vector == Vector>(function: F, time: Double) -> DynamicSolverState<Vector> {
+    func integrate<F: DynamicFunctionType>(_ function: F, time: Double) -> DynamicSolverState<Vector> where F.Vector == Vector {
         let initial = Derivative(value:Vector.zero, velocity: Vector.zero)
         
         let a = evaluate(function, time: 0.0, derivative: initial)
@@ -206,7 +206,7 @@ private extension DynamicSolverState {
         return DynamicSolverState(value: val, velocity: vel)
     }
     
-    private func evaluate<F: DynamicFunctionType where F.Vector == Vector>(function: F, time: Double, derivative: Derivative) -> Derivative {
+    func evaluate<F: DynamicFunctionType>(_ function: F, time: Double, derivative: Derivative) -> Derivative where F.Vector == Vector {
         let val = value + Scalar(time) * derivative.value
         let vel = velocity + Scalar(time) * derivative.velocity
         let accel = function.acceleration(val, velocity: vel)

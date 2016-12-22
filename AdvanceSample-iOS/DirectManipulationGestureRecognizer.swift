@@ -35,37 +35,37 @@ private let π = CGFloat(M_PI)
 public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
     
     public enum PinchDirection {
-        case In
-        case Out
-        case Any
+        case `in`
+        case out
+        case any
     }
     
-    public var requiredPinchDirection: PinchDirection = .Any
+    public var requiredPinchDirection: PinchDirection = .any
     
     // The state of the touches when we first saw them
-    private var preliminaryState: GestureState = GestureState()
+    fileprivate var preliminaryState: GestureState = GestureState()
     
     // The state of the touches when the recognizer successfully began
-    private var initialState: GestureState = GestureState()
+    fileprivate var initialState: GestureState = GestureState()
     
     // The current and previous states, for reference.
-    private var previousState: GestureState = GestureState()
-    private var currentState: GestureState = GestureState()
+    fileprivate var previousState: GestureState = GestureState()
+    fileprivate var currentState: GestureState = GestureState()
     
     // As per the UIKit documentation, we don't retain the touches. But
     // we do remember their address so that we can compare against them as needed.
-    private var firstTouchPointer: UnsafePointer<Void>? = nil
-    private var secondTouchPointer: UnsafePointer<Void>? = nil
+    fileprivate var firstTouchPointer: UnsafeMutableRawPointer? = nil
+    fileprivate var secondTouchPointer: UnsafeMutableRawPointer? = nil
     
-    private var previousCumulativeAngle: CGFloat = 0.0
-    private var cumulativeAngle: CGFloat = 0.0
+    fileprivate var previousCumulativeAngle: CGFloat = 0.0
+    fileprivate var cumulativeAngle: CGFloat = 0.0
     
-    private var lastUpdateTime: NSTimeInterval = 0.0
-    private var lastUpdateDuration: NSTimeInterval = 0.0
+    fileprivate var lastUpdateTime: TimeInterval = 0.0
+    fileprivate var lastUpdateDuration: TimeInterval = 0.0
     
-    public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent) {
-        super.touchesBegan(touches, withEvent: event)
-        guard state == .Possible else { return }
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesBegan(touches, with: event)
+        guard state == .possible else { return }
         guard touches.count > 0 else { return }
         
         var touches = touches
@@ -73,14 +73,14 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
         while touches.count > 0 {
             let t = touches.removeFirst()
             if firstTouchPointer == nil {
-                firstTouchPointer = unsafeAddressOf(t)
+                firstTouchPointer = Unmanaged.passUnretained(t).toOpaque()
                 let state = TouchState(t: t)
                 preliminaryState.firstTouchState = state
                 initialState.firstTouchState = state
                 previousState.firstTouchState = state
                 currentState.firstTouchState = state
             } else if secondTouchPointer == nil {
-                secondTouchPointer = unsafeAddressOf(t)
+                secondTouchPointer = Unmanaged.passUnretained(t).toOpaque()
                 let state = TouchState(t: t)
                 preliminaryState.secondTouchState = state
                 initialState.secondTouchState = state
@@ -91,23 +91,23 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
             }
         }
         
-        if requiredPinchDirection == .Any && firstTouchPointer != nil && secondTouchPointer != nil {
+        if requiredPinchDirection == .any && firstTouchPointer != nil && secondTouchPointer != nil {
             begin()
         }
     }
     
-    public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent) {
-        super.touchesMoved(touches, withEvent: event)
-        guard state == .Possible || state == .Began || state == .Changed else { return }
+    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesMoved(touches, with: event)
+        guard state == .possible || state == .began || state == .changed else { return }
         
         previousState = currentState
         
         for t in touches {
-            if unsafeAddressOf(t) == firstTouchPointer {
+            if Unmanaged.passUnretained(t).toOpaque() == firstTouchPointer {
                 currentState.firstTouchState = TouchState(t: t)
             }
             
-            if unsafeAddressOf(t) == secondTouchPointer {
+            if Unmanaged.passUnretained(t).toOpaque() == secondTouchPointer {
                 currentState.secondTouchState = TouchState(t: t)
             }
         }
@@ -118,43 +118,43 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
         // from the target's perspective, the recognizer just start claiming to
         // have changed without going through a .Began phase. We can just check
         // to make sure that neither touch has just started or ended to avoid this.
-        if currentState.firstTouchState.phase == .Began || currentState.secondTouchState.phase == .Began {
+        if currentState.firstTouchState.phase == .began || currentState.secondTouchState.phase == .began {
             return
         }
         
-        if currentState.firstTouchState.phase == .Ended || currentState.secondTouchState.phase == .Ended {
+        if currentState.firstTouchState.phase == .ended || currentState.secondTouchState.phase == .ended {
             return
         }
         
-        if currentState.firstTouchState.phase == .Cancelled || currentState.secondTouchState.phase == .Cancelled {
+        if currentState.firstTouchState.phase == .cancelled || currentState.secondTouchState.phase == .cancelled {
             return
         }
         
-        if state == .Possible {
+        if state == .possible {
             guard firstTouchPointer != nil && secondTouchPointer != nil else { return }
             
             // How far the user has pinched since we first saw the touches.
             let pinchDistance = currentState.distanceBetween - preliminaryState.distanceBetween
             
             switch requiredPinchDirection {
-            case .Any:
+            case .any:
                 begin()
-            case .In:
+            case .in:
                 if pinchDistance > 0.0 {
                     begin()
                 } else if pinchDistance < 0.0 {
-                    state = .Failed
+                    state = .failed
                 }
-            case .Out:
+            case .out:
                 if pinchDistance < 0.0 {
                     begin()
                 } else if pinchDistance > 0.0 {
-                    state = .Failed
+                    state = .failed
                 }
             }
             
-            if state == .Possible && currentState.distanceTo(preliminaryState) > 4.0 {
-                state = .Failed
+            if state == .possible && currentState.distanceTo(preliminaryState) > 4.0 {
+                state = .failed
             }
             
             return
@@ -174,50 +174,50 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
         lastUpdateDuration = currentTime - lastUpdateTime
         lastUpdateTime = currentTime
         
-        assert(state == .Began || state == .Changed)
-        state = .Changed
+        assert(state == .began || state == .changed)
+        state = .changed
     }
     
-    public override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent) {
-        super.touchesCancelled(touches, withEvent: event)
+    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesCancelled(touches, with: event)
         
         
         for t in touches {
-            if unsafeAddressOf(t) == firstTouchPointer || unsafeAddressOf(t) == secondTouchPointer {
-                if state == .Possible {
-                    state = .Failed
-                } else if state == .Began || state == .Changed {
-                    state = .Cancelled
+            if Unmanaged.passUnretained(t).toOpaque() == firstTouchPointer || Unmanaged.passUnretained(t).toOpaque() == secondTouchPointer {
+                if state == .possible {
+                    state = .failed
+                } else if state == .began || state == .changed {
+                    state = .cancelled
                 }
                 return
             }
         }
     }
     
-    public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent) {
-        super.touchesEnded(touches, withEvent: event)
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesEnded(touches, with: event)
         
         for t in touches {
-            if unsafeAddressOf(t) == firstTouchPointer || unsafeAddressOf(t) == secondTouchPointer {
-                if state == .Possible {
-                    state = .Failed
-                } else if state == .Began || state == .Changed {
-                    state = .Ended
+            if Unmanaged.passUnretained(t).toOpaque() == firstTouchPointer || Unmanaged.passUnretained(t).toOpaque() == secondTouchPointer {
+                if state == .possible {
+                    state = .failed
+                } else if state == .began || state == .changed {
+                    state = .ended
                 }
                 return
             }
         }
     }
     
-    private func begin() {
-        guard state == .Possible else { fatalError() }
+    fileprivate func begin() {
+        guard state == .possible else { fatalError() }
         initialState = currentState
         previousState = currentState
         cumulativeAngle = 0.0
         previousCumulativeAngle = 0.0
         lastUpdateTime = CACurrentMediaTime()
         lastUpdateDuration = 0.0
-        state = .Began
+        state = .began
     }
     
     override public func reset() {
@@ -233,13 +233,13 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
     }
     
     
-    public func translationInView(view: UIView?) -> CGPoint {
+    public func translationInView(_ view: UIView?) -> CGPoint {
         let current = currentState.convertedToView(view)
         let initial = initialState.convertedToView(view)
         return current.center - initial.center
     }
     
-    public func translationVelocityInView(view: UIView?) -> CGPoint {
+    public func translationVelocityInView(_ view: UIView?) -> CGPoint {
         guard active else { return CGPoint.zero }
         guard lastUpdateDuration > 0.0 else { return CGPoint.zero }
         let current = currentState.convertedToView(view)
@@ -275,8 +275,8 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
         return ((current - previous) / CGFloat(lastUpdateDuration))
     }
     
-    private var active: Bool {
-        return state == .Began || state == .Changed || state == .Ended
+    fileprivate var active: Bool {
+        return state == .began || state == .changed || state == .ended
     }
 }
 
@@ -287,14 +287,14 @@ private extension DirectManipulationGestureRecognizer {
         var secondTouchState: TouchState = TouchState()
         
         
-        func convertedToView(view: UIView?) -> GestureState {
+        func convertedToView(_ view: UIView?) -> GestureState {
             var s = self
             s.firstTouchState = s.firstTouchState.convertedToView(view)
             s.secondTouchState = s.secondTouchState.convertedToView(view)
             return s
         }
         
-        func distanceTo(state: GestureState) -> CGFloat {
+        func distanceTo(_ state: GestureState) -> CGFloat {
             return (state.center - center).distance
         }
         
@@ -320,24 +320,24 @@ private extension DirectManipulationGestureRecognizer {
     
     struct TouchState {
         var location: CGPoint = CGPoint.zero
-        var phase: UITouchPhase = UITouchPhase.Began
+        var phase: UITouchPhase = UITouchPhase.began
         
         init() {}
         
         init(t: UITouch) {
-            location = t.locationInView(nil)
+            location = t.location(in: nil)
             phase = t.phase
         }
         
-        func convertedToView(view: UIView?) -> TouchState {
+        func convertedToView(_ view: UIView?) -> TouchState {
             var s = self
             if let view = view {
-                s.location = view.convertPoint(s.location, fromView: nil)
+                s.location = view.convert(s.location, from: nil)
             }
             return s
         }
         
-        func distanceTo(state: TouchState) -> CGFloat {
+        func distanceTo(_ state: TouchState) -> CGFloat {
             return (state.location - location).distance
         }
     }

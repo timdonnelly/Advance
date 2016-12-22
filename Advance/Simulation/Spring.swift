@@ -48,7 +48,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /// ```
 public final class Spring<T: VectorConvertible> {
     
-    private var solver: DynamicSolver<SpringFunction<T.Vector>> {
+    fileprivate var solver: DynamicSolver<SpringFunction<T.Vector>> {
         didSet {
             lastNotifiedValue = T(vector: solver.value)
             if solver.settled == false && subscription.paused == true {
@@ -57,7 +57,7 @@ public final class Spring<T: VectorConvertible> {
         }
     }
     
-    private lazy var subscription: LoopSubscription = {
+    fileprivate lazy var subscription: LoopSubscription = {
         let s = Loop.shared.subscribe()
         
         s.advanced.observe({ [unowned self] (elapsed) -> Void in
@@ -73,7 +73,7 @@ public final class Spring<T: VectorConvertible> {
     /// Fires when `value` has changed.
     public let changed = Event<T>()
     
-    private var lastNotifiedValue: T {
+    fileprivate var lastNotifiedValue: T {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
             changed.fire(lastNotifiedValue)
@@ -92,7 +92,7 @@ public final class Spring<T: VectorConvertible> {
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
-    public func reset(value: T) {
+    public func reset(_ value: T) {
         var f = solver.function
         f.target = value.vector
         solver = DynamicSolver(function: f, value: value.vector)

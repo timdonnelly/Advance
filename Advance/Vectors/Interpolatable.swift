@@ -36,8 +36,8 @@ public protocol Interpolatable {
     ///   where 0.0 is fully weighted toward `from`, and 1.0 is fully weighted
     ///   toward `to`.
     /// - Returns: The interpolated result.
-    func interpolatedTo(to: Self, alpha: Scalar) -> Self
+    func interpolatedTo(_ to: Self, alpha: Scalar) -> Self
     
     /// Interpolates between `self` and `to`
-    mutating func interpolateTo(to: Self, alpha: Scalar)
+    mutating func interpolateTo(_ to: Self, alpha: Scalar)
 }

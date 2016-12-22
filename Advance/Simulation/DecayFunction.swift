@@ -40,19 +40,19 @@ public struct DecayFunction<Vector: VectorType>: DynamicFunctionType {
     public init() {}
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(value: Vector, velocity: Vector) -> Vector {
+    public func acceleration(_ value: Vector, velocity: Vector) -> Vector {
         return -drag * velocity
     }
     
     /// Returns `true` if the simulation can become settled.
-    public func canSettle(value: Vector, velocity: Vector) -> Bool {
+    public func canSettle(_ value: Vector, velocity: Vector) -> Bool {
         let min = Vector(scalar: -threshold)
         let max = Vector(scalar: threshold)
         return velocity.clamped(min: min, max: max) == velocity
     }
     
     /// Returns the value to settle on.
-    public func settledValue(value: Vector, velocity: Vector) -> Vector {
+    public func settledValue(_ value: Vector, velocity: Vector) -> Vector {
         return value
     }
 }

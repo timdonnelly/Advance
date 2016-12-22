@@ -33,7 +33,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /// internally.
 public struct DecayAnimation<Value: VectorConvertible>: ValueAnimationType {
     
-    private var solver: DynamicSolver<DecayFunction<Value.Vector>>
+    fileprivate var solver: DynamicSolver<DecayFunction<Value.Vector>>
     
     /// Creates a new `DecayAnimation` instance.
     ///
@@ -51,7 +51,7 @@ public struct DecayAnimation<Value: VectorConvertible>: ValueAnimationType {
     /// Advances the animation.
     ///
     /// - parameter elapsed: The time (in seconds) to advance the animation.
-    public mutating func advance(elapsed: Double) {
+    public mutating func advance(_ elapsed: Double) {
         solver.advance(elapsed)
     }
     
@@ -98,7 +98,7 @@ public extension Animatable {
     ///   to settle.
     /// - parameter completion: An optional closure that will be called at
     ///   the end of the animation.
-    public func decay(drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
+    public func decay(_ drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
         decay(velocity, drag: drag, threshold: threshold, completion: completion)
     }
     
@@ -111,7 +111,7 @@ public extension Animatable {
     ///   to settle.
     /// - parameter completion: An optional closure that will be called at
     ///   the end of the animation.
-    public func decay(velocity: Value, drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
+    public func decay(_ velocity: Value, drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
         var d = DecayAnimation(threshold: threshold, from: value, velocity: velocity)
         d.drag = drag
         animate(d, completion: completion)
