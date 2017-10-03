@@ -71,7 +71,7 @@ extension Animator: AnimatorType {}
 
 private struct AnimatorWrapper: Hashable {
     let animator: AnimatorType
-    init<A: AnimationType>(animator: Animator<A>) {
+    init<A>(animator: Animator<A>) {
         self.animator = animator
     }
     

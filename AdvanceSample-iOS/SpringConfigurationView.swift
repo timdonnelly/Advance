@@ -96,7 +96,7 @@ class SpringConfigurationView: UIView {
         dampingSlider.frame = CGRect(x: 0.0, y: tensionSlider.frame.maxY, width: bounds.width, height: dampingSize.height)
     }
     
-    fileprivate dynamic func changed() {
+    @objc fileprivate dynamic func changed() {
         delegate?.springConfigurationViewDidChange(self)
     }
 }

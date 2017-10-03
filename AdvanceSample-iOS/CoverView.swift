@@ -47,9 +47,9 @@ final class CoverView: UIView {
         
         urlLabel = UILabel(frame: CGRect.zero)
         
-        var attribs: [String: AnyObject] = [:]
-        attribs[NSFontAttributeName] = UIFont.systemFont(ofSize: 12.0, weight: UIFontWeightRegular)
-        attribs[NSForegroundColorAttributeName] = UIColor.white
+        var attribs: [NSAttributedStringKey: Any] = [:]
+        attribs[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: 12.0, weight: UIFont.Weight.regular)
+        attribs[NSAttributedStringKey.foregroundColor] = UIColor.white
         
         // attribs[NSUnderlineStyleAttributeName] = NSUnderlineStyle.StyleSingle.rawValue
         

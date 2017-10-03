@@ -97,7 +97,7 @@ internal final class DisplayLink {
         var callback: ((_ frame: DisplayLink.Frame) -> Void)? = nil
         
         /// Called for each frame from the CADisplayLink.
-        dynamic func frame(_ displayLink: CADisplayLink) {
+        @objc dynamic func frame(_ displayLink: CADisplayLink) {
             callback?(Frame(timestamp: displayLink.timestamp, duration: displayLink.duration))
         }
     }

@@ -21,9 +21,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
-        panRecognizer.addTarget(self, action: #selector(pan(_:)))
+        panRecognizer.addTarget(self, action: #selector(pan))
         view.addGestureRecognizer(panRecognizer)
     
     
@@ -44,17 +44,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    dynamic func pan(sender: UIPanGestureRecognizer) {
+    @objc dynamic func pan(sender: UIPanGestureRecognizer) {
         switch sender.state {
-        case .Began:
+        case .began:
             positionWhenPanBegan = spring.value
-        case .Changed:
+        case .changed:
             var pos = positionWhenPanBegan
-            pos.x += sender.translationInView(view).x
-            pos.y += sender.translationInView(view).y
+            pos.x += sender.translation(in: view).x
+            pos.y += sender.translation(in: view).y
             spring.reset(pos)
-        case .Ended:
-            spring.velocity = sender.velocityInView(view)
+        case .ended:
+            spring.velocity = sender.velocity(in: view)
             spring.target = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
         default:
             break

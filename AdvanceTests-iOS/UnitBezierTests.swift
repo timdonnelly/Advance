@@ -12,7 +12,7 @@ class UnitBezierTests : XCTestCase {
         for i in 0..<values.count {
             let v = b.solve(Scalar(i) / Scalar(values.count - 1), epsilon: eps)
             let expected = values[i]
-            XCTAssertEqualWithAccuracy(v, expected, accuracy: eps)
+            XCTAssertEqual(v, expected, accuracy: eps)
         }
     }
     
@@ -23,7 +23,7 @@ class UnitBezierTests : XCTestCase {
         for i in 0..<values.count {
             let v = b.solve(Scalar(i) / Scalar(values.count - 1), epsilon: eps)
             let expected = values[i]
-            XCTAssertEqualWithAccuracy(v, expected, accuracy: eps)
+            XCTAssertEqual(v, expected, accuracy: eps)
         }
     }
 }

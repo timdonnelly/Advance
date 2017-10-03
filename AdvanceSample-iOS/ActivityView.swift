@@ -197,7 +197,7 @@ public final class ActivityView: UIView {
         }
     }
 
-    fileprivate dynamic func flash() {
+    @objc fileprivate dynamic func flash() {
         for i in 0..<segmentLayers.count {
             let t = DispatchTime.now() + Double(Int64(Double(NSEC_PER_SEC) * 0.04 * Double(i))) / Double(NSEC_PER_SEC)
             DispatchQueue.main.asyncAfter(deadline: t, execute: { 
@@ -254,7 +254,7 @@ private struct ActivitySegment {
         return p
     }()
     
-    let initialRotation = ((CGFloat(arc4random() % 100) / 100.0) * CGFloat(M_PI))
+    let initialRotation = ((CGFloat(arc4random() % 100) / 100.0) * CGFloat.pi)
     
     func path(_ size: CGSize, visibility: CGFloat) -> UIBezierPath {
         var p1 = initialPosition
