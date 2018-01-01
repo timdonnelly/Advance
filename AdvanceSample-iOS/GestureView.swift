@@ -66,7 +66,7 @@ final class GestureView: UIView {
         }
     }
     
-    fileprivate dynamic func manipulate(_ recognizer: DirectManipulationGestureRecognizer) {
+    @objc fileprivate dynamic func manipulate(_ recognizer: DirectManipulationGestureRecognizer) {
         switch recognizer.state {
         case .began:
             

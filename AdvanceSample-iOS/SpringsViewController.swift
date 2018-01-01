@@ -76,7 +76,7 @@ class SpringsViewController: DemoViewController {
         configView.frame = configFrame
     }
     
-    dynamic func tap(_ recognizer: UITapGestureRecognizer) {
+    @objc dynamic func tap(_ recognizer: UITapGestureRecognizer) {
         let point = recognizer.location(in: view)
         springView.centerSpring.target = point
     }

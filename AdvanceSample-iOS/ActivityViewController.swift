@@ -68,7 +68,7 @@ class ActivityViewController: DemoViewController {
         slider.frame = sliderFrame
     }
     
-    dynamic func sliderChanged() {
+    @objc dynamic func sliderChanged() {
         activityView.assembledAmount = CGFloat(slider.value)
         activityView.flashing = activityView.assembledAmount == 1.0
     }

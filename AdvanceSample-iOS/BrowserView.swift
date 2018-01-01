@@ -100,13 +100,13 @@ class BrowserItem: NSObject {
         view.addGestureRecognizer(panRecognizer)
     }
     
-    fileprivate dynamic func tap() {
+    @objc fileprivate dynamic func tap() {
         if browserView?.fullScreenItem != self {
             browserView?.enterFullScreen(self)
         }
     }
     
-    fileprivate dynamic func gesture(_ recognizer: DirectManipulationGestureRecognizer) {
+    @objc fileprivate dynamic func gesture(_ recognizer: DirectManipulationGestureRecognizer) {
         switch recognizer.state {
         case .began:
             
@@ -170,7 +170,7 @@ class BrowserItem: NSObject {
         }
     }
     
-    dynamic func pan(_ recognizer: UIPanGestureRecognizer) {
+    @objc dynamic func pan(_ recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
             gestureInProgress = true
@@ -464,7 +464,7 @@ class BrowserView: UIView {
         delegate?.browserView(self, didLeaveFullScreenForItem: item)
     }
     
-    fileprivate dynamic func pan(_ recognizer: UIPanGestureRecognizer) {
+    @objc fileprivate dynamic func pan(_ recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
             panInProgress = true

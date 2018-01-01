@@ -61,13 +61,13 @@ class DemoViewController: UIViewController {
         contentView.frame = view.bounds
         view.addSubview(contentView)
         
-        titleLabel.font = UIFont.systemFont(ofSize: 32.0, weight: UIFontWeightMedium)
+        titleLabel.font = UIFont.systemFont(ofSize: 32.0, weight: UIFont.Weight.medium)
         titleLabel.textColor = UIColor.darkGray
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
         view.addSubview(titleLabel)
         
-        noteLabel.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightThin)
+        noteLabel.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.thin)
         noteLabel.textColor = UIColor.darkGray
         noteLabel.textAlignment = .center
         noteLabel.numberOfLines = 0

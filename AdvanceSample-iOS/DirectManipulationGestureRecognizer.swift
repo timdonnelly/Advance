@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import Foundation
 import UIKit.UIGestureRecognizerSubclass
 
-private let π = CGFloat(M_PI)
+private let π = CGFloat.pi
 
 
 public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {

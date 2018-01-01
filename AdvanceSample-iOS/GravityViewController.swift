@@ -115,7 +115,7 @@ class GravityViewController: DemoViewController {
         resetButton.center = CGPoint(x: contentView.bounds.midX, y: contentView.bounds.maxY - 64.0)
     }
     
-    dynamic func press(_ recognizer: UILongPressGestureRecognizer) {
+    @objc dynamic func press(_ recognizer: UILongPressGestureRecognizer) {
         switch recognizer.state {
         case .began, .changed:
             simulation.target = recognizer.location(in: view)
@@ -126,7 +126,7 @@ class GravityViewController: DemoViewController {
         }
     }
     
-    dynamic func reset() {
+    @objc dynamic func reset() {
         simulation.reset(view.bounds.insetBy(dx: 64.0, dy: 128.0))
     }
     
