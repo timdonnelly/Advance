@@ -1,0 +1,77 @@
+module: Advance
+author: Tim Donnelly
+github_url: https://github.com/timdonnelly/Advance
+github_file_prefix: https://github.com/timdonnelly/Advance/tree/master
+root_url: https://timdonnelly.github.io/Advance
+xcodebuild_arguments: [-scheme,Advance-iOS]
+module_version: master
+exclude: []
+
+copyright: '© 2018 Tim Donnelly'
+
+
+custom_categories:
+  - name: Animations
+    children:
+    - Advanceable
+    - AnimationType
+    - AnyValueAnimation
+    - BasicAnimation
+    - DecayAnimation
+    - SpringAnimation
+    - ValueAnimationType
+  - name: Timing Functions
+    children:
+    - TimingFunctionType
+    - LinearTimingFunction
+    - ReversedTimingFunction
+    - UnitBezier
+
+  - name: Animation Helpers
+    children:
+    - Animatable
+    - Animator
+    - AnimatorContext
+    - AnimatorResult
+    - AnimatorState
+
+  - name: Loop
+    children:
+    - Loop
+    - LoopSubscription
+
+  - name: Dynamics
+    children:
+    - DecayFunction
+    - DynamicSolver
+    - DynamicFunctionType
+    - Spring
+    - SpringFunction
+    - SpringConfiguration
+
+  - name: Events
+    children:
+      - Event
+      - EventState
+
+  - name: Vectors
+    children:
+    - Interpolatable
+    - Scalar
+    - VectorConvertible
+    - VectorMathCapable
+    - VectorType
+    - Vector1
+    - Vector2
+    - Vector3
+    - Vector4
+
+  - name: Extensions
+    children:
+    - Double
+    - CAMediaTimingFunction
+    - CGFloat
+    - CGPoint
+    - CGRect
+    - CGSize
+    - CGVector
