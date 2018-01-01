@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animatable Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Animatable" class="dashAnchor"></a>
+    <a title="Animatable Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Advance Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Advance Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Animatable Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Animations.html">Animations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Advanceable.html">Advanceable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AnimationType.html">AnimationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyValueAnimation.html">AnyValueAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DecayAnimation.html">DecayAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringAnimation.html">SpringAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ValueAnimationType.html">ValueAnimationType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Timing Functions.html">Timing Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TimingFunctionType.html">TimingFunctionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LinearTimingFunction.html">LinearTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReversedTimingFunction.html">ReversedTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnitBezier.html">UnitBezier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnitBezier/Preset.html">– Preset</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Animation Helpers.html">Animation Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Animatable.html">Animatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Animator.html">Animator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimatorContext.html">AnimatorContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/AnimatorResult.html">AnimatorResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/AnimatorState.html">AnimatorState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Loop.html">Loop</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Loop.html">Loop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoopSubscription.html">LoopSubscription</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Dynamics.html">Dynamics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/DecayFunction.html">DecayFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DynamicSolver.html">DynamicSolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DynamicFunctionType.html">DynamicFunctionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Spring.html">Spring</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringFunction.html">SpringFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringConfiguration.html">SpringConfiguration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Events.html">Events</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Event.html">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EventState.html">EventState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Vectors.html">Vectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Interpolatable.html">Interpolatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VectorConvertible.html">VectorConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VectorMathCapable.html">VectorMathCapable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VectorType.html">VectorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Vectors.html#/s:7Advance7Vector1a">Vector1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Vector1.html">Vector1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Vector2.html">Vector2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Vector3.html">Vector3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Vector4.html">Vector4</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CAMediaTimingFunction.html">CAMediaTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGVector.html">CGVector</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Functions.html">Other Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector2VAD_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector2VSd_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector3VAD_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector3VSd_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector4VAD_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector4VSd_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2meoiyAA7Vector2Vz_ADtF">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2meoiyAA7Vector3Vz_ADtF">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2meoiyAA7Vector4Vz_ADtF">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1poiAA7Vector3VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1poiAA7Vector4VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2peoiyAA7Vector2Vz_ADtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2peoiyAA7Vector3Vz_ADtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2peoiyAA7Vector4Vz_ADtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1soiAA7Vector3VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1soiAA7Vector4VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2seoiyAA7Vector2Vz_ADtF">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2seoiyAA7Vector3Vz_ADtF">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2seoiyAA7Vector4Vz_ADtF">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1doiAA7Vector2VAD_ADtF">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1doiAA7Vector3VAD_ADtF">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1doiAA7Vector4VAD_ADtF">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2deoiyAA7Vector2Vz_ADtF">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2deoiyAA7Vector3Vz_ADtF">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2deoiyAA7Vector4Vz_ADtF">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA10UnitBezierV_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA13AnimatorStateO_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA7Vector2V_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA7Vector3V_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA7Vector4V_ADtF">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Animatable</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animatable</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Instances of <code>Animatable</code> wrap, and manage animated change to, a value 
+conforming to <code><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></code>.</p>
+
+<p>Using this class to represent a value is often cleaner than setting
+up and managing animations independently, as <code>Animatable</code> conveniently
+channels all changes to the value into the <code>changed</code> event. For example:</p>
+<pre class="highlight plaintext"><code>class Foo {
+  let size: Animatable&lt;CGSize&gt;
+
+  (...)
+
+  init() {
+    size.changed.observe { [weak self] (val) in
+      self?.doSomethingWithSize(val)
+    }
+  }
+}
+
+let f = Foo()
+f.size.animateTo(CGSize(width: 200.0, height: 200.0))
+</code></pre>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC10Completiona"></a>
+                    <a name="//apple_ref/swift/Alias/Completion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC10Completiona">Completion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>finished</code> will be true if the animation finished uninterrupted, or 
+false if it was cancelled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Completion</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">finished</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animatable/Animatable.swift#L58">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC7changedAA5EventCyxGv"></a>
+                    <a name="//apple_ref/swift/Property/changed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC7changedAA5EventCyxGv">changed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fires each time the <code><a href="../Classes/Animatable.html#/s:7Advance10AnimatableC5valuexv">value</a></code> property changes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">changed</span> <span class="o">=</span> <span class="kt"><a href="../Classes/Event.html">Event</a></span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animatable/Animatable.swift#L61">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC9animatingSbv"></a>
+                    <a name="//apple_ref/swift/Property/animating" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC9animatingSbv">animating</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>true</code> if an animation is in progress.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">animating</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animatable/Animatable.swift#L77-L79">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC5valuexv"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC5valuexv">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current value of this <code>Animatable</code>.</p>
+
+<p>Setting this property will cancel any animation that is in
+progress, and this <code>Animatable</code> will assume the new value immediately.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animatable/Animatable.swift#L85-L93">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC8velocityxv"></a>
+                    <a name="//apple_ref/swift/Property/velocity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC8velocityxv">velocity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current velocity reported by the in-flight animation, if any. If no
+animation is in progress, the returned value will be equivalent to
+<code>T.Vector.zero</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animatable/Animatable.swift#L98-L100">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableCACyxGx5value_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableCACyxGx5value_tcfc">init(value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an <code>Animatable</code> of T initialized to an initial value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The initial value of this animatable.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animatable/Animatable.swift#L105-L107">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC7animateyqd___ySbcSg10completiont5ValueQyd__RszAA0E13AnimationTypeRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/animate(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC7animateyqd___ySbcSg10completiont5ValueQyd__RszAA0E13AnimationTypeRd__lF">animate(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Runs the given animation until is either completes or is removed (by
+starting another animation or by directly setting the value).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">animate</span><span class="o">&lt;</span><span class="kt">A</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ValueAnimationType.html">ValueAnimationType</a></span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">animation</span><span class="p">:</span> <span class="kt">A</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Classes/Animatable.html#/s:7Advance10AnimatableC10Completiona">Completion</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">A</span><span class="o">.</span><span class="kt">Value</span> <span class="o">==</span> <span class="kt">Value</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The animation to be run.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional closure that will be called when this 
+animation has completed. Its only argument is a <code>Boolean</code>, which will 
+be <code>true</code> if the animation completed uninterrupted, or <code>false</code> if it
+was removed for any other reason.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animatable/Animatable.swift#L123-L146">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC15cancelAnimationyyF"></a>
+                    <a name="//apple_ref/swift/Method/cancelAnimation()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC15cancelAnimationyyF">cancelAnimation()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cancels an in-flight animation, if present.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">cancelAnimation</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animatable/Animatable.swift#L149-L151">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC9animateToyx_ySbcSg10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/animateTo(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC9animateToyx_ySbcSg10completiontF">animateTo(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Animates to the specified value, using a default duration and timing
+function.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animateTo</span><span class="p">(</span><span class="n">_</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Classes/Animatable.html#/s:7Advance10AnimatableC10Completiona">Completion</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>to</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The value to animate to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional closure that will be called when
+the animation completes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animation/Basic/BasicAnimation.swift#L105-L107">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC9animateToyx_Sd8durationAA18TimingFunctionType_p06timingG0ySbcSg10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/animateTo(_:duration:timingFunction:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC9animateToyx_Sd8durationAA18TimingFunctionType_p06timingG0ySbcSg10completiontF">animateTo(_:duration:timingFunction:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Animates to the specified value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animateTo</span><span class="p">(</span><span class="n">_</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">timingFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TimingFunctionType.html">TimingFunctionType</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Classes/Animatable.html#/s:7Advance10AnimatableC10Completiona">Completion</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>to</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The value to animate to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The duration of the animation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timingFunction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The timing (easing) function to use.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional closure that will be called when
+the animation completes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animation/Basic/BasicAnimation.swift#L116-L119">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC5decayySd_Sd9thresholdySbcSg10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/decay(_:threshold:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC5decayySd_Sd9thresholdySbcSg10completiontF">decay(_:threshold:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a decay animation, starting from the current value and velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decay</span><span class="p">(</span><span class="n">_</span> <span class="nv">drag</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span><span class="p">,</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Classes/Animatable.html#/s:7Advance10AnimatableC10Completiona">Completion</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>drag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The amount of drag that will slow down the velocity.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>threshold</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The settling threshold that determines how
+close the velocity must be to <code>0</code> before the simulation is allowed
+to settle.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional closure that will be called at
+the end of the animation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animation/Decay/DecayAnimation.swift#L101-L103">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC5decayyx_Sd4dragSd9thresholdySbcSg10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/decay(_:drag:threshold:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC5decayyx_Sd4dragSd9thresholdySbcSg10completiontF">decay(_:drag:threshold:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a decay animation, starting from the current value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decay</span><span class="p">(</span><span class="n">_</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span> <span class="nv">drag</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span><span class="p">,</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Classes/Animatable.html#/s:7Advance10AnimatableC10Completiona">Completion</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>velocity</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The initial velocity at time <code>0</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>drag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The amount of drag that will slow down the velocity.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>threshold</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The settling threshold that determines how
+close the velocity must be to <code>0</code> before the simulation is allowed
+to settle.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional closure that will be called at
+the end of the animation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animation/Decay/DecayAnimation.swift#L114-L118">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC8springToyx_xSg15initialVelocityAA19SpringConfigurationV13configurationySbcSg10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/springTo(_:initialVelocity:configuration:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC8springToyx_xSg15initialVelocityAA19SpringConfigurationV13configurationySbcSg10completiontF">springTo(_:initialVelocity:configuration:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Animates to the given value using a spring function.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">springTo</span><span class="p">(</span><span class="n">_</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span> <span class="nv">initialVelocity</span><span class="p">:</span> <span class="kt">Value</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">configuration</span><span class="p">:</span> <span class="kt"><a href="../Structs/SpringConfiguration.html">SpringConfiguration</a></span> <span class="o">=</span> <span class="kt"><a href="../Structs/SpringConfiguration.html">SpringConfiguration</a></span><span class="p">(),</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Classes/Animatable.html#/s:7Advance10AnimatableC10Completiona">Completion</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>to</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The value to animate to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>initialVelocity</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional velocity to use at time <code>0</code>.
+If no velocity is given, the current velocity of the <code>Animatable</code> instance
+will be used (if another animation is in progress).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>configuration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A spring configuration instance to use.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure that will be called at the end of the
+animation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animation/Spring/SpringAnimation.swift#L107-L111">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2018 Tim Donnelly</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

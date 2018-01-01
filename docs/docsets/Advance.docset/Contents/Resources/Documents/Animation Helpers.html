@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animation Helpers  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Animation Helpers  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Advance Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Advance Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Animation Helpers  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Animations.html">Animations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Advanceable.html">Advanceable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/AnimationType.html">AnimationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/AnyValueAnimation.html">AnyValueAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BasicAnimation.html">BasicAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DecayAnimation.html">DecayAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpringAnimation.html">SpringAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ValueAnimationType.html">ValueAnimationType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Timing Functions.html">Timing Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/TimingFunctionType.html">TimingFunctionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/LinearTimingFunction.html">LinearTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ReversedTimingFunction.html">ReversedTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/UnitBezier.html">UnitBezier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/UnitBezier/Preset.html">– Preset</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Animation Helpers.html">Animation Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Animatable.html">Animatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Animator.html">Animator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AnimatorContext.html">AnimatorContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/AnimatorResult.html">AnimatorResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/AnimatorState.html">AnimatorState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Loop.html">Loop</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Loop.html">Loop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LoopSubscription.html">LoopSubscription</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Dynamics.html">Dynamics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/DecayFunction.html">DecayFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DynamicSolver.html">DynamicSolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/DynamicFunctionType.html">DynamicFunctionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Spring.html">Spring</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpringFunction.html">SpringFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpringConfiguration.html">SpringConfiguration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Events.html">Events</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Event.html">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/EventState.html">EventState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Vectors.html">Vectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Interpolatable.html">Interpolatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Vectors.html#/s:7Advance6Scalara">Scalar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/VectorConvertible.html">VectorConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/VectorMathCapable.html">VectorMathCapable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/VectorType.html">VectorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Vectors.html#/s:7Advance7Vector1a">Vector1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Vector1.html">Vector1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Vector2.html">Vector2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Vector3.html">Vector3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Vector4.html">Vector4</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CAMediaTimingFunction.html">CAMediaTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGVector.html">CGVector</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Functions.html">Other Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1moiAA7Vector2VAD_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1moiAA7Vector2VSd_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1moiAA7Vector3VAD_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1moiAA7Vector3VSd_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1moiAA7Vector4VAD_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1moiAA7Vector4VSd_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2meoiyAA7Vector2Vz_ADtF">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2meoiyAA7Vector3Vz_ADtF">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2meoiyAA7Vector4Vz_ADtF">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1poiAA7Vector3VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1poiAA7Vector4VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2peoiyAA7Vector2Vz_ADtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2peoiyAA7Vector3Vz_ADtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2peoiyAA7Vector4Vz_ADtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1soiAA7Vector3VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1soiAA7Vector4VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2seoiyAA7Vector2Vz_ADtF">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2seoiyAA7Vector3Vz_ADtF">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2seoiyAA7Vector4Vz_ADtF">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1doiAA7Vector2VAD_ADtF">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1doiAA7Vector3VAD_ADtF">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance1doiAA7Vector4VAD_ADtF">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2deoiyAA7Vector2Vz_ADtF">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2deoiyAA7Vector3Vz_ADtF">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2deoiyAA7Vector4Vz_ADtF">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2eeoiSbAA10UnitBezierV_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2eeoiSbAA13AnimatorStateO_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2eeoiSbAA7Vector2V_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2eeoiSbAA7Vector3V_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Functions.html#/s:7Advance2eeoiSbAA7Vector4V_ADtF">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Animation Helpers</h1>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10AnimatableC"></a>
+                    <a name="//apple_ref/swift/Class/Animatable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10AnimatableC">Animatable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instances of <code>Animatable</code> wrap, and manage animated change to, a value 
+conforming to <code><a href="Protocols/VectorConvertible.html">VectorConvertible</a></code>.</p>
+
+<p>Using this class to represent a value is often cleaner than setting
+up and managing animations independently, as <code>Animatable</code> conveniently
+channels all changes to the value into the <code>changed</code> event. For example:</p>
+<pre class="highlight plaintext"><code>class Foo {
+  let size: Animatable&lt;CGSize&gt;
+
+  (...)
+
+  init() {
+    size.changed.observe { [weak self] (val) in
+      self?.doSomethingWithSize(val)
+    }
+  }
+}
+
+let f = Foo()
+f.size.animateTo(CGSize(width: 200.0, height: 200.0))
+</code></pre>
+
+                        <a href="Classes/Animatable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animatable</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animatable/Animatable.swift#L54-L152">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance8AnimatorC"></a>
+                    <a name="//apple_ref/swift/Class/Animator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance8AnimatorC">Animator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Runs an animation until the animations finishes, or until <code>cancel()</code> 
+is called.</p>
+
+<p>The <code>Animator</code> class is one-shot: It runs the animation precisely one time.</p>
+
+<p>It starts in the <code>Pending</code> state. From here either:</p>
+
+<ul>
+<li>It enters the running state. This occurs if start() is called.</li>
+<li>It is cancelled. This occurs if cancel() is called, and causes the animator
+to enter the <code>Completed</code> state, with a result of <code>Cancelled</code>.</li>
+</ul>
+
+<p>After entering the <code>Running</code> state, the <code>started</code> event is fired. The 
+animation then updates on every frame, triggering the <code>changed</code> event each
+time, until either:</p>
+
+<ul>
+<li>The animation finishes on its own, after which the animator enters the
+<code>Completed</code> state, with a result of <code>Finished</code>.</li>
+<li><code>cancel()</code> is called, after which the animator enters the <code>Completed</code>
+state, with a result of <code>Cancelled</code>.</li>
+</ul>
+
+<p>When the animator enters the <code>Completed</code> state, it triggers either the
+<code>cancelled</code> or <code>finished</code> event, depending on the result. After entering
+the <code>Completed</code> state, the animator is finished and no further state changes
+can occur.</p>
+
+                        <a href="Classes/Animator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">A</span><span class="p">:</span> <span class="kt"><a href="Protocols/AnimationType.html">AnimationType</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animator/Animator.swift#L86-L197">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance14AnimatorResultO"></a>
+                    <a name="//apple_ref/swift/Enum/AnimatorResult" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14AnimatorResultO">AnimatorResult</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The possible result cases of an animator.</p>
+
+                        <a href="Enums/AnimatorResult.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnimatorResult</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animator/Animator.swift#L56-L62">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance13AnimatorStateO"></a>
+                    <a name="//apple_ref/swift/Enum/AnimatorState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance13AnimatorStateO">AnimatorState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The state of an <code><a href="Classes/Animator.html">Animator</a></code> instance.</p>
+
+                        <a href="Enums/AnimatorState.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnimatorState</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animator/Animator.swift#L30-L39">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance15AnimatorContextC"></a>
+                    <a name="//apple_ref/swift/Class/AnimatorContext" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimatorContextC">AnimatorContext</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and manages <code><a href="Classes/Animator.html">Animator</a></code> instances, retaining them until completion.</p>
+
+                        <a href="Classes/AnimatorContext.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AnimatorContext</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Animator/AnimatorContext.swift#L30-L64">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2018 Tim Donnelly</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

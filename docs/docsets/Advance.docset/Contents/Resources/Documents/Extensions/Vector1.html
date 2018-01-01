@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vector1 Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/Vector1" class="dashAnchor"></a>
+    <a title="Vector1 Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Advance Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Advance Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Vector1 Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Animations.html">Animations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Advanceable.html">Advanceable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AnimationType.html">AnimationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyValueAnimation.html">AnyValueAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DecayAnimation.html">DecayAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringAnimation.html">SpringAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ValueAnimationType.html">ValueAnimationType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Timing Functions.html">Timing Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TimingFunctionType.html">TimingFunctionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LinearTimingFunction.html">LinearTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReversedTimingFunction.html">ReversedTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnitBezier.html">UnitBezier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnitBezier/Preset.html">– Preset</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Animation Helpers.html">Animation Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Animatable.html">Animatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Animator.html">Animator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimatorContext.html">AnimatorContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/AnimatorResult.html">AnimatorResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/AnimatorState.html">AnimatorState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Loop.html">Loop</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Loop.html">Loop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoopSubscription.html">LoopSubscription</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Dynamics.html">Dynamics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/DecayFunction.html">DecayFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DynamicSolver.html">DynamicSolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DynamicFunctionType.html">DynamicFunctionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Spring.html">Spring</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringFunction.html">SpringFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringConfiguration.html">SpringConfiguration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Events.html">Events</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Event.html">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EventState.html">EventState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Vectors.html">Vectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Interpolatable.html">Interpolatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VectorConvertible.html">VectorConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VectorMathCapable.html">VectorMathCapable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VectorType.html">VectorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Vectors.html#/s:7Advance7Vector1a">Vector1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Vector1.html">Vector1</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Vector2.html">Vector2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Vector3.html">Vector3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Vector4.html">Vector4</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CAMediaTimingFunction.html">CAMediaTimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGVector.html">CGVector</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Functions.html">Other Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector2VAD_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector2VSd_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector3VAD_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector3VSd_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector4VAD_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1moiAA7Vector4VSd_ADtF">*(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2meoiyAA7Vector2Vz_ADtF">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2meoiyAA7Vector3Vz_ADtF">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2meoiyAA7Vector4Vz_ADtF">*=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1poiAA7Vector2VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1poiAA7Vector3VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1poiAA7Vector4VAD_ADtF">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2peoiyAA7Vector2Vz_ADtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2peoiyAA7Vector3Vz_ADtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2peoiyAA7Vector4Vz_ADtF">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1soiAA7Vector2VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1soiAA7Vector3VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1soiAA7Vector4VAD_ADtF">-(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2seoiyAA7Vector2Vz_ADtF">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2seoiyAA7Vector3Vz_ADtF">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2seoiyAA7Vector4Vz_ADtF">-=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1doiAA7Vector2VAD_ADtF">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1doiAA7Vector3VAD_ADtF">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance1doiAA7Vector4VAD_ADtF">/(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2deoiyAA7Vector2Vz_ADtF">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2deoiyAA7Vector3Vz_ADtF">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2deoiyAA7Vector4Vz_ADtF">/=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA10UnitBezierV_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA13AnimatorStateO_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA7Vector2V_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA7Vector3V_ADtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Functions.html#/s:7Advance2eeoiSbAA7Vector4V_ADtF">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Vector1</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt"><a href="../Vectors.html#/s:7Advance7Vector1a">Vector1</a></span> <span class="o">=</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span></code></pre>
+
+                </div>
+              </div>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sd7AdvanceES2d6scalar_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(scalar:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sd7AdvanceES2d6scalar_tcfc">init(scalar:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a vector for which all components are equal to the given scalar.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">scalar</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Vectors/Vector1.swift#L35-L37">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sd7AdvanceE4zeroSdvZ"></a>
+                    <a name="//apple_ref/swift/Variable/zero" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sd7AdvanceE4zeroSdvZ">zero</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The empty vector (all scalar components are equal to <code>0.0</code>).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">zero</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance7Vector1a">Vector1</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Vectors/Vector1.swift#L40-L42">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sd7AdvanceE6lengthSivZ"></a>
+                    <a name="//apple_ref/swift/Variable/length" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sd7AdvanceE6lengthSivZ">length</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of scalar components in this vector type.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Vectors/Vector1.swift#L45-L47">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sd7AdvanceE14interpolatedToS2d_Sd5alphatF"></a>
+                    <a name="//apple_ref/swift/Method/interpolatedTo(_:alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sd7AdvanceE14interpolatedToS2d_Sd5alphatF">interpolatedTo(_:alpha:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Interpolate between the given values.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">interpolatedTo</span><span class="p">(</span><span class="n">_</span> <span class="nv">to</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance7Vector1a">Vector1</a></span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Vectors.html#/s:7Advance7Vector1a">Vector1</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Vectors/Vector1.swift#L61-L65">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sd7AdvanceE13interpolateToySd_Sd5alphatF"></a>
+                    <a name="//apple_ref/swift/Method/interpolateTo(_:alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sd7AdvanceE13interpolateToySd_Sd5alphatF">interpolateTo(_:alpha:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Interpolate between the given values.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">interpolateTo</span><span class="p">(</span><span class="n">_</span> <span class="nv">to</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance7Vector1a">Vector1</a></span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Advance/Vectors/Vector1.swift#L68-L70">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2018 Tim Donnelly</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
