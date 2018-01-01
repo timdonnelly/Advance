@@ -1,4 +1,6 @@
-git clone -b master git@github.com:storehouse/Advance.git ./temp_master
+rm -rf ./temp_master
+
+git clone -b master git@github.com:timdonnelly/Advance.git ./temp_master
 
 jazzy \
   --clean \

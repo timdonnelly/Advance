@@ -1,17 +1,14 @@
 module: Advance
-module_name: Advance
-author: Storehouse
-author_url: https://www.storehouse.co
-github_url: https://github.com/storehouse/Advance
-github-file-prefix: https://github.com/storehouse/Advance/tree/master
-root-url: https://storehouse.github.io/Advance/docs
-xcodebuild-arguments: -scheme,Advance
-module-version: master
+author: Tim Donnelly
+github_url: https://github.com/timdonnelly/Advance
+github_file_prefix: https://github.com/timdonnelly/Advance/tree/master
+root_url: https://timdonnelly.github.io/Advance/docs
+xcodebuild_arguments: [-scheme,Advance-iOS]
+module_version: master
 exclude: []
 
-copyright: '© 2016 [Storehouse Media Inc](http://www.storehouse.co).'
+copyright: '© 2018 Tim Donnelly'
 
-swift_version: 2.2
 
 custom_categories:
   - name: Animations
