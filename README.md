@@ -7,7 +7,7 @@ A powerful animation framework for iOS, tvOS, and OS X.
 ##### What is it?
 Advance is a pure Swift framework that enables advanced animations and physics-based interactions.
 
-Originally developed to power the animations throughout the Storehouse app for iOS, Advance has evolved into a composable set of tools with a [simple API](http://storehouse.github.io/Advance/docs). It uses a `CADisplayLink` instance to drive animations and simulations that advance on each frame.
+Originally developed to power the animations throughout the Storehouse app for iOS, Advance has evolved into a composable set of tools with a [simple API](http://timdonnelly.github.io/Advance/docs). It uses a `CADisplayLink` instance to drive animations and simulations that advance on each frame.
 
 ##### Should I use it?
 Advance shines when:
@@ -30,8 +30,8 @@ You can accomplish amazing things with Advance. But you should be sensitive to t
 ##### Check out the sample app.
 Located in the project:
 
-![Sample app](https://github.com/storehouse/Advance/raw/master/Assets/nav.gif)
-![Sample app](https://github.com/storehouse/Advance/raw/master/Assets/logo.gif)
+![Sample app](https://github.com/timdonnelly/Advance/raw/master/Assets/nav.gif)
+![Sample app](https://github.com/timdonnelly/Advance/raw/master/Assets/logo.gif)
 
 ****
 
@@ -194,7 +194,7 @@ The framework includes the following animations:
 
 ****
 
-[Please see the documentation](http://storehouse.github.io/Advance/docs) and check out the sample app (AdvanceSample) in the project for more details.
+[Please see the documentation](http://timdonnelly.github.io/Advance/docs) and check out the sample app (AdvanceSample) in the project for more details.
 
 ### Notes
 
@@ -229,12 +229,12 @@ There are several ways to integrate Advance into your project.
 
 * Swift Package Manager (experimental).
 
-* Carthage: add `github "storehouse/Advance" "master"` to your `Cartfile`.
+* Carthage: add `github "timdonnelly/Advance" "master"` to your `Cartfile`.
 
 * CocoaPods: add `pod 'Advance', '~> 0.9'` to your `Podfile`.
 
 ### Documentation
-API documentation is [available here](http://storehouse.github.io/Advance/docs).
+API documentation is [available here](http://timdonnelly.github.io/Advance/docs).
 
 ### License
-This project is released under the [BSD 2-clause license](https://github.com/storehouse/Advance/blob/master/LICENSE).
+This project is released under the [BSD 2-clause license](https://github.com/timdonnelly/Advance/blob/master/LICENSE).
