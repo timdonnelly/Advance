@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 public typealias Scalar = Double
 
 /// Conforming types can be operated on as vectors composed of `Scalar` components.
-public protocol VectorType: Equatable, Interpolatable, VectorMathCapable {
+public protocol Vector: Equatable, Interpolatable, VectorMathCapable {
     
     /// Creates a vector for which all components are equal to the given scalar.
     init(scalar: Scalar)
@@ -59,7 +59,7 @@ public protocol VectorType: Equatable, Interpolatable, VectorMathCapable {
 }
 
 
-public extension VectorType {
+public extension Vector {
     
     /// Returns a vector where each component is clamped by the corresponding
     /// components in `min` and `max`.

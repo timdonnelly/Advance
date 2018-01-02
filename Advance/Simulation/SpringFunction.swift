@@ -46,10 +46,10 @@ public struct SpringConfiguration {
 }
 
 /// Implements a simple spring acceleration function.
-public struct SpringFunction<T: VectorType>: DynamicFunctionType {
+public struct SpringFunction<VectorType: Vector>: DynamicFunctionType {
     
     /// The target of the spring.
-    public var target: T
+    public var target: VectorType
     
     /// Configuration options.
     public var configuration: SpringConfiguration
@@ -57,22 +57,22 @@ public struct SpringFunction<T: VectorType>: DynamicFunctionType {
     /// Creates a new `SpringFunction` instance.
     ///
     /// - parameter target: The target of the new instance.
-    public init(target: T) {
+    public init(target: VectorType) {
         self.target = target
         self.configuration = SpringConfiguration()
     }
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(_ value: T, velocity: T) -> T {
+    public func acceleration(_ value: VectorType, velocity: VectorType) -> VectorType {
         let delta = value - target
         let accel = (-configuration.tension * delta) - (configuration.damping * velocity)
         return accel
     }
     
     /// Returns `true` if the simulation can become settled.
-    public func canSettle(_ value: T, velocity: T) -> Bool {
-        let min = Vector(scalar: -configuration.threshold)
-        let max = Vector(scalar: configuration.threshold)
+    public func canSettle(_ value: VectorType, velocity: VectorType) -> Bool {
+        let min = VectorType(scalar: -configuration.threshold)
+        let max = VectorType(scalar: configuration.threshold)
         
         if velocity.clamped(min: min, max: max) != velocity {
             return false
@@ -87,7 +87,7 @@ public struct SpringFunction<T: VectorType>: DynamicFunctionType {
     }
     
     /// Returns the value to settle on.
-    public func settledValue(_ value: T, velocity: T) -> T {
+    public func settledValue(_ value: VectorType, velocity: VectorType) -> VectorType {
         return target
     }
 }

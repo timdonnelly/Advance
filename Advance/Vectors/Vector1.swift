@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /// A vector with 1 component.
 public typealias Vector1 = Scalar
 
-extension Vector1: VectorType {
+extension Vector1: Vector {
     
     /// Creates a vector for which all components are equal to the given scalar.
     public init(scalar: Scalar) {

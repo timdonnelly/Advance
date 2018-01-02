@@ -50,7 +50,7 @@ public struct Vector4 {
     }
 }
 
-extension Vector4: VectorType {
+extension Vector4: Vector {
     
     /// Creates a vector for which all components are equal to the given scalar.
     public init(scalar: Scalar) {
