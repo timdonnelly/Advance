@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import Advance
 import Foundation
 
-struct GravityFunction: DynamicFunctionType {
+struct GravityFunction: DynamicFunction {
     
     typealias Vector = Vector2
     

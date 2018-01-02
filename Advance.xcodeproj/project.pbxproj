@@ -50,7 +50,7 @@
 		228E205B1C9CB99D0058ADA1 /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
 		228E205C1C9CB99D0058ADA1 /* CGPoint+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint+VectorConvertible.swift */; };
 		228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48B1C876AD1000CF9EE /* Vector1.swift */; };
-		228E205E1C9CB99D0058ADA1 /* DynamicFunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunctionType.swift */; };
+		228E205E1C9CB99D0058ADA1 /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
 		228E205F1C9CB99D0058ADA1 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
 		228E20601C9CB99D0058ADA1 /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
 		228E20611C9CB99D0058ADA1 /* CGVector+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector+VectorConvertible.swift */; };
@@ -97,7 +97,7 @@
 		5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
 		5D3A2F471C920CB10071F08F /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5D3A2F481C920CBC0071F08F /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
-		5D3A2F491C920CBC0071F08F /* DynamicFunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunctionType.swift */; };
+		5D3A2F491C920CBC0071F08F /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
 		5D3A2F4A1C920CBC0071F08F /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
 		5D3A2F4B1C920CBC0071F08F /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
 		5D3A2F4C1C920CBC0071F08F /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
@@ -142,7 +142,7 @@
 		5DB1A49E1C876AD1000CF9EE /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
 		5DB1A4A01C876AD1000CF9EE /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
-		5DB1A4A21C876AD1000CF9EE /* DynamicFunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunctionType.swift */; };
+		5DB1A4A21C876AD1000CF9EE /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
 		5DB1A4A31C876AD1000CF9EE /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
 		5DB1A4A41C876AD1000CF9EE /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
 		5DB1A4A51C876AD1000CF9EE /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
@@ -346,7 +346,7 @@
 		5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAMediaTimingFunction.swift; sourceTree = "<group>"; };
 		5DB1A47A1C876AD1000CF9EE /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecayFunction.swift; sourceTree = "<group>"; };
-		5DB1A47D1C876AD1000CF9EE /* DynamicFunctionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFunctionType.swift; sourceTree = "<group>"; };
+		5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFunction.swift; sourceTree = "<group>"; };
 		5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicSolver.swift; sourceTree = "<group>"; };
 		5DB1A47F1C876AD1000CF9EE /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
 		5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringFunction.swift; sourceTree = "<group>"; };
@@ -711,7 +711,7 @@
 			isa = PBXGroup;
 			children = (
 				5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */,
-				5DB1A47D1C876AD1000CF9EE /* DynamicFunctionType.swift */,
+				5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */,
 				5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */,
 				5DB1A47F1C876AD1000CF9EE /* Spring.swift */,
 				5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */,
@@ -1134,7 +1134,7 @@
 				228E205B1C9CB99D0058ADA1 /* VectorMathCapable.swift in Sources */,
 				228E205C1C9CB99D0058ADA1 /* CGPoint+VectorConvertible.swift in Sources */,
 				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
-				228E205E1C9CB99D0058ADA1 /* DynamicFunctionType.swift in Sources */,
+				228E205E1C9CB99D0058ADA1 /* DynamicFunction.swift in Sources */,
 				228E205F1C9CB99D0058ADA1 /* Animator.swift in Sources */,
 				228E20601C9CB99D0058ADA1 /* DynamicSolver.swift in Sources */,
 				228E20611C9CB99D0058ADA1 /* CGVector+VectorConvertible.swift in Sources */,
@@ -1223,7 +1223,7 @@
 				5DB1A4B21C876AD1000CF9EE /* VectorMathCapable.swift in Sources */,
 				5DB1A4A71C876AD1000CF9EE /* CGPoint+VectorConvertible.swift in Sources */,
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
-				5DB1A4A21C876AD1000CF9EE /* DynamicFunctionType.swift in Sources */,
+				5DB1A4A21C876AD1000CF9EE /* DynamicFunction.swift in Sources */,
 				5DB1A49B1C876AD1000CF9EE /* Animator.swift in Sources */,
 				5DB1A4A31C876AD1000CF9EE /* DynamicSolver.swift in Sources */,
 				5DB1A4AA1C876AD1000CF9EE /* CGVector+VectorConvertible.swift in Sources */,
@@ -1274,7 +1274,7 @@
 				5D3A2F481C920CBC0071F08F /* DecayFunction.swift in Sources */,
 				5D3A2F3B1C920C7C0071F08F /* TimingFunction.swift in Sources */,
 				5D3A2F511C920CC20071F08F /* CGRect+VectorConvertible.swift in Sources */,
-				5D3A2F491C920CBC0071F08F /* DynamicFunctionType.swift in Sources */,
+				5D3A2F491C920CBC0071F08F /* DynamicFunction.swift in Sources */,
 				5D3A2F501C920CC20071F08F /* CGPoint+VectorConvertible.swift in Sources */,
 				5D3A2F581C920CCA0071F08F /* VectorMathCapable.swift in Sources */,
 				5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */,
