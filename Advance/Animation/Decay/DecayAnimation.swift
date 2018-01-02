@@ -98,8 +98,8 @@ public extension Animatable {
     ///   to settle.
     /// - parameter completion: An optional closure that will be called at
     ///   the end of the animation.
-    public func decay(_ drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
-        decay(velocity, drag: drag, threshold: threshold, completion: completion)
+    public func decay(drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
+        decay(velocity: velocity, drag: drag, threshold: threshold, completion: completion)
     }
     
     /// Adds a decay animation, starting from the current value.
@@ -111,10 +111,10 @@ public extension Animatable {
     ///   to settle.
     /// - parameter completion: An optional closure that will be called at
     ///   the end of the animation.
-    public func decay(_ velocity: Value, drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
+    public func decay(velocity: Value, drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
         var d = DecayAnimation(threshold: threshold, from: value, velocity: velocity)
         d.drag = drag
-        animate(d, completion: completion)
+        animate(with: d, completion: completion)
     }
     
 }

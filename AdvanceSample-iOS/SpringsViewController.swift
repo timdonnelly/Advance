@@ -83,7 +83,7 @@ class SpringsViewController: DemoViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        springView.centerSpring.reset(CGPoint(x: view.bounds.midX, y: view.bounds.midY))
+        springView.centerSpring.reset(to: CGPoint(x: view.bounds.midX, y: view.bounds.midY))
     }
     
     fileprivate func updateSprings() {

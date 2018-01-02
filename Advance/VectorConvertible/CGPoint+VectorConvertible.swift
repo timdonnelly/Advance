@@ -41,6 +41,6 @@ extension CGPoint: VectorConvertible {
     
     /// Returns the vector representation.
     public var vector: Vector {
-        return Vector(Scalar(x), Scalar(y))
+        return Vector(x: Scalar(x), y: Scalar(y))
     }
 }

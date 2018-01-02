@@ -36,7 +36,7 @@ public struct Vector2 {
     public var y: Scalar
     
     /// Creates a new `Vector2` instance.
-    public init(_ x: Scalar, _ y: Scalar) {
+    public init(x: Scalar, y: Scalar) {
         self.x = x
         self.y = y
     }
@@ -57,7 +57,7 @@ extension Vector2: Vector {
     
     /// The empty vector (all scalar components are equal to `0.0`).
     public static var zero: Vector2 {
-        return Vector2(0.0, 0.0)
+        return Vector2(x: 0.0, y: 0.0)
     }
     
     public subscript(index: Int) -> Scalar {
@@ -88,16 +88,16 @@ extension Vector2: Vector {
     }
     
     /// Interpolate between the given values.
-    public func interpolatedTo(_ to: Vector2, alpha: Scalar) -> Vector2 {
+    public func interpolated(to otherValue: Vector2, alpha: Scalar) -> Vector2 {
         var result = self
-        result.interpolateTo(to, alpha: alpha)
+        result.interpolate(to: otherValue, alpha: alpha)
         return result
     }
     
     /// Interpolate between the given values.
-    public mutating func interpolateTo(_ to: Vector2, alpha: Scalar) {
-        x += alpha * (to.x - x)
-        y += alpha * (to.y - y)
+    public mutating func interpolate(to otherValue: Vector2, alpha: Scalar) {
+        x += alpha * (otherValue.x - x)
+        y += alpha * (otherValue.y - y)
     }
 }
 
@@ -109,7 +109,7 @@ public func ==(lhs: Vector2, rhs: Vector2) -> Bool {
 
 /// Product.
 public func *(lhs: Vector2, rhs: Vector2) -> Vector2 {
-    return Vector2(lhs.x*rhs.x, lhs.y*rhs.y)
+    return Vector2(x: lhs.x*rhs.x, y: lhs.y*rhs.y)
 }
 
 /// Product (in place).
@@ -119,7 +119,7 @@ public func *=(lhs: inout Vector2, rhs: Vector2) {
 
 /// Quotient.
 public func /(lhs: Vector2, rhs: Vector2) -> Vector2 {
-    return Vector2(lhs.x/rhs.x, lhs.y/rhs.y)
+    return Vector2(x: lhs.x/rhs.x, y: lhs.y/rhs.y)
 }
 
 /// Quotient (in place).
@@ -129,7 +129,7 @@ public func /=(lhs: inout Vector2, rhs: Vector2) {
 
 /// Sum.
 public func +(lhs: Vector2, rhs: Vector2) -> Vector2 {
-    return Vector2(lhs.x+rhs.x, lhs.y+rhs.y)
+    return Vector2(x: lhs.x+rhs.x, y: lhs.y+rhs.y)
 }
 
 /// Sum (in place).
@@ -139,7 +139,7 @@ public func +=(lhs: inout Vector2, rhs: Vector2) {
 
 /// Difference.
 public func -(lhs: Vector2, rhs: Vector2) -> Vector2 {
-    return Vector2(lhs.x-rhs.x, lhs.y-rhs.y)
+    return Vector2(x: lhs.x-rhs.x, y: lhs.y-rhs.y)
 }
 
 /// Difference (in place).
@@ -149,5 +149,5 @@ public func -=(lhs: inout Vector2, rhs: Vector2) {
 
 /// Scalar-Vector product.
 public func *(lhs: Scalar, rhs: Vector2) -> Vector2 {
-    return Vector2(lhs*rhs.x, lhs*rhs.y)
+    return Vector2(x: lhs*rhs.x, y: lhs*rhs.y)
 }

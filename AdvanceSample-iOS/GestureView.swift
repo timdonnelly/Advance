@@ -109,14 +109,14 @@ final class GestureView: UIView {
             velocity.rotation = recognizer.rotationVelocity
             var config = SpringConfiguration()
             config.threshold = 0.001
-            animatableTransform.springTo(SimpleTransform(), initialVelocity: velocity, configuration: config)
+            animatableTransform.spring(to: SimpleTransform(), initialVelocity: velocity, configuration: config)
             
             let centerVel = recognizer.translationVelocityInView(superview)
             var centerConfig = SpringConfiguration()
             centerConfig.tension = 40.0
             centerConfig.damping = 5.0
             let c = CGPoint(x: superview!.bounds.midX, y: superview!.bounds.midY)
-            animatableCenter.springTo(c, initialVelocity: centerVel, configuration: centerConfig)
+            animatableCenter.spring(to: c, initialVelocity: centerVel, configuration: centerConfig)
             break
         default:
             break

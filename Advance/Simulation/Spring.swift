@@ -76,7 +76,7 @@ public final class Spring<Value: VectorConvertible> {
     fileprivate var lastNotifiedValue: Value {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
-            changed.fire(lastNotifiedValue)
+            changed.fire(value: lastNotifiedValue)
         }
     }
     
@@ -92,7 +92,7 @@ public final class Spring<Value: VectorConvertible> {
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
-    public func reset(_ value: Value) {
+    public func reset(to value: Value) {
         var f = solver.function
         f.target = value.vector
         solver = DynamicSolver(function: f, value: value.vector)

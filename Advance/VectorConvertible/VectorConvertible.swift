@@ -56,8 +56,8 @@ public extension VectorConvertible {
     /// - parameter alpha: The amount (between 0.0 and 1.0) to interpolate,
     ///   where `0` returns the receiver, and `1` returns the `to` value.
     /// - Returns: The interpolated result.
-    public func interpolatedTo(_ to: Self, alpha: Scalar) -> Self {
-        return Self(vector: vector.interpolatedTo(to.vector, alpha: alpha))
+    public func interpolated(to otherValue: Self, alpha: Scalar) -> Self {
+        return Self(vector: vector.interpolated(to: otherValue.vector, alpha: alpha))
     }
     
     /// Interpolates in place.
@@ -66,8 +66,8 @@ public extension VectorConvertible {
     /// - parameter alpha: The amount (between 0.0 and 1.0) to interpolate,
     ///   where `0` leaves the receiver unchanged, and `1` assumes the value
     ///   of `to`.
-    public mutating func interpolateTo(_ to: Self, alpha: Scalar) {
-        self = interpolatedTo(to, alpha: alpha)
+    public mutating func interpolate(to otherValue: Self, alpha: Scalar) {
+        self = interpolated(to: otherValue, alpha: alpha)
     }
     
 }

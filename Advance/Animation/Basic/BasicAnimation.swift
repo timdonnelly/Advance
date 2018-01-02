@@ -82,9 +82,9 @@ public struct BasicAnimation<Value: VectorConvertible>: ValueAnimation {
         var progress = elapsed / duration
         progress = max(progress, 0.0)
         progress = min(progress, 1.0)
-        let adjustedProgress = timingFunction.solveForTime(Scalar(progress), epsilon: 1.0 / Scalar(duration * 1000.0))
+        let adjustedProgress = timingFunction.solve(at: Scalar(progress), epsilon: 1.0 / Scalar(duration * 1000.0))
         
-        let val = from.vector.interpolatedTo(to.vector, alpha: Scalar(adjustedProgress))
+        let val = from.vector.interpolated(to: to.vector, alpha: Scalar(adjustedProgress))
         value = Value(vector: val)
 
         let vel = Scalar(1.0/time) * (value.vector - starting.vector)
@@ -102,8 +102,8 @@ public extension Animatable {
     /// - parameter to: The value to animate to.
     /// - parameter completion: An optional closure that will be called when
     ///   the animation completes.
-    public func animateTo(_ to: Value, completion: Completion? = nil) {
-        animateTo(to, duration: 0.25, timingFunction: UnitBezier(preset: .swiftOut), completion: completion)
+    public func animate(to value: Value, completion: Completion? = nil) {
+        animate(to: value, duration: 0.25, timingFunction: UnitBezier(preset: .swiftOut), completion: completion)
     }
     
     /// Animates to the specified value.
@@ -113,9 +113,9 @@ public extension Animatable {
     /// - parameter timingFunction: The timing (easing) function to use.
     /// - parameter completion: An optional closure that will be called when
     ///   the animation completes.
-    public func animateTo(_ to: Value, duration: Double, timingFunction: TimingFunction, completion: Completion? = nil) {
-        let a = BasicAnimation(from: value, to: to, duration: duration, timingFunction: timingFunction)
-        animate(a, completion: completion)
+    public func animate(to value: Value, duration: Double, timingFunction: TimingFunction, completion: Completion? = nil) {
+        let a = BasicAnimation(from: value, to: value, duration: duration, timingFunction: timingFunction)
+        animate(with: a, completion: completion)
     }
     
 }
@@ -130,8 +130,8 @@ public extension VectorConvertible {
     /// - parameter callback: A closure that will be called with the new value
     ///   for each frame of the animation until it is finished.
     /// - returns: The underlying animator.
-    public func animateTo(_ to: Self, duration: Double, timingFunction: TimingFunction, callback: @escaping (Self)->Void) -> Animator<BasicAnimation<Self>> {
-        let a = BasicAnimation(from: self, to: to, duration: duration, timingFunction: timingFunction)
+    public func animate(to value: Self, duration: Double, timingFunction: TimingFunction, callback: @escaping (Self)->Void) -> Animator<BasicAnimation<Self>> {
+        let a = BasicAnimation(from: self, to: value, duration: duration, timingFunction: timingFunction)
         let animator = AnimatorContext.shared.animate(a)
         animator.changed.observe { (a) in
             callback(a.value)

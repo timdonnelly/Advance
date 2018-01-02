@@ -81,9 +81,9 @@ struct VectorTester<T: Vector> {
     static func testInterpolatable() {
         let v1 = T(scalar: 0.0)
         let v2 = T(scalar: 10.0)
-        XCTAssert(v1.interpolatedTo(v2, alpha: 0.0) == v1)
-        XCTAssert(v1.interpolatedTo(v2, alpha: 0.55) == T(scalar: 5.5))
-        XCTAssert(v1.interpolatedTo(v2, alpha: 1.0) == v2)
+        XCTAssert(v1.interpolated(to: v2, alpha: 0.0) == v1)
+        XCTAssert(v1.interpolated(to: v2, alpha: 0.55) == T(scalar: 5.5))
+        XCTAssert(v1.interpolated(to: v2, alpha: 1.0) == v2)
     }
     
     static func testMath() {

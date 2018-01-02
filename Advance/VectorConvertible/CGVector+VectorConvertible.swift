@@ -41,6 +41,6 @@ extension CGVector: VectorConvertible {
     
     /// Returns the vector representation.
     public var vector: Vector {
-        return Vector(Scalar(dx), Scalar(dy))
+        return Vector(x: Scalar(dx), y: Scalar(dy))
     }
 }

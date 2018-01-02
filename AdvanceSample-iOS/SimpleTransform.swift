@@ -53,7 +53,7 @@ extension SimpleTransform: VectorConvertible {
     typealias Vector = Vector2
     
     var vector: Vector {
-        return Vector2(Scalar(scale), Scalar(rotation))
+        return Vector2(x: Scalar(scale), y: Scalar(rotation))
     }
     
     init(vector: Vector) {

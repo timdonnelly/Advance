@@ -123,7 +123,7 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
                 break
             }
             previousState = simulationState
-            simulationState = simulationState.integrate(function, time: tickTime)
+            simulationState = simulationState.integrate(function: function, time: tickTime)
             timeAccumulator -= tickTime
         }
         
@@ -142,8 +142,8 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
             // while maintaining a consistent time step internally.
             let alpha = Scalar((tickTime + timeAccumulator) / tickTime)
             interpolatedState = previousState
-            interpolatedState.value = interpolatedState.value.interpolatedTo(simulationState.value, alpha: alpha)
-            interpolatedState.velocity = interpolatedState.velocity.interpolatedTo(simulationState.velocity, alpha: alpha)
+            interpolatedState.value = interpolatedState.value.interpolated(to: simulationState.value, alpha: alpha)
+            interpolatedState.velocity = interpolatedState.velocity.interpolated(to: simulationState.velocity, alpha: alpha)
         }
     }
     
@@ -183,13 +183,13 @@ private extension DynamicSolverState {
     typealias Derivative = DynamicSolverState<VectorType>
     
     /// RK4 Integration.
-    func integrate<F: DynamicFunction>(_ function: F, time: Double) -> DynamicSolverState<VectorType> where F.VectorType == VectorType {
+    func integrate<F: DynamicFunction>(function: F, time: Double) -> DynamicSolverState<VectorType> where F.VectorType == VectorType {
         let initial = Derivative(value:VectorType.zero, velocity: VectorType.zero)
         
-        let a = evaluate(function, time: 0.0, derivative: initial)
-        let b = evaluate(function, time: time * 0.5, derivative: a)
-        let c = evaluate(function, time: time * 0.5, derivative: b)
-        let d = evaluate(function, time: time, derivative: c)
+        let a = evaluate(function: function, time: 0.0, derivative: initial)
+        let b = evaluate(function: function, time: time * 0.5, derivative: a)
+        let c = evaluate(function: function, time: time * 0.5, derivative: b)
+        let d = evaluate(function: function, time: time, derivative: c)
         
         var dxdt = a.value
         dxdt += (2.0 * (b.value + c.value)) + d.value
@@ -206,7 +206,7 @@ private extension DynamicSolverState {
         return DynamicSolverState(value: val, velocity: vel)
     }
     
-    func evaluate<F: DynamicFunction>(_ function: F, time: Double, derivative: Derivative) -> Derivative where F.VectorType == VectorType {
+    func evaluate<F: DynamicFunction>(function: F, time: Double, derivative: Derivative) -> Derivative where F.VectorType == VectorType {
         let val = value + Scalar(time) * derivative.value
         let vel = velocity + Scalar(time) * derivative.velocity
         let accel = function.acceleration(value: val, velocity: vel)

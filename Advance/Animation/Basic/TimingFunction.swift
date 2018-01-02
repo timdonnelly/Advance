@@ -37,7 +37,7 @@ public protocol TimingFunction {
     /// - parameter x: The input time (ranges between 0.0 and 1.0).
     /// - parameter epsilon: The required precision of the result (where `x * epsilon` is the maximum time segment to be evaluated).
     /// - returns: The resulting output time.
-    func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar
+    func solve(at time: Scalar, epsilon: Scalar) -> Scalar
 }
 
 /// Returns the input time, unmodified.
@@ -47,8 +47,8 @@ public struct LinearTimingFunction: TimingFunction {
     public init(){}
     
     /// Solves for time `x`.
-    public func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar {
-        return x
+    public func solve(at time: Scalar, epsilon: Scalar) -> Scalar {
+        return time
     }
 }
 
@@ -58,8 +58,8 @@ public struct ReversedTimingFunction: TimingFunction {
     public init(){}
     
     /// Solves for time `x`.
-    public func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar {
-        return 1.0 - x
+    public func solve(at time: Scalar, epsilon: Scalar) -> Scalar {
+        return 1.0 - time
     }
 }
 
@@ -67,8 +67,8 @@ public struct ReversedTimingFunction: TimingFunction {
 extension UnitBezier: TimingFunction {
     
     /// Solves for time `x`.
-    public func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar {
-        return solve(x, epsilon: epsilon)
+    public func solve(at time: Scalar, epsilon: Scalar) -> Scalar {
+        return solve(x: time, epsilon: epsilon)
     }
 }
 

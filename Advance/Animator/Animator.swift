@@ -92,7 +92,7 @@ public final class Animator<A: Animation> {
         s.advanced.observe({ [unowned self] (elapsed) -> Void in
             guard self.state == .running else { return }
             self.animation.advance(by: elapsed)
-            self.changed.fire(self.animation)
+            self.changed.fire(value: self.animation)
             if self.animation.finished == true {
                 self.finish()
             }
@@ -122,13 +122,13 @@ public final class Animator<A: Animation> {
             case .pending:
                  break
             case .running:
-                started.close(animation)
+                started.close(value: animation)
             case .completed(let result):
                 switch result {
                 case .cancelled:
-                    cancelled.close(animation)
+                    cancelled.close(value: animation)
                 case .finished:
-                    finished.close(animation)
+                    finished.close(value: animation)
                 }
             }
         }

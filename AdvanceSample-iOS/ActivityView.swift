@@ -192,7 +192,7 @@ public final class ActivityView: UIView {
             if animated {
                 visibilitySprings[i].target = mappedVis
             } else {
-                visibilitySprings[i].reset(mappedVis)
+                visibilitySprings[i].reset(to: mappedVis)
             }
         }
     }
@@ -260,10 +260,10 @@ private struct ActivitySegment {
         var p1 = initialPosition
         var p2 = initialPosition
         
-        p1.interpolateTo(firstPoint, alpha: Scalar(visibility))
-        p2.interpolateTo(secondPoint, alpha: Scalar(visibility))
+        p1.interpolate(to: firstPoint, alpha: Scalar(visibility))
+        p2.interpolate(to: secondPoint, alpha: Scalar(visibility))
         
-        let rotation = initialRotation.interpolatedTo(0.0, alpha: Scalar(visibility))
+        let rotation = initialRotation.interpolated(to: 0.0, alpha: Scalar(visibility))
         let midX = p1.x + (p2.x - p1.x) * 0.5
         let midY = p1.y + (p2.y - p1.y) * 0.5
         

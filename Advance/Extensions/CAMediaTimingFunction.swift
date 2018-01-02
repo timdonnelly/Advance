@@ -31,8 +31,8 @@ import QuartzCore
 extension CAMediaTimingFunction: TimingFunction {
     
     /// Solves for the given time with the specified precision.
-    public func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar {
-        return unitBezier.solve(x, epsilon: epsilon)
+    public func solve(at time: Scalar, epsilon: Scalar) -> Scalar {
+        return unitBezier.solve(x: time, epsilon: epsilon)
     }
     
     /// Returns a `UnitBezier` instance created from this timing function's
