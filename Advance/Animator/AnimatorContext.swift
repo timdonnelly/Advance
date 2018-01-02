@@ -63,14 +63,14 @@ public final class AnimatorContext {
     }
 }
 
-private protocol AnimatorType: class {
+private protocol Cancelable: class {
     func cancel()
 }
 
-extension Animator: AnimatorType {}
+extension Animator: Cancelable {}
 
 private struct AnimatorWrapper: Hashable {
-    let animator: AnimatorType
+    let animator: Cancelable
     init<A>(animator: Animator<A>) {
         self.animator = animator
     }
