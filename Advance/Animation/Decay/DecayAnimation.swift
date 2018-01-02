@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///
 /// `DecayAnimation` uses a `DynamicSolver` containing a `DecayFunction`
 /// internally.
-public struct DecayAnimation<Value: VectorConvertible>: ValueAnimationType {
+public struct DecayAnimation<Value: VectorConvertible>: ValueAnimation {
     
     fileprivate var solver: DynamicSolver<DecayFunction<Value.Vector>>
     

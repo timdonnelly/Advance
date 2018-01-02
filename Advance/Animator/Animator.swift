@@ -83,7 +83,7 @@ public enum AnimatorResult {
 /// `cancelled` or `finished` event, depending on the result. After entering
 /// the `Completed` state, the animator is finished and no further state changes
 /// can occur.
-public final class Animator<A: AnimationType> {
+public final class Animator<A: Animation> {
     
     fileprivate lazy var subscription: LoopSubscription? = {
         

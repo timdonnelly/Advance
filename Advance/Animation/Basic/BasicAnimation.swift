@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /// Interpolates between values over a specified duration.
 ///
 /// - parameter Value: The type of value to be animated.
-public struct BasicAnimation<Value: VectorConvertible>: ValueAnimationType {
+public struct BasicAnimation<Value: VectorConvertible>: ValueAnimation {
     
     /// The initial value at time 0.
     fileprivate (set) public var from: Value
