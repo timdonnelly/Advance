@@ -57,7 +57,7 @@ public final class Spring<Value: VectorConvertible> {
         }
     }
     
-    fileprivate lazy var subscription: LoopSubscription = {
+    fileprivate lazy var subscription: Loop.Subscription = {
         let s = Loop.shared.subscribe()
         
         s.advanced.observe({ [unowned self] (elapsed) -> Void in

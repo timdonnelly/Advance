@@ -96,7 +96,7 @@ public extension Animator.State {
 /// can occur.
 public final class Animator<A: Animation> {
     
-    fileprivate lazy var subscription: LoopSubscription? = {
+    fileprivate lazy var subscription: Loop.Subscription? = {
         
         let s = Loop.shared.subscribe()
         
