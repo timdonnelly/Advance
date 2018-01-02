@@ -90,8 +90,8 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
     
     fileprivate mutating func settleIfPossible() {
         guard settled == false else { return }
-        if function.canSettle(simulationState.value, velocity: simulationState.velocity) {
-            simulationState.value = function.settledValue(simulationState.value, velocity: simulationState.velocity)
+        if function.canSettle(value: simulationState.value, velocity: simulationState.velocity) {
+            simulationState.value = function.settledValue(value: simulationState.value, velocity: simulationState.velocity)
             simulationState.velocity = F.VectorType.zero
             interpolatedState = simulationState
             settled = true
@@ -209,7 +209,7 @@ private extension DynamicSolverState {
     func evaluate<F: DynamicFunction>(_ function: F, time: Double, derivative: Derivative) -> Derivative where F.VectorType == VectorType {
         let val = value + Scalar(time) * derivative.value
         let vel = velocity + Scalar(time) * derivative.velocity
-        let accel = function.acceleration(val, velocity: vel)
+        let accel = function.acceleration(value: val, velocity: vel)
         let d = Derivative(value: vel, velocity: accel)
         return d
     }
