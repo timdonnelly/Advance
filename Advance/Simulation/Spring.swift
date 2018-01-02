@@ -61,7 +61,7 @@ public final class Spring<Value: VectorConvertible> {
         let s = Loop.shared.subscribe()
         
         s.advanced.observe({ [unowned self] (elapsed) -> Void in
-            self.solver.advance(elapsed)
+            self.solver.advance(by: elapsed)
             if self.solver.settled {
                 self.subscription.paused = true
             }

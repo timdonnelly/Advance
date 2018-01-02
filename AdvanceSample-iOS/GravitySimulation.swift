@@ -57,15 +57,15 @@ private enum GravitySimulationNode: Advanceable {
         }
     }
     
-    mutating func advance(_ elapsed: Double) {
+    mutating func advance(by time: Double) {
         switch self {
         case .static(_):
             break
         case .decay(var sim):
-            sim.advance(elapsed)
+            sim.advance(by: time)
             self = sim.settled ? .`static`(sim.value) : .decay(sim)
         case .pull(var sim):
-            sim.advance(elapsed)
+            sim.advance(by: time)
             self = sim.settled ? .`static`(sim.value) : .pull(sim)
         }
     }
@@ -160,10 +160,10 @@ struct GravitySimulation: Advanceable {
       return CGPoint(vector: nodes[row][col].value)
     }
     
-    mutating func advance(_ elapsed: Double) {
+    mutating func advance(by time: Double) {
         for r in 0..<rows {
             for c in 0..<cols {
-                nodes[r][c].advance(elapsed)
+                nodes[r][c].advance(by: time)
             }
         }
     }

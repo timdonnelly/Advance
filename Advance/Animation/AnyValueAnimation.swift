@@ -53,7 +53,7 @@ public struct AnyValueAnimation<Value: VectorConvertible>: ValueAnimation {
         finished = animation.finished
         advanceFunction = { (time: Double) -> AnyValueAnimation<Value> in
             var a = animation
-            a.advance(time)
+            a.advance(by: time)
             return AnyValueAnimation(animation: a)
         }
     }
@@ -61,7 +61,7 @@ public struct AnyValueAnimation<Value: VectorConvertible>: ValueAnimation {
     /// Advances the animation.
     ///
     /// - parameter elapsed: The time (in seconds) to advance the animation.
-    public mutating func advance(_ time: Double) {
+    public mutating func advance(by time: Double) {
         self = advanceFunction(time)
     }
 }
