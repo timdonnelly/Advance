@@ -33,6 +33,8 @@ import QuartzCore
 /// The animation loop that powers all of the Animation framework.
 public final class Loop {
     
+    fileprivate typealias Observer = (Double)->Void
+    
     /// The default loop.
     public static let shared = Loop()
     
@@ -46,12 +48,7 @@ public final class Loop {
         return link
     }()
     
-    fileprivate var tokens: Set<LoopSubscription.Token> = []
-    
-    /// All currently active subscriptions.
-    public var subscriptions: [LoopSubscription] {
-        return tokens.filter({$0.subscription != nil}).map({ $0.subscription! })
-    }
+    private var observers: [UUID:Observer] = [:]
     
     fileprivate init() {
 
@@ -60,31 +57,31 @@ public final class Loop {
     /// Generates and returns a subscription for this loop.
     ///
     /// **Note that loops are retained by subscriptions.**
-    public func subscribe() -> LoopSubscription {
-        return LoopSubscription(loop: self)
+    public func subscribe() -> Subscription {
+        return Subscription(loop: self)
     }
     
-    fileprivate func add(_ subscription: LoopSubscription) {
-        assert(subscription.loop === self)
-        tokens.insert(subscription.token)
+    fileprivate func observe(with observer: @escaping Observer) -> UUID {
+        let identifier = UUID()
+        observers[identifier] = observer
         startIfNeeded()
+        return identifier
     }
     
-    fileprivate func remove(_ subscription: LoopSubscription) {
-        assert(subscription.loop === self)
-        tokens.remove(subscription.token)
+    fileprivate func removeObserver(for token: UUID) {
+        observers.removeValue(forKey: token)
         stopIfPossible()
     }
     
     fileprivate func startIfNeeded() {
-        guard tokens.count > 0 else { return }
+        guard observers.count > 0 else { return }
         guard displayLink.paused == true else { return }
         displayLink.paused = false
         currentAnimationTime = 0
     }
     
     fileprivate func stopIfPossible() {
-        guard tokens.count == 0 else { return }
+        guard observers.count == 0 else { return }
         guard displayLink.paused == false else { return }
         displayLink.paused = true
     }
@@ -100,73 +97,71 @@ public final class Loop {
         let elapsed = timestamp - currentAnimationTime
         currentAnimationTime = timestamp
         
-        let t = tokens
+        let observers = self.observers.values
         
         // Loop through once to let everything update the animation state...
-        for token in t {
-            guard token.subscription != nil else {
-                tokens.remove(token)
-                continue
-            }
-            token.subscription?.advance(elapsed)
+        for observer in observers {
+            observer(elapsed)
         }
         
-        stopIfPossible()
     }
 }
 
-/// The interface through which consumers can respond to animation loop updates.
-public final class LoopSubscription {
+
+public extension Loop {
     
-    fileprivate final class Token: Hashable {
-        weak var subscription: LoopSubscription?
-        init(subscription: LoopSubscription) {
-            self.subscription = subscription
-        }
-        var hashValue: Int {
-            return Unmanaged.passUnretained(self).toOpaque().hashValue
-        }
+    /// The interface through which consumers can respond to animation loop updates.
+    public final class Subscription {
         
-        static func ==(lhs: Token, rhs: Token) -> Bool {
-            return lhs === rhs
-        }
+        private var observationToken: UUID? = nil
         
-    }
-    
-    fileprivate lazy var token: Token = {
-        return Token(subscription: self)
-    }()
-    
-    /// Fired during the update phase of each turn of the loop. Contains
-    /// the elapsed time for the current animation frame.
-    public let advanced = Event<Double>()
-    
-    /// The associated loop instance.
-    public let loop: Loop
-    
-    /// Any time animation updates are not required, the subscription should
-    /// be paused for efficiency.
-    public var paused: Bool = true {
-        didSet {
-            guard paused != oldValue else { return }
-            if paused {
-                loop.remove(self)
-            } else {
-                loop.add(self)
+        /// Fired during the update phase of each turn of the loop. Contains
+        /// the elapsed time for the current animation frame.
+        public let advanced = Event<Double>()
+        
+        /// The associated loop instance.
+        public let loop: Loop
+        
+        /// Any time animation updates are not required, the subscription should
+        /// be paused for efficiency.
+        public var paused: Bool = true {
+            didSet {
+                guard paused != oldValue else { return }
+                if paused {
+                    unsubscribe()
+                } else {
+                    subscribe()
+                }
             }
         }
+        
+        fileprivate init(loop: Loop) {
+            self.loop = loop
+        }
+        
+        deinit {
+            unsubscribe()
+        }
+        
+        fileprivate func advance(_ elapsed: Double) {
+            advanced.fire(value: elapsed)
+        }
+        
+        private func subscribe() {
+            guard observationToken == nil else { return }
+            observationToken = loop.observe(with: { [unowned self] (time) in
+                self.advance(time)
+            })
+        }
+        
+        private func unsubscribe() {
+            guard let token = observationToken else { return }
+            loop.removeObserver(for: token)
+            observationToken = nil
+        }
+        
     }
     
-    fileprivate init(loop: Loop) {
-        self.loop = loop
-    }
-    
-    deinit {
-        paused = true
-    }
-    
-    fileprivate func advance(_ elapsed: Double) {
-        advanced.fire(value: elapsed)
-    }
-
 }
+
+
