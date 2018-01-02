@@ -30,7 +30,7 @@ import Foundation
 import CoreGraphics
 
 /// Conforming types can be used to convert linear input time (`0.0 -> 1.0`) to transformed output time (also `0.0 -> 1.0`).
-public protocol TimingFunctionType {
+public protocol TimingFunction {
     
     /// Transforms the given time.
     ///
@@ -41,7 +41,7 @@ public protocol TimingFunctionType {
 }
 
 /// Returns the input time, unmodified.
-public struct LinearTimingFunction: TimingFunctionType {
+public struct LinearTimingFunction: TimingFunction {
     
     /// Creates a new instance of `LinearTimingFunction`.
     public init(){}
@@ -53,7 +53,7 @@ public struct LinearTimingFunction: TimingFunctionType {
 }
 
 /// Output time is calculated as `(1.0-x)`.
-public struct ReversedTimingFunction: TimingFunctionType {
+public struct ReversedTimingFunction: TimingFunction {
     /// Creates a new instance of `ReversedTimingFunction`.
     public init(){}
     
@@ -64,7 +64,7 @@ public struct ReversedTimingFunction: TimingFunctionType {
 }
 
 
-extension UnitBezier: TimingFunctionType {
+extension UnitBezier: TimingFunction {
     
     /// Solves for time `x`.
     public func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar {

@@ -28,7 +28,7 @@
 
 import QuartzCore
 
-extension CAMediaTimingFunction: TimingFunctionType {
+extension CAMediaTimingFunction: TimingFunction {
     
     /// Solves for the given time with the specified precision.
     public func solveForTime(_ x: Scalar, epsilon: Scalar) -> Scalar {
