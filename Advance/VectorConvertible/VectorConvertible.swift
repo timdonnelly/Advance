@@ -31,20 +31,20 @@ public protocol VectorConvertible: Equatable, Interpolatable {
     
     /// The concrete VectorType implementation that can represent the 
     /// conforming type.
-    associatedtype Vector: VectorType
+    associatedtype VectorType: Vector
     
     /// Creates a new instance from a vector.
-    init(vector: Vector)
+    init(vector: VectorType)
     
     /// The vector representation of this instance.
-    var vector: Vector { get }
+    var vector: VectorType { get }
 }
 
 public extension VectorConvertible {
     
     /// Returns an instance initialized using the zero vector.
     public static var zero: Self {
-        return Self(vector: Vector.zero)
+        return Self(vector: VectorType.zero)
     }
 }
 

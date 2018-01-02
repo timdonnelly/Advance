@@ -33,7 +33,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /// internally.
 public struct DecayAnimation<Value: VectorConvertible>: ValueAnimation {
     
-    fileprivate var solver: DynamicSolver<DecayFunction<Value.Vector>>
+    fileprivate var solver: DynamicSolver<DecayFunction<Value.VectorType>>
     
     /// Creates a new `DecayAnimation` instance.
     ///
@@ -42,7 +42,7 @@ public struct DecayAnimation<Value: VectorConvertible>: ValueAnimation {
     /// - parameter from: The initial value of the animation.
     /// - parameter velocity: The velocity at time `0`.
     public init(threshold: Scalar = 0.1, from: Value = Value.zero, velocity: Value = Value.zero) {
-        var f = DecayFunction<Value.Vector>()
+        var f = DecayFunction<Value.VectorType>()
         f.threshold = threshold
         f.drag = 3.0
         solver = DynamicSolver(function: f, value: from.vector, velocity: velocity.vector)

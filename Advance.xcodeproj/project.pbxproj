@@ -10,7 +10,7 @@
 		2212A2F11C82702500BB79F4 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212A2F01C82702500BB79F4 /* ActivityView.swift */; };
 		22142E651C810D86000C6DEB /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22142E641C810D86000C6DEB /* ActivityViewController.swift */; };
 		22142E671C810DA7000C6DEB /* GravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22142E661C810DA7000C6DEB /* GravityViewController.swift */; };
-		22168B5B1C7A547300BAE519 /* VectorTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5A1C7A547300BAE519 /* VectorTypeTests.swift */; };
+		22168B5B1C7A547300BAE519 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5A1C7A547300BAE519 /* VectorTests.swift */; };
 		22168B5D1C7A5E3500BAE519 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5C1C7A5E3500BAE519 /* BasicAnimationTests.swift */; };
 		222E211D1C7D4C300063FAA2 /* SimpleTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E211C1C7D4C300063FAA2 /* SimpleTransform.swift */; };
 		222E211F1C7D8CF00063FAA2 /* SpringConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E211E1C7D8CF00063FAA2 /* SpringConfigurationView.swift */; };
@@ -43,7 +43,7 @@
 		228E20541C9CB99D0058ADA1 /* DecayAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */; };
 		228E20551C9CB99D0058ADA1 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */; };
 		228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
-		228E20571C9CB99D0058ADA1 /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* VectorType.swift */; };
+		228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
 		228E20581C9CB99D0058ADA1 /* Double+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double+VectorConvertible.swift */; };
 		228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */; };
 		228E205A1C9CB99D0058ADA1 /* CGRect+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect+VectorConvertible.swift */; };
@@ -60,7 +60,7 @@
 		228E20731C9CB9B00058ADA1 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */; };
 		228E20741C9CB9B00058ADA1 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
 		228E20751C9CB9B00058ADA1 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
-		228E20761C9CB9B00058ADA1 /* VectorTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5A1C7A547300BAE519 /* VectorTypeTests.swift */; };
+		228E20761C9CB9B00058ADA1 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5A1C7A547300BAE519 /* VectorTests.swift */; };
 		228E20771C9CB9B00058ADA1 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5C1C7A5E3500BAE519 /* BasicAnimationTests.swift */; };
 		228E20781C9CB9B00058ADA1 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* EventTests.swift */; };
 		228E20791C9CB9B00058ADA1 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F471C80DAA00039B9BB /* VectorConvenienceTests.swift */; };
@@ -113,7 +113,7 @@
 		5D3A2F561C920CCA0071F08F /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48D1C876AD1000CF9EE /* Vector3.swift */; };
 		5D3A2F571C920CCA0071F08F /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48E1C876AD1000CF9EE /* Vector4.swift */; };
 		5D3A2F581C920CCA0071F08F /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
-		5D3A2F591C920CCA0071F08F /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* VectorType.swift */; };
+		5D3A2F591C920CCA0071F08F /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
 		5D3A2F5A1C920CCA0071F08F /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */; };
 		5D3A2F5F1C922DAA0071F08F /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
 		5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
@@ -159,11 +159,11 @@
 		5DB1A4B01C876AD1000CF9EE /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48D1C876AD1000CF9EE /* Vector3.swift */; };
 		5DB1A4B11C876AD1000CF9EE /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48E1C876AD1000CF9EE /* Vector4.swift */; };
 		5DB1A4B21C876AD1000CF9EE /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
-		5DB1A4B31C876AD1000CF9EE /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* VectorType.swift */; };
+		5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
 		5DE959E91C9388B9008487A8 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
 		5DE959F51C9392E1008487A8 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A2F311C9209EE0071F08F /* Advance.framework */; };
 		5DE959FC1C93940E008487A8 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* EventTests.swift */; };
-		5DE959FD1C93940E008487A8 /* VectorTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5A1C7A547300BAE519 /* VectorTypeTests.swift */; };
+		5DE959FD1C93940E008487A8 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5A1C7A547300BAE519 /* VectorTests.swift */; };
 		5DE959FE1C93940E008487A8 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F471C80DAA00039B9BB /* VectorConvenienceTests.swift */; };
 		5DE959FF1C93940E008487A8 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5C1C7A5E3500BAE519 /* BasicAnimationTests.swift */; };
 		5DE95A001C93940E008487A8 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
@@ -283,7 +283,7 @@
 		2212A2F01C82702500BB79F4 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		22142E641C810D86000C6DEB /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		22142E661C810DA7000C6DEB /* GravityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityViewController.swift; sourceTree = "<group>"; };
-		22168B5A1C7A547300BAE519 /* VectorTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTypeTests.swift; sourceTree = "<group>"; };
+		22168B5A1C7A547300BAE519 /* VectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTests.swift; sourceTree = "<group>"; };
 		22168B5C1C7A5E3500BAE519 /* BasicAnimationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimationTests.swift; sourceTree = "<group>"; };
 		222E211C1C7D4C300063FAA2 /* SimpleTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTransform.swift; sourceTree = "<group>"; };
 		222E211E1C7D8CF00063FAA2 /* SpringConfigurationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringConfigurationView.swift; sourceTree = "<group>"; };
@@ -363,7 +363,7 @@
 		5DB1A48D1C876AD1000CF9EE /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		5DB1A48E1C876AD1000CF9EE /* Vector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector4.swift; sourceTree = "<group>"; };
 		5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorMathCapable.swift; sourceTree = "<group>"; };
-		5DB1A4901C876AD1000CF9EE /* VectorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorType.swift; sourceTree = "<group>"; };
+		5DB1A4901C876AD1000CF9EE /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLinkTests.swift; sourceTree = "<group>"; };
 		5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdvanceTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE959F41C9392E1008487A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -566,7 +566,7 @@
 			isa = PBXGroup;
 			children = (
 				5DA94F4E1C8114680039B9BB /* EventTests.swift */,
-				22168B5A1C7A547300BAE519 /* VectorTypeTests.swift */,
+				22168B5A1C7A547300BAE519 /* VectorTests.swift */,
 				5DA94F471C80DAA00039B9BB /* VectorConvenienceTests.swift */,
 				22168B5C1C7A5E3500BAE519 /* BasicAnimationTests.swift */,
 				5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */,
@@ -742,7 +742,7 @@
 				5DB1A48D1C876AD1000CF9EE /* Vector3.swift */,
 				5DB1A48E1C876AD1000CF9EE /* Vector4.swift */,
 				5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */,
-				5DB1A4901C876AD1000CF9EE /* VectorType.swift */,
+				5DB1A4901C876AD1000CF9EE /* Vector.swift */,
 				5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */,
 			);
 			path = Vectors;
@@ -1127,7 +1127,7 @@
 				228E20541C9CB99D0058ADA1 /* DecayAnimation.swift in Sources */,
 				228E20551C9CB99D0058ADA1 /* SpringAnimation.swift in Sources */,
 				228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */,
-				228E20571C9CB99D0058ADA1 /* VectorType.swift in Sources */,
+				228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */,
 				228E20581C9CB99D0058ADA1 /* Double+VectorConvertible.swift in Sources */,
 				228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */,
 				228E205A1C9CB99D0058ADA1 /* CGRect+VectorConvertible.swift in Sources */,
@@ -1151,7 +1151,7 @@
 				228E20731C9CB9B00058ADA1 /* CAMediaTimingFunctionTests.swift in Sources */,
 				228E20741C9CB9B00058ADA1 /* UnitBezierTests.swift in Sources */,
 				228E20751C9CB9B00058ADA1 /* DisplayLinkTests.swift in Sources */,
-				228E20761C9CB9B00058ADA1 /* VectorTypeTests.swift in Sources */,
+				228E20761C9CB9B00058ADA1 /* VectorTests.swift in Sources */,
 				228E20771C9CB9B00058ADA1 /* BasicAnimationTests.swift in Sources */,
 				228E20781C9CB9B00058ADA1 /* EventTests.swift in Sources */,
 				228E20791C9CB9B00058ADA1 /* VectorConvenienceTests.swift in Sources */,
@@ -1216,7 +1216,7 @@
 				5DB1A4981C876AD1000CF9EE /* DecayAnimation.swift in Sources */,
 				5DB1A4991C876AD1000CF9EE /* SpringAnimation.swift in Sources */,
 				5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */,
-				5DB1A4B31C876AD1000CF9EE /* VectorType.swift in Sources */,
+				5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */,
 				5DB1A4AB1C876AD1000CF9EE /* Double+VectorConvertible.swift in Sources */,
 				5DB1A4941C876AD1000CF9EE /* AnyValueAnimation.swift in Sources */,
 				5DB1A4A81C876AD1000CF9EE /* CGRect+VectorConvertible.swift in Sources */,
@@ -1240,7 +1240,7 @@
 				5DA94F4D1C8112810039B9BB /* CAMediaTimingFunctionTests.swift in Sources */,
 				5DA94F4B1C80E2700039B9BB /* UnitBezierTests.swift in Sources */,
 				5DE959E91C9388B9008487A8 /* DisplayLinkTests.swift in Sources */,
-				22168B5B1C7A547300BAE519 /* VectorTypeTests.swift in Sources */,
+				22168B5B1C7A547300BAE519 /* VectorTests.swift in Sources */,
 				22168B5D1C7A5E3500BAE519 /* BasicAnimationTests.swift in Sources */,
 				5DA94F4F1C8114680039B9BB /* EventTests.swift in Sources */,
 				5DA94F481C80DAA00039B9BB /* VectorConvenienceTests.swift in Sources */,
@@ -1258,7 +1258,7 @@
 				5D3A2F4C1C920CBC0071F08F /* SpringFunction.swift in Sources */,
 				5D3A2F391C920C710071F08F /* Animatable.swift in Sources */,
 				5D3A2F3A1C920C7C0071F08F /* BasicAnimation.swift in Sources */,
-				5D3A2F591C920CCA0071F08F /* VectorType.swift in Sources */,
+				5D3A2F591C920CCA0071F08F /* Vector.swift in Sources */,
 				5D3A2F3F1C920C8C0071F08F /* Animation.swift in Sources */,
 				5D3A2F4F1C920CC20071F08F /* CGFloat+VectorConvertible.swift in Sources */,
 				5D3A2F531C920CC20071F08F /* CGVector+VectorConvertible.swift in Sources */,
@@ -1308,7 +1308,7 @@
 				5DE95A021C93940E008487A8 /* DisplayLinkTests.swift in Sources */,
 				5DE95A011C93940E008487A8 /* CAMediaTimingFunctionTests.swift in Sources */,
 				5DE959FF1C93940E008487A8 /* BasicAnimationTests.swift in Sources */,
-				5DE959FD1C93940E008487A8 /* VectorTypeTests.swift in Sources */,
+				5DE959FD1C93940E008487A8 /* VectorTests.swift in Sources */,
 				5DE959FC1C93940E008487A8 /* EventTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

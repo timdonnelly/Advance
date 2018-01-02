@@ -70,18 +70,18 @@ public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
     fileprivate (set) public var settled: Bool = false
     
     // The current state of the solver.
-    fileprivate var simulationState: DynamicSolverState<F.Vector>
+    fileprivate var simulationState: DynamicSolverState<F.VectorType>
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    fileprivate var interpolatedState: DynamicSolverState<F.Vector>
+    fileprivate var interpolatedState: DynamicSolverState<F.VectorType>
     
     /// Creates a new `DynamicSolver` instance.
     ///
     /// - parameter function: The function that will drive the simulation.
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
-    public init(function: F, value: F.Vector, velocity: F.Vector = F.Vector.zero) {
+    public init(function: F, value: F.VectorType, velocity: F.VectorType = F.VectorType.zero) {
         self.function = function
         simulationState = DynamicSolverState(value: value, velocity: velocity)
         interpolatedState = simulationState
@@ -92,7 +92,7 @@ public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
         guard settled == false else { return }
         if function.canSettle(simulationState.value, velocity: simulationState.velocity) {
             simulationState.value = function.settledValue(simulationState.value, velocity: simulationState.velocity)
-            simulationState.velocity = F.Vector.zero
+            simulationState.velocity = F.VectorType.zero
             interpolatedState = simulationState
             settled = true
         }
@@ -148,7 +148,7 @@ public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
     }
     
     /// The current value.
-    public var value: F.Vector {
+    public var value: F.VectorType {
         get { return interpolatedState.value }
         set {
             interpolatedState.value = newValue
@@ -159,7 +159,7 @@ public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
     }
     
     /// The current velocity.
-    public var velocity: F.Vector {
+    public var velocity: F.VectorType {
         get { return interpolatedState.velocity }
         set {
             interpolatedState.velocity = newValue
@@ -170,21 +170,21 @@ public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
     }
 }
 
-private struct DynamicSolverState<Vector: VectorType> {
-    var value: Vector
-    var velocity: Vector
-    init(value: Vector, velocity: Vector) {
+private struct DynamicSolverState<VectorType: Vector> {
+    var value: VectorType
+    var velocity: VectorType
+    init(value: VectorType, velocity: VectorType) {
         self.value = value
         self.velocity = velocity
     }
 }
 
 private extension DynamicSolverState {
-    typealias Derivative = DynamicSolverState<Vector>
+    typealias Derivative = DynamicSolverState<VectorType>
     
     /// RK4 Integration.
-    func integrate<F: DynamicFunctionType>(_ function: F, time: Double) -> DynamicSolverState<Vector> where F.Vector == Vector {
-        let initial = Derivative(value:Vector.zero, velocity: Vector.zero)
+    func integrate<F: DynamicFunctionType>(_ function: F, time: Double) -> DynamicSolverState<VectorType> where F.VectorType == VectorType {
+        let initial = Derivative(value:VectorType.zero, velocity: VectorType.zero)
         
         let a = evaluate(function, time: 0.0, derivative: initial)
         let b = evaluate(function, time: time * 0.5, derivative: a)
@@ -206,7 +206,7 @@ private extension DynamicSolverState {
         return DynamicSolverState(value: val, velocity: vel)
     }
     
-    func evaluate<F: DynamicFunctionType>(_ function: F, time: Double, derivative: Derivative) -> Derivative where F.Vector == Vector {
+    func evaluate<F: DynamicFunctionType>(_ function: F, time: Double, derivative: Derivative) -> Derivative where F.VectorType == VectorType {
         let val = value + Scalar(time) * derivative.value
         let vel = velocity + Scalar(time) * derivative.velocity
         let accel = function.acceleration(val, velocity: vel)

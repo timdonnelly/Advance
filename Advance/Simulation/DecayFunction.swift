@@ -27,7 +27,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /// Gradually reduces velocity until it equals `Vector.zero`.
-public struct DecayFunction<Vector: VectorType>: DynamicFunctionType {
+public struct DecayFunction<VectorType: Vector>: DynamicFunctionType {
     
     /// How close to 0 each component of the velocity must be before the
     /// simulation is allowed to settle.
@@ -40,19 +40,19 @@ public struct DecayFunction<Vector: VectorType>: DynamicFunctionType {
     public init() {}
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(_ value: Vector, velocity: Vector) -> Vector {
+    public func acceleration(_ value: VectorType, velocity: VectorType) -> VectorType {
         return -drag * velocity
     }
     
     /// Returns `true` if the simulation can become settled.
-    public func canSettle(_ value: Vector, velocity: Vector) -> Bool {
-        let min = Vector(scalar: -threshold)
-        let max = Vector(scalar: threshold)
+    public func canSettle(_ value: VectorType, velocity: VectorType) -> Bool {
+        let min = VectorType(scalar: -threshold)
+        let max = VectorType(scalar: threshold)
         return velocity.clamped(min: min, max: max) == velocity
     }
     
     /// Returns the value to settle on.
-    public func settledValue(_ value: Vector, velocity: Vector) -> Vector {
+    public func settledValue(_ value: VectorType, velocity: VectorType) -> VectorType {
         return value
     }
 }

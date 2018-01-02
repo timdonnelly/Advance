@@ -2,7 +2,7 @@ import XCTest
 @testable import Advance
 
 
-class VectorTypeTests: XCTestCase {
+class VectorTests: XCTestCase {
     func testVector1() {
         XCTAssert(Vector1.length == 1)
         VectorTester<Vector1>.runTests()
@@ -25,7 +25,7 @@ class VectorTypeTests: XCTestCase {
 }
 
 
-struct VectorTester<T: VectorType> {
+struct VectorTester<T: Vector> {
     static func runTests() {
         testScalarInit()
         testZero()

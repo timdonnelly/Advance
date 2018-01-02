@@ -41,7 +41,7 @@
 public struct SpringAnimation<Value: VectorConvertible>: ValueAnimation {
     
     // The underlying spring simulation.
-    fileprivate var solver: DynamicSolver<SpringFunction<Value.Vector>>
+    fileprivate var solver: DynamicSolver<SpringFunction<Value.VectorType>>
     
     /// Creates a new `SpringAnimation` instance.
     ///

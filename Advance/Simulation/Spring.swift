@@ -46,11 +46,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /// s.target = CGPoint(x: 100.0, y: 200.0)
 /// // Off it goes!
 /// ```
-public final class Spring<T: VectorConvertible> {
+public final class Spring<Value: VectorConvertible> {
     
-    fileprivate var solver: DynamicSolver<SpringFunction<T.Vector>> {
+    fileprivate var solver: DynamicSolver<SpringFunction<Value.VectorType>> {
         didSet {
-            lastNotifiedValue = T(vector: solver.value)
+            lastNotifiedValue = Value(vector: solver.value)
             if solver.settled == false && subscription.paused == true {
                 subscription.paused = false
             }
@@ -71,9 +71,9 @@ public final class Spring<T: VectorConvertible> {
     }()
     
     /// Fires when `value` has changed.
-    public let changed = Event<T>()
+    public let changed = Event<Value>()
     
-    fileprivate var lastNotifiedValue: T {
+    fileprivate var lastNotifiedValue: Value {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
             changed.fire(lastNotifiedValue)
@@ -85,14 +85,14 @@ public final class Spring<T: VectorConvertible> {
     /// - parameter value: The initial value of the spring. The spring will be
     ///   initialized with `target` and `value` equal to the given value, and
     ///   a velocity of `0`.
-    public init(value: T) {
+    public init(value: Value) {
         let f = SpringFunction(target: value.vector)
         solver = DynamicSolver(function: f, value: value.vector)
         lastNotifiedValue = value
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
-    public func reset(_ value: T) {
+    public func reset(_ value: Value) {
         var f = solver.function
         f.target = value.vector
         solver = DynamicSolver(function: f, value: value.vector)
@@ -100,21 +100,21 @@ public final class Spring<T: VectorConvertible> {
     }
     
     /// The current value of the spring.
-    public var value: T {
-        get { return T(vector: solver.value) }
+    public var value: Value {
+        get { return Value(vector: solver.value) }
         set { solver.value = newValue.vector }
     }
     
     /// The current velocity of the simulation.
-    public var velocity: T {
-        get { return T(vector: solver.velocity) }
+    public var velocity: Value {
+        get { return Value(vector: solver.velocity) }
         set { solver.velocity = newValue.vector }
     }
     
     /// The target value of the spring. As the simulation runs, `value` will be 
     /// pulled toward this value.
-    public var target: T {
-        get { return T(vector: solver.function.target) }
+    public var target: Value {
+        get { return Value(vector: solver.function.target) }
         set { solver.function.target = newValue.vector }
     }
     
