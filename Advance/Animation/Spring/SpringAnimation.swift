@@ -57,8 +57,8 @@ public struct SpringAnimation<Value: VectorConvertible>: ValueAnimation {
     /// Advances the animation.
     ///
     /// - parameter elapsed: The time (in seconds) to advance the animation.
-    public mutating func advance(_ elapsed: Double) {
-        solver.advance(elapsed)
+    public mutating func advance(by time: Double) {
+        solver.advance(by: time)
     }
     
     /// Returns `true` if the spring has reached a settled state.

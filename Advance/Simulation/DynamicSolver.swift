@@ -102,11 +102,11 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
     ///
     /// - parameter elapsed: The duration by which to advance the simulation
     ///   in seconds.
-    public mutating func advance(_ elapsed: Double) {
+    public mutating func advance(by time: Double) {
         guard settled == false else { return }
         
         // Limit to 10 physics ticks per update, should never come close.
-        let t = min(elapsed, tickTime * 10.0)
+        let t = min(time, tickTime * 10.0)
         
         // Add the new time to the accumulator. This can be thought of as the
         // delta between the time of the current physics state, and the time

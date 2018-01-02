@@ -91,7 +91,7 @@ public final class Animator<A: Animation> {
         
         s.advanced.observe({ [unowned self] (elapsed) -> Void in
             guard self.state == .running else { return }
-            self.animation.advance(elapsed)
+            self.animation.advance(by: elapsed)
             self.changed.fire(self.animation)
             if self.animation.finished == true {
                 self.finish()

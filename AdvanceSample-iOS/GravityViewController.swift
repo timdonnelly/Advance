@@ -44,7 +44,7 @@ class GravityViewController: DemoViewController {
         let s = Loop.shared.subscribe()
         
         s.advanced.observe({ [unowned self] (elapsed) -> Void in
-            self.simulation.advance(elapsed)
+            self.simulation.advance(by: elapsed)
             if self.simulation.settled {
                 self.subscription.paused = true
             }
