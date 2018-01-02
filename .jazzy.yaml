@@ -45,6 +45,7 @@ custom_categories:
     - DecayFunction
     - DynamicSolver
     - DynamicFunctionType
+    - DynamicState
     - Spring
     - SpringFunction
     - SpringConfiguration

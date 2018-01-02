@@ -18,6 +18,9 @@
 		222E21231C7E448D0063FAA2 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E21221C7E448D0063FAA2 /* DemoViewController.swift */; };
 		222E21251C7E45420063FAA2 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E21241C7E45420063FAA2 /* BrowserView.swift */; };
 		22319B721C8110A300D4E027 /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22319B711C8110A300D4E027 /* CoverView.swift */; };
+		2239A2A51FFB1B0D0046E89E /* DynamicState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239A2A41FFB1B0D0046E89E /* DynamicState.swift */; };
+		2239A2A61FFB1B0D0046E89E /* DynamicState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239A2A41FFB1B0D0046E89E /* DynamicState.swift */; };
+		2239A2A71FFB1B0D0046E89E /* DynamicState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239A2A41FFB1B0D0046E89E /* DynamicState.swift */; };
 		223E49731C76C9430048CAB6 /* SpringsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49721C76C9430048CAB6 /* SpringsViewController.swift */; };
 		223E49751C76C9510048CAB6 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49741C76C9510048CAB6 /* SpringView.swift */; };
 		226A752C1C84153E00A7F1FB /* GravitySimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752B1C84153E00A7F1FB /* GravitySimulation.swift */; };
@@ -291,6 +294,7 @@
 		222E21221C7E448D0063FAA2 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		222E21241C7E45420063FAA2 /* BrowserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 		22319B711C8110A300D4E027 /* CoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
+		2239A2A41FFB1B0D0046E89E /* DynamicState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicState.swift; sourceTree = "<group>"; };
 		223E49721C76C9430048CAB6 /* SpringsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringsViewController.swift; sourceTree = "<group>"; };
 		223E49741C76C9510048CAB6 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
 		226A752B1C84153E00A7F1FB /* GravitySimulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravitySimulation.swift; sourceTree = "<group>"; };
@@ -713,6 +717,7 @@
 				5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */,
 				5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */,
 				5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */,
+				2239A2A41FFB1B0D0046E89E /* DynamicState.swift */,
 				5DB1A47F1C876AD1000CF9EE /* Spring.swift */,
 				5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */,
 			);
@@ -1131,6 +1136,7 @@
 				228E20581C9CB99D0058ADA1 /* Double+VectorConvertible.swift in Sources */,
 				228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */,
 				228E205A1C9CB99D0058ADA1 /* CGRect+VectorConvertible.swift in Sources */,
+				2239A2A61FFB1B0D0046E89E /* DynamicState.swift in Sources */,
 				228E205B1C9CB99D0058ADA1 /* VectorMathCapable.swift in Sources */,
 				228E205C1C9CB99D0058ADA1 /* CGPoint+VectorConvertible.swift in Sources */,
 				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
@@ -1220,6 +1226,7 @@
 				5DB1A4AB1C876AD1000CF9EE /* Double+VectorConvertible.swift in Sources */,
 				5DB1A4941C876AD1000CF9EE /* AnyValueAnimation.swift in Sources */,
 				5DB1A4A81C876AD1000CF9EE /* CGRect+VectorConvertible.swift in Sources */,
+				2239A2A51FFB1B0D0046E89E /* DynamicState.swift in Sources */,
 				5DB1A4B21C876AD1000CF9EE /* VectorMathCapable.swift in Sources */,
 				5DB1A4A71C876AD1000CF9EE /* CGPoint+VectorConvertible.swift in Sources */,
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
@@ -1276,6 +1283,7 @@
 				5D3A2F511C920CC20071F08F /* CGRect+VectorConvertible.swift in Sources */,
 				5D3A2F491C920CBC0071F08F /* DynamicFunction.swift in Sources */,
 				5D3A2F501C920CC20071F08F /* CGPoint+VectorConvertible.swift in Sources */,
+				2239A2A71FFB1B0D0046E89E /* DynamicState.swift in Sources */,
 				5D3A2F581C920CCA0071F08F /* VectorMathCapable.swift in Sources */,
 				5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */,
 				5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */,
