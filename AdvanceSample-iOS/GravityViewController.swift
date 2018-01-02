@@ -106,7 +106,7 @@ class GravityViewController: DemoViewController {
         
         for r in 0..<simulation.rows {
             for c in 0..<simulation.cols {
-                let position = simulation.getPosition(r, col: c)
+                let position = simulation.getPosition(row: r, col: c)
                 nodeLayers[r][c].position = position
             }
         }
@@ -127,7 +127,7 @@ class GravityViewController: DemoViewController {
     }
     
     @objc dynamic func reset() {
-        simulation.reset(view.bounds.insetBy(dx: 64.0, dy: 128.0))
+        simulation.reset(layoutBounds: view.bounds.insetBy(dx: 64.0, dy: 128.0))
     }
     
     override func didEnterFullScreen() {

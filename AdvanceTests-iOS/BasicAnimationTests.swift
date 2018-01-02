@@ -25,7 +25,7 @@ class BasicAnimationTests: XCTestCase {
             elapsed += 0.1
             a.advance(by: 0.1)
             guard elapsed < a.duration else { break }
-            let current = a.from.interpolatedTo(a.to, alpha: elapsed/a.duration)
+            let current = a.from.interpolated(to: a.to, alpha: elapsed/a.duration)
             XCTAssert(a.value == current)
         }
         XCTAssert(a.value == a.to)

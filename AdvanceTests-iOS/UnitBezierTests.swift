@@ -10,7 +10,7 @@ class UnitBezierTests : XCTestCase {
         let b = UnitBezier(p1x: 0.0, p1y: 0.0, p2x: 1.0, p2y: 1.0)
         
         for i in 0..<values.count {
-            let v = b.solve(Scalar(i) / Scalar(values.count - 1), epsilon: eps)
+            let v = b.solve(x: Scalar(i) / Scalar(values.count - 1), epsilon: eps)
             let expected = values[i]
             XCTAssertEqual(v, expected, accuracy: eps)
         }
@@ -21,7 +21,7 @@ class UnitBezierTests : XCTestCase {
         let b = UnitBezier(p1x: 0.42, p1y: 0.0, p2x: 0.58, p2y: 1.0) // ease in/out
         
         for i in 0..<values.count {
-            let v = b.solve(Scalar(i) / Scalar(values.count - 1), epsilon: eps)
+            let v = b.solve(x: Scalar(i) / Scalar(values.count - 1), epsilon: eps)
             let expected = values[i]
             XCTAssertEqual(v, expected, accuracy: eps)
         }

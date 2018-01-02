@@ -20,7 +20,7 @@ class EventTests : XCTestCase {
             exp2.fulfill()
             }, key: "keyed")
         
-        event.fire(payload)
+        event.fire(value: payload)
         XCTAssertFalse(event.closed)
         
         waitForExpectations(timeout: 3.0) { (error) -> Void in
@@ -38,7 +38,7 @@ class EventTests : XCTestCase {
             exp.fulfill()
         }
         
-        event.close(payload)
+        event.close(value: payload)
         XCTAssertTrue(event.closed)
         
         waitForExpectations(timeout: 3.0) { (error) -> Void in

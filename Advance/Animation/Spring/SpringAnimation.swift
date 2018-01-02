@@ -104,10 +104,10 @@ public extension Animatable {
     /// - parameter configuration: A spring configuration instance to use.
     /// - parameter completion: A closure that will be called at the end of the
     ///   animation.
-    public func springTo(_ to: Value, initialVelocity: Value? = nil, configuration: SpringConfiguration = SpringConfiguration(), completion: Completion? = nil) {
-        var a = SpringAnimation(from: value, target: to, velocity: initialVelocity ?? velocity)
+    public func spring(to target: Value, initialVelocity: Value? = nil, configuration: SpringConfiguration = SpringConfiguration(), completion: Completion? = nil) {
+        var a = SpringAnimation(from: value, target: target, velocity: initialVelocity ?? velocity)
         a.configuration = configuration
-        animate(a, completion: completion)
+        animate(with: a, completion: completion)
     }
 }
 
@@ -118,8 +118,8 @@ public extension VectorConvertible {
     /// - parameter to: The value to animate to.
     /// - parameter callback: A closure that will be called at each step of the animation.
     /// - returns: The animator instance that is powering the animation.
-    public func springTo(_ to: Self, configuration: SpringConfiguration, callback: @escaping (Self) -> Void) -> Animator<SpringAnimation<Self>> {
-        var a = SpringAnimation(from: self, target: to, velocity: Self.zero)
+    public func spring(to target: Self, configuration: SpringConfiguration, callback: @escaping (Self) -> Void) -> Animator<SpringAnimation<Self>> {
+        var a = SpringAnimation(from: self, target: target, velocity: Self.zero)
         a.configuration = configuration
         let animator = AnimatorContext.shared.animate(a)
         animator.changed.observe({ (a) -> Void in

@@ -58,14 +58,14 @@ extension Vector1: Vector {
     }
     
     /// Interpolate between the given values.
-    public func interpolatedTo(_ to: Vector1, alpha: Scalar) -> Vector1 {
+    public func interpolated(to otherValue: Vector1, alpha: Scalar) -> Vector1 {
         var result = self
-        result.interpolateTo(to, alpha: alpha)
+        result.interpolate(to: otherValue, alpha: alpha)
         return result
     }
     
     /// Interpolate between the given values.
-    public mutating func interpolateTo(_ to: Vector1, alpha: Scalar) {
-        self += alpha * (to - self)
+    public mutating func interpolate(to otherValue: Vector1, alpha: Scalar) {
+        self += alpha * (otherValue - self)
     }
 }

@@ -31,7 +31,7 @@ import CoreGraphics
 
 
 /// A bezier curve, often used to calculate timing functions.
-public struct UnitBezier {
+public struct UnitBezier: Equatable {
     
     /// The horizontal component of the first control point.
     public var p1x: Scalar
@@ -58,20 +58,21 @@ public struct UnitBezier {
     /// - parameter x: The value to solve for.
     /// - parameter epsilon: The required precision of the result (where `x * epsilon` is the maximum time segment to be evaluated).
     /// - returns: The solved `y` value.
-    public func solve(_ x: Scalar, epsilon: Scalar) -> Scalar {
-        return UnitBezierSolver(bezier: self).solve(x, eps: epsilon)
+    public func solve(x: Scalar, epsilon: Scalar) -> Scalar {
+        return UnitBezierSolver(bezier: self).solve(x: x, eps: epsilon)
     }
+    
+    /// Equatable.
+    public static func ==(lhs: UnitBezier, rhs: UnitBezier) -> Bool {
+        return lhs.p1x == rhs.p1x
+            && lhs.p1y == rhs.p1y
+            && lhs.p2x == rhs.p2x
+            && lhs.p2y == rhs.p2y
+    }
+
 }
 
-extension UnitBezier: Equatable { }
 
-/// Equatable.
-public func ==(lhs: UnitBezier, rhs: UnitBezier) -> Bool {
-    return lhs.p1x == rhs.p1x
-        && lhs.p1y == rhs.p1y
-        && lhs.p2x == rhs.p2x
-        && lhs.p2y == rhs.p2y
-}
 
 
 // Ported to Swift from WebCore:
@@ -129,19 +130,19 @@ private struct UnitBezierSolver {
         ay = 1.0 - cy - by
     }
     
-    func sampleCurveX(_ t: Scalar) -> Scalar {
+    func sampleCurveX(t: Scalar) -> Scalar {
         return ((ax * t + bx) * t + cx) * t
     }
     
-    func sampleCurveY(_ t: Scalar) -> Scalar {
+    func sampleCurveY(t: Scalar) -> Scalar {
         return ((ay * t + by) * t + cy) * t
     }
     
-    func sampleCurveDerivativeX(_ t: Scalar) -> Scalar {
+    func sampleCurveDerivativeX(t: Scalar) -> Scalar {
         return (3.0 * ax * t + 2.0 * bx) * t + cx
     }
     
-    func solveCurveX(_ x: Scalar, eps: Scalar) -> Scalar {
+    func solveCurveX(x: Scalar, eps: Scalar) -> Scalar {
         var t0: Scalar = 0.0
         var t1: Scalar = 0.0
         var t2: Scalar = 0.0
@@ -151,11 +152,11 @@ private struct UnitBezierSolver {
         // First try a few iterations of Newton's method -- normally very fast.
         t2 = x
         for _ in 0..<8 {
-            x2 = sampleCurveX(t2) - x
+            x2 = sampleCurveX(t: t2) - x
             if abs(x2) < eps {
                 return t2
             }
-            d2 = sampleCurveDerivativeX(t2)
+            d2 = sampleCurveDerivativeX(t: t2)
             if abs(d2) < 1e-6 {
                 break
             }
@@ -175,7 +176,7 @@ private struct UnitBezierSolver {
         }
         
         while t0 < t1 {
-            x2 = sampleCurveX(t2)
+            x2 = sampleCurveX(t: t2)
             if abs(x2-x) < eps {
                 return t2
             }
@@ -190,7 +191,7 @@ private struct UnitBezierSolver {
         return t2
     }
     
-    func solve(_ x: Scalar, eps: Scalar) -> Scalar {
-        return sampleCurveY(solveCurveX(x, eps: eps))
+    func solve(x: Scalar, eps: Scalar) -> Scalar {
+        return sampleCurveY(t: solveCurveX(x: x, eps: eps))
     }
 }

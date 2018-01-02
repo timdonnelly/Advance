@@ -42,8 +42,7 @@ public final class Event<T> {
     /// The current state of the event.
     fileprivate (set) public var state = EventState<T>.active
     
-    public typealias PayloadType = T
-    public typealias Observer = (PayloadType) -> Void
+    public typealias Observer = (T) -> Void
     
     fileprivate var observers: [Observer] = []
     fileprivate var keyedObservers: [String:Observer] = [:]
@@ -69,9 +68,9 @@ public final class Event<T> {
     /// If the event has been closed, this has no effect.
     ///
     /// - parameter payload: A value to be passed to each observer.
-    public func fire(_ payload: T) {
+    public func fire(value: T) {
         guard closed == false else { return }
-        deliver(payload)
+        deliver(value: value)
     }
     
     /// Closes the event.
@@ -83,18 +82,18 @@ public final class Event<T> {
     /// Adding an observer after an event is closed will simply call the
     /// observer synchronously with the payload that the event was closed
     /// with.
-    public func close(_ payload: T) {
+    public func close(value: T) {
         guard closed == false else { return }
-        state = .closed(payload)
-        deliver(payload)
+        state = .closed(value)
+        deliver(value: value)
     }
     
-    fileprivate func deliver(_ payload: T) {
+    fileprivate func deliver(value: T) {
         for o in observers {
-            o(payload)
+            o(value)
         }
         for o in keyedObservers.values {
-            o(payload)
+            o(value)
         }
     }
     
@@ -139,7 +138,7 @@ public final class Event<T> {
     /// - parameter key: A string that identifies the observer to be removed.
     ///   If an observer does not exist for the given key, the method returns
     ///   without impact.
-    public func unobserve(_ key: String) {
+    public func removeObserver(for key: String) {
         keyedObservers.removeValue(forKey: key)
     }
 }

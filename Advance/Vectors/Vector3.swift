@@ -39,7 +39,7 @@ public struct Vector3 {
     public var z: Scalar
     
     /// Creates a new `Vector3` instance.
-    public init(_ x: Scalar, _ y: Scalar, _ z: Scalar) {
+    public init(x: Scalar, y: Scalar, z: Scalar) {
         self.x = x
         self.y = y
         self.z = z
@@ -62,7 +62,7 @@ extension Vector3: Vector {
     
     /// The empty vector (all scalar components are equal to `0.0`).
     public static var zero: Vector3 {
-        return Vector3(0.0, 0.0, 0.0)
+        return Vector3(x: 0.0, y: 0.0, z: 0.0)
     }
     
     public subscript(index: Int) -> Scalar {
@@ -97,17 +97,17 @@ extension Vector3: Vector {
     }
     
     /// Interpolate between the given values.
-    public func interpolatedTo(_ to: Vector3, alpha: Scalar) -> Vector3 {
+    public func interpolated(to otherValue: Vector3, alpha: Scalar) -> Vector3 {
         var result = self
-        result.interpolateTo(to, alpha: alpha)
+        result.interpolate(to: otherValue, alpha: alpha)
         return result
     }
     
     /// Interpolate between the given values.
-    public mutating func interpolateTo(_ to: Vector3, alpha: Scalar) {
-        x += alpha * (to.x - x)
-        y += alpha * (to.y - y)
-        z += alpha * (to.z - z)
+    public mutating func interpolate(to otherValue: Vector3, alpha: Scalar) {
+        x += alpha * (otherValue.x - x)
+        y += alpha * (otherValue.y - y)
+        z += alpha * (otherValue.z - z)
     }
 }
 
@@ -120,7 +120,7 @@ public func ==(lhs: Vector3, rhs: Vector3) -> Bool {
 
 /// Product.
 public func *(lhs: Vector3, rhs: Vector3) -> Vector3 {
-    return Vector3(lhs.x*rhs.x, lhs.y*rhs.y, lhs.z*rhs.z)
+    return Vector3(x: lhs.x*rhs.x, y: lhs.y*rhs.y, z: lhs.z*rhs.z)
 }
 
 /// Product (in place).
@@ -130,7 +130,7 @@ public func *=(lhs: inout Vector3, rhs: Vector3) {
 
 /// Quotient
 public func /(lhs: Vector3, rhs: Vector3) -> Vector3 {
-    return Vector3(lhs.x/rhs.x, lhs.y/rhs.y, lhs.z/rhs.z)
+    return Vector3(x: lhs.x/rhs.x, y: lhs.y/rhs.y, z: lhs.z/rhs.z)
 }
 
 /// Quotient (in place).
@@ -140,7 +140,7 @@ public func /=(lhs: inout Vector3, rhs: Vector3) {
 
 /// Sum.
 public func +(lhs: Vector3, rhs: Vector3) -> Vector3 {
-    return Vector3(lhs.x+rhs.x, lhs.y+rhs.y, lhs.z+rhs.z)
+    return Vector3(x: lhs.x+rhs.x, y: lhs.y+rhs.y, z: lhs.z+rhs.z)
 }
 
 /// Sum (in place).
@@ -150,7 +150,7 @@ public func +=(lhs: inout Vector3, rhs: Vector3) {
 
 /// Difference.
 public func -(lhs: Vector3, rhs: Vector3) -> Vector3 {
-    return Vector3(lhs.x-rhs.x, lhs.y-rhs.y, lhs.z-rhs.z)
+    return Vector3(x: lhs.x-rhs.x, y: lhs.y-rhs.y, z: lhs.z-rhs.z)
 }
 
 /// Difference (in place).
@@ -160,5 +160,5 @@ public func -=(lhs: inout Vector3, rhs: Vector3) {
 
 /// Scalar-Vector product.
 public func *(lhs: Scalar, rhs: Vector3) -> Vector3 {
-    return Vector3(lhs*rhs.x, lhs*rhs.y, lhs*rhs.z)
+    return Vector3(x: lhs*rhs.x, y: lhs*rhs.y, z: lhs*rhs.z)
 }

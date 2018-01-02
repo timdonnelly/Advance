@@ -57,7 +57,7 @@ func ==(lhs: DisplayLink.Frame, rhs: DisplayLink.Frame) -> Bool {
 internal final class DisplayLink {
     
     /// The callback to call for each frame.
-    var callback: ((_ frame: Frame) -> Void)? = nil
+    var callback: ((Frame) -> Void)? = nil
     
     /// If the display link is paused or not.
     var paused: Bool {
@@ -94,7 +94,7 @@ internal final class DisplayLink {
     internal final class DisplayLinkTarget {
         
         /// The callback to call for each frame.
-        var callback: ((_ frame: DisplayLink.Frame) -> Void)? = nil
+        var callback: ((DisplayLink.Frame) -> Void)? = nil
         
         /// Called for each frame from the CADisplayLink.
         @objc dynamic func frame(_ displayLink: CADisplayLink) {
@@ -109,7 +109,7 @@ internal final class DisplayLink {
 internal final class DisplayLink {
     
     /// The callback to call for each frame.
-    var callback: ((_ frame: Frame) -> Void)? = nil
+    var callback: ((Frame) -> Void)? = nil
     
     /// If the display link is paused or not.
     var paused: Bool = true {

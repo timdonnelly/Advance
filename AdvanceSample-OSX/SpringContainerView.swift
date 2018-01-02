@@ -44,7 +44,7 @@ final class SpringContainerView : NSView, CALayerDelegate {
         layer?.delegate = self
         
         addSubview(springView)
-        springView.centerSpring.reset(CGPoint(x: bounds.midX, y: bounds.midY))
+        springView.centerSpring.reset(to: CGPoint(x: bounds.midX, y: bounds.midY))
     }
     
     override func awakeFromNib() {

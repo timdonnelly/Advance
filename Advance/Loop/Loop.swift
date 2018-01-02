@@ -161,7 +161,7 @@ public final class LoopSubscription {
     }
     
     fileprivate func advance(_ elapsed: Double) {
-        advanced.fire(elapsed)
+        advanced.fire(value: elapsed)
     }
 }
 

@@ -42,6 +42,6 @@ extension CGRect: VectorConvertible {
     
     /// Returns the vector representation.
     public var vector: Vector {
-        return Vector(Scalar(origin.x), Scalar(origin.y), Scalar(size.width), Scalar(size.height))
+        return Vector(x: Scalar(origin.x), y: Scalar(origin.y), z: Scalar(size.width), w: Scalar(size.height))
     }
 }

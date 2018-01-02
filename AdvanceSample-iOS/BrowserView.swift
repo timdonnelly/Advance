@@ -112,7 +112,7 @@ class BrowserItem: NSObject {
             
             let gestureLocation = recognizer.location(in: view)
             let newCenter = view.superview!.convert(gestureLocation, from: view)
-            center.reset(newCenter)
+            center.reset(to: newCenter)
             
             var anchorPoint = gestureLocation
             anchorPoint.x /= view.bounds.width
@@ -122,24 +122,24 @@ class BrowserItem: NSObject {
             gestureInProgress = true
             centerWhenGestureBegan = center.value
             transformWhenGestureBegan = transform.value
-            transform.reset(transform.value)
+            transform.reset(to: transform.value)
         case .changed:
             var t = transformWhenGestureBegan
             t.rotation += recognizer.rotation
             t.scale *= recognizer.scale
-            transform.reset(t)
+            transform.reset(to: t)
             
             var c = centerWhenGestureBegan
             c.x += recognizer.translationInView(view.superview).x
             c.y += recognizer.translationInView(view.superview).y
-            center.reset(c)
+            center.reset(to: c)
             break
         case .ended, .cancelled:
             
             // Reset the anchor point
             let mid = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
             let newCenter = view.superview!.convert(mid, from: view)
-            center.reset(newCenter)
+            center.reset(to: newCenter)
             anchorPoint = CGPoint(x: 0.5, y: 0.5)
             
             var velocity = SimpleTransform.zero
@@ -175,12 +175,12 @@ class BrowserItem: NSObject {
         case .began:
             gestureInProgress = true
             centerWhenGestureBegan = center.value
-            center.reset(center.value)
+            center.reset(to: center.value)
             break
         case .changed:
             var c = centerWhenGestureBegan
             c.y += recognizer.translation(in: view.superview).y
-            center.reset(c)
+            center.reset(to: c)
             break
         case .ended:
             gestureInProgress = false
@@ -347,7 +347,7 @@ class BrowserView: UIView {
             
             let initialCenter = CGPoint(x: bounds.midX, y: bounds.midY)
             let finalCenter = CGPoint(x: bounds.midX, y: bounds.height * 0.3 * 0.25)
-            cv.center = initialCenter.interpolatedTo(finalCenter, alpha: 1.0-Scalar(cvVis))
+            cv.center = initialCenter.interpolated(to: finalCenter, alpha: 1.0-Scalar(cvVis))
             
             let t = CGAffineTransform(scaleX: 0.7 + cvVis*0.3, y: 0.7 + cvVis*0.3)
             cv.transform = t
@@ -399,9 +399,9 @@ class BrowserView: UIView {
             item.size.target = size
             item.transform.target = transform
         } else {
-            item.center.reset(center)
-            item.size.reset(size)
-            item.transform.reset(transform)
+            item.center.reset(to: center)
+            item.size.reset(to: size)
+            item.transform.reset(to: transform)
         }
     }
 
@@ -453,7 +453,7 @@ class BrowserView: UIView {
         leaveFullScreen()
         fullScreenItem = item
         updateAllItems(true)
-        index.animateTo(CGFloat(items.index(of: item)! + 1))
+        index.animate(to: CGFloat(items.index(of: item)! + 1))
         delegate?.browserView(self, didEnterFullScreenForItem: item)
     }
     
@@ -490,7 +490,7 @@ class BrowserView: UIView {
             config.tension = 120.0
             config.damping = 20.0
             config.threshold = 0.001
-            index.springTo(destIndex, initialVelocity: vel, configuration: config, completion: nil)
+            index.spring(to: destIndex, initialVelocity: vel, configuration: config, completion: nil)
         default:
             break
         }
