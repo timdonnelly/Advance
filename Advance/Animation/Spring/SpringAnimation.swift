@@ -28,7 +28,7 @@
 
 
 /// The `SpringAnimation` struct is an implementation of
-/// `ValueAnimationType` that uses a configurable spring function to animate
+/// `ValueAnimation` that uses a configurable spring function to animate
 /// the value.
 ///
 /// Spring animations do not have a duration. Instead, you should configure
@@ -38,7 +38,7 @@
 ///
 /// SpringAnimation instances use a `DynamicSolver` containing a
 /// `SpringFunction` internally to perform the spring calculations.
-public struct SpringAnimation<Value: VectorConvertible>: ValueAnimationType {
+public struct SpringAnimation<Value: VectorConvertible>: ValueAnimation {
     
     // The underlying spring simulation.
     fileprivate var solver: DynamicSolver<SpringFunction<Value.Vector>>

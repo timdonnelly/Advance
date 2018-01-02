@@ -27,10 +27,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 
-/// Provides type erasure for an animation conforming to ValueAnimationType
+/// Provides type erasure for an animation conforming to ValueAnimation
 ///
 /// - parameter Value: The type of value to be animated.
-public struct AnyValueAnimation<Value: VectorConvertible>: ValueAnimationType {
+public struct AnyValueAnimation<Value: VectorConvertible>: ValueAnimation {
     
     /// The current value of the animation.
     public let value: Value
@@ -47,7 +47,7 @@ public struct AnyValueAnimation<Value: VectorConvertible>: ValueAnimationType {
     /// Creates a new type-erased animation.
     ///
     /// - parameter animation: The animation to be type erased.
-    public init<A: ValueAnimationType>(animation: A) where A.Value == Value {
+    public init<A: ValueAnimation>(animation: A) where A.Value == Value {
         value = animation.value
         velocity = animation.velocity
         finished = animation.finished

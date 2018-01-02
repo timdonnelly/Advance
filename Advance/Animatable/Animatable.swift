@@ -120,7 +120,7 @@ public final class Animatable<Value: VectorConvertible> {
     ///   animation has completed. Its only argument is a `Boolean`, which will 
     ///   be `true` if the animation completed uninterrupted, or `false` if it
     ///   was removed for any other reason.
-    public func animate<A: ValueAnimationType>(_ animation: A, completion: Completion? = nil) where A.Value == Value {
+    public func animate<A: ValueAnimation>(_ animation: A, completion: Completion? = nil) where A.Value == Value {
         
         // Cancel any in-flight animation. We observe the cancelled event of
         // animators that we create in order to clean up, so this will have
