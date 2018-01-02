@@ -46,7 +46,7 @@ public struct SpringConfiguration {
 }
 
 /// Implements a simple spring acceleration function.
-public struct SpringFunction<VectorType: Vector>: DynamicFunctionType {
+public struct SpringFunction<VectorType: Vector>: DynamicFunction {
     
     /// The target of the spring.
     public var target: VectorType

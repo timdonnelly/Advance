@@ -27,7 +27,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /// Gradually reduces velocity until it equals `Vector.zero`.
-public struct DecayFunction<VectorType: Vector>: DynamicFunctionType {
+public struct DecayFunction<VectorType: Vector>: DynamicFunction {
     
     /// How close to 0 each component of the velocity must be before the
     /// simulation is allowed to settle.

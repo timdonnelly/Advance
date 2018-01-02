@@ -44,7 +44,7 @@ import Foundation
 /// up" to the outside time. It then uses linear interpolation to match the
 /// internal state to the required external time in order to return the most
 /// precise calculations.
-public struct DynamicSolver<F: DynamicFunctionType> : Advanceable {
+public struct DynamicSolver<F: DynamicFunction> : Advanceable {
     
     // The internal time step. 0.008 == 120fps (double the typical screen refresh
     // rate). The math required to solve most functions is easy for modern
@@ -183,7 +183,7 @@ private extension DynamicSolverState {
     typealias Derivative = DynamicSolverState<VectorType>
     
     /// RK4 Integration.
-    func integrate<F: DynamicFunctionType>(_ function: F, time: Double) -> DynamicSolverState<VectorType> where F.VectorType == VectorType {
+    func integrate<F: DynamicFunction>(_ function: F, time: Double) -> DynamicSolverState<VectorType> where F.VectorType == VectorType {
         let initial = Derivative(value:VectorType.zero, velocity: VectorType.zero)
         
         let a = evaluate(function, time: 0.0, derivative: initial)
@@ -206,7 +206,7 @@ private extension DynamicSolverState {
         return DynamicSolverState(value: val, velocity: vel)
     }
     
-    func evaluate<F: DynamicFunctionType>(_ function: F, time: Double, derivative: Derivative) -> Derivative where F.VectorType == VectorType {
+    func evaluate<F: DynamicFunction>(_ function: F, time: Double, derivative: Derivative) -> Derivative where F.VectorType == VectorType {
         let val = value + Scalar(time) * derivative.value
         let vel = velocity + Scalar(time) * derivative.velocity
         let accel = function.acceleration(val, velocity: vel)
