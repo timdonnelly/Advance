@@ -42,7 +42,7 @@ public struct BasicAnimation<Value: VectorConvertible>: ValueAnimation {
     
     /// The timing function that is used to map elapsed time to an
     /// interpolated value.
-    fileprivate (set) public var timingFunction: TimingFunctionType
+    fileprivate (set) public var timingFunction: TimingFunction
     
     /// Creates a new `BasicAnimation` instance.
     ///
@@ -50,7 +50,7 @@ public struct BasicAnimation<Value: VectorConvertible>: ValueAnimation {
     /// - parameter to: The value at the end of the animation.
     /// - parameter duration: How long (in seconds) the animation should last.
     /// - parameter timingFunction: The timing function to use.
-    public init(from: Value, to: Value, duration: Double, timingFunction: TimingFunctionType = UnitBezier(preset: .swiftOut)) {
+    public init(from: Value, to: Value, duration: Double, timingFunction: TimingFunction = UnitBezier(preset: .swiftOut)) {
         self.from = from
         self.to = to
         self.duration = duration
@@ -113,7 +113,7 @@ public extension Animatable {
     /// - parameter timingFunction: The timing (easing) function to use.
     /// - parameter completion: An optional closure that will be called when
     ///   the animation completes.
-    public func animateTo(_ to: Value, duration: Double, timingFunction: TimingFunctionType, completion: Completion? = nil) {
+    public func animateTo(_ to: Value, duration: Double, timingFunction: TimingFunction, completion: Completion? = nil) {
         let a = BasicAnimation(from: value, to: to, duration: duration, timingFunction: timingFunction)
         animate(a, completion: completion)
     }
@@ -130,7 +130,7 @@ public extension VectorConvertible {
     /// - parameter callback: A closure that will be called with the new value
     ///   for each frame of the animation until it is finished.
     /// - returns: The underlying animator.
-    public func animateTo(_ to: Self, duration: Double, timingFunction: TimingFunctionType, callback: @escaping (Self)->Void) -> Animator<BasicAnimation<Self>> {
+    public func animateTo(_ to: Self, duration: Double, timingFunction: TimingFunction, callback: @escaping (Self)->Void) -> Animator<BasicAnimation<Self>> {
         let a = BasicAnimation(from: self, to: to, duration: duration, timingFunction: timingFunction)
         let animator = AnimatorContext.shared.animate(a)
         animator.changed.observe { (a) in
