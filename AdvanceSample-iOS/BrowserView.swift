@@ -210,11 +210,13 @@ extension BrowserItem: UIGestureRecognizerDelegate {
         }
         return true
     }
+    
+    static func ==(lhs: BrowserItem, rhs: BrowserItem) -> Bool {
+        return lhs === rhs
+    }
 }
 
-func ==(lhs: BrowserItem, rhs: BrowserItem) -> Bool {
-    return lhs === rhs
-}
+
 
 protocol BrowserViewDelegate: class {
     func browserView(_ browserView: BrowserView, didShowItem item: BrowserItem)

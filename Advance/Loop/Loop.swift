@@ -126,6 +126,11 @@ public final class LoopSubscription {
         var hashValue: Int {
             return Unmanaged.passUnretained(self).toOpaque().hashValue
         }
+        
+        static func ==(lhs: Token, rhs: Token) -> Bool {
+            return lhs === rhs
+        }
+        
     }
     
     fileprivate lazy var token: Token = {
@@ -163,8 +168,5 @@ public final class LoopSubscription {
     fileprivate func advance(_ elapsed: Double) {
         advanced.fire(value: elapsed)
     }
-}
 
-private func ==(lhs: LoopSubscription.Token, rhs: LoopSubscription.Token) -> Bool {
-    return lhs === rhs
 }
