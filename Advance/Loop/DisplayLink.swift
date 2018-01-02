@@ -43,12 +43,16 @@ extension DisplayLink {
         
         /// The current duration between frames.
         var duration: Double
+        
+        static func ==(lhs: Frame, rhs: Frame) -> Bool {
+            return lhs.timestamp == rhs.timestamp
+                && lhs.duration == rhs.duration
+        }
+        
     }
 }
 
-func ==(lhs: DisplayLink.Frame, rhs: DisplayLink.Frame) -> Bool {
-    return lhs.timestamp == rhs.timestamp && lhs.duration == rhs.duration
-}
+
 
 
 #if os(iOS) || os(tvOS) // iOS support using CADisplayLink --------------------------------------------------------

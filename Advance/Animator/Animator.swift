@@ -26,40 +26,51 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-/// The state of an `Animator` instance.
-public enum AnimatorState: Equatable {
-    /// The animator has not yet started.
-    case pending
+public extension Animator {
     
-    /// The animator is currently running.
-    case running
-    
-    /// The animator has stopped running.
-    case completed(AnimatorResult)
-}
-
-/// Equatable.
-public func ==(lhs: AnimatorState, rhs: AnimatorState) -> Bool {
-    switch (lhs, rhs) {
-    case (.pending, .pending):
-        return true
-    case (.running, .running):
-        return true
-    case (.completed(let l), .completed(let r)):
-        return l == r
-    default:
-        return false
+    /// The state of an `Animator` instance.
+    public enum State: Equatable {
+        /// The animator has not yet started.
+        case pending
+        
+        /// The animator is currently running.
+        case running
+        
+        /// The animator has stopped running.
+        case completed(Result)
+        
+        /// Equatable
+        public static func ==(lhs: State, rhs: State) -> Bool {
+            switch (lhs, rhs) {
+            case (.pending, .pending):
+                return true
+            case (.running, .running):
+                return true
+            case (.completed(let l), .completed(let r)):
+                return l == r
+            default:
+                return false
+            }
+        }
+        
     }
+    
 }
 
-/// The possible result cases of an animator.
-public enum AnimatorResult {
-    /// The animator was cancelled before the animation completed.
-    case cancelled
+public extension Animator.State {
     
-    /// The animator successfully ran the animation until it was finished.
-    case finished
+    /// The possible result cases of an animator.
+    public enum Result {
+        /// The animator was cancelled before the animation completed.
+        case cancelled
+        
+        /// The animator successfully ran the animation until it was finished.
+        case finished
+    }
+    
 }
+
+
 
 /// Runs an animation until the animations finishes, or until `cancel()` 
 /// is called.
@@ -104,7 +115,7 @@ public final class Animator<A: Animation> {
     /// The current state of the animator. Animators begin in a running state,
     /// and they are guarenteed to transition into either the cancelled or
     /// finished state exactly one time – no further state changes are allowed.
-    fileprivate (set) public var state: AnimatorState = .pending {
+    fileprivate (set) public var state: State = .pending {
         willSet {
             guard newValue != state else { return }
             switch newValue {

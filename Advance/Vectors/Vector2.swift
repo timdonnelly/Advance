@@ -99,55 +99,57 @@ extension Vector2: Vector {
         x += alpha * (otherValue.x - x)
         y += alpha * (otherValue.y - y)
     }
+    
+    /// Equatable.
+    public static func ==(lhs: Vector2, rhs: Vector2) -> Bool {
+        return lhs.x == rhs.x
+            && lhs.y == rhs.y
+    }
+    
+    /// Product.
+    public static func *(lhs: Vector2, rhs: Vector2) -> Vector2 {
+        return Vector2(x: lhs.x*rhs.x, y: lhs.y*rhs.y)
+    }
+    
+    /// Product (in place).
+    public static func *=(lhs: inout Vector2, rhs: Vector2) {
+        lhs = lhs * rhs
+    }
+    
+    /// Quotient.
+    public static func /(lhs: Vector2, rhs: Vector2) -> Vector2 {
+        return Vector2(x: lhs.x/rhs.x, y: lhs.y/rhs.y)
+    }
+    
+    /// Quotient (in place).
+    public static func /=(lhs: inout Vector2, rhs: Vector2) {
+        lhs = lhs / rhs
+    }
+    
+    /// Sum.
+    public static func +(lhs: Vector2, rhs: Vector2) -> Vector2 {
+        return Vector2(x: lhs.x+rhs.x, y: lhs.y+rhs.y)
+    }
+    
+    /// Sum (in place).
+    public static func +=(lhs: inout Vector2, rhs: Vector2) {
+        lhs = lhs + rhs
+    }
+    
+    /// Difference.
+    public static func -(lhs: Vector2, rhs: Vector2) -> Vector2 {
+        return Vector2(x: lhs.x-rhs.x, y: lhs.y-rhs.y)
+    }
+    
+    /// Difference (in place).
+    public static func -=(lhs: inout Vector2, rhs: Vector2) {
+        lhs = lhs - rhs
+    }
+    
+    /// Scalar-Vector product.
+    public static func *(lhs: Scalar, rhs: Vector2) -> Vector2 {
+        return Vector2(x: lhs*rhs.x, y: lhs*rhs.y)
+    }
 }
 
-/// Equatable.
-public func ==(lhs: Vector2, rhs: Vector2) -> Bool {
-    return lhs.x == rhs.x
-        && lhs.y == rhs.y
-}
 
-/// Product.
-public func *(lhs: Vector2, rhs: Vector2) -> Vector2 {
-    return Vector2(x: lhs.x*rhs.x, y: lhs.y*rhs.y)
-}
-
-/// Product (in place).
-public func *=(lhs: inout Vector2, rhs: Vector2) {
-    lhs = lhs * rhs
-}
-
-/// Quotient.
-public func /(lhs: Vector2, rhs: Vector2) -> Vector2 {
-    return Vector2(x: lhs.x/rhs.x, y: lhs.y/rhs.y)
-}
-
-/// Quotient (in place).
-public func /=(lhs: inout Vector2, rhs: Vector2) {
-    lhs = lhs / rhs
-}
-
-/// Sum.
-public func +(lhs: Vector2, rhs: Vector2) -> Vector2 {
-    return Vector2(x: lhs.x+rhs.x, y: lhs.y+rhs.y)
-}
-
-/// Sum (in place).
-public func +=(lhs: inout Vector2, rhs: Vector2) {
-    lhs = lhs + rhs
-}
-
-/// Difference.
-public func -(lhs: Vector2, rhs: Vector2) -> Vector2 {
-    return Vector2(x: lhs.x-rhs.x, y: lhs.y-rhs.y)
-}
-
-/// Difference (in place).
-public func -=(lhs: inout Vector2, rhs: Vector2) {
-    lhs = lhs - rhs
-}
-
-/// Scalar-Vector product.
-public func *(lhs: Scalar, rhs: Vector2) -> Vector2 {
-    return Vector2(x: lhs*rhs.x, y: lhs*rhs.y)
-}

@@ -78,8 +78,11 @@ private struct AnimatorWrapper: Hashable {
     var hashValue: Int {
       return ObjectIdentifier(animator).hashValue
     }
+    
+    static func ==(lhs: AnimatorWrapper, rhs: AnimatorWrapper) -> Bool {
+        return lhs.animator === rhs.animator
+    }
+    
 }
 
-private func ==(lhs: AnimatorWrapper, rhs: AnimatorWrapper) -> Bool {
-    return lhs.animator === rhs.animator
-}
+
