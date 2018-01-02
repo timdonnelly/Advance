@@ -63,14 +63,14 @@ public struct SpringFunction<VectorType: Vector>: DynamicFunction {
     }
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(_ value: VectorType, velocity: VectorType) -> VectorType {
+    public func acceleration(value: VectorType, velocity: VectorType) -> VectorType {
         let delta = value - target
         let accel = (-configuration.tension * delta) - (configuration.damping * velocity)
         return accel
     }
     
     /// Returns `true` if the simulation can become settled.
-    public func canSettle(_ value: VectorType, velocity: VectorType) -> Bool {
+    public func canSettle(value: VectorType, velocity: VectorType) -> Bool {
         let min = VectorType(scalar: -configuration.threshold)
         let max = VectorType(scalar: configuration.threshold)
         
@@ -87,7 +87,7 @@ public struct SpringFunction<VectorType: Vector>: DynamicFunction {
     }
     
     /// Returns the value to settle on.
-    public func settledValue(_ value: VectorType, velocity: VectorType) -> VectorType {
+    public func settledValue(value: VectorType, velocity: VectorType) -> VectorType {
         return target
     }
 }
