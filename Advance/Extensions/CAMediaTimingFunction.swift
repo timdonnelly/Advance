@@ -14,7 +14,7 @@ extension CAMediaTimingFunction: TimingFunction {
         let pointsPointer2 = UnsafeMutablePointer<Float>.allocate(capacity: 2)
         getControlPoint(at: 1, values: pointsPointer1)
         getControlPoint(at: 2, values: pointsPointer2)
-        let b = UnitBezier(p1x: Scalar(pointsPointer1[0]), p1y: Scalar(pointsPointer1[1]), p2x: Scalar(pointsPointer2[0]), p2y: Scalar(pointsPointer2[1]))
+        let b = UnitBezier(firstX: Scalar(pointsPointer1[0]), firstY: Scalar(pointsPointer1[1]), secondX: Scalar(pointsPointer2[0]), secondY: Scalar(pointsPointer2[1]))
         pointsPointer1.deallocate(capacity: 2)
         pointsPointer2.deallocate(capacity: 2)
         return b

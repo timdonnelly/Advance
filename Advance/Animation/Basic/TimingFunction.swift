@@ -71,17 +71,17 @@ public extension UnitBezier {
     public init(preset: Preset) {
         switch preset {
         case .default:
-            self = UnitBezier(p1x: 0.25, p1y: 0.1, p2x: 0.25, p2y: 1.0)
+            self = UnitBezier(firstX: 0.25, firstY: 0.1, secondX: 0.25, secondY: 1.0)
         case .easeIn:
-            self =  UnitBezier(p1x: 0.42, p1y: 0.0, p2x: 1.0, p2y: 1.0)
+            self =  UnitBezier(firstX: 0.42, firstY: 0.0, secondX: 1.0, secondY: 1.0)
         case .easeOut:
-            self =  UnitBezier(p1x: 0.0, p1y: 0.0, p2x: 0.58, p2y: 1.0)
+            self =  UnitBezier(firstX: 0.0, firstY: 0.0, secondX: 0.58, secondY: 1.0)
         case .easeInEaseOut:
-            self =  UnitBezier(p1x: 0.42, p1y: 0.0, p2x: 0.58, p2y: 1.0)
+            self =  UnitBezier(firstX: 0.42, firstY: 0.0, secondX: 0.58, secondY: 1.0)
         case .linear:
-            self =  UnitBezier(p1x: 0.0, p1y: 0.0, p2x: 1.0, p2y: 1.0)
+            self =  UnitBezier(firstX: 0.0, firstY: 0.0, secondX: 1.0, secondY: 1.0)
         case .swiftOut:
-            self =  UnitBezier(p1x: 0.4, p1y: 0.0, p2x: 0.2, p2y: 1.0)
+            self =  UnitBezier(firstX: 0.4, firstY: 0.0, secondX: 0.2, secondY: 1.0)
         }
     }
 }
