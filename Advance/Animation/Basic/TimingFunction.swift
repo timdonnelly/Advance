@@ -46,42 +46,29 @@ extension UnitBezier: TimingFunction {
 
 public extension UnitBezier {
     
-    /// A set of preset bezier curves.
-    public enum Preset {
-        /// Equivalent to `kCAMediaTimingFunctionDefault`.
-        case `default`
-        
-        /// Equivalent to `kCAMediaTimingFunctionEaseIn`.
-        case easeIn
-        
-        /// Equivalent to `kCAMediaTimingFunctionEaseOut`.
-        case easeOut
-        
-        /// Equivalent to `kCAMediaTimingFunctionEaseInEaseOut`.
-        case easeInEaseOut
-        
-        /// No easing.
-        case linear
-        
-        /// Inspired by the default curve in Google Material Design.
-        case swiftOut
+    /// Equivalent to `kCAMediaTimingFunctionEaseIn`.
+    public static var easeIn: UnitBezier {
+        return UnitBezier(firstX: 0.42, firstY: 0.0, secondX: 1.0, secondY: 1.0)
     }
     
-    /// Initializes a UnitBezier with a preset.
-    public init(preset: Preset) {
-        switch preset {
-        case .default:
-            self = UnitBezier(firstX: 0.25, firstY: 0.1, secondX: 0.25, secondY: 1.0)
-        case .easeIn:
-            self =  UnitBezier(firstX: 0.42, firstY: 0.0, secondX: 1.0, secondY: 1.0)
-        case .easeOut:
-            self =  UnitBezier(firstX: 0.0, firstY: 0.0, secondX: 0.58, secondY: 1.0)
-        case .easeInEaseOut:
-            self =  UnitBezier(firstX: 0.42, firstY: 0.0, secondX: 0.58, secondY: 1.0)
-        case .linear:
-            self =  UnitBezier(firstX: 0.0, firstY: 0.0, secondX: 1.0, secondY: 1.0)
-        case .swiftOut:
-            self =  UnitBezier(firstX: 0.4, firstY: 0.0, secondX: 0.2, secondY: 1.0)
-        }
+    /// Equivalent to `kCAMediaTimingFunctionEaseOut`.
+    public static var easeOut: UnitBezier {
+        return UnitBezier(firstX: 0.0, firstY: 0.0, secondX: 0.58, secondY: 1.0)
     }
+    
+    /// Equivalent to `kCAMediaTimingFunctionEaseInEaseOut`.
+    public static var easeInEaseOut: UnitBezier {
+        return UnitBezier(firstX: 0.42, firstY: 0.0, secondX: 0.58, secondY: 1.0)
+    }
+    
+    /// No easing.
+    public static var linear: UnitBezier {
+        return UnitBezier(firstX: 0.0, firstY: 0.0, secondX: 1.0, secondY: 1.0)
+    }
+    
+    /// Inspired by the default curve in Google Material Design.
+    public static var swiftOut: UnitBezier {
+        return UnitBezier(firstX: 0.4, firstY: 0.0, secondX: 0.2, secondY: 1.0)
+    }
+    
 }

@@ -22,7 +22,7 @@ public struct BasicAnimation<Value: VectorConvertible>: ValueAnimation {
     /// - parameter to: The value at the end of the animation.
     /// - parameter duration: How long (in seconds) the animation should last.
     /// - parameter timingFunction: The timing function to use.
-    public init(from: Value, to: Value, duration: Double, timingFunction: TimingFunction = UnitBezier(preset: .swiftOut)) {
+    public init(from: Value, to: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
         self.from = from
         self.to = to
         self.duration = duration
@@ -75,7 +75,7 @@ public extension Animatable {
     /// - parameter completion: An optional closure that will be called when
     ///   the animation completes.
     public func animate(to value: Value, completion: Completion? = nil) {
-        animate(to: value, duration: 0.25, timingFunction: UnitBezier(preset: .swiftOut), completion: completion)
+        animate(to: value, duration: 0.25, timingFunction: UnitBezier.swiftOut, completion: completion)
     }
     
     /// Animates to the specified value.
