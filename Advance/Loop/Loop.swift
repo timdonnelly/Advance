@@ -86,7 +86,7 @@ public extension Loop {
         
         /// Fired during the update phase of each turn of the loop. Contains
         /// the elapsed time for the current animation frame.
-        public let advanced = Event<Double>()
+        public let advanced = Observable<Double>()
         
         /// The associated loop instance.
         public let loop: Loop
@@ -113,7 +113,7 @@ public extension Loop {
         }
         
         fileprivate func advance(_ elapsed: Double) {
-            advanced.fire(value: elapsed)
+            advanced.send(value: elapsed)
         }
         
         private func subscribe() {

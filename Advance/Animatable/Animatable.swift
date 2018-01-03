@@ -29,7 +29,7 @@ public final class Animatable<Value: VectorConvertible> {
     public typealias Completion = (Bool) -> Void
     
     /// Fires each time the `value` property changes.
-    public let changed = Event<Value>()
+    public let changed = Observable<Value>()
     
     // The animator that is driving the current animation, if any.
     fileprivate var animator: Animator<AnyValueAnimation<Value>>? = nil
@@ -40,7 +40,7 @@ public final class Animatable<Value: VectorConvertible> {
     fileprivate var currentValue: Value {
         didSet {
             guard currentValue != oldValue else { return }
-            changed.fire(value: value)
+            changed.send(value: value)
         }
     }
     

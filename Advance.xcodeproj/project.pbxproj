@@ -55,7 +55,7 @@
 		228E20611C9CB99D0058ADA1 /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector.swift */; };
 		228E20621C9CB99D0058ADA1 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */; };
 		228E20631C9CB99D0058ADA1 /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
-		228E20641C9CB99D0058ADA1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Event.swift */; };
+		228E20641C9CB99D0058ADA1 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
 		228E20731C9CB9B00058ADA1 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */; };
 		228E20741C9CB9B00058ADA1 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
 		228E20751C9CB9B00058ADA1 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
@@ -92,7 +92,7 @@
 		5D3A2F421C920C8C0071F08F /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
 		5D3A2F431C920C920071F08F /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
 		5D3A2F441C920C920071F08F /* AnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */; };
-		5D3A2F451C920C970071F08F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Event.swift */; };
+		5D3A2F451C920C970071F08F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
 		5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
 		5D3A2F471C920CB10071F08F /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5D3A2F481C920CBC0071F08F /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
@@ -136,7 +136,7 @@
 		5DB1A49A1C876AD1000CF9EE /* ValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */; };
 		5DB1A49B1C876AD1000CF9EE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
 		5DB1A49C1C876AD1000CF9EE /* AnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */; };
-		5DB1A49D1C876AD1000CF9EE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Event.swift */; };
+		5DB1A49D1C876AD1000CF9EE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
 		5DB1A49E1C876AD1000CF9EE /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
 		5DB1A4A01C876AD1000CF9EE /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
@@ -339,7 +339,7 @@
 		5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueAnimation.swift; sourceTree = "<group>"; };
 		5DB1A4721C876AD1000CF9EE /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorContext.swift; sourceTree = "<group>"; };
-		5DB1A4751C876AD1000CF9EE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		5DB1A4751C876AD1000CF9EE /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAMediaTimingFunction.swift; sourceTree = "<group>"; };
 		5DB1A47A1C876AD1000CF9EE /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecayFunction.swift; sourceTree = "<group>"; };
@@ -611,7 +611,7 @@
 				5DB1A4621C876AD1000CF9EE /* Animatable */,
 				5DB1A4641C876AD1000CF9EE /* Animation */,
 				5DB1A4711C876AD1000CF9EE /* Animator */,
-				5DB1A4741C876AD1000CF9EE /* Events */,
+				5DB1A4741C876AD1000CF9EE /* Observable */,
 				5DB1A4761C876AD1000CF9EE /* Extensions */,
 				5DB1A4791C876AD1000CF9EE /* Loop */,
 				5DB1A47B1C876AD1000CF9EE /* Dynamics */,
@@ -678,12 +678,12 @@
 			path = Animator;
 			sourceTree = "<group>";
 		};
-		5DB1A4741C876AD1000CF9EE /* Events */ = {
+		5DB1A4741C876AD1000CF9EE /* Observable */ = {
 			isa = PBXGroup;
 			children = (
-				5DB1A4751C876AD1000CF9EE /* Event.swift */,
+				5DB1A4751C876AD1000CF9EE /* Observable.swift */,
 			);
-			path = Events;
+			path = Observable;
 			sourceTree = "<group>";
 		};
 		5DB1A4761C876AD1000CF9EE /* Extensions */ = {
@@ -1134,7 +1134,7 @@
 				228E20611C9CB99D0058ADA1 /* CGVector.swift in Sources */,
 				228E20621C9CB99D0058ADA1 /* TimingFunction.swift in Sources */,
 				228E20631C9CB99D0058ADA1 /* CAMediaTimingFunction.swift in Sources */,
-				228E20641C9CB99D0058ADA1 /* Event.swift in Sources */,
+				228E20641C9CB99D0058ADA1 /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1222,7 +1222,7 @@
 				5DB1A4AA1C876AD1000CF9EE /* CGVector.swift in Sources */,
 				5DB1A4961C876AD1000CF9EE /* TimingFunction.swift in Sources */,
 				5DB1A49E1C876AD1000CF9EE /* CAMediaTimingFunction.swift in Sources */,
-				5DB1A49D1C876AD1000CF9EE /* Event.swift in Sources */,
+				5DB1A49D1C876AD1000CF9EE /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1277,7 +1277,7 @@
 				5D3A2F4A1C920CBC0071F08F /* DynamicSolver.swift in Sources */,
 				5D3A2F551C920CCA0071F08F /* Vector2.swift in Sources */,
 				5D3A2F561C920CCA0071F08F /* Vector3.swift in Sources */,
-				5D3A2F451C920C970071F08F /* Event.swift in Sources */,
+				5D3A2F451C920C970071F08F /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

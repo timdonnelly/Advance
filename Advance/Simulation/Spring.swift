@@ -43,12 +43,12 @@ public final class Spring<Value: VectorConvertible> {
     }()
     
     /// Fires when `value` has changed.
-    public let changed = Event<Value>()
+    public let changed = Observable<Value>()
     
     fileprivate var lastNotifiedValue: Value {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
-            changed.fire(value: lastNotifiedValue)
+            changed.send(value: lastNotifiedValue)
         }
     }
     
