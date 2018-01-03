@@ -10,14 +10,20 @@ extension CAMediaTimingFunction: TimingFunction {
     /// Returns a `UnitBezier` instance created from this timing function's
     /// control points.
     public var unitBezier: UnitBezier {
-        let pointsPointer1 = UnsafeMutablePointer<Float>.allocate(capacity: 2)
-        let pointsPointer2 = UnsafeMutablePointer<Float>.allocate(capacity: 2)
-        getControlPoint(at: 1, values: pointsPointer1)
-        getControlPoint(at: 2, values: pointsPointer2)
-        let b = UnitBezier(firstX: Scalar(pointsPointer1[0]), firstY: Scalar(pointsPointer1[1]), secondX: Scalar(pointsPointer2[0]), secondY: Scalar(pointsPointer2[1]))
-        pointsPointer1.deallocate(capacity: 2)
-        pointsPointer2.deallocate(capacity: 2)
-        return b
+        return UnitBezier(firstX: controlPoints[1].x,
+                          firstY: controlPoints[1].y,
+                          secondX: controlPoints[2].x,
+                          secondY: controlPoints[2].y)
+    }
+    
+    private var controlPoints: [(x: Scalar, y: Scalar)] {
+        return (0...3).lazy.map { (index) in
+            
+            var rawValues: [Float] = [0.0, 0.0]
+            getControlPoint(at: index, values: &rawValues)
+            
+            return (x: Scalar(rawValues[0]), y: Scalar(rawValues[1]))
+        }
     }
     
 }
