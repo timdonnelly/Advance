@@ -103,15 +103,15 @@ public final class Animator<A: Animation> {
             guard oldValue != state else { return }
             switch state {
             case .pending:
-                 break
+                break
             case .running:
-                started.close(value: animation)
+                break
             case .completed(let result):
                 switch result {
                 case .cancelled:
-                    cancelled.close(value: animation)
+                    cancelled.fire(value: animation)
                 case .finished:
-                    finished.close(value: animation)
+                    finished.fire(value: animation)
                 }
             }
         }
@@ -119,9 +119,6 @@ public final class Animator<A: Animation> {
     
     /// The animation that is being run.
     fileprivate (set) public var animation: A
-    
-    /// Fired when the animator starts running
-    public let started = Event<A>()
     
     /// Fired after every animation update.
     public let changed = Event<A>()
