@@ -2,7 +2,7 @@
 public typealias Scalar = Double
 
 /// Conforming types can be operated on as vectors composed of `Scalar` components.
-public protocol Vector: Equatable, Interpolatable, VectorMathCapable {
+public protocol Vector: Equatable, Interpolatable {
     
     /// Creates a vector for which all components are equal to the given scalar.
     init(scalar: Scalar)
@@ -28,6 +28,33 @@ public protocol Vector: Equatable, Interpolatable, VectorMathCapable {
     
     /// Clamps in place.
     mutating func clamp(min: Self, max: Self)
+    
+    /// Product.
+    static func *(lhs: Self, rhs: Self) -> Self
+    
+    /// Product (in place).
+    static func *=(lhs: inout Self, rhs: Self)
+    
+    /// Quotient.
+    static func /(lhs: Self, rhs: Self) -> Self
+    
+    /// Quotient (in place).
+    static func /=(lhs: inout Self, rhs: Self)
+    
+    /// Sum.
+    static func +(lhs: Self, rhs: Self) -> Self
+    
+    /// Sum (in place).
+    static func +=(lhs: inout Self, rhs: Self)
+    
+    /// Difference.
+    static func -(lhs: Self, rhs: Self) -> Self
+    
+    /// Difference (in place).
+    static func -=(lhs: inout Self, rhs: Self)
+    
+    /// Scalar-Vector product.
+    static func *(lhs: Scalar, rhs: Self) -> Self
 }
 
 

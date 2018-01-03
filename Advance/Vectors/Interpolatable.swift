@@ -1,5 +1,6 @@
 /// Conforming types can be linearly interpolated.
 public protocol Interpolatable {
+    
     /// Interpolate between the given values.
     ///
     /// - parameter from: The value to interpolate from.

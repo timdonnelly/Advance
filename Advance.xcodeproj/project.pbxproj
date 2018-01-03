@@ -47,7 +47,6 @@
 		228E20581C9CB99D0058ADA1 /* Double+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double+VectorConvertible.swift */; };
 		228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */; };
 		228E205A1C9CB99D0058ADA1 /* CGRect+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect+VectorConvertible.swift */; };
-		228E205B1C9CB99D0058ADA1 /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
 		228E205C1C9CB99D0058ADA1 /* CGPoint+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint+VectorConvertible.swift */; };
 		228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48B1C876AD1000CF9EE /* Vector1.swift */; };
 		228E205E1C9CB99D0058ADA1 /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
@@ -112,7 +111,6 @@
 		5D3A2F551C920CCA0071F08F /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48C1C876AD1000CF9EE /* Vector2.swift */; };
 		5D3A2F561C920CCA0071F08F /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48D1C876AD1000CF9EE /* Vector3.swift */; };
 		5D3A2F571C920CCA0071F08F /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48E1C876AD1000CF9EE /* Vector4.swift */; };
-		5D3A2F581C920CCA0071F08F /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
 		5D3A2F591C920CCA0071F08F /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
 		5D3A2F5A1C920CCA0071F08F /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */; };
 		5D3A2F5F1C922DAA0071F08F /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
@@ -158,7 +156,6 @@
 		5DB1A4AF1C876AD1000CF9EE /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48C1C876AD1000CF9EE /* Vector2.swift */; };
 		5DB1A4B01C876AD1000CF9EE /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48D1C876AD1000CF9EE /* Vector3.swift */; };
 		5DB1A4B11C876AD1000CF9EE /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48E1C876AD1000CF9EE /* Vector4.swift */; };
-		5DB1A4B21C876AD1000CF9EE /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
 		5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
 		5DE959E91C9388B9008487A8 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
 		5DE959F51C9392E1008487A8 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A2F311C9209EE0071F08F /* Advance.framework */; };
@@ -362,7 +359,6 @@
 		5DB1A48C1C876AD1000CF9EE /* Vector2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
 		5DB1A48D1C876AD1000CF9EE /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		5DB1A48E1C876AD1000CF9EE /* Vector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector4.swift; sourceTree = "<group>"; };
-		5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorMathCapable.swift; sourceTree = "<group>"; };
 		5DB1A4901C876AD1000CF9EE /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLinkTests.swift; sourceTree = "<group>"; };
 		5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdvanceTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -741,7 +737,6 @@
 				5DB1A48C1C876AD1000CF9EE /* Vector2.swift */,
 				5DB1A48D1C876AD1000CF9EE /* Vector3.swift */,
 				5DB1A48E1C876AD1000CF9EE /* Vector4.swift */,
-				5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */,
 				5DB1A4901C876AD1000CF9EE /* Vector.swift */,
 				5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */,
 			);
@@ -1131,7 +1126,6 @@
 				228E20581C9CB99D0058ADA1 /* Double+VectorConvertible.swift in Sources */,
 				228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */,
 				228E205A1C9CB99D0058ADA1 /* CGRect+VectorConvertible.swift in Sources */,
-				228E205B1C9CB99D0058ADA1 /* VectorMathCapable.swift in Sources */,
 				228E205C1C9CB99D0058ADA1 /* CGPoint+VectorConvertible.swift in Sources */,
 				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
 				228E205E1C9CB99D0058ADA1 /* DynamicFunction.swift in Sources */,
@@ -1220,7 +1214,6 @@
 				5DB1A4AB1C876AD1000CF9EE /* Double+VectorConvertible.swift in Sources */,
 				5DB1A4941C876AD1000CF9EE /* AnyValueAnimation.swift in Sources */,
 				5DB1A4A81C876AD1000CF9EE /* CGRect+VectorConvertible.swift in Sources */,
-				5DB1A4B21C876AD1000CF9EE /* VectorMathCapable.swift in Sources */,
 				5DB1A4A71C876AD1000CF9EE /* CGPoint+VectorConvertible.swift in Sources */,
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
 				5DB1A4A21C876AD1000CF9EE /* DynamicFunction.swift in Sources */,
@@ -1276,7 +1269,6 @@
 				5D3A2F511C920CC20071F08F /* CGRect+VectorConvertible.swift in Sources */,
 				5D3A2F491C920CBC0071F08F /* DynamicFunction.swift in Sources */,
 				5D3A2F501C920CC20071F08F /* CGPoint+VectorConvertible.swift in Sources */,
-				5D3A2F581C920CCA0071F08F /* VectorMathCapable.swift in Sources */,
 				5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */,
 				5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */,
 				5D3A2F431C920C920071F08F /* Animator.swift in Sources */,
