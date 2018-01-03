@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  AdvanceSample-tvOS
-//
-//  Created by Timothy Donnelly on 3/18/16.
-//  Copyright © 2016 Storehouse Media Inc. All rights reserved.
-//
-
 import UIKit
 import Advance
 
