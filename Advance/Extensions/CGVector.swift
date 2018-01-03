@@ -3,16 +3,13 @@ import CoreGraphics
 /// Adds `VectorConvertible` conformance.
 extension CGVector: VectorConvertible {
     
-    /// The underlying vector type.
-    public typealias Vector = Vector2
-    
     /// Creates a new instance from a vector.
-    public init(vector: Vector) {
+    public init(vector: Vector2) {
         self.init(dx: CGFloat(vector.x), dy: CGFloat(vector.y))
     }
     
     /// Returns the vector representation.
-    public var vector: Vector {
-        return Vector(x: Scalar(dx), y: Scalar(dy))
+    public var vector: Vector2 {
+        return Vector2(x: Scalar(dx), y: Scalar(dy))
     }
 }
