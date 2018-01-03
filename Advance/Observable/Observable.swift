@@ -13,7 +13,7 @@ public final class Observable<T> {
     /// If the event has been closed, this has no effect.
     ///
     /// - parameter value: A value to be passed to each observer.
-    public func send(value: T) {
+    fileprivate func send(value: T) {
         for o in observers.values {
             o(value)
         }
@@ -43,4 +43,14 @@ public final class Observable<T> {
     public func removeObserver(for token: Token) {
         observers.removeValue(forKey: token)
     }
+}
+
+internal final class Sink<T> {
+    
+    let observable = Observable<T>()
+    
+    func send(value: T) {
+        observable.send(value: value)
+    }
+    
 }

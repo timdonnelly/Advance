@@ -28,8 +28,7 @@ public final class Animatable<Value: VectorConvertible> {
     /// false if it was cancelled.
     public typealias Completion = (Bool) -> Void
     
-    /// Fires each time the `value` property changes.
-    public let changed = Observable<Value>()
+    private let changedSink = Sink<Value>()
     
     // The animator that is driving the current animation, if any.
     fileprivate var animator: Animator<AnyValueAnimation<Value>>? = nil
@@ -40,8 +39,13 @@ public final class Animatable<Value: VectorConvertible> {
     fileprivate var currentValue: Value {
         didSet {
             guard currentValue != oldValue else { return }
-            changed.send(value: value)
+            changedSink.send(value: value)
         }
+    }
+    
+    /// Fires each time the `value` property changes.
+    public var changed: Observable<Value> {
+        return changedSink.observable
     }
     
     /// Returns `true` if an animation is in progress.

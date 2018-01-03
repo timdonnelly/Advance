@@ -84,9 +84,13 @@ public extension Loop {
         
         private var observationToken: UUID? = nil
         
+        private let advancedSink = Sink<Double>()
+        
         /// Fired during the update phase of each turn of the loop. Contains
         /// the elapsed time for the current animation frame.
-        public let advanced = Observable<Double>()
+        public var advanced: Observable<Double> {
+            return advancedSink.observable
+        }
         
         /// The associated loop instance.
         public let loop: Loop
@@ -113,7 +117,7 @@ public extension Loop {
         }
         
         fileprivate func advance(_ elapsed: Double) {
-            advanced.send(value: elapsed)
+            advancedSink.send(value: elapsed)
         }
         
         private func subscribe() {

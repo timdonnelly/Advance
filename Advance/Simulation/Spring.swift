@@ -20,6 +20,8 @@
 /// ```
 public final class Spring<Value: VectorConvertible> {
     
+    private let changedSink = Sink<Value>()
+    
     fileprivate var solver: DynamicSolver<SpringFunction<Value.VectorType>> {
         didSet {
             lastNotifiedValue = Value(vector: solver.value)
@@ -43,12 +45,14 @@ public final class Spring<Value: VectorConvertible> {
     }()
     
     /// Fires when `value` has changed.
-    public let changed = Observable<Value>()
+    public var changed: Observable<Value> {
+        return changedSink.observable
+    }
     
     fileprivate var lastNotifiedValue: Value {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
-            changed.send(value: lastNotifiedValue)
+            changedSink.send(value: lastNotifiedValue)
         }
     }
     

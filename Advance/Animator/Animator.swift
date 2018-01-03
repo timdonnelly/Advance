@@ -75,7 +75,7 @@ public final class Animator<A: Animation> {
         s.advanced.observe({ [unowned self] (elapsed) -> Void in
             guard self.state == .running else { return }
             self.animation.advance(by: elapsed)
-            self.changed.send(value: self.animation)
+            self.changedSink.send(value: self.animation)
             if self.animation.finished == true {
                 self.finish()
             }
@@ -109,9 +109,9 @@ public final class Animator<A: Animation> {
             case .completed(let result):
                 switch result {
                 case .cancelled:
-                    cancelled.send(value: animation)
+                    cancelledSink.send(value: animation)
                 case .finished:
-                    finished.send(value: animation)
+                    finishedSink.send(value: animation)
                 }
             }
         }
@@ -120,14 +120,24 @@ public final class Animator<A: Animation> {
     /// The animation that is being run.
     fileprivate (set) public var animation: A
     
+    private let changedSink = Sink<A>()
+    private let cancelledSink = Sink<A>()
+    private let finishedSink = Sink<A>()
+    
     /// Fired after every animation update.
-    public let changed = Observable<A>()
+    public var changed: Observable<A> {
+        return changedSink.observable
+    }
     
     /// Fired if the animator is cancelled.
-    public let cancelled = Observable<A>()
+    public var cancelled: Observable<A> {
+        return cancelledSink.observable
+    }
     
     /// Fired when the animation finishes.
-    public let finished = Observable<A>()
+    public var finished: Observable<A> {
+        return finishedSink.observable
+    }
     
     /// Creates a new animator.
     ///
