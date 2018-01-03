@@ -10,20 +10,17 @@ public final class Loop {
     /// The default loop.
     public static let shared = Loop()
     
-    fileprivate var currentAnimationTime: Double = 0.0
+    private var currentAnimationTime: Double = 0.0
     
-    fileprivate lazy var displayLink: DisplayLink = {
-        let link = DisplayLink()
-        link.callback = { [unowned self] (frame) in
-            self.displayLinkDidFire(frame)
-        }
-        return link
-    }()
+    private let displayLink: DisplayLink
     
     private var observers: [UUID:Observer] = [:]
     
     fileprivate init() {
-
+        displayLink = DisplayLink()
+        displayLink.callback = { [unowned self] (frame) in
+            self.displayLinkDidFire(frame)
+        }
     }
     
     /// Generates and returns a subscription for this loop.
