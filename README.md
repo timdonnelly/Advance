@@ -22,7 +22,7 @@ You can accomplish amazing things with Advance. But you should be sensitive to t
 
 ##### Requirements
 * iOS 8+, tvOS 9+, or OS X 10.10+
-* Swift 2.2+
+* Swift 4.0+ (Xcode 9 or higher)
 
 
 ### Examples
@@ -40,7 +40,7 @@ Located in the project:
 ```swift
 import Advance
 
-0.0.animateTo(3.0, duration: 2.0, timingFunction: LinearTimingFunction()) { (value) in
+0.0.animate(to: 3.0, duration: 2.0, timingFunction: LinearTimingFunction()) { (value) in
     print("value: \(value)")
     // Do something with value
 }
