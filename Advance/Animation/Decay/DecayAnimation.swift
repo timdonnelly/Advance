@@ -3,7 +3,7 @@
 ///
 /// `DecayAnimation` uses a `DynamicSolver` containing a `DecayFunction`
 /// internally.
-public struct DecayAnimation<Value: VectorConvertible>: ValueAnimation {
+public struct DecayAnimation<Value: VectorConvertible>: Animation {
     
     fileprivate var solver: DynamicSolver<DecayFunction<Value.VectorType>>
     

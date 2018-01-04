@@ -1,7 +1,7 @@
 /// Interpolates between values over a specified duration.
 ///
 /// - parameter Value: The type of value to be animated.
-public struct BasicAnimation<Value: VectorConvertible>: ValueAnimation {
+public struct BasicAnimation<Value: VectorConvertible>: Animation {
     
     /// The initial value at time 0.
     fileprivate (set) public var from: Value

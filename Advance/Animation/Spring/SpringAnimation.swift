@@ -9,7 +9,7 @@
 ///
 /// SpringAnimation instances use a `DynamicSolver` containing a
 /// `SpringFunction` internally to perform the spring calculations.
-public struct SpringAnimation<Value: VectorConvertible>: ValueAnimation {
+public struct SpringAnimation<Value: VectorConvertible>: Animation {
     
     // The underlying spring simulation.
     fileprivate var solver: DynamicSolver<SpringFunction<Value.VectorType>>

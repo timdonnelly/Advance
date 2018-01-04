@@ -31,7 +31,7 @@ public final class Animatable<Value: VectorConvertible> {
     private let changedSink = Sink<Value>()
     
     // The animator that is driving the current animation, if any.
-    fileprivate var animator: Animator<AnyValueAnimation<Value>>? = nil
+    fileprivate var animator: Animator<AnyAnimation<Value>>? = nil
     
     // Tracks the last publicly notified value – this lets us control when
     // events are fired (we always want to wait until the end of the
@@ -95,7 +95,7 @@ public final class Animatable<Value: VectorConvertible> {
     ///   animation has completed. Its only argument is a `Boolean`, which will 
     ///   be `true` if the animation completed uninterrupted, or `false` if it
     ///   was removed for any other reason.
-    public func animate<A: ValueAnimation>(with animation: A, completion: Completion? = nil) where A.Value == Value {
+    public func animate<A: Animation>(with animation: A, completion: Completion? = nil) where A.Value == Value {
         
         // Cancel any in-flight animation. We observe the cancelled event of
         // animators that we create in order to clean up, so this will have
@@ -103,7 +103,7 @@ public final class Animatable<Value: VectorConvertible> {
         cancelAnimation()
         assert(animator == nil)
         
-        animator = AnimatorContext.shared.animate(AnyValueAnimation(animation: animation))
+        animator = AnimatorContext.shared.animate(AnyAnimation(animation: animation))
         
         animator?.changed.observe({ [unowned self] (a) -> Void in
             self.currentValue = a.value

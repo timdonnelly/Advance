@@ -34,7 +34,6 @@
 		228E204B1C9CB99D0058ADA1 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4631C876AD1000CF9EE /* Animatable.swift */; };
 		228E204C1C9CB99D0058ADA1 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
 		228E204D1C9CB99D0058ADA1 /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */; };
-		228E204E1C9CB99D0058ADA1 /* ValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */; };
 		228E204F1C9CB99D0058ADA1 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4851C876AD1000CF9EE /* CGSize.swift */; };
 		228E20501C9CB99D0058ADA1 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
 		228E20511C9CB99D0058ADA1 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48C1C876AD1000CF9EE /* Vector2.swift */; };
@@ -45,7 +44,7 @@
 		228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
 		228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
 		228E20581C9CB99D0058ADA1 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double.swift */; };
-		228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */; };
+		228E20591C9CB99D0058ADA1 /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */; };
 		228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect.swift */; };
 		228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint.swift */; };
 		228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48B1C876AD1000CF9EE /* Vector1.swift */; };
@@ -87,8 +86,7 @@
 		5D3A2F3D1C920C810071F08F /* DecayAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */; };
 		5D3A2F3E1C920C860071F08F /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */; };
 		5D3A2F3F1C920C8C0071F08F /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4661C876AD1000CF9EE /* Animation.swift */; };
-		5D3A2F401C920C8C0071F08F /* AnyValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */; };
-		5D3A2F411C920C8C0071F08F /* ValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */; };
+		5D3A2F401C920C8C0071F08F /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */; };
 		5D3A2F421C920C8C0071F08F /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
 		5D3A2F431C920C920071F08F /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
 		5D3A2F441C920C920071F08F /* AnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */; };
@@ -127,13 +125,12 @@
 		5DB1A4911C876AD1000CF9EE /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4631C876AD1000CF9EE /* Animatable.swift */; };
 		5DB1A4921C876AD1000CF9EE /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
 		5DB1A4931C876AD1000CF9EE /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4661C876AD1000CF9EE /* Animation.swift */; };
-		5DB1A4941C876AD1000CF9EE /* AnyValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */; };
+		5DB1A4941C876AD1000CF9EE /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */; };
 		5DB1A4951C876AD1000CF9EE /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */; };
 		5DB1A4961C876AD1000CF9EE /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */; };
 		5DB1A4971C876AD1000CF9EE /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */; };
 		5DB1A4981C876AD1000CF9EE /* DecayAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */; };
 		5DB1A4991C876AD1000CF9EE /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */; };
-		5DB1A49A1C876AD1000CF9EE /* ValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */; };
 		5DB1A49B1C876AD1000CF9EE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
 		5DB1A49C1C876AD1000CF9EE /* AnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */; };
 		5DB1A49D1C876AD1000CF9EE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
@@ -330,13 +327,12 @@
 		5DB1A4631C876AD1000CF9EE /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
 		5DB1A4651C876AD1000CF9EE /* Advanceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanceable.swift; sourceTree = "<group>"; };
 		5DB1A4661C876AD1000CF9EE /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyValueAnimation.swift; sourceTree = "<group>"; };
+		5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyAnimation.swift; sourceTree = "<group>"; };
 		5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimation.swift; sourceTree = "<group>"; };
 		5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecayAnimation.swift; sourceTree = "<group>"; };
 		5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
-		5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueAnimation.swift; sourceTree = "<group>"; };
 		5DB1A4721C876AD1000CF9EE /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorContext.swift; sourceTree = "<group>"; };
 		5DB1A4751C876AD1000CF9EE /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -636,8 +632,7 @@
 				5DB1A46C1C876AD1000CF9EE /* Decay */,
 				5DB1A46E1C876AD1000CF9EE /* Spring */,
 				5DB1A4661C876AD1000CF9EE /* Animation.swift */,
-				5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */,
-				5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */,
+				5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */,
 				5DB1A4651C876AD1000CF9EE /* Advanceable.swift */,
 			);
 			path = Animation;
@@ -1113,7 +1108,6 @@
 				228E204B1C9CB99D0058ADA1 /* Animatable.swift in Sources */,
 				228E204C1C9CB99D0058ADA1 /* DisplayLink.swift in Sources */,
 				228E204D1C9CB99D0058ADA1 /* BasicAnimation.swift in Sources */,
-				228E204E1C9CB99D0058ADA1 /* ValueAnimation.swift in Sources */,
 				228E204F1C9CB99D0058ADA1 /* CGSize.swift in Sources */,
 				228E20501C9CB99D0058ADA1 /* Spring.swift in Sources */,
 				228E20511C9CB99D0058ADA1 /* Vector2.swift in Sources */,
@@ -1124,7 +1118,7 @@
 				228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */,
 				228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */,
 				228E20581C9CB99D0058ADA1 /* Double.swift in Sources */,
-				228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */,
+				228E20591C9CB99D0058ADA1 /* AnyAnimation.swift in Sources */,
 				228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */,
 				228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */,
 				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
@@ -1201,7 +1195,6 @@
 				5DB1A4911C876AD1000CF9EE /* Animatable.swift in Sources */,
 				5D3A2F5F1C922DAA0071F08F /* DisplayLink.swift in Sources */,
 				5DB1A4951C876AD1000CF9EE /* BasicAnimation.swift in Sources */,
-				5DB1A49A1C876AD1000CF9EE /* ValueAnimation.swift in Sources */,
 				5DB1A4A91C876AD1000CF9EE /* CGSize.swift in Sources */,
 				5DB1A4A41C876AD1000CF9EE /* Spring.swift in Sources */,
 				5DB1A4AF1C876AD1000CF9EE /* Vector2.swift in Sources */,
@@ -1212,7 +1205,7 @@
 				5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */,
 				5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */,
 				5DB1A4AB1C876AD1000CF9EE /* Double.swift in Sources */,
-				5DB1A4941C876AD1000CF9EE /* AnyValueAnimation.swift in Sources */,
+				5DB1A4941C876AD1000CF9EE /* AnyAnimation.swift in Sources */,
 				5DB1A4A81C876AD1000CF9EE /* CGRect.swift in Sources */,
 				5DB1A4A71C876AD1000CF9EE /* CGPoint.swift in Sources */,
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
@@ -1247,7 +1240,6 @@
 				5D3A2F471C920CB10071F08F /* Loop.swift in Sources */,
 				5D3A2F441C920C920071F08F /* AnimatorContext.swift in Sources */,
 				5D3A2F3C1C920C7C0071F08F /* UnitBezier.swift in Sources */,
-				5D3A2F411C920C8C0071F08F /* ValueAnimation.swift in Sources */,
 				5D3A2F4C1C920CBC0071F08F /* SpringFunction.swift in Sources */,
 				5D3A2F391C920C710071F08F /* Animatable.swift in Sources */,
 				5D3A2F3A1C920C7C0071F08F /* BasicAnimation.swift in Sources */,
@@ -1272,7 +1264,7 @@
 				5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */,
 				5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */,
 				5D3A2F431C920C920071F08F /* Animator.swift in Sources */,
-				5D3A2F401C920C8C0071F08F /* AnyValueAnimation.swift in Sources */,
+				5D3A2F401C920C8C0071F08F /* AnyAnimation.swift in Sources */,
 				5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */,
 				5D3A2F4A1C920CBC0071F08F /* DynamicSolver.swift in Sources */,
 				5D3A2F551C920CCA0071F08F /* Vector2.swift in Sources */,
