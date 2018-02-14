@@ -4,9 +4,8 @@ import Foundation
 public final class Observable<T> {
     
     public typealias Observer = (T) -> Void
-    public typealias Token = UUID
     
-    fileprivate var observers: [Token:Observer] = [:]
+    private var observers: [UUID:Observer] = [:]
     
     /// Notifies observers.
     ///
@@ -21,28 +20,40 @@ public final class Observable<T> {
 
     /// Adds an observer.
     ///
-    /// Adding an observer after an event is closed will simply call the
-    /// observer synchronously with the payload that the event was closed
-    /// with.
-    ///
     /// - parameter observer: A closure that will be executed when this event
     ///   is fired.
     @discardableResult
-    public func observe(_ observer: @escaping Observer) -> Token {
-        let token = Token()
-        observers[token] = observer
-        return token
+    public func observe(_ observer: @escaping Observer) -> Subscription {
+        let identifier = UUID()
+        observers[identifier] = observer
+        
+        let subscription = Subscription { [weak self] in
+            self?.removeObserver(for: identifier)
+        }
+        
+        return subscription
     }
     
-    /// Removed an observer with a given token.
-    ///
-    /// - seeAlso: func observe(observer:key:)
-    /// - parameter key: A string that identifies the observer to be removed.
-    ///   If an observer does not exist for the given key, the method returns
-    ///   without impact.
-    public func removeObserver(for token: Token) {
-        observers.removeValue(forKey: token)
+    private func removeObserver(for identifier: UUID) {
+        observers.removeValue(forKey: identifier)
     }
+}
+
+public extension Observable {
+    
+    struct Subscription {
+        
+        private let _unsubscribe: () -> Void
+        
+        fileprivate init(unsubscribeAction: @escaping () -> Void) {
+            _unsubscribe = unsubscribeAction
+        }
+        
+        public func unsubscribe() {
+            _unsubscribe()
+        }
+    }
+    
 }
 
 internal final class Sink<T> {
