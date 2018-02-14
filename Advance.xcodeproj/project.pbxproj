@@ -611,7 +611,6 @@
 				5DB1A4761C876AD1000CF9EE /* Extensions */,
 				5DB1A4791C876AD1000CF9EE /* Loop */,
 				5DB1A47B1C876AD1000CF9EE /* Dynamics */,
-				5DB1A4811C876AD1000CF9EE /* VectorConvertible */,
 				5DB1A4891C876AD1000CF9EE /* Vectors */,
 			);
 			path = Advance;
@@ -715,13 +714,6 @@
 			);
 			name = Dynamics;
 			path = Simulation;
-			sourceTree = "<group>";
-		};
-		5DB1A4811C876AD1000CF9EE /* VectorConvertible */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = VectorConvertible;
 			sourceTree = "<group>";
 		};
 		5DB1A4891C876AD1000CF9EE /* Vectors */ = {
