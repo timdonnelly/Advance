@@ -1,17 +1,17 @@
 Pod::Spec.new do |s|
   s.name         = "Advance"
-  s.version      = "1.0.0.beta1"
+  s.version      = "1.0.0"
   s.summary      = "A powerful animation framework for iOS and OS X."
-  s.description  = "Advance is a pure Swift framework that enables advanced animations and physics-based interactions."
+  s.description  = "Advance is a Swift framework that enables advanced animations and physics-based interactions."
 
-  s.homepage     = "https://github.com/storehouse/Advance"
+  s.homepage     = "https://github.com/timdonnelly/Advance"
 
   s.license      = "BSD 2-clause \"Simplified\" License"
 
-  s.authors      = "Storehouse", "Tim Donnelly"
-  s.social_media_url = 'http://twitter.com/storehousehq'
+  s.authors      = "Tim Donnelly"
+  s.social_media_url = 'http://twitter.com/timdonnelly'
 
-  s.source       = { :git => "https://github.com/storehouse/Advance.git", :tag => "1.0.0.beta1" }
+  s.source       = { :git => "https://github.com/timdonnelly/Advance.git", :tag => "v1.0.0" }
 
   s.source_files = "Advance/**/*.swift"
 
