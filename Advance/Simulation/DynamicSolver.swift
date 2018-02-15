@@ -7,7 +7,7 @@ import Foundation
 /// [The RK4 method](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods) 
 /// is used to integrate the acceleration function.
 ///
-/// Constant time steps are not guarenteed elsewhere in the framework. Due to
+/// Constant time steps are not guaranteed elsewhere in the framework. Due to
 /// the nature of dynamic functions, however, it is desirable to maintain
 /// a constant update interval for a dynamic simulation. `DynamicSolver`
 /// instances maintain their own internal time state. When `advance(elapsed:)
