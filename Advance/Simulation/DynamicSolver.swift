@@ -42,11 +42,11 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
     fileprivate (set) public var settled: Bool = false
     
     // The current state of the solver.
-    fileprivate var simulationState: DynamicSolverState<F.VectorType>
+    fileprivate var simulationState: DynamicSolverState<F>
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    fileprivate var interpolatedState: DynamicSolverState<F.VectorType>
+    fileprivate var interpolatedState: DynamicSolverState<F>
     
     /// Creates a new `DynamicSolver` instance.
     ///
@@ -142,21 +142,25 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
     }
 }
 
-private struct DynamicSolverState<VectorType: Vector> {
-    var value: VectorType
-    var velocity: VectorType
-    init(value: VectorType, velocity: VectorType) {
+private struct DynamicSolverState<F: DynamicFunction> {
+    
+    var value: F.VectorType
+    var velocity: F.VectorType
+    
+    init(value: F.VectorType, velocity: F.VectorType) {
         self.value = value
         self.velocity = velocity
     }
+    
 }
 
 private extension DynamicSolverState {
-    typealias Derivative = DynamicSolverState<VectorType>
+    
+    typealias Derivative = DynamicSolverState<F>
     
     /// RK4 Integration.
-    func integrate<F: DynamicFunction>(function: F, time: Double) -> DynamicSolverState<VectorType> where F.VectorType == VectorType {
-        let initial = Derivative(value:VectorType.zero, velocity: VectorType.zero)
+    func integrate(function: F, time: Double) -> DynamicSolverState<F> {
+        let initial = Derivative(value:F.VectorType.zero, velocity: F.VectorType.zero)
         
         let a = evaluate(function: function, time: 0.0, derivative: initial)
         let b = evaluate(function: function, time: time * 0.5, derivative: a)
@@ -178,7 +182,7 @@ private extension DynamicSolverState {
         return DynamicSolverState(value: val, velocity: vel)
     }
     
-    func evaluate<F: DynamicFunction>(function: F, time: Double, derivative: Derivative) -> Derivative where F.VectorType == VectorType {
+    func evaluate(function: F, time: Double, derivative: Derivative) -> Derivative {
         let val = value + Scalar(time) * derivative.value
         let vel = velocity + Scalar(time) * derivative.velocity
         let accel = function.acceleration(value: val, velocity: vel)
