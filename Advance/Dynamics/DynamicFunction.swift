@@ -16,8 +16,6 @@ public protocol AccelerationFunction {
 /// a vector over time.
 public protocol DynamicFunction: AccelerationFunction {
     
-
-    
     /// Returns `true` if the simulation should be allowed to enter its settled
     /// state. For example, a decay function may check that `velocity` is below
     /// a minimum threshold.
