@@ -1,6 +1,5 @@
-/// Conforming types implement a dynamic function that models changes to
-/// a vector over time.
-public protocol DynamicFunction {
+public protocol AccelerationFunction {
+    
     associatedtype VectorType: Vector
     
     /// The computed acceleration for a given simulation state.
@@ -10,6 +9,14 @@ public protocol DynamicFunction {
     /// - returns: A vector containing the acceleration (in units per second)
     ///   based on `value` and `velocity`.
     func acceleration(value: VectorType, velocity: VectorType) -> VectorType
+    
+}
+
+/// Conforming types implement a dynamic function that models changes to
+/// a vector over time.
+public protocol DynamicFunction: AccelerationFunction {
+    
+
     
     /// Returns `true` if the simulation should be allowed to enter its settled
     /// state. For example, a decay function may check that `velocity` is below

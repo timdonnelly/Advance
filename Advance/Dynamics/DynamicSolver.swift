@@ -42,11 +42,11 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
     fileprivate (set) public var settled: Bool = false
     
     // The current state of the solver.
-    fileprivate var simulationState: DynamicSolverState<F>
+    fileprivate var simulationState: DynamicsState<F.VectorType>
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    fileprivate var interpolatedState: DynamicSolverState<F>
+    fileprivate var interpolatedState: DynamicsState<F.VectorType>
     
     /// Creates a new `DynamicSolver` instance.
     ///
@@ -55,7 +55,7 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
     /// - parameter velocity: The initial velocity of the simulation.
     public init(function: F, value: F.VectorType, velocity: F.VectorType = F.VectorType.zero) {
         self.function = function
-        simulationState = DynamicSolverState(value: value, velocity: velocity)
+        simulationState = DynamicsState(value: value, velocity: velocity)
         interpolatedState = simulationState
         settleIfPossible()
     }
@@ -95,7 +95,7 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
                 break
             }
             previousState = simulationState
-            simulationState = simulationState.integrate(function: function, time: tickTime)
+            simulationState = simulationState.integrating(function: function, time: tickTime)
             timeAccumulator -= tickTime
         }
         
@@ -139,54 +139,5 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
             settled = false
             settleIfPossible()
         }
-    }
-}
-
-private struct DynamicSolverState<F: DynamicFunction> {
-    
-    var value: F.VectorType
-    var velocity: F.VectorType
-    
-    init(value: F.VectorType, velocity: F.VectorType) {
-        self.value = value
-        self.velocity = velocity
-    }
-    
-}
-
-private extension DynamicSolverState {
-    
-    typealias Derivative = DynamicSolverState<F>
-    
-    /// RK4 Integration.
-    func integrate(function: F, time: Double) -> DynamicSolverState<F> {
-        let initial = Derivative(value:F.VectorType.zero, velocity: F.VectorType.zero)
-        
-        let a = evaluate(function: function, time: 0.0, derivative: initial)
-        let b = evaluate(function: function, time: time * 0.5, derivative: a)
-        let c = evaluate(function: function, time: time * 0.5, derivative: b)
-        let d = evaluate(function: function, time: time, derivative: c)
-        
-        var dxdt = a.value
-        dxdt += (2.0 * (b.value + c.value)) + d.value
-        dxdt = Scalar(1.0/6.0) * dxdt
-        
-        var dvdt = a.velocity
-        dvdt += (2.0 * (b.velocity + c.velocity)) + d.velocity
-        dvdt = Scalar(1.0/6.0) * dvdt
-        
-        
-        let val = value + Scalar(time) * dxdt
-        let vel = velocity + Scalar(time) * dvdt
-        
-        return DynamicSolverState(value: val, velocity: vel)
-    }
-    
-    func evaluate(function: F, time: Double, derivative: Derivative) -> Derivative {
-        let val = value + Scalar(time) * derivative.value
-        let vel = velocity + Scalar(time) * derivative.velocity
-        let accel = function.acceleration(value: val, velocity: vel)
-        let d = Derivative(value: vel, velocity: accel)
-        return d
     }
 }
