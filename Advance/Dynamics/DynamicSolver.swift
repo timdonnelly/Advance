@@ -16,7 +16,7 @@ import Foundation
 /// up" to the outside time. It then uses linear interpolation to match the
 /// internal state to the required external time in order to return the most
 /// precise calculations.
-public struct DynamicSolver<F: DynamicFunction> : Advanceable {
+public struct DynamicSolver<F: Simulation> : Advanceable {
     
     // The internal time step. 0.008 == 120fps (double the typical screen refresh
     // rate). The math required to solve most functions is easy for modern
@@ -62,12 +62,17 @@ public struct DynamicSolver<F: DynamicFunction> : Advanceable {
     
     fileprivate mutating func settleIfPossible() {
         guard settled == false else { return }
-        if function.canSettle(value: simulationState.value, velocity: simulationState.velocity) {
-            simulationState.value = function.settledValue(value: simulationState.value, velocity: simulationState.velocity)
+        
+        switch function.status(for: simulationState) {
+        case .running:
+            break
+        case let .settled(value):
+            simulationState.value = value
             simulationState.velocity = F.VectorType.zero
             interpolatedState = simulationState
             settled = true
         }
+
     }
     
     /// Advances the simulation.

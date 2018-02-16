@@ -1,10 +1,10 @@
 public struct DynamicsState<T> where T: Vector {
     
-    var value: T
+    public var value: T
     
-    var velocity: T
+    public var velocity: T
     
-    init(value: T, velocity: T) {
+    public init(value: T, velocity: T) {
         self.value = value
         self.velocity = velocity
     }

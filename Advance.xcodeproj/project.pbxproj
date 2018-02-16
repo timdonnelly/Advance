@@ -48,7 +48,7 @@
 		228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect.swift */; };
 		228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint.swift */; };
 		228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48B1C876AD1000CF9EE /* Vector1.swift */; };
-		228E205E1C9CB99D0058ADA1 /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
+		228E205E1C9CB99D0058ADA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* Simulation.swift */; };
 		228E205F1C9CB99D0058ADA1 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
 		228E20601C9CB99D0058ADA1 /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
 		228E20611C9CB99D0058ADA1 /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector.swift */; };
@@ -94,7 +94,7 @@
 		5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
 		5D3A2F471C920CB10071F08F /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5D3A2F481C920CBC0071F08F /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
-		5D3A2F491C920CBC0071F08F /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
+		5D3A2F491C920CBC0071F08F /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* Simulation.swift */; };
 		5D3A2F4A1C920CBC0071F08F /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
 		5D3A2F4B1C920CBC0071F08F /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
 		5D3A2F4C1C920CBC0071F08F /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
@@ -137,7 +137,7 @@
 		5DB1A49E1C876AD1000CF9EE /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
 		5DB1A4A01C876AD1000CF9EE /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
-		5DB1A4A21C876AD1000CF9EE /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
+		5DB1A4A21C876AD1000CF9EE /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* Simulation.swift */; };
 		5DB1A4A31C876AD1000CF9EE /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
 		5DB1A4A41C876AD1000CF9EE /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
 		5DB1A4A51C876AD1000CF9EE /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
@@ -163,12 +163,6 @@
 		5DE95A001C93940E008487A8 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
 		5DE95A011C93940E008487A8 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */; };
 		5DE95A021C93940E008487A8 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
-		9710072B2035080500FC5BA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710072A2035080500FC5BA1 /* Simulation.swift */; };
-		9710072C2035080500FC5BA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710072A2035080500FC5BA1 /* Simulation.swift */; };
-		9710072D2035080500FC5BA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710072A2035080500FC5BA1 /* Simulation.swift */; };
-		9710072F2035085500FC5BA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710072E2035085500FC5BA1 /* Simulator.swift */; };
-		971007302035085500FC5BA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710072E2035085500FC5BA1 /* Simulator.swift */; };
-		971007312035085500FC5BA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710072E2035085500FC5BA1 /* Simulator.swift */; };
 		9710075920378A5300FC5BA1 /* DynamicsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* DynamicsState.swift */; };
 		9710075A20378A5300FC5BA1 /* DynamicsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* DynamicsState.swift */; };
 		9710075B20378A5300FC5BA1 /* DynamicsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* DynamicsState.swift */; };
@@ -351,7 +345,7 @@
 		5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAMediaTimingFunction.swift; sourceTree = "<group>"; };
 		5DB1A47A1C876AD1000CF9EE /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecayFunction.swift; sourceTree = "<group>"; };
-		5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFunction.swift; sourceTree = "<group>"; };
+		5DB1A47D1C876AD1000CF9EE /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicSolver.swift; sourceTree = "<group>"; };
 		5DB1A47F1C876AD1000CF9EE /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
 		5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringFunction.swift; sourceTree = "<group>"; };
@@ -372,8 +366,6 @@
 		5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdvanceTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE959F41C9392E1008487A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DE95A061C93963A008487A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9710072A2035080500FC5BA1 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
-		9710072E2035085500FC5BA1 /* Simulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
 		9710075820378A5300FC5BA1 /* DynamicsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsState.swift; sourceTree = "<group>"; };
 		9710075C20379C3500FC5BA1 /* DynamicsState+RK4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DynamicsState+RK4.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -620,7 +612,6 @@
 		5DB1A4611C876AD1000CF9EE /* Advance */ = {
 			isa = PBXGroup;
 			children = (
-				97100729203507C300FC5BA1 /* Simulation */,
 				5DB1A4621C876AD1000CF9EE /* Animatable */,
 				5DB1A4641C876AD1000CF9EE /* Animation */,
 				5DB1A4711C876AD1000CF9EE /* Animator */,
@@ -724,7 +715,7 @@
 			isa = PBXGroup;
 			children = (
 				5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */,
-				5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */,
+				5DB1A47D1C876AD1000CF9EE /* Simulation.swift */,
 				5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */,
 				5DB1A47F1C876AD1000CF9EE /* Spring.swift */,
 				5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */,
@@ -763,15 +754,6 @@
 			);
 			path = "Advance-iOS";
 			sourceTree = SOURCE_ROOT;
-		};
-		97100729203507C300FC5BA1 /* Simulation */ = {
-			isa = PBXGroup;
-			children = (
-				9710072A2035080500FC5BA1 /* Simulation.swift */,
-				9710072E2035085500FC5BA1 /* Simulator.swift */,
-			);
-			path = Simulation;
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -1135,7 +1117,6 @@
 				228E20541C9CB99D0058ADA1 /* DecayAnimation.swift in Sources */,
 				228E20551C9CB99D0058ADA1 /* SpringAnimation.swift in Sources */,
 				228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */,
-				9710072C2035080500FC5BA1 /* Simulation.swift in Sources */,
 				228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */,
 				228E20581C9CB99D0058ADA1 /* Double.swift in Sources */,
 				9710075E20379C3500FC5BA1 /* DynamicsState+RK4.swift in Sources */,
@@ -1144,11 +1125,10 @@
 				9710075A20378A5300FC5BA1 /* DynamicsState.swift in Sources */,
 				228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */,
 				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
-				228E205E1C9CB99D0058ADA1 /* DynamicFunction.swift in Sources */,
+				228E205E1C9CB99D0058ADA1 /* Simulation.swift in Sources */,
 				228E205F1C9CB99D0058ADA1 /* Animator.swift in Sources */,
 				228E20601C9CB99D0058ADA1 /* DynamicSolver.swift in Sources */,
 				228E20611C9CB99D0058ADA1 /* CGVector.swift in Sources */,
-				971007302035085500FC5BA1 /* Simulator.swift in Sources */,
 				228E20621C9CB99D0058ADA1 /* TimingFunction.swift in Sources */,
 				228E20631C9CB99D0058ADA1 /* CAMediaTimingFunction.swift in Sources */,
 				228E20641C9CB99D0058ADA1 /* Observable.swift in Sources */,
@@ -1226,7 +1206,6 @@
 				5DB1A4981C876AD1000CF9EE /* DecayAnimation.swift in Sources */,
 				5DB1A4991C876AD1000CF9EE /* SpringAnimation.swift in Sources */,
 				5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */,
-				9710072B2035080500FC5BA1 /* Simulation.swift in Sources */,
 				5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */,
 				5DB1A4AB1C876AD1000CF9EE /* Double.swift in Sources */,
 				9710075D20379C3500FC5BA1 /* DynamicsState+RK4.swift in Sources */,
@@ -1235,11 +1214,10 @@
 				9710075920378A5300FC5BA1 /* DynamicsState.swift in Sources */,
 				5DB1A4A71C876AD1000CF9EE /* CGPoint.swift in Sources */,
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
-				5DB1A4A21C876AD1000CF9EE /* DynamicFunction.swift in Sources */,
+				5DB1A4A21C876AD1000CF9EE /* Simulation.swift in Sources */,
 				5DB1A49B1C876AD1000CF9EE /* Animator.swift in Sources */,
 				5DB1A4A31C876AD1000CF9EE /* DynamicSolver.swift in Sources */,
 				5DB1A4AA1C876AD1000CF9EE /* CGVector.swift in Sources */,
-				9710072F2035085500FC5BA1 /* Simulator.swift in Sources */,
 				5DB1A4961C876AD1000CF9EE /* TimingFunction.swift in Sources */,
 				5DB1A49E1C876AD1000CF9EE /* CAMediaTimingFunction.swift in Sources */,
 				5DB1A49D1C876AD1000CF9EE /* Observable.swift in Sources */,
@@ -1284,11 +1262,10 @@
 				5D3A2F4E1C920CC20071F08F /* Double.swift in Sources */,
 				5D3A2F3D1C920C810071F08F /* DecayAnimation.swift in Sources */,
 				5D3A2F481C920CBC0071F08F /* DecayFunction.swift in Sources */,
-				9710072D2035080500FC5BA1 /* Simulation.swift in Sources */,
 				5D3A2F3B1C920C7C0071F08F /* TimingFunction.swift in Sources */,
 				5D3A2F511C920CC20071F08F /* CGRect.swift in Sources */,
 				9710075F20379C3500FC5BA1 /* DynamicsState+RK4.swift in Sources */,
-				5D3A2F491C920CBC0071F08F /* DynamicFunction.swift in Sources */,
+				5D3A2F491C920CBC0071F08F /* Simulation.swift in Sources */,
 				5D3A2F501C920CC20071F08F /* CGPoint.swift in Sources */,
 				9710075B20378A5300FC5BA1 /* DynamicsState.swift in Sources */,
 				5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */,
@@ -1297,7 +1274,6 @@
 				5D3A2F401C920C8C0071F08F /* AnyAnimation.swift in Sources */,
 				5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */,
 				5D3A2F4A1C920CBC0071F08F /* DynamicSolver.swift in Sources */,
-				971007312035085500FC5BA1 /* Simulator.swift in Sources */,
 				5D3A2F551C920CCA0071F08F /* Vector2.swift in Sources */,
 				5D3A2F561C920CCA0071F08F /* Vector3.swift in Sources */,
 				5D3A2F451C920C970071F08F /* Observable.swift in Sources */,

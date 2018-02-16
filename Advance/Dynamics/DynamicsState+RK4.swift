@@ -30,11 +30,12 @@ public extension DynamicsState {
     }
     
     private func evaluate<F>(function: F, time: Double, derivative: Derivative) -> Derivative where F: AccelerationFunction, F.VectorType == T {
-        let val = value + Scalar(time) * derivative.value
-        let vel = velocity + Scalar(time) * derivative.velocity
-        let accel = function.acceleration(value: val, velocity: vel)
-        let d = Derivative(value: vel, velocity: accel)
-        return d
+        var state = self
+        state.value += Scalar(time) * derivative.value
+        state.velocity += Scalar(time) * derivative.velocity
+        return Derivative(
+            value: state.velocity,
+            velocity: function.acceleration(for: state))
     }
     
     

@@ -1,23 +1,21 @@
 import Advance
 import Foundation
 
-struct GravityFunction: DynamicFunction {
+struct GravityFunction: Simulation {
     
-    typealias Vector = Vector2
-    
-    var target: Vector
+    var target: Vector2
     
     var minRadius = 30.0
     
     var threshold: Scalar = 0.1
     
-    init(target: Vector) {
+    init(target: Vector2) {
         self.target = target
     }
     
-    func acceleration(value: Vector, velocity: Vector) -> Vector {
+    func acceleration(for state: DynamicsState<Vector2>) -> Vector2 {
         
-        let delta = target - value
+        let delta = target - state.value
         let heading = atan2(delta.y, delta.x)
         
         var distance = hypot(delta.x, delta.y)
@@ -25,29 +23,27 @@ struct GravityFunction: DynamicFunction {
         
         let accel = 1000000.0 / (distance*distance)
         
-        var result = Vector.zero
+        var result = Vector2.zero
         result.x = accel * cos(heading)
         result.y = accel * sin(heading)
         return result
     }
     
-    func canSettle(value: Vector, velocity: Vector) -> Bool {
-        let min = Vector(scalar: -threshold)
-        let max = Vector(scalar: threshold)
+    func status(for state: DynamicsState<Vector2>) -> SimulationStatus<Vector2> {
         
-        if velocity.clamped(min: min, max: max) != velocity {
-            return false
+        let min = Vector2(scalar: -threshold)
+        let max = Vector2(scalar: threshold)
+        
+        if state.velocity.clamped(min: min, max: max) != state.velocity {
+            return .running
         }
         
-        let valueDelta = value - target
+        let valueDelta = state.value - target
         if valueDelta.clamped(min: min, max: max) != valueDelta {
-            return false
+            return .running
         }
         
-        return true
+        return .settled(value: target)
     }
-    
-    func settledValue(value: Vector, velocity: Vector) -> Vector {
-        return target
-    }
+
 }
