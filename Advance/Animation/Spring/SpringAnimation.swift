@@ -12,7 +12,7 @@
 public struct SpringAnimation<Value: VectorConvertible>: Animation {
     
     // The underlying spring simulation.
-    fileprivate var solver: DynamicSolver<SpringFunction<Value>>
+    fileprivate var solver: Simulator<SpringFunction<Value>>
     
     /// Creates a new `SpringAnimation` instance.
     ///
@@ -22,7 +22,7 @@ public struct SpringAnimation<Value: VectorConvertible>: Animation {
     /// - parameter velocity: The initial velocity at the start of the animation.
     public init(from: Value, target: Value, velocity: Value = Value.zero) {
         let f = SpringFunction(target: target)
-        solver = DynamicSolver(function: f, value: from, velocity: velocity)
+        solver = Simulator(function: f, value: from, velocity: velocity)
     }
     
     /// Advances the animation.
