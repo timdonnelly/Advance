@@ -100,7 +100,7 @@ public struct DynamicSolver<F: Simulation> : Advanceable {
                 break
             }
             previousState = simulationState
-            simulationState = simulationState.integrating(function: function, time: tickTime)
+            simulationState = function.integrate(state: simulationState, time: tickTime)
             timeAccumulator -= tickTime
         }
         

@@ -166,9 +166,6 @@
 		9710075920378A5300FC5BA1 /* DynamicsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* DynamicsState.swift */; };
 		9710075A20378A5300FC5BA1 /* DynamicsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* DynamicsState.swift */; };
 		9710075B20378A5300FC5BA1 /* DynamicsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* DynamicsState.swift */; };
-		9710075D20379C3500FC5BA1 /* DynamicsState+RK4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075C20379C3500FC5BA1 /* DynamicsState+RK4.swift */; };
-		9710075E20379C3500FC5BA1 /* DynamicsState+RK4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075C20379C3500FC5BA1 /* DynamicsState+RK4.swift */; };
-		9710075F20379C3500FC5BA1 /* DynamicsState+RK4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075C20379C3500FC5BA1 /* DynamicsState+RK4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -367,7 +364,6 @@
 		5DE959F41C9392E1008487A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DE95A061C93963A008487A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9710075820378A5300FC5BA1 /* DynamicsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsState.swift; sourceTree = "<group>"; };
-		9710075C20379C3500FC5BA1 /* DynamicsState+RK4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DynamicsState+RK4.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -720,7 +716,6 @@
 				5DB1A47F1C876AD1000CF9EE /* Spring.swift */,
 				5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */,
 				9710075820378A5300FC5BA1 /* DynamicsState.swift */,
-				9710075C20379C3500FC5BA1 /* DynamicsState+RK4.swift */,
 			);
 			path = Dynamics;
 			sourceTree = "<group>";
@@ -1119,7 +1114,6 @@
 				228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */,
 				228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */,
 				228E20581C9CB99D0058ADA1 /* Double.swift in Sources */,
-				9710075E20379C3500FC5BA1 /* DynamicsState+RK4.swift in Sources */,
 				228E20591C9CB99D0058ADA1 /* AnyAnimation.swift in Sources */,
 				228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */,
 				9710075A20378A5300FC5BA1 /* DynamicsState.swift in Sources */,
@@ -1208,7 +1202,6 @@
 				5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */,
 				5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */,
 				5DB1A4AB1C876AD1000CF9EE /* Double.swift in Sources */,
-				9710075D20379C3500FC5BA1 /* DynamicsState+RK4.swift in Sources */,
 				5DB1A4941C876AD1000CF9EE /* AnyAnimation.swift in Sources */,
 				5DB1A4A81C876AD1000CF9EE /* CGRect.swift in Sources */,
 				9710075920378A5300FC5BA1 /* DynamicsState.swift in Sources */,
@@ -1264,7 +1257,6 @@
 				5D3A2F481C920CBC0071F08F /* DecayFunction.swift in Sources */,
 				5D3A2F3B1C920C7C0071F08F /* TimingFunction.swift in Sources */,
 				5D3A2F511C920CC20071F08F /* CGRect.swift in Sources */,
-				9710075F20379C3500FC5BA1 /* DynamicsState+RK4.swift in Sources */,
 				5D3A2F491C920CBC0071F08F /* Simulation.swift in Sources */,
 				5D3A2F501C920CC20071F08F /* CGPoint.swift in Sources */,
 				9710075B20378A5300FC5BA1 /* DynamicsState.swift in Sources */,

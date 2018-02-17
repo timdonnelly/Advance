@@ -1,7 +1,7 @@
 /// Conforming types implement a dynamic function that models changes to
 /// a vector over time.
 
-public protocol AccelerationFunction {
+public protocol Simulation {
     
     associatedtype VectorType: Vector
     
@@ -13,13 +13,53 @@ public protocol AccelerationFunction {
     ///   based on `value` and `velocity`.
     func acceleration(for state: DynamicsState<VectorType>) -> VectorType
     
+    func status(for state: DynamicsState<VectorType>) -> SimulationStatus<VectorType>
+
 }
 
-public protocol Simulation: AccelerationFunction {
-    func status(for state: DynamicsState<VectorType>) -> SimulationStatus<VectorType>
-}
 
 public enum SimulationStatus<T> where T: Vector {
     case running
     case settled(value: T)
+}
+
+
+/// RK4 Integration.
+public extension Simulation {
+    
+    fileprivate typealias Derivative = DynamicsState
+    
+    public func integrate(state: DynamicsState<VectorType>, time: Double) -> DynamicsState<VectorType> {
+        
+        let initial = Derivative(value:VectorType.zero, velocity: VectorType.zero)
+        
+        let a = evaluate(state: state, time: 0.0, derivative: initial)
+        let b = evaluate(state: state, time: time * 0.5, derivative: a)
+        let c = evaluate(state: state, time: time * 0.5, derivative: b)
+        let d = evaluate(state: state, time: time, derivative: c)
+        
+        var dxdt = a.value
+        dxdt += (2.0 * (b.value + c.value)) + d.value
+        dxdt = Scalar(1.0/6.0) * dxdt
+        
+        var dvdt = a.velocity
+        dvdt += (2.0 * (b.velocity + c.velocity)) + d.velocity
+        dvdt = Scalar(1.0/6.0) * dvdt
+        
+        
+        let val = state.value + Scalar(time) * dxdt
+        let vel = state.velocity + Scalar(time) * dvdt
+        
+        return DynamicsState(value: val, velocity: vel)
+    }
+    
+    private func evaluate(state: DynamicsState<VectorType>, time: Double, derivative: Derivative<VectorType>) -> Derivative<VectorType> {
+        var nextState = state
+        nextState.value += Scalar(time) * derivative.value
+        nextState.velocity += Scalar(time) * derivative.velocity
+        return Derivative(
+            value: nextState.velocity,
+            velocity: acceleration(for: nextState))
+    }
+    
 }
