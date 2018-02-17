@@ -40,4 +40,11 @@ extension Vector1: Vector {
     public mutating func interpolate(to otherValue: Vector1, alpha: Scalar) {
         self += alpha * (otherValue - self)
     }
+    
+    public func clamped(min: Vector1, max: Vector1) -> Vector1 {
+        assert(min <= max)
+        if self < min { return min }
+        if self > max { return max }
+        return self
+    }
 }

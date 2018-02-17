@@ -82,6 +82,13 @@ extension Vector3: Vector {
         z += alpha * (otherValue.z - z)
     }
     
+    public func clamped(min: Vector3, max: Vector3) -> Vector3 {
+        return Vector3(
+            x: x.clamped(min: min.x, max: max.x),
+            y: y.clamped(min: min.y, max: max.y),
+            z: z.clamped(min: min.z, max: max.z))
+    }
+    
     /// Equatable.
     public static func ==(lhs: Vector3, rhs: Vector3) -> Bool {
         return lhs.x == rhs.x

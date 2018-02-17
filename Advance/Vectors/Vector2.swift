@@ -59,6 +59,12 @@ extension Vector2: Vector {
         }
     }
     
+    public func clamped(min: Vector2, max: Vector2) -> Vector2 {
+        return Vector2(
+            x: x.clamped(min: min.x, max: max.x),
+            y: y.clamped(min: min.y, max: max.y))
+    }
+    
     /// Interpolate between the given values.
     public func interpolated(to otherValue: Vector2, alpha: Scalar) -> Vector2 {
         var result = self
