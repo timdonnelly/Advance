@@ -16,7 +16,7 @@ public struct DecayFunction<VectorType: Vector>: Simulation {
         return -drag * state.velocity
     }
     
-    public func status(for state: SimulationState<VectorType>) -> SimulationStatus<VectorType> {
+    public func status(for state: SimulationState<VectorType>) -> SimulationResult<VectorType> {
         let min = VectorType(scalar: -threshold)
         let max = VectorType(scalar: threshold)
         if state.velocity.clamped(min: min, max: max) == state.velocity {

@@ -41,7 +41,7 @@ public struct SpringFunction<VectorType>: Simulation where VectorType: Vector {
         return accel
     }
     
-    public func status(for state: SimulationState<VectorType>) -> SimulationStatus<VectorType> {
+    public func status(for state: SimulationState<VectorType>) -> SimulationResult<VectorType> {
         let min = VectorType(scalar: -configuration.threshold)
         let max = VectorType(scalar: configuration.threshold)
         

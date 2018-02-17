@@ -29,7 +29,7 @@ struct GravityFunction: Simulation {
         return result
     }
     
-    func status(for state: SimulationState<Vector2>) -> SimulationStatus<Vector2> {
+    func status(for state: SimulationState<Vector2>) -> SimulationResult<Vector2> {
         
         let min = Vector2(scalar: -threshold)
         let max = Vector2(scalar: threshold)
