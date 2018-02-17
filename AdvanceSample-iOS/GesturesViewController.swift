@@ -33,8 +33,8 @@ final class GesturesViewController: DemoViewController {
         b.size.width = min(view.bounds.width, view.bounds.height) - 64.0
         b.size.height = b.size.width
         gestureView.bounds = b
-        gestureView.animatableCenter.value = CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY)
-        gestureView.animatableTransform.value = SimpleTransform()
+        gestureView.animatableCenter.reset(to: CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY))
+        gestureView.animatableTransform.reset(to: SimpleTransform())
     }
 
     override func didReceiveMemoryWarning() {
