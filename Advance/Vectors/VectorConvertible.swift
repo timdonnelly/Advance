@@ -33,3 +33,60 @@ public extension VectorConvertible {
     }
     
 }
+
+public extension VectorConvertible {
+    
+    init(scalar: Scalar) {
+        self.init(vector: VectorType(scalar: scalar))
+    }
+    
+    func clamped(min: Self, max: Self) -> Self {
+        return Self.init(vector: vector.clamped(min: min.vector, max: max.vector))
+    }
+    
+    /// Product.
+    static func *(lhs: Self, rhs: Self) -> Self {
+        return Self.init(vector: lhs.vector * rhs.vector)
+    }
+    
+    /// Product (in place).
+    static func *=(lhs: inout Self, rhs: Self) {
+        lhs = lhs * rhs
+    }
+    
+    /// Quotient.
+    static func /(lhs: Self, rhs: Self) -> Self {
+        return Self.init(vector: lhs.vector / rhs.vector)
+    }
+    
+    /// Quotient (in place).
+    static func /=(lhs: inout Self, rhs: Self) {
+        lhs = lhs / rhs
+    }
+    
+    /// Sum.
+    static func +(lhs: Self, rhs: Self) -> Self {
+        return Self.init(vector: lhs.vector + rhs.vector)
+    }
+    
+    /// Sum (in place).
+    static func +=(lhs: inout Self, rhs: Self) {
+        lhs = lhs + rhs
+    }
+    
+    /// Difference.
+    static func -(lhs: Self, rhs: Self) -> Self {
+        return Self.init(vector: lhs.vector - rhs.vector)
+    }
+    
+    /// Difference (in place).
+    static func -=(lhs: inout Self, rhs: Self) {
+        lhs = lhs - rhs
+    }
+    
+    /// Scalar-Vector product.
+    static func *(lhs: Scalar, rhs: Self) -> Self {
+        return Self.init(vector: lhs * rhs.vector)
+    }
+    
+}
