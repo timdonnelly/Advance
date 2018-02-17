@@ -11,9 +11,9 @@ public protocol Simulation {
     /// - parameter velocity: The current velocity of the simulation.
     /// - returns: A vector containing the acceleration (in units per second)
     ///   based on `value` and `velocity`.
-    func acceleration(for state: DynamicsState<VectorType>) -> VectorType
+    func acceleration(for state: SimulationState<VectorType>) -> VectorType
     
-    func status(for state: DynamicsState<VectorType>) -> SimulationStatus<VectorType>
+    func status(for state: SimulationState<VectorType>) -> SimulationStatus<VectorType>
 
 }
 
@@ -27,9 +27,9 @@ public enum SimulationStatus<T> where T: Vector {
 /// RK4 Integration.
 public extension Simulation {
     
-    fileprivate typealias Derivative = DynamicsState
+    fileprivate typealias Derivative = SimulationState
     
-    public func integrate(state: DynamicsState<VectorType>, time: Double) -> DynamicsState<VectorType> {
+    public func integrate(state: SimulationState<VectorType>, time: Double) -> SimulationState<VectorType> {
         
         let initial = Derivative(value:VectorType.zero, velocity: VectorType.zero)
         
@@ -50,10 +50,10 @@ public extension Simulation {
         let val = state.value + Scalar(time) * dxdt
         let vel = state.velocity + Scalar(time) * dvdt
         
-        return DynamicsState(value: val, velocity: vel)
+        return SimulationState(value: val, velocity: vel)
     }
     
-    private func evaluate(state: DynamicsState<VectorType>, time: Double, derivative: Derivative<VectorType>) -> Derivative<VectorType> {
+    private func evaluate(state: SimulationState<VectorType>, time: Double, derivative: Derivative<VectorType>) -> Derivative<VectorType> {
         var nextState = state
         nextState.value += Scalar(time) * derivative.value
         nextState.velocity += Scalar(time) * derivative.velocity

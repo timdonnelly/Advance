@@ -12,11 +12,11 @@ public struct DecayFunction<VectorType: Vector>: Simulation {
     public init() {}
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(for state: DynamicsState<VectorType>) -> VectorType {
+    public func acceleration(for state: SimulationState<VectorType>) -> VectorType {
         return -drag * state.velocity
     }
     
-    public func status(for state: DynamicsState<VectorType>) -> SimulationStatus<VectorType> {
+    public func status(for state: SimulationState<VectorType>) -> SimulationStatus<VectorType> {
         let min = VectorType(scalar: -threshold)
         let max = VectorType(scalar: threshold)
         if state.velocity.clamped(min: min, max: max) == state.velocity {

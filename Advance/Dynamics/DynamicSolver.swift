@@ -42,11 +42,11 @@ public struct DynamicSolver<F: Simulation> : Advanceable {
     fileprivate (set) public var settled: Bool = false
     
     // The current state of the solver.
-    fileprivate var simulationState: DynamicsState<F.VectorType>
+    fileprivate var simulationState: SimulationState<F.VectorType>
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    fileprivate var interpolatedState: DynamicsState<F.VectorType>
+    fileprivate var interpolatedState: SimulationState<F.VectorType>
     
     /// Creates a new `DynamicSolver` instance.
     ///
@@ -55,7 +55,7 @@ public struct DynamicSolver<F: Simulation> : Advanceable {
     /// - parameter velocity: The initial velocity of the simulation.
     public init(function: F, value: F.VectorType, velocity: F.VectorType = F.VectorType.zero) {
         self.function = function
-        simulationState = DynamicsState(value: value, velocity: velocity)
+        simulationState = SimulationState(value: value, velocity: velocity)
         interpolatedState = simulationState
         settleIfPossible()
     }

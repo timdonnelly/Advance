@@ -13,7 +13,7 @@ struct GravityFunction: Simulation {
         self.target = target
     }
     
-    func acceleration(for state: DynamicsState<Vector2>) -> Vector2 {
+    func acceleration(for state: SimulationState<Vector2>) -> Vector2 {
         
         let delta = target - state.value
         let heading = atan2(delta.y, delta.x)
@@ -29,7 +29,7 @@ struct GravityFunction: Simulation {
         return result
     }
     
-    func status(for state: DynamicsState<Vector2>) -> SimulationStatus<Vector2> {
+    func status(for state: SimulationState<Vector2>) -> SimulationStatus<Vector2> {
         
         let min = Vector2(scalar: -threshold)
         let max = Vector2(scalar: threshold)

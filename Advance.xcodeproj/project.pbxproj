@@ -163,9 +163,9 @@
 		5DE95A001C93940E008487A8 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
 		5DE95A011C93940E008487A8 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */; };
 		5DE95A021C93940E008487A8 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
-		9710075920378A5300FC5BA1 /* DynamicsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* DynamicsState.swift */; };
-		9710075A20378A5300FC5BA1 /* DynamicsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* DynamicsState.swift */; };
-		9710075B20378A5300FC5BA1 /* DynamicsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* DynamicsState.swift */; };
+		9710075920378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
+		9710075A20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
+		9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -363,7 +363,7 @@
 		5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdvanceTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE959F41C9392E1008487A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DE95A061C93963A008487A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9710075820378A5300FC5BA1 /* DynamicsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsState.swift; sourceTree = "<group>"; };
+		9710075820378A5300FC5BA1 /* SimulationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -715,7 +715,7 @@
 				5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */,
 				5DB1A47F1C876AD1000CF9EE /* Spring.swift */,
 				5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */,
-				9710075820378A5300FC5BA1 /* DynamicsState.swift */,
+				9710075820378A5300FC5BA1 /* SimulationState.swift */,
 			);
 			path = Dynamics;
 			sourceTree = "<group>";
@@ -1116,7 +1116,7 @@
 				228E20581C9CB99D0058ADA1 /* Double.swift in Sources */,
 				228E20591C9CB99D0058ADA1 /* AnyAnimation.swift in Sources */,
 				228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */,
-				9710075A20378A5300FC5BA1 /* DynamicsState.swift in Sources */,
+				9710075A20378A5300FC5BA1 /* SimulationState.swift in Sources */,
 				228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */,
 				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
 				228E205E1C9CB99D0058ADA1 /* Simulation.swift in Sources */,
@@ -1204,7 +1204,7 @@
 				5DB1A4AB1C876AD1000CF9EE /* Double.swift in Sources */,
 				5DB1A4941C876AD1000CF9EE /* AnyAnimation.swift in Sources */,
 				5DB1A4A81C876AD1000CF9EE /* CGRect.swift in Sources */,
-				9710075920378A5300FC5BA1 /* DynamicsState.swift in Sources */,
+				9710075920378A5300FC5BA1 /* SimulationState.swift in Sources */,
 				5DB1A4A71C876AD1000CF9EE /* CGPoint.swift in Sources */,
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
 				5DB1A4A21C876AD1000CF9EE /* Simulation.swift in Sources */,
@@ -1259,7 +1259,7 @@
 				5D3A2F511C920CC20071F08F /* CGRect.swift in Sources */,
 				5D3A2F491C920CBC0071F08F /* Simulation.swift in Sources */,
 				5D3A2F501C920CC20071F08F /* CGPoint.swift in Sources */,
-				9710075B20378A5300FC5BA1 /* DynamicsState.swift in Sources */,
+				9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */,
 				5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */,
 				5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */,
 				5D3A2F431C920C920071F08F /* Animator.swift in Sources */,

@@ -35,13 +35,13 @@ public struct SpringFunction<VectorType>: Simulation where VectorType: Vector {
     }
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(for state: DynamicsState<VectorType>) -> VectorType {
+    public func acceleration(for state: SimulationState<VectorType>) -> VectorType {
         let delta = state.value - target
         let accel = (-configuration.tension * delta) - (configuration.damping * state.velocity)
         return accel
     }
     
-    public func status(for state: DynamicsState<VectorType>) -> SimulationStatus<VectorType> {
+    public func status(for state: SimulationState<VectorType>) -> SimulationStatus<VectorType> {
         let min = VectorType(scalar: -configuration.threshold)
         let max = VectorType(scalar: configuration.threshold)
         

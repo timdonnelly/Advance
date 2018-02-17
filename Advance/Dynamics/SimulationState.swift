@@ -1,4 +1,4 @@
-public struct DynamicsState<T> where T: Vector {
+public struct SimulationState<T> where T: Vector {
     
     public var value: T
     
