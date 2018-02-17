@@ -81,22 +81,3 @@ public extension Animatable {
         animate(with: a, completion: completion)
     }
 }
-
-public extension VectorConvertible {
-    
-    /// Animates to the given value using a spring function.
-    ///
-    /// - parameter to: The value to animate to.
-    /// - parameter callback: A closure that will be called at each step of the animation.
-    /// - returns: The animator instance that is powering the animation.
-    public func spring(to target: Self, configuration: SpringConfiguration, callback: @escaping (Self) -> Void) -> Animator<SpringAnimation<Self>> {
-        var a = SpringAnimation(from: self, target: target, velocity: Self.zero)
-        a.configuration = configuration
-        let animator = AnimatorContext.shared.animate(a)
-        animator.changed.observe({ (a) -> Void in
-            callback(a.value)
-        })
-        return animator
-    }
-    
-}
