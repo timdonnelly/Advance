@@ -1,5 +1,5 @@
 /// Gradually reduces velocity until it equals `Vector.zero`.
-public struct DecayFunction<VectorType: Vector>: Simulation {
+public struct DecayFunction<T>: Simulation where T: VectorConvertible {
     
     /// How close to 0 each component of the velocity must be before the
     /// simulation is allowed to settle.
@@ -12,13 +12,13 @@ public struct DecayFunction<VectorType: Vector>: Simulation {
     public init() {}
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(for state: SimulationState<VectorType>) -> VectorType {
+    public func acceleration(for state: SimulationState<T>) -> T {
         return -drag * state.velocity
     }
     
-    public func status(for state: SimulationState<VectorType>) -> SimulationResult<VectorType> {
-        let min = VectorType(scalar: -threshold)
-        let max = VectorType(scalar: threshold)
+    public func status(for state: SimulationState<T>) -> SimulationResult<T> {
+        let min = T(scalar: -threshold)
+        let max = T(scalar: threshold)
         if state.velocity.clamped(min: min, max: max) == state.velocity {
             return .settled(value: state.value)
         } else {

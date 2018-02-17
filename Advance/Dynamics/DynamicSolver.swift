@@ -42,18 +42,18 @@ public struct DynamicSolver<F: Simulation> : Advanceable {
     fileprivate (set) public var settled: Bool = false
     
     // The current state of the solver.
-    fileprivate var simulationState: SimulationState<F.VectorType>
+    fileprivate var simulationState: SimulationState<F.Result>
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    fileprivate var interpolatedState: SimulationState<F.VectorType>
+    fileprivate var interpolatedState: SimulationState<F.Result>
     
     /// Creates a new `DynamicSolver` instance.
     ///
     /// - parameter function: The function that will drive the simulation.
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
-    public init(function: F, value: F.VectorType, velocity: F.VectorType = F.VectorType.zero) {
+    public init(function: F, value: F.Result, velocity: F.Result = F.Result.zero) {
         self.function = function
         simulationState = SimulationState(value: value, velocity: velocity)
         interpolatedState = simulationState
@@ -68,7 +68,7 @@ public struct DynamicSolver<F: Simulation> : Advanceable {
             break
         case let .settled(value):
             simulationState.value = value
-            simulationState.velocity = F.VectorType.zero
+            simulationState.velocity = F.Result.zero
             interpolatedState = simulationState
             settled = true
         }
@@ -125,7 +125,7 @@ public struct DynamicSolver<F: Simulation> : Advanceable {
     }
     
     /// The current value.
-    public var value: F.VectorType {
+    public var value: F.Result {
         get { return interpolatedState.value }
         set {
             interpolatedState.value = newValue
@@ -136,7 +136,7 @@ public struct DynamicSolver<F: Simulation> : Advanceable {
     }
     
     /// The current velocity.
-    public var velocity: F.VectorType {
+    public var velocity: F.Result {
         get { return interpolatedState.velocity }
         set {
             interpolatedState.velocity = newValue

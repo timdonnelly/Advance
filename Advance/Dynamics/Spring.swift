@@ -22,9 +22,9 @@ public final class Spring<Value: VectorConvertible> {
     
     private let changedSink = Sink<Value>()
     
-    fileprivate var solver: DynamicSolver<SpringFunction<Value.VectorType>> {
+    fileprivate var solver: DynamicSolver<SpringFunction<Value>> {
         didSet {
-            lastNotifiedValue = Value(vector: solver.value)
+            lastNotifiedValue = solver.value
             if solver.settled == false && subscription.paused == true {
                 subscription.paused = false
             }
@@ -62,36 +62,36 @@ public final class Spring<Value: VectorConvertible> {
     ///   initialized with `target` and `value` equal to the given value, and
     ///   a velocity of `0`.
     public init(value: Value) {
-        let f = SpringFunction(target: value.vector)
-        solver = DynamicSolver(function: f, value: value.vector)
+        let f = SpringFunction(target: value)
+        solver = DynamicSolver(function: f, value: value)
         lastNotifiedValue = value
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
     public func reset(to value: Value) {
         var f = solver.function
-        f.target = value.vector
-        solver = DynamicSolver(function: f, value: value.vector)
+        f.target = value
+        solver = DynamicSolver(function: f, value: value)
         lastNotifiedValue = value
     }
     
     /// The current value of the spring.
     public var value: Value {
-        get { return Value(vector: solver.value) }
-        set { solver.value = newValue.vector }
+        get { return solver.value }
+        set { solver.value = newValue }
     }
     
     /// The current velocity of the simulation.
     public var velocity: Value {
-        get { return Value(vector: solver.velocity) }
-        set { solver.velocity = newValue.vector }
+        get { return solver.velocity }
+        set { solver.velocity = newValue }
     }
     
     /// The target value of the spring. As the simulation runs, `value` will be 
     /// pulled toward this value.
     public var target: Value {
-        get { return Value(vector: solver.function.target) }
-        set { solver.function.target = newValue.vector }
+        get { return solver.function.target }
+        set { solver.function.target = newValue }
     }
     
     /// Configuration options for the spring.

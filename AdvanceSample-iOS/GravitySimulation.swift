@@ -3,11 +3,11 @@ import Advance
 
 
 private enum GravitySimulationNode: Advanceable {
-    case stationary(Vector2)
-    case decaying(DynamicSolver<DecayFunction<Vector2>>)
+    case stationary(CGPoint)
+    case decaying(DynamicSolver<DecayFunction<CGPoint>>)
     case pulling(DynamicSolver<GravityFunction>)
     
-    var value: Vector2 {
+    var value: CGPoint {
         switch self {
         case .stationary(let v):
             return v
@@ -18,10 +18,10 @@ private enum GravitySimulationNode: Advanceable {
         }
     }
     
-    var velocity: Vector2 {
+    var velocity: CGPoint {
         switch self {
         case .stationary(_):
-            return Vector2.zero
+            return CGPoint.zero
         case .decaying(let d):
             return d.velocity
         case .pulling(let s):
@@ -53,12 +53,12 @@ private enum GravitySimulationNode: Advanceable {
     
     mutating func pull(to point: CGPoint) {
         if case var .pulling(sim) = self {
-            sim.function.target = point.vector
+            sim.function.target = point
             self = .pulling(sim)
             return
         }
         
-        let f = GravityFunction(target: point.vector)
+        let f = GravityFunction(target: point)
         let solver = DynamicSolver(function: f, value: value, velocity: velocity)
         self = .pulling(solver)
     }
@@ -66,13 +66,13 @@ private enum GravitySimulationNode: Advanceable {
     mutating func getDecay() {
         guard case let .pulling(sim) = self else { return }
         
-        let f = DecayFunction<Vector2>()
+        let f = DecayFunction<CGPoint>()
         let solver = DynamicSolver(function: f, value: sim.value, velocity: sim.velocity)
         self = .decaying(solver)
     }
     
     mutating func reset(to value: CGPoint) {
-        self = .stationary(value.vector)
+        self = .stationary(value)
     }
 }
 
@@ -86,7 +86,7 @@ struct GravitySimulation: Advanceable {
         for r in 0..<rows {
             nodes.append([])
             for _ in 0..<cols {
-                let node = GravitySimulationNode.stationary(Vector2(x: 0.0, y: 0.0))
+                let node = GravitySimulationNode.stationary(CGPoint(x: 0.0, y: 0.0))
                 nodes[r].append(node)
             }
         }
@@ -129,7 +129,7 @@ struct GravitySimulation: Advanceable {
     }
     
     func getPosition(row: Int, col: Int) -> CGPoint {
-      return CGPoint(vector: nodes[row][col].value)
+      return nodes[row][col].value
     }
     
     mutating func advance(by time: Double) {

@@ -5,7 +5,7 @@
 /// internally.
 public struct DecayAnimation<Value: VectorConvertible>: Animation {
     
-    fileprivate var solver: DynamicSolver<DecayFunction<Value.VectorType>>
+    fileprivate var solver: DynamicSolver<DecayFunction<Value>>
     
     /// Creates a new `DecayAnimation` instance.
     ///
@@ -14,10 +14,10 @@ public struct DecayAnimation<Value: VectorConvertible>: Animation {
     /// - parameter from: The initial value of the animation.
     /// - parameter velocity: The velocity at time `0`.
     public init(threshold: Scalar = 0.1, from: Value = Value.zero, velocity: Value = Value.zero) {
-        var f = DecayFunction<Value.VectorType>()
+        var f = DecayFunction<Value>()
         f.threshold = threshold
         f.drag = 3.0
-        solver = DynamicSolver(function: f, value: from.vector, velocity: velocity.vector)
+        solver = DynamicSolver(function: f, value: from, velocity: velocity)
     }
     
     /// Advances the animation.
@@ -34,14 +34,14 @@ public struct DecayAnimation<Value: VectorConvertible>: Animation {
     
     /// The current value.
     public var value: Value {
-        get { return Value(vector: solver.value) }
-        set { solver.value = newValue.vector }
+        get { return solver.value }
+        set { solver.value = newValue }
     }
     
     /// The current velocity.
     public var velocity: Value {
-        get { return Value(vector: solver.velocity) }
-        set { solver.velocity = newValue.vector }
+        get { return solver.velocity }
+        set { solver.velocity = newValue }
     }
     
     /// Each component of the simulation's velocity must be within this distance

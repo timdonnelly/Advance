@@ -1,4 +1,4 @@
-public struct SimulationState<T> where T: Vector {
+public struct SimulationState<T> where T: VectorConvertible {
     
     public var value: T
     

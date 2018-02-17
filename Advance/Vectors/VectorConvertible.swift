@@ -36,7 +36,7 @@ public extension VectorConvertible {
 
 public extension VectorConvertible {
     
-    init(scalar: Scalar) {
+    public init(scalar: Scalar) {
         self.init(vector: VectorType(scalar: scalar))
     }
     

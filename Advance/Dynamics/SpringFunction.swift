@@ -18,10 +18,10 @@ public struct SpringConfiguration {
 }
 
 /// Implements a simple spring acceleration function.
-public struct SpringFunction<VectorType>: Simulation where VectorType: Vector {
+public struct SpringFunction<T>: Simulation where T: VectorConvertible {
     
     /// The target of the spring.
-    public var target: VectorType
+    public var target: T
     
     /// Configuration options.
     public var configuration: SpringConfiguration
@@ -29,21 +29,21 @@ public struct SpringFunction<VectorType>: Simulation where VectorType: Vector {
     /// Creates a new `SpringFunction` instance.
     ///
     /// - parameter target: The target of the new instance.
-    public init(target: VectorType) {
+    public init(target: T) {
         self.target = target
         self.configuration = SpringConfiguration()
     }
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(for state: SimulationState<VectorType>) -> VectorType {
+    public func acceleration(for state: SimulationState<T>) -> T {
         let delta = state.value - target
         let accel = (-configuration.tension * delta) - (configuration.damping * state.velocity)
         return accel
     }
     
-    public func status(for state: SimulationState<VectorType>) -> SimulationResult<VectorType> {
-        let min = VectorType(scalar: -configuration.threshold)
-        let max = VectorType(scalar: configuration.threshold)
+    public func status(for state: SimulationState<T>) -> SimulationResult<T> {
+        let min = T(scalar: -configuration.threshold)
+        let max = T(scalar: configuration.threshold)
         
         if state.velocity.clamped(min: min, max: max) != state.velocity {
             return .running

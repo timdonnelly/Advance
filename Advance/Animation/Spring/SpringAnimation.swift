@@ -12,7 +12,7 @@
 public struct SpringAnimation<Value: VectorConvertible>: Animation {
     
     // The underlying spring simulation.
-    fileprivate var solver: DynamicSolver<SpringFunction<Value.VectorType>>
+    fileprivate var solver: DynamicSolver<SpringFunction<Value>>
     
     /// Creates a new `SpringAnimation` instance.
     ///
@@ -21,8 +21,8 @@ public struct SpringAnimation<Value: VectorConvertible>: Animation {
     ///   the end of the animation.
     /// - parameter velocity: The initial velocity at the start of the animation.
     public init(from: Value, target: Value, velocity: Value = Value.zero) {
-        let f = SpringFunction(target: target.vector)
-        solver = DynamicSolver(function: f, value: from.vector, velocity: velocity.vector)
+        let f = SpringFunction(target: target)
+        solver = DynamicSolver(function: f, value: from, velocity: velocity)
     }
     
     /// Advances the animation.
@@ -39,21 +39,21 @@ public struct SpringAnimation<Value: VectorConvertible>: Animation {
     
     /// The current value.
     public var value: Value {
-        get { return Value(vector: solver.value) }
-        set { solver.value = newValue.vector }
+        get { return solver.value }
+        set { solver.value = newValue }
     }
     
     /// The current velocity.
     public var velocity: Value {
-        get { return Value(vector: solver.velocity) }
-        set { solver.velocity = newValue.vector }
+        get { return solver.velocity }
+        set { solver.velocity = newValue }
     }
     
     
     /// The value that the spring will move toward.
     public var target: Value {
-        get { return Value(vector: solver.function.target) }
-        set { solver.function.target = newValue.vector }
+        get { return solver.function.target }
+        set { solver.function.target = newValue }
     }
     
     /// The configuration of the underlying spring simulation.
