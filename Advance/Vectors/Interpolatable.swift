@@ -11,6 +11,4 @@ public protocol Interpolatable {
     /// - Returns: The interpolated result.
     func interpolated(to otherValue: Self, alpha: Scalar) -> Self
     
-    /// Interpolates between `self` and `to`
-    mutating func interpolate(to otherValue: Self, alpha: Scalar)
 }
