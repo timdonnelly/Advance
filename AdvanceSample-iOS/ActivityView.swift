@@ -232,8 +232,8 @@ private struct ActivitySegment {
         var p1 = initialPosition
         var p2 = initialPosition
         
-        p1.interpolate(to: firstPoint, alpha: Scalar(visibility))
-        p2.interpolate(to: secondPoint, alpha: Scalar(visibility))
+        p1 = p1.interpolated(to: firstPoint, alpha: Scalar(visibility))
+        p2 = p2.interpolated(to: secondPoint, alpha: Scalar(visibility))
         
         let rotation = initialRotation.interpolated(to: 0.0, alpha: Scalar(visibility))
         let midX = p1.x + (p2.x - p1.x) * 0.5
