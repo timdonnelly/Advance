@@ -58,35 +58,3 @@ public struct DecayAnimation<Value: VectorConvertible>: Animation {
         set { solver.function.drag = newValue }
     }
 }
-
-
-public extension Animatable {
-    
-    /// Adds a decay animation, starting from the current value and velocity.
-    ///
-    /// - parameter drag: The amount of drag that will slow down the velocity.
-    /// - parameter threshold: The settling threshold that determines how
-    ///   close the velocity must be to `0` before the simulation is allowed
-    ///   to settle.
-    /// - parameter completion: An optional closure that will be called at
-    ///   the end of the animation.
-    public func decay(drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
-        decay(velocity: velocity, drag: drag, threshold: threshold, completion: completion)
-    }
-    
-    /// Adds a decay animation, starting from the current value.
-    ///
-    /// - parameter velocity: The initial velocity at time `0`.
-    /// - parameter drag: The amount of drag that will slow down the velocity.
-    /// - parameter threshold: The settling threshold that determines how
-    ///   close the velocity must be to `0` before the simulation is allowed
-    ///   to settle.
-    /// - parameter completion: An optional closure that will be called at
-    ///   the end of the animation.
-    public func decay(velocity: Value, drag: Scalar, threshold: Scalar, completion: Completion? = nil) {
-        var d = DecayAnimation(threshold: threshold, from: value, velocity: velocity)
-        d.drag = drag
-        animate(with: d, completion: completion)
-    }
-    
-}

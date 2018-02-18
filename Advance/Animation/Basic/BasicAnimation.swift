@@ -65,33 +65,6 @@ public struct BasicAnimation<Value: VectorConvertible>: Animation {
     
 }
 
-
-public extension Animatable {
-    
-    /// Animates to the specified value, using a default duration and timing
-    /// function.
-    ///
-    /// - parameter to: The value to animate to.
-    /// - parameter completion: An optional closure that will be called when
-    ///   the animation completes.
-    public func animate(to value: Value, completion: Completion? = nil) {
-        animate(to: value, duration: 0.25, timingFunction: UnitBezier.swiftOut, completion: completion)
-    }
-    
-    /// Animates to the specified value.
-    ///
-    /// - parameter to: The value to animate to.
-    /// - parameter duration: The duration of the animation.
-    /// - parameter timingFunction: The timing (easing) function to use.
-    /// - parameter completion: An optional closure that will be called when
-    ///   the animation completes.
-    public func animate(to value: Value, duration: Double, timingFunction: TimingFunction, completion: Completion? = nil) {
-        let a = BasicAnimation(from: value, to: value, duration: duration, timingFunction: timingFunction)
-        animate(with: a, completion: completion)
-    }
-    
-}
-
 public extension VectorConvertible {
     
     /// Animates to the specified value.

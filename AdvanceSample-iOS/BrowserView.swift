@@ -204,7 +204,7 @@ class BrowserView: UIView {
     
     fileprivate let paginationRatio: CGFloat = 0.68
     
-    fileprivate let index = Animatable(value: CGFloat.zero)
+    fileprivate let index = Spring(value: CGFloat.zero)
     
     fileprivate var panInProgress = false
     fileprivate var indexWhenPanBegan: CGFloat = 0.0
@@ -427,7 +427,7 @@ class BrowserView: UIView {
         leaveFullScreen()
         fullScreenItem = item
         updateAllItems(true)
-        index.animate(to: CGFloat(items.index(of: item)! + 1))
+        index.target = CGFloat(items.index(of: item)! + 1)
         delegate?.browserView(self, didEnterFullScreenForItem: item)
     }
     
@@ -443,9 +443,10 @@ class BrowserView: UIView {
         case .began:
             panInProgress = true
             indexWhenPanBegan = index.value
-            index.cancelAnimation()
+            index.reset(to: index.value)
         case .changed:
-            index.value = indexWhenPanBegan - (recognizer.translation(in: self).x / bounds.width * paginationRatio)
+            let newIndex = indexWhenPanBegan - (recognizer.translation(in: self).x / bounds.width * paginationRatio)
+            index.reset(to: newIndex)
             break
         case .ended, .cancelled:
             panInProgress = false
@@ -464,7 +465,9 @@ class BrowserView: UIView {
             config.tension = 120.0
             config.damping = 20.0
             config.threshold = 0.001
-            index.spring(to: destIndex, initialVelocity: vel, configuration: config, completion: nil)
+            index.configuration = config
+            index.velocity = vel
+            index.target = destIndex
         default:
             break
         }

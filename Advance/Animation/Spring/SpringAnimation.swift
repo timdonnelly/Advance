@@ -62,22 +62,3 @@ public struct SpringAnimation<Value: VectorConvertible>: Animation {
         set { solver.function.configuration = newValue }
     }
 }
-
-
-public extension Animatable {
-    
-    /// Animates to the given value using a spring function.
-    ///
-    /// - parameter to: The value to animate to.
-    /// - parameter initialVelocity: An optional velocity to use at time `0`.
-    ///   If no velocity is given, the current velocity of the `Animatable` instance
-    ///   will be used (if another animation is in progress).
-    /// - parameter configuration: A spring configuration instance to use.
-    /// - parameter completion: A closure that will be called at the end of the
-    ///   animation.
-    public func spring(to target: Value, initialVelocity: Value? = nil, configuration: SpringConfiguration = SpringConfiguration(), completion: Completion? = nil) {
-        var a = SpringAnimation(from: value, target: target, velocity: initialVelocity ?? velocity)
-        a.configuration = configuration
-        animate(with: a, completion: completion)
-    }
-}
