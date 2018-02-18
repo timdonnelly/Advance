@@ -4,20 +4,20 @@
 /// Conforming types can be used to animate values conforming to `VectorConvertible`.
 public protocol Animation: Advanceable {
     
+    /// The type of value to be animated.
+    associatedtype Result: VectorConvertible
+    
     /// Returns `True` if the animation has completed. 
     ///
     /// After the animation finishes, it should not return to an unfinished 
     /// state. Doing so may result in undefined behavior.
     var isFinished: Bool { get }
     
-    /// The type of value to be animated.
-    associatedtype Value: VectorConvertible
-    
     /// The current value of the animation.
-    var value: Value { get }
+    var value: Result { get }
     
     /// The current velocity of the animation.
-    var velocity: Value { get }
+    var velocity: Result { get }
     
 }
 

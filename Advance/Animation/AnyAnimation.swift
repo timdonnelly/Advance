@@ -1,28 +1,28 @@
 /// Provides type erasure for an animation conforming to ValueAnimation
 ///
 /// - parameter Value: The type of value to be animated.
-public struct AnyAnimation<Value: VectorConvertible>: Animation {
+public struct AnyAnimation<Result>: Animation where Result: VectorConvertible {
     
     /// The current value of the animation.
-    public let value: Value
+    public let value: Result
     
     /// The current value of the animation.
-    public let velocity: Value
+    public let velocity: Result
     
     /// `true` if the animation has finished.
     public let isFinished: Bool
     
     // Captures the underlying animation and allows us to advance it.
-    fileprivate let advanceFunction: (Double) -> AnyAnimation<Value>
+    fileprivate let advanceFunction: (Double) -> AnyAnimation<Result>
     
     /// Creates a new type-erased animation.
     ///
     /// - parameter animation: The animation to be type erased.
-    public init<A: Animation>(animation: A) where A.Value == Value {
+    public init<A: Animation>(animation: A) where A.Result == Result {
         value = animation.value
         velocity = animation.velocity
         isFinished = animation.isFinished
-        advanceFunction = { (time: Double) -> AnyAnimation<Value> in
+        advanceFunction = { (time: Double) -> AnyAnimation<Result> in
             var a = animation
             a.advance(by: time)
             return AnyAnimation(animation: a)
