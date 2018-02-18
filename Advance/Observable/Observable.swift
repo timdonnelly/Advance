@@ -6,7 +6,7 @@ public final class Observable<T> {
     
     private var observers: [UUID:Observer] = [:]
     
-    fileprivate func send(value: T) {
+    internal func send(value: T) {
         for o in observers.values {
             o(value)
         }
@@ -43,16 +43,6 @@ public extension Observable {
         public func unsubscribe() {
             _unsubscribe()
         }
-    }
-    
-}
-
-internal final class Sink<T> {
-    
-    let observable = Observable<T>()
-    
-    func send(value: T) {
-        observable.send(value: value)
     }
     
 }

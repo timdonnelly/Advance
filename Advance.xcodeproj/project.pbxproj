@@ -150,6 +150,9 @@
 		970359CA203A36A200028EFE /* SimulatedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C9203A36A200028EFE /* SimulatedAnimation.swift */; };
 		970359CB203A36A200028EFE /* SimulatedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C9203A36A200028EFE /* SimulatedAnimation.swift */; };
 		970359CC203A36A200028EFE /* SimulatedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C9203A36A200028EFE /* SimulatedAnimation.swift */; };
+		970359CE203A420500028EFE /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359CD203A420500028EFE /* Sink.swift */; };
+		970359CF203A420500028EFE /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359CD203A420500028EFE /* Sink.swift */; };
+		970359D0203A420500028EFE /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359CD203A420500028EFE /* Sink.swift */; };
 		9710075920378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
 		9710075A20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
 		9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
@@ -349,6 +352,7 @@
 		5DE95A061C93963A008487A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		970359C4203A2B6100028EFE /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		970359C9203A36A200028EFE /* SimulatedAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedAnimation.swift; sourceTree = "<group>"; };
+		970359CD203A420500028EFE /* Sink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sink.swift; sourceTree = "<group>"; };
 		9710075820378A5300FC5BA1 /* SimulationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -622,6 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				5DB1A4751C876AD1000CF9EE /* Observable.swift */,
+				970359CD203A420500028EFE /* Sink.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -1068,6 +1073,7 @@
 				228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */,
 				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
 				228E205E1C9CB99D0058ADA1 /* SimulationFunction.swift in Sources */,
+				970359CF203A420500028EFE /* Sink.swift in Sources */,
 				228E20601C9CB99D0058ADA1 /* Simulation.swift in Sources */,
 				228E20611C9CB99D0058ADA1 /* CGVector.swift in Sources */,
 				228E20621C9CB99D0058ADA1 /* TimingFunction.swift in Sources */,
@@ -1152,6 +1158,7 @@
 				5DB1A4A71C876AD1000CF9EE /* CGPoint.swift in Sources */,
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
 				5DB1A4A21C876AD1000CF9EE /* SimulationFunction.swift in Sources */,
+				970359CE203A420500028EFE /* Sink.swift in Sources */,
 				5DB1A4A31C876AD1000CF9EE /* Simulation.swift in Sources */,
 				5DB1A4AA1C876AD1000CF9EE /* CGVector.swift in Sources */,
 				5DB1A4961C876AD1000CF9EE /* TimingFunction.swift in Sources */,
@@ -1204,6 +1211,7 @@
 				5D3A2F631C923ADB0071F08F /* Loop.swift in Sources */,
 				5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */,
 				5D3A2F401C920C8C0071F08F /* AnyAnimation.swift in Sources */,
+				970359D0203A420500028EFE /* Sink.swift in Sources */,
 				5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */,
 				5D3A2F4A1C920CBC0071F08F /* Simulation.swift in Sources */,
 				5D3A2F551C920CCA0071F08F /* Vector2.swift in Sources */,
