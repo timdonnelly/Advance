@@ -3,7 +3,7 @@ import QuartzCore
 
 
 /// Implements a simple spring acceleration function.
-public struct SpringFunction<T>: SimulationFunction where T: VectorConvertible {
+public struct SpringFunction<T>: SimulationFunction where T: Vector {
     
     /// The target of the spring.
     public var target: T

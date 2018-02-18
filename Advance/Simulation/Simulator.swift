@@ -18,15 +18,13 @@
 /// s.target = CGPoint(x: 100.0, y: 200.0)
 /// // Off it goes!
 /// ```
-
-
-public class Simulator<Result, Function: SimulationFunction> where Result == Function.Result {
+public class Simulator<Result, Function: SimulationFunction> where Result: VectorConvertible, Result.VectorType == Function.VectorType {
     
     private let changedSink = Sink<Result>()
     
     public var simulation: Simulation<Function> {
         didSet {
-            lastNotifiedValue = simulation.value
+            lastNotifiedValue = Result(vector: simulation.value)
             subscription.paused = simulation.settled
         }
     }
@@ -51,7 +49,7 @@ public class Simulator<Result, Function: SimulationFunction> where Result == Fun
     ///   initialized with `target` and `value` equal to the given value, and
     ///   a velocity of `0`.
     public init(function: Function, value: Result) {
-        simulation = Simulation(function: function, value: value)
+        simulation = Simulation(function: function, value: value.vector)
         lastNotifiedValue = value
         subscription = Loop.shared.subscribe()
         
@@ -67,35 +65,35 @@ public class Simulator<Result, Function: SimulationFunction> where Result == Fun
     
     /// The current value of the spring.
     public var value: Result {
-        get { return simulation.value }
-        set { simulation.value = newValue }
+        get { return Result(vector: simulation.value) }
+        set { simulation.value = newValue.vector }
     }
     
     /// The current velocity of the simulation.
     public var velocity: Result {
-        get { return simulation.velocity }
-        set { simulation.velocity = newValue }
+        get { return Result(vector: simulation.velocity) }
+        set { simulation.velocity = newValue.vector }
     }
 
 }
 
-public final class Spring<Result>: Simulator<Result, SpringFunction<Result>> where Result: VectorConvertible {
+public final class Spring<Result>: Simulator<Result, SpringFunction<Result.VectorType>> where Result: VectorConvertible {
     
     public init(value: Result) {
-        let spring = SpringFunction(target: value)
+        let spring = SpringFunction(target: value.vector)
         super.init(function: spring, value: value)
     }
     
     public var target: Result {
-        get { return simulation.function.target }
-        set { simulation.function.target = newValue }
+        get { return Result(vector: simulation.function.target) }
+        set { simulation.function.target = newValue.vector }
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
     public func reset(to value: Result) {
         var f = simulation.function
-        f.target = value
-        simulation = Simulation(function: f, value: value)
+        f.target = value.vector
+        simulation = Simulation(function: f, value: value.vector)
         lastNotifiedValue = value
     }
     

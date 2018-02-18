@@ -3,7 +3,7 @@
 
 public protocol SimulationFunction {
     
-    associatedtype Result: VectorConvertible
+    associatedtype VectorType: Vector
     
     /// The computed acceleration for a given simulation state.
     ///
@@ -11,14 +11,14 @@ public protocol SimulationFunction {
     /// - parameter velocity: The current velocity of the simulation.
     /// - returns: A vector containing the acceleration (in units per second)
     ///   based on `value` and `velocity`.
-    func acceleration(for state: SimulationState<Result>) -> Result
+    func acceleration(for state: SimulationState<VectorType>) -> VectorType
     
-    func status(for state: SimulationState<Result>) -> SimulationResult<Result>
+    func status(for state: SimulationState<VectorType>) -> SimulationResult<VectorType>
 
 }
 
 
-public enum SimulationResult<T> where T: VectorConvertible {
+public enum SimulationResult<T> where T: Vector {
     case running
     case settled(value: T)
 }
@@ -29,9 +29,9 @@ public extension SimulationFunction {
     
     fileprivate typealias Derivative = SimulationState
     
-    public func integrate(state: SimulationState<Result>, time: Double) -> SimulationState<Result> {
+    public func integrate(state: SimulationState<VectorType>, time: Double) -> SimulationState<VectorType> {
         
-        let initial = Derivative(value:Result.zero, velocity: Result.zero)
+        let initial = Derivative(value:VectorType.zero, velocity: VectorType.zero)
         
         let a = evaluate(state: state, time: 0.0, derivative: initial)
         let b = evaluate(state: state, time: time * 0.5, derivative: a)
@@ -53,7 +53,7 @@ public extension SimulationFunction {
         return SimulationState(value: val, velocity: vel)
     }
     
-    private func evaluate(state: SimulationState<Result>, time: Double, derivative: Derivative<Result>) -> Derivative<Result> {
+    private func evaluate(state: SimulationState<VectorType>, time: Double, derivative: Derivative<VectorType>) -> Derivative<VectorType> {
         var nextState = state
         nextState.value += Scalar(time) * derivative.value
         nextState.velocity += Scalar(time) * derivative.velocity

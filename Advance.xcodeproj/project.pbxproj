@@ -21,7 +21,6 @@
 		223E49731C76C9430048CAB6 /* SpringsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49721C76C9430048CAB6 /* SpringsViewController.swift */; };
 		223E49751C76C9510048CAB6 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49741C76C9510048CAB6 /* SpringView.swift */; };
 		226A752C1C84153E00A7F1FB /* GravitySimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752B1C84153E00A7F1FB /* GravitySimulation.swift */; };
-		226A752E1C84206D00A7F1FB /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
 		228E20421C9CB99D0058ADA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		228E20431C9CB99D0058ADA1 /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */; };
 		228E20441C9CB99D0058ADA1 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat.swift */; };
@@ -151,6 +150,9 @@
 		9710075920378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
 		9710075A20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
 		9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
+		97687CCC203A0BC200FAC3F3 /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
+		97687CCD203A0BC200FAC3F3 /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
+		97687CCE203A0BC200FAC3F3 /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -433,7 +435,6 @@
 			children = (
 				22142E661C810DA7000C6DEB /* GravityViewController.swift */,
 				226A752B1C84153E00A7F1FB /* GravitySimulation.swift */,
-				226A752D1C84206D00A7F1FB /* GravityFunction.swift */,
 			);
 			name = Gravity;
 			sourceTree = "<group>";
@@ -653,6 +654,7 @@
 		5DB1A47B1C876AD1000CF9EE /* Simulation */ = {
 			isa = PBXGroup;
 			children = (
+				226A752D1C84206D00A7F1FB /* GravityFunction.swift */,
 				5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */,
 				5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */,
 				5DB1A47E1C876AD1000CF9EE /* Simulation.swift */,
@@ -1047,6 +1049,7 @@
 				228E204D1C9CB99D0058ADA1 /* BasicAnimation.swift in Sources */,
 				228E204F1C9CB99D0058ADA1 /* CGSize.swift in Sources */,
 				228E20501C9CB99D0058ADA1 /* Simulator.swift in Sources */,
+				97687CCD203A0BC200FAC3F3 /* GravityFunction.swift in Sources */,
 				228E20511C9CB99D0058ADA1 /* Vector2.swift in Sources */,
 				228E20521C9CB99D0058ADA1 /* Vector4.swift in Sources */,
 				228E20531C9CB99D0058ADA1 /* Animation.swift in Sources */,
@@ -1107,7 +1110,6 @@
 				22142E651C810D86000C6DEB /* ActivityViewController.swift in Sources */,
 				22F74AB81C76769C004C6E4C /* GesturesViewController.swift in Sources */,
 				222E211F1C7D8CF00063FAA2 /* SpringConfigurationView.swift in Sources */,
-				226A752E1C84206D00A7F1FB /* GravityFunction.swift in Sources */,
 				226A752C1C84153E00A7F1FB /* GravitySimulation.swift in Sources */,
 				223E49731C76C9430048CAB6 /* SpringsViewController.swift in Sources */,
 				222E21231C7E448D0063FAA2 /* DemoViewController.swift in Sources */,
@@ -1130,6 +1132,7 @@
 				5DB1A4951C876AD1000CF9EE /* BasicAnimation.swift in Sources */,
 				5DB1A4A91C876AD1000CF9EE /* CGSize.swift in Sources */,
 				5DB1A4A41C876AD1000CF9EE /* Simulator.swift in Sources */,
+				97687CCE203A0BC200FAC3F3 /* GravityFunction.swift in Sources */,
 				5DB1A4AF1C876AD1000CF9EE /* Vector2.swift in Sources */,
 				5DB1A4B11C876AD1000CF9EE /* Vector4.swift in Sources */,
 				5DB1A4931C876AD1000CF9EE /* Animation.swift in Sources */,
@@ -1180,6 +1183,7 @@
 				5D3A2F541C920CCA0071F08F /* Vector1.swift in Sources */,
 				5D3A2F571C920CCA0071F08F /* Vector4.swift in Sources */,
 				5D3A2F521C920CC20071F08F /* CGSize.swift in Sources */,
+				97687CCC203A0BC200FAC3F3 /* GravityFunction.swift in Sources */,
 				5D3A2F421C920C8C0071F08F /* Advanceable.swift in Sources */,
 				5D3A2F5A1C920CCA0071F08F /* Interpolatable.swift in Sources */,
 				5D3A2F4E1C920CC20071F08F /* Double.swift in Sources */,

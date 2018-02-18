@@ -1,21 +1,18 @@
-import Advance
-import CoreGraphics
-import Foundation
+import simd
 
-
-struct GravityFunction: SimulationFunction {
+public struct GravityFunction: SimulationFunction {
     
-    var target: CGPoint
+    public var target: Vector2
     
-    var minRadius: CGFloat = 30.0
+    public var minRadius: Scalar = 30.0
     
-    var threshold: Scalar = 0.1
+    public var threshold: Scalar = 0.1
     
-    init(target: CGPoint) {
+    public init(target: Vector2) {
         self.target = target
     }
     
-    func acceleration(for state: SimulationState<CGPoint>) -> CGPoint {
+    public func acceleration(for state: SimulationState<Vector2>) -> Vector2 {
         
         let delta = target - state.value
         let heading = atan2(delta.y, delta.x)
@@ -25,16 +22,16 @@ struct GravityFunction: SimulationFunction {
         
         let accel = 1000000.0 / (distance*distance)
         
-        var result = CGPoint.zero
+        var result = Vector2.zero
         result.x = accel * cos(heading)
         result.y = accel * sin(heading)
         return result
     }
     
-    func status(for state: SimulationState<CGPoint>) -> SimulationResult<CGPoint> {
+    public func status(for state: SimulationState<Vector2>) -> SimulationResult<Vector2> {
         
-        let min = CGPoint(scalar: -threshold)
-        let max = CGPoint(scalar: threshold)
+        let min = Vector2(scalar: -threshold)
+        let max = Vector2(scalar: threshold)
         
         if state.velocity.clamped(min: min, max: max) != state.velocity {
             return .running
