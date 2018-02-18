@@ -10,7 +10,7 @@ public struct AnyAnimation<Value: VectorConvertible>: Animation {
     public let velocity: Value
     
     /// `true` if the animation has finished.
-    public let finished: Bool
+    public let isFinished: Bool
     
     // Captures the underlying animation and allows us to advance it.
     fileprivate let advanceFunction: (Double) -> AnyAnimation<Value>
@@ -21,7 +21,7 @@ public struct AnyAnimation<Value: VectorConvertible>: Animation {
     public init<A: Animation>(animation: A) where A.Value == Value {
         value = animation.value
         velocity = animation.velocity
-        finished = animation.finished
+        isFinished = animation.isFinished
         advanceFunction = { (time: Double) -> AnyAnimation<Value> in
             var a = animation
             a.advance(by: time)

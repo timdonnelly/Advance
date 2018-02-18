@@ -40,7 +40,7 @@ public struct BasicAnimation<Value: VectorConvertible>: Animation {
     fileprivate var elapsed: Double = 0.0
     
     /// Returns `true` if the advanced time is `>=` duration.
-    public var finished: Bool {
+    public var isFinished: Bool {
         return elapsed >= duration
     }
     

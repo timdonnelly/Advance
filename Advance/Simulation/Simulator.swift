@@ -18,11 +18,13 @@
 /// s.target = CGPoint(x: 100.0, y: 200.0)
 /// // Off it goes!
 /// ```
-public class Simulator<T> where T: SimulationFunction {
+
+
+public class Animator<Result, Function> where Function: SimulationFunction, Result == Function.Result {
     
-    private let changedSink = Sink<T.Result>()
+    private let changedSink = Sink<Result>()
     
-    public var simulation: Simulation<T> {
+    public var simulation: Simulation<Function> {
         didSet {
             lastNotifiedValue = simulation.value
             subscription.paused = simulation.settled
@@ -32,11 +34,11 @@ public class Simulator<T> where T: SimulationFunction {
     private let subscription: Loop.Subscription
     
     /// Fires when `value` has changed.
-    public var changed: Observable<T.Result> {
+    public var changed: Observable<Result> {
         return changedSink.observable
     }
     
-    fileprivate var lastNotifiedValue: T.Result {
+    fileprivate var lastNotifiedValue: Result {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
             changedSink.send(value: lastNotifiedValue)
@@ -48,7 +50,7 @@ public class Simulator<T> where T: SimulationFunction {
     /// - parameter value: The initial value of the spring. The spring will be
     ///   initialized with `target` and `value` equal to the given value, and
     ///   a velocity of `0`.
-    public init(function: T, value: T.Result) {
+    public init(function: Function, value: Result) {
         simulation = Simulation(function: function, value: value)
         lastNotifiedValue = value
         subscription = Loop.shared.subscribe()
@@ -63,42 +65,38 @@ public class Simulator<T> where T: SimulationFunction {
         subscription.paused = simulation.settled
     }
     
-
-    
     /// The current value of the spring.
-    public var value: T.Result {
+    public var value: Result {
         get { return simulation.value }
         set { simulation.value = newValue }
     }
     
     /// The current velocity of the simulation.
-    public var velocity: T.Result {
+    public var velocity: Result {
         get { return simulation.velocity }
         set { simulation.velocity = newValue }
     }
 
 }
 
-public final class Spring<T>: Simulator<SpringFunction<T>> where T: VectorConvertible {
+public extension Animator where Function == SpringFunction<Result> {
     
-    public init(value: T) {
+    public convenience init(value: Result) {
         let spring = SpringFunction(target: value)
-        super.init(function: spring, value: value)
+        self.init(function: spring, value: value)
+    }
+    
+    public var target: Result {
+        get { return simulation.function.target }
+        set { simulation.function.target = newValue }
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
-    public func reset(to value: T) {
+    public func reset(to value: Result) {
         var f = simulation.function
         f.target = value
         simulation = Simulation(function: f, value: value)
         lastNotifiedValue = value
-    }
-    
-    /// The target value of the spring. As the simulation runs, `value` will be
-    /// pulled toward this value.
-    public var target: T {
-        get { return simulation.function.target }
-        set { simulation.function.target = newValue }
     }
     
     public var tension: Scalar {
@@ -117,3 +115,5 @@ public final class Spring<T>: Simulator<SpringFunction<T>> where T: VectorConver
     }
     
 }
+
+public typealias Spring<T> = Animator<T, SpringFunction<T>> where T: VectorConvertible

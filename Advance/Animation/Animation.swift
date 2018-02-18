@@ -8,7 +8,7 @@ public protocol Animation: Advanceable {
     ///
     /// After the animation finishes, it should not return to an unfinished 
     /// state. Doing so may result in undefined behavior.
-    var finished: Bool { get }
+    var isFinished: Bool { get }
     
     /// The type of value to be animated.
     associatedtype Value: VectorConvertible
