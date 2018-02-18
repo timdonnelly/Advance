@@ -36,15 +36,20 @@ final class DisplayLink {
 extension DisplayLink {
     /// Info about a particular frame.
     struct Frame : Equatable {
+        
+        var previousTimestamp: Double
+        
         /// The timestamp that the frame.
         var timestamp: Double
         
         /// The current duration between frames.
-        var duration: Double
+        var duration: Double {
+            return timestamp - previousTimestamp
+        }
         
         static func ==(lhs: Frame, rhs: Frame) -> Bool {
             return lhs.timestamp == rhs.timestamp
-                && lhs.duration == rhs.duration
+                && lhs.previousTimestamp == rhs.previousTimestamp
         }
         
     }
@@ -102,7 +107,12 @@ fileprivate extension DisplayLink {
             
             /// Called for each frame from the CADisplayLink.
             @objc dynamic func frame(_ displayLink: CADisplayLink) {
-                callback?(Frame(timestamp: displayLink.timestamp, duration: displayLink.duration))
+                
+                let frame = Frame(
+                    previousTimestamp: displayLink.timestamp,
+                    timestamp: displayLink.targetTimestamp)
+                
+                callback?(frame)
             }
         }
         
@@ -138,27 +148,23 @@ fileprivate extension DisplayLink {
             return dl!
         }()
         
-        var lastFrame = Frame(timestamp: 0, duration: 0)
+        var lastFrame = DisplayLink.Frame(previousTimestamp: 0, timestamp: 0)
         
         /// Creates a new paused DisplayLink instance.
         init() {
-            func displayLinkOutputCallback(displayLink: CVDisplayLink, inNow: UnsafePointer<CVTimeStamp>, inOutputTime: UnsafePointer<CVTimeStamp>, flagsIn: CVOptionFlags, flagsOut: UnsafeMutablePointer<CVOptionFlags>, userInfo: UnsafeMutableRawPointer?) -> CVReturn {
-                let timestamp = Double(inNow.pointee.videoTime) / Double(inNow.pointee.videoTimeScale) // convert to seconds
-                let dl = unsafeBitCast(userInfo, to: DisplayLink.self) // cast back to a pointer to self
-                
-                let time = CVDisplayLinkGetNominalOutputVideoRefreshPeriod(displayLink)
-                let duration = Double(Double(time.timeValue) / Double(time.timeScale)) // convert to seconds
-                let info = Frame(timestamp: timestamp, duration: duration)
-                
-                // dispatch to main - this is called from an internal CV thread
-                DispatchQueue.main.async { () -> Void in
-                    dl.frame(info) // call frame(timestamp:) on self
-                }
-                return kCVReturnSuccess
-            }
             
-            // hook up the frame output callback
-            CVDisplayLinkSetOutputCallback(self.displayLink, displayLinkOutputCallback, UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque())) // pass in self as the 'userInfo'
+            CVDisplayLinkSetOutputHandler(self.displayLink, { [weak self] (displayLink, inNow, inOutputTime, flageIn, flagsOut) -> CVReturn in
+                let frame = DisplayLink.Frame(
+                    previousTimestamp: inNow.pointee.timeInterval,
+                    timestamp: inOutputTime.pointee.timeInterval)
+                
+                DispatchQueue.main.async {
+                    self?.frame(frame)
+                }
+                
+                return kCVReturnSuccess
+            })
+
         }
         
         deinit {
@@ -173,6 +179,12 @@ fileprivate extension DisplayLink {
             lastFrame = frame
         }
     
+    }
+}
+    
+fileprivate extension CVTimeStamp {
+    var timeInterval: TimeInterval {
+        return TimeInterval(videoTime) / TimeInterval(self.videoTimeScale)
     }
 }
 

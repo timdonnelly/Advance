@@ -25,11 +25,11 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
     public var simulation: Simulation<Function> {
         didSet {
             lastNotifiedValue = Result(vector: simulation.value)
-            subscription.paused = simulation.settled
+            displayLink.paused = simulation.settled
         }
     }
     
-    private let subscription: Loop.Subscription
+    private let displayLink: DisplayLink
     
     /// Fires when `value` has changed.
     public var changed: Observable<Result> {
@@ -51,16 +51,16 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
     public init(function: Function, value: Result) {
         simulation = Simulation(function: function, value: value.vector)
         lastNotifiedValue = value
-        subscription = Loop.shared.subscribe()
+        displayLink = DisplayLink()
         
-        subscription.advanced.observe({ [unowned self] (elapsed) -> Void in
-            self.simulation.advance(by: elapsed)
+        displayLink.frames.observe { [unowned self] (frame) in
+            self.simulation.advance(by: frame.duration)
             if self.simulation.settled {
-                self.subscription.paused = true
+                self.displayLink.paused = true
             }
-        })
-        
-        subscription.paused = simulation.settled
+        }
+
+        displayLink.paused = simulation.settled
     }
     
     /// The current value of the spring.

@@ -21,8 +21,8 @@ final class SpringContainerView : NSView, CALayerDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        tensionSlider.doubleValue = springView.centerSpring.configuration.tension
-        dampingSlider.doubleValue = springView.centerSpring.configuration.damping
+        tensionSlider.doubleValue = springView.centerSpring.tension
+        dampingSlider.doubleValue = springView.centerSpring.damping
     }
     
     override func mouseDown(with theEvent: NSEvent) {
@@ -33,10 +33,10 @@ final class SpringContainerView : NSView, CALayerDelegate {
     }
     
     @IBAction func tensionChanged(_ sender: AnyObject) {
-        springView.centerSpring.configuration.tension = tensionSlider.doubleValue
+        springView.centerSpring.tension = tensionSlider.doubleValue
     }
     
     @IBAction func dampingSlider(_ sender: AnyObject) {
-        springView.centerSpring.configuration.damping = dampingSlider.doubleValue
+        springView.centerSpring.damping = dampingSlider.doubleValue
     }
 }
