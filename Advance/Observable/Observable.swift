@@ -46,3 +46,14 @@ public extension Observable {
     }
     
 }
+
+public extension Observable {
+    
+    @discardableResult
+    public func bind<R>(to object: R, keyPath: ReferenceWritableKeyPath<R, T>) -> Subscription {
+        return observe({ (value) in
+            object[keyPath: keyPath] = value
+        })
+    }
+    
+}

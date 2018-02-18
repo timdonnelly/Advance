@@ -62,39 +62,46 @@ public final class Animator<T> where T: Animation {
         changeHandlers.removeAll()
     }
     
-    public func onChange(_ handler: @escaping (T.Result) -> Void) {
+    @discardableResult
+    public func onChange(_ handler: @escaping (T.Result) -> Void) -> Animator<T> {
         switch state {
         case .running:
             changeHandlers.append(handler)
         case .done(_):
             break
         }
+        return self
     }
     
     /// If the animator is already in a completed state, the given handler
     /// will be called immediately.
-    public func onCompletion(_ handler: @escaping (Result) -> Void) {
+    @discardableResult
+    public func onCompletion(_ handler: @escaping (Result) -> Void) -> Animator<T> {
         switch state {
         case .running:
             completionHandlers.append(handler)
         case let .done(result):
             handler(result)
         }
+        return self
     }
     
-    
-    public func onFinish(_ handler: @escaping () -> Void) {
+    @discardableResult
+    public func onFinish(_ handler: @escaping () -> Void) -> Animator<T> {
         onCompletion { (result) in
             guard result == .finished else { return }
             handler()
         }
+        return self
     }
     
-    public func onCancel(_ handler: @escaping () -> Void) {
+    @discardableResult
+    public func onCancel(_ handler: @escaping () -> Void) -> Animator<T> {
         onCompletion { (result) in
             guard result == .cancelled else { return }
             handler()
         }
+        return self
     }
     
     public func cancel() {
@@ -155,6 +162,18 @@ public extension Animator {
     public enum Result {
         case finished
         case cancelled
+    }
+    
+}
+
+public extension Animator {
+    
+    @discardableResult
+    public func bind<Root>(to object: Root, keyPath: ReferenceWritableKeyPath<Root, T.Result>) -> Animator<T> {
+        onChange { (value) in
+            object[keyPath: keyPath] = value
+        }
+        return self
     }
     
 }

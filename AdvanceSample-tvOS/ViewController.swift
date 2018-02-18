@@ -24,11 +24,8 @@ class ViewController: UIViewController {
         dot.backgroundColor = UIColor(red: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0)
         view.addSubview(dot)
         
-        spring.changed.observe { [unowned self] (point) in
-            self.dot.center = point
-        }
-        
-        spring.reset(CGPoint(x: view.bounds.midX, y: view.bounds.midY))
+        spring.values.bind(to: dot, keyPath: \.center)
+        spring.reset(to: CGPoint(x: view.bounds.midX, y: view.bounds.midY))
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +33,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @objc dynamic func pan(sender: UIPanGestureRecognizer) {
+    @objc private func pan(sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .began:
             positionWhenPanBegan = spring.value
@@ -44,7 +41,7 @@ class ViewController: UIViewController {
             var pos = positionWhenPanBegan
             pos.x += sender.translation(in: view).x
             pos.y += sender.translation(in: view).y
-            spring.reset(pos)
+            spring.reset(to: pos)
         case .ended:
             spring.velocity = sender.velocity(in: view)
             spring.target = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
