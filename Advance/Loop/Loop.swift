@@ -18,7 +18,7 @@ public final class Loop {
     
     fileprivate init() {
         displayLink = DisplayLink()
-        displayLink.callback = { [unowned self] (frame) in
+        displayLink.frames.observe { [unowned self] (frame) in
             self.displayLinkDidFire(frame)
         }
     }
