@@ -21,7 +21,6 @@
 		223E49731C76C9430048CAB6 /* SpringsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49721C76C9430048CAB6 /* SpringsViewController.swift */; };
 		223E49751C76C9510048CAB6 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49741C76C9510048CAB6 /* SpringView.swift */; };
 		226A752C1C84153E00A7F1FB /* GravitySimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752B1C84153E00A7F1FB /* GravitySimulation.swift */; };
-		228E20421C9CB99D0058ADA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		228E20431C9CB99D0058ADA1 /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */; };
 		228E20441C9CB99D0058ADA1 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat.swift */; };
 		228E20461C9CB99D0058ADA1 /* VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */; };
@@ -29,7 +28,7 @@
 		228E20481C9CB99D0058ADA1 /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */; };
 		228E20491C9CB99D0058ADA1 /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
 		228E204A1C9CB99D0058ADA1 /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
-		228E204C1C9CB99D0058ADA1 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
+		228E204C1C9CB99D0058ADA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* Loop.swift */; };
 		228E204D1C9CB99D0058ADA1 /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */; };
 		228E204F1C9CB99D0058ADA1 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4851C876AD1000CF9EE /* CGSize.swift */; };
 		228E20501C9CB99D0058ADA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Simulator.swift */; };
@@ -81,7 +80,6 @@
 		5D3A2F421C920C8C0071F08F /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
 		5D3A2F451C920C970071F08F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
 		5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
-		5D3A2F471C920CB10071F08F /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5D3A2F481C920CBC0071F08F /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
 		5D3A2F491C920CBC0071F08F /* SimulationFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */; };
 		5D3A2F4A1C920CBC0071F08F /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* Simulation.swift */; };
@@ -100,8 +98,8 @@
 		5D3A2F571C920CCA0071F08F /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48E1C876AD1000CF9EE /* Vector4.swift */; };
 		5D3A2F591C920CCA0071F08F /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
 		5D3A2F5A1C920CCA0071F08F /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */; };
-		5D3A2F5F1C922DAA0071F08F /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
-		5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
+		5D3A2F5F1C922DAA0071F08F /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* Loop.swift */; };
+		5D3A2F631C923ADB0071F08F /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* Loop.swift */; };
 		5D3A2F6B1C92559B0071F08F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F6A1C92559B0071F08F /* AppDelegate.swift */; };
 		5D3A2F6D1C92559B0071F08F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A2F6C1C92559B0071F08F /* Assets.xcassets */; };
 		5D3A2F701C92559B0071F08F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A2F6E1C92559B0071F08F /* MainMenu.xib */; };
@@ -119,7 +117,6 @@
 		5DB1A4971C876AD1000CF9EE /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */; };
 		5DB1A49D1C876AD1000CF9EE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
 		5DB1A49E1C876AD1000CF9EE /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
-		5DB1A4A01C876AD1000CF9EE /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
 		5DB1A4A21C876AD1000CF9EE /* SimulationFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */; };
 		5DB1A4A31C876AD1000CF9EE /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* Simulation.swift */; };
@@ -303,7 +300,7 @@
 		5D39CEF21C6E983100DFCF86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D3A2F311C9209EE0071F08F /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A2F351C9209EE0071F08F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
+		5D3A2F5E1C922DAA0071F08F /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		5D3A2F681C92559B0071F08F /* AdvanceSample-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AdvanceSample-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A2F6A1C92559B0071F08F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D3A2F6C1C92559B0071F08F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -322,7 +319,6 @@
 		5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		5DB1A4751C876AD1000CF9EE /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAMediaTimingFunction.swift; sourceTree = "<group>"; };
-		5DB1A47A1C876AD1000CF9EE /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecayFunction.swift; sourceTree = "<group>"; };
 		5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulationFunction.swift; sourceTree = "<group>"; };
 		5DB1A47E1C876AD1000CF9EE /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
@@ -645,8 +641,7 @@
 		5DB1A4791C876AD1000CF9EE /* Loop */ = {
 			isa = PBXGroup;
 			children = (
-				5DB1A47A1C876AD1000CF9EE /* Loop.swift */,
-				5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */,
+				5D3A2F5E1C922DAA0071F08F /* Loop.swift */,
 			);
 			path = Loop;
 			sourceTree = "<group>";
@@ -1037,7 +1032,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				228E20421C9CB99D0058ADA1 /* Loop.swift in Sources */,
 				228E20431C9CB99D0058ADA1 /* Interpolatable.swift in Sources */,
 				228E20441C9CB99D0058ADA1 /* CGFloat.swift in Sources */,
 				228E20461C9CB99D0058ADA1 /* VectorConvertible.swift in Sources */,
@@ -1045,7 +1039,7 @@
 				228E20481C9CB99D0058ADA1 /* UnitBezier.swift in Sources */,
 				228E20491C9CB99D0058ADA1 /* Advanceable.swift in Sources */,
 				228E204A1C9CB99D0058ADA1 /* SpringFunction.swift in Sources */,
-				228E204C1C9CB99D0058ADA1 /* DisplayLink.swift in Sources */,
+				228E204C1C9CB99D0058ADA1 /* Loop.swift in Sources */,
 				228E204D1C9CB99D0058ADA1 /* BasicAnimation.swift in Sources */,
 				228E204F1C9CB99D0058ADA1 /* CGSize.swift in Sources */,
 				228E20501C9CB99D0058ADA1 /* Simulator.swift in Sources */,
@@ -1120,7 +1114,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DB1A4A01C876AD1000CF9EE /* Loop.swift in Sources */,
 				5DB1A4AD1C876AD1000CF9EE /* Interpolatable.swift in Sources */,
 				5DB1A4A61C876AD1000CF9EE /* CGFloat.swift in Sources */,
 				5DB1A4AC1C876AD1000CF9EE /* VectorConvertible.swift in Sources */,
@@ -1128,7 +1121,7 @@
 				5DB1A4971C876AD1000CF9EE /* UnitBezier.swift in Sources */,
 				5DB1A4921C876AD1000CF9EE /* Advanceable.swift in Sources */,
 				5DB1A4A51C876AD1000CF9EE /* SpringFunction.swift in Sources */,
-				5D3A2F5F1C922DAA0071F08F /* DisplayLink.swift in Sources */,
+				5D3A2F5F1C922DAA0071F08F /* Loop.swift in Sources */,
 				5DB1A4951C876AD1000CF9EE /* BasicAnimation.swift in Sources */,
 				5DB1A4A91C876AD1000CF9EE /* CGSize.swift in Sources */,
 				5DB1A4A41C876AD1000CF9EE /* Simulator.swift in Sources */,
@@ -1171,7 +1164,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D3A2F471C920CB10071F08F /* Loop.swift in Sources */,
 				5D3A2F3C1C920C7C0071F08F /* UnitBezier.swift in Sources */,
 				5D3A2F4C1C920CBC0071F08F /* SpringFunction.swift in Sources */,
 				5D3A2F3A1C920C7C0071F08F /* BasicAnimation.swift in Sources */,
@@ -1193,7 +1185,7 @@
 				5D3A2F491C920CBC0071F08F /* SimulationFunction.swift in Sources */,
 				5D3A2F501C920CC20071F08F /* CGPoint.swift in Sources */,
 				9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */,
-				5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */,
+				5D3A2F631C923ADB0071F08F /* Loop.swift in Sources */,
 				5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */,
 				5D3A2F401C920C8C0071F08F /* AnyAnimation.swift in Sources */,
 				5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */,

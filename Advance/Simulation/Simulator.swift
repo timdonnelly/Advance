@@ -25,14 +25,14 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
     public var simulation: Simulation<Function> {
         didSet {
             lastNotifiedValue = Result(vector: simulation.value)
-            displayLink.paused = simulation.settled
+            loop.paused = simulation.settled
         }
     }
     
-    private let displayLink: DisplayLink
+    private let loop: Loop
     
     /// Fires when `value` has changed.
-    public var changed: Observable<Result> {
+    public var values: Observable<Result> {
         return changedSink.observable
     }
     
@@ -51,16 +51,16 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
     public init(function: Function, value: Result) {
         simulation = Simulation(function: function, value: value.vector)
         lastNotifiedValue = value
-        displayLink = DisplayLink()
+        loop = Loop()
         
-        displayLink.frames.observe { [unowned self] (frame) in
+        loop.frames.observe { [unowned self] (frame) in
             self.simulation.advance(by: frame.duration)
             if self.simulation.settled {
-                self.displayLink.paused = true
+                self.loop.paused = true
             }
         }
 
-        displayLink.paused = simulation.settled
+        loop.paused = simulation.settled
     }
     
     /// The current value of the spring.

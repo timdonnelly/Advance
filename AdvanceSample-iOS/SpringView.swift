@@ -16,7 +16,7 @@ final class SpringView: UIView {
         centerSpring.tension = Scalar(t)
         centerSpring.damping = Scalar(d)
         
-        centerSpring.changed.observe { [unowned self] (c) -> Void in
+        centerSpring.values.observe { [unowned self] (c) -> Void in
             self.center = c
         }
     }

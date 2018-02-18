@@ -5,25 +5,12 @@ class GravityViewController: DemoViewController {
     
     var simulation = GravitySimulation() {
         didSet {
-            if simulation.settled == false && subscription.paused == true {
-                subscription.paused = false
-            }
+            loop.paused = simulation.settled
             view.setNeedsLayout()
         }
     }
     
-    fileprivate lazy var subscription: Loop.Subscription = {
-        let s = Loop.shared.subscribe()
-        
-        s.advanced.observe({ [unowned self] (elapsed) -> Void in
-            self.simulation.advance(by: elapsed)
-            if self.simulation.settled {
-                self.subscription.paused = true
-            }
-        })
-        
-        return s
-    }()
+    private let loop = Loop()
     
     let resetButton = UIButton()
     
@@ -35,6 +22,14 @@ class GravityViewController: DemoViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loop.frames.observe { [weak self] frame in
+            guard let strongSelf = self else { return }
+            strongSelf.simulation.advance(by: frame.duration)
+            if strongSelf.simulation.settled {
+                strongSelf.loop.paused = true
+            }
+        }
         
         title = "Gravity"
         note = "Long press to add gravity."
