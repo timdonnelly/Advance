@@ -25,11 +25,9 @@ final class BrowserViewController: UIViewController {
         self.viewControllers = viewControllers
         super.init(nibName: nil, bundle: nil)
         
-        var cfg = SpringConfiguration()
-        cfg.threshold = 0.001
-        cfg.tension = 60.0
-        cfg.damping = 26.0
-        blurSpring.configuration = cfg
+        blurSpring.threshold = 0.001
+        blurSpring.tension = 60.0
+        blurSpring.damping = 26.0
     }
 
     required init?(coder aDecoder: NSCoder) {

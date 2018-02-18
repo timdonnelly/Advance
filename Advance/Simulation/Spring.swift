@@ -101,10 +101,19 @@ public final class Spring<T>: Simulator<SpringFunction<T>> where T: VectorConver
         set { simulation.function.target = newValue }
     }
     
-    /// Configuration options for the spring.
-    public var configuration: SpringConfiguration {
-        get { return simulation.function.configuration }
-        set { simulation.function.configuration = newValue }
+    public var tension: Scalar {
+        get { return simulation.function.tension }
+        set { simulation.function.tension = newValue }
+    }
+    
+    public var damping: Scalar {
+        get { return simulation.function.damping }
+        set { simulation.function.damping = newValue }
+    }
+    
+    public var threshold: Scalar {
+        get { return simulation.function.threshold }
+        set { simulation.function.threshold = newValue }
     }
     
 }

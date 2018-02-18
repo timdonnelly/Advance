@@ -44,19 +44,19 @@ class BrowserItem: NSObject {
     override init() {
         super.init()
         
-        center.configuration.threshold = 0.1
-        center.configuration.tension = 120.0
-        center.configuration.damping = 27.0
+        center.threshold = 0.1
+        center.tension = 120.0
+        center.damping = 27.0
         center.changed.observe { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
-        transform.configuration.threshold = 0.001
+        transform.threshold = 0.001
         transform.changed.observe { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
-        size.configuration.threshold = 0.1
+        size.threshold = 0.1
         size.changed.observe { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
@@ -117,14 +117,9 @@ class BrowserItem: NSObject {
             var velocity = SimpleTransform.zero
             velocity.scale = recognizer.scaleVelocity
             velocity.rotation = recognizer.rotationVelocity
-            var config = SpringConfiguration()
-            config.threshold = 0.001
             transform.velocity = velocity
             
             let centerVel = recognizer.translationVelocityInView(view.superview)
-            var centerConfig = SpringConfiguration()
-            centerConfig.tension = 40.0
-            centerConfig.damping = 5.0
             center.velocity = centerVel
             
             gestureInProgress = false
@@ -219,9 +214,9 @@ class BrowserView: UIView {
     
     fileprivate let coverVisibilty: Spring<CGFloat> = {
         let s = Spring(value: CGFloat(1.0))
-        s.configuration.threshold = 0.001
-        s.configuration.tension = 220.0
-        s.configuration.damping = 28.0
+        s.threshold = 0.001
+        s.tension = 220.0
+        s.damping = 28.0
         return s
     }()
     
@@ -276,6 +271,10 @@ class BrowserView: UIView {
         panRecognizer.addTarget(self, action: #selector(pan(_:)))
         panRecognizer.delegate = self
         addGestureRecognizer(panRecognizer)
+        
+        index.tension = 120.0
+        index.damping = 20.0
+        index.threshold = 0.001
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -359,13 +358,13 @@ class BrowserView: UIView {
         
         let tension = 60.0 + Scalar(distance) * 40.0
         
-        item.transform.configuration.tension = tension
-        item.transform.configuration.damping = 18.0
+        item.transform.tension = tension
+        item.transform.damping = 18.0
         
         if item == fullScreenItem {
             transform.scale = 1.0
-            item.transform.configuration.tension = 160.0
-            item.transform.configuration.damping = 28.0
+            item.transform.tension = 160.0
+            item.transform.damping = 28.0
         }
         
         if animated {
@@ -461,11 +460,6 @@ class BrowserView: UIView {
             }
             destIndex = min(destIndex, CGFloat(items.count))
             destIndex = max(destIndex, CGFloat(0.0))
-            var config = SpringConfiguration()
-            config.tension = 120.0
-            config.damping = 20.0
-            config.threshold = 0.001
-            index.configuration = config
             index.velocity = vel
             index.target = destIndex
         default:

@@ -59,8 +59,8 @@ class SpringsViewController: DemoViewController {
     }
     
     fileprivate func updateSprings() {
-        springView.centerSpring.configuration.tension = Scalar(configView.tension)
-        springView.centerSpring.configuration.damping = Scalar(configView.damping)
+        springView.centerSpring.tension = Scalar(configView.tension)
+        springView.centerSpring.damping = Scalar(configView.damping)
     }
     
     override func didEnterFullScreen() {

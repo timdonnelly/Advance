@@ -13,8 +13,8 @@ final class SpringView: UIView {
         let t = arc4random_uniform(120 - 20) + 20
         let d = arc4random_uniform(20 - 4) + 4
         
-        centerSpring.configuration.tension = Scalar(t)
-        centerSpring.configuration.damping = Scalar(d)
+        centerSpring.tension = Scalar(t)
+        centerSpring.damping = Scalar(d)
         
         centerSpring.changed.observe { [unowned self] (c) -> Void in
             self.center = c

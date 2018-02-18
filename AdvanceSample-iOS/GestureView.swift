@@ -19,10 +19,14 @@ final class GestureView: UIView {
         recognizer.addTarget(self, action: #selector(manipulate(_:)))
         addGestureRecognizer(recognizer)
         
+        animatableCenter.threshold = 0.1
+        animatableCenter.tension = 40
+        animatableCenter.damping = 5
         animatableCenter.changed.observe { [weak self] (c) -> Void in
             self?.center = c
         }
         
+        animatableTransform.threshold = 0.001
         animatableTransform.changed.observe { [weak self] (t) -> Void in
             self?.transform = t.affineTransform
         }
@@ -78,18 +82,11 @@ final class GestureView: UIView {
             var velocity = SimpleTransform.zero
             velocity.scale = recognizer.scaleVelocity
             velocity.rotation = recognizer.rotationVelocity
-            var config = SpringConfiguration()
-            config.threshold = 0.001
-            animatableTransform.configuration = config
             animatableTransform.target = SimpleTransform()
             animatableTransform.velocity = velocity
             
             let centerVel = recognizer.translationVelocityInView(superview)
-            var centerConfig = SpringConfiguration()
-            centerConfig.tension = 40.0
-            centerConfig.damping = 5.0
             let c = CGPoint(x: superview!.bounds.midX, y: superview!.bounds.midY)
-            animatableCenter.configuration = centerConfig
             animatableCenter.target = c
             animatableCenter.velocity = centerVel
             break
