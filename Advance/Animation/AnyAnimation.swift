@@ -6,9 +6,6 @@ public struct AnyAnimation<Result>: Animation where Result: VectorConvertible {
     /// The current value of the animation.
     public let value: Result
     
-    /// The current value of the animation.
-    public let velocity: Result
-    
     /// `true` if the animation has finished.
     public let isFinished: Bool
     
@@ -20,7 +17,6 @@ public struct AnyAnimation<Result>: Animation where Result: VectorConvertible {
     /// - parameter animation: The animation to be type erased.
     public init<A: Animation>(animation: A) where A.Result == Result {
         value = animation.value
-        velocity = animation.velocity
         isFinished = animation.isFinished
         advanceFunction = { (time: Double) -> AnyAnimation<Result> in
             var a = animation

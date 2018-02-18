@@ -5,7 +5,7 @@
 public protocol Animation: Advanceable {
     
     /// The type of value to be animated.
-    associatedtype Result: VectorConvertible
+    associatedtype Result
     
     /// Returns `True` if the animation has completed. 
     ///
@@ -15,9 +15,6 @@ public protocol Animation: Advanceable {
     
     /// The current value of the animation.
     var value: Result { get }
-    
-    /// The current velocity of the animation.
-    var velocity: Result { get }
     
 }
 

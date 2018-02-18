@@ -1,7 +1,7 @@
 /// Interpolates between values over a specified duration.
 ///
 /// - parameter Value: The type of value to be animated.
-public struct BasicAnimation<Value: VectorConvertible>: Animation {
+public struct BasicAnimation<Value>: Animation where Value: Interpolatable {
     
     /// The initial value at time 0.
     fileprivate (set) public var from: Value
@@ -28,14 +28,10 @@ public struct BasicAnimation<Value: VectorConvertible>: Animation {
         self.duration = duration
         self.timingFunction = timingFunction
         self.value = from
-        self.velocity = Value.zero
     }
     
     /// The current value.
     fileprivate(set) public var value: Value
-    
-    /// The current velocity.
-    fileprivate(set) public var velocity: Value
     
     fileprivate var elapsed: Double = 0.0
     
@@ -48,7 +44,6 @@ public struct BasicAnimation<Value: VectorConvertible>: Animation {
     ///
     /// - parameter elapsed: The time (in seconds) to advance the animation.
     public mutating func advance(by time: Double) {
-        let starting = value
         
         elapsed += time
         var progress = elapsed / duration
@@ -56,11 +51,15 @@ public struct BasicAnimation<Value: VectorConvertible>: Animation {
         progress = min(progress, 1.0)
         let adjustedProgress = timingFunction.solve(at: Scalar(progress), epsilon: 1.0 / Scalar(duration * 1000.0))
         
-        let val = from.vector.interpolated(to: to.vector, alpha: Scalar(adjustedProgress))
-        value = Value(vector: val)
+        value = from.interpolated(to: to, alpha: Scalar(adjustedProgress))
+    }
+    
+}
 
-        let vel = Scalar(1.0/time) * (value.vector - starting.vector)
-        velocity = Value(vector: vel)
+public extension Interpolatable {
+    
+    public func animation(to finalValue: Self, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) -> BasicAnimation<Self> {
+        return BasicAnimation(from: self, to: finalValue, duration: duration, timingFunction: timingFunction)
     }
     
 }

@@ -144,6 +144,12 @@
 		5DE95A001C93940E008487A8 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
 		5DE95A011C93940E008487A8 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */; };
 		5DE95A021C93940E008487A8 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
+		970359C5203A2B6100028EFE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C4203A2B6100028EFE /* Animator.swift */; };
+		970359C6203A2B6100028EFE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C4203A2B6100028EFE /* Animator.swift */; };
+		970359C7203A2B6100028EFE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C4203A2B6100028EFE /* Animator.swift */; };
+		970359CA203A36A200028EFE /* SimulatedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C9203A36A200028EFE /* SimulatedAnimation.swift */; };
+		970359CB203A36A200028EFE /* SimulatedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C9203A36A200028EFE /* SimulatedAnimation.swift */; };
+		970359CC203A36A200028EFE /* SimulatedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C9203A36A200028EFE /* SimulatedAnimation.swift */; };
 		9710075920378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
 		9710075A20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
 		9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
@@ -341,6 +347,8 @@
 		5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdvanceTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE959F41C9392E1008487A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DE95A061C93963A008487A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		970359C4203A2B6100028EFE /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		970359C9203A36A200028EFE /* SimulatedAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedAnimation.swift; sourceTree = "<group>"; };
 		9710075820378A5300FC5BA1 /* SimulationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -585,6 +593,7 @@
 		5DB1A4611C876AD1000CF9EE /* Advance */ = {
 			isa = PBXGroup;
 			children = (
+				970359C3203A2B3B00028EFE /* Animator */,
 				5DB1A4641C876AD1000CF9EE /* Animation */,
 				5DB1A4741C876AD1000CF9EE /* Observable */,
 				5DB1A4761C876AD1000CF9EE /* Extensions */,
@@ -598,22 +607,15 @@
 		5DB1A4641C876AD1000CF9EE /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				5DB1A4681C876AD1000CF9EE /* Basic */,
+				5DB1A4651C876AD1000CF9EE /* Advanceable.swift */,
 				5DB1A4661C876AD1000CF9EE /* Animation.swift */,
 				5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */,
-				5DB1A4651C876AD1000CF9EE /* Advanceable.swift */,
-			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
-		5DB1A4681C876AD1000CF9EE /* Basic */ = {
-			isa = PBXGroup;
-			children = (
 				5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */,
+				970359C9203A36A200028EFE /* SimulatedAnimation.swift */,
 				5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */,
 				5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */,
 			);
-			path = Basic;
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		5DB1A4741C876AD1000CF9EE /* Observable */ = {
@@ -689,6 +691,14 @@
 			);
 			path = "Advance-iOS";
 			sourceTree = SOURCE_ROOT;
+		};
+		970359C3203A2B3B00028EFE /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				970359C4203A2B6100028EFE /* Animator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -1032,6 +1042,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970359C6203A2B6100028EFE /* Animator.swift in Sources */,
+				970359CB203A36A200028EFE /* SimulatedAnimation.swift in Sources */,
 				228E20431C9CB99D0058ADA1 /* Interpolatable.swift in Sources */,
 				228E20441C9CB99D0058ADA1 /* CGFloat.swift in Sources */,
 				228E20461C9CB99D0058ADA1 /* VectorConvertible.swift in Sources */,
@@ -1114,6 +1126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970359C5203A2B6100028EFE /* Animator.swift in Sources */,
+				970359CA203A36A200028EFE /* SimulatedAnimation.swift in Sources */,
 				5DB1A4AD1C876AD1000CF9EE /* Interpolatable.swift in Sources */,
 				5DB1A4A61C876AD1000CF9EE /* CGFloat.swift in Sources */,
 				5DB1A4AC1C876AD1000CF9EE /* VectorConvertible.swift in Sources */,
@@ -1164,6 +1178,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970359C7203A2B6100028EFE /* Animator.swift in Sources */,
+				970359CC203A36A200028EFE /* SimulatedAnimation.swift in Sources */,
 				5D3A2F3C1C920C7C0071F08F /* UnitBezier.swift in Sources */,
 				5D3A2F4C1C920CBC0071F08F /* SpringFunction.swift in Sources */,
 				5D3A2F3A1C920C7C0071F08F /* BasicAnimation.swift in Sources */,
