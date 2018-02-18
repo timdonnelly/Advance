@@ -18,7 +18,7 @@
 /// s.target = CGPoint(x: 100.0, y: 200.0)
 /// // Off it goes!
 /// ```
-public class Simulator<Result, Function: SimulationFunction> where Result: VectorConvertible, Result.VectorType == Function.VectorType {
+public class Simulator<Result, Function> where Result: VectorConvertible, Function: SimulationFunction, Result.VectorType == Function.VectorType {
     
     private let changedSink = Sink<Result>()
     
