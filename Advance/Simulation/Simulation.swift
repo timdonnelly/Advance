@@ -16,7 +16,7 @@ import Foundation
 /// up" to the outside time. It then uses linear interpolation to match the
 /// internal state to the required external time in order to return the most
 /// precise calculations.
-public struct Simulation<F: SimulationFunction> : Advanceable {
+public struct Simulation<F: SimulationFunction>: Advanceable {
     
     // The internal time step. 0.008 == 120fps (double the typical screen refresh
     // rate). The math required to solve most functions is easy for modern

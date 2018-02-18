@@ -64,23 +64,3 @@ public struct BasicAnimation<Value: VectorConvertible>: Animation {
     }
     
 }
-
-public extension VectorConvertible {
-    
-    /// Animates to the specified value.
-    ///
-    /// - parameter to: The value to animate to.
-    /// - parameter duration: The duration of the animation.
-    /// - parameter timingFunction: The timing (easing) function to use.
-    /// - parameter callback: A closure that will be called with the new value
-    ///   for each frame of the animation until it is finished.
-    /// - returns: The underlying animator.
-    public func animate(to value: Self, duration: Double, timingFunction: TimingFunction, callback: @escaping (Self)->Void) -> Animator<BasicAnimation<Self>> {
-        let a = BasicAnimation(from: self, to: value, duration: duration, timingFunction: timingFunction)
-        let animator = AnimatorContext.shared.animate(a)
-        animator.changed.observe { (a) in
-            callback(a.value)
-        }
-        return animator
-    }
-}
