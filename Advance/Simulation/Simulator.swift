@@ -20,7 +20,7 @@
 /// ```
 
 
-public class Animator<Result, Function> where Function: SimulationFunction, Result == Function.Result {
+public class Simulator<Result, Function: SimulationFunction> where Result == Function.Result {
     
     private let changedSink = Sink<Result>()
     
@@ -79,11 +79,11 @@ public class Animator<Result, Function> where Function: SimulationFunction, Resu
 
 }
 
-public extension Animator where Function == SpringFunction<Result> {
+public final class Spring<Result>: Simulator<Result, SpringFunction<Result>> where Result: VectorConvertible {
     
-    public convenience init(value: Result) {
+    public init(value: Result) {
         let spring = SpringFunction(target: value)
-        self.init(function: spring, value: value)
+        super.init(function: spring, value: value)
     }
     
     public var target: Result {
@@ -115,5 +115,3 @@ public extension Animator where Function == SpringFunction<Result> {
     }
     
 }
-
-public typealias Spring<T> = Animator<T, SpringFunction<T>> where T: VectorConvertible
