@@ -22,7 +22,7 @@ public final class Spring<Value: VectorConvertible> {
     
     private let changedSink = Sink<Value>()
     
-    fileprivate var solver: Simulator<SpringFunction<Value>> {
+    fileprivate var solver: Simulation<SpringFunction<Value>> {
         didSet {
             lastNotifiedValue = solver.value
             if solver.settled == false && subscription.paused == true {
@@ -63,7 +63,7 @@ public final class Spring<Value: VectorConvertible> {
     ///   a velocity of `0`.
     public init(value: Value) {
         let f = SpringFunction(target: value)
-        solver = Simulator(function: f, value: value)
+        solver = Simulation(function: f, value: value)
         lastNotifiedValue = value
     }
     
@@ -71,7 +71,7 @@ public final class Spring<Value: VectorConvertible> {
     public func reset(to value: Value) {
         var f = solver.function
         f.target = value
-        solver = Simulator(function: f, value: value)
+        solver = Simulation(function: f, value: value)
         lastNotifiedValue = value
     }
     

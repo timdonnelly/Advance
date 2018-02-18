@@ -4,8 +4,8 @@ import Advance
 
 private enum GravitySimulationNode: Advanceable {
     case stationary(CGPoint)
-    case decaying(Simulator<DecayFunction<CGPoint>>)
-    case pulling(Simulator<GravityFunction>)
+    case decaying(Simulation<DecayFunction<CGPoint>>)
+    case pulling(Simulation<GravityFunction>)
     
     var value: CGPoint {
         switch self {
@@ -59,7 +59,7 @@ private enum GravitySimulationNode: Advanceable {
         }
         
         let f = GravityFunction(target: point)
-        let solver = Simulator(function: f, value: value, velocity: velocity)
+        let solver = Simulation(function: f, value: value, velocity: velocity)
         self = .pulling(solver)
     }
     
@@ -67,7 +67,7 @@ private enum GravitySimulationNode: Advanceable {
         guard case let .pulling(sim) = self else { return }
         
         let f = DecayFunction<CGPoint>()
-        let solver = Simulator(function: f, value: sim.value, velocity: sim.velocity)
+        let solver = Simulation(function: f, value: sim.value, velocity: sim.velocity)
         self = .decaying(solver)
     }
     

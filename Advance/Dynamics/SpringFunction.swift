@@ -18,7 +18,7 @@ public struct SpringConfiguration {
 }
 
 /// Implements a simple spring acceleration function.
-public struct SpringFunction<T>: Simulation where T: VectorConvertible {
+public struct SpringFunction<T>: SimulationFunction where T: VectorConvertible {
     
     /// The target of the spring.
     public var target: T

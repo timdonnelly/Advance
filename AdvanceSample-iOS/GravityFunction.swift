@@ -3,7 +3,7 @@ import CoreGraphics
 import Foundation
 
 
-struct GravityFunction: Simulation {
+struct GravityFunction: SimulationFunction {
     
     var target: CGPoint
     

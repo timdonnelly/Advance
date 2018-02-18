@@ -5,7 +5,7 @@
 /// internally.
 public struct DecayAnimation<Value: VectorConvertible>: Animation {
     
-    fileprivate var solver: Simulator<DecayFunction<Value>>
+    fileprivate var solver: Simulation<DecayFunction<Value>>
     
     /// Creates a new `DecayAnimation` instance.
     ///
@@ -17,7 +17,7 @@ public struct DecayAnimation<Value: VectorConvertible>: Animation {
         var f = DecayFunction<Value>()
         f.threshold = threshold
         f.drag = 3.0
-        solver = Simulator(function: f, value: from, velocity: velocity)
+        solver = Simulation(function: f, value: from, velocity: velocity)
     }
     
     /// Advances the animation.
