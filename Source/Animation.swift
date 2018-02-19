@@ -7,10 +7,7 @@ public protocol Animation: Advanceable {
     /// The type of value to be animated.
     associatedtype Result
     
-    /// Returns `True` if the animation has completed. 
-    ///
-    /// After the animation finishes, it should not return to an unfinished 
-    /// state. Doing so may result in undefined behavior.
+    /// Returns `true` if the animation has completed.
     var isFinished: Bool { get }
     
     /// The current value of the animation.

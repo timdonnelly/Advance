@@ -1,5 +1,6 @@
 import Foundation
 
+/// Represents a changing stream of values that can be observed.
 public final class Observable<T> {
     
     public typealias Observer = (T) -> Void
@@ -12,6 +13,9 @@ public final class Observable<T> {
         }
     }
 
+    /// Adds a new observer.
+    /// - parameter observer: The observer to be added.
+    /// - returns: A `Subscription` instance.
     @discardableResult
     public func observe(_ observer: @escaping Observer) -> Subscription {
         let identifier = UUID()
@@ -32,6 +36,7 @@ public final class Observable<T> {
 
 public extension Observable {
     
+    /// Represents a subscription to an `Observable`.
     struct Subscription {
         
         private let _unsubscribe: () -> Void
@@ -40,6 +45,7 @@ public extension Observable {
             _unsubscribe = unsubscribeAction
         }
         
+        /// Cancels the subscription.
         public func unsubscribe() {
             _unsubscribe()
         }
