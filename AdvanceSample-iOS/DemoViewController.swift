@@ -83,7 +83,7 @@ class DemoViewController: UIViewController {
         let labelHeight = noteLabel.sizeThatFits(CGSize(width: view.bounds.width-64.0, height: CGFloat.greatestFiniteMagnitude)).height
         var labelFrame = CGRect.zero
         labelFrame.origin.x = 32.0
-        labelFrame.origin.y = 32.0
+        labelFrame.origin.y = 64.0
         labelFrame.size.width = view.bounds.width - 64.0
         labelFrame.size.height = labelHeight
         noteLabel.frame = labelFrame
@@ -91,7 +91,7 @@ class DemoViewController: UIViewController {
         let titleHeight = titleLabel.sizeThatFits(CGSize(width: view.bounds.width-64.0, height: CGFloat.greatestFiniteMagnitude)).height
         var titleFrame = CGRect.zero
         titleFrame.origin.x = 32.0
-        titleFrame.origin.y = 32.0
+        titleFrame.origin.y = 64.0
         titleFrame.size.width = view.bounds.width - 64.0
         titleFrame.size.height = titleHeight
         titleLabel.frame = titleFrame
