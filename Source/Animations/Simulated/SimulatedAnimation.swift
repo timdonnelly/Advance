@@ -1,8 +1,8 @@
-public struct SimulatedAnimation<Result, T>: Animation where Result: VectorConvertible, T: SimulationFunction, Result.VectorType == T.VectorType {
+public struct SimulatedAnimation<Element, T>: Animation where Element: VectorConvertible, T: SimulationFunction, Element.VectorType == T.VectorType {
     
     private var simulation: Simulation<T>
     
-    public init(function: T, value: Result, velocity: Result) {
+    public init(function: T, value: Element, velocity: Element) {
         self.simulation = Simulation(function: function, value: value.vector, velocity: velocity.vector)
     }
     
@@ -10,8 +10,8 @@ public struct SimulatedAnimation<Result, T>: Animation where Result: VectorConve
         simulation.advance(by: time)
     }
     
-    public var value: Result {
-        return Result(vector: simulation.value)
+    public var value: Element {
+        return Element(vector: simulation.value)
     }
     
     public var isFinished: Bool {
