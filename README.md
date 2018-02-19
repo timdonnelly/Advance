@@ -12,7 +12,7 @@ This project was originally developed to power the animations throughout the App
 
 ## Examples
 
-##### Use a spring to animate UI
+##### Use `Spring` to animate UI
 
 ```swift
 import Advance
@@ -33,7 +33,13 @@ let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
 let centerAnimator = PropertyAnimator(target: view, keyPath: \.center)
 
+/// Spring physics will move the view's center to the new value.
 centerAnimator.spring(to: CGPoint(x: 300, y: 300))
+
+/// Some time in the future...
+
+/// The value will slowly come to a stop.
+centerAnimator.decay(initialVelocity: CGPoint(x: 20, y: 40))
 
 ```
 
