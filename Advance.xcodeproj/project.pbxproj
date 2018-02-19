@@ -1334,7 +1334,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -1358,7 +1358,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -1373,7 +1373,7 @@
 				INFOPLIST_FILE = "AdvanceTests-tvOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1387,7 +1387,7 @@
 				INFOPLIST_FILE = "AdvanceTests-tvOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1404,7 +1404,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "AdvanceSample-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1421,7 +1421,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "AdvanceSample-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1438,7 +1438,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AdvanceSample-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.AdvanceSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.AdvanceSample;
 				PRODUCT_NAME = AdvanceSample;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1453,7 +1453,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AdvanceSample-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.AdvanceSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.AdvanceSample;
 				PRODUCT_NAME = AdvanceSample;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -1583,7 +1583,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1606,7 +1606,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1620,7 +1620,7 @@
 				INFOPLIST_FILE = "AdvanceTests-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = Advance;
 				SWIFT_VERSION = 4.0;
@@ -1634,7 +1634,7 @@
 				INFOPLIST_FILE = "AdvanceTests-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = Advance;
 				SWIFT_VERSION = 4.0;
@@ -1655,8 +1655,8 @@
 				INFOPLIST_FILE = "Advance-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.Advance-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.Advance-OSX";
 				PRODUCT_NAME = Advance;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1676,8 +1676,8 @@
 				INFOPLIST_FILE = "Advance-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.Advance-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.Advance-OSX";
 				PRODUCT_NAME = Advance;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1695,7 +1695,7 @@
 				INFOPLIST_FILE = "AdvanceSample-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1712,7 +1712,7 @@
 				INFOPLIST_FILE = "AdvanceSample-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1784,7 +1784,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1807,7 +1807,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -1829,8 +1829,8 @@
 				INFOPLIST_FILE = "Advance-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.Advance-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.Advance-OSX";
 				PRODUCT_NAME = Advance;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1844,7 +1844,7 @@
 				INFOPLIST_FILE = "AdvanceTests-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = Advance;
 				SWIFT_VERSION = 4.0;
@@ -1858,7 +1858,7 @@
 				INFOPLIST_FILE = "AdvanceTests-tvOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1874,7 +1874,7 @@
 				INFOPLIST_FILE = "AdvanceTests-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceTests-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1891,7 +1891,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AdvanceSample-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.AdvanceSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.AdvanceSample;
 				PRODUCT_NAME = AdvanceSample;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -1908,7 +1908,7 @@
 				INFOPLIST_FILE = "AdvanceSample-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1924,7 +1924,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "AdvanceSample-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1940,7 +1940,7 @@
 				INFOPLIST_FILE = "AdvanceTests-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceTests-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1956,7 +1956,7 @@
 				INFOPLIST_FILE = "AdvanceTests-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceTests-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
