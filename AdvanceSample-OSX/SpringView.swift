@@ -18,7 +18,7 @@ final class SpringView : NSView, CALayerDelegate {
         centerSpring.tension = Scalar(t)
         centerSpring.damping = Scalar(d)
         
-        centerSpring.changed.observe { [unowned self] (c) -> Void in
+        centerSpring.values.observe { [unowned self] (c) -> Void in
             self.layer?.position = c
         }
     }

@@ -31,7 +31,7 @@ class ObservableTests : XCTestCase {
         
         var output: Int? = nil
         
-        let token = observable.observe { (value) -> Void in
+        let subscription = observable.observe { (value) -> Void in
             output = value
         }
         
@@ -39,7 +39,7 @@ class ObservableTests : XCTestCase {
         XCTAssertEqual(payload, output)
         
         output = nil
-        observable.removeObserver(for: token)
+        subscription.unsubscribe()
         sink.send(value: payload)
         XCTAssertNil(output)
     }

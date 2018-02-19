@@ -171,9 +171,7 @@ fileprivate extension Loop {
         /// Called for each CVDisplayLink frame callback.
         func frame(_ frame: Frame) {
             guard paused == false else { return }
-            guard frame.timestamp != lastFrame.timestamp else { return }
             callback?(frame)
-            lastFrame = frame
         }
     
     }

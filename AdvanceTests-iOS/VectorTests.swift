@@ -27,34 +27,16 @@ class VectorTests: XCTestCase {
 
 struct VectorTester<T: Vector> {
     static func runTests() {
-        testScalarInit()
         testZero()
-        testSubscripting()
         testEquatable()
         testClamp()
         testInterpolatable()
         testMath()
     }
     
-    static func testScalarInit() {
-        let v = T(scalar: 5.2)
-        for i in 0..<T.length {
-            XCTAssert(v[i] == 5.2)
-        }
-    }
     
     static func testZero() {
         XCTAssert(T(scalar: 0.0) == T.zero)
-    }
-    
-    static func testSubscripting() {
-        var v = T.zero
-        for i in 0..<T.length {
-            v[i] = Scalar(i)
-        }
-        for i in 0..<T.length {
-            XCTAssert(v[i] == Scalar(i))
-        }
     }
     
     static func testEquatable() {
