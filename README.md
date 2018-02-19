@@ -9,22 +9,6 @@ Advance is a Swift framework that enables advanced animations and physics-based 
 
 Originally developed to power the animations throughout the Storehouse app for iOS, Advance has evolved into a composable set of tools with a [simple API](http://timdonnelly.github.io/Advance/docs).
 
-##### Should I use it?
-Advance shines when:
-
-* You are building gesture-based interactions that use physics to reflect the behavior of the real world.
-* You need to animate custom types with per-frame callbacks.
-* ???. Advance is extensible, making it easy to build custom animation and simulation types.
-
-You can accomplish amazing things with Advance. But you should be sensitive to the performance impact of performing per-frame animations on the main thread. Check out [this article](https://www.objc.io/issues/12-animations/interactive-animations/) on objc.io for a good overview.
-
-*If you simply want to animate the basic properties of a view, it's probably best to stick with UIView animations / Core Animation.*
-
-##### Requirements
-* iOS 10+, tvOS 10+, or OS X 10.12+
-* Swift 4.0+ (Xcode 9 or higher)
-
-
 ### Examples
 
 ##### Check out the sample app.
@@ -67,6 +51,17 @@ let animator = 0.0
 The resulting animator can be used to cancel the animation or to add additional observers or completion handlers.
 
 ****
+
+##### Should I use it?
+Advance shines when:
+
+* You are building gesture-based interactions that use physics to reflect the behavior of the real world.
+* You need to animate custom types with per-frame callbacks.
+* ???. Advance is extensible, making it easy to build custom animation and simulation types.
+
+##### Requirements
+* iOS 10+, tvOS 10+, or OS X 10.12+
+* Swift 4.0+ (Xcode 9 or higher)
 
 [Please see the documentation](http://timdonnelly.github.io/Advance/docs) and check out the sample app (AdvanceSample) in the project for more details.
 
