@@ -4,13 +4,13 @@ Physics-based animations for iOS, tvOS, and macOS.
 
 ---
 
-##### What is it?
+## What is it?
 
 Advance enables fully interactive and interruptable physics-based animations.
 
 This project was originally developed to power the animations throughout the Apple Design Award winning Storehouse app for iOS, but has since been extensively rewritten in modern Swift.
 
-### Examples
+## Examples
 
 ##### Use a spring to animate UI
 
@@ -71,11 +71,11 @@ The resulting animator can be used to cancel the animation or to add additional 
 
 [Please see the documentation](http://timdonnelly.github.io/Advance/) and check out the sample app (AdvanceSample) in the project for more details.
 
-### Contributing
+## Contributing
 
 *Suggestions / pull requests / etc. are welcome!*
 
-### Usage
+## Usage
 
 There are several ways to integrate Advance into your project.
 
@@ -85,8 +85,8 @@ There are several ways to integrate Advance into your project.
 
 * CocoaPods: add `pod 'Advance', '~> 2.0'` to your `Podfile`.
 
-### Documentation
+## Documentation
 API documentation is [available here](http://timdonnelly.github.io/Advance/docs).
 
-### License
+## License
 This project is released under the [BSD 2-clause license](https://github.com/timdonnelly/Advance/blob/master/LICENSE).
