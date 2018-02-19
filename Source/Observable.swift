@@ -1,5 +1,7 @@
 import Foundation
 
+
+
 /// Represents a changing stream of values that can be observed.
 public final class Observable<T> {
     
@@ -21,7 +23,7 @@ public final class Observable<T> {
         let identifier = UUID()
         observers[identifier] = observer
         
-        let subscription = Subscription { [weak self] in
+        let subscription = AnySubscription { [weak self] in
             self?.removeObserver(for: identifier)
         }
         
@@ -36,21 +38,32 @@ public final class Observable<T> {
 
 public extension Observable {
     
-    /// Represents a subscription to an `Observable`.
-    struct Subscription {
-        
-        private let _unsubscribe: () -> Void
-        
-        fileprivate init(unsubscribeAction: @escaping () -> Void) {
-            _unsubscribe = unsubscribeAction
-        }
-        
-        /// Cancels the subscription.
-        public func unsubscribe() {
-            _unsubscribe()
-        }
+
+    
+}
+
+/// Represents a subscription to an observable type.
+public protocol Subscription {
+    /// Cancels the subscription.
+    func unsubscribe()
+}
+
+/// Represents a subscription to an `Observable`.
+final class AnySubscription: Subscription {
+    
+    private var hasUnsubscribed: Bool
+    private let unsubscribeAction: () -> Void
+    
+    fileprivate init(unsubscribeAction: @escaping () -> Void) {
+        self.hasUnsubscribed = false
+        self.unsubscribeAction = unsubscribeAction
     }
     
+    public func unsubscribe() {
+        guard !hasUnsubscribed else { return }
+        hasUnsubscribed = true
+        unsubscribeAction()
+    }
 }
 
 public extension Observable {
