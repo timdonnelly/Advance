@@ -14,7 +14,7 @@
     <a title="Animator Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (92% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (91% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -30,7 +30,7 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="../Animator.html">Animator</a>
+            <a href="../Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Classes/Animator.html">Animator</a>
@@ -41,16 +41,20 @@
               <li class="nav-group-task">
                 <a href="../Classes/Animator/Result.html">– Result</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Simulator.html">Simulator</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/Simulator.html">Simulator</a>
+                <a href="../Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Simulator.html#/s:7Advance6Springa">Spring</a>
+                <a href="../Protocols/Animation.html">Animation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
             </ul>
           </li>
@@ -58,13 +62,19 @@
             <a href="../Simulation.html">Simulation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Classes/Simulator.html">Simulator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Simulation.html#/s:7Advance6Springa">Spring</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/Simulation.html">Simulation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SimulationState.html">SimulationState</a>
+                <a href="../Protocols/SimulationFunction.html">SimulationFunction</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols/SimulationFunction.html">SimulationFunction</a>
+                <a href="../Structs/SimulationState.html">SimulationState</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Convergence.html">Convergence</a>
@@ -81,19 +91,8 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Animations.html">Animations</a>
+            <a href="../Timing Functions.html">Timing Functions</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Protocols/Animation.html">Animation</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Basic Animations.html">Basic Animations</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
-              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/TimingFunction.html">TimingFunction</a>
               </li>
@@ -112,14 +111,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Simulated Animations.html">Simulated Animations</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="../Loop.html">Loop</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -134,10 +125,10 @@
             <a href="../Events.html">Events</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/Observable.html">Observable</a>
+                <a href="../Protocols/Observable.html">Observable</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/Observable/Subscription.html">– Subscription</a>
+                <a href="../Protocols/Subscription.html">Subscription</a>
               </li>
             </ul>
           </li>
@@ -197,6 +188,18 @@
               <li class="nav-group-task">
                 <a href="../Extensions/CGVector.html">CGVector</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Int.html">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIEdgeInsets.html">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIOffset.html">UIOffset</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -215,7 +218,7 @@
             <h1>Animator</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
 
                 </div>
               </div>
@@ -266,9 +269,9 @@ animator enters the <code>completed (cancelled)</code> state.</li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorCACyxGx9animation_tcfc"></a>
+                    <a name="/s:7Advance8AnimatorCACyxGqd__9animation_tc7ElementQyd__RszAA9AnimationRd__lufc"></a>
                     <a name="//apple_ref/swift/Method/init(animation:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorCACyxGx9animation_tcfc">init(animation:)</a>
+                    <a class="token" href="#/s:7Advance8AnimatorCACyxGqd__9animation_tc7ElementQyd__RszAA9AnimationRd__lufc">init(animation:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -284,12 +287,12 @@ The animator begins running immediately.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">animation</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">animation</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span><span class="p">,</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Element</span> <span class="o">==</span> <span class="kt">Element</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L20-L46">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L19-L37">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -297,9 +300,9 @@ The animator begins running immediately.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8onChangeACyxGy6ResultQzcF"></a>
+                    <a name="/s:7Advance8AnimatorC8onChangeACyxGyxcF"></a>
                     <a name="//apple_ref/swift/Method/onChange(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8onChangeACyxGy6ResultQzcF">onChange(_:)</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC8onChangeACyxGyxcF">onChange(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -317,12 +320,12 @@ the latest value from the animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="o">.</span><span class="kt"><a href="../Classes/Animator/Result.html">Result</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Element</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L78-L87">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L68-L77">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -351,12 +354,12 @@ will be called immediately.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onCompletion</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/Animator/Result.html">Result</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onCompletion</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/Animator/Result.html">Result</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L95-L103">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L85-L93">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -385,12 +388,12 @@ will be called immediately.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onFinish</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onFinish</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L111-L117">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L101-L107">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -419,12 +422,12 @@ will be called immediately.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L125-L131">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L115-L121">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -457,7 +460,74 @@ have no effect.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L137-L140">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L127-L130">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py7ElementQzcF"></a>
+                    <a name="//apple_ref/swift/Method/observe(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py7ElementQzcF">observe(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Element</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L137-L139">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance8AnimatorC5boundACyxGqd__2to_s24ReferenceWritableKeyPathCyqd__xG03keyH0tlF"></a>
+                    <a name="//apple_ref/swift/Method/bound(to:keyPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance8AnimatorC5boundACyxGqd__2to_s24ReferenceWritableKeyPathCyqd__xG03keyH0tlF">bound(to:keyPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">bound</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt">Element</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L145-L150">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -492,7 +562,7 @@ have no effect.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L147-L165">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L157-L175">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -527,76 +597,7 @@ have no effect.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L171-L178">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance8AnimatorC4bindACyxGqd__2to_s24ReferenceWritableKeyPathCyqd__6ResultQzG03keyH0tlF"></a>
-                    <a name="//apple_ref/swift/Method/bind(to:keyPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC4bindACyxGqd__2to_s24ReferenceWritableKeyPathCyqd__6ResultQzG03keyH0tlF">bind(to:keyPath:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Assigns the changing output value of the animation to the given object
-and keypath on each frame.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">bind</span><span class="o">&lt;</span><span class="kt">Root</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Root</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">Root</span><span class="p">,</span> <span class="kt">T</span><span class="o">.</span><span class="kt"><a href="../Classes/Animator/Result.html">Result</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L187-L192">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance8AnimatorCACyAA18SimulatedAnimationVyqd__qd_0_GGqd__12initialValue_qd__0E8Velocityqd_0_8functiontcAFRszAA17VectorConvertibleRd__AA18SimulationFunctionRd_0_0I4TypeQyd_0_AMRtd__r0_lufc"></a>
-                    <a name="//apple_ref/swift/Method/init(initialValue:initialVelocity:function:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorCACyAA18SimulatedAnimationVyqd__qd_0_GGqd__12initialValue_qd__0E8Velocityqd_0_8functiontcAFRszAA17VectorConvertibleRd__AA18SimulationFunctionRd_0_0I4TypeQyd_0_AMRtd__r0_lufc">init(initialValue:initialVelocity:function:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/Animator/Result.html">Result</a></span><span class="p">,</span> <span class="kt">F</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="kt"><a href="../Classes/Animator/Result.html">Result</a></span><span class="p">,</span> <span class="nv">initialVelocity</span><span class="p">:</span> <span class="kt"><a href="../Classes/Animator/Result.html">Result</a></span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">F</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="kt"><a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a></span><span class="o">&lt;</span><span class="kt"><a href="../Classes/Animator/Result.html">Result</a></span><span class="p">,</span> <span class="kt">F</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/Simulated/SimulatedAnimation.swift#L25-L28">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L181-L188">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

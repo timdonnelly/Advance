@@ -1,4 +1,6 @@
-/// Manages the application of animaties to a property of an object.
+/// Manages the application of animationss to a property of type `Value` on
+/// the target object.
+///
 /// Property animators retain the target object, so they should *not* be used
 /// to animate properties of `self`.
 public final class PropertyAnimator<Target, Value> where Target: AnyObject {

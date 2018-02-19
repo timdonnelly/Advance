@@ -1,4 +1,23 @@
 /// Animates changes to a value using a simulation function.
+///
+/// In most scenarios, physics-based animations are simply run to completion.
+/// For those situations, `Animator` and `PropertyAnimator` make it easy to
+/// run and use the results of an animation.
+///
+/// In contrast, `Simulator` is useful for scenarios where you need direct access
+/// to a running simulation. This might occur in a UI where the user's scroll
+/// position drives changes to a spring's tension, for example. It would be
+/// impractical to create and start a new animation every time the simulation
+/// needs to change. A `Simulator` instance provides mutable access to the
+/// `function` property (containing the underlying function that is driving the
+/// simulation), along with the current state of the simulation (value and
+/// velocity).
+///
+/// Another difference between `Simulator` and the animator classes is that a
+/// simulator never 'finishes.' Simulations may converge (reach a settled state),
+/// but changes to either the function or the current simulation state may cause
+/// the simulation to begin running again.
+///
 public class Simulator<Element, Function> where Element: VectorConvertible, Function: SimulationFunction, Element.VectorType == Function.VectorType {
     
     private let valueSink = Sink<Element>()
@@ -79,6 +98,7 @@ public extension Simulator where Function == SpringFunction<Element.VectorType> 
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
+    /// - Parameter value: The new value that the spring will be reset to.
     public func reset(to value: Element) {
         function.target = value.vector
         self.value = value

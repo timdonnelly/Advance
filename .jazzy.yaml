@@ -12,41 +12,33 @@ copyright: '© 2018 Tim Donnelly'
 
 custom_categories:
 
-  - name: Animator
+  - name: Animation
     children:
     - Animator
+    - PropertyAnimator
+    - Animation
+    - BasicAnimation
+    - SimulatedAnimation
+    - AnyAnimation
 
-  - name: Simulator
-    children:
-    - Simulator
-    - Spring 
-  
   - name: Simulation
     children:
+    - Simulator
+    - Spring
     - Simulation
-    - SimulationState
     - SimulationFunction
+    - SimulationState
     - Convergence
     - SpringFunction
     - DecayFunction
     - GravityFunction
 
-  - name: Animations
+  - name: Timing Functions
     children:
-    - Animator
-    - Animation
-
-  - name: Basic Animations
-    children:
-    - BasicAnimation
     - TimingFunction
     - LinearTimingFunction
     - ReversedTimingFunction
     - UnitBezier
-
-  - name: Simulated Animations
-    children:
-    - SimulatedAnimation
 
   - name: Loop
     children:
@@ -54,7 +46,8 @@ custom_categories:
 
   - name: Events
     children:
-      - Observable
+    - Observable
+    - Subscription
 
   - name: Vectors
     children:
@@ -76,6 +69,10 @@ custom_categories:
     - CGRect
     - CGSize
     - CGVector
+    - Bool
+    - Int
+    - UIEdgeInsets
+    - UIOffset
 
   - name: Advanceable
     children:

@@ -13,7 +13,7 @@
     <a title="Simulation  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Advance Docs</a> (92% documented)</p>
+        <p><a href="index.html">Advance Docs</a> (91% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -29,7 +29,7 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Animator.html">Animator</a>
+            <a href="Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Classes/Animator.html">Animator</a>
@@ -40,16 +40,20 @@
               <li class="nav-group-task">
                 <a href="Classes/Animator/Result.html">– Result</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Simulator.html">Simulator</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Simulator.html">Simulator</a>
+                <a href="Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
-                <a href="Simulator.html#/s:7Advance6Springa">Spring</a>
+                <a href="Protocols/Animation.html">Animation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BasicAnimation.html">BasicAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
             </ul>
           </li>
@@ -57,13 +61,19 @@
             <a href="Simulation.html">Simulation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Classes/Simulator.html">Simulator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Simulation.html#/s:7Advance6Springa">Spring</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/Simulation.html">Simulation</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SimulationState.html">SimulationState</a>
+                <a href="Protocols/SimulationFunction.html">SimulationFunction</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/SimulationFunction.html">SimulationFunction</a>
+                <a href="Structs/SimulationState.html">SimulationState</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Convergence.html">Convergence</a>
@@ -80,19 +90,8 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Animations.html">Animations</a>
+            <a href="Timing Functions.html">Timing Functions</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/Animation.html">Animation</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Basic Animations.html">Basic Animations</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/BasicAnimation.html">BasicAnimation</a>
-              </li>
               <li class="nav-group-task">
                 <a href="Protocols/TimingFunction.html">TimingFunction</a>
               </li>
@@ -111,14 +110,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Simulated Animations.html">Simulated Animations</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="Loop.html">Loop</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -133,10 +124,10 @@
             <a href="Events.html">Events</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Observable.html">Observable</a>
+                <a href="Protocols/Observable.html">Observable</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Observable/Subscription.html">– Subscription</a>
+                <a href="Protocols/Subscription.html">Subscription</a>
               </li>
             </ul>
           </li>
@@ -196,6 +187,18 @@
               <li class="nav-group-task">
                 <a href="Extensions/CGVector.html">CGVector</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Int.html">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIEdgeInsets.html">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIOffset.html">UIOffset</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -215,6 +218,89 @@
             
           </section>
           <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance9SimulatorC"></a>
+                    <a name="//apple_ref/swift/Class/Simulator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance9SimulatorC">Simulator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Animates changes to a value using a simulation function.</p>
+
+<p>In most scenarios, physics-based animations are simply run to completion.
+For those situations, <code><a href="Classes/Animator.html">Animator</a></code> and <code><a href="Classes/PropertyAnimator.html">PropertyAnimator</a></code> make it easy to
+run and use the results of an animation.</p>
+
+<p>In contrast, <code>Simulator</code> is useful for scenarios where you need direct access
+to a running simulation. This might occur in a UI where the user&rsquo;s scroll
+position drives changes to a spring&rsquo;s tension, for example. It would be
+impractical to create and start a new animation every time the simulation
+needs to change. A <code>Simulator</code> instance provides mutable access to the
+<code>function</code> property (containing the underlying function that is driving the
+simulation), along with the current state of the simulation (value and
+velocity).</p>
+
+<p>Another difference between <code>Simulator</code> and the animator classes is that a
+simulator never &lsquo;finishes.&rsquo; Simulations may converge (reach a settled state),
+but changes to either the function or the current simulation state may cause
+the simulation to begin running again.</p>
+
+                        <a href="Classes/Simulator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Simulator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="p">,</span> <span class="kt">Function</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="p">,</span> <span class="kt">Function</span><span class="p">:</span> <span class="kt"><a href="Protocols/SimulationFunction.html">SimulationFunction</a></span><span class="p">,</span> <span class="kt">Element</span><span class="o">.</span><span class="kt">VectorType</span> <span class="o">==</span> <span class="kt">Function</span><span class="o">.</span><span class="kt">VectorType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L21-L76">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance6Springa"></a>
+                    <a name="//apple_ref/swift/Alias/Spring" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance6Springa">Spring</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A specialized simulator that uses a spring function.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Spring</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt"><a href="Classes/Simulator.html">Simulator</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="Structs/SpringFunction.html">SpringFunction</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">.</span><span class="kt">VectorType</span><span class="o">&gt;&gt;</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L130">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <div class="task-group">
               <ul>
                 <li class="item">
@@ -258,41 +344,6 @@ precise calculations.</p>
                       </div>
                       <div class="slightly-smaller">
                         <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulation.swift#L19-L148">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance15SimulationStateV"></a>
-                    <a name="//apple_ref/swift/Struct/SimulationState" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance15SimulationStateV">SimulationState</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The current state of a running simulation.</p>
-
-                        <a href="Structs/SimulationState.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SimulationState</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="Protocols/Vector.html">Vector</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/SimulationState.swift#L2-L16">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -372,6 +423,41 @@ converge (come to rest) for a given state.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:7Advance15SimulationStateV"></a>
+                    <a name="//apple_ref/swift/Struct/SimulationState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15SimulationStateV">SimulationState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current state of a running simulation.</p>
+
+                        <a href="Structs/SimulationState.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SimulationState</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="Protocols/Vector.html">Vector</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/SimulationState.swift#L2-L16">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:7Advance14SpringFunctionV"></a>
                     <a name="//apple_ref/swift/Struct/SpringFunction" class="dashAnchor"></a>
                     <a class="token" href="#/s:7Advance14SpringFunctionV">SpringFunction</a>
@@ -395,7 +481,7 @@ converge (come to rest) for a given state.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulation Functions/SpringFunction.swift#L6-L53">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulation Functions/SpringFunction.swift#L5-L52">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

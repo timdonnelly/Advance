@@ -13,7 +13,7 @@
     <a title="Advance  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Advance Docs</a> (92% documented)</p>
+        <p><a href="index.html">Advance Docs</a> (91% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -29,7 +29,7 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Animator.html">Animator</a>
+            <a href="Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Classes/Animator.html">Animator</a>
@@ -40,16 +40,20 @@
               <li class="nav-group-task">
                 <a href="Classes/Animator/Result.html">– Result</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Simulator.html">Simulator</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Simulator.html">Simulator</a>
+                <a href="Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
-                <a href="Simulator.html#/s:7Advance6Springa">Spring</a>
+                <a href="Protocols/Animation.html">Animation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BasicAnimation.html">BasicAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
             </ul>
           </li>
@@ -57,13 +61,19 @@
             <a href="Simulation.html">Simulation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Classes/Simulator.html">Simulator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Simulation.html#/s:7Advance6Springa">Spring</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/Simulation.html">Simulation</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SimulationState.html">SimulationState</a>
+                <a href="Protocols/SimulationFunction.html">SimulationFunction</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/SimulationFunction.html">SimulationFunction</a>
+                <a href="Structs/SimulationState.html">SimulationState</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Convergence.html">Convergence</a>
@@ -80,19 +90,8 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Animations.html">Animations</a>
+            <a href="Timing Functions.html">Timing Functions</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/Animation.html">Animation</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Basic Animations.html">Basic Animations</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/BasicAnimation.html">BasicAnimation</a>
-              </li>
               <li class="nav-group-task">
                 <a href="Protocols/TimingFunction.html">TimingFunction</a>
               </li>
@@ -111,14 +110,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Simulated Animations.html">Simulated Animations</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="Loop.html">Loop</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -133,10 +124,10 @@
             <a href="Events.html">Events</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Observable.html">Observable</a>
+                <a href="Protocols/Observable.html">Observable</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Observable/Subscription.html">– Subscription</a>
+                <a href="Protocols/Subscription.html">Subscription</a>
               </li>
             </ul>
           </li>
@@ -196,6 +187,18 @@
               <li class="nav-group-task">
                 <a href="Extensions/CGVector.html">CGVector</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Int.html">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIEdgeInsets.html">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIOffset.html">UIOffset</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -214,14 +217,14 @@
             
             <h1 id='advance' class='heading'>Advance</h1>
 
-<p>A powerful animation framework for iOS, tvOS, and OS X.</p>
+<p>A powerful animation framework for iOS, tvOS, and macOS.</p>
 
 <hr>
 <h5 id='what-is-it' class='heading'>What is it?</h5>
 
 <p>Advance is a Swift framework that enables advanced animations and physics-based interactions.</p>
 
-<p>Originally developed to power the animations throughout the Storehouse app for iOS, Advance has evolved into a composable set of tools with a <a href="http://timdonnelly.github.io/Advance/docs">simple API</a>.</p>
+<p>Originally developed to power the animations throughout the Storehouse app for iOS, Advance has evolved into a composable set of tools with a <a href="http://timdonnelly.github.io/Advance/">simple API</a>.</p>
 <h3 id='examples' class='heading'>Examples</h3>
 <h5 id='use-a-spring-to-animate-ui' class='heading'>Use a spring to animate UI</h5>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Advance</span>
@@ -259,39 +262,25 @@
 <img src="https://github.com/timdonnelly/Advance/raw/master/images/logo.gif" alt="Sample app"></p>
 
 <hr>
-<h5 id='should-i-use-it' class='heading'>Should I use it?</h5>
-
-<p>Advance shines when:</p>
-
-<ul>
-<li>You are building gesture-based interactions that use physics to reflect the behavior of the real world.</li>
-<li>You need to animate custom types with per-frame callbacks.</li>
-<li>???. Advance is extensible, making it easy to build custom animation and simulation types.</li>
-</ul>
 <h5 id='requirements' class='heading'>Requirements</h5>
 
 <ul>
-<li>iOS 10+, tvOS 10+, or OS X 10.12+</li>
+<li>iOS 10+, tvOS 10+, or macOS 10.12+</li>
 <li>Swift 4.0+ (Xcode 9 or higher)</li>
 </ul>
 
-<p><a href="http://timdonnelly.github.io/Advance/docs">Please see the documentation</a> and check out the sample app (AdvanceSample) in the project for more details.</p>
-<h3 id='notes' class='heading'>Notes</h3>
-<h5 id='thread-safety' class='heading'>Thread safety</h5>
+<p><a href="http://timdonnelly.github.io/Advance/">Please see the documentation</a> and check out the sample app (AdvanceSample) in the project for more details.</p>
+<h3 id='contributing' class='heading'>Contributing</h3>
 
-<p>Advance classes are <strong>not</strong> thread safe, and expect to be used from the main thread only.</p>
-<h3 id='status' class='heading'>Status</h3>
-
-<p><em>Suggestions / pull requests / etc are welcome!</em></p>
+<p><em>Suggestions / pull requests / etc. are welcome!</em></p>
 <h3 id='usage' class='heading'>Usage</h3>
 
 <p>There are several ways to integrate Advance into your project.</p>
 
 <ul>
 <li><p>Manually, as a framework: simply add the <code>Advance.xcodeproj</code> to your project and add <code>Advance.framework</code> as an <q>Embedded Binary</q> to your application target (under General in target settings). From there, add <code>import Advance</code> to your code and you&rsquo;re good to go.</p></li>
-<li><p>Swift Package Manager (experimental).</p></li>
 <li><p>Carthage: add <code>github &quot;timdonnelly/Advance&quot; &quot;master&quot;</code> to your <code>Cartfile</code>.</p></li>
-<li><p>CocoaPods: add <code>pod &#39;Advance&#39;, &#39;~&gt; 0.9&#39;</code> to your <code>Podfile</code>.</p></li>
+<li><p>CocoaPods: add <code>pod &#39;Advance&#39;, &#39;~&gt; 2.0&#39;</code> to your <code>Podfile</code>.</p></li>
 </ul>
 <h3 id='documentation' class='heading'>Documentation</h3>
 

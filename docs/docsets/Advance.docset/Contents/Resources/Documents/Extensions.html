@@ -13,7 +13,7 @@
     <a title="Extensions  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Advance Docs</a> (92% documented)</p>
+        <p><a href="index.html">Advance Docs</a> (91% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -29,7 +29,7 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Animator.html">Animator</a>
+            <a href="Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Classes/Animator.html">Animator</a>
@@ -40,16 +40,20 @@
               <li class="nav-group-task">
                 <a href="Classes/Animator/Result.html">– Result</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Simulator.html">Simulator</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Simulator.html">Simulator</a>
+                <a href="Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
-                <a href="Simulator.html#/s:7Advance6Springa">Spring</a>
+                <a href="Protocols/Animation.html">Animation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/BasicAnimation.html">BasicAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
             </ul>
           </li>
@@ -57,13 +61,19 @@
             <a href="Simulation.html">Simulation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Classes/Simulator.html">Simulator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Simulation.html#/s:7Advance6Springa">Spring</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/Simulation.html">Simulation</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SimulationState.html">SimulationState</a>
+                <a href="Protocols/SimulationFunction.html">SimulationFunction</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/SimulationFunction.html">SimulationFunction</a>
+                <a href="Structs/SimulationState.html">SimulationState</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Convergence.html">Convergence</a>
@@ -80,19 +90,8 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Animations.html">Animations</a>
+            <a href="Timing Functions.html">Timing Functions</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/Animation.html">Animation</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Basic Animations.html">Basic Animations</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/BasicAnimation.html">BasicAnimation</a>
-              </li>
               <li class="nav-group-task">
                 <a href="Protocols/TimingFunction.html">TimingFunction</a>
               </li>
@@ -111,14 +110,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Simulated Animations.html">Simulated Animations</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a href="Loop.html">Loop</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -133,10 +124,10 @@
             <a href="Events.html">Events</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Observable.html">Observable</a>
+                <a href="Protocols/Observable.html">Observable</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Observable/Subscription.html">– Subscription</a>
+                <a href="Protocols/Subscription.html">Subscription</a>
               </li>
             </ul>
           </li>
@@ -195,6 +186,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/CGVector.html">CGVector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Int.html">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIEdgeInsets.html">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIOffset.html">UIOffset</a>
               </li>
             </ul>
           </li>
@@ -384,6 +387,114 @@
                         <p>Adds <code><a href="Protocols/VectorConvertible.html">VectorConvertible</a></code> conformance.</p>
 
                         <a href="Extensions/CGVector.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Sb"></a>
+                    <a name="//apple_ref/swift/Extension/Bool" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sb">Bool</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/Bool.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Si"></a>
+                    <a name="//apple_ref/swift/Extension/Int" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Si">Int</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/Int.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Int</span> <span class="p">:</span> <span class="kt">FixedWidthInteger</span><span class="p">,</span> <span class="kt">SignedInteger</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@S@UIEdgeInsets"></a>
+                    <a name="//apple_ref/swift/Extension/UIEdgeInsets" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@S@UIEdgeInsets">UIEdgeInsets</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/UIEdgeInsets.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@S@UIOffset"></a>
+                    <a name="//apple_ref/swift/Extension/UIOffset" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@S@UIOffset">UIOffset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/UIOffset.html" class="slightly-smaller">See more</a>
                       </div>
                     </section>
                   </div>
