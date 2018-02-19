@@ -24,7 +24,7 @@ public final class PropertyAnimator<Target, Value> where Target: AnyObject, Valu
     public func animate<T>(with animation: T) -> Animator<Value> where T: Animation, T.Value == Value {
         
         cancelRunningAnimation()
-        let animator = animation.run()
+        let animator = Animator(animation: animation)
             
         animator.bind(to: target, keyPath: keyPath)
         animator.onCompletion({ [weak self] (_) in
@@ -32,6 +32,8 @@ public final class PropertyAnimator<Target, Value> where Target: AnyObject, Valu
         })
 
         self.runningAnimator = animator
+        
+        animator.start()
         
         return animator
     }

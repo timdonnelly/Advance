@@ -1,12 +1,17 @@
 /// Runs an animation until it is either finished or cancelled.
 /// Animators cannot be reused:
-/// - They begin in a 'running' state
+/// - They begin in a 'pending' state.
+/// - Then enter the `running` state after 'start()' is called.
 /// - If the animation finishes, the animator enters the `completed (finished)` state.
 /// - If `cancel()` is called on the animator while in a running state, the
 ///   animator enters the `completed (cancelled)` state.
 public final class Animator<Value> where Value: VectorConvertible {
 
-    private (set) public var state: State
+    private (set) public var state: State {
+        didSet {
+            loop.paused = (state != .running)
+        }
+    }
 
     private var animation: AnyAnimation<Value>
     private let loop: Loop
@@ -18,22 +23,15 @@ public final class Animator<Value> where Value: VectorConvertible {
     /// The animator begins running immediately.
     public init<T>(animation: T) where T: Animation, T.Value == Value {
         self.animation = AnyAnimation(animation)
-        self.state = State.running
+        self.state = State.pending
         self.loop = Loop()
         self.completionHandlers = []
         self.valueSink = Sink()
         
-        if animation.isFinished {
-            self.state = State.done(result: .finished)
-        }
-        
         loop.observe { [weak self] (frame) in
             self?.advance(by: frame.duration)
         }
-        
-        if state == .running {
-            loop.paused = false
-        }
+
     }
     
     deinit {
@@ -67,7 +65,7 @@ public final class Animator<Value> where Value: VectorConvertible {
     @discardableResult
     public func onChange(_ handler: @escaping (Value) -> Void) -> Animator<Value> {
         switch state {
-        case .running:
+        case .pending, .running:
             valueSink.observe(handler)
             handler(animation.value)
         case .done(_):
@@ -84,7 +82,7 @@ public final class Animator<Value> where Value: VectorConvertible {
     @discardableResult
     public func onCompletion(_ handler: @escaping (Result) -> Void) -> Animator<Value> {
         switch state {
-        case .running:
+        case .pending, .running:
             completionHandlers.append(handler)
         case let .done(result):
             handler(result)
@@ -118,6 +116,15 @@ public final class Animator<Value> where Value: VectorConvertible {
             handler()
         }
         return self
+    }
+    
+    /// Starts the animation.
+    ///
+    /// If the animator is not in the `pending` state, calls to `start()` will
+    /// have no effect.
+    public func start() {
+        guard state == .pending else { return }
+        state = .running
     }
     
     /// Cancels the animation.
@@ -164,6 +171,9 @@ public extension Animator {
     /// Represents the current state of an Animator.
     public enum State: Equatable {
         
+        /// The animator has not started yet.
+        case pending
+        
         /// The animator is currently running the animation.
         case running
         
@@ -172,6 +182,8 @@ public extension Animator {
         
         public static func ==(lhs: State, rhs: State) -> Bool {
             switch (lhs, rhs) {
+            case (.pending, .pending):
+                return true
             case (.running, .running):
                 return true
             case let (.done(l), .done(r)):
@@ -193,18 +205,6 @@ public extension Animator {
         
         /// The animator was cancelled before the animation could finish.
         case cancelled
-    }
-    
-}
-
-
-public extension Animation {
-    
-    /// Initializes and returns an animator to execute this animation.
-    ///
-    /// The animator will begin running immediately.
-    public func run() -> Animator<Self.Value> {
-        return Animator(animation: self)
     }
     
 }
