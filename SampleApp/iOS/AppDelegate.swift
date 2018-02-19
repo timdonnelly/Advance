@@ -14,8 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let a = ActivityViewController()
         let g = GesturesViewController()
         let s = SpringsViewController()
+        let decay = DecayViewController()
         
-        window?.rootViewController = BrowserViewController(viewControllers: [a, s, g])
+        window?.rootViewController = BrowserViewController(viewControllers: [a, decay, s, g])
         window?.makeKeyAndVisible()
         
         return true

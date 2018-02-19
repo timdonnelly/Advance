@@ -148,6 +148,17 @@ extension Animator: Observable {
 
 public extension Animator {
     
+    public func bound<T>(to object: T, keyPath: ReferenceWritableKeyPath<T, Element>) -> Animator<Element> {
+        observe { (nextValue) in
+            object[keyPath: keyPath] = nextValue
+        }
+        return self
+    }
+    
+}
+
+public extension Animator {
+    
     /// Represents the current state of an Animator.
     public enum State: Equatable {
         

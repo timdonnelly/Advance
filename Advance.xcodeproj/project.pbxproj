@@ -70,6 +70,12 @@
 		229740BD203B5D2B00BA6C63 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229740BC203B5D2B00BA6C63 /* UIEdgeInsets.swift */; };
 		229740BE203B5D2B00BA6C63 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229740BC203B5D2B00BA6C63 /* UIEdgeInsets.swift */; };
 		229740C0203B5F0300BA6C63 /* AnyAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229740BF203B5F0300BA6C63 /* AnyAnimationTests.swift */; };
+		229740CB203B69CC00BA6C63 /* DecayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229740CA203B69CC00BA6C63 /* DecayViewController.swift */; };
+		229740CC203B69CC00BA6C63 /* DecayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229740CA203B69CC00BA6C63 /* DecayViewController.swift */; };
+		229740CD203B69CC00BA6C63 /* DecayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229740CA203B69CC00BA6C63 /* DecayViewController.swift */; };
+		229740CF203B6D8700BA6C63 /* KeypathAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229740CE203B6D8700BA6C63 /* KeypathAnimatable.swift */; };
+		229740D0203B6D8700BA6C63 /* KeypathAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229740CE203B6D8700BA6C63 /* KeypathAnimatable.swift */; };
+		229740D1203B6D8700BA6C63 /* KeypathAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229740CE203B6D8700BA6C63 /* KeypathAnimatable.swift */; };
 		2299A6831C7D35FE009DE78C /* DirectManipulationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2299A6821C7D35FE009DE78C /* DirectManipulationGestureRecognizer.swift */; };
 		22B8E9831C7713FF0010EF5A /* Advance.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D39CEE11C6E983100DFCF86 /* Advance.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22DA152A1C9CBD0100A70551 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228E206B1C9CB99D0058ADA1 /* Advance.framework */; };
@@ -299,6 +305,8 @@
 		229740B9203B5D2300BA6C63 /* UIOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOffset.swift; sourceTree = "<group>"; };
 		229740BC203B5D2B00BA6C63 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		229740BF203B5F0300BA6C63 /* AnyAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAnimationTests.swift; sourceTree = "<group>"; };
+		229740CA203B69CC00BA6C63 /* DecayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecayViewController.swift; sourceTree = "<group>"; };
+		229740CE203B6D8700BA6C63 /* KeypathAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypathAnimatable.swift; sourceTree = "<group>"; };
 		2299A6821C7D35FE009DE78C /* DirectManipulationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectManipulationGestureRecognizer.swift; sourceTree = "<group>"; };
 		22F74AA51C7674BB004C6E4C /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F74AA71C7674BB004C6E4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -472,9 +480,18 @@
 			path = tvOS;
 			sourceTree = "<group>";
 		};
+		229740C9203B69AE00BA6C63 /* Decay */ = {
+			isa = PBXGroup;
+			children = (
+				229740CA203B69CC00BA6C63 /* DecayViewController.swift */,
+			);
+			name = Decay;
+			sourceTree = "<group>";
+		};
 		22F74AA61C7674BB004C6E4C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				229740C9203B69AE00BA6C63 /* Decay */,
 				22142E631C810D6C000C6DEB /* Activity */,
 				223E49711C76C9350048CAB6 /* Springs */,
 				22F74AB91C767740004C6E4C /* Gestures */,
@@ -571,6 +588,7 @@
 		5DB1A4611C876AD1000CF9EE /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				229740CE203B6D8700BA6C63 /* KeypathAnimatable.swift */,
 				5DB1A47E1C876AD1000CF9EE /* Simulation.swift */,
 				9710075820378A5300FC5BA1 /* SimulationState.swift */,
 				5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */,
@@ -1072,6 +1090,7 @@
 				228E20531C9CB99D0058ADA1 /* Animation.swift in Sources */,
 				228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */,
 				222FAC4F203B579900CCDFEE /* Int.swift in Sources */,
+				229740D0203B6D8700BA6C63 /* KeypathAnimatable.swift in Sources */,
 				228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */,
 				228E20581C9CB99D0058ADA1 /* Double.swift in Sources */,
 				228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */,
@@ -1126,6 +1145,7 @@
 				2212A2F11C82702500BB79F4 /* ActivityView.swift in Sources */,
 				222E21251C7E45420063FAA2 /* BrowserView.swift in Sources */,
 				222E211D1C7D4C300063FAA2 /* SimpleTransform.swift in Sources */,
+				229740CD203B69CC00BA6C63 /* DecayViewController.swift in Sources */,
 				22F74ABB1C767757004C6E4C /* GestureView.swift in Sources */,
 				22319B721C8110A300D4E027 /* CoverView.swift in Sources */,
 				22142E651C810D86000C6DEB /* ActivityViewController.swift in Sources */,
@@ -1159,6 +1179,7 @@
 				5DB1A4931C876AD1000CF9EE /* Animation.swift in Sources */,
 				5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */,
 				222FAC4E203B579900CCDFEE /* Int.swift in Sources */,
+				229740CF203B6D8700BA6C63 /* KeypathAnimatable.swift in Sources */,
 				5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */,
 				5DB1A4AB1C876AD1000CF9EE /* Double.swift in Sources */,
 				5DB1A4A81C876AD1000CF9EE /* CGRect.swift in Sources */,
@@ -1184,6 +1205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DA94F4D1C8112810039B9BB /* CAMediaTimingFunctionTests.swift in Sources */,
+				229740CC203B69CC00BA6C63 /* DecayViewController.swift in Sources */,
 				5DA94F4B1C80E2700039B9BB /* UnitBezierTests.swift in Sources */,
 				5DE959E91C9388B9008487A8 /* LoopTests.swift in Sources */,
 				22168B5B1C7A547300BAE519 /* VectorTests.swift in Sources */,
@@ -1205,6 +1227,7 @@
 				5D3A2F3A1C920C7C0071F08F /* BasicAnimation.swift in Sources */,
 				5D3A2F591C920CCA0071F08F /* Vector.swift in Sources */,
 				5D3A2F3F1C920C8C0071F08F /* Animation.swift in Sources */,
+				229740CB203B69CC00BA6C63 /* DecayViewController.swift in Sources */,
 				5D3A2F4F1C920CC20071F08F /* CGFloat.swift in Sources */,
 				5D3A2F531C920CC20071F08F /* CGVector.swift in Sources */,
 				5D3A2F4B1C920CBC0071F08F /* Simulator.swift in Sources */,
@@ -1223,6 +1246,7 @@
 				222FAC4C203B4FF900CCDFEE /* AnyAnimation.swift in Sources */,
 				5D3A2F501C920CC20071F08F /* CGPoint.swift in Sources */,
 				9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */,
+				229740D1203B6D8700BA6C63 /* KeypathAnimatable.swift in Sources */,
 				5D3A2F631C923ADB0071F08F /* Loop.swift in Sources */,
 				5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */,
 				229740B8203B5C2700BA6C63 /* Bool.swift in Sources */,
