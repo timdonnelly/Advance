@@ -11,15 +11,7 @@ Originally developed to power the animations throughout the Storehouse app for i
 
 ### Examples
 
-##### Check out the sample app.
-Located in the project:
-
-![Sample app](https://github.com/timdonnelly/Advance/raw/master/Assets/nav.gif)
-![Sample app](https://github.com/timdonnelly/Advance/raw/master/Assets/logo.gif)
-
-****
-
-##### Using a spring to animate UI.
+##### Use a spring to animate UI
 
 ```swift
 import Advance
@@ -33,7 +25,7 @@ The spring will then animate the movement of the view to the new `target` positi
 
 ****
 
-##### Animating between values
+##### Animate between values
 
 ```swift
 import Advance
@@ -49,6 +41,14 @@ let animator = 0.0
 ```
 
 The resulting animator can be used to cancel the animation or to add additional observers or completion handlers.
+
+****
+
+##### Check out the sample app
+Located in the project:
+
+![Sample app](https://github.com/timdonnelly/Advance/raw/master/Assets/nav.gif)
+![Sample app](https://github.com/timdonnelly/Advance/raw/master/Assets/logo.gif)
 
 ****
 
