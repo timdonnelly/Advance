@@ -18,7 +18,7 @@ public class Simulator<Element, Function> where Element: VectorConvertible, Func
         set { simulation.function = newValue }
     }
     
-    fileprivate var lastNotifiedValue: Element {
+    private var lastNotifiedValue: Element {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
             valueSink.send(value: lastNotifiedValue)
