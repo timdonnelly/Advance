@@ -13,14 +13,14 @@ public protocol SimulationFunction {
     ///   based on `value` and `velocity`.
     func acceleration(for state: SimulationState<VectorType>) -> VectorType
     
-    func status(for state: SimulationState<VectorType>) -> SimulationResult<VectorType>
+    func convergence(for state: SimulationState<VectorType>) -> Convergence<VectorType>
 
 }
 
 
-public enum SimulationResult<T> where T: Vector {
-    case running
-    case settled(value: T)
+public enum Convergence<T> where T: Vector {
+    case keepRunning
+    case converge(atValue: T)
 }
 
 

@@ -28,21 +28,21 @@ public struct GravityFunction: SimulationFunction {
         return result
     }
     
-    public func status(for state: SimulationState<Vector2>) -> SimulationResult<Vector2> {
+    public func convergence(for state: SimulationState<Vector2>) -> Convergence<Vector2> {
         
         let min = Vector2(scalar: -threshold)
         let max = Vector2(scalar: threshold)
         
         if state.velocity.clamped(min: min, max: max) != state.velocity {
-            return .running
+            return .keepRunning
         }
         
         let valueDelta = state.value - target
         if valueDelta.clamped(min: min, max: max) != valueDelta {
-            return .running
+            return .keepRunning
         }
         
-        return .settled(value: target)
+        return .converge(atValue: target)
     }
 
 }

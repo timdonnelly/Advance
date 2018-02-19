@@ -28,18 +28,18 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     public var function: F {
         didSet {
             // If the function changes, we need to make sure that its new state 
-            // will allow the solver to settle.
-            isSettled = false
-            settleIfPossible()
+            // will allow the simulation to converge.
+            hasConverged = false
+            convergeIfPossible()
         }
     }
     
     // Tracks the delta between external and internal time.
     fileprivate var timeAccumulator: Double = 0.0
     
-    /// Returns `true` if the solver has settled and does not currently
+    /// Returns `true` if the solver has converged and does not currently
     /// need to be advanced on each frame.
-    fileprivate (set) public var isSettled: Bool = false
+    fileprivate (set) public var hasConverged: Bool = false
     
     // The current state of the solver.
     fileprivate var simulationState: SimulationState<F.VectorType>
@@ -57,20 +57,20 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         self.function = function
         simulationState = SimulationState(value: value, velocity: velocity)
         interpolatedState = simulationState
-        settleIfPossible()
+        convergeIfPossible()
     }
     
-    fileprivate mutating func settleIfPossible() {
-        guard isSettled == false else { return }
+    fileprivate mutating func convergeIfPossible() {
+        guard hasConverged == false else { return }
         
-        switch function.status(for: simulationState) {
-        case .running:
+        switch function.convergence(for: simulationState) {
+        case .keepRunning:
             break
-        case let .settled(value):
+        case let .converge(value):
             simulationState.value = value
             simulationState.velocity = F.VectorType.zero
             interpolatedState = simulationState
-            isSettled = true
+            hasConverged = true
         }
 
     }
@@ -80,7 +80,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     /// - parameter elapsed: The duration by which to advance the simulation
     ///   in seconds.
     public mutating func advance(by time: Double) {
-        guard isSettled == false else { return }
+        guard hasConverged == false else { return }
         
         // Limit to 10 physics ticks per update, should never come close.
         let t = min(time, tickTime * 10.0)
@@ -96,7 +96,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         // Advance the simulation until the time accumulator is negative –
         // this means that the current state is ahead of the needed time.
         while timeAccumulator > 0.0 {
-            if isSettled {
+            if hasConverged {
                 break
             }
             previousState = simulationState
@@ -107,11 +107,11 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         assert(timeAccumulator <= 0.0)
         assert(timeAccumulator > -tickTime)
         
-        // If snapping is possible, we can just do that and avoid interpolation.
-        settleIfPossible()
+        // If convergence is possible, we can just do that and avoid interpolation.
+        convergeIfPossible()
         
-        if isSettled == false {
-            // The simulation did not settle. At this point, the latest state
+        if hasConverged == false {
+            // The simulation did not converge. At this point, the latest state
             // was calculated for some time in the future of what we need
             // to satisfy `elapsed`. We can figure out the alpha in between
             // `previousState` and `simulationState`, and interpolate. This
@@ -130,8 +130,8 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         set {
             interpolatedState.value = newValue
             simulationState.value = newValue
-            isSettled = false
-            settleIfPossible()
+            hasConverged = false
+            convergeIfPossible()
         }
     }
     
@@ -141,8 +141,8 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         set {
             interpolatedState.velocity = newValue
             simulationState.velocity = newValue
-            isSettled = false
-            settleIfPossible()
+            hasConverged = false
+            convergeIfPossible()
         }
     }
 }

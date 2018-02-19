@@ -34,20 +34,20 @@ public struct SpringFunction<T>: SimulationFunction where T: Vector {
         return accel
     }
     
-    public func status(for state: SimulationState<T>) -> SimulationResult<T> {
+    public func convergence(for state: SimulationState<T>) -> Convergence<T> {
         let min = T(scalar: -threshold)
         let max = T(scalar: threshold)
         
         if state.velocity.clamped(min: min, max: max) != state.velocity {
-            return .running
+            return .keepRunning
         }
         
         let valueDelta = state.value - target
         if valueDelta.clamped(min: min, max: max) != valueDelta {
-            return .running
+            return .keepRunning
         }
         
-        return .settled(value: target)
+        return .converge(atValue: target)
     }
     
 }
