@@ -47,8 +47,8 @@ The resulting animator can be used to cancel the animation or to add additional 
 ##### Check out the sample app
 Located in the project:
 
-![Sample app](https://github.com/timdonnelly/Advance/raw/master/assets/nav.gif)
-![Sample app](https://github.com/timdonnelly/Advance/raw/master/assets/logo.gif)
+![Sample app](https://github.com/timdonnelly/Advance/raw/master/images/nav.gif)
+![Sample app](https://github.com/timdonnelly/Advance/raw/master/images/logo.gif)
 
 ****
 
