@@ -1,7 +1,7 @@
 /// Provides type erasure for an animation conforming to ValueAnimation
 ///
 /// - parameter Value: The type of value to be animated.
-public struct AnyAnimation<Result>: Animation where Result: VectorConvertible {
+public struct AnyAnimation<Result>: Animation {
     
     /// The current value of the animation.
     public let value: Result
