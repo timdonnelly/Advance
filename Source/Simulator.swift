@@ -1,28 +1,9 @@
-/// Animates changes to a value using spring physics.
-///
-/// Instances of `Spring` should be used in situations where spring physics
-/// are the only animation type required, or when convenient access to the
-/// properties of a running spring simulation is needed.
-///
-/// The focused API of this class makes it more convenient in such cases
-/// than using an `Animatable` instance, where a new spring animation would
-/// have to be added each time the spring needed to be modified.
-///
-/// ```
-/// let s = Spring(value: CGPoint.zero)
-///
-/// s.changed.observe { (value) in
-///   // do something with the value when it changes
-/// }
-///
-/// s.target = CGPoint(x: 100.0, y: 200.0)
-/// // Off it goes!
-/// ```
+/// Animates changes to a value using a simulation function.
 public class Simulator<Result, Function> where Result: VectorConvertible, Function: SimulationFunction, Result.VectorType == Function.VectorType {
     
-    private let changedSink = Sink<Result>()
+    private let valueSink = Sink<Result>()
     
-    public var simulation: Simulation<Function> {
+    private var simulation: Simulation<Function> {
         didSet {
             lastNotifiedValue = Result(vector: simulation.value)
             loop.paused = simulation.hasConverged
@@ -31,15 +12,20 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
     
     private let loop: Loop
     
-    /// Fires when `value` has changed.
+    public var function: Function {
+        get { return simulation.function }
+        set { simulation.function = newValue }
+    }
+    
+    /// Observable stream of values from the simulation.
     public var values: Observable<Result> {
-        return changedSink.observable
+        return valueSink.observable
     }
     
     fileprivate var lastNotifiedValue: Result {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
-            changedSink.send(value: lastNotifiedValue)
+            valueSink.send(value: lastNotifiedValue)
         }
     }
     
@@ -55,9 +41,6 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
         
         loop.frames.observe { [unowned self] (frame) in
             self.simulation.advance(by: frame.duration)
-            if self.simulation.hasConverged {
-                self.loop.paused = true
-            }
         }
 
         loop.paused = simulation.hasConverged
@@ -85,31 +68,30 @@ public final class Spring<Result>: Simulator<Result, SpringFunction<Result.Vecto
     }
     
     public var target: Result {
-        get { return Result(vector: simulation.function.target) }
-        set { simulation.function.target = newValue.vector }
+        get { return Result(vector: function.target) }
+        set { function.target = newValue.vector }
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
     public func reset(to value: Result) {
-        var f = simulation.function
-        f.target = value.vector
-        simulation = Simulation(function: f, value: value.vector)
-        lastNotifiedValue = value
+        function.target = value.vector
+        self.value = value
+        self.velocity = Result.zero
     }
     
     public var tension: Scalar {
-        get { return simulation.function.tension }
-        set { simulation.function.tension = newValue }
+        get { return function.tension }
+        set { function.tension = newValue }
     }
     
     public var damping: Scalar {
-        get { return simulation.function.damping }
-        set { simulation.function.damping = newValue }
+        get { return function.damping }
+        set { function.damping = newValue }
     }
     
     public var threshold: Scalar {
-        get { return simulation.function.threshold }
-        set { simulation.function.threshold = newValue }
+        get { return function.threshold }
+        set { function.threshold = newValue }
     }
     
 }

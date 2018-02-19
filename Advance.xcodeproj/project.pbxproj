@@ -38,7 +38,6 @@
 		228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
 		228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
 		228E20581C9CB99D0058ADA1 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double.swift */; };
-		228E20591C9CB99D0058ADA1 /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */; };
 		228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect.swift */; };
 		228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint.swift */; };
 		228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48B1C876AD1000CF9EE /* Vector1.swift */; };
@@ -76,7 +75,6 @@
 		5D3A2F3B1C920C7C0071F08F /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */; };
 		5D3A2F3C1C920C7C0071F08F /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */; };
 		5D3A2F3F1C920C8C0071F08F /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4661C876AD1000CF9EE /* Animation.swift */; };
-		5D3A2F401C920C8C0071F08F /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */; };
 		5D3A2F421C920C8C0071F08F /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
 		5D3A2F451C920C970071F08F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
 		5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
@@ -111,7 +109,6 @@
 		5DA94F4F1C8114680039B9BB /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* ObservableTests.swift */; };
 		5DB1A4921C876AD1000CF9EE /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
 		5DB1A4931C876AD1000CF9EE /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4661C876AD1000CF9EE /* Animation.swift */; };
-		5DB1A4941C876AD1000CF9EE /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */; };
 		5DB1A4951C876AD1000CF9EE /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */; };
 		5DB1A4961C876AD1000CF9EE /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */; };
 		5DB1A4971C876AD1000CF9EE /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */; };
@@ -159,9 +156,6 @@
 		97687CCC203A0BC200FAC3F3 /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
 		97687CCD203A0BC200FAC3F3 /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
 		97687CCE203A0BC200FAC3F3 /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
-		97769074203A8F85001A7764 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9776906C203A8F76001A7764 /* Info.plist */; };
-		97769075203A8F95001A7764 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97769070203A8F77001A7764 /* Info.plist */; };
-		97769076203A8F9F001A7764 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9776906E203A8F77001A7764 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,7 +310,6 @@
 		5DA94F4E1C8114680039B9BB /* ObservableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
 		5DB1A4651C876AD1000CF9EE /* Advanceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanceable.swift; sourceTree = "<group>"; };
 		5DB1A4661C876AD1000CF9EE /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyAnimation.swift; sourceTree = "<group>"; };
 		5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimation.swift; sourceTree = "<group>"; };
 		5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
@@ -506,8 +499,8 @@
 			isa = PBXGroup;
 			children = (
 				5DA94F491C80DEEB0039B9BB /* Playground.playground */,
-				97769078203A90CD001A7764 /* SampleApp */,
 				5DB1A4611C876AD1000CF9EE /* Source */,
+				97769078203A90CD001A7764 /* SampleApp */,
 				97769077203A9056001A7764 /* UnitTests */,
 				5D39CF281C6E9B2E00DFCF86 /* Resources */,
 				5D39CEE21C6E983100DFCF86 /* Products */,
@@ -571,38 +564,34 @@
 		5DB1A4611C876AD1000CF9EE /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				970359C3203A2B3B00028EFE /* Animator */,
-				5DB1A4641C876AD1000CF9EE /* Animation */,
-				5DB1A4741C876AD1000CF9EE /* Observable */,
+				5DB1A47E1C876AD1000CF9EE /* Simulation.swift */,
+				9710075820378A5300FC5BA1 /* SimulationState.swift */,
+				5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */,
+				5DB1A47F1C876AD1000CF9EE /* Simulator.swift */,
+				5D3A2F5E1C922DAA0071F08F /* Loop.swift */,
+				5DB1A4751C876AD1000CF9EE /* Observable.swift */,
+				970359CD203A420500028EFE /* Sink.swift */,
+				5DB1A4661C876AD1000CF9EE /* Animation.swift */,
+				5DB1A4651C876AD1000CF9EE /* Advanceable.swift */,
+				970359C4203A2B6100028EFE /* Animator.swift */,
+				5DB1A4901C876AD1000CF9EE /* Vector.swift */,
+				5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */,
+				5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */,
+				5DB1A4641C876AD1000CF9EE /* Animations */,
 				5DB1A4761C876AD1000CF9EE /* Extensions */,
-				5DB1A4791C876AD1000CF9EE /* Loop */,
-				5DB1A47B1C876AD1000CF9EE /* Simulation */,
+				5DB1A47B1C876AD1000CF9EE /* Simulation Functions */,
 				5DB1A4891C876AD1000CF9EE /* Vectors */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		5DB1A4641C876AD1000CF9EE /* Animation */ = {
+		5DB1A4641C876AD1000CF9EE /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				5DB1A4651C876AD1000CF9EE /* Advanceable.swift */,
-				5DB1A4661C876AD1000CF9EE /* Animation.swift */,
-				5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */,
-				5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */,
-				970359C9203A36A200028EFE /* SimulatedAnimation.swift */,
-				5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */,
-				5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */,
+				9776907A203A9891001A7764 /* Simulated */,
+				97769079203A9878001A7764 /* Basic */,
 			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
-		5DB1A4741C876AD1000CF9EE /* Observable */ = {
-			isa = PBXGroup;
-			children = (
-				5DB1A4751C876AD1000CF9EE /* Observable.swift */,
-				970359CD203A420500028EFE /* Sink.swift */,
-			);
-			path = Observable;
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		5DB1A4761C876AD1000CF9EE /* Extensions */ = {
@@ -619,26 +608,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5DB1A4791C876AD1000CF9EE /* Loop */ = {
-			isa = PBXGroup;
-			children = (
-				5D3A2F5E1C922DAA0071F08F /* Loop.swift */,
-			);
-			path = Loop;
-			sourceTree = "<group>";
-		};
-		5DB1A47B1C876AD1000CF9EE /* Simulation */ = {
+		5DB1A47B1C876AD1000CF9EE /* Simulation Functions */ = {
 			isa = PBXGroup;
 			children = (
 				226A752D1C84206D00A7F1FB /* GravityFunction.swift */,
 				5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */,
-				5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */,
-				5DB1A47E1C876AD1000CF9EE /* Simulation.swift */,
-				5DB1A47F1C876AD1000CF9EE /* Simulator.swift */,
 				5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */,
-				9710075820378A5300FC5BA1 /* SimulationState.swift */,
 			);
-			path = Simulation;
+			path = "Simulation Functions";
 			sourceTree = "<group>";
 		};
 		5DB1A4891C876AD1000CF9EE /* Vectors */ = {
@@ -648,9 +625,6 @@
 				5DB1A48C1C876AD1000CF9EE /* Vector2.swift */,
 				5DB1A48D1C876AD1000CF9EE /* Vector3.swift */,
 				5DB1A48E1C876AD1000CF9EE /* Vector4.swift */,
-				5DB1A4901C876AD1000CF9EE /* Vector.swift */,
-				5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */,
-				5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */,
 			);
 			path = Vectors;
 			sourceTree = "<group>";
@@ -663,14 +637,6 @@
 			name = macOS;
 			path = UnitTests/macOS;
 			sourceTree = SOURCE_ROOT;
-		};
-		970359C3203A2B3B00028EFE /* Animator */ = {
-			isa = PBXGroup;
-			children = (
-				970359C4203A2B6100028EFE /* Animator.swift */,
-			);
-			path = Animator;
-			sourceTree = "<group>";
 		};
 		9776906B203A8F76001A7764 /* iOS */ = {
 			isa = PBXGroup;
@@ -714,6 +680,24 @@
 				228E20871C9CBA490058ADA1 /* tvOS */,
 			);
 			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		97769079203A9878001A7764 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */,
+				5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */,
+				5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		9776907A203A9891001A7764 /* Simulated */ = {
+			isa = PBXGroup;
+			children = (
+				970359C9203A36A200028EFE /* SimulatedAnimation.swift */,
+			);
+			path = Simulated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -986,7 +970,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97769076203A8F9F001A7764 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1018,7 +1001,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97769074203A8F85001A7764 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1033,7 +1015,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97769075203A8F95001A7764 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1080,7 +1061,6 @@
 				228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */,
 				228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */,
 				228E20581C9CB99D0058ADA1 /* Double.swift in Sources */,
-				228E20591C9CB99D0058ADA1 /* AnyAnimation.swift in Sources */,
 				228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */,
 				9710075A20378A5300FC5BA1 /* SimulationState.swift in Sources */,
 				228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */,
@@ -1165,7 +1145,6 @@
 				5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */,
 				5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */,
 				5DB1A4AB1C876AD1000CF9EE /* Double.swift in Sources */,
-				5DB1A4941C876AD1000CF9EE /* AnyAnimation.swift in Sources */,
 				5DB1A4A81C876AD1000CF9EE /* CGRect.swift in Sources */,
 				9710075920378A5300FC5BA1 /* SimulationState.swift in Sources */,
 				5DB1A4A71C876AD1000CF9EE /* CGPoint.swift in Sources */,
@@ -1223,7 +1202,6 @@
 				9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */,
 				5D3A2F631C923ADB0071F08F /* Loop.swift in Sources */,
 				5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */,
-				5D3A2F401C920C8C0071F08F /* AnyAnimation.swift in Sources */,
 				970359D0203A420500028EFE /* Sink.swift in Sources */,
 				5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */,
 				5D3A2F4A1C920CBC0071F08F /* Simulation.swift in Sources */,
