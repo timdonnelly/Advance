@@ -19,7 +19,7 @@ class LoopTests : XCTestCase {
         
         var fulfilled = false
         
-        loop.frames.observe { (frame) in
+        loop.observe { (frame) in
             guard fulfilled == false else { return }
             fulfilled = true
             exp.fulfill()
@@ -39,7 +39,7 @@ class LoopTests : XCTestCase {
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
             self.loop.paused = true
-            self.loop.frames.observe { (frame) in
+            self.loop.observe { (frame) in
                 gotCallback = true
             }
         }
@@ -62,7 +62,7 @@ class LoopTests : XCTestCase {
         var callbacks = 0
         var lastTimestamp: Double = 0
         
-        loop.frames.observe { (frame) in
+        loop.observe { (frame) in
             XCTAssertTrue(frame.timestamp > lastTimestamp, "timestamp \(frame.timestamp) was not larger than \(lastTimestamp) (frame #\(callbacks))")
             lastTimestamp = frame.timestamp
             
