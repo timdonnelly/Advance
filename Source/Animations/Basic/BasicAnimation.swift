@@ -1,7 +1,7 @@
 /// Interpolates between values over a specified duration.
 ///
 /// - parameter Value: The type of value to be animated.
-public struct BasicAnimation<Value>: Animation where Value: Interpolatable {
+public struct BasicAnimation<Value>: Animation where Value: VectorConvertible {
     
     /// The initial value at time 0.
     fileprivate (set) public var from: Value
@@ -16,6 +16,13 @@ public struct BasicAnimation<Value>: Animation where Value: Interpolatable {
     /// interpolated value.
     fileprivate (set) public var timingFunction: TimingFunction
     
+    /// The current value.
+    private (set) public var value: Value
+    
+    private (set) public var velocity: Value
+    
+    private var elapsed: Double = 0.0
+    
     /// Creates a new `BasicAnimation` instance.
     ///
     /// - parameter from: The value at time `0`.
@@ -28,12 +35,10 @@ public struct BasicAnimation<Value>: Animation where Value: Interpolatable {
         self.duration = duration
         self.timingFunction = timingFunction
         self.value = from
+        self.velocity = .zero
     }
     
-    /// The current value.
-    fileprivate(set) public var value: Value
-    
-    fileprivate var elapsed: Double = 0.0
+
     
     /// Returns `true` if the advanced time is `>=` duration.
     public var isFinished: Bool {
@@ -45,6 +50,8 @@ public struct BasicAnimation<Value>: Animation where Value: Interpolatable {
     /// - parameter elapsed: The time (in seconds) to advance the animation.
     public mutating func advance(by time: Double) {
         
+        let starting = value
+        
         elapsed += time
         var progress = elapsed / duration
         progress = max(progress, 0.0)
@@ -52,21 +59,24 @@ public struct BasicAnimation<Value>: Animation where Value: Interpolatable {
         let adjustedProgress = timingFunction.solve(at: Scalar(progress), epsilon: 1.0 / Scalar(duration * 1000.0))
         
         value = from.interpolated(to: to, alpha: Scalar(adjustedProgress))
+        
+        let vel = Scalar(1.0/time) * (value.vector - starting.vector)
+        velocity = Value(vector: vel)
     }
     
 }
 
-public extension PropertyAnimator where Value: Interpolatable {
+public extension PropertyAnimator where Value: VectorConvertible {
     
     @discardableResult
     public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) -> Animator<Value> {
-        let animation = BasicAnimation(from: currentValue, to: finalValue, duration: duration, timingFunction: timingFunction)
+        let animation = BasicAnimation(from: value, to: finalValue, duration: duration, timingFunction: timingFunction)
         return animate(with: animation)
     }
     
 }
 
-public extension Interpolatable {
+public extension VectorConvertible {
     
     public func animation(to finalValue: Self, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) -> BasicAnimation<Self> {
         return BasicAnimation(from: self, to: finalValue, duration: duration, timingFunction: timingFunction)

@@ -33,6 +33,9 @@ final class DecayViewController: DemoViewController {
         
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(pan))
         draggableView.addGestureRecognizer(gestureRecognizer)
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        contentView.addGestureRecognizer(tapRecognizer)
     }
     
     
@@ -55,15 +58,21 @@ final class DecayViewController: DemoViewController {
         case .changed:
             let translation = recognizer.translation(in: contentView)
             recognizer.setTranslation(.zero, in: contentView)
-            centerAnimator.currentValue.x += translation.x
-            centerAnimator.currentValue.y += translation.y
+            centerAnimator.value.x += translation.x
+            centerAnimator.value.y += translation.y
         case .ended, .cancelled:
-            centerAnimator.decay(initialVelocity: recognizer.velocity(in: contentView))
+            let velocity = recognizer.velocity(in: contentView)
+            centerAnimator.decay(initialVelocity: velocity)
         default:
             break
         }
         
-        
+    }
+    
+    @objc private func tapped(recognizer: UITapGestureRecognizer) {
+        let tapLocation = recognizer.location(in: contentView)
+        guard !draggableView.frame.contains(tapLocation) else { return }
+        centerAnimator.spring(to: tapLocation)
     }
     
 }

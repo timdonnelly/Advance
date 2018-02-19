@@ -50,3 +50,46 @@ public struct SpringFunction<T>: SimulationFunction where T: Vector {
     }
     
 }
+
+
+public extension PropertyAnimator where Value: VectorConvertible {
+    
+    /// Starts a spring animation with the given properties, adopting the property's
+    /// current velocity as `initialVelocity`.
+    @discardableResult
+    public func spring(to target: Value, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> Animator<Value> {
+        return self.spring(to: target, initialVelocity: velocity, tension: tension, damping: damping, threshold: threshold)
+    }
+    
+    /// Starts a spring animation with the given properties.
+    @discardableResult
+    public func spring(to target: Value, initialVelocity: Value, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> Animator<Value> {
+        let animation = value
+            .springAnimation(
+                to: target,
+                initialVelocity: initialVelocity,
+                tension: tension,
+                damping: damping,
+                threshold: threshold)
+        
+        return self.animate(with: animation)
+    }
+
+}
+
+
+public extension VectorConvertible {
+    
+    /// Returns a spring animation with the given properties.
+    public func springAnimation(to target: Self, initialVelocity: Self = .zero, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> SimulatedAnimation<Self, SpringFunction<Self.VectorType>> {
+        var function = SpringFunction(target: target.vector)
+        function.tension = tension
+        function.damping = damping
+        function.threshold = threshold
+        return SimulatedAnimation(
+            function: function,
+            value: self,
+            velocity: initialVelocity)
+    }
+    
+}

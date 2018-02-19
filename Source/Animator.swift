@@ -4,19 +4,19 @@
 /// - If the animation finishes, the animator enters the `completed (finished)` state.
 /// - If `cancel()` is called on the animator while in a running state, the
 ///   animator enters the `completed (cancelled)` state.
-public final class Animator<Element> {
+public final class Animator<Value> where Value: VectorConvertible {
 
     private (set) public var state: State
 
-    private var animation: AnyAnimation<Element>
+    private var animation: AnyAnimation<Value>
     private let loop: Loop
-    private let valueSink: Sink<Element>
+    private let valueSink: Sink<Value>
     
     private var completionHandlers: [(Result) -> Void]
     
     /// Instantiates a new animator for the given animation.
     /// The animator begins running immediately.
-    public init<T>(animation: T) where T: Animation, T.Element == Element {
+    public init<T>(animation: T) where T: Animation, T.Value == Value {
         self.animation = AnyAnimation(animation)
         self.state = State.running
         self.loop = Loop()
@@ -65,7 +65,7 @@ public final class Animator<Element> {
     /// Newly added handlers are invoked immediately when they are added with
     /// the latest value from the animation.
     @discardableResult
-    public func onChange(_ handler: @escaping (Element) -> Void) -> Animator<Element> {
+    public func onChange(_ handler: @escaping (Value) -> Void) -> Animator<Value> {
         switch state {
         case .running:
             valueSink.observe(handler)
@@ -82,7 +82,7 @@ public final class Animator<Element> {
     /// If the animator is already in a completed state, the given handler
     /// will be called immediately.
     @discardableResult
-    public func onCompletion(_ handler: @escaping (Result) -> Void) -> Animator<Element> {
+    public func onCompletion(_ handler: @escaping (Result) -> Void) -> Animator<Value> {
         switch state {
         case .running:
             completionHandlers.append(handler)
@@ -98,7 +98,7 @@ public final class Animator<Element> {
     /// If the animator is already in a finished state, the given handler
     /// will be called immediately.
     @discardableResult
-    public func onFinish(_ handler: @escaping () -> Void) -> Animator<Element> {
+    public func onFinish(_ handler: @escaping () -> Void) -> Animator<Value> {
         onCompletion { (result) in
             guard result == .finished else { return }
             handler()
@@ -112,7 +112,7 @@ public final class Animator<Element> {
     /// If the animator is already in a cancelled state, the given handler
     /// will be called immediately.
     @discardableResult
-    public func onCancel(_ handler: @escaping () -> Void) -> Animator<Element> {
+    public func onCancel(_ handler: @escaping () -> Void) -> Animator<Value> {
         onCompletion { (result) in
             guard result == .cancelled else { return }
             handler()
@@ -129,12 +129,20 @@ public final class Animator<Element> {
         complete(with: .cancelled)
     }
     
+    public var value: Value {
+        return animation.value
+    }
+    
+    public var velocity: Value {
+        return animation.velocity
+    }
+    
 }
 
 extension Animator: Observable {
     
     @discardableResult
-    public func observe(_ observer: @escaping (Element) -> Void) -> Subscription {
+    public func observe(_ observer: @escaping (Value) -> Void) -> Subscription {
         return valueSink.observe(observer)
     }
     
@@ -142,7 +150,7 @@ extension Animator: Observable {
 
 public extension Animator {
     
-    public func bound<T>(to object: T, keyPath: ReferenceWritableKeyPath<T, Element>) -> Animator<Element> {
+    public func bound<T>(to object: T, keyPath: ReferenceWritableKeyPath<T, Value>) -> Animator<Value> {
         observe { (nextValue) in
             object[keyPath: keyPath] = nextValue
         }
@@ -195,7 +203,7 @@ public extension Animation {
     /// Initializes and returns an animator to execute this animation.
     ///
     /// The animator will begin running immediately.
-    public func run() -> Animator<Self.Element> {
+    public func run() -> Animator<Self.Value> {
         return Animator(animation: self)
     }
     

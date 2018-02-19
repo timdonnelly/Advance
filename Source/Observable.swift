@@ -6,10 +6,10 @@ import Foundation
 public protocol Observable {
     
     /// The type of value that will be emitted by the observable type.
-    associatedtype Element
+    associatedtype Value
     
     /// Observers are closures that take a single `Element`.
-    typealias Observer = (Element) -> Void
+    typealias Observer = (Value) -> Void
     
     /// Adds a new observer.
     /// - parameter observer: The observer to be added.
@@ -29,7 +29,7 @@ public protocol Subscription {
 public extension Observable {
     
     @discardableResult
-    public func bind<R>(to object: R, keyPath: ReferenceWritableKeyPath<R, Element>) -> Subscription {
+    public func bind<R>(to object: R, keyPath: ReferenceWritableKeyPath<R, Value>) -> Subscription {
         return observe({ (value) in
             object[keyPath: keyPath] = value
         })

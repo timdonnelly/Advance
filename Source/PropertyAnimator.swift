@@ -3,7 +3,7 @@
 ///
 /// Property animators retain the target object, so they should *not* be used
 /// to animate properties of `self`.
-public final class PropertyAnimator<Target, Value> where Target: AnyObject {
+public final class PropertyAnimator<Target, Value> where Target: AnyObject, Value: VectorConvertible {
     
     /// The object to be animated.
     public let target: Target
@@ -21,7 +21,7 @@ public final class PropertyAnimator<Target, Value> where Target: AnyObject {
     
     /// Animates the property using the given animation.
     @discardableResult
-    public func animate<T>(with animation: T) -> Animator<Value> where T: Animation, T.Element == Value {
+    public func animate<T>(with animation: T) -> Animator<Value> where T: Animation, T.Value == Value {
         
         cancelRunningAnimation()
         let animator = animation.run()
@@ -54,7 +54,7 @@ public final class PropertyAnimator<Target, Value> where Target: AnyObject {
     }
     
     /// assigning to this value will remove any running animation.
-    public var currentValue: Value {
+    public var value: Value {
         get {
             return target[keyPath: keyPath]
         }
@@ -62,6 +62,10 @@ public final class PropertyAnimator<Target, Value> where Target: AnyObject {
             cancelRunningAnimation()
             target[keyPath: keyPath] = newValue
         }
+    }
+    
+    public var velocity: Value {
+        return runningAnimator?.velocity ?? .zero
     }
 }
 

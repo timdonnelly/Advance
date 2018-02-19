@@ -18,13 +18,13 @@
 /// but changes to either the function or the current simulation state may cause
 /// the simulation to begin running again.
 ///
-public class Simulator<Element, Function> where Element: VectorConvertible, Function: SimulationFunction, Element.VectorType == Function.VectorType {
+public class Simulator<Value, Function> where Value: VectorConvertible, Function: SimulationFunction, Value.VectorType == Function.VectorType {
     
-    private let valueSink = Sink<Element>()
+    private let valueSink = Sink<Value>()
     
     private var simulation: Simulation<Function> {
         didSet {
-            lastNotifiedValue = Element(vector: simulation.value)
+            lastNotifiedValue = Value(vector: simulation.value)
             loop.paused = simulation.hasConverged
         }
     }
@@ -37,7 +37,7 @@ public class Simulator<Element, Function> where Element: VectorConvertible, Func
         set { simulation.function = newValue }
     }
     
-    private var lastNotifiedValue: Element {
+    private var lastNotifiedValue: Value {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
             valueSink.send(value: lastNotifiedValue)
@@ -49,7 +49,7 @@ public class Simulator<Element, Function> where Element: VectorConvertible, Func
     /// - parameter function: The function that will drive the simulation.
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
-    public init(function: Function, value: Element, velocity: Element = Element.zero) {
+    public init(function: Function, value: Value, velocity: Value = Value.zero) {
         simulation = Simulation(function: function, value: value.vector, velocity: velocity.vector)
         lastNotifiedValue = value
         loop = Loop()
@@ -62,14 +62,14 @@ public class Simulator<Element, Function> where Element: VectorConvertible, Func
     }
     
     /// The current value of the spring.
-    public var value: Element {
-        get { return Element(vector: simulation.value) }
+    public var value: Value {
+        get { return Value(vector: simulation.value) }
         set { simulation.value = newValue.vector }
     }
     
     /// The current velocity of the simulation.
-    public var velocity: Element {
-        get { return Element(vector: simulation.velocity) }
+    public var velocity: Value {
+        get { return Value(vector: simulation.velocity) }
         set { simulation.velocity = newValue.vector }
     }
 
@@ -78,31 +78,31 @@ public class Simulator<Element, Function> where Element: VectorConvertible, Func
 extension Simulator: Observable {
     
     @discardableResult
-    public func observe(_ observer: @escaping (Element) -> Void) -> Subscription {
+    public func observe(_ observer: @escaping (Value) -> Void) -> Subscription {
         return valueSink.observe(observer)
     }
     
 }
 
-public extension Simulator where Function == SpringFunction<Element.VectorType> {
+public extension Simulator where Function == SpringFunction<Value.VectorType> {
     
-    public convenience init(value: Element) {
+    public convenience init(value: Value) {
         let spring = SpringFunction(target: value.vector)
         self.init(function: spring, value: value)
     }
     
     /// The spring's target.
-    public var target: Element {
-        get { return Element(vector: function.target) }
+    public var target: Value {
+        get { return Value(vector: function.target) }
         set { function.target = newValue.vector }
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
     /// - Parameter value: The new value that the spring will be reset to.
-    public func reset(to value: Element) {
+    public func reset(to value: Value) {
         function.target = value.vector
         self.value = value
-        self.velocity = Element.zero
+        self.velocity = Value.zero
     }
     
     /// How strongly the spring will pull the value toward the target,
