@@ -17,10 +17,7 @@ final class SpringView : NSView, CALayerDelegate {
         
         centerSpring.tension = Scalar(t)
         centerSpring.damping = Scalar(d)
-        centerSpring.values.bind(to: layer!, keyPath: \.position)
-        centerSpring.values.observe { (point) in
-            Swift.print(point)
-        }
+        centerSpring.bind(to: layer!, keyPath: \.position)
     }
     
     required init?(coder aDecoder: NSCoder) {
