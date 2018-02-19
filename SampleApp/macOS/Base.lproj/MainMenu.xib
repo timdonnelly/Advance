@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14092" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14092"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -12,7 +13,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AdvanceSample_OSX" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SampleApp_macOS" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -20,11 +21,11 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="AdvanceSample-OSX" id="1Xt-HY-uBw">
+                <menuItem title="SampleApp" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="AdvanceSample-OSX" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="SampleApp" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About AdvanceSample-OSX" id="5kV-Vb-QxS">
+                            <menuItem title="About SampleApp" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -38,7 +39,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide AdvanceSample-OSX" keyEquivalent="h" id="Olw-nP-bQN">
+                            <menuItem title="Hide SampleApp" keyEquivalent="h" id="Olw-nP-bQN">
                                 <connections>
                                     <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
                                 </connections>
@@ -56,7 +57,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit AdvanceSample-OSX" keyEquivalent="q" id="4sb-4s-VLi">
+                            <menuItem title="Quit SampleApp" keyEquivalent="q" id="4sb-4s-VLi">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
                                 </connections>
@@ -657,7 +658,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                         <items>
-                            <menuItem title="AdvanceSample-OSX Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                            <menuItem title="SampleApp Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
                                 </connections>
@@ -667,19 +668,19 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="AdvanceSample-OSX" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="SampleApp" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="335" y="390" width="470" height="628"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="470" height="628"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="2GC-Eh-228" customClass="SpringContainerView" customModule="AdvanceSample_OSX" customModuleProvider="target">
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="2GC-Eh-228" customClass="SpringContainerView" customModule="SampleApp_macOS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="470" height="628"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t5A-3S-zNd">
-                                <rect key="frame" x="91" y="591" width="288" height="17"/>
+                                <rect key="frame" x="92" y="591" width="287" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Click anywhere to move the dot using a spring." id="mqy-JN-xV3">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -687,14 +688,14 @@
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wyX-O9-fNI">
-                                <rect key="frame" x="81" y="48" width="371" height="21"/>
+                                <rect key="frame" x="81" y="46" width="371" height="19"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="500" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="cnN-NF-sqL"/>
                                 <connections>
                                     <action selector="tensionChanged:" target="2GC-Eh-228" id="kM1-uo-EY2"/>
                                 </connections>
                             </slider>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="msm-mE-zF5">
-                                <rect key="frame" x="81" y="16" width="371" height="21"/>
+                                <rect key="frame" x="81" y="16" width="371" height="19"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.10000000000000001" maxValue="150" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="8hn-8y-v1g"/>
                                 <connections>
                                     <action selector="dampingSlider:" target="2GC-Eh-228" id="UUZ-c0-UfB"/>

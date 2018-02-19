@@ -2,7 +2,7 @@ import Foundation
 
 #if os(iOS) || os(tvOS)
 import QuartzCore
-#elseif os(OSX)
+#elseif os(macOS)
 import CoreVideo
 #endif
 
@@ -126,7 +126,7 @@ fileprivate extension Loop {
     }
 }
 
-#elseif os(OSX) // OS X support using CVDisplayLink --------------------------------------------------
+#elseif os(macOS) // macOS support using CVDisplayLink --------------------------------------------------
 
 fileprivate extension Loop {
     
