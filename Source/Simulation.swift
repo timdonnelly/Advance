@@ -9,7 +9,7 @@ import Foundation
 ///
 /// Constant time steps are not guaranteed elsewhere in the framework. Due to
 /// the nature of dynamic functions, however, it is desirable to maintain
-/// a constant update interval for a dynamic simulation. `DynamicSolver`
+/// a constant update interval for a dynamic simulation. `Simulation`
 /// instances maintain their own internal time state. When `advance(elapsed:)
 /// is called on an instance, it may run an arbitrary number of time steps
 /// internally (and call the underlying function as needed) in order to "catch

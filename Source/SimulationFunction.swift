@@ -3,6 +3,7 @@
 
 public protocol SimulationFunction {
     
+    /// The type of vector driven by the simulation
     associatedtype VectorType: Vector
     
     /// The computed acceleration for a given simulation state.
@@ -13,22 +14,32 @@ public protocol SimulationFunction {
     ///   based on `value` and `velocity`.
     func acceleration(for state: SimulationState<VectorType>) -> VectorType
     
+    /// Determines whether the simulation can converge (come to rest) for the
+    /// given state.
     func convergence(for state: SimulationState<VectorType>) -> Convergence<VectorType>
 
 }
 
-
+/// Returned by a simulation function to indicate whether a simulation should
+/// converge (come to rest) for a given state.
 public enum Convergence<T> where T: Vector {
+    
+    /// The simulation should keep running.
     case keepRunning
+    
+    /// The simulation should converge (come to rest) with the given value.
     case converge(atValue: T)
 }
 
 
-/// RK4 Integration.
 public extension SimulationFunction {
     
     fileprivate typealias Derivative = SimulationState
     
+    /// Integrates time into an existing simulation state, returning the resulting
+    /// simulation state.
+    ///
+    /// The integration is done via RK4.
     public func integrate(state: SimulationState<VectorType>, time: Double) -> SimulationState<VectorType> {
         
         let initial = Derivative(value:VectorType.zero, velocity: VectorType.zero)

@@ -12,6 +12,7 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
     
     private let loop: Loop
     
+    /// The function driving the simulation.
     public var function: Function {
         get { return simulation.function }
         set { simulation.function = newValue }
@@ -29,13 +30,13 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
         }
     }
     
-    /// Creates a new `Spring` instance
+    /// Creates a new `Simulator` instance
     ///
-    /// - parameter value: The initial value of the spring. The spring will be
-    ///   initialized with `target` and `value` equal to the given value, and
-    ///   a velocity of `0`.
-    public init(function: Function, value: Result) {
-        simulation = Simulation(function: function, value: value.vector)
+    /// - parameter function: The function that will drive the simulation.
+    /// - parameter value: The initial value of the simulation.
+    /// - parameter velocity: The initial velocity of the simulation.
+    public init(function: Function, value: Result, velocity: Result = Result.zero) {
+        simulation = Simulation(function: function, value: value.vector, velocity: velocity.vector)
         lastNotifiedValue = value
         loop = Loop()
         
@@ -60,13 +61,14 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
 
 }
 
-public final class Spring<Result>: Simulator<Result, SpringFunction<Result.VectorType>> where Result: VectorConvertible {
+public extension Simulator where Function == SpringFunction<Result.VectorType> {
     
-    public init(value: Result) {
+    public convenience init(value: Result) {
         let spring = SpringFunction(target: value.vector)
-        super.init(function: spring, value: value)
+        self.init(function: spring, value: value)
     }
     
+    /// The spring's target.
     public var target: Result {
         get { return Result(vector: function.target) }
         set { function.target = newValue.vector }
@@ -79,19 +81,26 @@ public final class Spring<Result>: Simulator<Result, SpringFunction<Result.Vecto
         self.velocity = Result.zero
     }
     
+    /// How strongly the spring will pull the value toward the target,
     public var tension: Scalar {
         get { return function.tension }
         set { function.tension = newValue }
     }
     
+    /// The resistance that the spring encounters while moving the value.
     public var damping: Scalar {
         get { return function.damping }
         set { function.damping = newValue }
     }
     
+    /// The minimum distance from the target value (for each component) that the
+    /// current value can be in order to ender a converged (settled) state.
     public var threshold: Scalar {
         get { return function.threshold }
         set { function.threshold = newValue }
     }
     
 }
+
+/// A specialized simulator that uses a spring function.
+public typealias Spring<T> = Simulator<T, SpringFunction<T.VectorType>> where T: VectorConvertible

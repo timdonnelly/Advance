@@ -1,6 +1,152 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Basic/BasicAnimation.swift",
+      "line": 61,
+      "symbol": "Interpolatable.animation(to:duration:timingFunction:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Basic/UnitBezier.swift",
+      "line": 8,
+      "symbol": "UnitBezier.first",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Basic/UnitBezier.swift",
+      "line": 9,
+      "symbol": "UnitBezier.second",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Basic/UnitBezier.swift",
+      "line": 17,
+      "symbol": "UnitBezier.init(firstX:firstY:secondX:secondY:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Basic/UnitBezier.swift",
+      "line": 45,
+      "symbol": "UnitBezier.ControlPoint",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Basic/UnitBezier.swift",
+      "line": 47,
+      "symbol": "UnitBezier.ControlPoint.x",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Basic/UnitBezier.swift",
+      "line": 48,
+      "symbol": "UnitBezier.ControlPoint.y",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Basic/UnitBezier.swift",
+      "line": 50,
+      "symbol": "UnitBezier.ControlPoint.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
+      "line": 1,
+      "symbol": "SimulatedAnimation",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
+      "line": 5,
+      "symbol": "SimulatedAnimation.init(function:value:velocity:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
+      "line": 25,
+      "symbol": "Animator.init(initialValue:initialVelocity:function:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
+      "line": 34,
+      "symbol": "VectorConvertible.springAnimation(to:initialVelocity:tension:damping:threshold:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Animator.swift",
+      "line": 9,
+      "symbol": "Animator.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Loop.swift",
+      "line": 47,
+      "symbol": "Loop.Frame.previousTimestamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Observable.swift",
+      "line": 59,
+      "symbol": "Observable.bind(to:keyPath:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
+      "line": 3,
+      "symbol": "GravityFunction",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
+      "line": 5,
+      "symbol": "GravityFunction.target",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
+      "line": 7,
+      "symbol": "GravityFunction.minRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
+      "line": 9,
+      "symbol": "GravityFunction.threshold",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
+      "line": 11,
+      "symbol": "GravityFunction.init(target:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/Simulator.swift",
+      "line": 66,
+      "symbol": "Simulator.init(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/tim/Development/Advance"
 }
