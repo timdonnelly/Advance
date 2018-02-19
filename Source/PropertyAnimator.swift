@@ -3,17 +3,21 @@
 /// to animate properties of `self`.
 public final class PropertyAnimator<Target, Value> where Target: AnyObject {
     
+    /// The object to be animated.
     public let target: Target
     
+    /// The keypath describing the property to be animated.
     public let keyPath: ReferenceWritableKeyPath<Target, Value>
     
     private var runningAnimator: Animator<Value>? = nil
     
+    /// Initializes a new property animator with the given target and keypath.
     public init(target: Target, keyPath: ReferenceWritableKeyPath<Target, Value>) {
         self.target = target
         self.keyPath = keyPath
     }
     
+    /// Animates the property using the given animation.
     @discardableResult
     public func animate<T>(with animation: T) -> Animator<Value> where T: Animation, T.Element == Value {
         
@@ -30,22 +34,18 @@ public final class PropertyAnimator<Target, Value> where Target: AnyObject {
         return animator
     }
     
-    @discardableResult
-    public func animate<T>(generator: (Value) -> T) -> Animator<Value> where T: Animation, T.Element == Value {
-        let animation = generator(currentValue)
-        return animate(with: animation)
-    }
-    
     private func animatorDidFinish(_ animator: Animator<Value>) {
         if animator === runningAnimator {
             runningAnimator = nil
         }
     }
     
+    /// Returns true if an animation is in progress.
     public var isAnimating: Bool {
         return runningAnimator != nil
     }
     
+    /// Cancels any running animation.
     public func cancelRunningAnimation() {
         runningAnimator?.cancel()
         runningAnimator = nil
