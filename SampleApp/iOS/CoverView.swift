@@ -20,10 +20,8 @@ final class CoverView: UIView {
         urlLabel = UILabel(frame: CGRect.zero)
         
         var attribs: [NSAttributedStringKey: Any] = [:]
-        attribs[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: 12.0, weight: UIFont.Weight.regular)
-        attribs[NSAttributedStringKey.foregroundColor] = UIColor.white
-        
-        // attribs[NSUnderlineStyleAttributeName] = NSUnderlineStyle.StyleSingle.rawValue
+        attribs[.font] = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        attribs[.foregroundColor] = UIColor.white
         
         urlLabel.attributedText = NSAttributedString(string: "github.com/storehouse/Advance", attributes: attribs)
         urlLabel.sizeToFit()

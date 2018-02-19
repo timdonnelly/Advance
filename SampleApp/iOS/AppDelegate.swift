@@ -14,9 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let a = ActivityViewController()
         let g = GesturesViewController()
         let s = SpringsViewController()
-        let gravity = GravityViewController()
         
-        window?.rootViewController = BrowserViewController(viewControllers: [a, gravity, s, g])
+        window?.rootViewController = BrowserViewController(viewControllers: [a, s, g])
         window?.makeKeyAndVisible()
         
         return true
