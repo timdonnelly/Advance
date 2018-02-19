@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5D3A2F301C9209EE0071F08F"
                BuildableName = "Advance.framework"
-               BlueprintName = "Advance-OSX"
+               BlueprintName = "Advance-macOS"
                ReferencedContainer = "container:Advance.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5DE959EF1C9392E1008487A8"
-               BuildableName = "AdvanceTests-OSX.xctest"
-               BlueprintName = "AdvanceTests-OSX"
+               BuildableName = "UnitTests-macOS.xctest"
+               BlueprintName = "UnitTests-macOS"
                ReferencedContainer = "container:Advance.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D3A2F301C9209EE0071F08F"
             BuildableName = "Advance.framework"
-            BlueprintName = "Advance-OSX"
+            BlueprintName = "Advance-macOS"
             ReferencedContainer = "container:Advance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D3A2F301C9209EE0071F08F"
             BuildableName = "Advance.framework"
-            BlueprintName = "Advance-OSX"
+            BlueprintName = "Advance-macOS"
             ReferencedContainer = "container:Advance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D3A2F301C9209EE0071F08F"
             BuildableName = "Advance.framework"
-            BlueprintName = "Advance-OSX"
+            BlueprintName = "Advance-macOS"
             ReferencedContainer = "container:Advance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

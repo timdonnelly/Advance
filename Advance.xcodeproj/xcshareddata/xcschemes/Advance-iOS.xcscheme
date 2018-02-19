@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5D39CEEA1C6E983100DFCF86"
                BuildableName = "Advance.xctest"
-               BlueprintName = "AdvanceTests-iOS"
+               BlueprintName = "UnitTests-iOS"
                ReferencedContainer = "container:Advance.xcodeproj">
             </BuildableReference>
          </TestableReference>

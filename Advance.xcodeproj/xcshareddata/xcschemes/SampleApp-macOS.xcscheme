@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "22F74AA41C7674BB004C6E4C"
-               BuildableName = "AdvanceSample.app"
-               BlueprintName = "AdvanceSample-iOS"
+               BlueprintIdentifier = "5D3A2F671C92559B0071F08F"
+               BuildableName = "SampleApp-macOS.app"
+               BlueprintName = "SampleApp-macOS"
                ReferencedContainer = "container:Advance.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "22F74AA41C7674BB004C6E4C"
-            BuildableName = "AdvanceSample.app"
-            BlueprintName = "AdvanceSample-iOS"
+            BlueprintIdentifier = "5D3A2F671C92559B0071F08F"
+            BuildableName = "SampleApp-macOS.app"
+            BlueprintName = "SampleApp-macOS"
             ReferencedContainer = "container:Advance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "22F74AA41C7674BB004C6E4C"
-            BuildableName = "AdvanceSample.app"
-            BlueprintName = "AdvanceSample-iOS"
+            BlueprintIdentifier = "5D3A2F671C92559B0071F08F"
+            BuildableName = "SampleApp-macOS.app"
+            BlueprintName = "SampleApp-macOS"
             ReferencedContainer = "container:Advance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "22F74AA41C7674BB004C6E4C"
-            BuildableName = "AdvanceSample.app"
-            BlueprintName = "AdvanceSample-iOS"
+            BlueprintIdentifier = "5D3A2F671C92559B0071F08F"
+            BuildableName = "SampleApp-macOS.app"
+            BlueprintName = "SampleApp-macOS"
             ReferencedContainer = "container:Advance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

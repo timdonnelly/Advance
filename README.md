@@ -1,4 +1,4 @@
-<br/><img src="https://github.com/storehouse/Advance/raw/master/Assets/logo.png" width="302">
+#Advance
 
 A powerful animation framework for iOS, tvOS, and OS X.
 
@@ -47,8 +47,8 @@ The resulting animator can be used to cancel the animation or to add additional 
 ##### Check out the sample app
 Located in the project:
 
-![Sample app](https://github.com/timdonnelly/Advance/raw/master/Assets/nav.gif)
-![Sample app](https://github.com/timdonnelly/Advance/raw/master/Assets/logo.gif)
+![Sample app](https://github.com/timdonnelly/Advance/raw/master/assets/nav.gif)
+![Sample app](https://github.com/timdonnelly/Advance/raw/master/assets/logo.gif)
 
 ****
 
