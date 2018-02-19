@@ -1,5 +1,4 @@
 import Foundation
-import QuartzCore
 
 
 /// Implements a simple spring acceleration function.

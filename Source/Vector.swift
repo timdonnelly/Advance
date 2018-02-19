@@ -7,6 +7,13 @@ public protocol Vector: Equatable, Interpolatable {
     /// Creates a vector for which all components are equal to the given scalar.
     init(scalar: Scalar)
     
+    /// The length of this vector.
+    static var length: Int { get }
+
+    /// Direct component access. If the given `index` is >= `Self.length`, it
+    /// is a programmer error.
+    subscript(index: Int) -> Scalar { get set }
+    
     /// Returns a vector where each component is clamped by the corresponding
     /// components in `min` and `max`.
     ///
@@ -16,6 +23,7 @@ public protocol Vector: Equatable, Interpolatable {
     /// - parameter max: Each component in the output vector will be `<=` the
     ///   corresponding component in this vector.
     func clamped(min: Self, max: Self) -> Self
+    
     
     /// The empty vector (all scalar components are equal to `0.0`).
     static var zero: Self { get }
