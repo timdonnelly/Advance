@@ -12,7 +12,7 @@ This project was originally developed to power the animations throughout the App
 
 ## Examples
 
-##### Use `Spring` to animate UI
+### Use `Spring` to animate UI
 
 ```swift
 import Advance
@@ -24,7 +24,7 @@ spring.target = CGPoint(x: 300, y: 200)
 ```
 The spring will then animate the movement of the view to the new `target` position.
 
-##### Use `PropertyAnimator` to animate an object's properties
+### Use `PropertyAnimator` to animate an object's properties
 
 ```swift
 import Advance
@@ -44,7 +44,7 @@ centerAnimator.decay(drag: 2.0)
 
 ```
 
-##### Use `Animator` to drive single animations
+### Use `Animator` to drive single animations
 
 ```swift
 import Advance
