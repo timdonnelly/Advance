@@ -38,8 +38,9 @@ centerAnimator.spring(to: CGPoint(x: 300, y: 300))
 
 /// Some time in the future...
 
-/// The value will slowly come to a stop.
-centerAnimator.decay(initialVelocity: CGPoint(x: 20, y: 40))
+/// The value will keep the same velocity that it had from the preceeding
+/// animation, and a decay function will slowly bring movement to a stop.
+centerAnimator.decay(drag: 2.0)
 
 ```
 
@@ -53,7 +54,7 @@ let animation = 0.0.animation(
     duration: 0.6, 
     timingFunction: UnitBezier.easeIn)
 
-let animator = animation.run()
+let animator = Animator(animation: animation)
 
 animator.onChange { value in
     /// Do something with the value
