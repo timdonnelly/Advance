@@ -25,7 +25,7 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
     public var simulation: Simulation<Function> {
         didSet {
             lastNotifiedValue = Result(vector: simulation.value)
-            loop.paused = simulation.settled
+            loop.paused = simulation.isSettled
         }
     }
     
@@ -55,12 +55,12 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
         
         loop.frames.observe { [unowned self] (frame) in
             self.simulation.advance(by: frame.duration)
-            if self.simulation.settled {
+            if self.simulation.isSettled {
                 self.loop.paused = true
             }
         }
 
-        loop.paused = simulation.settled
+        loop.paused = simulation.isSettled
     }
     
     /// The current value of the spring.

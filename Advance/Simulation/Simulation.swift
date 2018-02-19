@@ -29,7 +29,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         didSet {
             // If the function changes, we need to make sure that its new state 
             // will allow the solver to settle.
-            settled = false
+            isSettled = false
             settleIfPossible()
         }
     }
@@ -39,7 +39,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     
     /// Returns `true` if the solver has settled and does not currently
     /// need to be advanced on each frame.
-    fileprivate (set) public var settled: Bool = false
+    fileprivate (set) public var isSettled: Bool = false
     
     // The current state of the solver.
     fileprivate var simulationState: SimulationState<F.VectorType>
@@ -61,7 +61,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     }
     
     fileprivate mutating func settleIfPossible() {
-        guard settled == false else { return }
+        guard isSettled == false else { return }
         
         switch function.status(for: simulationState) {
         case .running:
@@ -70,7 +70,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
             simulationState.value = value
             simulationState.velocity = F.VectorType.zero
             interpolatedState = simulationState
-            settled = true
+            isSettled = true
         }
 
     }
@@ -80,7 +80,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     /// - parameter elapsed: The duration by which to advance the simulation
     ///   in seconds.
     public mutating func advance(by time: Double) {
-        guard settled == false else { return }
+        guard isSettled == false else { return }
         
         // Limit to 10 physics ticks per update, should never come close.
         let t = min(time, tickTime * 10.0)
@@ -96,7 +96,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         // Advance the simulation until the time accumulator is negative –
         // this means that the current state is ahead of the needed time.
         while timeAccumulator > 0.0 {
-            if settled {
+            if isSettled {
                 break
             }
             previousState = simulationState
@@ -110,7 +110,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         // If snapping is possible, we can just do that and avoid interpolation.
         settleIfPossible()
         
-        if settled == false {
+        if isSettled == false {
             // The simulation did not settle. At this point, the latest state
             // was calculated for some time in the future of what we need
             // to satisfy `elapsed`. We can figure out the alpha in between
@@ -130,7 +130,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         set {
             interpolatedState.value = newValue
             simulationState.value = newValue
-            settled = false
+            isSettled = false
             settleIfPossible()
         }
     }
@@ -141,7 +141,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
         set {
             interpolatedState.velocity = newValue
             simulationState.velocity = newValue
-            settled = false
+            isSettled = false
             settleIfPossible()
         }
     }

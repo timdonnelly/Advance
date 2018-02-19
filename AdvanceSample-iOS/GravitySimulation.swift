@@ -35,10 +35,10 @@ private enum GravitySimulationNode: Advanceable {
             break
         case .decaying(var sim):
             sim.advance(by: time)
-            self = sim.settled ? .stationary(sim.value) : .decaying(sim)
+            self = sim.isSettled ? .stationary(sim.value) : .decaying(sim)
         case .pulling(var sim):
             sim.advance(by: time)
-            self = sim.settled ? .stationary(sim.value) : .pulling(sim)
+            self = sim.isSettled ? .stationary(sim.value) : .pulling(sim)
         }
     }
     

@@ -15,7 +15,7 @@ public struct SimulatedAnimation<Result, T>: Animation where Result: VectorConve
     }
     
     public var isFinished: Bool {
-        return simulation.settled
+        return simulation.isSettled
     }
     
 }
