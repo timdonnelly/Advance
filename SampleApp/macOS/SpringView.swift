@@ -17,9 +17,9 @@ final class SpringView : NSView, CALayerDelegate {
         
         centerSpring.tension = Scalar(t)
         centerSpring.damping = Scalar(d)
-        
-        centerSpring.values.observe { [unowned self] (c) -> Void in
-            self.layer?.position = c
+        centerSpring.values.bind(to: layer!, keyPath: \.position)
+        centerSpring.values.observe { (point) in
+            Swift.print(point)
         }
     }
     
@@ -27,8 +27,10 @@ final class SpringView : NSView, CALayerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func layoutSublayers(of layer: CALayer) {
-        layer.cornerRadius = min(bounds.width, bounds.height) / 2.0
+    override func layout() {
+        super.layout()
+        layer?.cornerRadius = min(bounds.width, bounds.height) / 2.0
     }
+        
 }
 
