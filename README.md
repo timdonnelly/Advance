@@ -1,13 +1,14 @@
 # Advance
 
-A powerful animation framework for iOS, tvOS, and macOS.
+Physics-based animations for iOS, tvOS, and macOS.
 
 ---
 
 ##### What is it?
-Advance is a Swift framework that enables advanced animations and physics-based interactions.
 
-Originally developed to power the animations throughout the Storehouse app for iOS, Advance has evolved into a composable set of tools with a [simple API](http://timdonnelly.github.io/Advance/).
+Advance enables fully interactive and interruptable physics-based animations.
+
+This project was originally developed to power the animations throughout the Apple Design Award winning Storehouse app for iOS, but has since been extensively rewritten in modern Swift.
 
 ### Examples
 
@@ -17,35 +18,47 @@ Originally developed to power the animations throughout the Storehouse app for i
 import Advance
 
 let spring = Spring(value: CGPoint.zero)
-spring.values.bind(to: view, keyPath: \.center)
+spring.bind(to: view, keyPath: \.center)
 spring.target = CGPoint(x: 300, y: 200)
 
 ```
 The spring will then animate the movement of the view to the new `target` position.
 
-****
-
-##### Animate between values
+##### Use `PropertyAnimator` to animate an object's properties
 
 ```swift
 import Advance
 
-let animator = 0.0
-    .animation(to: 100.0, duration: 0.6, timingFunction: .easeIn)
-    .run()
-    .bind(to: myObject, keyPath: \.propertyName)
-    .onCompletion { result in
-        /// Do something when the animation finishes.
-    }
+let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+
+let centerAnimator = PropertyAnimator(target: view, keyPath: \.center)
+
+centerAnimator.spring(to: CGPoint(x: 300, y: 300))
+
+```
+
+##### Use `Animator` to drive single animations
+
+```swift
+import Advance
+
+let animation = 0.0.animation(
+    to: 100.0, 
+    duration: 0.6, 
+    timingFunction: UnitBezier.easeIn)
+
+let animator = animation.run()
+
+animator.onChange { value in
+    /// Do something with the value
+{
 
 ```
 
 The resulting animator can be used to cancel the animation or to add additional observers or completion handlers.
 
-****
 
 ##### Check out the sample app
-Located in the project:
 
 ![Sample app](https://github.com/timdonnelly/Advance/raw/master/images/nav.gif)
 ![Sample app](https://github.com/timdonnelly/Advance/raw/master/images/logo.gif)
