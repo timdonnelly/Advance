@@ -55,10 +55,18 @@ let animation = 0.0.animation(
     timingFunction: UnitBezier.easeIn)
 
 let animator = Animator(animation: animation)
+    .onChange { value in
+        /// Do something with the value.
+    }
+    .onCancel {
+        /// The animation was cancelled before it could finish.
+    }
+    .onFinish {
+        /// The animation finished successfully.
+    }
 
-animator.onChange { value in
-    /// Do something with the value
-{
+/// Kick off the animation
+animator.start()
 
 ```
 
