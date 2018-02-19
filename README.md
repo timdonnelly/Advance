@@ -1,6 +1,6 @@
 # Advance
 
-A powerful animation framework for iOS, tvOS, and OS X.
+A powerful animation framework for iOS, tvOS, and macOS.
 
 ---
 
@@ -53,7 +53,7 @@ Located in the project:
 ****
 
 ##### Requirements
-* iOS 10+, tvOS 10+, or OS X 10.12+
+* iOS 10+, tvOS 10+, or macOS 10.12+
 * Swift 4.0+ (Xcode 9 or higher)
 
 [Please see the documentation](http://timdonnelly.github.io/Advance/) and check out the sample app (AdvanceSample) in the project for more details.
