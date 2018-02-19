@@ -21,7 +21,7 @@ You can accomplish amazing things with Advance. But you should be sensitive to t
 *If you simply want to animate the basic properties of a view, it's probably best to stick with UIView animations / Core Animation. It is able to run your animations on a high priority background thread and is not as sensitive to blocking the main thread.*
 
 ##### Requirements
-* iOS 8+, tvOS 9+, or OS X 10.10+
+* iOS 10+, tvOS 10+, or OS X 10.12+
 * Swift 4.0+ (Xcode 9 or higher)
 
 
