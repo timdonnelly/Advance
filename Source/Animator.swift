@@ -4,24 +4,22 @@
 /// - If the animation finishes, the animator enters the `completed (finished)` state.
 /// - If `cancel()` is called on the animator while in a running state, the
 ///   animator enters the `completed (cancelled)` state.
-public final class Animator<T> where T: Animation {
+public final class Animator<Element> {
 
     private (set) public var state: State
 
-    private var animation: T
+    private var animation: AnyAnimation<Element>
     private let loop: Loop
-    private let valueSink: Sink<T.Result>
+    private let valueSink: Sink<Element>
     
     private var completionHandlers: [(Result) -> Void]
-    private var changeHandlers: [(T.Result) -> Void]
     
     /// Instantiates a new animator for the given animation.
     /// The animator begins running immediately.
-    public init(animation: T) {
-        self.animation = animation
+    public init<T>(animation: T) where T: Animation, T.Element == Element {
+        self.animation = AnyAnimation(animation)
         self.state = State.running
         self.loop = Loop()
-        self.changeHandlers = []
         self.completionHandlers = []
         self.valueSink = Sink()
         
@@ -29,7 +27,7 @@ public final class Animator<T> where T: Animation {
             self.state = State.done(result: .finished)
         }
         
-        loop.frames.observe { [weak self] (frame) in
+        loop.observe { [weak self] (frame) in
             self?.advance(by: frame.duration)
         }
         
@@ -51,11 +49,10 @@ public final class Animator<T> where T: Animation {
     
     private func advance(by time: Double) {
         guard state == .running else { return }
+        
         animation.advance(by: time)
         
-        for handler in changeHandlers {
-            handler(animation.value)
-        }
+        valueSink.send(value: animation.value)
         
         if animation.isFinished {
             complete(with: .finished)
@@ -67,7 +64,6 @@ public final class Animator<T> where T: Animation {
         state = State.done(result: result)
         completionHandlers.forEach { $0(result) }
         completionHandlers.removeAll()
-        changeHandlers.removeAll()
     }
     
     /// Adds a handler that will be called every time the animation's value changes.
@@ -75,10 +71,10 @@ public final class Animator<T> where T: Animation {
     /// Newly added handlers are invoked immediately when they are added with
     /// the latest value from the animation.
     @discardableResult
-    public func onChange(_ handler: @escaping (T.Result) -> Void) -> Animator<T> {
+    public func onChange(_ handler: @escaping (Element) -> Void) -> Animator<Element> {
         switch state {
         case .running:
-            changeHandlers.append(handler)
+            valueSink.observe(handler)
             handler(animation.value)
         case .done(_):
             break
@@ -92,7 +88,7 @@ public final class Animator<T> where T: Animation {
     /// If the animator is already in a completed state, the given handler
     /// will be called immediately.
     @discardableResult
-    public func onCompletion(_ handler: @escaping (Result) -> Void) -> Animator<T> {
+    public func onCompletion(_ handler: @escaping (Result) -> Void) -> Animator<Element> {
         switch state {
         case .running:
             completionHandlers.append(handler)
@@ -108,7 +104,7 @@ public final class Animator<T> where T: Animation {
     /// If the animator is already in a finished state, the given handler
     /// will be called immediately.
     @discardableResult
-    public func onFinish(_ handler: @escaping () -> Void) -> Animator<T> {
+    public func onFinish(_ handler: @escaping () -> Void) -> Animator<Element> {
         onCompletion { (result) in
             guard result == .finished else { return }
             handler()
@@ -122,7 +118,7 @@ public final class Animator<T> where T: Animation {
     /// If the animator is already in a cancelled state, the given handler
     /// will be called immediately.
     @discardableResult
-    public func onCancel(_ handler: @escaping () -> Void) -> Animator<T> {
+    public func onCancel(_ handler: @escaping () -> Void) -> Animator<Element> {
         onCompletion { (result) in
             guard result == .cancelled else { return }
             handler()
@@ -137,6 +133,15 @@ public final class Animator<T> where T: Animation {
     public func cancel() {
         guard state == .running else { return }
         complete(with: .cancelled)
+    }
+    
+}
+
+extension Animator: Observable {
+    
+    @discardableResult
+    public func observe(_ observer: @escaping (Element) -> Void) -> Subscription {
+        return valueSink.observe(observer)
     }
     
 }
@@ -179,26 +184,13 @@ public extension Animator {
     
 }
 
-public extension Animator {
-    
-    /// Assigns the changing output value of the animation to the given object
-    /// and keypath on each frame.
-    @discardableResult
-    public func bind<Root>(to object: Root, keyPath: ReferenceWritableKeyPath<Root, T.Result>) -> Animator<T> {
-        onChange { (value) in
-            object[keyPath: keyPath] = value
-        }
-        return self
-    }
-    
-}
 
 public extension Animation {
     
     /// Initializes and returns an animator to execute this animation.
     ///
     /// The animator will begin running immediately.
-    public func run() -> Animator<Self> {
+    public func run() -> Animator<Self.Element> {
         return Animator(animation: self)
     }
     

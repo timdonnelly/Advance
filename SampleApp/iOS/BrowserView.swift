@@ -47,17 +47,17 @@ class BrowserItem: NSObject {
         center.threshold = 0.1
         center.tension = 120.0
         center.damping = 27.0
-        center.values.observe { [unowned self] (p) -> Void in
+        center.observe { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
         transform.threshold = 0.001
-        transform.values.observe { [unowned self] (p) -> Void in
+        transform.observe { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
         size.threshold = 0.1
-        size.values.observe { [unowned self] (p) -> Void in
+        size.observe { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
@@ -259,12 +259,12 @@ class BrowserView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        index.values.observe { [unowned self] (idx) -> Void in
+        index.observe { [unowned self] (idx) -> Void in
             self.setNeedsLayout()
             self.delegate?.browserViewDidScroll(self)
         }
         
-        coverVisibilty.values.observe { [unowned self] (v) in
+        coverVisibilty.observe { [unowned self] (v) in
             self.setNeedsLayout()
         }
         

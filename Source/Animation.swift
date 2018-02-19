@@ -5,13 +5,13 @@
 public protocol Animation: Advanceable {
     
     /// The type of value to be animated.
-    associatedtype Result
+    associatedtype Element
     
     /// Returns `true` if the animation has completed.
     var isFinished: Bool { get }
     
     /// The current value of the animation.
-    var value: Result { get }
+    var value: Element { get }
     
 }
 
@@ -19,7 +19,7 @@ public extension Animation {
     
     /// Returns a sequence containing discrete values for the duration of the animation, based
     /// on the provided time step.
-    public func allValues(timeStep: Double = 0.008) -> AnySequence<Result> {
+    public func allValues(timeStep: Double = 0.008) -> AnySequence<Element> {
         return AnySequence.init({ () -> AnimationIterator<Self> in
             return AnimationIterator(animation: self, timeStep: timeStep)
         })
@@ -37,7 +37,7 @@ fileprivate struct AnimationIterator<T>: IteratorProtocol where T: Animation {
         self.timeStep = timeStep
     }
     
-    public mutating func next() -> T.Result? {
+    public mutating func next() -> T.Element? {
         guard var currentAnimation = animation else { return nil }
         let result = currentAnimation.value
         

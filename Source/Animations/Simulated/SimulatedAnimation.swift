@@ -20,15 +20,6 @@ public struct SimulatedAnimation<Result, T>: Animation where Result: VectorConve
     
 }
 
-public extension Animator {
-    
-    public convenience init<Result, F>(initialValue: Result, initialVelocity: Result, function: F) where T == SimulatedAnimation<Result, F> {
-        let animation = SimulatedAnimation(function: function, value: initialValue, velocity: initialVelocity)
-        self.init(animation: animation)
-    }
-    
-}
-
 public extension VectorConvertible {
     
     public func springAnimation(to target: Self, initialVelocity: Self = .zero, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> SimulatedAnimation<Self, SpringFunction<Self.VectorType>> {

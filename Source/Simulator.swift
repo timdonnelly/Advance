@@ -18,11 +18,6 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
         set { simulation.function = newValue }
     }
     
-    /// Observable stream of values from the simulation.
-    public var values: Observable<Result> {
-        return valueSink.observable
-    }
-    
     fileprivate var lastNotifiedValue: Result {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
@@ -40,7 +35,7 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
         lastNotifiedValue = value
         loop = Loop()
         
-        loop.frames.observe { [unowned self] (frame) in
+        loop.observe { [unowned self] (frame) in
             self.simulation.advance(by: frame.duration)
         }
 
@@ -59,6 +54,15 @@ public class Simulator<Result, Function> where Result: VectorConvertible, Functi
         set { simulation.velocity = newValue.vector }
     }
 
+}
+
+extension Simulator: Observable {
+    
+    @discardableResult
+    public func observe(_ observer: @escaping (Result) -> Void) -> Subscription {
+        return valueSink.observe(observer)
+    }
+    
 }
 
 public extension Simulator where Function == SpringFunction<Result.VectorType> {

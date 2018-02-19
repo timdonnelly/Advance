@@ -17,6 +17,9 @@
 		222E21211C7E44660063FAA2 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E21201C7E44660063FAA2 /* BrowserViewController.swift */; };
 		222E21231C7E448D0063FAA2 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E21221C7E448D0063FAA2 /* DemoViewController.swift */; };
 		222E21251C7E45420063FAA2 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E21241C7E45420063FAA2 /* BrowserView.swift */; };
+		222FAC4A203B4FF900CCDFEE /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FAC49203B4FF900CCDFEE /* AnyAnimation.swift */; };
+		222FAC4B203B4FF900CCDFEE /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FAC49203B4FF900CCDFEE /* AnyAnimation.swift */; };
+		222FAC4C203B4FF900CCDFEE /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FAC49203B4FF900CCDFEE /* AnyAnimation.swift */; };
 		22319B721C8110A300D4E027 /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22319B711C8110A300D4E027 /* CoverView.swift */; };
 		223E49731C76C9430048CAB6 /* SpringsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49721C76C9430048CAB6 /* SpringsViewController.swift */; };
 		223E49751C76C9510048CAB6 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49741C76C9510048CAB6 /* SpringView.swift */; };
@@ -270,6 +273,7 @@
 		222E21201C7E44660063FAA2 /* BrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		222E21221C7E448D0063FAA2 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		222E21241C7E45420063FAA2 /* BrowserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
+		222FAC49203B4FF900CCDFEE /* AnyAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAnimation.swift; sourceTree = "<group>"; };
 		22319B711C8110A300D4E027 /* CoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		223E49721C76C9430048CAB6 /* SpringsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringsViewController.swift; sourceTree = "<group>"; };
 		223E49741C76C9510048CAB6 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
@@ -334,7 +338,7 @@
 		5DB1A48E1C876AD1000CF9EE /* Vector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector4.swift; sourceTree = "<group>"; };
 		5DB1A4901C876AD1000CF9EE /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		5DE959E81C9388B9008487A8 /* LoopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopTests.swift; sourceTree = "<group>"; };
-		5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdvanceTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "AdvanceTests-OSX.xctest"; path = "UnitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE959F41C9392E1008487A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		970359C4203A2B6100028EFE /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		970359C9203A36A200028EFE /* SimulatedAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedAnimation.swift; sourceTree = "<group>"; };
@@ -588,6 +592,7 @@
 		5DB1A4641C876AD1000CF9EE /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				222FAC49203B4FF900CCDFEE /* AnyAnimation.swift */,
 				9776907A203A9891001A7764 /* Simulated */,
 				97769079203A9878001A7764 /* Basic */,
 			);
@@ -1062,6 +1067,7 @@
 				228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */,
 				228E20581C9CB99D0058ADA1 /* Double.swift in Sources */,
 				228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */,
+				222FAC4B203B4FF900CCDFEE /* AnyAnimation.swift in Sources */,
 				9710075A20378A5300FC5BA1 /* SimulationState.swift in Sources */,
 				228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */,
 				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
@@ -1146,6 +1152,7 @@
 				5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */,
 				5DB1A4AB1C876AD1000CF9EE /* Double.swift in Sources */,
 				5DB1A4A81C876AD1000CF9EE /* CGRect.swift in Sources */,
+				222FAC4A203B4FF900CCDFEE /* AnyAnimation.swift in Sources */,
 				9710075920378A5300FC5BA1 /* SimulationState.swift in Sources */,
 				5DB1A4A71C876AD1000CF9EE /* CGPoint.swift in Sources */,
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
@@ -1198,6 +1205,7 @@
 				5D3A2F3B1C920C7C0071F08F /* TimingFunction.swift in Sources */,
 				5D3A2F511C920CC20071F08F /* CGRect.swift in Sources */,
 				5D3A2F491C920CBC0071F08F /* SimulationFunction.swift in Sources */,
+				222FAC4C203B4FF900CCDFEE /* AnyAnimation.swift in Sources */,
 				5D3A2F501C920CC20071F08F /* CGPoint.swift in Sources */,
 				9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */,
 				5D3A2F631C923ADB0071F08F /* Loop.swift in Sources */,
@@ -1346,7 +1354,6 @@
 				PRODUCT_NAME = Advance;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
@@ -1440,7 +1447,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.SampleApp-iOS";
 				PRODUCT_NAME = SampleApp;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 			};
@@ -1550,7 +1556,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
@@ -1600,7 +1605,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1673,7 +1677,6 @@
 				PRODUCT_NAME = Advance;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;

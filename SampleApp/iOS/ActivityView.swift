@@ -111,7 +111,7 @@ public final class ActivityView: UIView {
         layer.allowsGroupOpacity = false
         
         for vs in visibilitySprings {
-            vs.values.observe({ [weak self] (vis) in
+            vs.observe({ [weak self] (vis) in
                 self?.setNeedsLayout()
             })
         }

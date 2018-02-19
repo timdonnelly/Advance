@@ -23,7 +23,7 @@ class GravityViewController: DemoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loop.frames.observe { [weak self] frame in
+        loop.observe { [weak self] frame in
             guard let strongSelf = self else { return }
             strongSelf.simulation.advance(by: frame.duration)
             if strongSelf.simulation.settled {

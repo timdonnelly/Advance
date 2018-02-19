@@ -13,17 +13,15 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //            print(point)
 //    }
 
-CGPoint(x: 30.0, y: 20.0)
+let animator = CGPoint(x: 30.0, y: 20.0)
     .springAnimation(to: CGPoint.zero)
     .run()
-    .onChange { (point) in
+    .onChange({ (point) in
         print(point)
-    }
+    })
     .onCancel {
         print("cancelled")
     }
     .onFinish {
         print("finished")
     }
-
-

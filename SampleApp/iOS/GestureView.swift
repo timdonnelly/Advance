@@ -22,12 +22,12 @@ final class GestureView: UIView {
         animatableCenter.threshold = 0.1
         animatableCenter.tension = 40
         animatableCenter.damping = 5
-        animatableCenter.values.observe { [weak self] (c) -> Void in
+        animatableCenter.observe { [weak self] (c) -> Void in
             self?.center = c
         }
         
         animatableTransform.threshold = 0.001
-        animatableTransform.values.observe { [weak self] (t) -> Void in
+        animatableTransform.observe { [weak self] (t) -> Void in
             self?.transform = t.affineTransform
         }
     }
