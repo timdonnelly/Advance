@@ -13,9 +13,9 @@ class BasicAnimationTests: XCTestCase {
             elapsed += 0.1
             a.advance(by: 0.1)
             guard elapsed < a.duration else { break }
-            XCTAssert(a.finished == false)
+            XCTAssert(a.isFinished == false)
         }
-        XCTAssert(a.finished == true)
+        XCTAssert(a.isFinished == true)
     }
     
     func testInterpolation() {

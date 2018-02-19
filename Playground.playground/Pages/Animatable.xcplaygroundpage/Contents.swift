@@ -1,23 +1,29 @@
 //: [Previous](@previous)
 
 import UIKit
-import XCPlayground
+import PlaygroundSupport
 import Advance
 
-XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
+PlaygroundPage.current.needsIndefiniteExecution = true
 
-let a = Animatable(value: 0.0)
+//CGPoint(x: 30, y: 40)
+//    .animation(to: .zero, duration: 1.0)
+//    .run()
+//    .onChange { (point) in
+//            print(point)
+//    }
 
-a.changed.observe { (val) in
-    NSLog("value: \(val)")
-}
+CGPoint(x: 30.0, y: 20.0)
+    .springAnimation(to: CGPoint.zero)
+    .run()
+    .onChange { (point) in
+        print(point)
+    }
+    .onCancel {
+        print("cancelled")
+    }
+    .onFinish {
+        print("finished")
+    }
 
-a.value = 4.0
 
-a.value = 20.0
-
-a.animateTo(10.0) { (finished) in
-    var cfg = SpringConfiguration()
-    cfg.damping = 2.0
-    a.springTo(0.0, initialVelocity: 0.0, configuration: cfg, completion: nil)
-}

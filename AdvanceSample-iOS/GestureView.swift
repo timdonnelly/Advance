@@ -1,38 +1,10 @@
-/*
-
-Copyright (c) 2016, Storehouse Media Inc.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-*/
-
 import UIKit
 import Advance
 
 final class GestureView: UIView {
     
-    let animatableCenter = Animatable(value: CGPoint.zero)
-    ;let animatableTransform = Animatable(value: SimpleTransform())
+    let animatableCenter = Spring(value: CGPoint.zero)
+    let animatableTransform = Spring(value: SimpleTransform())
     
     fileprivate var centerWhenGestureBegan = CGPoint.zero
     fileprivate var transformWhenGestureBegan = SimpleTransform.zero
@@ -47,11 +19,15 @@ final class GestureView: UIView {
         recognizer.addTarget(self, action: #selector(manipulate(_:)))
         addGestureRecognizer(recognizer)
         
-        animatableCenter.changed.observe { [weak self] (c) -> Void in
+        animatableCenter.threshold = 0.1
+        animatableCenter.tension = 40
+        animatableCenter.damping = 5
+        animatableCenter.values.observe { [weak self] (c) -> Void in
             self?.center = c
         }
         
-        animatableTransform.changed.observe { [weak self] (t) -> Void in
+        animatableTransform.threshold = 0.001
+        animatableTransform.values.observe { [weak self] (t) -> Void in
             self?.transform = t.affineTransform
         }
     }
@@ -62,7 +38,7 @@ final class GestureView: UIView {
     
     override var frame: CGRect {
         didSet {
-            animatableCenter.value = center
+            animatableCenter.reset(to: center)
         }
     }
     
@@ -73,15 +49,14 @@ final class GestureView: UIView {
             // Take the anchor point into consideration
             let gestureLocation = recognizer.location(in: self)
             let newCenter = superview!.convert(gestureLocation, from: self)
-            animatableCenter.value = newCenter
-            
+            animatableCenter.reset(to: newCenter)
+
             var anchorPoint = gestureLocation
             anchorPoint.x /= bounds.width
             anchorPoint.y /= bounds.height
             layer.anchorPoint = anchorPoint
             
-            animatableTransform.cancelAnimation()
-            animatableCenter.cancelAnimation()
+            animatableTransform.reset(to: animatableTransform.value)
             centerWhenGestureBegan = animatableCenter.value
             transformWhenGestureBegan = animatableTransform.value
             break
@@ -89,12 +64,12 @@ final class GestureView: UIView {
             var t = transformWhenGestureBegan
             t.rotation += recognizer.rotation
             t.scale *= recognizer.scale
-            animatableTransform.value = t
+            animatableTransform.reset(to: t)
             
             var center = centerWhenGestureBegan
             center.x += recognizer.translationInView(superview).x
             center.y += recognizer.translationInView(superview).y
-            animatableCenter.value = center
+            animatableCenter.reset(to: center)
             
             break
         case .ended, .cancelled:
@@ -107,16 +82,13 @@ final class GestureView: UIView {
             var velocity = SimpleTransform.zero
             velocity.scale = recognizer.scaleVelocity
             velocity.rotation = recognizer.rotationVelocity
-            var config = SpringConfiguration()
-            config.threshold = 0.001
-            animatableTransform.spring(to: SimpleTransform(), initialVelocity: velocity, configuration: config)
+            animatableTransform.target = SimpleTransform()
+            animatableTransform.velocity = velocity
             
             let centerVel = recognizer.translationVelocityInView(superview)
-            var centerConfig = SpringConfiguration()
-            centerConfig.tension = 40.0
-            centerConfig.damping = 5.0
             let c = CGPoint(x: superview!.bounds.midX, y: superview!.bounds.midY)
-            animatableCenter.spring(to: c, initialVelocity: centerVel, configuration: centerConfig)
+            animatableCenter.target = c
+            animatableCenter.velocity = centerVel
             break
         default:
             break

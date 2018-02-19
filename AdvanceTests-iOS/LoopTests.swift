@@ -2,16 +2,16 @@ import XCTest
 @testable import Advance
 
 
-class DisplayLinkTests : XCTestCase {
+class LoopTests : XCTestCase {
     
-    var displayLink: DisplayLink! = nil
+    var loop: Loop! = nil
     
     override func setUp() {
-        displayLink = DisplayLink()
+        loop = Loop()
     }
     
     override func tearDown() {
-        displayLink = nil
+        loop = nil
     }
     
     func testCallback() {
@@ -19,13 +19,13 @@ class DisplayLinkTests : XCTestCase {
         
         var fulfilled = false
         
-        displayLink.callback = { (frame) in
+        loop.frames.observe { (frame) in
             guard fulfilled == false else { return }
             fulfilled = true
             exp.fulfill()
         }
         
-        displayLink.paused = false
+        loop.paused = false
         
         waitForExpectations(timeout: 0.5) { (error) -> Void in
             guard error == nil else { XCTFail(); return }
@@ -33,13 +33,13 @@ class DisplayLinkTests : XCTestCase {
     }
     
     func testPausing() {
-        displayLink.paused = false
+        loop.paused = false
         
         var gotCallback = false
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
-            self.displayLink.paused = true
-            self.displayLink.callback = { (frame) in
+            self.loop.paused = true
+            self.loop.frames.observe { (frame) in
                 gotCallback = true
             }
         }
@@ -62,7 +62,7 @@ class DisplayLinkTests : XCTestCase {
         var callbacks = 0
         var lastTimestamp: Double = 0
         
-        displayLink.callback = { (frame) in
+        loop.frames.observe { (frame) in
             XCTAssertTrue(frame.timestamp > lastTimestamp, "timestamp \(frame.timestamp) was not larger than \(lastTimestamp) (frame #\(callbacks))")
             lastTimestamp = frame.timestamp
             
@@ -73,7 +73,7 @@ class DisplayLinkTests : XCTestCase {
             callbacks += 1
         }
         
-        displayLink.paused = false
+        loop.paused = false
         
         waitForExpectations(timeout: 0.5) { (error) -> Void in
             guard error == nil else { XCTFail(); return }

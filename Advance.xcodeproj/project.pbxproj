@@ -21,48 +21,39 @@
 		223E49731C76C9430048CAB6 /* SpringsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49721C76C9430048CAB6 /* SpringsViewController.swift */; };
 		223E49751C76C9510048CAB6 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E49741C76C9510048CAB6 /* SpringView.swift */; };
 		226A752C1C84153E00A7F1FB /* GravitySimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752B1C84153E00A7F1FB /* GravitySimulation.swift */; };
-		226A752E1C84206D00A7F1FB /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
-		228E20421C9CB99D0058ADA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		228E20431C9CB99D0058ADA1 /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */; };
-		228E20441C9CB99D0058ADA1 /* CGFloat+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat+VectorConvertible.swift */; };
-		228E20451C9CB99D0058ADA1 /* AnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */; };
+		228E20441C9CB99D0058ADA1 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat.swift */; };
 		228E20461C9CB99D0058ADA1 /* VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */; };
 		228E20471C9CB99D0058ADA1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48D1C876AD1000CF9EE /* Vector3.swift */; };
 		228E20481C9CB99D0058ADA1 /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */; };
 		228E20491C9CB99D0058ADA1 /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
 		228E204A1C9CB99D0058ADA1 /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
-		228E204B1C9CB99D0058ADA1 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4631C876AD1000CF9EE /* Animatable.swift */; };
-		228E204C1C9CB99D0058ADA1 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
+		228E204C1C9CB99D0058ADA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* Loop.swift */; };
 		228E204D1C9CB99D0058ADA1 /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */; };
-		228E204E1C9CB99D0058ADA1 /* ValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */; };
-		228E204F1C9CB99D0058ADA1 /* CGSize+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4851C876AD1000CF9EE /* CGSize+VectorConvertible.swift */; };
-		228E20501C9CB99D0058ADA1 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
+		228E204F1C9CB99D0058ADA1 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4851C876AD1000CF9EE /* CGSize.swift */; };
+		228E20501C9CB99D0058ADA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Simulator.swift */; };
 		228E20511C9CB99D0058ADA1 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48C1C876AD1000CF9EE /* Vector2.swift */; };
 		228E20521C9CB99D0058ADA1 /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48E1C876AD1000CF9EE /* Vector4.swift */; };
 		228E20531C9CB99D0058ADA1 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4661C876AD1000CF9EE /* Animation.swift */; };
-		228E20541C9CB99D0058ADA1 /* DecayAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */; };
-		228E20551C9CB99D0058ADA1 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */; };
 		228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
 		228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
-		228E20581C9CB99D0058ADA1 /* Double+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double+VectorConvertible.swift */; };
-		228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */; };
-		228E205A1C9CB99D0058ADA1 /* CGRect+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect+VectorConvertible.swift */; };
-		228E205B1C9CB99D0058ADA1 /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
-		228E205C1C9CB99D0058ADA1 /* CGPoint+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint+VectorConvertible.swift */; };
+		228E20581C9CB99D0058ADA1 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double.swift */; };
+		228E20591C9CB99D0058ADA1 /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */; };
+		228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect.swift */; };
+		228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint.swift */; };
 		228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48B1C876AD1000CF9EE /* Vector1.swift */; };
-		228E205E1C9CB99D0058ADA1 /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
-		228E205F1C9CB99D0058ADA1 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
-		228E20601C9CB99D0058ADA1 /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
-		228E20611C9CB99D0058ADA1 /* CGVector+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector+VectorConvertible.swift */; };
+		228E205E1C9CB99D0058ADA1 /* SimulationFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */; };
+		228E20601C9CB99D0058ADA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* Simulation.swift */; };
+		228E20611C9CB99D0058ADA1 /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector.swift */; };
 		228E20621C9CB99D0058ADA1 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */; };
 		228E20631C9CB99D0058ADA1 /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
-		228E20641C9CB99D0058ADA1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Event.swift */; };
+		228E20641C9CB99D0058ADA1 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
 		228E20731C9CB9B00058ADA1 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */; };
 		228E20741C9CB9B00058ADA1 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
-		228E20751C9CB9B00058ADA1 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
+		228E20751C9CB9B00058ADA1 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* LoopTests.swift */; };
 		228E20761C9CB9B00058ADA1 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5A1C7A547300BAE519 /* VectorTests.swift */; };
 		228E20771C9CB9B00058ADA1 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5C1C7A5E3500BAE519 /* BasicAnimationTests.swift */; };
-		228E20781C9CB9B00058ADA1 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* EventTests.swift */; };
+		228E20781C9CB9B00058ADA1 /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* ObservableTests.swift */; };
 		228E20791C9CB9B00058ADA1 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F471C80DAA00039B9BB /* VectorConvenienceTests.swift */; };
 		228E207B1C9CB9B00058ADA1 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D39CEE11C6E983100DFCF86 /* Advance.framework */; };
 		228E20891C9CBA490058ADA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E20881C9CBA490058ADA1 /* AppDelegate.swift */; };
@@ -81,42 +72,34 @@
 		5D28A2D81C93757200E5A1E9 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D28A2D71C93757200E5A1E9 /* SpringView.swift */; };
 		5D28A2DA1C9378F000E5A1E9 /* SpringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D28A2D91C9378F000E5A1E9 /* SpringContainerView.swift */; };
 		5D39CEEC1C6E983100DFCF86 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D39CEE11C6E983100DFCF86 /* Advance.framework */; };
-		5D3A2F391C920C710071F08F /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4631C876AD1000CF9EE /* Animatable.swift */; };
 		5D3A2F3A1C920C7C0071F08F /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */; };
 		5D3A2F3B1C920C7C0071F08F /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */; };
 		5D3A2F3C1C920C7C0071F08F /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */; };
-		5D3A2F3D1C920C810071F08F /* DecayAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */; };
-		5D3A2F3E1C920C860071F08F /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */; };
 		5D3A2F3F1C920C8C0071F08F /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4661C876AD1000CF9EE /* Animation.swift */; };
-		5D3A2F401C920C8C0071F08F /* AnyValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */; };
-		5D3A2F411C920C8C0071F08F /* ValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */; };
+		5D3A2F401C920C8C0071F08F /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */; };
 		5D3A2F421C920C8C0071F08F /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
-		5D3A2F431C920C920071F08F /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
-		5D3A2F441C920C920071F08F /* AnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */; };
-		5D3A2F451C920C970071F08F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Event.swift */; };
+		5D3A2F451C920C970071F08F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
 		5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
-		5D3A2F471C920CB10071F08F /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5D3A2F481C920CBC0071F08F /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
-		5D3A2F491C920CBC0071F08F /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
-		5D3A2F4A1C920CBC0071F08F /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
-		5D3A2F4B1C920CBC0071F08F /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
+		5D3A2F491C920CBC0071F08F /* SimulationFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */; };
+		5D3A2F4A1C920CBC0071F08F /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* Simulation.swift */; };
+		5D3A2F4B1C920CBC0071F08F /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Simulator.swift */; };
 		5D3A2F4C1C920CBC0071F08F /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
 		5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */; };
-		5D3A2F4E1C920CC20071F08F /* Double+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double+VectorConvertible.swift */; };
-		5D3A2F4F1C920CC20071F08F /* CGFloat+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat+VectorConvertible.swift */; };
-		5D3A2F501C920CC20071F08F /* CGPoint+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint+VectorConvertible.swift */; };
-		5D3A2F511C920CC20071F08F /* CGRect+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect+VectorConvertible.swift */; };
-		5D3A2F521C920CC20071F08F /* CGSize+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4851C876AD1000CF9EE /* CGSize+VectorConvertible.swift */; };
-		5D3A2F531C920CC20071F08F /* CGVector+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector+VectorConvertible.swift */; };
+		5D3A2F4E1C920CC20071F08F /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double.swift */; };
+		5D3A2F4F1C920CC20071F08F /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat.swift */; };
+		5D3A2F501C920CC20071F08F /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint.swift */; };
+		5D3A2F511C920CC20071F08F /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect.swift */; };
+		5D3A2F521C920CC20071F08F /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4851C876AD1000CF9EE /* CGSize.swift */; };
+		5D3A2F531C920CC20071F08F /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector.swift */; };
 		5D3A2F541C920CCA0071F08F /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48B1C876AD1000CF9EE /* Vector1.swift */; };
 		5D3A2F551C920CCA0071F08F /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48C1C876AD1000CF9EE /* Vector2.swift */; };
 		5D3A2F561C920CCA0071F08F /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48D1C876AD1000CF9EE /* Vector3.swift */; };
 		5D3A2F571C920CCA0071F08F /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48E1C876AD1000CF9EE /* Vector4.swift */; };
-		5D3A2F581C920CCA0071F08F /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
 		5D3A2F591C920CCA0071F08F /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
 		5D3A2F5A1C920CCA0071F08F /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */; };
-		5D3A2F5F1C922DAA0071F08F /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
-		5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */; };
+		5D3A2F5F1C922DAA0071F08F /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* Loop.swift */; };
+		5D3A2F631C923ADB0071F08F /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F5E1C922DAA0071F08F /* Loop.swift */; };
 		5D3A2F6B1C92559B0071F08F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A2F6A1C92559B0071F08F /* AppDelegate.swift */; };
 		5D3A2F6D1C92559B0071F08F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A2F6C1C92559B0071F08F /* Assets.xcassets */; };
 		5D3A2F701C92559B0071F08F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3A2F6E1C92559B0071F08F /* MainMenu.xib */; };
@@ -125,67 +108,60 @@
 		5DA94F481C80DAA00039B9BB /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F471C80DAA00039B9BB /* VectorConvenienceTests.swift */; };
 		5DA94F4B1C80E2700039B9BB /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
 		5DA94F4D1C8112810039B9BB /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */; };
-		5DA94F4F1C8114680039B9BB /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* EventTests.swift */; };
-		5DB1A4911C876AD1000CF9EE /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4631C876AD1000CF9EE /* Animatable.swift */; };
+		5DA94F4F1C8114680039B9BB /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* ObservableTests.swift */; };
 		5DB1A4921C876AD1000CF9EE /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4651C876AD1000CF9EE /* Advanceable.swift */; };
 		5DB1A4931C876AD1000CF9EE /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4661C876AD1000CF9EE /* Animation.swift */; };
-		5DB1A4941C876AD1000CF9EE /* AnyValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */; };
+		5DB1A4941C876AD1000CF9EE /* AnyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */; };
 		5DB1A4951C876AD1000CF9EE /* BasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */; };
 		5DB1A4961C876AD1000CF9EE /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */; };
 		5DB1A4971C876AD1000CF9EE /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */; };
-		5DB1A4981C876AD1000CF9EE /* DecayAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */; };
-		5DB1A4991C876AD1000CF9EE /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */; };
-		5DB1A49A1C876AD1000CF9EE /* ValueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */; };
-		5DB1A49B1C876AD1000CF9EE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4721C876AD1000CF9EE /* Animator.swift */; };
-		5DB1A49C1C876AD1000CF9EE /* AnimatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */; };
-		5DB1A49D1C876AD1000CF9EE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Event.swift */; };
+		5DB1A49D1C876AD1000CF9EE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4751C876AD1000CF9EE /* Observable.swift */; };
 		5DB1A49E1C876AD1000CF9EE /* CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */; };
-		5DB1A4A01C876AD1000CF9EE /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47A1C876AD1000CF9EE /* Loop.swift */; };
 		5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */; };
-		5DB1A4A21C876AD1000CF9EE /* DynamicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */; };
-		5DB1A4A31C876AD1000CF9EE /* DynamicSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */; };
-		5DB1A4A41C876AD1000CF9EE /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Spring.swift */; };
+		5DB1A4A21C876AD1000CF9EE /* SimulationFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */; };
+		5DB1A4A31C876AD1000CF9EE /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47E1C876AD1000CF9EE /* Simulation.swift */; };
+		5DB1A4A41C876AD1000CF9EE /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A47F1C876AD1000CF9EE /* Simulator.swift */; };
 		5DB1A4A51C876AD1000CF9EE /* SpringFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */; };
-		5DB1A4A61C876AD1000CF9EE /* CGFloat+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat+VectorConvertible.swift */; };
-		5DB1A4A71C876AD1000CF9EE /* CGPoint+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint+VectorConvertible.swift */; };
-		5DB1A4A81C876AD1000CF9EE /* CGRect+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect+VectorConvertible.swift */; };
-		5DB1A4A91C876AD1000CF9EE /* CGSize+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4851C876AD1000CF9EE /* CGSize+VectorConvertible.swift */; };
-		5DB1A4AA1C876AD1000CF9EE /* CGVector+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector+VectorConvertible.swift */; };
-		5DB1A4AB1C876AD1000CF9EE /* Double+VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double+VectorConvertible.swift */; };
+		5DB1A4A61C876AD1000CF9EE /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4821C876AD1000CF9EE /* CGFloat.swift */; };
+		5DB1A4A71C876AD1000CF9EE /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4831C876AD1000CF9EE /* CGPoint.swift */; };
+		5DB1A4A81C876AD1000CF9EE /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4841C876AD1000CF9EE /* CGRect.swift */; };
+		5DB1A4A91C876AD1000CF9EE /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4851C876AD1000CF9EE /* CGSize.swift */; };
+		5DB1A4AA1C876AD1000CF9EE /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4861C876AD1000CF9EE /* CGVector.swift */; };
+		5DB1A4AB1C876AD1000CF9EE /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4871C876AD1000CF9EE /* Double.swift */; };
 		5DB1A4AC1C876AD1000CF9EE /* VectorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */; };
 		5DB1A4AD1C876AD1000CF9EE /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */; };
 		5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48B1C876AD1000CF9EE /* Vector1.swift */; };
 		5DB1A4AF1C876AD1000CF9EE /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48C1C876AD1000CF9EE /* Vector2.swift */; };
 		5DB1A4B01C876AD1000CF9EE /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48D1C876AD1000CF9EE /* Vector3.swift */; };
 		5DB1A4B11C876AD1000CF9EE /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48E1C876AD1000CF9EE /* Vector4.swift */; };
-		5DB1A4B21C876AD1000CF9EE /* VectorMathCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */; };
 		5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1A4901C876AD1000CF9EE /* Vector.swift */; };
-		5DE959E91C9388B9008487A8 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
+		5DE959E91C9388B9008487A8 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* LoopTests.swift */; };
 		5DE959F51C9392E1008487A8 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3A2F311C9209EE0071F08F /* Advance.framework */; };
-		5DE959FC1C93940E008487A8 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* EventTests.swift */; };
+		5DE959FC1C93940E008487A8 /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4E1C8114680039B9BB /* ObservableTests.swift */; };
 		5DE959FD1C93940E008487A8 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5A1C7A547300BAE519 /* VectorTests.swift */; };
 		5DE959FE1C93940E008487A8 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F471C80DAA00039B9BB /* VectorConvenienceTests.swift */; };
 		5DE959FF1C93940E008487A8 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22168B5C1C7A5E3500BAE519 /* BasicAnimationTests.swift */; };
 		5DE95A001C93940E008487A8 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */; };
 		5DE95A011C93940E008487A8 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */; };
-		5DE95A021C93940E008487A8 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */; };
+		5DE95A021C93940E008487A8 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE959E81C9388B9008487A8 /* LoopTests.swift */; };
+		970359C5203A2B6100028EFE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C4203A2B6100028EFE /* Animator.swift */; };
+		970359C6203A2B6100028EFE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C4203A2B6100028EFE /* Animator.swift */; };
+		970359C7203A2B6100028EFE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C4203A2B6100028EFE /* Animator.swift */; };
+		970359CA203A36A200028EFE /* SimulatedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C9203A36A200028EFE /* SimulatedAnimation.swift */; };
+		970359CB203A36A200028EFE /* SimulatedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C9203A36A200028EFE /* SimulatedAnimation.swift */; };
+		970359CC203A36A200028EFE /* SimulatedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359C9203A36A200028EFE /* SimulatedAnimation.swift */; };
+		970359CE203A420500028EFE /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359CD203A420500028EFE /* Sink.swift */; };
+		970359CF203A420500028EFE /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359CD203A420500028EFE /* Sink.swift */; };
+		970359D0203A420500028EFE /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970359CD203A420500028EFE /* Sink.swift */; };
+		9710075920378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
+		9710075A20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
+		9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710075820378A5300FC5BA1 /* SimulationState.swift */; };
+		97687CCC203A0BC200FAC3F3 /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
+		97687CCD203A0BC200FAC3F3 /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
+		97687CCE203A0BC200FAC3F3 /* GravityFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A752D1C84206D00A7F1FB /* GravityFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		228E206F1C9CB9B00058ADA1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5D39CEE01C6E983100DFCF86;
-			remoteInfo = Advance;
-		};
-		228E20711C9CB9B00058ADA1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 22F74AA41C7674BB004C6E4C;
-			remoteInfo = AdvanceSample;
-		};
 		228E20991C9CBBC30058ADA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
@@ -241,6 +217,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5D3A2F671C92559B0071F08F;
 			remoteInfo = "AdvanceSample-OSX";
+		};
+		970359D5203A569800028EFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D39CED81C6E983100DFCF86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 228E20401C9CB99D0058ADA1;
+			remoteInfo = "Advance-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -319,7 +302,7 @@
 		5D39CEF21C6E983100DFCF86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D3A2F311C9209EE0071F08F /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A2F351C9209EE0071F08F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
+		5D3A2F5E1C922DAA0071F08F /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		5D3A2F681C92559B0071F08F /* AdvanceSample-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AdvanceSample-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3A2F6A1C92559B0071F08F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D3A2F6C1C92559B0071F08F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -329,45 +312,41 @@
 		5DA94F491C80DEEB0039B9BB /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezierTests.swift; sourceTree = "<group>"; };
 		5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAMediaTimingFunctionTests.swift; sourceTree = "<group>"; };
-		5DA94F4E1C8114680039B9BB /* EventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
-		5DB1A4631C876AD1000CF9EE /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
+		5DA94F4E1C8114680039B9BB /* ObservableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
 		5DB1A4651C876AD1000CF9EE /* Advanceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanceable.swift; sourceTree = "<group>"; };
 		5DB1A4661C876AD1000CF9EE /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyValueAnimation.swift; sourceTree = "<group>"; };
+		5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyAnimation.swift; sourceTree = "<group>"; };
 		5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimation.swift; sourceTree = "<group>"; };
 		5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
-		5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecayAnimation.swift; sourceTree = "<group>"; };
-		5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
-		5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueAnimation.swift; sourceTree = "<group>"; };
-		5DB1A4721C876AD1000CF9EE /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorContext.swift; sourceTree = "<group>"; };
-		5DB1A4751C876AD1000CF9EE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		5DB1A4751C876AD1000CF9EE /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAMediaTimingFunction.swift; sourceTree = "<group>"; };
-		5DB1A47A1C876AD1000CF9EE /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecayFunction.swift; sourceTree = "<group>"; };
-		5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFunction.swift; sourceTree = "<group>"; };
-		5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicSolver.swift; sourceTree = "<group>"; };
-		5DB1A47F1C876AD1000CF9EE /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulationFunction.swift; sourceTree = "<group>"; };
+		5DB1A47E1C876AD1000CF9EE /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
+		5DB1A47F1C876AD1000CF9EE /* Simulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
 		5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringFunction.swift; sourceTree = "<group>"; };
-		5DB1A4821C876AD1000CF9EE /* CGFloat+VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+VectorConvertible.swift"; sourceTree = "<group>"; };
-		5DB1A4831C876AD1000CF9EE /* CGPoint+VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+VectorConvertible.swift"; sourceTree = "<group>"; };
-		5DB1A4841C876AD1000CF9EE /* CGRect+VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+VectorConvertible.swift"; sourceTree = "<group>"; };
-		5DB1A4851C876AD1000CF9EE /* CGSize+VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+VectorConvertible.swift"; sourceTree = "<group>"; };
-		5DB1A4861C876AD1000CF9EE /* CGVector+VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+VectorConvertible.swift"; sourceTree = "<group>"; };
-		5DB1A4871C876AD1000CF9EE /* Double+VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+VectorConvertible.swift"; sourceTree = "<group>"; };
+		5DB1A4821C876AD1000CF9EE /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		5DB1A4831C876AD1000CF9EE /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		5DB1A4841C876AD1000CF9EE /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		5DB1A4851C876AD1000CF9EE /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		5DB1A4861C876AD1000CF9EE /* CGVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
+		5DB1A4871C876AD1000CF9EE /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorConvertible.swift; sourceTree = "<group>"; };
 		5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpolatable.swift; sourceTree = "<group>"; };
 		5DB1A48B1C876AD1000CF9EE /* Vector1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector1.swift; sourceTree = "<group>"; };
 		5DB1A48C1C876AD1000CF9EE /* Vector2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
 		5DB1A48D1C876AD1000CF9EE /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		5DB1A48E1C876AD1000CF9EE /* Vector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector4.swift; sourceTree = "<group>"; };
-		5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorMathCapable.swift; sourceTree = "<group>"; };
 		5DB1A4901C876AD1000CF9EE /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
-		5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLinkTests.swift; sourceTree = "<group>"; };
+		5DE959E81C9388B9008487A8 /* LoopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopTests.swift; sourceTree = "<group>"; };
 		5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdvanceTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE959F41C9392E1008487A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DE95A061C93963A008487A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		970359C4203A2B6100028EFE /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		970359C9203A36A200028EFE /* SimulatedAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedAnimation.swift; sourceTree = "<group>"; };
+		970359CD203A420500028EFE /* Sink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sink.swift; sourceTree = "<group>"; };
+		9710075820378A5300FC5BA1 /* SimulationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,7 +436,6 @@
 			children = (
 				22142E661C810DA7000C6DEB /* GravityViewController.swift */,
 				226A752B1C84153E00A7F1FB /* GravitySimulation.swift */,
-				226A752D1C84206D00A7F1FB /* GravityFunction.swift */,
 			);
 			name = Gravity;
 			sourceTree = "<group>";
@@ -565,13 +543,13 @@
 		5D39CEEF1C6E983100DFCF86 /* AdvanceTests-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5DA94F4E1C8114680039B9BB /* EventTests.swift */,
+				5DA94F4E1C8114680039B9BB /* ObservableTests.swift */,
 				22168B5A1C7A547300BAE519 /* VectorTests.swift */,
 				5DA94F471C80DAA00039B9BB /* VectorConvenienceTests.swift */,
 				22168B5C1C7A5E3500BAE519 /* BasicAnimationTests.swift */,
 				5DA94F4A1C80E2700039B9BB /* UnitBezierTests.swift */,
 				5DA94F4C1C8112810039B9BB /* CAMediaTimingFunctionTests.swift */,
-				5DE959E81C9388B9008487A8 /* DisplayLinkTests.swift */,
+				5DE959E81C9388B9008487A8 /* LoopTests.swift */,
 				5D39CEF21C6E983100DFCF86 /* Info.plist */,
 			);
 			path = "AdvanceTests-iOS";
@@ -612,88 +590,50 @@
 		5DB1A4611C876AD1000CF9EE /* Advance */ = {
 			isa = PBXGroup;
 			children = (
-				5DB1A4621C876AD1000CF9EE /* Animatable */,
+				970359C3203A2B3B00028EFE /* Animator */,
 				5DB1A4641C876AD1000CF9EE /* Animation */,
-				5DB1A4711C876AD1000CF9EE /* Animator */,
-				5DB1A4741C876AD1000CF9EE /* Events */,
+				5DB1A4741C876AD1000CF9EE /* Observable */,
 				5DB1A4761C876AD1000CF9EE /* Extensions */,
 				5DB1A4791C876AD1000CF9EE /* Loop */,
-				5DB1A47B1C876AD1000CF9EE /* Dynamics */,
-				5DB1A4811C876AD1000CF9EE /* VectorConvertible */,
+				5DB1A47B1C876AD1000CF9EE /* Simulation */,
 				5DB1A4891C876AD1000CF9EE /* Vectors */,
 			);
 			path = Advance;
 			sourceTree = "<group>";
 		};
-		5DB1A4621C876AD1000CF9EE /* Animatable */ = {
-			isa = PBXGroup;
-			children = (
-				5DB1A4631C876AD1000CF9EE /* Animatable.swift */,
-			);
-			path = Animatable;
-			sourceTree = "<group>";
-		};
 		5DB1A4641C876AD1000CF9EE /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				5DB1A4681C876AD1000CF9EE /* Basic */,
-				5DB1A46C1C876AD1000CF9EE /* Decay */,
-				5DB1A46E1C876AD1000CF9EE /* Spring */,
-				5DB1A4661C876AD1000CF9EE /* Animation.swift */,
-				5DB1A4671C876AD1000CF9EE /* AnyValueAnimation.swift */,
-				5DB1A4701C876AD1000CF9EE /* ValueAnimation.swift */,
 				5DB1A4651C876AD1000CF9EE /* Advanceable.swift */,
+				5DB1A4661C876AD1000CF9EE /* Animation.swift */,
+				5DB1A4671C876AD1000CF9EE /* AnyAnimation.swift */,
+				5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */,
+				970359C9203A36A200028EFE /* SimulatedAnimation.swift */,
+				5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */,
+				5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
 		};
-		5DB1A4681C876AD1000CF9EE /* Basic */ = {
+		5DB1A4741C876AD1000CF9EE /* Observable */ = {
 			isa = PBXGroup;
 			children = (
-				5DB1A4691C876AD1000CF9EE /* BasicAnimation.swift */,
-				5DB1A46A1C876AD1000CF9EE /* TimingFunction.swift */,
-				5DB1A46B1C876AD1000CF9EE /* UnitBezier.swift */,
+				5DB1A4751C876AD1000CF9EE /* Observable.swift */,
+				970359CD203A420500028EFE /* Sink.swift */,
 			);
-			path = Basic;
-			sourceTree = "<group>";
-		};
-		5DB1A46C1C876AD1000CF9EE /* Decay */ = {
-			isa = PBXGroup;
-			children = (
-				5DB1A46D1C876AD1000CF9EE /* DecayAnimation.swift */,
-			);
-			path = Decay;
-			sourceTree = "<group>";
-		};
-		5DB1A46E1C876AD1000CF9EE /* Spring */ = {
-			isa = PBXGroup;
-			children = (
-				5DB1A46F1C876AD1000CF9EE /* SpringAnimation.swift */,
-			);
-			path = Spring;
-			sourceTree = "<group>";
-		};
-		5DB1A4711C876AD1000CF9EE /* Animator */ = {
-			isa = PBXGroup;
-			children = (
-				5DB1A4721C876AD1000CF9EE /* Animator.swift */,
-				5DB1A4731C876AD1000CF9EE /* AnimatorContext.swift */,
-			);
-			path = Animator;
-			sourceTree = "<group>";
-		};
-		5DB1A4741C876AD1000CF9EE /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				5DB1A4751C876AD1000CF9EE /* Event.swift */,
-			);
-			path = Events;
+			path = Observable;
 			sourceTree = "<group>";
 		};
 		5DB1A4761C876AD1000CF9EE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				5DB1A4771C876AD1000CF9EE /* CAMediaTimingFunction.swift */,
+				5DB1A4871C876AD1000CF9EE /* Double.swift */,
+				5DB1A4821C876AD1000CF9EE /* CGFloat.swift */,
+				5DB1A4831C876AD1000CF9EE /* CGPoint.swift */,
+				5DB1A4841C876AD1000CF9EE /* CGRect.swift */,
+				5DB1A4851C876AD1000CF9EE /* CGSize.swift */,
+				5DB1A4861C876AD1000CF9EE /* CGVector.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -701,37 +641,23 @@
 		5DB1A4791C876AD1000CF9EE /* Loop */ = {
 			isa = PBXGroup;
 			children = (
-				5DB1A47A1C876AD1000CF9EE /* Loop.swift */,
-				5D3A2F5E1C922DAA0071F08F /* DisplayLink.swift */,
+				5D3A2F5E1C922DAA0071F08F /* Loop.swift */,
 			);
 			path = Loop;
 			sourceTree = "<group>";
 		};
-		5DB1A47B1C876AD1000CF9EE /* Dynamics */ = {
+		5DB1A47B1C876AD1000CF9EE /* Simulation */ = {
 			isa = PBXGroup;
 			children = (
+				226A752D1C84206D00A7F1FB /* GravityFunction.swift */,
 				5DB1A47C1C876AD1000CF9EE /* DecayFunction.swift */,
-				5DB1A47D1C876AD1000CF9EE /* DynamicFunction.swift */,
-				5DB1A47E1C876AD1000CF9EE /* DynamicSolver.swift */,
-				5DB1A47F1C876AD1000CF9EE /* Spring.swift */,
+				5DB1A47D1C876AD1000CF9EE /* SimulationFunction.swift */,
+				5DB1A47E1C876AD1000CF9EE /* Simulation.swift */,
+				5DB1A47F1C876AD1000CF9EE /* Simulator.swift */,
 				5DB1A4801C876AD1000CF9EE /* SpringFunction.swift */,
+				9710075820378A5300FC5BA1 /* SimulationState.swift */,
 			);
-			name = Dynamics;
 			path = Simulation;
-			sourceTree = "<group>";
-		};
-		5DB1A4811C876AD1000CF9EE /* VectorConvertible */ = {
-			isa = PBXGroup;
-			children = (
-				5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */,
-				5DB1A4871C876AD1000CF9EE /* Double+VectorConvertible.swift */,
-				5DB1A4821C876AD1000CF9EE /* CGFloat+VectorConvertible.swift */,
-				5DB1A4831C876AD1000CF9EE /* CGPoint+VectorConvertible.swift */,
-				5DB1A4841C876AD1000CF9EE /* CGRect+VectorConvertible.swift */,
-				5DB1A4851C876AD1000CF9EE /* CGSize+VectorConvertible.swift */,
-				5DB1A4861C876AD1000CF9EE /* CGVector+VectorConvertible.swift */,
-			);
-			path = VectorConvertible;
 			sourceTree = "<group>";
 		};
 		5DB1A4891C876AD1000CF9EE /* Vectors */ = {
@@ -741,9 +667,9 @@
 				5DB1A48C1C876AD1000CF9EE /* Vector2.swift */,
 				5DB1A48D1C876AD1000CF9EE /* Vector3.swift */,
 				5DB1A48E1C876AD1000CF9EE /* Vector4.swift */,
-				5DB1A48F1C876AD1000CF9EE /* VectorMathCapable.swift */,
 				5DB1A4901C876AD1000CF9EE /* Vector.swift */,
 				5DB1A48A1C876AD1000CF9EE /* Interpolatable.swift */,
+				5DB1A4881C876AD1000CF9EE /* VectorConvertible.swift */,
 			);
 			path = Vectors;
 			sourceTree = "<group>";
@@ -763,6 +689,14 @@
 			);
 			path = "Advance-iOS";
 			sourceTree = SOURCE_ROOT;
+		};
+		970359C3203A2B3B00028EFE /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				970359C4203A2B6100028EFE /* Animator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -820,8 +754,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				228E206E1C9CB9B00058ADA1 /* PBXTargetDependency */,
-				228E20701C9CB9B00058ADA1 /* PBXTargetDependency */,
+				970359D6203A569800028EFE /* PBXTargetDependency */,
 				228E209A1C9CBBC30058ADA1 /* PBXTargetDependency */,
 			);
 			name = "AdvanceTests-tvOS";
@@ -1106,41 +1039,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				228E20421C9CB99D0058ADA1 /* Loop.swift in Sources */,
+				970359C6203A2B6100028EFE /* Animator.swift in Sources */,
+				970359CB203A36A200028EFE /* SimulatedAnimation.swift in Sources */,
 				228E20431C9CB99D0058ADA1 /* Interpolatable.swift in Sources */,
-				228E20441C9CB99D0058ADA1 /* CGFloat+VectorConvertible.swift in Sources */,
-				228E20451C9CB99D0058ADA1 /* AnimatorContext.swift in Sources */,
+				228E20441C9CB99D0058ADA1 /* CGFloat.swift in Sources */,
 				228E20461C9CB99D0058ADA1 /* VectorConvertible.swift in Sources */,
 				228E20471C9CB99D0058ADA1 /* Vector3.swift in Sources */,
 				228E20481C9CB99D0058ADA1 /* UnitBezier.swift in Sources */,
 				228E20491C9CB99D0058ADA1 /* Advanceable.swift in Sources */,
 				228E204A1C9CB99D0058ADA1 /* SpringFunction.swift in Sources */,
-				228E204B1C9CB99D0058ADA1 /* Animatable.swift in Sources */,
-				228E204C1C9CB99D0058ADA1 /* DisplayLink.swift in Sources */,
+				228E204C1C9CB99D0058ADA1 /* Loop.swift in Sources */,
 				228E204D1C9CB99D0058ADA1 /* BasicAnimation.swift in Sources */,
-				228E204E1C9CB99D0058ADA1 /* ValueAnimation.swift in Sources */,
-				228E204F1C9CB99D0058ADA1 /* CGSize+VectorConvertible.swift in Sources */,
-				228E20501C9CB99D0058ADA1 /* Spring.swift in Sources */,
+				228E204F1C9CB99D0058ADA1 /* CGSize.swift in Sources */,
+				228E20501C9CB99D0058ADA1 /* Simulator.swift in Sources */,
+				97687CCD203A0BC200FAC3F3 /* GravityFunction.swift in Sources */,
 				228E20511C9CB99D0058ADA1 /* Vector2.swift in Sources */,
 				228E20521C9CB99D0058ADA1 /* Vector4.swift in Sources */,
 				228E20531C9CB99D0058ADA1 /* Animation.swift in Sources */,
-				228E20541C9CB99D0058ADA1 /* DecayAnimation.swift in Sources */,
-				228E20551C9CB99D0058ADA1 /* SpringAnimation.swift in Sources */,
 				228E20561C9CB99D0058ADA1 /* DecayFunction.swift in Sources */,
 				228E20571C9CB99D0058ADA1 /* Vector.swift in Sources */,
-				228E20581C9CB99D0058ADA1 /* Double+VectorConvertible.swift in Sources */,
-				228E20591C9CB99D0058ADA1 /* AnyValueAnimation.swift in Sources */,
-				228E205A1C9CB99D0058ADA1 /* CGRect+VectorConvertible.swift in Sources */,
-				228E205B1C9CB99D0058ADA1 /* VectorMathCapable.swift in Sources */,
-				228E205C1C9CB99D0058ADA1 /* CGPoint+VectorConvertible.swift in Sources */,
+				228E20581C9CB99D0058ADA1 /* Double.swift in Sources */,
+				228E20591C9CB99D0058ADA1 /* AnyAnimation.swift in Sources */,
+				228E205A1C9CB99D0058ADA1 /* CGRect.swift in Sources */,
+				9710075A20378A5300FC5BA1 /* SimulationState.swift in Sources */,
+				228E205C1C9CB99D0058ADA1 /* CGPoint.swift in Sources */,
 				228E205D1C9CB99D0058ADA1 /* Vector1.swift in Sources */,
-				228E205E1C9CB99D0058ADA1 /* DynamicFunction.swift in Sources */,
-				228E205F1C9CB99D0058ADA1 /* Animator.swift in Sources */,
-				228E20601C9CB99D0058ADA1 /* DynamicSolver.swift in Sources */,
-				228E20611C9CB99D0058ADA1 /* CGVector+VectorConvertible.swift in Sources */,
+				228E205E1C9CB99D0058ADA1 /* SimulationFunction.swift in Sources */,
+				970359CF203A420500028EFE /* Sink.swift in Sources */,
+				228E20601C9CB99D0058ADA1 /* Simulation.swift in Sources */,
+				228E20611C9CB99D0058ADA1 /* CGVector.swift in Sources */,
 				228E20621C9CB99D0058ADA1 /* TimingFunction.swift in Sources */,
 				228E20631C9CB99D0058ADA1 /* CAMediaTimingFunction.swift in Sources */,
-				228E20641C9CB99D0058ADA1 /* Event.swift in Sources */,
+				228E20641C9CB99D0058ADA1 /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1150,10 +1080,10 @@
 			files = (
 				228E20731C9CB9B00058ADA1 /* CAMediaTimingFunctionTests.swift in Sources */,
 				228E20741C9CB9B00058ADA1 /* UnitBezierTests.swift in Sources */,
-				228E20751C9CB9B00058ADA1 /* DisplayLinkTests.swift in Sources */,
+				228E20751C9CB9B00058ADA1 /* LoopTests.swift in Sources */,
 				228E20761C9CB9B00058ADA1 /* VectorTests.swift in Sources */,
 				228E20771C9CB9B00058ADA1 /* BasicAnimationTests.swift in Sources */,
-				228E20781C9CB9B00058ADA1 /* EventTests.swift in Sources */,
+				228E20781C9CB9B00058ADA1 /* ObservableTests.swift in Sources */,
 				228E20791C9CB9B00058ADA1 /* VectorConvenienceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1184,7 +1114,6 @@
 				22142E651C810D86000C6DEB /* ActivityViewController.swift in Sources */,
 				22F74AB81C76769C004C6E4C /* GesturesViewController.swift in Sources */,
 				222E211F1C7D8CF00063FAA2 /* SpringConfigurationView.swift in Sources */,
-				226A752E1C84206D00A7F1FB /* GravityFunction.swift in Sources */,
 				226A752C1C84153E00A7F1FB /* GravitySimulation.swift in Sources */,
 				223E49731C76C9430048CAB6 /* SpringsViewController.swift in Sources */,
 				222E21231C7E448D0063FAA2 /* DemoViewController.swift in Sources */,
@@ -1195,41 +1124,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DB1A4A01C876AD1000CF9EE /* Loop.swift in Sources */,
+				970359C5203A2B6100028EFE /* Animator.swift in Sources */,
+				970359CA203A36A200028EFE /* SimulatedAnimation.swift in Sources */,
 				5DB1A4AD1C876AD1000CF9EE /* Interpolatable.swift in Sources */,
-				5DB1A4A61C876AD1000CF9EE /* CGFloat+VectorConvertible.swift in Sources */,
-				5DB1A49C1C876AD1000CF9EE /* AnimatorContext.swift in Sources */,
+				5DB1A4A61C876AD1000CF9EE /* CGFloat.swift in Sources */,
 				5DB1A4AC1C876AD1000CF9EE /* VectorConvertible.swift in Sources */,
 				5DB1A4B01C876AD1000CF9EE /* Vector3.swift in Sources */,
 				5DB1A4971C876AD1000CF9EE /* UnitBezier.swift in Sources */,
 				5DB1A4921C876AD1000CF9EE /* Advanceable.swift in Sources */,
 				5DB1A4A51C876AD1000CF9EE /* SpringFunction.swift in Sources */,
-				5DB1A4911C876AD1000CF9EE /* Animatable.swift in Sources */,
-				5D3A2F5F1C922DAA0071F08F /* DisplayLink.swift in Sources */,
+				5D3A2F5F1C922DAA0071F08F /* Loop.swift in Sources */,
 				5DB1A4951C876AD1000CF9EE /* BasicAnimation.swift in Sources */,
-				5DB1A49A1C876AD1000CF9EE /* ValueAnimation.swift in Sources */,
-				5DB1A4A91C876AD1000CF9EE /* CGSize+VectorConvertible.swift in Sources */,
-				5DB1A4A41C876AD1000CF9EE /* Spring.swift in Sources */,
+				5DB1A4A91C876AD1000CF9EE /* CGSize.swift in Sources */,
+				5DB1A4A41C876AD1000CF9EE /* Simulator.swift in Sources */,
+				97687CCE203A0BC200FAC3F3 /* GravityFunction.swift in Sources */,
 				5DB1A4AF1C876AD1000CF9EE /* Vector2.swift in Sources */,
 				5DB1A4B11C876AD1000CF9EE /* Vector4.swift in Sources */,
 				5DB1A4931C876AD1000CF9EE /* Animation.swift in Sources */,
-				5DB1A4981C876AD1000CF9EE /* DecayAnimation.swift in Sources */,
-				5DB1A4991C876AD1000CF9EE /* SpringAnimation.swift in Sources */,
 				5DB1A4A11C876AD1000CF9EE /* DecayFunction.swift in Sources */,
 				5DB1A4B31C876AD1000CF9EE /* Vector.swift in Sources */,
-				5DB1A4AB1C876AD1000CF9EE /* Double+VectorConvertible.swift in Sources */,
-				5DB1A4941C876AD1000CF9EE /* AnyValueAnimation.swift in Sources */,
-				5DB1A4A81C876AD1000CF9EE /* CGRect+VectorConvertible.swift in Sources */,
-				5DB1A4B21C876AD1000CF9EE /* VectorMathCapable.swift in Sources */,
-				5DB1A4A71C876AD1000CF9EE /* CGPoint+VectorConvertible.swift in Sources */,
+				5DB1A4AB1C876AD1000CF9EE /* Double.swift in Sources */,
+				5DB1A4941C876AD1000CF9EE /* AnyAnimation.swift in Sources */,
+				5DB1A4A81C876AD1000CF9EE /* CGRect.swift in Sources */,
+				9710075920378A5300FC5BA1 /* SimulationState.swift in Sources */,
+				5DB1A4A71C876AD1000CF9EE /* CGPoint.swift in Sources */,
 				5DB1A4AE1C876AD1000CF9EE /* Vector1.swift in Sources */,
-				5DB1A4A21C876AD1000CF9EE /* DynamicFunction.swift in Sources */,
-				5DB1A49B1C876AD1000CF9EE /* Animator.swift in Sources */,
-				5DB1A4A31C876AD1000CF9EE /* DynamicSolver.swift in Sources */,
-				5DB1A4AA1C876AD1000CF9EE /* CGVector+VectorConvertible.swift in Sources */,
+				5DB1A4A21C876AD1000CF9EE /* SimulationFunction.swift in Sources */,
+				970359CE203A420500028EFE /* Sink.swift in Sources */,
+				5DB1A4A31C876AD1000CF9EE /* Simulation.swift in Sources */,
+				5DB1A4AA1C876AD1000CF9EE /* CGVector.swift in Sources */,
 				5DB1A4961C876AD1000CF9EE /* TimingFunction.swift in Sources */,
 				5DB1A49E1C876AD1000CF9EE /* CAMediaTimingFunction.swift in Sources */,
-				5DB1A49D1C876AD1000CF9EE /* Event.swift in Sources */,
+				5DB1A49D1C876AD1000CF9EE /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1239,10 +1165,10 @@
 			files = (
 				5DA94F4D1C8112810039B9BB /* CAMediaTimingFunctionTests.swift in Sources */,
 				5DA94F4B1C80E2700039B9BB /* UnitBezierTests.swift in Sources */,
-				5DE959E91C9388B9008487A8 /* DisplayLinkTests.swift in Sources */,
+				5DE959E91C9388B9008487A8 /* LoopTests.swift in Sources */,
 				22168B5B1C7A547300BAE519 /* VectorTests.swift in Sources */,
 				22168B5D1C7A5E3500BAE519 /* BasicAnimationTests.swift in Sources */,
-				5DA94F4F1C8114680039B9BB /* EventTests.swift in Sources */,
+				5DA94F4F1C8114680039B9BB /* ObservableTests.swift in Sources */,
 				5DA94F481C80DAA00039B9BB /* VectorConvenienceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1251,41 +1177,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D3A2F471C920CB10071F08F /* Loop.swift in Sources */,
-				5D3A2F441C920C920071F08F /* AnimatorContext.swift in Sources */,
+				970359C7203A2B6100028EFE /* Animator.swift in Sources */,
+				970359CC203A36A200028EFE /* SimulatedAnimation.swift in Sources */,
 				5D3A2F3C1C920C7C0071F08F /* UnitBezier.swift in Sources */,
-				5D3A2F411C920C8C0071F08F /* ValueAnimation.swift in Sources */,
 				5D3A2F4C1C920CBC0071F08F /* SpringFunction.swift in Sources */,
-				5D3A2F391C920C710071F08F /* Animatable.swift in Sources */,
 				5D3A2F3A1C920C7C0071F08F /* BasicAnimation.swift in Sources */,
 				5D3A2F591C920CCA0071F08F /* Vector.swift in Sources */,
 				5D3A2F3F1C920C8C0071F08F /* Animation.swift in Sources */,
-				5D3A2F4F1C920CC20071F08F /* CGFloat+VectorConvertible.swift in Sources */,
-				5D3A2F531C920CC20071F08F /* CGVector+VectorConvertible.swift in Sources */,
-				5D3A2F4B1C920CBC0071F08F /* Spring.swift in Sources */,
-				5D3A2F3E1C920C860071F08F /* SpringAnimation.swift in Sources */,
+				5D3A2F4F1C920CC20071F08F /* CGFloat.swift in Sources */,
+				5D3A2F531C920CC20071F08F /* CGVector.swift in Sources */,
+				5D3A2F4B1C920CBC0071F08F /* Simulator.swift in Sources */,
 				5D3A2F541C920CCA0071F08F /* Vector1.swift in Sources */,
 				5D3A2F571C920CCA0071F08F /* Vector4.swift in Sources */,
-				5D3A2F521C920CC20071F08F /* CGSize+VectorConvertible.swift in Sources */,
+				5D3A2F521C920CC20071F08F /* CGSize.swift in Sources */,
+				97687CCC203A0BC200FAC3F3 /* GravityFunction.swift in Sources */,
 				5D3A2F421C920C8C0071F08F /* Advanceable.swift in Sources */,
 				5D3A2F5A1C920CCA0071F08F /* Interpolatable.swift in Sources */,
-				5D3A2F4E1C920CC20071F08F /* Double+VectorConvertible.swift in Sources */,
-				5D3A2F3D1C920C810071F08F /* DecayAnimation.swift in Sources */,
+				5D3A2F4E1C920CC20071F08F /* Double.swift in Sources */,
 				5D3A2F481C920CBC0071F08F /* DecayFunction.swift in Sources */,
 				5D3A2F3B1C920C7C0071F08F /* TimingFunction.swift in Sources */,
-				5D3A2F511C920CC20071F08F /* CGRect+VectorConvertible.swift in Sources */,
-				5D3A2F491C920CBC0071F08F /* DynamicFunction.swift in Sources */,
-				5D3A2F501C920CC20071F08F /* CGPoint+VectorConvertible.swift in Sources */,
-				5D3A2F581C920CCA0071F08F /* VectorMathCapable.swift in Sources */,
-				5D3A2F631C923ADB0071F08F /* DisplayLink.swift in Sources */,
+				5D3A2F511C920CC20071F08F /* CGRect.swift in Sources */,
+				5D3A2F491C920CBC0071F08F /* SimulationFunction.swift in Sources */,
+				5D3A2F501C920CC20071F08F /* CGPoint.swift in Sources */,
+				9710075B20378A5300FC5BA1 /* SimulationState.swift in Sources */,
+				5D3A2F631C923ADB0071F08F /* Loop.swift in Sources */,
 				5D3A2F4D1C920CC20071F08F /* VectorConvertible.swift in Sources */,
-				5D3A2F431C920C920071F08F /* Animator.swift in Sources */,
-				5D3A2F401C920C8C0071F08F /* AnyValueAnimation.swift in Sources */,
+				5D3A2F401C920C8C0071F08F /* AnyAnimation.swift in Sources */,
+				970359D0203A420500028EFE /* Sink.swift in Sources */,
 				5D3A2F461C920C9C0071F08F /* CAMediaTimingFunction.swift in Sources */,
-				5D3A2F4A1C920CBC0071F08F /* DynamicSolver.swift in Sources */,
+				5D3A2F4A1C920CBC0071F08F /* Simulation.swift in Sources */,
 				5D3A2F551C920CCA0071F08F /* Vector2.swift in Sources */,
 				5D3A2F561C920CCA0071F08F /* Vector3.swift in Sources */,
-				5D3A2F451C920C970071F08F /* Event.swift in Sources */,
+				5D3A2F451C920C970071F08F /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1305,27 +1228,17 @@
 			files = (
 				5DE959FE1C93940E008487A8 /* VectorConvenienceTests.swift in Sources */,
 				5DE95A001C93940E008487A8 /* UnitBezierTests.swift in Sources */,
-				5DE95A021C93940E008487A8 /* DisplayLinkTests.swift in Sources */,
+				5DE95A021C93940E008487A8 /* LoopTests.swift in Sources */,
 				5DE95A011C93940E008487A8 /* CAMediaTimingFunctionTests.swift in Sources */,
 				5DE959FF1C93940E008487A8 /* BasicAnimationTests.swift in Sources */,
 				5DE959FD1C93940E008487A8 /* VectorTests.swift in Sources */,
-				5DE959FC1C93940E008487A8 /* EventTests.swift in Sources */,
+				5DE959FC1C93940E008487A8 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		228E206E1C9CB9B00058ADA1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5D39CEE01C6E983100DFCF86 /* Advance-iOS */;
-			targetProxy = 228E206F1C9CB9B00058ADA1 /* PBXContainerItemProxy */;
-		};
-		228E20701C9CB9B00058ADA1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 22F74AA41C7674BB004C6E4C /* AdvanceSample-iOS */;
-			targetProxy = 228E20711C9CB9B00058ADA1 /* PBXContainerItemProxy */;
-		};
 		228E209A1C9CBBC30058ADA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 228E20851C9CBA490058ADA1 /* AdvanceSample-tvOS */;
@@ -1366,6 +1279,11 @@
 			target = 5D3A2F671C92559B0071F08F /* AdvanceSample-OSX */;
 			targetProxy = 5DE95A031C939427008487A8 /* PBXContainerItemProxy */;
 		};
+		970359D6203A569800028EFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 228E20401C9CB99D0058ADA1 /* Advance-tvOS */;
+			targetProxy = 970359D5203A569800028EFE /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1401,14 +1319,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Advance-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -1425,14 +1342,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Advance-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -1440,13 +1356,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "AdvanceTests-tvOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdvanceSample-tvOS.app/AdvanceSample-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -1454,13 +1370,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "AdvanceTests-tvOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdvanceSample-tvOS.app/AdvanceSample-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -1473,11 +1389,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "AdvanceSample-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -1490,11 +1406,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "AdvanceSample-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -1505,9 +1421,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/AdvanceSample-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.AdvanceSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.AdvanceSample;
 				PRODUCT_NAME = AdvanceSample;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1520,9 +1436,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/AdvanceSample-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.AdvanceSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.AdvanceSample;
 				PRODUCT_NAME = AdvanceSample;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -1650,9 +1566,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Advance-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1673,9 +1589,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Advance-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1687,9 +1603,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "AdvanceTests-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = Advance;
 				SWIFT_VERSION = 4.0;
@@ -1701,9 +1617,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "AdvanceTests-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = Advance;
 				SWIFT_VERSION = 4.0;
@@ -1724,8 +1640,8 @@
 				INFOPLIST_FILE = "Advance-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.Advance-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.Advance-OSX";
 				PRODUCT_NAME = Advance;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1745,8 +1661,8 @@
 				INFOPLIST_FILE = "Advance-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.Advance-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.Advance-OSX";
 				PRODUCT_NAME = Advance;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1763,8 +1679,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "AdvanceSample-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1780,8 +1696,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "AdvanceSample-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1851,9 +1767,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Advance-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1874,14 +1790,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Advance-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_NAME = Advance;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Distribution;
 		};
@@ -1898,8 +1813,8 @@
 				INFOPLIST_FILE = "Advance-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.Advance-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.Advance-OSX";
 				PRODUCT_NAME = Advance;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1911,9 +1826,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "AdvanceTests-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = Advance;
 				SWIFT_VERSION = 4.0;
@@ -1925,13 +1840,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "AdvanceTests-tvOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.Advance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdvanceSample-tvOS.app/AdvanceSample-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Distribution;
 		};
@@ -1942,8 +1857,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "AdvanceTests-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceTests-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1958,9 +1873,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/AdvanceSample-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.storehouse.AdvanceSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.AdvanceSample;
 				PRODUCT_NAME = AdvanceSample;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -1976,8 +1891,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "AdvanceSample-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -1993,11 +1908,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "AdvanceSample-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceSample-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceSample-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Distribution;
 		};
@@ -2008,8 +1923,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "AdvanceTests-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceTests-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -2024,8 +1939,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "AdvanceTests-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.storehouse.AdvanceTests-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.AdvanceTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;

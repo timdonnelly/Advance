@@ -1,31 +1,3 @@
-/*
- 
- Copyright (c) 2016, Storehouse Media Inc.
- All rights reserved.
- 
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
- 
- * Redistributions of source code must retain the above copyright notice, this
- list of conditions and the following disclaimer.
- 
- * Redistributions in binary form must reproduce the above copyright notice,
- this list of conditions and the following disclaimer in the documentation
- and/or other materials provided with the distribution.
- 
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
- FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
- OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- 
- */
-
 import QuartzCore
 
 extension CAMediaTimingFunction: TimingFunction {
@@ -38,14 +10,20 @@ extension CAMediaTimingFunction: TimingFunction {
     /// Returns a `UnitBezier` instance created from this timing function's
     /// control points.
     public var unitBezier: UnitBezier {
-        let pointsPointer1 = UnsafeMutablePointer<Float>.allocate(capacity: 2)
-        let pointsPointer2 = UnsafeMutablePointer<Float>.allocate(capacity: 2)
-        getControlPoint(at: 1, values: pointsPointer1)
-        getControlPoint(at: 2, values: pointsPointer2)
-        let b = UnitBezier(p1x: Scalar(pointsPointer1[0]), p1y: Scalar(pointsPointer1[1]), p2x: Scalar(pointsPointer2[0]), p2y: Scalar(pointsPointer2[1]))
-        pointsPointer1.deallocate(capacity: 2)
-        pointsPointer2.deallocate(capacity: 2)
-        return b
+        return UnitBezier(firstX: controlPoints[1].x,
+                          firstY: controlPoints[1].y,
+                          secondX: controlPoints[2].x,
+                          secondY: controlPoints[2].y)
+    }
+    
+    private var controlPoints: [(x: Scalar, y: Scalar)] {
+        return (0...3).lazy.map { (index) in
+            
+            var rawValues: [Float] = [0.0, 0.0]
+            getControlPoint(at: index, values: &rawValues)
+            
+            return (x: Scalar(rawValues[0]), y: Scalar(rawValues[1]))
+        }
     }
     
 }

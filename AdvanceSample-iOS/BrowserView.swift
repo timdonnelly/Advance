@@ -1,31 +1,3 @@
-/*
-
-Copyright (c) 2016, Storehouse Media Inc.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-*/
-
 import UIKit
 import Advance
 
@@ -72,20 +44,20 @@ class BrowserItem: NSObject {
     override init() {
         super.init()
         
-        center.configuration.threshold = 0.1
-        center.configuration.tension = 120.0
-        center.configuration.damping = 27.0
-        center.changed.observe { [unowned self] (p) -> Void in
+        center.threshold = 0.1
+        center.tension = 120.0
+        center.damping = 27.0
+        center.values.observe { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
-        transform.configuration.threshold = 0.001
-        transform.changed.observe { [unowned self] (p) -> Void in
+        transform.threshold = 0.001
+        transform.values.observe { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
-        size.configuration.threshold = 0.1
-        size.changed.observe { [unowned self] (p) -> Void in
+        size.threshold = 0.1
+        size.values.observe { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
@@ -145,14 +117,9 @@ class BrowserItem: NSObject {
             var velocity = SimpleTransform.zero
             velocity.scale = recognizer.scaleVelocity
             velocity.rotation = recognizer.rotationVelocity
-            var config = SpringConfiguration()
-            config.threshold = 0.001
             transform.velocity = velocity
             
             let centerVel = recognizer.translationVelocityInView(view.superview)
-            var centerConfig = SpringConfiguration()
-            centerConfig.tension = 40.0
-            centerConfig.damping = 5.0
             center.velocity = centerVel
             
             gestureInProgress = false
@@ -232,7 +199,7 @@ class BrowserView: UIView {
     
     fileprivate let paginationRatio: CGFloat = 0.68
     
-    fileprivate let index = Animatable(value: CGFloat.zero)
+    fileprivate let index = Spring(value: CGFloat.zero)
     
     fileprivate var panInProgress = false
     fileprivate var indexWhenPanBegan: CGFloat = 0.0
@@ -247,9 +214,9 @@ class BrowserView: UIView {
     
     fileprivate let coverVisibilty: Spring<CGFloat> = {
         let s = Spring(value: CGFloat(1.0))
-        s.configuration.threshold = 0.001
-        s.configuration.tension = 220.0
-        s.configuration.damping = 28.0
+        s.threshold = 0.001
+        s.tension = 220.0
+        s.damping = 28.0
         return s
     }()
     
@@ -292,18 +259,22 @@ class BrowserView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        index.changed.observe { [unowned self] (idx) -> Void in
+        index.values.observe { [unowned self] (idx) -> Void in
             self.setNeedsLayout()
             self.delegate?.browserViewDidScroll(self)
         }
         
-        coverVisibilty.changed.observe { [unowned self] (v) in
+        coverVisibilty.values.observe { [unowned self] (v) in
             self.setNeedsLayout()
         }
         
         panRecognizer.addTarget(self, action: #selector(pan(_:)))
         panRecognizer.delegate = self
         addGestureRecognizer(panRecognizer)
+        
+        index.tension = 120.0
+        index.damping = 20.0
+        index.threshold = 0.001
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -387,13 +358,13 @@ class BrowserView: UIView {
         
         let tension = 60.0 + Scalar(distance) * 40.0
         
-        item.transform.configuration.tension = tension
-        item.transform.configuration.damping = 18.0
+        item.transform.tension = tension
+        item.transform.damping = 18.0
         
         if item == fullScreenItem {
             transform.scale = 1.0
-            item.transform.configuration.tension = 160.0
-            item.transform.configuration.damping = 28.0
+            item.transform.tension = 160.0
+            item.transform.damping = 28.0
         }
         
         if animated {
@@ -455,7 +426,7 @@ class BrowserView: UIView {
         leaveFullScreen()
         fullScreenItem = item
         updateAllItems(true)
-        index.animate(to: CGFloat(items.index(of: item)! + 1))
+        index.target = CGFloat(items.index(of: item)! + 1)
         delegate?.browserView(self, didEnterFullScreenForItem: item)
     }
     
@@ -471,9 +442,10 @@ class BrowserView: UIView {
         case .began:
             panInProgress = true
             indexWhenPanBegan = index.value
-            index.cancelAnimation()
+            index.reset(to: index.value)
         case .changed:
-            index.value = indexWhenPanBegan - (recognizer.translation(in: self).x / bounds.width * paginationRatio)
+            let newIndex = indexWhenPanBegan - (recognizer.translation(in: self).x / bounds.width * paginationRatio)
+            index.reset(to: newIndex)
             break
         case .ended, .cancelled:
             panInProgress = false
@@ -488,11 +460,8 @@ class BrowserView: UIView {
             }
             destIndex = min(destIndex, CGFloat(items.count))
             destIndex = max(destIndex, CGFloat(0.0))
-            var config = SpringConfiguration()
-            config.tension = 120.0
-            config.damping = 20.0
-            config.threshold = 0.001
-            index.spring(to: destIndex, initialVelocity: vel, configuration: config, completion: nil)
+            index.velocity = vel
+            index.target = destIndex
         default:
             break
         }

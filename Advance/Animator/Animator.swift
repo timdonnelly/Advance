@@ -1,208 +1,187 @@
-/*
+public final class Animator<T> where T: Animation {
 
-Copyright (c) 2016, Storehouse Media Inc.
-All rights reserved.
+    private (set) public var state: State
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-*/
+    private var animation: T
+    private let loop: Loop
+    private let valueSink: Sink<T.Result>
+    
+    private var completionHandlers: [(Result) -> Void]
+    private var changeHandlers: [(T.Result) -> Void]
+    
+    public init(animation: T) {
+        self.animation = animation
+        self.state = State.running
+        self.loop = Loop()
+        self.changeHandlers = []
+        self.completionHandlers = []
+        self.valueSink = Sink()
+        
+        if animation.isFinished {
+            self.state = State.done(result: .finished)
+        }
+        
+        loop.frames.observe { [weak self] (frame) in
+            self?.advance(by: frame.duration)
+        }
+        
+        onCompletion { (_) in
+            /// Intentionally retain self. All completion handlers are dicarded at the
+            /// completion of an animation, so the animator will automatically be
+            /// cleaned up when the animation cancels or finishes.
+            self.breakIntentionalRetainCycle()
+        }
+        
+        if state == .running {
+            loop.paused = false
+        }
+    }
+    
+    private func breakIntentionalRetainCycle() {
+        /// noop.
+    }
+    
+    private func advance(by time: Double) {
+        guard state == .running else { return }
+        animation.advance(by: time)
+        
+        for handler in changeHandlers {
+            handler(animation.value)
+        }
+        
+        if animation.isFinished {
+            complete(with: .finished)
+        }
+    }
+    
+    private func complete(with result: Result) {
+        guard state == .running else { return }
+        state = State.done(result: result)
+        completionHandlers.forEach { $0(result) }
+        completionHandlers.removeAll()
+        changeHandlers.removeAll()
+    }
+    
+    @discardableResult
+    public func onChange(_ handler: @escaping (T.Result) -> Void) -> Animator<T> {
+        switch state {
+        case .running:
+            changeHandlers.append(handler)
+        case .done(_):
+            break
+        }
+        return self
+    }
+    
+    /// If the animator is already in a completed state, the given handler
+    /// will be called immediately.
+    @discardableResult
+    public func onCompletion(_ handler: @escaping (Result) -> Void) -> Animator<T> {
+        switch state {
+        case .running:
+            completionHandlers.append(handler)
+        case let .done(result):
+            handler(result)
+        }
+        return self
+    }
+    
+    @discardableResult
+    public func onFinish(_ handler: @escaping () -> Void) -> Animator<T> {
+        onCompletion { (result) in
+            guard result == .finished else { return }
+            handler()
+        }
+        return self
+    }
+    
+    @discardableResult
+    public func onCancel(_ handler: @escaping () -> Void) -> Animator<T> {
+        onCompletion { (result) in
+            guard result == .cancelled else { return }
+            handler()
+        }
+        return self
+    }
+    
+    public func cancel() {
+        guard state == .running else { return }
+        complete(with: .cancelled)
+    }
+    
+    public var isRunning: Bool {
+        if case .running = state {
+            return true
+        }
+        return false
+    }
+    
+    public var isCancelled: Bool {
+        switch state {
+        case .running:
+            return false
+        case let .done(result):
+            return result == .cancelled
+        }
+    }
+    
+    public var isFinished: Bool {
+        switch state {
+        case .running:
+            return false
+        case let .done(result):
+            return result == .finished
+        }
+    }
+    
+    
+}
 
 public extension Animator {
     
-    /// The state of an `Animator` instance.
     public enum State: Equatable {
-        /// The animator has not yet started.
-        case pending
         
-        /// The animator is currently running.
         case running
+        case done(result: Result)
         
-        /// The animator has stopped running.
-        case completed(Result)
-        
-        /// Equatable
         public static func ==(lhs: State, rhs: State) -> Bool {
             switch (lhs, rhs) {
-            case (.pending, .pending):
-                return true
             case (.running, .running):
                 return true
-            case (.completed(let l), .completed(let r)):
+            case let (.done(l), .done(r)):
                 return l == r
             default:
                 return false
             }
         }
-        
     }
-    
 }
 
-public extension Animator.State {
-    
-    /// The possible result cases of an animator.
+public extension Animator {
+
     public enum Result {
-        /// The animator was cancelled before the animation completed.
-        case cancelled
-        
-        /// The animator successfully ran the animation until it was finished.
         case finished
+        case cancelled
     }
     
 }
 
+public extension Animator {
+    
+    @discardableResult
+    public func bind<Root>(to object: Root, keyPath: ReferenceWritableKeyPath<Root, T.Result>) -> Animator<T> {
+        onChange { (value) in
+            object[keyPath: keyPath] = value
+        }
+        return self
+    }
+    
+}
 
-
-/// Runs an animation until the animations finishes, or until `cancel()` 
-/// is called.
-///
-/// The `Animator` class is one-shot: It runs the animation precisely one time.
-///
-/// It starts in the `Pending` state. From here either:
-/// - It enters the running state. This occurs if start() is called.
-/// - It is cancelled. This occurs if cancel() is called, and causes the animator
-///   to enter the `Completed` state, with a result of `Cancelled`.
-///
-/// After entering the `Running` state, the `started` event is fired. The 
-/// animation then updates on every frame, triggering the `changed` event each
-/// time, until either:
-/// - The animation finishes on its own, after which the animator enters the
-///   `Completed` state, with a result of `Finished`.
-/// - `cancel()` is called, after which the animator enters the `Completed`
-///   state, with a result of `Cancelled`.
-///
-/// When the animator enters the `Completed` state, it triggers either the
-/// `cancelled` or `finished` event, depending on the result. After entering
-/// the `Completed` state, the animator is finished and no further state changes
-/// can occur.
-public final class Animator<A: Animation> {
+public extension Animation {
     
-    fileprivate lazy var subscription: Loop.Subscription? = {
-        
-        let s = Loop.shared.subscribe()
-        
-        s.advanced.observe({ [unowned self] (elapsed) -> Void in
-            guard self.state == .running else { return }
-            self.animation.advance(by: elapsed)
-            self.changed.fire(value: self.animation)
-            if self.animation.finished == true {
-                self.finish()
-            }
-        })
-        
-        return s
-    }()
-    
-    /// The current state of the animator. Animators begin in a running state,
-    /// and they are guarenteed to transition into either the cancelled or
-    /// finished state exactly one time – no further state changes are allowed.
-    fileprivate (set) public var state: State = .pending {
-        willSet {
-            guard newValue != state else { return }
-            switch newValue {
-            case .pending:
-                assert(false, "Invalid state transition")
-            case .running:
-                assert(state == .pending, "Invalid state transition")
-            case .completed(_):
-                assert(state == .pending || state == .running, "Invalid state transition")
-            }
-        }
-        didSet {
-            guard oldValue != state else { return }
-            switch state {
-            case .pending:
-                 break
-            case .running:
-                started.close(value: animation)
-            case .completed(let result):
-                switch result {
-                case .cancelled:
-                    cancelled.close(value: animation)
-                case .finished:
-                    finished.close(value: animation)
-                }
-            }
-        }
+    public func run() -> Animator<Self> {
+        return Animator(animation: self)
     }
     
-    /// The animation that is being run.
-    fileprivate (set) public var animation: A
-    
-    /// Fired when the animator starts running
-    public let started = Event<A>()
-    
-    /// Fired after every animation update.
-    public let changed = Event<A>()
-    
-    /// Fired if the animator is cancelled.
-    public let cancelled = Event<A>()
-    
-    /// Fired when the animation finishes.
-    public let finished = Event<A>()
-    
-    /// Creates a new animator.
-    ///
-    /// - parameter animation: The animation to be run.
-    public init(animation: A, loop: Loop = Loop.shared) {
-        self.animation = animation
-    }
-    
-    deinit {
-        if state == .running || state == .pending {
-            cancel()
-        }
-    }
-    
-    
-    /// Starts a pending animation
-    ///
-    /// If the animator is not in a `pending` state, calling start() will have
-    /// no effect.
-    public func start() {
-        guard state == .pending else { return }
-        state = .running
-        if animation.finished == true {
-            finish()
-        } else {
-            subscription?.paused = false
-        }
-    }
-    
-    /// Cancels the animation.
-    ///
-    /// If the animator is in a `running` or `pending` state, this will immediately
-    /// transition to the `cancelled` state (and call any `onCancel` observers). 
-    /// If the animator is already cancelled or finished, calling `cancel()` will 
-    /// have no effect.
-    public func cancel() {
-        guard state == .running || state == .pending else { return }
-        state = .completed(.cancelled)
-        subscription = nil
-    }
-    
-    fileprivate func finish() {
-        assert(state == .running || state == .pending)
-        state = .completed(.finished)
-        subscription = nil
-    }
 }

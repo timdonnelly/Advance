@@ -1,40 +1,57 @@
-/*
-
-Copyright (c) 2016, Storehouse Media Inc.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-*/
-
 /// A protocol which defines the basic requirements to function as a
 /// time-advancable animation.
+///
+/// Conforming types can be used to animate values.
 public protocol Animation: Advanceable {
+    
+    /// The type of value to be animated.
+    associatedtype Result
     
     /// Returns `True` if the animation has completed. 
     ///
     /// After the animation finishes, it should not return to an unfinished 
     /// state. Doing so may result in undefined behavior.
-    var finished: Bool { get }
+    var isFinished: Bool { get }
+    
+    /// The current value of the animation.
+    var value: Result { get }
     
 }
 
+public extension Animation {
+    
+    /// Returns a sequence containing discrete values for the duration of the animation, based
+    /// on the provided time step.
+    public func allValues(timeStep: Double = 0.008) -> AnySequence<Result> {
+        return AnySequence.init({ () -> AnimationIterator<Self> in
+            return AnimationIterator(animation: self, timeStep: timeStep)
+        })
+    }
+    
+}
+
+fileprivate struct AnimationIterator<T>: IteratorProtocol where T: Animation {
+    
+    private var animation: T?
+    private let timeStep: Double
+    
+    fileprivate init(animation: T, timeStep: Double) {
+        self.animation = animation
+        self.timeStep = timeStep
+    }
+    
+    public mutating func next() -> T.Result? {
+        guard var currentAnimation = animation else { return nil }
+        let result = currentAnimation.value
+        
+        if currentAnimation.isFinished {
+            self.animation = nil
+        } else {
+            currentAnimation.advance(by: timeStep)
+            self.animation = currentAnimation
+        }
+        
+        return result
+    }
+    
+}

@@ -1,167 +1,186 @@
-/*
-
-Copyright (c) 2016, Storehouse Media Inc.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-*/
-
 import Foundation
+
+#if os(iOS) || os(tvOS)
 import QuartzCore
+#elseif os(OSX)
+import CoreVideo
+#endif
 
 
-/// The animation loop that powers all of the Animation framework.
 public final class Loop {
     
-    fileprivate typealias Observer = (Double)->Void
+    private let frameSink: Sink<Frame>
     
-    /// The default loop.
-    public static let shared = Loop()
+    private let driver: Driver
     
-    fileprivate var currentAnimationTime: Double = 0.0
-    
-    fileprivate lazy var displayLink: DisplayLink = {
-        let link = DisplayLink()
-        link.callback = { [unowned self] (frame) in
-            self.displayLinkDidFire(frame)
+    public init() {
+        frameSink = Sink()
+        driver = Driver()
+        driver.callback = { [unowned self] frame in
+            self.frameSink.send(value: frame)
         }
-        return link
-    }()
-    
-    private var observers: [UUID:Observer] = [:]
-    
-    fileprivate init() {
-
     }
     
-    /// Generates and returns a subscription for this loop.
-    ///
-    /// **Note that loops are retained by subscriptions.**
-    public func subscribe() -> Subscription {
-        return Subscription(loop: self)
+    public var frames: Observable<Frame> {
+        return frameSink.observable
     }
     
-    fileprivate func observe(with observer: @escaping Observer) -> UUID {
-        let identifier = UUID()
-        observers[identifier] = observer
-        startIfNeeded()
-        return identifier
+    public var paused: Bool {
+        get { return driver.paused }
+        set { driver.paused = newValue }
     }
     
-    fileprivate func removeObserver(for token: UUID) {
-        observers.removeValue(forKey: token)
-        stopIfPossible()
-    }
-    
-    fileprivate func startIfNeeded() {
-        guard observers.count > 0 else { return }
-        guard displayLink.paused == true else { return }
-        displayLink.paused = false
-        currentAnimationTime = 0
-    }
-    
-    fileprivate func stopIfPossible() {
-        guard observers.count == 0 else { return }
-        guard displayLink.paused == false else { return }
-        displayLink.paused = true
-    }
-    
-    fileprivate func displayLinkDidFire(_ frame: DisplayLink.Frame) {
-        
-        let timestamp = max(frame.timestamp, currentAnimationTime)
-        
-        if currentAnimationTime == 0.0 {
-            currentAnimationTime = timestamp - frame.duration
-        }
-        
-        let elapsed = timestamp - currentAnimationTime
-        currentAnimationTime = timestamp
-        
-        let observers = self.observers.values
-        
-        // Loop through once to let everything update the animation state...
-        for observer in observers {
-            observer(elapsed)
-        }
-        
-    }
 }
 
 
 public extension Loop {
+    /// Info about a particular frame.
+    public struct Frame : Equatable {
+        
+        public var previousTimestamp: Double
+        
+        /// The timestamp that the frame.
+        public var timestamp: Double
+        
+        /// The current duration between frames.
+        public var duration: Double {
+            return timestamp - previousTimestamp
+        }
+        
+        public static func ==(lhs: Frame, rhs: Frame) -> Bool {
+            return lhs.timestamp == rhs.timestamp
+                && lhs.previousTimestamp == rhs.previousTimestamp
+        }
+        
+    }
+}
+
+
+
+
+#if os(iOS) || os(tvOS) // iOS support using CADisplayLink --------------------------------------------------------
+
+/// DisplayLink is used to hook into screen refreshes.
+fileprivate extension Loop {
     
-    /// The interface through which consumers can respond to animation loop updates.
-    public final class Subscription {
+    final class Driver {
+    
+        /// The callback to call for each frame.
+        var callback: ((Frame) -> Void)? = nil
         
-        private var observationToken: UUID? = nil
+        /// If the display link is paused or not.
+        var paused: Bool {
+            get {
+                return displayLink.isPaused
+            }
+            set {
+                displayLink.isPaused = newValue
+            }
+        }
         
-        /// Fired during the update phase of each turn of the loop. Contains
-        /// the elapsed time for the current animation frame.
-        public let advanced = Event<Double>()
+        /// The CADisplayLink that powers this DisplayLink instance.
+        let displayLink: CADisplayLink
         
-        /// The associated loop instance.
-        public let loop: Loop
+        /// The target for the CADisplayLink (because CADisplayLink retains its target).
+        let target = DisplayLinkTarget()
         
-        /// Any time animation updates are not required, the subscription should
-        /// be paused for efficiency.
-        public var paused: Bool = true {
+        /// Creates a new paused DisplayLink instance.
+        init() {
+            displayLink = CADisplayLink(target: target, selector: #selector(DisplayLinkTarget.frame(_:)))
+            displayLink.isPaused = true
+            displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+            
+            target.callback = { [unowned self] (frame) in
+                self.callback?(frame)
+            }
+        }
+        
+        deinit {
+            displayLink.invalidate()
+        }
+        
+        /// The target for the CADisplayLink (because CADisplayLink retains its target).
+        internal final class DisplayLinkTarget {
+            
+            /// The callback to call for each frame.
+            var callback: ((Loop.Frame) -> Void)? = nil
+            
+            /// Called for each frame from the CADisplayLink.
+            @objc dynamic func frame(_ displayLink: CADisplayLink) {
+                
+                let frame = Frame(
+                    previousTimestamp: displayLink.timestamp,
+                    timestamp: displayLink.targetTimestamp)
+                
+                callback?(frame)
+            }
+        }
+        
+    }
+}
+
+#elseif os(OSX) // OS X support using CVDisplayLink --------------------------------------------------
+
+fileprivate extension Loop {
+    
+    /// DisplayLink is used to hook into screen refreshes.
+    final class Driver {
+    
+        /// The callback to call for each frame.
+        var callback: ((Frame) -> Void)? = nil
+        
+        /// If the display link is paused or not.
+        var paused: Bool = true {
             didSet {
                 guard paused != oldValue else { return }
-                if paused {
-                    unsubscribe()
+                if paused == true {
+                    CVDisplayLinkStop(self.displayLink)
                 } else {
-                    subscribe()
+                    CVDisplayLinkStart(self.displayLink)
                 }
             }
         }
         
-        fileprivate init(loop: Loop) {
-            self.loop = loop
+        /// The CVDisplayLink that powers this DisplayLink instance.
+        var displayLink: CVDisplayLink = {
+            var dl: CVDisplayLink? = nil
+            CVDisplayLinkCreateWithActiveCGDisplays(&dl)
+            return dl!
+        }()
+                
+        init() {
+            
+            CVDisplayLinkSetOutputHandler(self.displayLink, { [weak self] (displayLink, inNow, inOutputTime, flageIn, flagsOut) -> CVReturn in
+                let frame = Loop.Frame(
+                    previousTimestamp: inNow.pointee.timeInterval,
+                    timestamp: inOutputTime.pointee.timeInterval)
+                
+                DispatchQueue.main.async {
+                    self?.frame(frame)
+                }
+                
+                return kCVReturnSuccess
+            })
+
         }
         
         deinit {
-            unsubscribe()
+            paused = true
         }
         
-        fileprivate func advance(_ elapsed: Double) {
-            advanced.fire(value: elapsed)
+        /// Called for each CVDisplayLink frame callback.
+        func frame(_ frame: Frame) {
+            guard paused == false else { return }
+            callback?(frame)
         }
-        
-        private func subscribe() {
-            guard observationToken == nil else { return }
-            observationToken = loop.observe(with: { [unowned self] (time) in
-                self.advance(time)
-            })
-        }
-        
-        private func unsubscribe() {
-            guard let token = observationToken else { return }
-            loop.removeObserver(for: token)
-            observationToken = nil
-        }
-        
-    }
     
+    }
+}
+    
+fileprivate extension CVTimeStamp {
+    var timeInterval: TimeInterval {
+        return TimeInterval(videoTime) / TimeInterval(self.videoTimeScale)
+    }
 }
 
-
+#endif // ------------------------------------------------------------------------------------------

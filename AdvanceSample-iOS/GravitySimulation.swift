@@ -1,39 +1,11 @@
-/*
-
-Copyright (c) 2016, Storehouse Media Inc.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, this
-list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-*/
-
 import CoreGraphics
 import Advance
 
 
 private enum GravitySimulationNode: Advanceable {
     case stationary(Vector2)
-    case decaying(DynamicSolver<DecayFunction<Vector2>>)
-    case pulling(DynamicSolver<GravityFunction>)
+    case decaying(Simulation<DecayFunction<Vector2>>)
+    case pulling(Simulation<GravityFunction>)
     
     var value: Vector2 {
         switch self {
@@ -63,10 +35,10 @@ private enum GravitySimulationNode: Advanceable {
             break
         case .decaying(var sim):
             sim.advance(by: time)
-            self = sim.settled ? .stationary(sim.value) : .decaying(sim)
+            self = sim.hasConverged ? .stationary(sim.value) : .decaying(sim)
         case .pulling(var sim):
             sim.advance(by: time)
-            self = sim.settled ? .stationary(sim.value) : .pulling(sim)
+            self = sim.hasConverged ? .stationary(sim.value) : .pulling(sim)
         }
     }
     
@@ -87,7 +59,7 @@ private enum GravitySimulationNode: Advanceable {
         }
         
         let f = GravityFunction(target: point.vector)
-        let solver = DynamicSolver(function: f, value: value, velocity: velocity)
+        let solver = Simulation(function: f, value: value, velocity: velocity)
         self = .pulling(solver)
     }
     
@@ -95,7 +67,7 @@ private enum GravitySimulationNode: Advanceable {
         guard case let .pulling(sim) = self else { return }
         
         let f = DecayFunction<Vector2>()
-        let solver = DynamicSolver(function: f, value: sim.value, velocity: sim.velocity)
+        let solver = Simulation(function: f, value: sim.value, velocity: sim.velocity)
         self = .decaying(solver)
     }
     
@@ -157,7 +129,7 @@ struct GravitySimulation: Advanceable {
     }
     
     func getPosition(row: Int, col: Int) -> CGPoint {
-      return CGPoint(vector: nodes[row][col].value)
+        return CGPoint(vector: nodes[row][col].value)
     }
     
     mutating func advance(by time: Double) {
