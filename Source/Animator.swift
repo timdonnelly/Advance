@@ -31,21 +31,15 @@ public final class Animator<Element> {
             self?.advance(by: frame.duration)
         }
         
-        onCompletion { (_) in
-            /// Intentionally retain self. All completion handlers are dicarded at the
-            /// completion of an animation, so the animator will automatically be
-            /// cleaned up when the animation cancels or finishes.
-            self.breakIntentionalRetainCycle()
-        }
-        
         if state == .running {
             loop.paused = false
         }
     }
     
-    private func breakIntentionalRetainCycle() {
-        /// noop.
+    deinit {
+        cancel()
     }
+    
     
     private func advance(by time: Double) {
         guard state == .running else { return }

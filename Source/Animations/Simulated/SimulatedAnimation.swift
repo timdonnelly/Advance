@@ -20,33 +20,35 @@ public struct SimulatedAnimation<Element, T>: Animation where Element: VectorCon
     
 }
 
-public extension KeyPathAnimatable {
+public extension PropertyAnimator where Value: VectorConvertible {
     
     @discardableResult
-    public func spring<T>(keyPath: ReferenceWritableKeyPath<Self, T>, to target: T, initialVelocity: T = .zero, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> Animator<T> where T: VectorConvertible {
-        return self[keyPath: keyPath]
+    public func spring(to target: Value, initialVelocity: Value = .zero, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> Animator<Value> {
+        let animation = currentValue
             .springAnimation(
                 to: target,
                 initialVelocity: initialVelocity,
                 tension: tension,
                 damping: damping,
                 threshold: threshold)
-            .run()
-            .bound(to: self, keyPath: keyPath)
+        
+        return self.animate(with: animation)
     }
     
     @discardableResult
-    public func decay<T>(keyPath: ReferenceWritableKeyPath<Self, T>, initialVelocity: T, drag: Scalar = 3.0, threshold: Scalar = 0.1) -> Animator<T> where T: VectorConvertible {
-        return self[keyPath: keyPath]
+    public func decay(initialVelocity: Value, drag: Scalar = 3.0, threshold: Scalar = 0.1) -> Animator<Value> {
+        
+        let animation = currentValue
             .decayAnimation(
                 initialVelocity: initialVelocity,
                 drag: drag,
                 threshold: threshold)
-            .run()
-            .bound(to: self, keyPath: keyPath)
+        
+        return animate(with: animation)
+        
     }
-    
 }
+
 
 public extension VectorConvertible {
     

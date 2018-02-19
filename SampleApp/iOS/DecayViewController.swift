@@ -3,10 +3,22 @@ import Advance
 
 
 final class DecayViewController: DemoViewController {
+        
+    let draggableView: UIView
     
-    private var currentAnimator: Animator<CGPoint>? = nil
+    let centerAnimator: PropertyAnimator<UIView, CGPoint>
     
-    let draggableView = UIView()
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        
+        draggableView = UIView()
+        centerAnimator = PropertyAnimator(target: draggableView, keyPath: \.center)
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +43,7 @@ final class DecayViewController: DemoViewController {
     
     override func didLeaveFullScreen() {
         super.didLeaveFullScreen()
-        currentAnimator?.cancel()
-        currentAnimator = draggableView
-            .spring(keyPath: \.center, to: CGPoint(x: view.bounds.midX, y: view.bounds.midY))
+        centerAnimator.spring(to: CGPoint(x: view.bounds.midX, y: view.bounds.midY))
     }
     
     
@@ -41,20 +51,14 @@ final class DecayViewController: DemoViewController {
     @objc private func pan(recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
-            currentAnimator?.cancel()
-            currentAnimator = nil
+            centerAnimator.cancelRunningAnimation()
         case .changed:
             let translation = recognizer.translation(in: contentView)
             recognizer.setTranslation(.zero, in: contentView)
-            draggableView.center.x += translation.x
-            draggableView.center.y += translation.y
+            centerAnimator.currentValue.x += translation.x
+            centerAnimator.currentValue.y += translation.y
         case .ended, .cancelled:
-            let velocity = recognizer.velocity(in: contentView)
-            currentAnimator = draggableView
-                .center
-                .decayAnimation(initialVelocity: velocity)
-                .run()
-                .bound(to: draggableView, keyPath: \.center)
+            centerAnimator.decay(initialVelocity: recognizer.velocity(in: contentView))
         default:
             break
         }

@@ -56,6 +56,16 @@ public struct BasicAnimation<Value>: Animation where Value: Interpolatable {
     
 }
 
+public extension PropertyAnimator where Value: Interpolatable {
+    
+    @discardableResult
+    public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) -> Animator<Value> {
+        let animation = BasicAnimation(from: currentValue, to: finalValue, duration: duration, timingFunction: timingFunction)
+        return animate(with: animation)
+    }
+    
+}
+
 public extension Interpolatable {
     
     public func animation(to finalValue: Self, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) -> BasicAnimation<Self> {
