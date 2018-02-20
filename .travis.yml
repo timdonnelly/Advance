@@ -2,5 +2,5 @@ language: objective-c
 osx_image: xcode9.2
 script:
   - xcodebuild -project Advance.xcodeproj -scheme 'Advance-iOS' -configuration Debug -sdk iphonesimulator test -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2'
-  - xcodebuild -project Advance.xcodeproj -scheme 'Advance-tvOS' -configuration Debug -sdk appletvsimulator test -destination 'platform=tvOS Simulator,name=Apple TV 4K, OS=11.2'
+  - xcodebuild -project Advance.xcodeproj -scheme 'Advance-tvOS' -configuration Debug -sdk appletvsimulator test -destination 'platform=tvOS Simulator,name=Apple TV 4K,OS=11.2'
   - xcodebuild -project Advance.xcodeproj -scheme 'Advance-macOS' -configuration Debug test
