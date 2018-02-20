@@ -18,6 +18,8 @@ spring.target = CGPoint(x: 300, y: 200)
 ```
 The spring will then animate the movement of the view to the new `target` position.
 
+`Spring` is the simplest way to introduce physics-based animations, providing full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.
+
 #### Using `PropertyAnimator` to animate a view's size
 
 ```swift
@@ -37,6 +39,8 @@ sizeAnimator.spring(to: CGSize(width: 300, height: 300))
 sizeAnimator.decay(drag: 2.0)
 
 ```
+
+`PropertyAnimator` is the most flexible way to apply multiple types of animations to an object.
 
 
 #### Check out the sample app
@@ -127,7 +131,9 @@ Simulated animations are powered by a **Simulation Function**. These functions c
 
 ## Contributing
 
-*Suggestions / pull requests / etc. are welcome!*
+**The best contribution you can provide is feedback.** This library was designed in the context of a specific product – I'd love to hear more about your project and how Advance can be improved to meet your needs.
+
+*(Of course, pull requests are always welcome)*
 
 ## Usage
 
