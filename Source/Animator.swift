@@ -1,13 +1,10 @@
 /// Manages the application of animations to a property of type `Value` on
 /// the target object.
 ///
-/// Property animators retain the target object, so they should *not* be used
-/// to animate properties of `self`.
-///
 /// ```
 /// let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 ///
-/// let sizeAnimator = PropertyAnimator(target: view, keyPath: \.bounds.size)
+/// let sizeAnimator = Animator(boundTo: view, keyPath: \.bounds.size)
 ///
 /// /// Spring physics will move the view's size to the new value.
 /// sizeAnimator.spring(to: CGSize(width: 300, height: 300))
@@ -36,6 +33,14 @@ public final class Animator<Value> where Value: VectorConvertible {
     public init(value: Value = Value.zero) {
         self.valueSink = Sink()
         self.currentValue = value
+    }
+    
+    /// Convenience initializer that binds the animator to the given target object and key path.
+    /// The current value of `object[keyPath: keyPath]` is used as the initial value of the animator.
+    public convenience init<T>(boundTo object: T, keyPath: ReferenceWritableKeyPath<T, Value>) where T: AnyObject {
+        let initialValue = object[keyPath: keyPath]
+        self.init(value: initialValue)
+        bind(to: object, keyPath: keyPath)
     }
     
     /// Animates the property using the given animation.

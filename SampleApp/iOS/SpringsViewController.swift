@@ -4,13 +4,18 @@ import Advance
 
 class SpringsViewController: DemoViewController {
     
-    fileprivate let springView = SpringView()
+    private let springView: SpringView
     
-    fileprivate let configView = SpringConfigurationView()
+    private let spring: Spring<CGPoint>
     
-    fileprivate let tapRecognizer = UITapGestureRecognizer()
+    private let configView = SpringConfigurationView()
+    
+    private let tapRecognizer = UITapGestureRecognizer()
     
     required init() {
+        springView = SpringView()
+        spring = Spring(boundTo: springView, keyPath: \.center)
+        
         super.init(nibName: nil, bundle:    nil)
         title = "Spring"
         note = "Tap anywhere to move the dot using a spring."
@@ -50,17 +55,17 @@ class SpringsViewController: DemoViewController {
     
     @objc dynamic func tap(_ recognizer: UITapGestureRecognizer) {
         let point = recognizer.location(in: view)
-        springView.centerSpring.target = point
+        spring.target = point
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        springView.centerSpring.reset(to: CGPoint(x: view.bounds.midX, y: view.bounds.midY))
+        spring.reset(to: CGPoint(x: view.bounds.midX, y: view.bounds.midY))
     }
     
     fileprivate func updateSprings() {
-        springView.centerSpring.tension = Scalar(configView.tension)
-        springView.centerSpring.damping = Scalar(configView.damping)
+        spring.tension = Scalar(configView.tension)
+        spring.damping = Scalar(configView.damping)
     }
     
     override func didEnterFullScreen() {
@@ -72,7 +77,7 @@ class SpringsViewController: DemoViewController {
     override func didLeaveFullScreen() {
         super.didLeaveFullScreen()
         configView.alpha = 0.0
-        springView.centerSpring.target = CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY)
+        spring.target = CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY)
         tapRecognizer.isEnabled = false
     }
 }

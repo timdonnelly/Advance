@@ -1,8 +1,8 @@
 /// Animates changes to a value using a simulation function.
 ///
 /// In most scenarios, physics-based animations are simply run to completion.
-/// For those situations, `PropertyAnimator` makes it easy to run and use the
-/// results of an animation.
+/// For those situations, `Animator` makes it easy to run and use the results of
+/// an animation.
 ///
 /// In contrast, `Simulator` is useful for scenarios where you need direct access
 /// to a running simulation. This might occur in a UI where the user's scroll
@@ -85,6 +85,14 @@ public extension Simulator where Function == SpringFunction<Value.VectorType> {
     public convenience init(value: Value) {
         let spring = SpringFunction(target: value.vector)
         self.init(function: spring, value: value)
+    }
+    
+    /// Initializes a new spring converged at the value returned by `object[keyPath: keyPath`, and bound to the given
+    /// object and key path.
+    public convenience init<T>(boundTo object: T, keyPath: ReferenceWritableKeyPath<T, Value>) {
+        let initialValue = object[keyPath: keyPath]
+        self.init(value: initialValue)
+        bind(to: object, keyPath: keyPath)
     }
     
     /// The spring's target.

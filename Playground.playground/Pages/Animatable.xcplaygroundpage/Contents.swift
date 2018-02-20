@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import UIKit
 import PlaygroundSupport
 import Advance
@@ -27,12 +25,9 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //    }
 
 
-0.animation(to: 100, duration: 2.0, timingFunction: UnitBezier.easeOut)
-    .allValues(timeStep: 0.01)
-    .lazy
-    .forEach { (int) in
-        print(int)
-    }
+0.0.animation(to: 100, duration: 2.0, timingFunction: UnitBezier.swiftOut)
+    .allValues()
+    .map { $0 }
 
 
 

@@ -82,7 +82,6 @@
 		22F74AAF1C7674BB004C6E4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F74AAE1C7674BB004C6E4C /* Assets.xcassets */; };
 		22F74AB21C7674BB004C6E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F74AB01C7674BB004C6E4C /* LaunchScreen.storyboard */; };
 		22F74AB81C76769C004C6E4C /* GesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F74AB71C76769C004C6E4C /* GesturesViewController.swift */; };
-		22F74ABB1C767757004C6E4C /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F74ABA1C767757004C6E4C /* GestureView.swift */; };
 		22F74ABC1C76778E004C6E4C /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D39CEE11C6E983100DFCF86 /* Advance.framework */; };
 		5D28A2D81C93757200E5A1E9 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D28A2D71C93757200E5A1E9 /* SpringView.swift */; };
 		5D28A2DA1C9378F000E5A1E9 /* SpringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D28A2D91C9378F000E5A1E9 /* SpringContainerView.swift */; };
@@ -312,7 +311,6 @@
 		22F74AB11C7674BB004C6E4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22F74AB31C7674BB004C6E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22F74AB71C76769C004C6E4C /* GesturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturesViewController.swift; sourceTree = "<group>"; };
-		22F74ABA1C767757004C6E4C /* GestureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
 		5D28A2D71C93757200E5A1E9 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
 		5D28A2D91C9378F000E5A1E9 /* SpringContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringContainerView.swift; sourceTree = "<group>"; };
 		5D39CEE11C6E983100DFCF86 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -509,7 +507,6 @@
 			isa = PBXGroup;
 			children = (
 				22F74AB71C76769C004C6E4C /* GesturesViewController.swift */,
-				22F74ABA1C767757004C6E4C /* GestureView.swift */,
 				2299A6821C7D35FE009DE78C /* DirectManipulationGestureRecognizer.swift */,
 				222E211C1C7D4C300063FAA2 /* SimpleTransform.swift */,
 			);
@@ -1144,7 +1141,6 @@
 				222E21251C7E45420063FAA2 /* BrowserView.swift in Sources */,
 				222E211D1C7D4C300063FAA2 /* SimpleTransform.swift in Sources */,
 				229740CD203B69CC00BA6C63 /* DecayViewController.swift in Sources */,
-				22F74ABB1C767757004C6E4C /* GestureView.swift in Sources */,
 				22319B721C8110A300D4E027 /* CoverView.swift in Sources */,
 				22142E651C810D86000C6DEB /* ActivityViewController.swift in Sources */,
 				22F74AB81C76769C004C6E4C /* GesturesViewController.swift in Sources */,

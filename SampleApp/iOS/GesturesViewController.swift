@@ -1,12 +1,34 @@
 import UIKit
+import Advance
 
 final class GesturesViewController: DemoViewController {
     
-    let gestureView = GestureView()
+    private let gestureView = UIView()
+    
+    private let centerSpring = Spring(value: CGPoint.zero)
+    private let transformSpring = Spring(value: SimpleTransform())
+    
+    private let recognizer = DirectManipulationGestureRecognizer()
+    
+    private var centerWhenGestureBegan = CGPoint.zero
+    private var transformWhenGestureBegan = SimpleTransform.zero
 
     required init() {
         super.init(nibName: nil, bundle: nil)
         title = "Gestures"
+        
+        recognizer.addTarget(self, action: #selector(gesture))
+        gestureView.addGestureRecognizer(recognizer)
+        
+        centerSpring.threshold = 0.1
+        centerSpring.tension = 40
+        centerSpring.damping = 5
+        centerSpring.bind(to: gestureView, keyPath: \.center)
+        
+        transformSpring.threshold = 0.001
+        transformSpring.observe { [weak self] (transform) in
+            self?.gestureView.transform = transform.affineTransform
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -18,9 +40,8 @@ final class GesturesViewController: DemoViewController {
         
         note = "Use two fingers to pick up the square."
         
+        gestureView.backgroundColor = UIColor(red: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0)
         contentView.addSubview(gestureView)
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,24 +54,59 @@ final class GesturesViewController: DemoViewController {
         b.size.width = min(view.bounds.width, view.bounds.height) - 64.0
         b.size.height = b.size.width
         gestureView.bounds = b
-        gestureView.animatableCenter.reset(to: CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY))
-        gestureView.animatableTransform.reset(to: SimpleTransform())
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        centerSpring.reset(to: CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY))
+        transformSpring.reset(to: SimpleTransform())
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc private func gesture(recognizer: DirectManipulationGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            
+            // Take the anchor point into consideration
+            let gestureLocation = recognizer.location(in: gestureView)
+            let newCenter = contentView.convert(gestureLocation, from: gestureView)
+            centerSpring.reset(to: newCenter)
+            
+            var anchorPoint = gestureLocation
+            anchorPoint.x /= gestureView.bounds.width
+            anchorPoint.y /= gestureView.bounds.height
+            gestureView.layer.anchorPoint = anchorPoint
+            
+            transformSpring.reset(to: transformSpring.value)
+            centerWhenGestureBegan = centerSpring.value
+            transformWhenGestureBegan = transformSpring.value
+            break
+        case .changed:
+            var t = transformWhenGestureBegan
+            t.rotation += recognizer.rotation
+            t.scale *= recognizer.scale
+            transformSpring.reset(to: t)
+            
+            var center = centerWhenGestureBegan
+            center.x += recognizer.translationInView(contentView).x
+            center.y += recognizer.translationInView(contentView).y
+            centerSpring.reset(to: center)
+            
+            break
+        case .ended, .cancelled:
+            // Reset the anchor point
+            let mid = CGPoint(x: gestureView.bounds.midX, y: gestureView.bounds.midY)
+            let newCenter = contentView.convert(mid, from: gestureView)
+            centerSpring.value = newCenter
+            gestureView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            
+            var velocity = SimpleTransform.zero
+            velocity.scale = recognizer.scaleVelocity
+            velocity.rotation = recognizer.rotationVelocity
+            transformSpring.target = SimpleTransform()
+            transformSpring.velocity = velocity
+            
+            centerSpring.target = CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY)
+            centerSpring.velocity = recognizer.translationVelocityInView(contentView)
+            break
+        default:
+            break
+        }
     }
-    */
 
 }
