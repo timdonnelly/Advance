@@ -17,16 +17,7 @@ In contrast to standard `UIView` animations, Advance animations are applied on e
 ```swift
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-let spring = Spring(boundTo: view, keyPath: \.center)
-
-/// The view's center will realistically animate to the new value.
-spring.target = CGPoint(x: 300, y: 200)
-```
-
-
-```swift
-let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-
+/// Animators coordinate animations to drive changes to a value.
 let sizeAnimator = Animator(boundTo: view, keyPath: \.bounds.size)
 
 /// Spring physics will move the view's size to the new value.
@@ -39,6 +30,17 @@ sizeAnimator.spring(to: CGSize(width: 300, height: 300))
 sizeAnimator.decay(drag: 2.0)
 
 ```
+
+```swift
+let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+
+/// Springs are... springs. That's all they do.
+let spring = Spring(boundTo: view, keyPath: \.center)
+
+/// The view's center will realistically animate to the new value.
+spring.target = CGPoint(x: 300, y: 200)
+```
+
 
 ### Animator
 
@@ -67,7 +69,7 @@ boundsAnimator.decay(initialVelocity: CGRect(x: 30, y: 30, width: 30, height: 30
 
 ```
 
-You won't commonly need to initialize animations directly.
+Each of these methods returns an `AnimationRunner<Value>` instance, which can be used to add completion handlers, wire up additional observers for the running animation, etc.
 
 ### Simulator / Spring
 `Simulator` uses a physics-based simulation to realistically model changes to a value over time.
@@ -86,6 +88,7 @@ simulator.observe { value in
 }
 ```
 
+#### Spring
 `Spring` is a specialized simulator that uses a spring function. If all you are after is a simple spring to animate a value, this is what you want.
 
 Convenience extensions provide full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.
@@ -107,6 +110,14 @@ spring.value = 0.2
 spring.reset(to: 0.5)
 
 ```
+
+#### Simulation Functions
+
+Simulations are powered by a **Simulation Function**. These functions compute the forces that should effect the value for every frame, and control *convergence* (or: when the simulation should come to rest). The included simulation functions are:
+- `SpringFunction`
+- `DecayFunction`
+- `GravityFunction`
+
 
 ### Animations
 
@@ -134,13 +145,9 @@ Basic animations use a timing function to control the pacing of the value's chan
 
 
 #### Simulated animations
-`SimulatedAnimation` use a physics-based approach to model changes to a value over time. This allows for realistic animations that model real-world behavior. `SimulatedAnimation` allows you to use the same simulation functions that power `Simulator` with an `Animator`.
+`SimulatedAnimation` uses a physics-based approach to model changes to a value over time, enabling realistic animations that model real-world behavior. `SimulatedAnimation` allows you to use simulation functions as animations (most commonly with an `Animator` instance).
 
-Simulated animations are powered by a **Simulation Function**. These functions compute the forces that should effect the animated value for every frame, and control *convergence* (or: when the simulation should come to rest). The included simulation functions are:
-- `SpringFunction`
-- `DecayFunction`
-- `GravityFunction`
-
+#### Creating animations
 
 Convenience extensions make it easy to generate animations from `VectorConvertible` types.
 

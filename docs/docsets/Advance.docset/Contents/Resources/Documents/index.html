@@ -227,13 +227,7 @@
 <p>In contrast to standard <code>UIView</code> animations, Advance animations are applied on every frame (using <code>CADisplayLink</code> on iOS).</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
 
-<span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
-
-<span class="c1">/// The view's center will realistically animate to the new value.</span>
-<span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
-
+<span class="c1">/// Animators coordinate animations to drive changes to a value.</span>
 <span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 
 <span class="c1">/// Spring physics will move the view's size to the new value.</span>
@@ -245,6 +239,14 @@
 <span class="c1">/// animation, and a decay function will slowly bring movement to a stop.</span>
 <span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">decay</span><span class="p">(</span><span class="nv">drag</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">)</span>
 
+</code></pre>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="c1">/// Springs are... springs. That's all they do.</span>
+<span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+
+<span class="c1">/// The view's center will realistically animate to the new value.</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
 </code></pre>
 <h3 id='animator' class='heading'>Animator</h3>
 
@@ -271,7 +273,7 @@
 
 </code></pre>
 
-<p>You won&rsquo;t commonly need to initialize animations directly.</p>
+<p>Each of these methods returns an <code><a href="Classes/AnimationRunner.html">AnimationRunner&lt;Value&gt;</a></code> instance, which can be used to add completion handlers, wire up additional observers for the running animation, etc.</p>
 <h3 id='simulator-spring' class='heading'>Simulator / Spring</h3>
 
 <p><code><a href="Classes/Simulator.html">Simulator</a></code> uses a physics-based simulation to realistically model changes to a value over time.</p>
@@ -287,6 +289,7 @@
     <span class="c1">/// Apply the new value.</span>
 <span class="p">}</span>
 </code></pre>
+<h4 id='spring' class='heading'>Spring</h4>
 
 <p><code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code> is a specialized simulator that uses a spring function. If all you are after is a simple spring to animate a value, this is what you want.</p>
 
@@ -307,6 +310,15 @@
 <span class="n">spring</span><span class="o">.</span><span class="nf">reset</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">)</span>
 
 </code></pre>
+<h4 id='simulation-functions' class='heading'>Simulation Functions</h4>
+
+<p>Simulations are powered by a <strong>Simulation Function</strong>. These functions compute the forces that should effect the value for every frame, and control <em>convergence</em> (or: when the simulation should come to rest). The included simulation functions are:</p>
+
+<ul>
+<li><code><a href="Structs/SpringFunction.html">SpringFunction</a></code></li>
+<li><code><a href="Structs/DecayFunction.html">DecayFunction</a></code></li>
+<li><code><a href="Structs/GravityFunction.html">GravityFunction</a></code></li>
+</ul>
 <h3 id='animations' class='heading'>Animations</h3>
 
 <p>Values conforming to the <code><a href="Protocols/VectorConvertible.html">VectorConvertible</a></code> protocol can be animated by Advance. Conforming types can be converted to and from a <code><a href="Protocols/Vector.html">Vector</a></code> implementation.</p>
@@ -332,15 +344,8 @@
 </ul>
 <h4 id='simulated-animations' class='heading'>Simulated animations</h4>
 
-<p><code><a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a></code> use a physics-based approach to model changes to a value over time. This allows for realistic animations that model real-world behavior. <code><a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a></code> allows you to use the same simulation functions that power <code><a href="Classes/Simulator.html">Simulator</a></code> with an <code><a href="Classes/Animator.html">Animator</a></code>.</p>
-
-<p>Simulated animations are powered by a <strong>Simulation Function</strong>. These functions compute the forces that should effect the animated value for every frame, and control <em>convergence</em> (or: when the simulation should come to rest). The included simulation functions are:</p>
-
-<ul>
-<li><code><a href="Structs/SpringFunction.html">SpringFunction</a></code></li>
-<li><code><a href="Structs/DecayFunction.html">DecayFunction</a></code></li>
-<li><code><a href="Structs/GravityFunction.html">GravityFunction</a></code></li>
-</ul>
+<p><code><a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a></code> uses a physics-based approach to model changes to a value over time, enabling realistic animations that model real-world behavior. <code><a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a></code> allows you to use simulation functions as animations (most commonly with an <code><a href="Classes/Animator.html">Animator</a></code> instance).</p>
+<h4 id='creating-animations' class='heading'>Creating animations</h4>
 
 <p>Convenience extensions make it easy to generate animations from <code><a href="Protocols/VectorConvertible.html">VectorConvertible</a></code> types.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">springAnimation</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="o">.</span><span class="n">zero</span><span class="o">.</span><span class="nf">springAnimation</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
