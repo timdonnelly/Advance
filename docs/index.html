@@ -253,21 +253,21 @@
 <p>The current velocity of the value is available though the <code>velocity</code> property, making it easy to transition between animations of different types while maintaining fluid motion.</p>
 
 <p>A set of extensions make it easy to kick off animations on an animator:</p>
-<pre class="highlight plaintext"><code>let view = UIView()
-let boundsAnimator = Animator(boundTo: view, keyPath: \.bounds)
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">boundsAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
 
-/// Basic animation
-boundsAnimator.animate(to: CGRect(x: 0, y: 0, width: 300, height: 300), duration: 0.5, timingFunction: UnitBezier.easeIn)
+<span class="c1">/// Basic animation</span>
+<span class="n">boundsAnimator</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">),</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">timingFunction</span><span class="p">:</span> <span class="kt">UnitBezier</span><span class="o">.</span><span class="n">easeIn</span><span class="p">)</span>
 
-/// or...
+<span class="c1">/// or...</span>
 
-/// Spring
-boundsAnimator.spring(to: CGRect(x: 0, y: 0, width: 300, height: 300))
+<span class="c1">/// Spring</span>
+<span class="n">boundsAnimator</span><span class="o">.</span><span class="nf">spring</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">))</span>
 
-/// or...
+<span class="c1">/// or...</span>
 
-/// Decay
-boundsAnimator.decay(initialVelocity: CGRect(x: 30, y: 30, width: 30, height: 30))
+<span class="c1">/// Decay</span>
+<span class="n">boundsAnimator</span><span class="o">.</span><span class="nf">decay</span><span class="p">(</span><span class="nv">initialVelocity</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">30</span><span class="p">))</span>
 
 </code></pre>
 
@@ -281,40 +281,40 @@ boundsAnimator.decay(initialVelocity: CGRect(x: 30, y: 30, width: 30, height: 30
 <p>In contrast, <code><a href="Classes/Simulator.html">Simulator</a></code> is a focused class that is useful for scenarios where you need direct access to a running simulation. This might occur in a UI where the user&rsquo;s scroll position drives changes to a spring&rsquo;s tension, for example. It would be impractical to create and start a new animation every time the simulation needs to change. A <code><a href="Classes/Simulator.html">Simulator</a></code> instance provides mutable access to the <code>function</code> property (containing the underlying function that is driving the simulation), along with the current state of the simulation (value and velocity).</p>
 
 <p><code><a href="Classes/Simulator.html">Simulator</a></code> conforms to <code><a href="Protocols/Observable.html">Observable</a></code>, so you can easily be notified when the simulated value changes.</p>
-<pre class="highlight plaintext"><code>let function = GravityFunction(target: CGPoint(20, 20).vector)
-let simulator = Simulator(function: function, value: CGPoint.zero)
-simulator.observe { value in
-    /// Apply the new value.
-}
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">function</span> <span class="o">=</span> <span class="kt">GravityFunction</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">vector</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">simulator</span> <span class="o">=</span> <span class="kt">Simulator</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="n">function</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+<span class="n">simulator</span><span class="o">.</span><span class="n">observe</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span>
+    <span class="c1">/// Apply the new value.</span>
+<span class="p">}</span>
 </code></pre>
 
 <p><code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code> is a specialized simulator that uses a spring function. If all you are after is a simple spring to animate a value, this is what you want.</p>
 
 <p>Convenience extensions provide full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.</p>
-<pre class="highlight plaintext"><code>let spring = Spring(boundTo: view, keyPath: \.alpha)
-spring.target = 0.5
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="mf">0.5</span>
 
-/// Spring values can be adjusted at any time.
-spring.tension = 30.0 /// The strength of the spring
-spring.damping = 2.0 /// The resistance (drag) that the spring encounters
-spring.threshold = 0.1 /// The maximum delta between the current value and the spring's target (for each component) for which the simulation can enter a converged state.
+<span class="c1">/// Spring values can be adjusted at any time.</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">tension</span> <span class="o">=</span> <span class="mf">30.0</span> <span class="c1">/// The strength of the spring</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">damping</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c1">/// The resistance (drag) that the spring encounters</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1">/// The maximum delta between the current value and the spring's target (for each component) for which the simulation can enter a converged state.</span>
 
-/// Update the simulation state at any time.
-spring.velocity = 6.5
-spring.value = 0.2
+<span class="c1">/// Update the simulation state at any time.</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="mf">6.5</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">0.2</span>
 
-/// Sets the spring's target and the current simulation value, and removes all velocity. This causes the spring to converge at the given value.
-spring.reset(to: 0.5)
+<span class="c1">/// Sets the spring's target and the current simulation value, and removes all velocity. This causes the spring to converge at the given value.</span>
+<span class="n">spring</span><span class="o">.</span><span class="nf">reset</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">)</span>
 
 </code></pre>
 <h3 id='animations' class='heading'>Animations</h3>
 
 <p>Values conforming to the <code><a href="Protocols/VectorConvertible.html">VectorConvertible</a></code> protocol can be animated by Advance. Conforming types can be converted to and from a <code><a href="Protocols/Vector.html">Vector</a></code> implementation.</p>
-<pre class="highlight plaintext"><code>public protocol VectorConvertible: Equatable, Interpolatable {
-    associatedtype VectorType: Vector
-    init(vector: VectorType)
-    var vector: VectorType { get }
-}
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">VectorConvertible</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Interpolatable</span> <span class="p">{</span>
+    <span class="k">associatedtype</span> <span class="kt">VectorType</span><span class="p">:</span> <span class="kt">Vector</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">vector</span><span class="p">:</span> <span class="kt">VectorType</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">vector</span><span class="p">:</span> <span class="kt">VectorType</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 
 <p>There are two primary types of animations in Advance: <strong>Simulated Animations</strong> and <strong>Basic Animations</strong>.</p>
@@ -343,13 +343,13 @@ spring.reset(to: 0.5)
 </ul>
 
 <p>Convenience extensions make it easy to generate animations from <code><a href="Protocols/VectorConvertible.html">VectorConvertible</a></code> types.</p>
-<pre class="highlight plaintext"><code>let springAnimation = CGPoint.zero.springAnimation(to: CGPoint(x: 100, y: 100))
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">springAnimation</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="o">.</span><span class="n">zero</span><span class="o">.</span><span class="nf">springAnimation</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
 
-/// Also try `.animation(to:duration:timingFunction:)` and `.decayAnimation(drag:)`.
+<span class="c1">/// Also try `.animation(to:duration:timingFunction:)` and `.decayAnimation(drag:)`.</span>
 
-let animator: Animator&lt;CGPoint&gt; = /// ...
+<span class="k">let</span> <span class="nv">animator</span><span class="p">:</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">CGPoint</span><span class="o">&gt;</span> <span class="o">=</span> <span class="c1">/// ...</span>
 
-animator.animate(with: springAnimation)
+<span class="n">animator</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">springAnimation</span><span class="p">)</span>
 
 </code></pre>
 <h2 id='contributing' class='heading'>Contributing</h2>

@@ -48,7 +48,7 @@ The current velocity of the value is available though the `velocity` property, m
 
 A set of extensions make it easy to kick off animations on an animator:
 
-```
+```swift
 let view = UIView()
 let boundsAnimator = Animator(boundTo: view, keyPath: \.bounds)
 
@@ -78,7 +78,7 @@ In contrast, `Simulator` is a focused class that is useful for scenarios where y
 
 `Simulator` conforms to `Observable`, so you can easily be notified when the simulated value changes.
 
-```
+```swift
 let function = GravityFunction(target: CGPoint(20, 20).vector)
 let simulator = Simulator(function: function, value: CGPoint.zero)
 simulator.observe { value in
@@ -90,7 +90,7 @@ simulator.observe { value in
 
 Convenience extensions provide full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.
 
-```
+```swift
 let spring = Spring(boundTo: view, keyPath: \.alpha)
 spring.target = 0.5
 
@@ -111,7 +111,7 @@ spring.reset(to: 0.5)
 ### Animations
 
 Values conforming to the `VectorConvertible` protocol can be animated by Advance. Conforming types can be converted to and from a `Vector` implementation.
-```
+```swift
 public protocol VectorConvertible: Equatable, Interpolatable {
     associatedtype VectorType: Vector
     init(vector: VectorType)
@@ -144,7 +144,7 @@ Simulated animations are powered by a **Simulation Function**. These functions c
 
 Convenience extensions make it easy to generate animations from `VectorConvertible` types.
 
-```
+```swift
 let springAnimation = CGPoint.zero.springAnimation(to: CGPoint(x: 100, y: 100))
 
 /// Also try `.animation(to:duration:timingFunction:)` and `.decayAnimation(drag:)`.
