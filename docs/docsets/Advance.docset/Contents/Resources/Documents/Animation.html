@@ -230,14 +230,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Manages the application of animations to a property of type <code>Value</code> on
-the target object.</p>
-
-<p>Property animators retain the target object, so they should <em>not</em> be used
-to animate properties of <code>self</code>.</p>
+                        <p>Manages the application of animations to a value.</p>
 <pre class="highlight plaintext"><code>let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-let sizeAnimator = PropertyAnimator(target: view, keyPath: \.bounds.size)
+let sizeAnimator = Animator(boundTo: view, keyPath: \.bounds.size)
 
 /// Spring physics will move the view's size to the new value.
 sizeAnimator.spring(to: CGSize(width: 300, height: 300))
@@ -260,7 +256,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L22-L92">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L18-L96">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

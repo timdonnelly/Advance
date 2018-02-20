@@ -219,14 +219,10 @@
 
                 </div>
               </div>
-            <p>Manages the application of animations to a property of type <code>Value</code> on
-the target object.</p>
-
-<p>Property animators retain the target object, so they should <em>not</em> be used
-to animate properties of <code>self</code>.</p>
+            <p>Manages the application of animations to a value.</p>
 <pre class="highlight plaintext"><code>let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-let sizeAnimator = PropertyAnimator(target: view, keyPath: \.bounds.size)
+let sizeAnimator = Animator(boundTo: view, keyPath: \.bounds.size)
 
 /// Spring physics will move the view's size to the new value.
 sizeAnimator.spring(to: CGSize(width: 300, height: 300))
@@ -267,7 +263,38 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L36-L39">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L32-L35">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance8AnimatorCACyxGqd__7boundTo_s24ReferenceWritableKeyPathCyqd__xG03keyH0tcRld__Clufc"></a>
+                    <a name="//apple_ref/swift/Method/init(boundTo:keyPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance8AnimatorCACyxGqd__7boundTo_s24ReferenceWritableKeyPathCyqd__xG03keyH0tcRld__Clufc">init(boundTo:keyPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convenience initializer that binds the animator to the given target object and key path.
+The current value of <code>object[keyPath: keyPath]</code> is used as the initial value of the animator.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">boundTo</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt">Value</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L39-L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -297,7 +324,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L43-L58">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L47-L62">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -327,7 +354,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L67-L69">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L71-L73">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -357,7 +384,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L72-L75">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L76-L79">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -387,7 +414,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L78-L86">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L82-L90">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -417,7 +444,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L89-L91">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L93-L95">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -613,7 +640,7 @@ current velocity as <code>initialVelocity</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L97-L99">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L101-L103">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

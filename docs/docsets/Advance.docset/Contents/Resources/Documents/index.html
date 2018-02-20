@@ -223,7 +223,7 @@
 
 <p>The API is much smaller as a result, providing a handful of types that make it easy to integrate physics-based animations.</p>
 <h2 id='examples' class='heading'>Examples</h2>
-<h4 id='using-a-code-spring-code-to-animate-the-position-of-a-view' class='heading'>Using a <code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code> to animate the position of a view</h4>
+<h4 id='code-spring-code' class='heading'><code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code></h4>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Advance</span>
 
 <span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span>
@@ -235,12 +235,13 @@
 <p>The spring will then animate the movement of the view to the new <code>target</code> position.</p>
 
 <p><code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code> is the simplest way to introduce physics-based animations, providing full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.</p>
-<h4 id='using-code-propertyanimator-code-to-animate-a-view-39-s-size' class='heading'>Using <code>PropertyAnimator</code> to animate a view&rsquo;s size</h4>
+<h4 id='code-animator-code' class='heading'><code><a href="Classes/Animator.html">Animator</a></code></h4>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Advance</span>
 
 <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
 
-<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">PropertyAnimator</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">CGSize</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 
 <span class="c1">/// Spring physics will move the view's size to the new value.</span>
 <span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">spring</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">))</span>
@@ -253,9 +254,9 @@
 
 </code></pre>
 
-<p><code>PropertyAnimator</code> is the most flexible way to apply multiple types of animations to an object.</p>
+<p><code><a href="Classes/Animator.html">Animator</a></code> is the most flexible way to apply multiple types of animations to an object.</p>
 
-<p>If you don&rsquo;t need direct access to a running simulation and want the flexibility of using various animation types for the same value, <code>PropertyAnimator</code> is your best bet.</p>
+<p>If you don&rsquo;t need direct access to a running simulation and want the flexibility of using various animation types for the same value, <code><a href="Classes/Animator.html">Animator</a></code> is your best bet.</p>
 <h4 id='check-out-the-sample-app' class='heading'>Check out the sample app</h4>
 
 <p><img src="https://github.com/timdonnelly/Advance/raw/master/images/nav.gif" alt="Sample app">
@@ -265,11 +266,12 @@
 <h2 id='core-concepts' class='heading'>Core Concepts</h2>
 
 <p>Three primary classes are used to power animations in your UI.</p>
-<h4 id='code-propertyanimator-code' class='heading'><code>PropertyAnimator</code></h4>
+<h4 id='code-animator-code' class='heading'><code><a href="Classes/Animator.html">Animator</a></code></h4>
 
-<p>The easiest way to use Advance is with the <code>PropertyAnimator</code> class. This class manages animations for a specific property of a target object.</p>
+<p>The easiest way to use Advance is with the <code><a href="Classes/Animator.html">Animator</a></code> class. This class manages animations for a specific property of a target object.</p>
 <pre class="highlight plaintext"><code>let view = UIView()
-let boundsAnimator = PropertyAnimator(target: view, keyPath: \.bounds)
+let boundsAnimator = Animator&lt;CGRect&gt;()
+boundsAnimator.bind(to: view, keyPath: \.bounds)
 </code></pre>
 <h4 id='code-simulator-code-code-spring-code' class='heading'><code><a href="Classes/Simulator.html">Simulator</a></code> / <code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code></h4>
 

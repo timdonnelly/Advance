@@ -1,5 +1,4 @@
-/// Manages the application of animations to a property of type `Value` on
-/// the target object.
+/// Manages the application of animations to a value.
 ///
 /// ```
 /// let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
