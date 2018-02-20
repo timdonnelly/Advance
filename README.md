@@ -12,7 +12,7 @@ This project was originally developed to power the animations throughout the App
 
 ## Examples
 
-#### Use a `Spring` to animate the position of a view
+#### Using a `Spring` to animate the position of a view
 
 ```swift
 import Advance
@@ -24,23 +24,23 @@ spring.target = CGPoint(x: 300, y: 200)
 ```
 The spring will then animate the movement of the view to the new `target` position.
 
-#### Use `PropertyAnimator` to animate an object's properties
+#### Using `PropertyAnimator` to animate a view's size
 
 ```swift
 import Advance
 
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-let centerAnimator = PropertyAnimator(target: view, keyPath: \.center)
+let sizeAnimator = PropertyAnimator(target: view, keyPath: \.bounds.size)
 
-/// Spring physics will move the view's center to the new value.
-centerAnimator.spring(to: CGPoint(x: 300, y: 300))
+/// Spring physics will move the view's size to the new value.
+sizeAnimator.spring(to: CGSize(width: 300, height: 300))
 
 /// Some time in the future...
 
 /// The value will keep the same velocity that it had from the preceeding
 /// animation, and a decay function will slowly bring movement to a stop.
-centerAnimator.decay(drag: 2.0)
+sizeAnimator.decay(drag: 2.0)
 
 ```
 
@@ -105,6 +105,16 @@ In contrast, `Simulator` is useful for scenarios where you need direct access to
 
 **Spring** is a specialized simulator that uses a spring function. If all you are after is a simple spring to animate a value, this is what you want.
 
+```
+
+let spring = Spring(value: 0.0)
+simulator.observe { nextValue in
+    /// Do something with the spring's v
+}
+
+spring.target = 120.0
+
+```
 
 ### Animations
 
