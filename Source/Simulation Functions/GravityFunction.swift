@@ -1,13 +1,19 @@
 import simd
 
+/// Implements a two-dimensional gravity simulation function.
 public struct GravityFunction: SimulationFunction {
     
+    /// The point that the value will be pulled toward.
     public var target: Vector2
     
+    /// The minimum distance from target for which acceleration will be calculated. Larger values avoid dramatic
+    /// slingshot effects when the value makes a pass near the target value.
     public var minRadius: Scalar = 30.0
     
+    /// The minimum distance from the target that the value must be in order for the simulation to converge.
     public var threshold: Scalar = 0.1
     
+    /// Initializes a new gravity function with the given target.
     public init(target: Vector2) {
         self.target = target
     }

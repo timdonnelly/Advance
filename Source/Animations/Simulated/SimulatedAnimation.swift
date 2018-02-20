@@ -1,7 +1,9 @@
+/// An animation that is powered by a simulation function (e.g. a spring or decay function).
 public struct SimulatedAnimation<Value, T>: Animation where Value: VectorConvertible, T: SimulationFunction, Value.VectorType == T.VectorType {
     
     private var simulation: Simulation<T>
     
+    /// Initializes a new animation with given initial state.
     public init(function: T, value: Value, velocity: Value) {
         self.simulation = Simulation(function: function, value: value.vector, velocity: velocity.vector)
     }

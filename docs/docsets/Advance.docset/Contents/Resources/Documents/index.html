@@ -13,7 +13,7 @@
     <a title="Advance  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Advance Docs</a> (91% documented)</p>
+        <p><a href="index.html">Advance Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -32,15 +32,6 @@
             <a href="Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Animator.html">Animator</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/Animator/State.html">– State</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/Animator/Result.html">– Result</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
@@ -50,10 +41,16 @@
                 <a href="Structs/BasicAnimation.html">BasicAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+                <a href="Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/AnyAnimation.html">AnyAnimation</a>
+                <a href="Classes/AnimationRunner.html">AnimationRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AnimationRunner/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AnimationRunner/Result.html">– Result</a>
               </li>
             </ul>
           </li>
@@ -86,6 +83,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/GravityFunction.html">GravityFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -217,63 +217,95 @@
             
             <h1 id='advance' class='heading'>Advance</h1>
 
-<p>A powerful animation framework for iOS, tvOS, and macOS.</p>
+<p>Physics-based animations for iOS, tvOS, and macOS.</p>
 
-<hr>
-<h5 id='what-is-it' class='heading'>What is it?</h5>
-
-<p>Advance is a Swift framework that enables advanced animations and physics-based interactions.</p>
-
-<p>Originally developed to power the animations throughout the Storehouse app for iOS, Advance has evolved into a composable set of tools with a <a href="http://timdonnelly.github.io/Advance/">simple API</a>.</p>
-<h3 id='examples' class='heading'>Examples</h3>
-<h5 id='use-a-spring-to-animate-ui' class='heading'>Use a spring to animate UI</h5>
+<p>This project was originally developed to power the animations throughout the Storehouse app for iOS, but has since been extensively rewritten in modern Swift.</p>
+<h2 id='examples' class='heading'>Examples</h2>
+<h4 id='using-a-code-spring-code-to-animate-the-position-of-a-view' class='heading'>Using a <code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code> to animate the position of a view</h4>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Advance</span>
 
 <span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span>
-<span class="n">spring</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+<span class="n">spring</span><span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
 <span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
 
 </code></pre>
 
 <p>The spring will then animate the movement of the view to the new <code>target</code> position.</p>
 
-<hr>
-<h5 id='animate-between-values' class='heading'>Animate between values</h5>
+<p><code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code> is the simplest way to introduce physics-based animations, providing full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.</p>
+<h4 id='using-code-propertyanimator-code-to-animate-a-view-39-s-size' class='heading'>Using <code><a href="Classes/PropertyAnimator.html">PropertyAnimator</a></code> to animate a view&rsquo;s size</h4>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Advance</span>
 
-<span class="k">let</span> <span class="nv">animator</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="o">.</span><span class="nf">animation</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="nv">timingFunction</span><span class="p">:</span> <span class="o">.</span><span class="n">easeIn</span><span class="p">)</span>
-    <span class="o">.</span><span class="nf">run</span><span class="p">()</span>
-    <span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">myObject</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">propertyName</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">onCompletion</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
-        <span class="c1">/// Do something when the animation finishes.</span>
-    <span class="p">}</span>
+<span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">PropertyAnimator</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+<span class="c1">/// Spring physics will move the view's size to the new value.</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">spring</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">))</span>
+
+<span class="c1">/// Some time in the future...</span>
+
+<span class="c1">/// The value will keep the same velocity that it had from the preceeding</span>
+<span class="c1">/// animation, and a decay function will slowly bring movement to a stop.</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">decay</span><span class="p">(</span><span class="nv">drag</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">)</span>
 
 </code></pre>
 
-<p>The resulting animator can be used to cancel the animation or to add additional observers or completion handlers.</p>
-
-<hr>
-<h5 id='check-out-the-sample-app' class='heading'>Check out the sample app</h5>
-
-<p>Located in the project:</p>
+<p><code><a href="Classes/PropertyAnimator.html">PropertyAnimator</a></code> is the most flexible way to apply multiple types of animations to an object.</p>
+<h4 id='check-out-the-sample-app' class='heading'>Check out the sample app</h4>
 
 <p><img src="https://github.com/timdonnelly/Advance/raw/master/images/nav.gif" alt="Sample app">
 <img src="https://github.com/timdonnelly/Advance/raw/master/images/logo.gif" alt="Sample app"></p>
 
 <hr>
-<h5 id='requirements' class='heading'>Requirements</h5>
+<h2 id='core-concepts' class='heading'>Core Concepts</h2>
+
+<p>Three primary classes are used to power animations in your UI.</p>
+<h4 id='code-propertyanimator-code' class='heading'><code><a href="Classes/PropertyAnimator.html">PropertyAnimator</a></code></h4>
+
+<p>The easiest way to use Advance is with the <code><a href="Classes/PropertyAnimator.html">PropertyAnimator</a></code> class. This class manages animations for a specific property of a target object.</p>
+<pre class="highlight plaintext"><code>let view = UIView()
+let boundsAnimator = PropertyAnimator(target: view, keyPath: \.bounds)
+</code></pre>
+<h4 id='code-simulator-code-code-spring-code' class='heading'><code><a href="Classes/Simulator.html">Simulator</a></code> / <code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code></h4>
+
+<p>In most scenarios, physics-based animations are simply run to completion. For those situations, <code>Animator</code> and <code><a href="Classes/PropertyAnimator.html">PropertyAnimator</a></code> make it easy to run and use the results of an animation.</p>
+
+<p>In contrast, <code><a href="Classes/Simulator.html">Simulator</a></code> is useful for scenarios where you need direct access to a running simulation. This might occur in a UI where the user&rsquo;s scroll position drives changes to a spring&rsquo;s tension, for example. It would be impractical to create and start a new animation every time the simulation needs to change. A <code><a href="Classes/Simulator.html">Simulator</a></code> instance provides mutable access to the <code>function</code> property (containing the underlying function that is driving the simulation), along with the current state of the simulation (value and velocity).</p>
+
+<p><code><a href="Classes/Simulator.html">Simulator</a></code> conforms to <code><a href="Protocols/Observable.html">Observable</a></code>, so you can easily be notified when the simulated value changes.</p>
+
+<p><strong>Spring</strong> is a specialized simulator that uses a spring function. If all you are after is a simple spring to animate a value, this is what you want.</p>
+<pre class="highlight plaintext"><code>
+let spring = Spring(value: 0.0)
+simulator.observe { nextValue in
+    /// Do something with the spring's v
+}
+
+spring.target = 120.0
+
+</code></pre>
+<h3 id='animations' class='heading'>Animations</h3>
+
+<p>There are two primary types of animations in Advance: <strong>Simulated Animations</strong> and <strong>Basic Animations</strong>.</p>
+
+<p><strong>Basic animations</strong> are conventional animations similar to those seen in most animation libraries: they have a duration and timing function which are used to interpolate between a start and end value as the animation progresses.</p>
+
+<p><strong>Simulated animations</strong> use a physics-based approach to model changes to a value over time. This allows for realistic animations that model real-world behavior.</p>
+
+<p>Simulated animations are powered by a <strong>Simulation Function</strong>. These functions compute the forces that should effect the animated value for every frame, and control <em>convergence</em> (or: when the simulation should come to rest). The included simulation functions are:</p>
 
 <ul>
-<li>iOS 10+, tvOS 10+, or macOS 10.12+</li>
-<li>Swift 4.0+ (Xcode 9 or higher)</li>
+<li>Spring</li>
+<li>Decay</li>
+<li>Gravity</li>
 </ul>
+<h2 id='contributing' class='heading'>Contributing</h2>
 
-<p><a href="http://timdonnelly.github.io/Advance/">Please see the documentation</a> and check out the sample app (AdvanceSample) in the project for more details.</p>
-<h3 id='contributing' class='heading'>Contributing</h3>
+<p><strong>The best contribution you can provide is feedback.</strong> This library was designed in the context of a specific product – I&rsquo;d love to hear more about your project and how Advance can be improved to meet your needs.</p>
 
-<p><em>Suggestions / pull requests / etc. are welcome!</em></p>
-<h3 id='usage' class='heading'>Usage</h3>
+<p><em>(Of course, pull requests are always welcome)</em></p>
+<h2 id='usage' class='heading'>Usage</h2>
 
 <p>There are several ways to integrate Advance into your project.</p>
 
@@ -282,10 +314,16 @@
 <li><p>Carthage: add <code>github &quot;timdonnelly/Advance&quot; &quot;master&quot;</code> to your <code>Cartfile</code>.</p></li>
 <li><p>CocoaPods: add <code>pod &#39;Advance&#39;, &#39;~&gt; 2.0&#39;</code> to your <code>Podfile</code>.</p></li>
 </ul>
-<h3 id='documentation' class='heading'>Documentation</h3>
+<h5 id='requirements' class='heading'>Requirements</h5>
 
-<p>API documentation is <a href="http://timdonnelly.github.io/Advance/docs">available here</a>.</p>
-<h3 id='license' class='heading'>License</h3>
+<ul>
+<li>iOS 10+, tvOS 10+, or macOS 10.12+</li>
+<li>Swift 4.0+ (Xcode 9 or higher)</li>
+</ul>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>API documentation is <a href="http://timdonnelly.github.io/Advance/">available here</a>.</p>
+<h2 id='license' class='heading'>License</h2>
 
 <p>This project is released under the <a href="https://github.com/timdonnelly/Advance/blob/master/LICENSE">BSD 2-clause license</a>.</p>
 

@@ -14,7 +14,7 @@
     <a title="VectorConvertible Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (91% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -33,15 +33,6 @@
             <a href="../Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/Animator.html">Animator</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/State.html">– State</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/Result.html">– Result</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
@@ -51,10 +42,16 @@
                 <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
+                <a href="../Classes/AnimationRunner.html">AnimationRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/Result.html">– Result</a>
               </li>
             </ul>
           </li>
@@ -87,6 +84,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/GravityFunction.html">GravityFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -326,76 +326,6 @@ conforming type.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance17VectorConvertiblePAAE15springAnimationAA09SimulatedE0VyxAA14SpringFunctionVy0B4TypeQzGGx2to_x15initialVelocitySd7tensionSd7dampingSd9thresholdtF"></a>
-                    <a name="//apple_ref/swift/Method/springAnimation(to:initialVelocity:tension:damping:threshold:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance17VectorConvertiblePAAE15springAnimationAA09SimulatedE0VyxAA14SpringFunctionVy0B4TypeQzGGx2to_x15initialVelocitySd7tensionSd7dampingSd9thresholdtF">springAnimation(to:initialVelocity:tension:damping:threshold:)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Extension method
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">springAnimation</span><span class="p">(</span><span class="n">to</span> <span class="nv">target</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">initialVelocity</span><span class="p">:</span> <span class="k">Self</span> <span class="o">=</span> <span class="o">.</span><span class="n"><a href="../Protocols/VectorConvertible.html#/s:7Advance17VectorConvertiblePAAE4zeroxvZ">zero</a></span><span class="p">,</span> <span class="nv">tension</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">30.0</span><span class="p">,</span> <span class="nv">damping</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="p">,</span> <span class="kt"><a href="../Structs/SpringFunction.html">SpringFunction</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">.</span><span class="kt"><a href="../Protocols/VectorConvertible.html#/s:7Advance17VectorConvertibleP0B4Type">VectorType</a></span><span class="o">&gt;&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/Simulated/SimulatedAnimation.swift#L55-L64">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance17VectorConvertiblePAAE14decayAnimationAA09SimulatedE0VyxAA13DecayFunctionVy0B4TypeQzGGx15initialVelocity_Sd4dragSd9thresholdtF"></a>
-                    <a name="//apple_ref/swift/Method/decayAnimation(initialVelocity:drag:threshold:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance17VectorConvertiblePAAE14decayAnimationAA09SimulatedE0VyxAA13DecayFunctionVy0B4TypeQzGGx15initialVelocity_Sd4dragSd9thresholdtF">decayAnimation(initialVelocity:drag:threshold:)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Extension method
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decayAnimation</span><span class="p">(</span><span class="nv">initialVelocity</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">drag</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="p">,</span> <span class="kt"><a href="../Structs/DecayFunction.html">DecayFunction</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">.</span><span class="kt"><a href="../Protocols/VectorConvertible.html#/s:7Advance17VectorConvertibleP0B4Type">VectorType</a></span><span class="o">&gt;&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/Simulated/SimulatedAnimation.swift#L66-L71">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:7Advance17VectorConvertiblePAAE4zeroxvZ"></a>
                     <a name="//apple_ref/swift/Variable/zero" class="dashAnchor"></a>
                     <a class="token" href="#/s:7Advance17VectorConvertiblePAAE4zeroxvZ">zero</a>
@@ -495,6 +425,117 @@ where <code>0</code> returns the receiver, and <code>1</code> returns the <code>
                       </div>
                       <div class="slightly-smaller">
                         <a href="https://github.com/timdonnelly/Advance/tree/master/Source/VectorConvertible.swift#L31-L33">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance17VectorConvertiblePAAE15springAnimationAA09SimulatedE0VyxAA14SpringFunctionVy0B4TypeQzGGx2to_x15initialVelocitySd7tensionSd7dampingSd9thresholdtF"></a>
+                    <a name="//apple_ref/swift/Method/springAnimation(to:initialVelocity:tension:damping:threshold:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance17VectorConvertiblePAAE15springAnimationAA09SimulatedE0VyxAA14SpringFunctionVy0B4TypeQzGGx2to_x15initialVelocitySd7tensionSd7dampingSd9thresholdtF">springAnimation(to:initialVelocity:tension:damping:threshold:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a spring animation with the given properties.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">springAnimation</span><span class="p">(</span><span class="n">to</span> <span class="nv">target</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">initialVelocity</span><span class="p">:</span> <span class="k">Self</span> <span class="o">=</span> <span class="o">.</span><span class="n"><a href="../Protocols/VectorConvertible.html#/s:7Advance17VectorConvertiblePAAE4zeroxvZ">zero</a></span><span class="p">,</span> <span class="nv">tension</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">30.0</span><span class="p">,</span> <span class="nv">damping</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="p">,</span> <span class="kt"><a href="../Structs/SpringFunction.html">SpringFunction</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">.</span><span class="kt"><a href="../Protocols/VectorConvertible.html#/s:7Advance17VectorConvertibleP0B4Type">VectorType</a></span><span class="o">&gt;&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulation Functions/SpringFunction.swift#L84-L93">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance17VectorConvertiblePAAE9animationAA14BasicAnimationVyxGx2to_Sd8durationAA14TimingFunction_p06timingJ0tF"></a>
+                    <a name="//apple_ref/swift/Method/animation(to:duration:timingFunction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance17VectorConvertiblePAAE9animationAA14BasicAnimationVyxGx2to_Sd8durationAA14TimingFunction_p06timingJ0tF">animation(to:duration:timingFunction:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animation</span><span class="p">(</span><span class="n">to</span> <span class="nv">finalValue</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">timingFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TimingFunction.html">TimingFunction</a></span> <span class="o">=</span> <span class="kt"><a href="../Structs/UnitBezier.html">UnitBezier</a></span><span class="o">.</span><span class="n">swiftOut</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/BasicAnimation.html">BasicAnimation</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/Basic/BasicAnimation.swift#L81-L83">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance17VectorConvertiblePAAE14decayAnimationAA09SimulatedE0VyxAA13DecayFunctionVy0B4TypeQzGGx15initialVelocity_Sd4dragSd9thresholdtF"></a>
+                    <a name="//apple_ref/swift/Method/decayAnimation(initialVelocity:drag:threshold:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance17VectorConvertiblePAAE14decayAnimationAA09SimulatedE0VyxAA13DecayFunctionVy0B4TypeQzGGx15initialVelocity_Sd4dragSd9thresholdtF">decayAnimation(initialVelocity:drag:threshold:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a decay animation with the given properties.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decayAnimation</span><span class="p">(</span><span class="nv">initialVelocity</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">drag</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="p">,</span> <span class="kt"><a href="../Structs/DecayFunction.html">DecayFunction</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">.</span><span class="kt"><a href="../Protocols/VectorConvertible.html#/s:7Advance17VectorConvertibleP0B4Type">VectorType</a></span><span class="o">&gt;&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulation Functions/DecayFunction.swift#L59-L64">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

@@ -13,6 +13,10 @@ public protocol Animation: Advanceable {
     /// The current value of the animation.
     var value: Value { get }
     
+    /// The current velocity of the animation. This can be used to achieve seamless transitions between animations.
+    /// For example, a running spring animation may be interrupted and replaced by a decay animation. The velocity of
+    /// the spring at the time it is interrupted can be used as the initial velocity of the decay animation to produce
+    /// fluid, continuous motion.
     var velocity: Value { get }
     
 }

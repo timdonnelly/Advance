@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Result Enumeration Reference</title>
+    <title>State Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,11 +10,11 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/Result" class="dashAnchor"></a>
-    <a title="Result Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Enum/State" class="dashAnchor"></a>
+    <a title="State Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../../index.html">Advance Docs</a> (91% documented)</p>
+        <p><a href="../../index.html">Advance Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html">Advance Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        Result Enumeration Reference
+        State Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -32,15 +32,6 @@
           <li class="nav-group-name">
             <a href="../../Animation.html">Animation</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../../Classes/Animator.html">Animator</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/Animator/State.html">– State</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/Animator/Result.html">– Result</a>
-              </li>
               <li class="nav-group-task">
                 <a href="../../Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
@@ -51,10 +42,16 @@
                 <a href="../../Structs/BasicAnimation.html">BasicAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+                <a href="../../Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Structs/AnyAnimation.html">AnyAnimation</a>
+                <a href="../../Classes/AnimationRunner.html">AnimationRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/AnimationRunner/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/AnimationRunner/Result.html">– Result</a>
               </li>
             </ul>
           </li>
@@ -87,6 +84,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../../Structs/GravityFunction.html">GravityFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -215,14 +215,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Result</h1>
+            <h1>State</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Result</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">State</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 
                 </div>
               </div>
-            <p>Represents the reason that the animator completed.</p>
+            <p>Represents the current state of an animation runner.</p>
 
           </section>
           <section class="section task-group-section">
@@ -231,9 +231,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC6ResultO8finishedAEyx_GAGmlF"></a>
-                    <a name="//apple_ref/swift/Element/finished" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC6ResultO8finishedAEyx_GAGmlF">finished</a>
+                    <a name="/s:7Advance15AnimationRunnerC5StateO7pendingAEyx_GAGmAA17VectorConvertibleRzlF"></a>
+                    <a name="//apple_ref/swift/Element/pending" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC5StateO7pendingAEyx_GAGmAA17VectorConvertibleRzlF">pending</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -241,19 +241,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The animation finished normally.</p>
+                        <p>The runner has not started yet.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">finished</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">pending</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L184">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L204">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -265,9 +265,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC6ResultO9cancelledAEyx_GAGmlF"></a>
-                    <a name="//apple_ref/swift/Element/cancelled" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC6ResultO9cancelledAEyx_GAGmlF">cancelled</a>
+                    <a name="/s:7Advance15AnimationRunnerC5StateO7runningAEyx_GAGmAA17VectorConvertibleRzlF"></a>
+                    <a name="//apple_ref/swift/Element/running" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC5StateO7runningAEyx_GAGmAA17VectorConvertibleRzlF">running</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -275,19 +275,86 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The animator was cancelled before the animation could finish.</p>
+                        <p>The runner is currently running the animation.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">cancelled</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">running</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L187">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L207">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance15AnimationRunnerC5StateO4doneAEyx_GAC6ResultOyx_G6result_tcAGmAA17VectorConvertibleRzlF"></a>
+                    <a name="//apple_ref/swift/Element/done" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC5StateO4doneAEyx_GAC6ResultOyx_G6result_tcAGmAA17VectorConvertibleRzlF">done</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The runner has completed (the animation is no longer running).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">done</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../../Classes/AnimationRunner/Result.html">Result</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L210">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s9EquatableP2eeoiSbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s9EquatableP2eeoiSbx_xtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">State</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L212-L223">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

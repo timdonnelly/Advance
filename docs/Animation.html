@@ -13,7 +13,7 @@
     <a title="Animation  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Advance Docs</a> (91% documented)</p>
+        <p><a href="index.html">Advance Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -32,15 +32,6 @@
             <a href="Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/Animator.html">Animator</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/Animator/State.html">– State</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/Animator/Result.html">– Result</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
@@ -50,10 +41,16 @@
                 <a href="Structs/BasicAnimation.html">BasicAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+                <a href="Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/AnyAnimation.html">AnyAnimation</a>
+                <a href="Classes/AnimationRunner.html">AnimationRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AnimationRunner/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AnimationRunner/Result.html">– Result</a>
               </li>
             </ul>
           </li>
@@ -86,6 +83,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/GravityFunction.html">GravityFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -223,49 +223,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC"></a>
-                    <a name="//apple_ref/swift/Class/Animator" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC">Animator</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Runs an animation until it is either finished or cancelled.
-Animators cannot be reused:</p>
-
-<ul>
-<li>They begin in a &lsquo;running&rsquo; state</li>
-<li>If the animation finishes, the animator enters the <code>completed (finished)</code> state.</li>
-<li>If <code>cancel()</code> is called on the animator while in a running state, the
-animator enters the <code>completed (cancelled)</code> state.</li>
-</ul>
-
-                        <a href="Classes/Animator.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L7-L132">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:7Advance16PropertyAnimatorC"></a>
                     <a name="//apple_ref/swift/Class/PropertyAnimator" class="dashAnchor"></a>
                     <a class="token" href="#/s:7Advance16PropertyAnimatorC">PropertyAnimator</a>
@@ -276,11 +233,24 @@ animator enters the <code>completed (cancelled)</code> state.</li>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Manages the application of animationss to a property of type <code>Value</code> on
+                        <p>Manages the application of animations to a property of type <code>Value</code> on
 the target object.</p>
 
 <p>Property animators retain the target object, so they should <em>not</em> be used
 to animate properties of <code>self</code>.</p>
+<pre class="highlight plaintext"><code>let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+
+let sizeAnimator = PropertyAnimator(target: view, keyPath: \.bounds.size)
+
+/// Spring physics will move the view's size to the new value.
+sizeAnimator.spring(to: CGSize(width: 300, height: 300))
+
+/// Some time in the future...
+
+/// The value will keep the same velocity that it had from the preceeding
+/// animation, and a decay function will slowly bring movement to a stop.
+sizeAnimator.decay(drag: 2.0)
+</code></pre>
 
                         <a href="Classes/PropertyAnimator.html" class="slightly-smaller">See more</a>
                       </div>
@@ -288,12 +258,12 @@ to animate properties of <code>self</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">PropertyAnimator</span><span class="o">&lt;</span><span class="kt">Target</span><span class="p">,</span> <span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Target</span><span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">PropertyAnimator</span><span class="o">&lt;</span><span class="kt">Target</span><span class="p">,</span> <span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Target</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">,</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L6-L66">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L22-L88">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -331,7 +301,7 @@ time-advancable animation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animation.swift#L5-L16">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animation.swift#L5-L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -361,7 +331,7 @@ time-advancable animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BasicAnimation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/Interpolatable.html">Interpolatable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BasicAnimation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
                       </div>
@@ -385,42 +355,7 @@ time-advancable animation.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/Basic/BasicAnimation.swift#L4-L57">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance18SimulatedAnimationV"></a>
-                    <a name="//apple_ref/swift/Struct/SimulatedAnimation" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance18SimulatedAnimationV">SimulatedAnimation</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                        <a href="Structs/SimulatedAnimation.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SimulatedAnimation</span><span class="o">&lt;</span><span class="kt">Element</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="p">,</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="Protocols/SimulationFunction.html">SimulationFunction</a></span><span class="p">,</span> <span class="kt">Element</span><span class="o">.</span><span class="kt">VectorType</span> <span class="o">==</span> <span class="kt">T</span><span class="o">.</span><span class="kt">VectorType</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/Simulated/SimulatedAnimation.swift#L1-L21">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/Basic/BasicAnimation.swift#L4-L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -450,12 +385,81 @@ time-advancable animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AnyAnimation</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AnyAnimation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/AnyAnimation.swift#L2-L29">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/AnyAnimation.swift#L2-L34">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance15AnimationRunnerC"></a>
+                    <a name="//apple_ref/swift/Class/AnimationRunner" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC">AnimationRunner</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class is used to drive a single animation to completion. It is one-shot,
+so a runner is no longer useful after the animation that it is driving
+completes.</p>
+
+<ul>
+<li>They begin in a <code>pending</code> state.</li>
+<li>Then enter the <code>running</code> state after <code>start()</code> is called.</li>
+<li>If the animation finishes, the runner enters the <code>completed (finished)</code> state.</li>
+<li>If <code>cancel()</code> is called on the runner while in a running state, the
+runner enters the <code>completed (cancelled)</code> state.</li>
+</ul>
+<pre class="highlight plaintext"><code>import Advance
+
+let animation = 0.0.animation(
+    to: 100.0,
+    duration: 0.6,
+    timingFunction: UnitBezier.easeIn)
+
+let runner = AnimationRunner(animation: animation)
+    .onChange { value in
+        /// Do something with the value.
+    }
+    .onCancel {
+        /// The animation was cancelled before it could finish.
+    }
+    .onFinish {
+        /// The animation finished successfully.
+     }
+
+/// Kick off the animation
+runner()
+
+</code></pre>
+
+<p>The resulting runner can be used to cancel the animation or to add additional observers or completion handlers.</p>
+
+                        <a href="Classes/AnimationRunner.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AnimationRunner</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L38-L176">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

@@ -26,6 +26,7 @@ public struct AnyAnimation<Value>: Animation where Value: VectorConvertible {
         
     }
     
+    /// Advances the wrapped animation.
     public mutating func advance(by time: Double) {
         self = _advance(time)
     }

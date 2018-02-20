@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Animator Class Reference</title>
+    <title>AnimationRunner Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,11 +10,11 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/Animator" class="dashAnchor"></a>
-    <a title="Animator Class Reference"></a>
+    <a name="//apple_ref/swift/Class/AnimationRunner" class="dashAnchor"></a>
+    <a title="AnimationRunner Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (91% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Advance Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Animator Class Reference
+        AnimationRunner Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -32,15 +32,6 @@
           <li class="nav-group-name">
             <a href="../Animation.html">Animation</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Classes/Animator.html">Animator</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/State.html">– State</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/Result.html">– Result</a>
-              </li>
               <li class="nav-group-task">
                 <a href="../Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
@@ -51,10 +42,16 @@
                 <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
+                <a href="../Classes/AnimationRunner.html">AnimationRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/Result.html">– Result</a>
               </li>
             </ul>
           </li>
@@ -87,6 +84,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/GravityFunction.html">GravityFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -215,22 +215,48 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Animator</h1>
+            <h1>AnimationRunner</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AnimationRunner</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                 </div>
               </div>
-            <p>Runs an animation until it is either finished or cancelled.
-Animators cannot be reused:</p>
+            <p>This class is used to drive a single animation to completion. It is one-shot,
+so a runner is no longer useful after the animation that it is driving
+completes.</p>
 
 <ul>
-<li>They begin in a &lsquo;running&rsquo; state</li>
-<li>If the animation finishes, the animator enters the <code>completed (finished)</code> state.</li>
-<li>If <code>cancel()</code> is called on the animator while in a running state, the
-animator enters the <code>completed (cancelled)</code> state.</li>
+<li>They begin in a <code>pending</code> state.</li>
+<li>Then enter the <code>running</code> state after <code>start()</code> is called.</li>
+<li>If the animation finishes, the runner enters the <code>completed (finished)</code> state.</li>
+<li>If <code>cancel()</code> is called on the runner while in a running state, the
+runner enters the <code>completed (cancelled)</code> state.</li>
 </ul>
+<pre class="highlight plaintext"><code>import Advance
+
+let animation = 0.0.animation(
+    to: 100.0,
+    duration: 0.6,
+    timingFunction: UnitBezier.easeIn)
+
+let runner = AnimationRunner(animation: animation)
+    .onChange { value in
+        /// Do something with the value.
+    }
+    .onCancel {
+        /// The animation was cancelled before it could finish.
+    }
+    .onFinish {
+        /// The animation finished successfully.
+     }
+
+/// Kick off the animation
+runner()
+
+</code></pre>
+
+<p>The resulting runner can be used to cancel the animation or to add additional observers or completion handlers.</p>
 
           </section>
           <section class="section task-group-section">
@@ -239,9 +265,9 @@ animator enters the <code>completed (cancelled)</code> state.</li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC5stateAC5StateOyx_Gv"></a>
+                    <a name="/s:7Advance15AnimationRunnerC5stateAC5StateOyx_Gv"></a>
                     <a name="//apple_ref/swift/Property/state" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC5stateAC5StateOyx_Gv">state</a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC5stateAC5StateOyx_Gv">state</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -256,12 +282,12 @@ animator enters the <code>completed (cancelled)</code> state.</li>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private</span> <span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/Animator/State.html">State</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/AnimationRunner/State.html">State</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L40-L44">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -269,9 +295,9 @@ animator enters the <code>completed (cancelled)</code> state.</li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorCACyxGqd__9animation_tc7ElementQyd__RszAA9AnimationRd__lufc"></a>
+                    <a name="/s:7Advance15AnimationRunnerCACyxGqd__9animation_tc5ValueQyd__RszAA0B0Rd__lufc"></a>
                     <a name="//apple_ref/swift/Method/init(animation:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorCACyxGqd__9animation_tc7ElementQyd__RszAA9AnimationRd__lufc">init(animation:)</a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerCACyxGqd__9animation_tc5ValueQyd__RszAA0B0Rd__lufc">init(animation:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -279,20 +305,19 @@ animator enters the <code>completed (cancelled)</code> state.</li>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Instantiates a new animator for the given animation.
-The animator begins running immediately.</p>
+                        <p>Instantiates a new runner for the given animation.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">animation</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span><span class="p">,</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Element</span> <span class="o">==</span> <span class="kt">Element</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">animation</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span><span class="p">,</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Value</span> <span class="o">==</span> <span class="kt">Value</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L19-L37">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L53-L64">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -300,9 +325,9 @@ The animator begins running immediately.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8onChangeACyxGyxcF"></a>
+                    <a name="/s:7Advance15AnimationRunnerC8onChangeACyxGyxcF"></a>
                     <a name="//apple_ref/swift/Method/onChange(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8onChangeACyxGyxcF">onChange(_:)</a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC8onChangeACyxGyxcF">onChange(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -320,12 +345,12 @@ the latest value from the animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Element</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnimationRunner</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L68-L77">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L95-L104">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -333,9 +358,9 @@ the latest value from the animation.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC12onCompletionACyxGyAC6ResultOyx_GcF"></a>
+                    <a name="/s:7Advance15AnimationRunnerC12onCompletionACyxGyAC6ResultOyx_GcF"></a>
                     <a name="//apple_ref/swift/Method/onCompletion(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC12onCompletionACyxGyAC6ResultOyx_GcF">onCompletion(_:)</a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC12onCompletionACyxGyAC6ResultOyx_GcF">onCompletion(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -346,7 +371,7 @@ the latest value from the animation.</p>
                         <p>Adds a handler that will be called when the animation completes (in either
 a finished or cancelled state).</p>
 
-<p>If the animator is already in a completed state, the given handler
+<p>If the runner is already in a completed state, the given handler
 will be called immediately.</p>
 
                       </div>
@@ -354,12 +379,12 @@ will be called immediately.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onCompletion</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/Animator/Result.html">Result</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onCompletion</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/AnimationRunner/Result.html">Result</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnimationRunner</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L85-L93">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L112-L120">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -367,9 +392,9 @@ will be called immediately.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8onFinishACyxGyycF"></a>
+                    <a name="/s:7Advance15AnimationRunnerC8onFinishACyxGyycF"></a>
                     <a name="//apple_ref/swift/Method/onFinish(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8onFinishACyxGyycF">onFinish(_:)</a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC8onFinishACyxGyycF">onFinish(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -380,7 +405,7 @@ will be called immediately.</p>
                         <p>Adds a handler that will be called when the animation completes in a
 finished state.</p>
 
-<p>If the animator is already in a finished state, the given handler
+<p>If the runner is already in a finished state, the given handler
 will be called immediately.</p>
 
                       </div>
@@ -388,12 +413,12 @@ will be called immediately.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onFinish</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onFinish</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnimationRunner</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L101-L107">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L128-L134">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -401,9 +426,9 @@ will be called immediately.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8onCancelACyxGyycF"></a>
+                    <a name="/s:7Advance15AnimationRunnerC8onCancelACyxGyycF"></a>
                     <a name="//apple_ref/swift/Method/onCancel(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8onCancelACyxGyycF">onCancel(_:)</a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC8onCancelACyxGyycF">onCancel(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -414,7 +439,7 @@ will be called immediately.</p>
                         <p>Adds a handler that will be called when the animation completes in a
 cancelled state.</p>
 
-<p>If the animator is already in a cancelled state, the given handler
+<p>If the runner is already in a cancelled state, the given handler
 will be called immediately.</p>
 
                       </div>
@@ -422,12 +447,12 @@ will be called immediately.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnimationRunner</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L115-L121">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L142-L148">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -435,9 +460,42 @@ will be called immediately.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC6cancelyyF"></a>
+                    <a name="/s:7Advance15AnimationRunnerC5startyyF"></a>
+                    <a name="//apple_ref/swift/Method/start()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC5startyyF">start()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts the animation.</p>
+
+<p>If the runner is not in the <code>pending</code> state, calls to <code>start()</code> will
+have no effect.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">start</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L154-L157">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance15AnimationRunnerC6cancelyyF"></a>
                     <a name="//apple_ref/swift/Method/cancel()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC6cancelyyF">cancel()</a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC6cancelyyF">cancel()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -447,7 +505,7 @@ will be called immediately.</p>
                       <div class="abstract">
                         <p>Cancels the animation.</p>
 
-<p>If the animator is not in the <code>running</code> state, calls to <code>cancel()</code> will
+<p>If the runner is not in the <code>running</code> state, calls to <code>cancel()</code> will
 have no effect.</p>
 
                       </div>
@@ -460,54 +518,17 @@ have no effect.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L127-L130">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L163-L166">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py7ElementQzcF"></a>
-                    <a name="//apple_ref/swift/Method/observe(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py7ElementQzcF">observe(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Element</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L137-L139">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance8AnimatorC5boundACyxGqd__2to_s24ReferenceWritableKeyPathCyqd__xG03keyH0tlF"></a>
-                    <a name="//apple_ref/swift/Method/bound(to:keyPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC5boundACyxGqd__2to_s24ReferenceWritableKeyPathCyqd__xG03keyH0tlF">bound(to:keyPath:)</a>
+                    <a name="/s:7Advance15AnimationRunnerC5valuexv"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC5valuexv">value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -522,12 +543,42 @@ have no effect.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">bound</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt">Element</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L145-L150">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L168-L170">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance15AnimationRunnerC8velocityxv"></a>
+                    <a name="//apple_ref/swift/Property/velocity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC8velocityxv">velocity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L172-L174">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -539,9 +590,9 @@ have no effect.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC5StateO"></a>
-                    <a name="//apple_ref/swift/Enum/State" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC5StateO">State</a>
+                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF"></a>
+                    <a name="//apple_ref/swift/Method/observe(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF">observe(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -549,9 +600,76 @@ have no effect.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Represents the current state of an Animator.</p>
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
 
-                        <a href="../Classes/Animator/State.html" class="slightly-smaller">See more</a>
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L181-L183">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance15AnimationRunnerC5boundACyxGqd__2to_s24ReferenceWritableKeyPathCyqd__xG03keyI0tlF"></a>
+                    <a name="//apple_ref/swift/Method/bound(to:keyPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC5boundACyxGqd__2to_s24ReferenceWritableKeyPathCyqd__xG03keyI0tlF">bound(to:keyPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">bound</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt">Value</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnimationRunner</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L189-L194">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance15AnimationRunnerC5StateO"></a>
+                    <a name="//apple_ref/swift/Enum/State" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC5StateO">State</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Represents the current state of an animation runner.</p>
+
+                        <a href="../Classes/AnimationRunner/State.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -562,7 +680,7 @@ have no effect.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L157-L175">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L201-L224">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -574,9 +692,9 @@ have no effect.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC6ResultO"></a>
+                    <a name="/s:7Advance15AnimationRunnerC6ResultO"></a>
                     <a name="//apple_ref/swift/Enum/Result" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC6ResultO">Result</a>
+                    <a class="token" href="#/s:7Advance15AnimationRunnerC6ResultO">Result</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -584,9 +702,9 @@ have no effect.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Represents the reason that the animator completed.</p>
+                        <p>Represents the reason that the runner completed.</p>
 
-                        <a href="../Classes/Animator/Result.html" class="slightly-smaller">See more</a>
+                        <a href="../Classes/AnimationRunner/Result.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -597,7 +715,7 @@ have no effect.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L181-L188">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L230-L237">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

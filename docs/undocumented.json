@@ -1,16 +1,44 @@
 {
   "warnings": [
     {
+      "file": "/Users/tim/Development/Advance/Source/AnimationRunner.swift",
+      "line": 40,
+      "symbol": "AnimationRunner.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/AnimationRunner.swift",
+      "line": 168,
+      "symbol": "AnimationRunner.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/AnimationRunner.swift",
+      "line": 172,
+      "symbol": "AnimationRunner.velocity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tim/Development/Advance/Source/AnimationRunner.swift",
+      "line": 189,
+      "symbol": "AnimationRunner.bound(to:keyPath:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/tim/Development/Advance/Source/Animations/Basic/BasicAnimation.swift",
-      "line": 62,
+      "line": 72,
       "symbol": "PropertyAnimator.animate(to:duration:timingFunction:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/tim/Development/Advance/Source/Animations/Basic/BasicAnimation.swift",
-      "line": 71,
-      "symbol": "Interpolatable.animation(to:duration:timingFunction:)",
+      "line": 81,
+      "symbol": "VectorConvertible.animation(to:duration:timingFunction:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -64,62 +92,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
-      "line": 1,
-      "symbol": "SimulatedAnimation",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
-      "line": 5,
-      "symbol": "SimulatedAnimation.init(function:value:velocity:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
-      "line": 26,
-      "symbol": "PropertyAnimator.spring(to:initialVelocity:tension:damping:threshold:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
-      "line": 39,
-      "symbol": "PropertyAnimator.decay(initialVelocity:drag:threshold:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
-      "line": 55,
-      "symbol": "VectorConvertible.springAnimation(to:initialVelocity:tension:damping:threshold:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Animations/Simulated/SimulatedAnimation.swift",
-      "line": 66,
-      "symbol": "VectorConvertible.decayAnimation(initialVelocity:drag:threshold:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Animator.swift",
-      "line": 9,
-      "symbol": "Animator.state",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Animator.swift",
-      "line": 145,
-      "symbol": "Animator.bound(to:keyPath:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/tim/Development/Advance/Source/Loop.swift",
       "line": 51,
       "symbol": "Loop.Frame.previousTimestamp",
@@ -134,45 +106,10 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
-      "line": 3,
-      "symbol": "GravityFunction",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
-      "line": 5,
-      "symbol": "GravityFunction.target",
+      "file": "/Users/tim/Development/Advance/Source/PropertyAnimator.swift",
+      "line": 85,
+      "symbol": "PropertyAnimator.velocity",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
-      "line": 7,
-      "symbol": "GravityFunction.minRadius",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
-      "line": 9,
-      "symbol": "GravityFunction.threshold",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Simulation Functions/GravityFunction.swift",
-      "line": 11,
-      "symbol": "GravityFunction.init(target:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/Simulator.swift",
-      "line": 89,
-      "symbol": "Simulator.init(value:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],

@@ -14,12 +14,11 @@ custom_categories:
 
   - name: Animation
     children:
-    - Animator
     - PropertyAnimator
     - Animation
     - BasicAnimation
-    - SimulatedAnimation
     - AnyAnimation
+    - AnimationRunner
 
   - name: Simulation
     children:
@@ -32,6 +31,7 @@ custom_categories:
     - SpringFunction
     - DecayFunction
     - GravityFunction
+    - SimulatedAnimation
 
   - name: Timing Functions
     children:

@@ -14,7 +14,7 @@
     <a title="Observable Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (91% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -33,15 +33,6 @@
             <a href="../Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/Animator.html">Animator</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/State.html">– State</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/Result.html">– Result</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
@@ -51,10 +42,16 @@
                 <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
+                <a href="../Classes/AnimationRunner.html">AnimationRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/Result.html">– Result</a>
               </li>
             </ul>
           </li>
@@ -87,6 +84,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/GravityFunction.html">GravityFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -231,9 +231,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance10ObservableP7Element"></a>
-                    <a name="//apple_ref/swift/Alias/Element" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance10ObservableP7Element">Element</a>
+                    <a name="/s:7Advance10ObservableP5Value"></a>
+                    <a name="//apple_ref/swift/Alias/Value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10ObservableP5Value">Value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -248,7 +248,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">associatedtype</span> <span class="kt">Element</span></code></pre>
+                          <pre class="highlight"><code><span class="k">associatedtype</span> <span class="kt">Value</span></code></pre>
 
                         </div>
                       </div>
@@ -271,14 +271,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Observers are closures that take a single <code><a href="../Protocols/Observable.html#/s:7Advance10ObservableP7Element">Element</a></code>.</p>
+                        <p>Observers are closures that take a single <code>Element</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">Observer</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP7Element">Element</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">Observer</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP5Value">Value</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
@@ -291,9 +291,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py7ElementQzcF"></a>
+                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF"></a>
                     <a name="//apple_ref/swift/Method/observe(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py7ElementQzcF">observe(_:)</a>
+                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF">observe(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -348,9 +348,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance10ObservablePAAE4bindAA12Subscription_pqd__2to_s24ReferenceWritableKeyPathCyqd__7ElementQzG03keyI0tlF"></a>
+                    <a name="/s:7Advance10ObservablePAAE4bindAA12Subscription_pqd__2to_s24ReferenceWritableKeyPathCyqd__5ValueQzG03keyI0tlF"></a>
                     <a name="//apple_ref/swift/Method/bind(to:keyPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance10ObservablePAAE4bindAA12Subscription_pqd__2to_s24ReferenceWritableKeyPathCyqd__7ElementQzG03keyI0tlF">bind(to:keyPath:)</a>
+                    <a class="token" href="#/s:7Advance10ObservablePAAE4bindAA12Subscription_pqd__2to_s24ReferenceWritableKeyPathCyqd__5ValueQzG03keyI0tlF">bind(to:keyPath:)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -368,7 +368,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">bind</span><span class="o">&lt;</span><span class="kt">R</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">R</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">R</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP7Element">Element</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">bind</span><span class="o">&lt;</span><span class="kt">R</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">R</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">R</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP5Value">Value</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
 
                         </div>
                       </div>

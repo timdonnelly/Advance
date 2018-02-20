@@ -1,4 +1,4 @@
-/// Manages the application of animationss to a property of type `Value` on
+/// Manages the application of animations to a property of type `Value` on
 /// the target object.
 ///
 /// Property animators retain the target object, so they should *not* be used

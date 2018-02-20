@@ -14,7 +14,7 @@
     <a title="Animation Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (91% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -33,15 +33,6 @@
             <a href="../Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/Animator.html">Animator</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/State.html">– State</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/Result.html">– Result</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
@@ -51,10 +42,16 @@
                 <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
+                <a href="../Classes/AnimationRunner.html">AnimationRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/Result.html">– Result</a>
               </li>
             </ul>
           </li>
@@ -87,6 +84,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/GravityFunction.html">GravityFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -234,9 +234,9 @@ time-advancable animation.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9AnimationP7Element"></a>
-                    <a name="//apple_ref/swift/Alias/Element" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9AnimationP7Element">Element</a>
+                    <a name="/s:7Advance9AnimationP5Value"></a>
+                    <a name="//apple_ref/swift/Alias/Value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance9AnimationP5Value">Value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -251,7 +251,7 @@ time-advancable animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">associatedtype</span> <span class="kt">Element</span></code></pre>
+                          <pre class="highlight"><code><span class="k">associatedtype</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
                       </div>
@@ -294,9 +294,9 @@ time-advancable animation.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9AnimationP5value7ElementQzv"></a>
+                    <a name="/s:7Advance9AnimationP5value5ValueQzv"></a>
                     <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9AnimationP5value7ElementQzv">value</a>
+                    <a class="token" href="#/s:7Advance9AnimationP5value5ValueQzv">value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -311,7 +311,7 @@ time-advancable animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html#/s:7Advance9AnimationP7Element">Element</a></span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html#/s:7Advance9AnimationP5Value">Value</a></span></code></pre>
 
                         </div>
                       </div>
@@ -321,41 +321,35 @@ time-advancable animation.</p>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9AnimationPAAE3runAA8AnimatorCy7ElementQzGyF"></a>
-                    <a name="//apple_ref/swift/Method/run()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9AnimationPAAE3runAA8AnimatorCy7ElementQzGyF">run()</a>
+                    <a name="/s:7Advance9AnimationP8velocity5ValueQzv"></a>
+                    <a name="//apple_ref/swift/Property/velocity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance9AnimationP8velocity5ValueQzv">velocity</a>
                     </code>
-                      <span class="declaration-note">
-                        Extension method
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializes and returns an animator to execute this animation.</p>
-
-<p>The animator will begin running immediately.</p>
+                        <p>The current velocity of the animation. This can be used to achieve seamless transitions between animations.
+For example, a running spring animation may be interrupted and replaced by a decay animation. The velocity of
+the spring at the time it is interrupted can be used as the initial velocity of the decay animation to produce
+fluid, continuous motion.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">run</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/Animator.html">Animator</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">.</span><span class="kt"><a href="../Protocols/Animation.html#/s:7Advance9AnimationP7Element">Element</a></span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html#/s:7Advance9AnimationP5Value">Value</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L198-L200">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animation.swift#L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -367,9 +361,9 @@ time-advancable animation.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9AnimationPAAE9allValuess11AnySequenceVy7ElementQzGSd8timeStep_tF"></a>
+                    <a name="/s:7Advance9AnimationPAAE9allValuess11AnySequenceVy5ValueQzGSd8timeStep_tF"></a>
                     <a name="//apple_ref/swift/Method/allValues(timeStep:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9AnimationPAAE9allValuess11AnySequenceVy7ElementQzGSd8timeStep_tF">allValues(timeStep:)</a>
+                    <a class="token" href="#/s:7Advance9AnimationPAAE9allValuess11AnySequenceVy5ValueQzGSd8timeStep_tF">allValues(timeStep:)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -388,12 +382,12 @@ on the provided time step.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">allValues</span><span class="p">(</span><span class="nv">timeStep</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">0.008</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnySequence</span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/Animation.html#/s:7Advance9AnimationP7Element">Element</a></span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">allValues</span><span class="p">(</span><span class="nv">timeStep</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">0.008</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnySequence</span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/Animation.html#/s:7Advance9AnimationP5Value">Value</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animation.swift#L22-L26">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animation.swift#L29-L33">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

@@ -119,10 +119,8 @@ There are several ways to integrate Advance into your project.
 * iOS 10+, tvOS 10+, or macOS 10.12+
 * Swift 4.0+ (Xcode 9 or higher)
 
-[Please see the documentation](http://timdonnelly.github.io/Advance/) and check out the sample app (AdvanceSample) in the project for more details.
-
 ## Documentation
-API documentation is [available here](http://timdonnelly.github.io/Advance/docs).
+API documentation is [available here](http://timdonnelly.github.io/Advance/).
 
 ## License
 This project is released under the [BSD 2-clause license](https://github.com/timdonnelly/Advance/blob/master/LICENSE).

@@ -14,7 +14,7 @@
     <a title="Simulator Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (91% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -33,15 +33,6 @@
             <a href="../Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/Animator.html">Animator</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/State.html">– State</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Animator/Result.html">– Result</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/PropertyAnimator.html">PropertyAnimator</a>
               </li>
               <li class="nav-group-task">
@@ -51,10 +42,16 @@
                 <a href="../Structs/BasicAnimation.html">BasicAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
+                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
+                <a href="../Classes/AnimationRunner.html">AnimationRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/Result.html">– Result</a>
               </li>
             </ul>
           </li>
@@ -87,6 +84,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/GravityFunction.html">GravityFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -218,15 +218,15 @@
             <h1>Simulator</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Simulator</span><span class="o">&lt;</span><span class="kt">Element</span><span class="p">,</span> <span class="kt">Function</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="p">,</span> <span class="kt">Function</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SimulationFunction.html">SimulationFunction</a></span><span class="p">,</span> <span class="kt">Element</span><span class="o">.</span><span class="kt">VectorType</span> <span class="o">==</span> <span class="kt">Function</span><span class="o">.</span><span class="kt">VectorType</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Simulator</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">Function</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="p">,</span> <span class="kt">Function</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SimulationFunction.html">SimulationFunction</a></span><span class="p">,</span> <span class="kt">Value</span><span class="o">.</span><span class="kt">VectorType</span> <span class="o">==</span> <span class="kt">Function</span><span class="o">.</span><span class="kt">VectorType</span></code></pre>
 
                 </div>
               </div>
             <p>Animates changes to a value using a simulation function.</p>
 
 <p>In most scenarios, physics-based animations are simply run to completion.
-For those situations, <code><a href="../Classes/Animator.html">Animator</a></code> and <code><a href="../Classes/PropertyAnimator.html">PropertyAnimator</a></code> make it easy to
-run and use the results of an animation.</p>
+For those situations, <code><a href="../Classes/PropertyAnimator.html">PropertyAnimator</a></code> makes it easy to run and use the
+results of an animation.</p>
 
 <p>In contrast, <code>Simulator</code> is useful for scenarios where you need direct access
 to a running simulation. This might occur in a UI where the user&rsquo;s scroll
@@ -236,11 +236,6 @@ needs to change. A <code>Simulator</code> instance provides mutable access to th
 <code>function</code> property (containing the underlying function that is driving the
 simulation), along with the current state of the simulation (value and
 velocity).</p>
-
-<p>Another difference between <code>Simulator</code> and the animator classes is that a
-simulator never &lsquo;finishes.&rsquo; Simulations may converge (reach a settled state),
-but changes to either the function or the current simulation state may cause
-the simulation to begin running again.</p>
 
           </section>
           <section class="section task-group-section">
@@ -271,7 +266,7 @@ the simulation to begin running again.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L35-L38">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L30-L33">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -296,7 +291,7 @@ the simulation to begin running again.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="kt">Function</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Element</span> <span class="o">=</span> <span class="kt">Element</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="kt">Function</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">Value</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -344,7 +339,7 @@ the simulation to begin running again.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L52-L62">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L47-L57">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -369,12 +364,12 @@ the simulation to begin running again.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Element</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L65-L68">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L60-L63">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -399,12 +394,12 @@ the simulation to begin running again.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Element</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L71-L74">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L66-L69">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -416,9 +411,9 @@ the simulation to begin running again.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py7ElementQzcF"></a>
+                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF"></a>
                     <a name="//apple_ref/swift/Method/observe(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py7ElementQzcF">observe(_:)</a>
+                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF">observe(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -432,12 +427,12 @@ the simulation to begin running again.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Element</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L81-L83">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L76-L78">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -459,19 +454,19 @@ the simulation to begin running again.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Initializes a new spring converged at the given value, using default configuration options for the spring function.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Element</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L89-L92">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L85-L88">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -496,12 +491,12 @@ the simulation to begin running again.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Element</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L95-L98">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L91-L94">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -526,7 +521,7 @@ the simulation to begin running again.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">(</span><span class="n">to</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Element</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">(</span><span class="n">to</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -550,7 +545,7 @@ the simulation to begin running again.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L102-L106">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L98-L102">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -580,7 +575,7 @@ the simulation to begin running again.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L109-L112">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L105-L108">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -610,7 +605,7 @@ the simulation to begin running again.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L115-L118">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L111-L114">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -641,7 +636,7 @@ current value can be in order to ender a converged (settled) state.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L122-L125">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L118-L121">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

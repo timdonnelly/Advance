@@ -81,6 +81,7 @@ extension Simulator: Observable {
 
 public extension Simulator where Function == SpringFunction<Value.VectorType> {
     
+    /// Initializes a new spring converged at the given value, using default configuration options for the spring function.
     public convenience init(value: Value) {
         let spring = SpringFunction(target: value.vector)
         self.init(function: spring, value: value)
