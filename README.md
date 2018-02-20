@@ -4,6 +4,12 @@ Physics-based animations for iOS, tvOS, and macOS.
 
 This project was originally developed to power the animations throughout the Storehouse app for iOS, but has since been extensively rewritten in modern Swift.
 
+## What's new in 2.0?
+
+Nearly everything. Pre-2.0 was largely an Objective-C port, so 2.0 was a chance to clean up and rethink the external API.
+
+The API is much smaller as a result, providing a handful of types that make it easy to integrate physics-based animations.
+
 ## Examples
 
 #### Using a `Spring` to animate the position of a view
@@ -41,6 +47,8 @@ sizeAnimator.decay(drag: 2.0)
 ```
 
 `PropertyAnimator` is the most flexible way to apply multiple types of animations to an object.
+
+If you don't need direct access to a running simulation and want the flexibility of using various animation types for the same value, `PropertyAnimator` is your best bet.
 
 
 #### Check out the sample app
