@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "Advance"
   s.version      = "2.0.0.alpha1"
-  s.summary      = "A powerful animation framework for iOS and OS X."
+  s.summary      = "Physics-based animations for iOS, tvOS, and macOS."
   s.description  = "Advance is a Swift framework that enables advanced animations and physics-based interactions."
 
   s.homepage     = "https://github.com/timdonnelly/Advance"
@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.source_files = "Source/**/*.swift"
 
   s.ios.deployment_target = "10.0"
-  s.osx.deployment_target = "10.11"
+  s.macos.deployment_target = "10.12"
   s.tvos.deployment_target = "10.0"
 end
