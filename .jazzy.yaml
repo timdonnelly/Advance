@@ -37,7 +37,6 @@ custom_categories:
     children:
     - TimingFunction
     - LinearTimingFunction
-    - ReversedTimingFunction
     - UnitBezier
 
   - name: Loop

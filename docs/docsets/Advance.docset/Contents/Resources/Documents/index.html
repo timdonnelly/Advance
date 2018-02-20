@@ -99,9 +99,6 @@
                 <a href="Structs/LinearTimingFunction.html">LinearTimingFunction</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/ReversedTimingFunction.html">ReversedTimingFunction</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/UnitBezier.html">UnitBezier</a>
               </li>
               <li class="nav-group-task">
@@ -220,6 +217,11 @@
 <p>Physics-based animations for iOS, tvOS, and macOS.</p>
 
 <p>This project was originally developed to power the animations throughout the Storehouse app for iOS, but has since been extensively rewritten in modern Swift.</p>
+<h2 id='what-39-s-new-in-2-0' class='heading'>What&rsquo;s new in 2.0?</h2>
+
+<p>Nearly everything. Pre-2.0 was largely an Objective-C port, so 2.0 was a chance to clean up and rethink the external API.</p>
+
+<p>The API is much smaller as a result, providing a handful of types that make it easy to integrate physics-based animations.</p>
 <h2 id='examples' class='heading'>Examples</h2>
 <h4 id='using-a-code-spring-code-to-animate-the-position-of-a-view' class='heading'>Using a <code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code> to animate the position of a view</h4>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Advance</span>
@@ -252,6 +254,8 @@
 </code></pre>
 
 <p><code><a href="Classes/PropertyAnimator.html">PropertyAnimator</a></code> is the most flexible way to apply multiple types of animations to an object.</p>
+
+<p>If you don&rsquo;t need direct access to a running simulation and want the flexibility of using various animation types for the same value, <code><a href="Classes/PropertyAnimator.html">PropertyAnimator</a></code> is your best bet.</p>
 <h4 id='check-out-the-sample-app' class='heading'>Check out the sample app</h4>
 
 <p><img src="https://github.com/timdonnelly/Advance/raw/master/images/nav.gif" alt="Sample app">

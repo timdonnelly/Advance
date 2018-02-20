@@ -24,18 +24,6 @@ public struct LinearTimingFunction: TimingFunction {
     }
 }
 
-/// Output time is calculated as `(1.0-x)`.
-public struct ReversedTimingFunction: TimingFunction {
-    /// Creates a new instance of `ReversedTimingFunction`.
-    public init(){}
-    
-    /// Solves for time `x`.
-    public func solve(at time: Scalar, epsilon: Scalar) -> Scalar {
-        return 1.0 - time
-    }
-}
-
-
 extension UnitBezier: TimingFunction {
     
     /// Solves for time `x`.
