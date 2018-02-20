@@ -19,20 +19,23 @@
 /// sizeAnimator.decay(drag: 2.0)
 /// ```
 ///
-public final class PropertyAnimator<Target, Value> where Target: AnyObject, Value: VectorConvertible {
+public final class Animator<Value> where Value: VectorConvertible {
     
-    /// The object to be animated.
-    public let target: Target
+    private let valueSink: Sink<Value>
     
-    /// The keypath describing the property to be animated.
-    public let keyPath: ReferenceWritableKeyPath<Target, Value>
+    private var currentValue: Value {
+        didSet {
+            guard currentValue != oldValue else { return }
+            valueSink.send(value: currentValue)
+        }
+    }
     
     private var currentAnimationRunner: AnimationRunner<Value>? = nil
     
     /// Initializes a new property animator with the given target and keypath.
-    public init(target: Target, keyPath: ReferenceWritableKeyPath<Target, Value>) {
-        self.target = target
-        self.keyPath = keyPath
+    public init(value: Value = Value.zero) {
+        self.valueSink = Sink()
+        self.currentValue = value
     }
     
     /// Animates the property using the given animation.
@@ -42,7 +45,7 @@ public final class PropertyAnimator<Target, Value> where Target: AnyObject, Valu
         cancelRunningAnimation()
         let runner = AnimationRunner(animation: animation)
             
-        runner.bind(to: target, keyPath: keyPath)
+        runner.bind(to: self, keyPath: \.currentValue)
         runner.onCompletion({ [weak self] (_) in
             self?.runnerDidFinish(runner)
         })
@@ -74,16 +77,26 @@ public final class PropertyAnimator<Target, Value> where Target: AnyObject, Valu
     /// assigning to this value will remove any running animation.
     public var value: Value {
         get {
-            return target[keyPath: keyPath]
+            return currentValue
         }
         set {
             cancelRunningAnimation()
-            target[keyPath: keyPath] = newValue
+            currentValue = newValue
         }
     }
     
+    /// The current velocity of the value. Returns `Value.zero` if no animation is in progress.
     public var velocity: Value {
         return currentAnimationRunner?.velocity ?? .zero
     }
+}
+
+extension Animator: Observable {
+    
+    @discardableResult
+    public func observe(_ observer: @escaping (Value) -> Void) -> Subscription {
+        return valueSink.observe(observer)
+    }
+    
 }
 

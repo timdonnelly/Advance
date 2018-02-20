@@ -31,7 +31,7 @@
     {
       "file": "/Users/tim/Development/Advance/Source/Animations/Basic/BasicAnimation.swift",
       "line": 72,
-      "symbol": "PropertyAnimator.animate(to:duration:timingFunction:)",
+      "symbol": "Animator.animate(to:duration:timingFunction:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -103,13 +103,6 @@
       "line": 32,
       "symbol": "Observable.bind(to:keyPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tim/Development/Advance/Source/PropertyAnimator.swift",
-      "line": 85,
-      "symbol": "PropertyAnimator.velocity",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],

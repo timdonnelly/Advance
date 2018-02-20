@@ -6,12 +6,13 @@ final class DecayViewController: DemoViewController {
         
     let draggableView: UIView
     
-    let centerAnimator: PropertyAnimator<UIView, CGPoint>
+    let centerAnimator: Animator<CGPoint>
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         
         draggableView = UIView()
-        centerAnimator = PropertyAnimator(target: draggableView, keyPath: \.center)
+        centerAnimator = Animator<CGPoint>()
+        centerAnimator.bind(to: draggableView, keyPath: \.center)
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }

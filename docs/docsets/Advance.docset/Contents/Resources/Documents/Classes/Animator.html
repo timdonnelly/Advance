@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>PropertyAnimator Class Reference</title>
+    <title>Animator Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,11 +10,11 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/PropertyAnimator" class="dashAnchor"></a>
-    <a title="PropertyAnimator Class Reference"></a>
+    <a name="//apple_ref/swift/Class/Animator" class="dashAnchor"></a>
+    <a title="Animator Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (94% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (95% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Advance Reference</a>
         <img id="carat" src="../img/carat.png" />
-        PropertyAnimator Class Reference
+        Animator Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -33,7 +33,16 @@
             <a href="../Animation.html">Animation</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/PropertyAnimator.html">PropertyAnimator</a>
+                <a href="../Classes/Animator.html">Animator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner.html">AnimationRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnimationRunner/Result.html">– Result</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/Animation.html">Animation</a>
@@ -45,13 +54,7 @@
                 <a href="../Structs/AnyAnimation.html">AnyAnimation</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/AnimationRunner.html">AnimationRunner</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/AnimationRunner/State.html">– State</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/AnimationRunner/Result.html">– Result</a>
+                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -84,9 +87,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/GravityFunction.html">GravityFunction</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/SimulatedAnimation.html">SimulatedAnimation</a>
               </li>
             </ul>
           </li>
@@ -212,10 +212,10 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>PropertyAnimator</h1>
+            <h1>Animator</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">PropertyAnimator</span><span class="o">&lt;</span><span class="kt">Target</span><span class="p">,</span> <span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Target</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">,</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                 </div>
               </div>
@@ -245,69 +245,9 @@ sizeAnimator.decay(drag: 2.0)
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC6targetxv"></a>
-                    <a name="//apple_ref/swift/Property/target" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC6targetxv">target</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The object to be animated.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Target</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L25">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance16PropertyAnimatorC7keyPaths020ReferenceWritableKeyE0Cyxq_Gv"></a>
-                    <a name="//apple_ref/swift/Property/keyPath" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC7keyPaths020ReferenceWritableKeyE0Cyxq_Gv">keyPath</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The keypath describing the property to be animated.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">Target</span><span class="p">,</span> <span class="kt">Value</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L28">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance16PropertyAnimatorCACyxq_Gx6target_s24ReferenceWritableKeyPathCyxq_G03keyH0tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(target:keyPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorCACyxq_Gx6target_s24ReferenceWritableKeyPathCyxq_G03keyH0tcfc">init(target:keyPath:)</a>
+                    <a name="/s:7Advance8AnimatorCACyxGx5value_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance8AnimatorCACyxGx5value_tcfc">init(value:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -322,12 +262,12 @@ sizeAnimator.decay(drag: 2.0)
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">Target</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">Target</span><span class="p">,</span> <span class="kt">Value</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">Value</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L33-L36">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L36-L39">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -335,9 +275,9 @@ sizeAnimator.decay(drag: 2.0)
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC7animateAA15AnimationRunnerCyq_Gqd__4with_t5ValueQyd__Rs_AA0E0Rd__lF"></a>
+                    <a name="/s:7Advance8AnimatorC7animateAA15AnimationRunnerCyxGqd__4with_t5ValueQyd__RszAA0D0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/animate(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC7animateAA15AnimationRunnerCyq_Gqd__4with_t5ValueQyd__Rs_AA0E0Rd__lF">animate(with:)</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC7animateAA15AnimationRunnerCyxGqd__4with_t5ValueQyd__RszAA0D0Rd__lF">animate(with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -357,7 +297,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L40-L55">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L43-L58">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -365,9 +305,9 @@ sizeAnimator.decay(drag: 2.0)
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC11isAnimatingSbv"></a>
+                    <a name="/s:7Advance8AnimatorC11isAnimatingSbv"></a>
                     <a name="//apple_ref/swift/Property/isAnimating" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC11isAnimatingSbv">isAnimating</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC11isAnimatingSbv">isAnimating</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -387,7 +327,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L64-L66">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L67-L69">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -395,9 +335,9 @@ sizeAnimator.decay(drag: 2.0)
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC22cancelRunningAnimationyyF"></a>
+                    <a name="/s:7Advance8AnimatorC22cancelRunningAnimationyyF"></a>
                     <a name="//apple_ref/swift/Method/cancelRunningAnimation()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC22cancelRunningAnimationyyF">cancelRunningAnimation()</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC22cancelRunningAnimationyyF">cancelRunningAnimation()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -417,7 +357,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L69-L72">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L72-L75">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -425,9 +365,9 @@ sizeAnimator.decay(drag: 2.0)
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC5valueq_v"></a>
+                    <a name="/s:7Advance8AnimatorC5valuexv"></a>
                     <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC5valueq_v">value</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC5valuexv">value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -447,7 +387,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L75-L83">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L78-L86">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -455,9 +395,9 @@ sizeAnimator.decay(drag: 2.0)
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC8velocityq_v"></a>
+                    <a name="/s:7Advance8AnimatorC8velocityxv"></a>
                     <a name="//apple_ref/swift/Property/velocity" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC8velocityq_v">velocity</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC8velocityxv">velocity</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -465,7 +405,7 @@ sizeAnimator.decay(drag: 2.0)
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The current velocity of the value. Returns <code>Value.zero</code> if no animation is in progress.</p>
 
                       </div>
                       <div class="declaration">
@@ -477,7 +417,7 @@ sizeAnimator.decay(drag: 2.0)
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/PropertyAnimator.swift#L85-L87">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L89-L91">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -489,9 +429,9 @@ sizeAnimator.decay(drag: 2.0)
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC6springAA15AnimationRunnerCyq_Gq_2to_Sd7tensionSd7dampingSd9thresholdtF"></a>
+                    <a name="/s:7Advance8AnimatorC6springAA15AnimationRunnerCyxGx2to_Sd7tensionSd7dampingSd9thresholdtF"></a>
                     <a name="//apple_ref/swift/Method/spring(to:tension:damping:threshold:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC6springAA15AnimationRunnerCyq_Gq_2to_Sd7tensionSd7dampingSd9thresholdtF">spring(to:tension:damping:threshold:)</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC6springAA15AnimationRunnerCyxGx2to_Sd7tensionSd7dampingSd9thresholdtF">spring(to:tension:damping:threshold:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -520,9 +460,9 @@ current velocity as <code>initialVelocity</code>.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC6springAA15AnimationRunnerCyq_Gq_2to_q_15initialVelocitySd7tensionSd7dampingSd9thresholdtF"></a>
+                    <a name="/s:7Advance8AnimatorC6springAA15AnimationRunnerCyxGx2to_x15initialVelocitySd7tensionSd7dampingSd9thresholdtF"></a>
                     <a name="//apple_ref/swift/Method/spring(to:initialVelocity:tension:damping:threshold:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC6springAA15AnimationRunnerCyq_Gq_2to_q_15initialVelocitySd7tensionSd7dampingSd9thresholdtF">spring(to:initialVelocity:tension:damping:threshold:)</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC6springAA15AnimationRunnerCyxGx2to_x15initialVelocitySd7tensionSd7dampingSd9thresholdtF">spring(to:initialVelocity:tension:damping:threshold:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -554,9 +494,9 @@ current velocity as <code>initialVelocity</code>.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC7animateAA15AnimationRunnerCyq_Gq_2to_Sd8durationAA14TimingFunction_p06timingJ0tF"></a>
+                    <a name="/s:7Advance8AnimatorC7animateAA15AnimationRunnerCyxGx2to_Sd8durationAA14TimingFunction_p06timingI0tF"></a>
                     <a name="//apple_ref/swift/Method/animate(to:duration:timingFunction:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC7animateAA15AnimationRunnerCyq_Gq_2to_Sd8durationAA14TimingFunction_p06timingJ0tF">animate(to:duration:timingFunction:)</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC7animateAA15AnimationRunnerCyxGx2to_Sd8durationAA14TimingFunction_p06timingI0tF">animate(to:duration:timingFunction:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -588,9 +528,9 @@ current velocity as <code>initialVelocity</code>.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC5decayAA15AnimationRunnerCyq_GSd4drag_Sd9thresholdtF"></a>
+                    <a name="/s:7Advance8AnimatorC5decayAA15AnimationRunnerCyxGSd4drag_Sd9thresholdtF"></a>
                     <a name="//apple_ref/swift/Method/decay(drag:threshold:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC5decayAA15AnimationRunnerCyq_GSd4drag_Sd9thresholdtF">decay(drag:threshold:)</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC5decayAA15AnimationRunnerCyxGSd4drag_Sd9thresholdtF">decay(drag:threshold:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -618,9 +558,9 @@ current velocity as <code>initialVelocity</code>.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance16PropertyAnimatorC5decayAA15AnimationRunnerCyq_Gq_15initialVelocity_Sd4dragSd9thresholdtF"></a>
+                    <a name="/s:7Advance8AnimatorC5decayAA15AnimationRunnerCyxGx15initialVelocity_Sd4dragSd9thresholdtF"></a>
                     <a name="//apple_ref/swift/Method/decay(initialVelocity:drag:threshold:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance16PropertyAnimatorC5decayAA15AnimationRunnerCyq_Gq_15initialVelocity_Sd4dragSd9thresholdtF">decay(initialVelocity:drag:threshold:)</a>
+                    <a class="token" href="#/s:7Advance8AnimatorC5decayAA15AnimationRunnerCyxGx15initialVelocity_Sd4dragSd9thresholdtF">decay(initialVelocity:drag:threshold:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -641,6 +581,39 @@ current velocity as <code>initialVelocity</code>.</p>
                       </div>
                       <div class="slightly-smaller">
                         <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulation Functions/DecayFunction.swift#L42-L52">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF"></a>
+                    <a name="//apple_ref/swift/Method/observe(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF">observe(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L97-L99">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
