@@ -63,36 +63,6 @@ let view = UIView()
 let boundsAnimator = PropertyAnimator(target: view, keyPath: \.bounds)
 ```
 
-#### `Animator`
-
-This class is used to drive a single animation to completion. It is one-shot, so an animator is no longer useful after the animation that it is driving completes.
-
-```swift
-import Advance
-
-let animation = 0.0.animation(
-    to: 100.0, 
-    duration: 0.6, 
-    timingFunction: UnitBezier.easeIn)
-
-let animator = Animator(animation: animation)
-    .onChange { value in
-        /// Do something with the value.
-    }
-    .onCancel {
-        /// The animation was cancelled before it could finish.
-    }
-    .onFinish {
-        /// The animation finished successfully.
-    }
-
-/// Kick off the animation
-animator.start()
-
-```
-
-The resulting animator can be used to cancel the animation or to add additional observers or completion handlers.
-
 #### `Simulator` / `Spring`
 
 In most scenarios, physics-based animations are simply run to completion. For those situations, `Animator` and `PropertyAnimator` make it easy to run and use the results of an animation.
