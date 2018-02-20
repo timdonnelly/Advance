@@ -38,12 +38,12 @@ final class DecayViewController: DemoViewController {
         contentView.addGestureRecognizer(tapRecognizer)
     }
     
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        draggableView.center = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        centerAnimator.value = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
+
     }
-    
+
     override func didLeaveFullScreen() {
         super.didLeaveFullScreen()
         centerAnimator.spring(to: CGPoint(x: view.bounds.midX, y: view.bounds.midY))
