@@ -52,7 +52,7 @@ public struct SpringFunction<T>: SimulationFunction where T: Vector {
 }
 
 
-public extension PropertyAnimator where Value: VectorConvertible {
+public extension PropertyAnimator {
     
     /// Starts a spring animation with the given properties, adopting the property's
     /// current velocity as `initialVelocity`.

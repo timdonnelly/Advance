@@ -29,7 +29,7 @@ public struct DecayFunction<T>: SimulationFunction where T: Vector {
 }
 
 
-public extension PropertyAnimator where Value: VectorConvertible {
+public extension PropertyAnimator {
 
     /// Starts a decay animation with the current velocity of the property animator.
     @discardableResult
