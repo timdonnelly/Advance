@@ -12,7 +12,7 @@ The API is much smaller as a result, providing a handful of types that make it e
 
 ## Examples
 
-#### Using a `Spring` to animate the position of a view
+#### `Spring`
 
 ```swift
 import Advance
@@ -26,7 +26,7 @@ The spring will then animate the movement of the view to the new `target` positi
 
 `Spring` is the simplest way to introduce physics-based animations, providing full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.
 
-#### Using `PropertyAnimator` to animate a view's size
+#### `PropertyAnimator`
 
 ```swift
 import Advance
