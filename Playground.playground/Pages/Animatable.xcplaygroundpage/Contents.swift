@@ -27,18 +27,12 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //    }
 
 
-//0.animation(to: 100, duration: 2.0, timingFunction: UnitBezier.easeOut)
-//    .allValues(timeStep: 0.01)
-//    .lazy
-//    .forEach { (int) in
-//        print(int)
-//    }
-
-
-false.animation(to: true, duration: 1.0, timingFunction: UnitBezier.easeOut)
-    .allValues(timeStep: 0.1)
+0.animation(to: 100, duration: 2.0, timingFunction: UnitBezier.easeOut)
+    .allValues(timeStep: 0.01)
     .lazy
     .forEach { (int) in
         print(int)
-}
+    }
+
+
 
