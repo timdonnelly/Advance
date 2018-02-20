@@ -33,13 +33,13 @@ public extension PropertyAnimator where Value: VectorConvertible {
 
     /// Starts a decay animation with the current velocity of the property animator.
     @discardableResult
-    public func decay(drag: Scalar = 3.0, threshold: Scalar = 0.1) -> Animator<Value> {
+    public func decay(drag: Scalar = 3.0, threshold: Scalar = 0.1) -> AnimationRunner<Value> {
         return decay(initialVelocity: velocity, drag: drag, threshold: threshold)
     }
     
     /// Starts a decay animation with the given initial velocity.
     @discardableResult
-    public func decay(initialVelocity: Value, drag: Scalar = 3.0, threshold: Scalar = 0.1) -> Animator<Value> {
+    public func decay(initialVelocity: Value, drag: Scalar = 3.0, threshold: Scalar = 0.1) -> AnimationRunner<Value> {
 
         let animation = value
             .decayAnimation(

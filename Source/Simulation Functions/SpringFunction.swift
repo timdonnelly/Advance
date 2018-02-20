@@ -57,13 +57,13 @@ public extension PropertyAnimator where Value: VectorConvertible {
     /// Starts a spring animation with the given properties, adopting the property's
     /// current velocity as `initialVelocity`.
     @discardableResult
-    public func spring(to target: Value, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> Animator<Value> {
+    public func spring(to target: Value, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> AnimationRunner<Value> {
         return self.spring(to: target, initialVelocity: velocity, tension: tension, damping: damping, threshold: threshold)
     }
     
     /// Starts a spring animation with the given properties.
     @discardableResult
-    public func spring(to target: Value, initialVelocity: Value, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> Animator<Value> {
+    public func spring(to target: Value, initialVelocity: Value, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> AnimationRunner<Value> {
         let animation = value
             .springAnimation(
                 to: target,

@@ -1,8 +1,8 @@
 /// Animates changes to a value using a simulation function.
 ///
 /// In most scenarios, physics-based animations are simply run to completion.
-/// For those situations, `Animator` and `PropertyAnimator` make it easy to
-/// run and use the results of an animation.
+/// For those situations, `PropertyAnimator` makes it easy to run and use the
+/// results of an animation.
 ///
 /// In contrast, `Simulator` is useful for scenarios where you need direct access
 /// to a running simulation. This might occur in a UI where the user's scroll
@@ -12,11 +12,6 @@
 /// `function` property (containing the underlying function that is driving the
 /// simulation), along with the current state of the simulation (value and
 /// velocity).
-///
-/// Another difference between `Simulator` and the animator classes is that a
-/// simulator never 'finishes.' Simulations may converge (reach a settled state),
-/// but changes to either the function or the current simulation state may cause
-/// the simulation to begin running again.
 ///
 public class Simulator<Value, Function> where Value: VectorConvertible, Function: SimulationFunction, Value.VectorType == Function.VectorType {
     
@@ -127,4 +122,11 @@ public extension Simulator where Function == SpringFunction<Value.VectorType> {
 }
 
 /// A specialized simulator that uses a spring function.
+///
+/// ```
+/// let spring = Spring(value: CGPoint.zero)
+/// spring.bind(to: view, keyPath: \.center)
+/// spring.target = CGPoint(x: 300, y: 200)
+///
+/// ```
 public typealias Spring<T> = Simulator<T, SpringFunction<T.VectorType>> where T: VectorConvertible
