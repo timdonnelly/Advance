@@ -26,14 +26,15 @@ The spring will then animate the movement of the view to the new `target` positi
 
 `Spring` is the simplest way to introduce physics-based animations, providing full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.
 
-#### `PropertyAnimator`
+#### `Animator`
 
 ```swift
 import Advance
 
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-let sizeAnimator = PropertyAnimator(target: view, keyPath: \.bounds.size)
+let sizeAnimator = Animator<CGSize>()
+sizeAnimator.bind(to: view, keyPath: \.bounds.size)
 
 /// Spring physics will move the view's size to the new value.
 sizeAnimator.spring(to: CGSize(width: 300, height: 300))
@@ -46,9 +47,9 @@ sizeAnimator.decay(drag: 2.0)
 
 ```
 
-`PropertyAnimator` is the most flexible way to apply multiple types of animations to an object.
+`Animator` is the most flexible way to apply multiple types of animations to an object.
 
-If you don't need direct access to a running simulation and want the flexibility of using various animation types for the same value, `PropertyAnimator` is your best bet.
+If you don't need direct access to a running simulation and want the flexibility of using various animation types for the same value, `Animator` is your best bet.
 
 
 #### Check out the sample app
@@ -62,13 +63,14 @@ If you don't need direct access to a running simulation and want the flexibility
 
 Three primary classes are used to power animations in your UI.
 
-#### `PropertyAnimator`
+#### `Animator`
 
-The easiest way to use Advance is with the `PropertyAnimator` class. This class manages animations for a specific property of a target object.
+The easiest way to use Advance is with the `Animator` class. This class manages animations for a specific property of a target object.
 
 ```
 let view = UIView()
-let boundsAnimator = PropertyAnimator(target: view, keyPath: \.bounds)
+let boundsAnimator = Animator<CGRect>()
+boundsAnimator.bind(to: view, keyPath: \.bounds)
 ```
 
 #### `Simulator` / `Spring`
