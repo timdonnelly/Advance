@@ -1,3 +1,5 @@
+#if os(iOS) || os(tvOS)
+
 import UIKit
 
 extension UIEdgeInsets: VectorConvertible {
@@ -19,3 +21,5 @@ extension UIEdgeInsets: VectorConvertible {
     }
     
 }
+
+#endif

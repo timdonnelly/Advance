@@ -1,3 +1,5 @@
+#if os(iOS) || os(tvOS)
+
 import UIKit
 
 extension UIOffset: VectorConvertible {
@@ -15,3 +17,5 @@ extension UIOffset: VectorConvertible {
     }
     
 }
+
+#endif
