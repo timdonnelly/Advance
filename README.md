@@ -10,26 +10,21 @@ Nearly everything. Pre-2.0 was largely an Objective-C port, so 2.0 was a chance 
 
 The API is much smaller as a result, providing a handful of types that make it easy to integrate physics-based animations.
 
-## Examples
+## Usage
 
-#### `Spring`
+In contrast to standard `UIView` animations, Advance animations are applied on every frame (using `CADisplayLink` on iOS).
 
 ```swift
-import Advance
+let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
 let spring = Spring(boundTo: view, keyPath: \.center)
+
+/// The view's center will realistically animate to the new value.
 spring.target = CGPoint(x: 300, y: 200)
-
 ```
-The spring will then animate the movement of the view to the new `target` position.
 
-`Spring` is the simplest way to introduce physics-based animations, providing full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.
-
-#### `Animator`
 
 ```swift
-import Advance
-
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
 let sizeAnimator = Animator(boundTo: view, keyPath: \.bounds.size)
@@ -45,66 +40,121 @@ sizeAnimator.decay(drag: 2.0)
 
 ```
 
-`Animator` is the most flexible way to apply multiple types of animations to an object.
+### Animator
 
-If you don't need direct access to a running simulation and want the flexibility of using various animation types for the same value, `Animator` is your best bet.
+`Animator` drives changes to a value over time using animations (conforming to the `Animation` protocol).
 
+The current velocity of the value is available though the `velocity` property, making it easy to transition between animations of different types while maintaining fluid motion.
 
-#### Check out the sample app
-
-![Sample app](https://github.com/timdonnelly/Advance/raw/master/images/nav.gif)
-![Sample app](https://github.com/timdonnelly/Advance/raw/master/images/logo.gif)
-
-****
-
-## Core Concepts
-
-Three primary classes are used to power animations in your UI.
-
-#### `Animator`
-
-The easiest way to use Advance is with the `Animator` class. This class manages animations for a specific property of a target object.
+A set of extensions make it easy to kick off animations on an animator:
 
 ```
 let view = UIView()
-let boundsAnimator = Animator<CGRect>()
-boundsAnimator.bind(to: view, keyPath: \.bounds)
+let boundsAnimator = Animator(boundTo: view, keyPath: \.bounds)
+
+/// Basic animation
+boundsAnimator.animate(to: CGRect(x: 0, y: 0, width: 300, height: 300), duration: 0.5, timingFunction: UnitBezier.easeIn)
+
+/// or...
+
+/// Spring
+boundsAnimator.spring(to: CGRect(x: 0, y: 0, width: 300, height: 300))
+
+/// or...
+
+/// Decay
+boundsAnimator.decay(initialVelocity: CGRect(x: 30, y: 30, width: 30, height: 30))
+
 ```
 
-#### `Simulator` / `Spring`
+You won't commonly need to initialize animations directly.
 
-In most scenarios, physics-based animations are simply run to completion. For those situations, `Animator` and `PropertyAnimator` make it easy to run and use the results of an animation.
+### Simulator / Spring
+`Simulator` uses a physics-based simulation to realistically model changes to a value over time.
 
-In contrast, `Simulator` is useful for scenarios where you need direct access to a running simulation. This might occur in a UI where the user's scroll position drives changes to a spring's tension, for example. It would be impractical to create and start a new animation every time the simulation needs to change. A `Simulator` instance provides mutable access to the `function` property (containing the underlying function that is driving the simulation), along with the current state of the simulation (value and velocity).
+In most scenarios animations are set up once, then run to completion. `Animator` takes are of that simple case with a flexible API that allows you to use any type of animation to drive the value.
+
+In contrast, `Simulator` is a focused class that is useful for scenarios where you need direct access to a running simulation. This might occur in a UI where the user's scroll position drives changes to a spring's tension, for example. It would be impractical to create and start a new animation every time the simulation needs to change. A `Simulator` instance provides mutable access to the `function` property (containing the underlying function that is driving the simulation), along with the current state of the simulation (value and velocity).
 
 `Simulator` conforms to `Observable`, so you can easily be notified when the simulated value changes.
 
-**Spring** is a specialized simulator that uses a spring function. If all you are after is a simple spring to animate a value, this is what you want.
-
+```
+let function = GravityFunction(target: CGPoint(20, 20).vector)
+let simulator = Simulator(function: function, value: CGPoint.zero)
+simulator.observe { value in
+    /// Apply the new value.
+}
 ```
 
-let spring = Spring(value: 0.0)
-simulator.observe { nextValue in
-    /// Do something with the spring's v
-}
+`Spring` is a specialized simulator that uses a spring function. If all you are after is a simple spring to animate a value, this is what you want.
 
-spring.target = 120.0
+Convenience extensions provide full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.
+
+```
+let spring = Spring(boundTo: view, keyPath: \.alpha)
+spring.target = 0.5
+
+/// Spring values can be adjusted at any time.
+spring.tension = 30.0 /// The strength of the spring
+spring.damping = 2.0 /// The resistance (drag) that the spring encounters
+spring.threshold = 0.1 /// The maximum delta between the current value and the spring's target (for each component) for which the simulation can enter a converged state.
+
+/// Update the simulation state at any time.
+spring.velocity = 6.5
+spring.value = 0.2
+
+/// Sets the spring's target and the current simulation value, and removes all velocity. This causes the spring to converge at the given value.
+spring.reset(to: 0.5)
 
 ```
 
 ### Animations
 
+Values conforming to the `VectorConvertible` protocol can be animated by Advance. Conforming types can be converted to and from a `Vector` implementation.
+```
+public protocol VectorConvertible: Equatable, Interpolatable {
+    associatedtype VectorType: Vector
+    init(vector: VectorType)
+    var vector: VectorType { get }
+}
+```
 
 There are two primary types of animations in Advance: **Simulated Animations** and **Basic Animations**.
 
-**Basic animations** are conventional animations similar to those seen in most animation libraries: they have a duration and timing function which are used to interpolate between a start and end value as the animation progresses.
+#### Basic Animations
+`BasicAnimation` implements a conventional animation similar to those seen in most animation libraries: it has a duration and timing function which are used to interpolate between a start and end value as the animation progresses.
 
-**Simulated animations** use a physics-based approach to model changes to a value over time. This allows for realistic animations that model real-world behavior.
+##### Timing Functions
+
+Basic animations use a timing function to control the pacing of the value's change over the course of the animation. Timing functions are types conforming to the `TimingFunction` protocol. Advance includes the following timing function implementations.
+
+- `LinearTimingFunction` 
+- `UnitBezier`
+- `CAMediaTimingFunction` (`TimingFunction` conformance via an extension)
+
+
+#### Simulated animations
+`SimulatedAnimation` use a physics-based approach to model changes to a value over time. This allows for realistic animations that model real-world behavior. `SimulatedAnimation` allows you to use the same simulation functions that power `Simulator` with an `Animator`.
 
 Simulated animations are powered by a **Simulation Function**. These functions compute the forces that should effect the animated value for every frame, and control *convergence* (or: when the simulation should come to rest). The included simulation functions are:
-- Spring
-- Decay
-- Gravity
+- `SpringFunction`
+- `DecayFunction`
+- `GravityFunction`
+
+
+Convenience extensions make it easy to generate animations from `VectorConvertible` types.
+
+```
+let springAnimation = CGPoint.zero.springAnimation(to: CGPoint(x: 100, y: 100))
+
+/// Also try `.animation(to:duration:timingFunction:)` and `.decayAnimation(drag:)`.
+
+let animator: Animator<CGPoint> = /// ...
+
+animator.animate(with: springAnimation)
+
+```
+
 
 
 ## Contributing
