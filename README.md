@@ -2,7 +2,7 @@
 
 Physics-based animations for iOS, tvOS, and macOS.
 
-This project was originally developed to power the animations throughout the Apple Design Award winning Storehouse app for iOS, but has since been extensively rewritten in modern Swift.
+This project was originally developed to power the animations throughout the Storehouse app for iOS, but has since been extensively rewritten in modern Swift.
 
 ## Examples
 
