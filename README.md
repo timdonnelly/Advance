@@ -17,8 +17,7 @@ The API is much smaller as a result, providing a handful of types that make it e
 ```swift
 import Advance
 
-let spring = Spring(value: CGPoint.zero)
-spring.bind(to: view, keyPath: \.center)
+let spring = Spring(boundTo: view, keyPath: \.center)
 spring.target = CGPoint(x: 300, y: 200)
 
 ```
@@ -33,8 +32,7 @@ import Advance
 
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-let sizeAnimator = Animator<CGSize>()
-sizeAnimator.bind(to: view, keyPath: \.bounds.size)
+let sizeAnimator = Animator(boundTo: view, keyPath: \.bounds.size)
 
 /// Spring physics will move the view's size to the new value.
 sizeAnimator.spring(to: CGSize(width: 300, height: 300))
