@@ -24,12 +24,14 @@ class AnyAnimationTests : XCTestCase {
         
         let anyAnimation = AnyAnimation(wrappedAnimation)
         
-        XCTAssertGreaterThan(Array(wrappedAnimation.allValues()).count, 20)
-        
-        XCTAssertEqual(
-            Array(wrappedAnimation.allValues()),
-            Array(anyAnimation.allValues()))
-        
+        XCTAssertGreaterThan(Array(wrappedAnimation.steps()).count, 20)
+
+
+        for (wrappedStep, anyStep) in zip(wrappedAnimation.steps(), anyAnimation.steps()) {
+            XCTAssertEqual(wrappedStep.timeOffset, anyStep.timeOffset)
+            XCTAssertEqual(wrappedStep.value, anyStep.value)
+        }
+
     }
 
 }
