@@ -26,7 +26,7 @@ public extension Animation {
     
     /// Returns a sequence containing discrete values for the duration of the animation, based
     /// on the provided time step.
-    public func steps(frameDuration: Double = 0.008) -> [(timeOffset: Double, value: Value)] {
+    public func steps(frameDuration: Double = 0.008) -> [(timeOffset: Double, value: Value, velocity: Value)] {
         let sequence = AnySequence.init({ () -> AnimationIterator<Self> in
             return AnimationIterator(animation: self, frameDuration: frameDuration)
         })
@@ -47,9 +47,9 @@ fileprivate struct AnimationIterator<T>: IteratorProtocol where T: Animation {
         self.frameDuration = frameDuration
     }
     
-    public mutating func next() -> (timeOffset: Double, value: T.Value)? {
+    public mutating func next() -> (timeOffset: Double, value: T.Value, velocity: T.Value)? {
         guard var currentAnimation = animation else { return nil }
-        let result = (timeOffset: currentTime, value: currentAnimation.value)
+        let result = (timeOffset: currentTime, value: currentAnimation.value, velocity: currentAnimation.velocity)
         
         if currentAnimation.isFinished {
             self.animation = nil
