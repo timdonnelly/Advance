@@ -30,7 +30,7 @@
 ///      }
 ///
 /// /// Kick off the animation
-/// runner()
+/// runner.start()
 ///
 /// ```
 ///
