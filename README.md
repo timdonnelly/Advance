@@ -178,7 +178,7 @@ There are several ways to integrate Advance into your project.
 
 * Carthage: add `github "timdonnelly/Advance" "master"` to your `Cartfile`.
 
-* CocoaPods: add `pod 'Advance', '~> 2.0'` to your `Podfile`.
+* CocoaPods: add `pod 'Advance'` to your `Podfile`.
 
 ##### Requirements
 * iOS 10+, tvOS 10+, or macOS 10.12+
