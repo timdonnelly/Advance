@@ -23,7 +23,7 @@ final class CoverView: UIView {
         attribs[.font] = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         attribs[.foregroundColor] = UIColor.white
         
-        urlLabel.attributedText = NSAttributedString(string: "github.com/storehouse/Advance", attributes: attribs)
+        urlLabel.attributedText = NSAttributedString(string: "github.com/timdonnelly/Advance", attributes: attribs)
         urlLabel.sizeToFit()
         
         super.init(frame: frame)
