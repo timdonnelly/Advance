@@ -118,11 +118,19 @@ fileprivate extension Loop {
             
             /// Called for each frame from the CADisplayLink.
             @objc dynamic func frame(_ displayLink: CADisplayLink) {
-                
+
+                let timestamp: TimeInterval
+
+                if #available(iOS 10.0, *) {
+                    timestamp = displayLink.targetTimestamp
+                } else {
+                    timestamp = displayLink.timestamp + displayLink.duration
+                }
+
                 let frame = Frame(
                     previousTimestamp: displayLink.timestamp,
-                    timestamp: displayLink.targetTimestamp)
-                
+                    timestamp: timestamp)
+
                 callback?(frame)
             }
         }
