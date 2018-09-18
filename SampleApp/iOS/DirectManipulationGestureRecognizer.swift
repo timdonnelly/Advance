@@ -292,7 +292,7 @@ private extension DirectManipulationGestureRecognizer {
     
     struct TouchState {
         var location: CGPoint = CGPoint.zero
-        var phase: UITouchPhase = UITouchPhase.began
+        var phase: UITouch.Phase = UITouch.Phase.began
         
         init() {}
         

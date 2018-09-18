@@ -47,7 +47,7 @@ class LoopTests : XCTestCase {
         let timeoutDate = Date(timeIntervalSinceNow: 1.0)
         
         repeat {
-            RunLoop.current.run(mode: RunLoopMode.defaultRunLoopMode, before: timeoutDate)
+            RunLoop.current.run(mode: RunLoop.Mode.default, before: timeoutDate)
             if timeoutDate.timeIntervalSinceNow <= 0.0 {
                 break
             }

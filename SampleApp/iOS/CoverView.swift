@@ -19,7 +19,7 @@ final class CoverView: UIView {
         
         urlLabel = UILabel(frame: CGRect.zero)
         
-        var attribs: [NSAttributedStringKey: Any] = [:]
+        var attribs: [NSAttributedString.Key: Any] = [:]
         attribs[.font] = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         attribs[.foregroundColor] = UIColor.white
         
