@@ -307,7 +307,7 @@ class BrowserView: UIView {
             }
         }
         if let item = closestItem {
-            bringSubview(toFront: item.view)
+            bringSubviewToFront(item.view)
         }
         
         updateAllItems(true)

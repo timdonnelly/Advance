@@ -99,7 +99,7 @@ fileprivate extension Loop {
         init() {
             displayLink = CADisplayLink(target: target, selector: #selector(DisplayLinkTarget.frame(_:)))
             displayLink.isPaused = true
-            displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+            displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
             
             target.callback = { [unowned self] (frame) in
                 self.callback?(frame)

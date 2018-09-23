@@ -354,7 +354,7 @@
 		5DB1A48E1C876AD1000CF9EE /* Vector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector4.swift; sourceTree = "<group>"; };
 		5DB1A4901C876AD1000CF9EE /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		5DE959E81C9388B9008487A8 /* LoopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopTests.swift; sourceTree = "<group>"; };
-		5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "AdvanceTests-OSX.xctest"; path = "UnitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DE959F01C9392E1008487A8 /* UnitTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UnitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE959F41C9392E1008487A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		970359C4203A2B6100028EFE /* AnimationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationRunner.swift; sourceTree = "<group>"; };
 		970359C9203A36A200028EFE /* SimulatedAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedAnimation.swift; sourceTree = "<group>"; };
@@ -533,7 +533,7 @@
 				22F74AA51C7674BB004C6E4C /* SampleApp.app */,
 				5D3A2F311C9209EE0071F08F /* Advance.framework */,
 				5D3A2F681C92559B0071F08F /* SampleApp-macOS.app */,
-				5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */,
+				5DE959F01C9392E1008487A8 /* UnitTests-macOS.xctest */,
 				228E206B1C9CB99D0058ADA1 /* Advance.framework */,
 				228E20801C9CB9B00058ADA1 /* UnitTests-tvOS.xctest */,
 				228E20861C9CBA490058ADA1 /* SampleApp-tvOS.app */,
@@ -917,7 +917,7 @@
 			);
 			name = "UnitTests-macOS";
 			productName = "AdvanceTests-OSX";
-			productReference = 5DE959F01C9392E1008487A8 /* AdvanceTests-OSX.xctest */;
+			productReference = 5DE959F01C9392E1008487A8 /* UnitTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -938,15 +938,15 @@
 					};
 					22F74AA41C7674BB004C6E4C = {
 						CreatedOnToolsVersion = 7.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 					};
 					5D39CEE01C6E983100DFCF86 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 					};
 					5D39CEEA1C6E983100DFCF86 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						TestTargetID = 22F74AA41C7674BB004C6E4C;
 					};
 					5D3A2F301C9209EE0071F08F = {
@@ -1364,6 +1364,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
@@ -1387,6 +1388,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
@@ -1400,6 +1402,7 @@
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp-tvOS.app/SampleApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
@@ -1414,6 +1417,7 @@
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp-tvOS.app/SampleApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
@@ -1465,7 +1469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.SampleApp-iOS";
 				PRODUCT_NAME = SampleApp;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1482,7 +1486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.SampleApp-iOS";
 				PRODUCT_NAME = SampleApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1617,6 +1621,7 @@
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1640,6 +1645,7 @@
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1653,7 +1659,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = Advance;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp.app/SampleApp";
 			};
 			name = Debug;
@@ -1667,7 +1673,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = Advance;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp.app/SampleApp";
 			};
 			name = Release;
@@ -1690,6 +1696,7 @@
 				PRODUCT_NAME = Advance;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1712,6 +1719,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1820,6 +1828,7 @@
 				PRODUCT_NAME = Advance;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
@@ -1843,6 +1852,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Distribution;
@@ -1866,6 +1876,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Distribution;
 		};
@@ -1878,7 +1889,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdonnelly.Advance;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = Advance;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp.app/SampleApp";
 			};
 			name = Distribution;
@@ -1892,6 +1903,7 @@
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp-tvOS.app/SampleApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
@@ -1908,7 +1920,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.UnitTests-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp-macOS.app/Contents/MacOS/SampleApp-macOS";
 			};
 			name = Distribution;
@@ -1926,7 +1938,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.SampleApp-iOS";
 				PRODUCT_NAME = SampleApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Distribution;
 		};
@@ -1975,7 +1987,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.UnitTests-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp-macOS.app/Contents/MacOS/SampleApp-macOS";
 			};
 			name = Debug;
@@ -1991,7 +2003,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tdonnelly.UnitTests-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp-macOS.app/Contents/MacOS/SampleApp-macOS";
 			};
 			name = Release;

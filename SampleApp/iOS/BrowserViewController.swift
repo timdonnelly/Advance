@@ -86,18 +86,18 @@ extension BrowserViewController: BrowserViewDelegate {
     func browserView(_ browserView: BrowserView, didShowItem item: BrowserItem) {
         guard let item = item as? DemoItem else { fatalError() }
         assert(item.viewController.parent != self)
-        addChildViewController(item.viewController)
+        addChild(item.viewController)
         item.viewController.view.frame = item.view.bounds
         item.view.addSubview(item.viewController.view)
-        item.viewController.didMove(toParentViewController: self)
+        item.viewController.didMove(toParent: self)
     }
     
     func browserView(_ browserView: BrowserView, didHideItem item: BrowserItem) {
         guard let item = item as? DemoItem else { fatalError() }
         assert(item.viewController.parent == self)
-        item.viewController.willMove(toParentViewController: nil)
+        item.viewController.willMove(toParent: nil)
         item.viewController.view.removeFromSuperview()
-        item.viewController.removeFromParentViewController()
+        item.viewController.removeFromParent()
     }
     
     func browserView(_ browserView: BrowserView, didEnterFullScreenForItem item: BrowserItem) {
