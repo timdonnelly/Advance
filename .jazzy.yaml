@@ -3,8 +3,6 @@ author: Tim Donnelly
 github_url: https://github.com/timdonnelly/Advance
 github_file_prefix: https://github.com/timdonnelly/Advance/tree/master
 root_url: https://timdonnelly.github.io/Advance
-xcodebuild_arguments: [-scheme,Advance-iOS]
-module_version: master
 exclude: []
 
 copyright: '© 2018 Tim Donnelly'

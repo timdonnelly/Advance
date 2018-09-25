@@ -14,7 +14,7 @@
     <a title="SimulationFunction Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (95% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -215,7 +215,7 @@
             <h1>SimulationFunction</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SimulationFunction</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SimulationFunction</span></code></pre>
 
                 </div>
               </div>
@@ -229,9 +229,9 @@ a vector over time.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance18SimulationFunctionP10VectorType"></a>
+                    <a name="/s:7Advance18SimulationFunctionP10VectorTypeQa"></a>
                     <a name="//apple_ref/swift/Alias/VectorType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance18SimulationFunctionP10VectorType">VectorType</a>
+                    <a class="token" href="#/s:7Advance18SimulationFunctionP10VectorTypeQa">VectorType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -246,12 +246,9 @@ a vector over time.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">associatedtype</span> <span class="kt">VectorType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Vector.html">Vector</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">VectorType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Vector.html">Vector</a></span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/SimulationFunction.swift#L7">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -259,9 +256,9 @@ a vector over time.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance18SimulationFunctionP12acceleration10VectorTypeQzAA0B5StateVyAFG3for_tF"></a>
+                    <a name="/s:7Advance18SimulationFunctionP12acceleration3for10VectorTypeQzAA0B5StateVyAGG_tF"></a>
                     <a name="//apple_ref/swift/Method/acceleration(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance18SimulationFunctionP12acceleration10VectorTypeQzAA0B5StateVyAFG3for_tF">acceleration(for:)</a>
+                    <a class="token" href="#/s:7Advance18SimulationFunctionP12acceleration3for10VectorTypeQzAA0B5StateVyAGG_tF">acceleration(for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -276,7 +273,7 @@ a vector over time.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">acceleration</span><span class="p">(</span><span class="k">for</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Structs/SimulationState.html">SimulationState</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorType">VectorType</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorType">VectorType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">acceleration</span><span class="p">(</span><span class="k">for</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Structs/SimulationState.html">SimulationState</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorTypeQa">VectorType</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorTypeQa">VectorType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -316,18 +313,15 @@ a vector over time.</p>
                         <p>A vector containing the acceleration (in units per second)
 based on <code>value</code> and <code>velocity</code>.</p>
                       </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/SimulationFunction.swift#L15">Show on GitHub</a>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance18SimulationFunctionP11convergenceAA11ConvergenceOy10VectorTypeQzGAA0B5StateVyAHG3for_tF"></a>
+                    <a name="/s:7Advance18SimulationFunctionP11convergence3forAA11ConvergenceOy10VectorTypeQzGAA0B5StateVyAIG_tF"></a>
                     <a name="//apple_ref/swift/Method/convergence(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance18SimulationFunctionP11convergenceAA11ConvergenceOy10VectorTypeQzGAA0B5StateVyAHG3for_tF">convergence(for:)</a>
+                    <a class="token" href="#/s:7Advance18SimulationFunctionP11convergence3forAA11ConvergenceOy10VectorTypeQzGAA0B5StateVyAIG_tF">convergence(for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -343,12 +337,9 @@ given state.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">convergence</span><span class="p">(</span><span class="k">for</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Structs/SimulationState.html">SimulationState</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorType">VectorType</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/Convergence.html">Convergence</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorType">VectorType</a></span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">convergence</span><span class="p">(</span><span class="k">for</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Structs/SimulationState.html">SimulationState</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorTypeQa">VectorType</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/Convergence.html">Convergence</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorTypeQa">VectorType</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/SimulationFunction.swift#L19">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -360,9 +351,9 @@ given state.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance18SimulationFunctionPAAE9integrateAA0B5StateVy10VectorTypeQzGAI5state_Sd4timetF"></a>
+                    <a name="/s:7Advance18SimulationFunctionPAAE9integrate5state4timeAA0B5StateVy10VectorTypeQzGAK_SdtF"></a>
                     <a name="//apple_ref/swift/Method/integrate(state:time:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance18SimulationFunctionPAAE9integrateAA0B5StateVy10VectorTypeQzGAI5state_Sd4timetF">integrate(state:time:)</a>
+                    <a class="token" href="#/s:7Advance18SimulationFunctionPAAE9integrate5state4timeAA0B5StateVy10VectorTypeQzGAK_SdtF">integrate(state:time:)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -383,12 +374,9 @@ simulation state.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">integrate</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Structs/SimulationState.html">SimulationState</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorType">VectorType</a></span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/SimulationState.html">SimulationState</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorType">VectorType</a></span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">integrate</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Structs/SimulationState.html">SimulationState</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorTypeQa">VectorType</a></span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/SimulationState.html">SimulationState</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/SimulationFunction.html#/s:7Advance18SimulationFunctionP10VectorTypeQa">VectorType</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/SimulationFunction.swift#L43-L65">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -399,7 +387,7 @@ simulation state.</p>
         </section>
         <section id="footer">
           <p>© 2018 Tim Donnelly</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

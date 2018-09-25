@@ -14,7 +14,7 @@
     <a title="Simulator Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (95% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -215,7 +215,7 @@
             <h1>Simulator</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Simulator</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">Function</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="p">,</span> <span class="kt">Function</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SimulationFunction.html">SimulationFunction</a></span><span class="p">,</span> <span class="kt">Value</span><span class="o">.</span><span class="kt">VectorType</span> <span class="o">==</span> <span class="kt">Function</span><span class="o">.</span><span class="kt">VectorType</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Simulator</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">Function</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="p">,</span> <span class="kt">Function</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SimulationFunction.html">SimulationFunction</a></span><span class="p">,</span> <span class="kt">Value</span><span class="o">.</span><span class="kt">VectorType</span> <span class="o">==</span> <span class="kt">Function</span><span class="o">.</span><span class="kt">VectorType</span></code></pre>
 
                 </div>
               </div>
@@ -241,9 +241,9 @@ velocity).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorC8functionq_v"></a>
+                    <a name="/s:7Advance9SimulatorC8functionq_vp"></a>
                     <a name="//apple_ref/swift/Property/function" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorC8functionq_v">function</a>
+                    <a class="token" href="#/s:7Advance9SimulatorC8functionq_vp">function</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -258,12 +258,9 @@ velocity).</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">Function</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">Function</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L30-L33">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -271,9 +268,9 @@ velocity).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorCACyxq_Gq_8function_x5valuex8velocitytcfc"></a>
+                    <a name="/s:7Advance9SimulatorC8function5value8velocityACyxq_Gq__xxtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(function:value:velocity:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorCACyxq_Gq_8function_x5valuex8velocitytcfc">init(function:value:velocity:)</a>
+                    <a class="token" href="#/s:7Advance9SimulatorC8function5value8velocityACyxq_Gq__xxtcfc">init(function:value:velocity:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -288,7 +285,7 @@ velocity).</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="kt">Function</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">Value</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">function</span><span class="p">:</span> <span class="kt">Function</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span> <span class="o">=</span> <span class="kt">Value</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -335,18 +332,15 @@ velocity).</p>
                           </tbody>
                         </table>
                       </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L47-L57">Show on GitHub</a>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorC5valuexv"></a>
+                    <a name="/s:7Advance9SimulatorC5valuexvp"></a>
                     <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorC5valuexv">value</a>
+                    <a class="token" href="#/s:7Advance9SimulatorC5valuexvp">value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -361,12 +355,9 @@ velocity).</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L60-L63">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -374,9 +365,9 @@ velocity).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorC8velocityxv"></a>
+                    <a name="/s:7Advance9SimulatorC8velocityxvp"></a>
                     <a name="//apple_ref/swift/Property/velocity" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorC8velocityxv">velocity</a>
+                    <a class="token" href="#/s:7Advance9SimulatorC8velocityxvp">velocity</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -391,12 +382,9 @@ velocity).</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L66-L69">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -408,9 +396,9 @@ velocity).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF"></a>
+                    <a name="/s:7Advance10ObservableP7observeyAA12Subscription_py5ValueQzcF"></a>
                     <a name="//apple_ref/swift/Method/observe(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF">observe(_:)</a>
+                    <a class="token" href="#/s:7Advance10ObservableP7observeyAA12Subscription_py5ValueQzcF">observe(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -424,12 +412,10 @@ velocity).</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L76-L78">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -441,9 +427,9 @@ velocity).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lEACyxAIGx5value_tcfc"></a>
+                    <a name="/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE5valueACyxAHGx_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(value:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lEACyxAIGx5value_tcfc">init(value:)</a>
+                    <a class="token" href="#/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE5valueACyxAHGx_tcfc">init(value:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -458,12 +444,9 @@ velocity).</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L85-L88">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -471,9 +454,9 @@ velocity).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lEACyxAIGqd__7boundTo_s24ReferenceWritableKeyPathCyqd__xG03keyM0tclufc"></a>
+                    <a name="/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE7boundTo7keyPathACyxAHGqd___s020ReferenceWritableKeyJ0Cyqd__xGtclufc"></a>
                     <a name="//apple_ref/swift/Method/init(boundTo:keyPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lEACyxAIGqd__7boundTo_s24ReferenceWritableKeyPathCyqd__xG03keyM0tclufc">init(boundTo:keyPath:)</a>
+                    <a class="token" href="#/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE7boundTo7keyPathACyxAHGqd___s020ReferenceWritableKeyJ0Cyqd__xGtclufc">init(boundTo:keyPath:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -489,12 +472,9 @@ object and key path.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">boundTo</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt">Value</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">boundTo</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt">Value</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L92-L96">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -502,9 +482,9 @@ object and key path.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE6targetxv"></a>
+                    <a name="/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE6targetxvp"></a>
                     <a name="//apple_ref/swift/Property/target" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE6targetxv">target</a>
+                    <a class="token" href="#/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE6targetxvp">target</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -519,12 +499,9 @@ object and key path.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Value</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Value</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L99-L102">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -532,9 +509,9 @@ object and key path.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE5resetyx2to_tF"></a>
+                    <a name="/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE5reset2toyx_tF"></a>
                     <a name="//apple_ref/swift/Method/reset(to:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE5resetyx2to_tF">reset(to:)</a>
+                    <a class="token" href="#/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE5reset2toyx_tF">reset(to:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -549,7 +526,7 @@ object and key path.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">(</span><span class="n">to</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">(</span><span class="n">to</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -572,18 +549,15 @@ object and key path.</p>
                           </tbody>
                         </table>
                       </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L106-L110">Show on GitHub</a>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE7tensionSdv"></a>
+                    <a name="/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE7tensionSdvp"></a>
                     <a name="//apple_ref/swift/Property/tension" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE7tensionSdv">tension</a>
+                    <a class="token" href="#/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE7tensionSdvp">tension</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -598,12 +572,9 @@ object and key path.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">tension</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">tension</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L113-L116">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -611,9 +582,9 @@ object and key path.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE7dampingSdv"></a>
+                    <a name="/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE7dampingSdvp"></a>
                     <a name="//apple_ref/swift/Property/damping" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE7dampingSdv">damping</a>
+                    <a class="token" href="#/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE7dampingSdvp">damping</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -628,12 +599,9 @@ object and key path.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">damping</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">damping</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L119-L122">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -641,9 +609,9 @@ object and key path.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE9thresholdSdv"></a>
+                    <a name="/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE9thresholdSdvp"></a>
                     <a name="//apple_ref/swift/Property/threshold" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance9SimulatorCA2A17VectorConvertibleRzAA14SpringFunctionVy0C4TypeQzGRs_r0_lE9thresholdSdv">threshold</a>
+                    <a class="token" href="#/s:7Advance9SimulatorCA2A14SpringFunctionVy10VectorTypeQzGRs_rlE9thresholdSdvp">threshold</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -659,12 +627,9 @@ current value can be in order to ender a converged (settled) state.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt"><a href="../Vectors.html#/s:7Advance6Scalara">Scalar</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Simulator.swift#L126-L129">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -675,7 +640,7 @@ current value can be in order to ender a converged (settled) state.</p>
         </section>
         <section id="footer">
           <p>© 2018 Tim Donnelly</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

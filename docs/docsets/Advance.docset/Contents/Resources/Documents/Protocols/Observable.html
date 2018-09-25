@@ -14,7 +14,7 @@
     <a title="Observable Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Advance Docs</a> (95% documented)</p>
+        <p><a href="../index.html">Advance Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -215,7 +215,7 @@
             <h1>Observable</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Observable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Observable</span></code></pre>
 
                 </div>
               </div>
@@ -228,9 +228,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance10ObservableP5Value"></a>
+                    <a name="/s:7Advance10ObservableP5ValueQa"></a>
                     <a name="//apple_ref/swift/Alias/Value" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance10ObservableP5Value">Value</a>
+                    <a class="token" href="#/s:7Advance10ObservableP5ValueQa">Value</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -245,12 +245,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">associatedtype</span> <span class="kt">Value</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Value</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Observable.swift#L9">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -275,12 +272,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">Observer</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP5Value">Value</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">Observer</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP5ValueQa">Value</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Observable.swift#L12">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -288,9 +282,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF"></a>
+                    <a name="/s:7Advance10ObservableP7observeyAA12Subscription_py5ValueQzcF"></a>
                     <a name="//apple_ref/swift/Method/observe(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance10ObservableP7observeAA12Subscription_py5ValueQzcF">observe(_:)</a>
+                    <a class="token" href="#/s:7Advance10ObservableP7observeyAA12Subscription_py5ValueQzcF">observe(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -305,7 +299,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP8Observera">Observer</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">func</span> <span class="nf">observe</span><span class="p">(</span><span class="n">_</span> <span class="nv">observer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP8Observera">Observer</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
 
                         </div>
                       </div>
@@ -332,9 +327,6 @@
                         <h4>Return Value</h4>
                         <p>A <code><a href="../Protocols/Subscription.html">Subscription</a></code> instance.</p>
                       </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Observable.swift#L18">Show on GitHub</a>
-                      </div>
                     </section>
                   </div>
                 </li>
@@ -345,9 +337,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance10ObservablePAAE4bindAA12Subscription_pqd__2to_s24ReferenceWritableKeyPathCyqd__5ValueQzG03keyI0tlF"></a>
+                    <a name="/s:7Advance10ObservablePAAE4bind2to7keyPathAA12Subscription_pqd___s020ReferenceWritableKeyF0Cyqd__5ValueQzGtlF"></a>
                     <a name="//apple_ref/swift/Method/bind(to:keyPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance10ObservablePAAE4bindAA12Subscription_pqd__2to_s24ReferenceWritableKeyPathCyqd__5ValueQzG03keyI0tlF">bind(to:keyPath:)</a>
+                    <a class="token" href="#/s:7Advance10ObservablePAAE4bind2to7keyPathAA12Subscription_pqd___s020ReferenceWritableKeyF0Cyqd__5ValueQzGtlF">bind(to:keyPath:)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -358,19 +350,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">bind</span><span class="o">&lt;</span><span class="kt">R</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">R</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">R</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP5Value">Value</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">bind</span><span class="o">&lt;</span><span class="kt">R</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">R</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">ReferenceWritableKeyPath</span><span class="o">&lt;</span><span class="kt">R</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Observable.html#/s:7Advance10ObservableP5ValueQa">Value</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Subscription.html">Subscription</a></span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Observable.swift#L32-L36">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -381,7 +370,7 @@
         </section>
         <section id="footer">
           <p>© 2018 Tim Donnelly</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
