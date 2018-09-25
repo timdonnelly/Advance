@@ -45,7 +45,7 @@ public final class AnimationRunner<Value> where Value: VectorConvertible {
 
     private var animation: AnyAnimation<Value>
     private let loop: Loop
-    private let valueSink: Sink<Value>
+    fileprivate let valueSink: Sink<Value>
     
     private var completionHandlers: [(Result) -> Void]
     
