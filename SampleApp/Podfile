@@ -1,0 +1,20 @@
+target 'SampleApp-iOS' do
+  platform :ios, '12.0'
+  use_frameworks!
+
+  pod 'Advance', path: '../Advance.podspec', :testspecs => ['Tests'] 
+end
+
+target 'SampleApp-macOS' do
+  platform :macos, '10.14'
+  use_frameworks!
+
+  pod 'Advance', path: '../Advance.podspec', :testspecs => ['Tests'] 
+end
+
+target 'SampleApp-tvOS' do
+  platform :tvos, '12.0'
+  use_frameworks!
+
+  pod 'Advance', path: '../Advance.podspec', :testspecs => ['Tests'] 
+end

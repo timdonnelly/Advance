@@ -17,7 +17,7 @@
 ///
 public final class Animator<Value> where Value: VectorConvertible {
     
-    private let valueSink: Sink<Value>
+    internal let valueSink: Sink<Value>
     
     private var currentValue: Value {
         didSet {

@@ -1,6 +1,7 @@
 language: objective-c
 osx_image: xcode10
+before_install: cd SampleApp
 script:
-  - xcodebuild -project Advance.xcodeproj -scheme 'Advance-iOS' -configuration Debug -sdk iphonesimulator test -destination 'platform=iOS Simulator,name=iPhone X,OS=11.2'
-  - xcodebuild -project Advance.xcodeproj -scheme 'Advance-tvOS' -configuration Debug -sdk appletvsimulator test -destination 'platform=tvOS Simulator,name=Apple TV 4K,OS=11.2'
-  - xcodebuild -project Advance.xcodeproj -scheme 'Advance-macOS' -configuration Debug test
+  - xcodebuild -workspace SampleApp.xcworkspace -scheme 'Advance-iOS' -configuration Debug -sdk iphonesimulator test -destination 'platform=iOS Simulator,name=iPhone X,OS=11.2'
+  - xcodebuild -workspace SampleApp.xcworkspace -scheme 'Advance-tvOS' -configuration Debug -sdk appletvsimulator test -destination 'platform=tvOS Simulator,name=Apple TV 4K,OS=11.2'
+  - xcodebuild -workspace SampleApp.xcworkspace -scheme 'Advance-macOS' -configuration Debug test

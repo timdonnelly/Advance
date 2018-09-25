@@ -1,0 +1,18 @@
+PODS:
+  - Advance (2.0.0)
+  - Advance/Tests (2.0.0)
+
+DEPENDENCIES:
+  - Advance (from `../Advance.podspec`)
+  - Advance/Tests (from `../Advance.podspec`)
+
+EXTERNAL SOURCES:
+  Advance:
+    :path: "../Advance.podspec"
+
+SPEC CHECKSUMS:
+  Advance: cf0cd6f6c883b734a515744e25f9e9ed7fcd8aca
+
+PODFILE CHECKSUM: 47bc775798b67a5637081a07c5c3ae22fe887b80
+
+COCOAPODS: 1.6.0.beta.1
