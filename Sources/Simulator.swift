@@ -15,7 +15,7 @@
 ///
 public class Simulator<Value, Function> where Value: VectorConvertible, Function: SimulationFunction, Value.VectorType == Function.VectorType {
     
-    private let valueSink = Sink<Value>()
+    fileprivate let valueSink = Sink<Value>()
     
     private var simulation: Simulation<Function> {
         didSet {

@@ -11,7 +11,7 @@ import CoreVideo
 /// to the device's display refresh rate.
 public final class Loop {
     
-    private let frameSink: Sink<Frame>
+    fileprivate let frameSink: Sink<Frame>
     
     private let driver: Driver
     
