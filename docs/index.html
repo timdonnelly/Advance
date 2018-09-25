@@ -13,7 +13,7 @@
     <a title="Advance  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Advance Docs</a> (95% documented)</p>
+        <p><a href="index.html">Advance Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -228,7 +228,7 @@
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
 
 <span class="c1">/// Animators coordinate animations to drive changes to a value.</span>
-<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 
 <span class="c1">/// Spring physics will move the view's size to the new value.</span>
 <span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">spring</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">))</span>
@@ -243,7 +243,7 @@
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
 
 <span class="c1">/// Springs are... springs. That's all they do.</span>
-<span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
 
 <span class="c1">/// The view's center will realistically animate to the new value.</span>
 <span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
@@ -256,7 +256,7 @@
 
 <p>A set of extensions make it easy to kick off animations on an animator:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
-<span class="k">let</span> <span class="nv">boundsAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">boundsAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
 
 <span class="c1">/// Basic animation</span>
 <span class="n">boundsAnimator</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">),</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">timingFunction</span><span class="p">:</span> <span class="kt">UnitBezier</span><span class="o">.</span><span class="n">easeIn</span><span class="p">)</span>
@@ -294,7 +294,7 @@
 <p><code><a href="Simulation.html#/s:7Advance6Springa">Spring</a></code> is a specialized simulator that uses a spring function. If all you are after is a simple spring to animate a value, this is what you want.</p>
 
 <p>Convenience extensions provide full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span>
 <span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="mf">0.5</span>
 
 <span class="c1">/// Spring values can be adjusted at any time.</span>
@@ -323,7 +323,7 @@
 
 <p>Values conforming to the <code><a href="Protocols/VectorConvertible.html">VectorConvertible</a></code> protocol can be animated by Advance. Conforming types can be converted to and from a <code><a href="Protocols/Vector.html">Vector</a></code> implementation.</p>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">VectorConvertible</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Interpolatable</span> <span class="p">{</span>
-    <span class="k">associatedtype</span> <span class="kt">VectorType</span><span class="p">:</span> <span class="kt">Vector</span>
+    <span class="kd">associatedtype</span> <span class="kt">VectorType</span><span class="p">:</span> <span class="kt">Vector</span>
     <span class="nf">init</span><span class="p">(</span><span class="nv">vector</span><span class="p">:</span> <span class="kt">VectorType</span><span class="p">)</span>
     <span class="k">var</span> <span class="nv">vector</span><span class="p">:</span> <span class="kt">VectorType</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
 <span class="p">}</span>
@@ -369,7 +369,7 @@
 <ul>
 <li><p>Manually, as a framework: simply add the <code>Advance.xcodeproj</code> to your project and add <code>Advance.framework</code> as an <q>Embedded Binary</q> to your application target (under General in target settings). From there, add <code>import Advance</code> to your code and you&rsquo;re good to go.</p></li>
 <li><p>Carthage: add <code>github &quot;timdonnelly/Advance&quot; &quot;master&quot;</code> to your <code>Cartfile</code>.</p></li>
-<li><p>CocoaPods: add <code>pod &#39;Advance&#39;, &#39;~&gt; 2.0&#39;</code> to your <code>Podfile</code>.</p></li>
+<li><p>CocoaPods: add <code>pod &#39;Advance&#39;</code> to your <code>Podfile</code>.</p></li>
 </ul>
 <h5 id='requirements' class='heading'>Requirements</h5>
 
@@ -388,7 +388,7 @@
         </section>
         <section id="footer">
           <p>© 2018 Tim Donnelly</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

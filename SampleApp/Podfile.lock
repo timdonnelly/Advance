@@ -1,6 +1,6 @@
 PODS:
-  - Advance (2.0.0)
-  - Advance/Tests (2.0.0)
+  - Advance (2.1.0)
+  - Advance/Tests (2.1.0)
 
 DEPENDENCIES:
   - Advance (from `../Advance.podspec`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../Advance.podspec"
 
 SPEC CHECKSUMS:
-  Advance: cf0cd6f6c883b734a515744e25f9e9ed7fcd8aca
+  Advance: 53770560381b96a8525032590b36c1421943f037
 
 PODFILE CHECKSUM: 47bc775798b67a5637081a07c5c3ae22fe887b80
 

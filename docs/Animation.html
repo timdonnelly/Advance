@@ -10,10 +10,11 @@
     
   </head>
   <body>
+    <a name="//apple_ref/swift/Section/Animation" class="dashAnchor"></a>
     <a title="Animation  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Advance Docs</a> (95% documented)</p>
+        <p><a href="index.html">Advance Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -231,18 +232,18 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Manages the application of animations to a value.</p>
-<pre class="highlight plaintext"><code>let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
 
-let sizeAnimator = Animator(boundTo: view, keyPath: \.bounds.size)
+<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">boundTo</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 
-/// Spring physics will move the view's size to the new value.
-sizeAnimator.spring(to: CGSize(width: 300, height: 300))
+<span class="c1">/// Spring physics will move the view's size to the new value.</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">spring</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">))</span>
 
-/// Some time in the future...
+<span class="c1">/// Some time in the future...</span>
 
-/// The value will keep the same velocity that it had from the preceeding
-/// animation, and a decay function will slowly bring movement to a stop.
-sizeAnimator.decay(drag: 2.0)
+<span class="c1">/// The value will keep the same velocity that it had from the preceeding</span>
+<span class="c1">/// animation, and a decay function will slowly bring movement to a stop.</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">decay</span><span class="p">(</span><span class="nv">drag</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">)</span>
 </code></pre>
 
                         <a href="Classes/Animator.html" class="slightly-smaller">See more</a>
@@ -251,12 +252,9 @@ sizeAnimator.decay(drag: 2.0)
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animator.swift#L18-L96">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -289,26 +287,26 @@ completes.</p>
 <li>If <code>cancel()</code> is called on the runner while in a running state, the
 runner enters the <code>completed (cancelled)</code> state.</li>
 </ul>
-<pre class="highlight plaintext"><code>import Advance
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Advance</span>
 
-let animation = 0.0.animation(
-    to: 100.0,
-    duration: 0.6,
-    timingFunction: UnitBezier.easeIn)
+<span class="k">let</span> <span class="nv">animation</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">.</span><span class="nf">animation</span><span class="p">(</span>
+    <span class="nv">to</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
+    <span class="nv">timingFunction</span><span class="p">:</span> <span class="kt">UnitBezier</span><span class="o">.</span><span class="n">easeIn</span><span class="p">)</span>
 
-let runner = AnimationRunner(animation: animation)
-    .onChange { value in
-        /// Do something with the value.
-    }
-    .onCancel {
-        /// The animation was cancelled before it could finish.
-    }
-    .onFinish {
-        /// The animation finished successfully.
-     }
+<span class="k">let</span> <span class="nv">runner</span> <span class="o">=</span> <span class="kt">AnimationRunner</span><span class="p">(</span><span class="nv">animation</span><span class="p">:</span> <span class="n">animation</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">onChange</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span>
+        <span class="c1">/// Do something with the value.</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="n">onCancel</span> <span class="p">{</span>
+        <span class="c1">/// The animation was cancelled before it could finish.</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="n">onFinish</span> <span class="p">{</span>
+        <span class="c1">/// The animation finished successfully.</span>
+     <span class="p">}</span>
 
-/// Kick off the animation
-runner()
+<span class="c1">/// Kick off the animation</span>
+<span class="n">runner</span><span class="o">.</span><span class="nf">start</span><span class="p">()</span>
 
 </code></pre>
 
@@ -320,12 +318,9 @@ runner()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AnimationRunner</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AnimationRunner</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/AnimationRunner.swift#L38-L176">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -358,12 +353,9 @@ time-advancable animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Animation</span><span class="p">:</span> <span class="kt"><a href="Protocols/Advanceable.html">Advanceable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Animation</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Advanceable.html">Advanceable</a></span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animation.swift#L5-L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -393,7 +385,7 @@ time-advancable animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BasicAnimation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BasicAnimation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
                       </div>
@@ -415,9 +407,6 @@ time-advancable animation.</p>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/Basic/BasicAnimation.swift#L4-L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -447,12 +436,9 @@ time-advancable animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AnyAnimation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AnyAnimation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/AnyAnimation.swift#L2-L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -482,12 +468,9 @@ time-advancable animation.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SimulatedAnimation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Value</span><span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="p">,</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="Protocols/SimulationFunction.html">SimulationFunction</a></span><span class="p">,</span> <span class="kt">Value</span><span class="o">.</span><span class="kt">VectorType</span> <span class="o">==</span> <span class="kt">T</span><span class="o">.</span><span class="kt">VectorType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SimulatedAnimation</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Animation.html">Animation</a></span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/SimulationFunction.html">SimulationFunction</a></span><span class="p">,</span> <span class="kt">Value</span><span class="o">.</span><span class="kt">VectorType</span> <span class="o">==</span> <span class="kt">T</span><span class="o">.</span><span class="kt">VectorType</span></code></pre>
 
                         </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Source/Animations/Simulated/SimulatedAnimation.swift#L2-L27">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -498,7 +481,7 @@ time-advancable animation.</p>
         </section>
         <section id="footer">
           <p>© 2018 Tim Donnelly</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
