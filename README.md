@@ -2,14 +2,6 @@
 
 Physics-based animations for iOS, tvOS, and macOS.
 
-This project was originally developed to power the animations throughout the Storehouse app for iOS, but has since been extensively rewritten in modern Swift.
-
-## What's new in 2.0?
-
-Nearly everything. Pre-2.0 was largely an Objective-C port, so 2.0 was a chance to clean up and rethink the external API.
-
-The API is much smaller as a result, providing a handful of types that make it easy to integrate physics-based animations.
-
 ## Usage
 
 In contrast to standard `UIView` animations, Advance animations are applied on every frame (using `CADisplayLink` on iOS).
