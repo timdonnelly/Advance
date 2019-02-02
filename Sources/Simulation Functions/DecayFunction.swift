@@ -29,7 +29,7 @@ public struct DecayFunction<T>: SimulationFunction where T: Vector {
 }
 
 
-public extension Animator {
+extension Animator {
 
     /// Starts a decay animation with the current velocity of the property animator.
     @discardableResult
@@ -53,7 +53,7 @@ public extension Animator {
 }
 
 
-public extension VectorConvertible {
+extension VectorConvertible {
     
     /// Returns a decay animation with the given properties.
     public func decayAnimation(initialVelocity: Self, drag: Scalar = 3.0, threshold: Scalar = 0.1) -> SimulatedAnimation<Self, DecayFunction<Self.VectorType>> {

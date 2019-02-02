@@ -32,7 +32,7 @@ extension UnitBezier: TimingFunction {
     }
 }
 
-public extension UnitBezier {
+extension UnitBezier {
     
     /// Equivalent to `kCAMediaTimingFunctionEaseIn`.
     public static var easeIn: UnitBezier {

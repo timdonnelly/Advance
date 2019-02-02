@@ -44,7 +44,7 @@ extension Loop: Observable {
 }
 
 
-public extension Loop {
+extension Loop {
     /// Info about a particular frame.
     public struct Frame : Equatable {
         

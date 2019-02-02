@@ -52,7 +52,7 @@ public struct SpringFunction<T>: SimulationFunction where T: Vector {
 }
 
 
-public extension Animator {
+extension Animator {
     
     /// Starts a spring animation with the given properties, adopting the property's
     /// current velocity as `initialVelocity`.
@@ -78,7 +78,7 @@ public extension Animator {
 }
 
 
-public extension VectorConvertible {
+extension VectorConvertible {
     
     /// Returns a spring animation with the given properties.
     public func springAnimation(to target: Self, initialVelocity: Self = .zero, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> SimulatedAnimation<Self, SpringFunction<Self.VectorType>> {

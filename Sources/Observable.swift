@@ -26,7 +26,7 @@ public protocol Subscription {
 
 
 
-public extension Observable {
+extension Observable {
     
     @discardableResult
     public func bind<R>(to object: R, keyPath: ReferenceWritableKeyPath<R, Value>) -> Subscription {

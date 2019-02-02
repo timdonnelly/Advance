@@ -12,7 +12,7 @@ public protocol VectorConvertible: Equatable, Interpolatable {
     var vector: VectorType { get }
 }
 
-public extension VectorConvertible {
+extension VectorConvertible {
     
     /// Returns an instance initialized using the zero vector.
     public static var zero: Self {
@@ -20,7 +20,7 @@ public extension VectorConvertible {
     }
 }
 
-public extension VectorConvertible {
+extension VectorConvertible {
     
     /// Interpolates between values.
     ///
