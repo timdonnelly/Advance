@@ -166,15 +166,15 @@ animator.animate(with: springAnimation)
 
 There are several ways to integrate Advance into your project.
 
-* Manually, as a framework: simply add the `Advance.xcodeproj` to your project and add `Advance.framework` as an "Embedded Binary" to your application target (under General in target settings). From there, add `import Advance` to your code and you're good to go.
+* Manually, as a framework: simply add the `Advance.xcodeproj` to your project and add `Advance-{iOS|macOS|tvOS}.framework` as an "Embedded Binary" to your application target (under General in target settings). From there, add `import Advance` to your code and you're good to go.
 
-* Carthage: add `github "timdonnelly/Advance" "master"` to your `Cartfile`.
+* Carthage: add `github "timdonnelly/Advance"` to your `Cartfile`.
 
 * CocoaPods: add `pod 'Advance'` to your `Podfile`.
 
 ##### Requirements
 * iOS 10+, tvOS 10+, or macOS 10.12+
-* Swift 4.0+ (Xcode 9 or higher)
+* Swift 4.2 (Xcode 10 or higher)
 
 ## Documentation
 API documentation is [available here](http://timdonnelly.github.io/Advance/).
