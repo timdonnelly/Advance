@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Advance"
-  s.version      = "2.1.0"
+  s.version      = "2.2.0"
   s.summary      = "Physics-based animations for iOS, tvOS, and macOS."
   s.description  = "Advance is a Swift framework that enables advanced animations and physics-based interactions."
 
