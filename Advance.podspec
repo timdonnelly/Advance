@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Advance"
-  s.version      = "2.2.0"
+  s.version      = "3.0.0"
   s.summary      = "Physics-based animations for iOS, tvOS, and macOS."
   s.description  = "Advance is a Swift framework that enables advanced animations and physics-based interactions."
 
@@ -11,11 +11,11 @@ Pod::Spec.new do |s|
   s.authors      = "Tim Donnelly"
   s.social_media_url = 'http://twitter.com/timdonnelly'
 
-  s.source       = { :git => "https://github.com/timdonnelly/Advance.git", :tag => "v2.2.0" }
+  s.source       = { :git => "https://github.com/timdonnelly/Advance.git", :tag => "v3.0.0" }
 
   s.source_files = "Sources/**/*.swift"
 
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.ios.deployment_target = "9.0"
   s.osx.deployment_target = "10.12"
