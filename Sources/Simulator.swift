@@ -79,20 +79,12 @@ extension Simulator: Observable {
     
 }
 
-public extension Simulator where Function == SpringFunction<Value.VectorType> {
+extension Simulator where Function == SpringFunction<Value.VectorType> {
     
     /// Initializes a new spring converged at the given value, using default configuration options for the spring function.
     public convenience init(value: Value) {
         let spring = SpringFunction(target: value.vector)
         self.init(function: spring, value: value)
-    }
-    
-    /// Initializes a new spring converged at the value returned by `object[keyPath: keyPath`, and bound to the given
-    /// object and key path.
-    public convenience init<T>(boundTo object: T, keyPath: ReferenceWritableKeyPath<T, Value>) {
-        let initialValue = object[keyPath: keyPath]
-        self.init(value: initialValue)
-        bind(to: object, keyPath: keyPath)
     }
     
     /// The spring's target.

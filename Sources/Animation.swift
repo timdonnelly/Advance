@@ -22,7 +22,7 @@ public protocol Animation: Advanceable {
 }
 
 
-public extension Animation {
+extension Animation {
     
     /// Returns a sequence containing discrete values for the duration of the animation, based
     /// on the provided time step.

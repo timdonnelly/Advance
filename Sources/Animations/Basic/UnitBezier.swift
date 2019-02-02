@@ -40,7 +40,7 @@ public struct UnitBezier: Equatable {
 
 }
 
-public extension UnitBezier {
+extension UnitBezier {
     
     public struct ControlPoint: Equatable {
         

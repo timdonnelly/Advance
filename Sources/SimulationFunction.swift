@@ -32,7 +32,7 @@ public enum Convergence<T> where T: Vector {
 }
 
 
-public extension SimulationFunction {
+extension SimulationFunction {
     
     fileprivate typealias Derivative = SimulationState
     
