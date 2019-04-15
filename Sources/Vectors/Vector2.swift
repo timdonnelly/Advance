@@ -17,13 +17,13 @@ public struct Vector2 {
 extension Vector2: Vector {
     
     /// Creates a vector for which all components are equal to the given Double.
-    public init(Double: Double) {
-        x = Double
-        y = Double
+    public init(repeating value: Double) {
+        x = value
+        y = value
     }
 
     /// The number of Double components in this vector type.
-    public static var length: Int {
+    public static var scalarCount: Int {
         return 2
     }
     
@@ -58,13 +58,7 @@ extension Vector2: Vector {
             }
         }
     }
-    
-    public func clamped(min: Vector2, max: Vector2) -> Vector2 {
-        return Vector2(
-            x: x.clamped(min: min.x, max: max.x),
-            y: y.clamped(min: min.y, max: max.y))
-    }
-    
+
     /// Interpolate between the given values.
     public func interpolated(to otherValue: Vector2, alpha: Double) -> Vector2 {
         var result = self

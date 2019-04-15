@@ -2,25 +2,14 @@
 public protocol Vector: Equatable, Interpolatable {
     
     /// Creates a vector for which all components are equal to the given Double.
-    init(Double: Double)
+    init(repeating value: Double)
     
     /// The length of this vector.
-    static var length: Int { get }
+    static var scalarCount: Int { get }
 
     /// Direct component access. If the given `index` is >= `Self.length`, it
     /// is a programmer error.
     subscript(index: Int) -> Double { get set }
-    
-    /// Returns a vector where each component is clamped by the corresponding
-    /// components in `min` and `max`.
-    ///
-    /// - parameter x: The vector to be clamped.
-    /// - parameter min: Each component in the output vector will `>=` the
-    ///   corresponding component in this vector.
-    /// - parameter max: Each component in the output vector will be `<=` the
-    ///   corresponding component in this vector.
-    func clamped(min: Self, max: Self) -> Self
-    
     
     /// The empty vector (all Double components are equal to `0.0`).
     static var zero: Self { get }
@@ -51,4 +40,29 @@ public protocol Vector: Equatable, Interpolatable {
     
     /// Double-Vector product.
     static func *(lhs: Double, rhs: Self) -> Self
+}
+
+extension Vector {
+    
+    /// Returns a vector where each component is clamped by the corresponding
+    /// components in `min` and `max`.
+    ///
+    /// - parameter x: The vector to be clamped.
+    /// - parameter min: Each component in the output vector will `>=` the
+    ///   corresponding component in this vector.
+    /// - parameter max: Each component in the output vector will be `<=` the
+    ///   corresponding component in this vector.
+    public func clamped(min: Self, max: Self) -> Self {
+        var result = self
+        for componentIndex in 0..<type(of: self).scalarCount {
+            assert(min[componentIndex] <= max[componentIndex])
+            if result[componentIndex] < min[componentIndex] {
+                result[componentIndex] = min[componentIndex]
+            } else if result[componentIndex] > max[componentIndex] {
+                result[componentIndex] = max[componentIndex]
+            }
+        }
+        return result
+    }
+    
 }

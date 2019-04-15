@@ -36,8 +36,8 @@ public struct GravityFunction: SimulationFunction {
     
     public func convergence(for state: SimulationState<Vector2>) -> Convergence<Vector2> {
         
-        let min = Vector2(Double: -threshold)
-        let max = Vector2(Double: threshold)
+        let min = Vector2(repeating: -threshold)
+        let max = Vector2(repeating: threshold)
         
         if state.velocity.clamped(min: min, max: max) != state.velocity {
             return .keepRunning

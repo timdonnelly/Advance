@@ -4,8 +4,8 @@ public typealias Vector1 = Double
 extension Vector1: Vector {
     
     /// Creates a vector for which all components are equal to the given Double.
-    public init(Double: Double) {
-        self = Double
+    public init(repeating value: Double) {
+        self = value
     }
     
     /// The empty vector (all Double components are equal to `0.0`).
@@ -14,7 +14,7 @@ extension Vector1: Vector {
     }
     
     /// The number of Double components in this vector type.
-    public static var length: Int {
+    public static var scalarCount: Int {
         return 1
     }
     
@@ -40,11 +40,5 @@ extension Vector1: Vector {
     public mutating func interpolate(to otherValue: Vector1, alpha: Double) {
         self += alpha * (otherValue - self)
     }
-    
-    public func clamped(min: Vector1, max: Vector1) -> Vector1 {
-        assert(min <= max)
-        if self < min { return min }
-        if self > max { return max }
-        return self
-    }
+
 }
