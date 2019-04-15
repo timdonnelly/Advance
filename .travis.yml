@@ -4,11 +4,11 @@ xcode_project: Advance.xcodeproj
 
 matrix:
   include:
-    - xcode_scheme: Advance-iOS
+    - xcode_scheme: Advance-UnitTests-iOS
       xcode_sdk: iphonesimulator12.2
 
-    - xcode_scheme: Advance-macOS
+    - xcode_scheme: Advance-UnitTests-macOS
       xcode_sdk: macosx10.14
 
-    - xcode_scheme: Advance-tvOS
+    - xcode_scheme: Advance-UnitTests-tvOS
       xcode_sdk: appletvos12.2
