@@ -34,22 +34,17 @@ public final class Animator<Value> where Value: VectorConvertible {
         self.currentValue = value
     }
     
-    /// Convenience initializer that binds the animator to the given target object and key path.
-    /// The current value of `object[keyPath: keyPath]` is used as the initial value of the animator.
-    public convenience init<T>(boundTo object: T, keyPath: ReferenceWritableKeyPath<T, Value>) where T: AnyObject {
-        let initialValue = object[keyPath: keyPath]
-        self.init(value: initialValue)
-        bind(to: object, keyPath: keyPath)
-    }
-    
     /// Animates the property using the given animation.
     @discardableResult
     public func animate<T>(with animation: T) -> AnimationRunner<Value> where T: Animation, T.Value == Value {
         
         cancelRunningAnimation()
         let runner = AnimationRunner(animation: animation)
-            
-        runner.bind(to: self, keyPath: \.currentValue)
+        
+        runner.observe { [weak self] value in
+            self?.currentValue = value
+        }
+        
         runner.onCompletion({ [weak self] (_) in
             self?.runnerDidFinish(runner)
         })

@@ -9,7 +9,7 @@ import CoreVideo
 
 /// An object that produces an observable sequence of frames that are synchronized
 /// to the device's display refresh rate.
-public final class Loop {
+internal final class Loop {
     
     fileprivate let frameSink: Sink<Frame>
     
@@ -46,21 +46,16 @@ extension Loop: Observable {
 
 extension Loop {
     /// Info about a particular frame.
-    public struct Frame : Equatable {
+    struct Frame : Equatable {
         
-        public var previousTimestamp: Double
+        var previousTimestamp: Double
         
         /// The timestamp that the frame.
-        public var timestamp: Double
+        var timestamp: Double
         
         /// The current duration between frames.
-        public var duration: Double {
+        var duration: Double {
             return timestamp - previousTimestamp
-        }
-        
-        public static func ==(lhs: Frame, rhs: Frame) -> Bool {
-            return lhs.timestamp == rhs.timestamp
-                && lhs.previousTimestamp == rhs.previousTimestamp
         }
         
     }
@@ -72,9 +67,9 @@ extension Loop {
 #if os(iOS) || os(tvOS) // iOS support using CADisplayLink --------------------------------------------------------
 
 /// DisplayLink is used to hook into screen refreshes.
-fileprivate extension Loop {
+extension Loop {
     
-    final class Driver {
+    fileprivate final class Driver {
     
         /// The callback to call for each frame.
         var callback: ((Frame) -> Void)? = nil
@@ -111,7 +106,7 @@ fileprivate extension Loop {
         }
         
         /// The target for the CADisplayLink (because CADisplayLink retains its target).
-        internal final class DisplayLinkTarget {
+        final class DisplayLinkTarget {
             
             /// The callback to call for each frame.
             var callback: ((Loop.Frame) -> Void)? = nil
@@ -140,10 +135,10 @@ fileprivate extension Loop {
 
 #elseif os(macOS) // macOS support using CVDisplayLink --------------------------------------------------
 
-fileprivate extension Loop {
+extension Loop {
     
     /// DisplayLink is used to hook into screen refreshes.
-    final class Driver {
+    fileprivate final class Driver {
     
         /// The callback to call for each frame.
         var callback: ((Frame) -> Void)? = nil
