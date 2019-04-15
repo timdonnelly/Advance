@@ -18,7 +18,6 @@
 		2279B91D2264EE31001EEAB0 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */; };
 		2279B91E2264EE31001EEAB0 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* LoopTests.swift */; };
 		2279B91F2264EE31001EEAB0 /* AnyAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */; };
-		2279B9202264EE31001EEAB0 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9182264EE02001EEAB0 /* VectorTests.swift */; };
 		2279B9212264EE31001EEAB0 /* SinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9192264EE02001EEAB0 /* SinkTests.swift */; };
 		2279B9222264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
 		2279B9232264EE31001EEAB0 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */; };
@@ -26,7 +25,6 @@
 		2279B9252264EE31001EEAB0 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */; };
 		2279B9262264EE31001EEAB0 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* LoopTests.swift */; };
 		2279B9272264EE31001EEAB0 /* AnyAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */; };
-		2279B9282264EE31001EEAB0 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9182264EE02001EEAB0 /* VectorTests.swift */; };
 		2279B9292264EE31001EEAB0 /* SinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9192264EE02001EEAB0 /* SinkTests.swift */; };
 		2279B92A2264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
 		2279B92B2264EE32001EEAB0 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */; };
@@ -34,7 +32,6 @@
 		2279B92D2264EE32001EEAB0 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */; };
 		2279B92E2264EE32001EEAB0 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* LoopTests.swift */; };
 		2279B92F2264EE32001EEAB0 /* AnyAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */; };
-		2279B9302264EE32001EEAB0 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9182264EE02001EEAB0 /* VectorTests.swift */; };
 		2279B9312264EE32001EEAB0 /* SinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9192264EE02001EEAB0 /* SinkTests.swift */; };
 		2279B9322264EE32001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
 		2279B93C2265097C001EEAB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B93A22650975001EEAB0 /* ViewController.swift */; };
@@ -79,15 +76,6 @@
 		22A466B122063CDC00C0FEA1 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667A22063CDC00C0FEA1 /* Sink.swift */; };
 		22A466B222063CDC00C0FEA1 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667A22063CDC00C0FEA1 /* Sink.swift */; };
 		22A466B322063CDC00C0FEA1 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667A22063CDC00C0FEA1 /* Sink.swift */; };
-		22A466B422063CDC00C0FEA1 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667C22063CDC00C0FEA1 /* Vector2.swift */; };
-		22A466B522063CDC00C0FEA1 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667C22063CDC00C0FEA1 /* Vector2.swift */; };
-		22A466B622063CDC00C0FEA1 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667C22063CDC00C0FEA1 /* Vector2.swift */; };
-		22A466B722063CDC00C0FEA1 /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667D22063CDC00C0FEA1 /* Vector4.swift */; };
-		22A466B822063CDC00C0FEA1 /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667D22063CDC00C0FEA1 /* Vector4.swift */; };
-		22A466B922063CDC00C0FEA1 /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667D22063CDC00C0FEA1 /* Vector4.swift */; };
-		22A466BD22063CDC00C0FEA1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667F22063CDC00C0FEA1 /* Vector3.swift */; };
-		22A466BE22063CDC00C0FEA1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667F22063CDC00C0FEA1 /* Vector3.swift */; };
-		22A466BF22063CDC00C0FEA1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667F22063CDC00C0FEA1 /* Vector3.swift */; };
 		22A466C022063CDC00C0FEA1 /* AnimationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668022063CDC00C0FEA1 /* AnimationRunner.swift */; };
 		22A466C122063CDC00C0FEA1 /* AnimationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668022063CDC00C0FEA1 /* AnimationRunner.swift */; };
 		22A466C222063CDC00C0FEA1 /* AnimationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668022063CDC00C0FEA1 /* AnimationRunner.swift */; };
@@ -221,7 +209,6 @@
 		2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitBezierTests.swift; sourceTree = "<group>"; };
 		2279B9162264EE02001EEAB0 /* LoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopTests.swift; sourceTree = "<group>"; };
 		2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAnimationTests.swift; sourceTree = "<group>"; };
-		2279B9182264EE02001EEAB0 /* VectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorTests.swift; sourceTree = "<group>"; };
 		2279B9192264EE02001EEAB0 /* SinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinkTests.swift; sourceTree = "<group>"; };
 		2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorConvenienceTests.swift; sourceTree = "<group>"; };
 		2279B93722650975001EEAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -262,9 +249,6 @@
 		22A4667822063CDC00C0FEA1 /* Interpolatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpolatable.swift; sourceTree = "<group>"; };
 		22A4667922063CDC00C0FEA1 /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		22A4667A22063CDC00C0FEA1 /* Sink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sink.swift; sourceTree = "<group>"; };
-		22A4667C22063CDC00C0FEA1 /* Vector2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
-		22A4667D22063CDC00C0FEA1 /* Vector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector4.swift; sourceTree = "<group>"; };
-		22A4667F22063CDC00C0FEA1 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		22A4668022063CDC00C0FEA1 /* AnimationRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationRunner.swift; sourceTree = "<group>"; };
 		22A4668222063CDC00C0FEA1 /* UIOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOffset.swift; sourceTree = "<group>"; };
 		22A4668322063CDC00C0FEA1 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
@@ -436,7 +420,6 @@
 				2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */,
 				2279B9162264EE02001EEAB0 /* LoopTests.swift */,
 				2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */,
-				2279B9182264EE02001EEAB0 /* VectorTests.swift */,
 				2279B9192264EE02001EEAB0 /* SinkTests.swift */,
 				2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */,
 			);
@@ -551,7 +534,6 @@
 				22A4667822063CDC00C0FEA1 /* Interpolatable.swift */,
 				22A4667922063CDC00C0FEA1 /* Loop.swift */,
 				22A4667A22063CDC00C0FEA1 /* Sink.swift */,
-				22A4667B22063CDC00C0FEA1 /* Vectors */,
 				22A4668022063CDC00C0FEA1 /* AnimationRunner.swift */,
 				22A4668122063CDC00C0FEA1 /* Extensions */,
 				22A4668D22063CDC00C0FEA1 /* Animator.swift */,
@@ -564,16 +546,6 @@
 				22A4669722063CDC00C0FEA1 /* Animations */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		22A4667B22063CDC00C0FEA1 /* Vectors */ = {
-			isa = PBXGroup;
-			children = (
-				22A4667C22063CDC00C0FEA1 /* Vector2.swift */,
-				22A4667D22063CDC00C0FEA1 /* Vector4.swift */,
-				22A4667F22063CDC00C0FEA1 /* Vector3.swift */,
-			);
-			path = Vectors;
 			sourceTree = "<group>";
 		};
 		22A4668122063CDC00C0FEA1 /* Extensions */ = {
@@ -1009,7 +981,6 @@
 				2279B91B2264EE31001EEAB0 /* BasicAnimationTests.swift in Sources */,
 				2279B9222264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */,
 				2279B9212264EE31001EEAB0 /* SinkTests.swift in Sources */,
-				2279B9202264EE31001EEAB0 /* VectorTests.swift in Sources */,
 				2279B91D2264EE31001EEAB0 /* UnitBezierTests.swift in Sources */,
 				2279B91F2264EE31001EEAB0 /* AnyAnimationTests.swift in Sources */,
 				2279B91E2264EE31001EEAB0 /* LoopTests.swift in Sources */,
@@ -1024,7 +995,6 @@
 				2279B9232264EE31001EEAB0 /* BasicAnimationTests.swift in Sources */,
 				2279B92A2264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */,
 				2279B9292264EE31001EEAB0 /* SinkTests.swift in Sources */,
-				2279B9282264EE31001EEAB0 /* VectorTests.swift in Sources */,
 				2279B9252264EE31001EEAB0 /* UnitBezierTests.swift in Sources */,
 				2279B9272264EE31001EEAB0 /* AnyAnimationTests.swift in Sources */,
 				2279B9262264EE31001EEAB0 /* LoopTests.swift in Sources */,
@@ -1039,7 +1009,6 @@
 				2279B92B2264EE32001EEAB0 /* BasicAnimationTests.swift in Sources */,
 				2279B9322264EE32001EEAB0 /* VectorConvenienceTests.swift in Sources */,
 				2279B9312264EE32001EEAB0 /* SinkTests.swift in Sources */,
-				2279B9302264EE32001EEAB0 /* VectorTests.swift in Sources */,
 				2279B92D2264EE32001EEAB0 /* UnitBezierTests.swift in Sources */,
 				2279B92F2264EE32001EEAB0 /* AnyAnimationTests.swift in Sources */,
 				2279B92E2264EE32001EEAB0 /* LoopTests.swift in Sources */,
@@ -1053,7 +1022,6 @@
 				22A466CF22063CDD00C0FEA1 /* CAMediaTimingFunction.swift in Sources */,
 				22A466DE22063CDD00C0FEA1 /* CGRect.swift in Sources */,
 				22A466FC22063CDD00C0FEA1 /* VectorConvertible.swift in Sources */,
-				22A466BD22063CDC00C0FEA1 /* Vector3.swift in Sources */,
 				22A466A222063CDC00C0FEA1 /* Animation.swift in Sources */,
 				22A466F922063CDD00C0FEA1 /* GravityFunction.swift in Sources */,
 				22A466C022063CDC00C0FEA1 /* AnimationRunner.swift in Sources */,
@@ -1070,14 +1038,12 @@
 				22A466F622063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
 				22A466ED22063CDD00C0FEA1 /* Observable.swift in Sources */,
 				22A466B122063CDC00C0FEA1 /* Sink.swift in Sources */,
-				22A466B422063CDC00C0FEA1 /* Vector2.swift in Sources */,
 				22A4669F22063CDC00C0FEA1 /* Simulator.swift in Sources */,
 				22A466C622063CDC00C0FEA1 /* CGSize.swift in Sources */,
 				22A466D522063CDD00C0FEA1 /* CGFloat.swift in Sources */,
 				22A466EA22063CDD00C0FEA1 /* Advanceable.swift in Sources */,
 				22A4670822063CDD00C0FEA1 /* UnitBezier.swift in Sources */,
 				22A466F322063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
-				22A466B722063CDC00C0FEA1 /* Vector4.swift in Sources */,
 				22A4670522063CDD00C0FEA1 /* BasicAnimation.swift in Sources */,
 				22A466FF22063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466D822063CDD00C0FEA1 /* Double.swift in Sources */,
@@ -1094,7 +1060,6 @@
 				22A466D022063CDD00C0FEA1 /* CAMediaTimingFunction.swift in Sources */,
 				22A466DF22063CDD00C0FEA1 /* CGRect.swift in Sources */,
 				22A466FD22063CDD00C0FEA1 /* VectorConvertible.swift in Sources */,
-				22A466BE22063CDC00C0FEA1 /* Vector3.swift in Sources */,
 				22A466A322063CDC00C0FEA1 /* Animation.swift in Sources */,
 				22A466FA22063CDD00C0FEA1 /* GravityFunction.swift in Sources */,
 				22A466C122063CDC00C0FEA1 /* AnimationRunner.swift in Sources */,
@@ -1111,14 +1076,12 @@
 				22A466F722063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
 				22A466EE22063CDD00C0FEA1 /* Observable.swift in Sources */,
 				22A466B222063CDC00C0FEA1 /* Sink.swift in Sources */,
-				22A466B522063CDC00C0FEA1 /* Vector2.swift in Sources */,
 				22A466A022063CDC00C0FEA1 /* Simulator.swift in Sources */,
 				22A466C722063CDC00C0FEA1 /* CGSize.swift in Sources */,
 				22A466D622063CDD00C0FEA1 /* CGFloat.swift in Sources */,
 				22A466EB22063CDD00C0FEA1 /* Advanceable.swift in Sources */,
 				22A4670922063CDD00C0FEA1 /* UnitBezier.swift in Sources */,
 				22A466F422063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
-				22A466B822063CDC00C0FEA1 /* Vector4.swift in Sources */,
 				22A4670622063CDD00C0FEA1 /* BasicAnimation.swift in Sources */,
 				22A4670022063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466D922063CDD00C0FEA1 /* Double.swift in Sources */,
@@ -1135,7 +1098,6 @@
 				22A466D122063CDD00C0FEA1 /* CAMediaTimingFunction.swift in Sources */,
 				22A466E022063CDD00C0FEA1 /* CGRect.swift in Sources */,
 				22A466FE22063CDD00C0FEA1 /* VectorConvertible.swift in Sources */,
-				22A466BF22063CDC00C0FEA1 /* Vector3.swift in Sources */,
 				22A466A422063CDC00C0FEA1 /* Animation.swift in Sources */,
 				22A466FB22063CDD00C0FEA1 /* GravityFunction.swift in Sources */,
 				22A466C222063CDC00C0FEA1 /* AnimationRunner.swift in Sources */,
@@ -1152,14 +1114,12 @@
 				22A466F822063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
 				22A466EF22063CDD00C0FEA1 /* Observable.swift in Sources */,
 				22A466B322063CDC00C0FEA1 /* Sink.swift in Sources */,
-				22A466B622063CDC00C0FEA1 /* Vector2.swift in Sources */,
 				22A466A122063CDC00C0FEA1 /* Simulator.swift in Sources */,
 				22A466C822063CDC00C0FEA1 /* CGSize.swift in Sources */,
 				22A466D722063CDD00C0FEA1 /* CGFloat.swift in Sources */,
 				22A466EC22063CDD00C0FEA1 /* Advanceable.swift in Sources */,
 				22A4670A22063CDD00C0FEA1 /* UnitBezier.swift in Sources */,
 				22A466F522063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
-				22A466B922063CDC00C0FEA1 /* Vector4.swift in Sources */,
 				22A4670722063CDD00C0FEA1 /* BasicAnimation.swift in Sources */,
 				22A4670122063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466DA22063CDD00C0FEA1 /* Double.swift in Sources */,

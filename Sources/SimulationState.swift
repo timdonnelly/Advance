@@ -1,5 +1,5 @@
 /// The current state of a running simulation.
-public struct SimulationState<T> where T: Vector {
+public struct SimulationState<T> where T: SIMD, T.Scalar == Double {
     
     /// The current value of a running simulation.
     public var value: T

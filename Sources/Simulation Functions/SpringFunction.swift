@@ -2,7 +2,7 @@ import Foundation
 
 
 /// Implements a simple spring acceleration function.
-public struct SpringFunction<T>: SimulationFunction where T: Vector {
+public struct SpringFunction<T>: SimulationFunction where T: SIMD, T.Scalar == Double {
     
     /// The target of the spring.
     public var target: T

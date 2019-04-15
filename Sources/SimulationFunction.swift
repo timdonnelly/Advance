@@ -4,7 +4,7 @@
 public protocol SimulationFunction {
     
     /// The type of vector driven by the simulation
-    associatedtype VectorType: Vector
+    associatedtype VectorType: SIMD where VectorType.Scalar == Double
     
     /// The computed acceleration for a given simulation state.
     ///
@@ -22,7 +22,7 @@ public protocol SimulationFunction {
 
 /// Returned by a simulation function to indicate whether a simulation should
 /// converge (come to rest) for a given state.
-public enum Convergence<T> where T: Vector {
+public enum Convergence<T> where T: SIMD, T.Scalar == Double {
     
     /// The simulation should keep running.
     case keepRunning

@@ -1,5 +1,5 @@
 /// Gradually reduces velocity until it equals `Vector.zero`.
-public struct DecayFunction<T>: SimulationFunction where T: Vector {
+public struct DecayFunction<T>: SimulationFunction where T: SIMD, T.Scalar == Double {
     
     /// How close to 0 each component of the velocity must be before the
     /// simulation is allowed to converge.
