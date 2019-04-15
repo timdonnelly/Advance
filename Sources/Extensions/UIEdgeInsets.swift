@@ -6,10 +6,10 @@ extension UIEdgeInsets: VectorConvertible {
     
     public var vector: Vector4 {
         return Vector4(
-            x: Scalar(top),
-            y: Scalar(left),
-            z: Scalar(bottom),
-            w: Scalar(right))
+            x: Double(top),
+            y: Double(left),
+            z: Double(bottom),
+            w: Double(right))
     }
     
     public init(vector: Vector4) {

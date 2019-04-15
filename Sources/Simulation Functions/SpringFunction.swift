@@ -8,13 +8,13 @@ public struct SpringFunction<T>: SimulationFunction where T: Vector {
     public var target: T
     
     /// Strength of the spring.
-    public var tension: Scalar
+    public var tension: Double
     
     /// How damped the spring is.
-    public var damping: Scalar
+    public var damping: Double
     
-    /// The minimum scalar distance used for settling the spring simulation.
-    public var threshold: Scalar
+    /// The minimum Double distance used for settling the spring simulation.
+    public var threshold: Double
     
     /// Creates a new `SpringFunction` instance.
     ///
@@ -34,8 +34,8 @@ public struct SpringFunction<T>: SimulationFunction where T: Vector {
     }
     
     public func convergence(for state: SimulationState<T>) -> Convergence<T> {
-        let min = T(scalar: -threshold)
-        let max = T(scalar: threshold)
+        let min = T(Double: -threshold)
+        let max = T(Double: threshold)
         
         if state.velocity.clamped(min: min, max: max) != state.velocity {
             return .keepRunning
@@ -57,13 +57,13 @@ extension Animator {
     /// Starts a spring animation with the given properties, adopting the property's
     /// current velocity as `initialVelocity`.
     @discardableResult
-    public func spring(to target: Value, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> AnimationRunner<Value> {
+    public func spring(to target: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) -> AnimationRunner<Value> {
         return self.spring(to: target, initialVelocity: velocity, tension: tension, damping: damping, threshold: threshold)
     }
     
     /// Starts a spring animation with the given properties.
     @discardableResult
-    public func spring(to target: Value, initialVelocity: Value, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> AnimationRunner<Value> {
+    public func spring(to target: Value, initialVelocity: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) -> AnimationRunner<Value> {
         let animation = value
             .springAnimation(
                 to: target,
@@ -81,7 +81,7 @@ extension Animator {
 extension VectorConvertible {
     
     /// Returns a spring animation with the given properties.
-    public func springAnimation(to target: Self, initialVelocity: Self = .zero, tension: Scalar = 30.0, damping: Scalar = 5.0, threshold: Scalar = 0.1) -> SimulatedAnimation<Self, SpringFunction<Self.VectorType>> {
+    public func springAnimation(to target: Self, initialVelocity: Self = .zero, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) -> SimulatedAnimation<Self, SpringFunction<Self.VectorType>> {
         var function = SpringFunction(target: target.vector)
         function.tension = tension
         function.damping = damping

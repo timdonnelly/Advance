@@ -12,9 +12,9 @@ class CAMediaTimingFunctionTests : XCTestCase {
         let timingFunction = CAMediaTimingFunction(controlPoints: p1x, p1y, p2x, p2y)
         let bezier = timingFunction.unitBezier
         
-        XCTAssertEqual(bezier.first.x, Scalar(p1x))
-        XCTAssertEqual(bezier.first.y, Scalar(p1y))
-        XCTAssertEqual(bezier.second.x, Scalar(p2x))
-        XCTAssertEqual(bezier.second.y, Scalar(p2y))
+        XCTAssertEqual(bezier.first.x, Double(p1x))
+        XCTAssertEqual(bezier.first.y, Double(p1y))
+        XCTAssertEqual(bezier.second.x, Double(p2x))
+        XCTAssertEqual(bezier.second.y, Double(p2y))
     }
 }

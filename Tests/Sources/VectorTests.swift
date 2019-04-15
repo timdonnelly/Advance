@@ -36,24 +36,24 @@ struct VectorTester<T: Vector> {
     
     
     static func testZero() {
-        XCTAssert(T(scalar: 0.0) == T.zero)
+        XCTAssert(T(Double: 0.0) == T.zero)
     }
     
     static func testEquatable() {
-        let v1 = T(scalar: 123.0)
-        let v2 = T(scalar: 123.0)
-        let v3 = T(scalar: 10.0)
+        let v1 = T(Double: 123.0)
+        let v2 = T(Double: 123.0)
+        let v3 = T(Double: 10.0)
         XCTAssert(v1 == v2)
         XCTAssert(v1 != v3)
     }
     
     static func testClamp() {
-        let min = T(scalar: -10.0)
-        let max = T(scalar: 20.0)
+        let min = T(Double: -10.0)
+        let max = T(Double: 20.0)
         
-        let v1 = T(scalar: -20.0)
-        let v2 = T(scalar: 30.0)
-        let v3 = T(scalar: 15.0)
+        let v1 = T(Double: -20.0)
+        let v2 = T(Double: 30.0)
+        let v3 = T(Double: 15.0)
         
         XCTAssert(v1.clamped(min: min, max: max) == min)
         XCTAssert(v2.clamped(min: min, max: max) == max)
@@ -61,25 +61,25 @@ struct VectorTester<T: Vector> {
     }
     
     static func testInterpolatable() {
-        let v1 = T(scalar: 0.0)
-        let v2 = T(scalar: 10.0)
+        let v1 = T(Double: 0.0)
+        let v2 = T(Double: 10.0)
         XCTAssert(v1.interpolated(to: v2, alpha: 0.0) == v1)
-        XCTAssert(v1.interpolated(to: v2, alpha: 0.55) == T(scalar: 5.5))
+        XCTAssert(v1.interpolated(to: v2, alpha: 0.55) == T(Double: 5.5))
         XCTAssert(v1.interpolated(to: v2, alpha: 1.0) == v2)
     }
     
     static func testMath() {
-        let s1 = Scalar(9.0)
-        let s2 = Scalar(17.3)
-        let v1 = T(scalar: s1)
-        let v2 = T(scalar: s2)
+        let s1 = Double(9.0)
+        let s2 = Double(17.3)
+        let v1 = T(Double: s1)
+        let v2 = T(Double: s2)
         
-        XCTAssert(v1 + v2 == T(scalar: s1 + s2))
-        XCTAssert(v1 - v2 == T(scalar: s1 - s2))
-        XCTAssert(v1 * v2 == T(scalar: s1 * s2))
-        XCTAssert(v1 / v2 == T(scalar: s1 / s2))
+        XCTAssert(v1 + v2 == T(Double: s1 + s2))
+        XCTAssert(v1 - v2 == T(Double: s1 - s2))
+        XCTAssert(v1 * v2 == T(Double: s1 * s2))
+        XCTAssert(v1 / v2 == T(Double: s1 / s2))
         
-        XCTAssert(Scalar(2.0) * v2 == T(scalar: 2.0 * s2))
+        XCTAssert(Double(2.0) * v2 == T(Double: 2.0 * s2))
         
         func testInPlaceMath(_ function: (inout T, T) -> Void, expectedValue: T) {
             var m = v1

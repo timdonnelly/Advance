@@ -102,20 +102,20 @@ extension Simulator where Function == SpringFunction<Value.VectorType> {
     }
     
     /// How strongly the spring will pull the value toward the target,
-    public var tension: Scalar {
+    public var tension: Double {
         get { return function.tension }
         set { function.tension = newValue }
     }
     
     /// The resistance that the spring encounters while moving the value.
-    public var damping: Scalar {
+    public var damping: Double {
         get { return function.damping }
         set { function.damping = newValue }
     }
     
     /// The minimum distance from the target value (for each component) that the
     /// current value can be in order to ender a converged (settled) state.
-    public var threshold: Scalar {
+    public var threshold: Double {
         get { return function.threshold }
         set { function.threshold = newValue }
     }

@@ -8,10 +8,10 @@ public struct GravityFunction: SimulationFunction {
     
     /// The minimum distance from target for which acceleration will be calculated. Larger values avoid dramatic
     /// slingshot effects when the value makes a pass near the target value.
-    public var minRadius: Scalar = 30.0
+    public var minRadius: Double = 30.0
     
     /// The minimum distance from the target that the value must be in order for the simulation to converge.
-    public var threshold: Scalar = 0.1
+    public var threshold: Double = 0.1
     
     /// Initializes a new gravity function with the given target.
     public init(target: Vector2) {
@@ -36,8 +36,8 @@ public struct GravityFunction: SimulationFunction {
     
     public func convergence(for state: SimulationState<Vector2>) -> Convergence<Vector2> {
         
-        let min = Vector2(scalar: -threshold)
-        let max = Vector2(scalar: threshold)
+        let min = Vector2(Double: -threshold)
+        let max = Vector2(Double: threshold)
         
         if state.velocity.clamped(min: min, max: max) != state.velocity {
             return .keepRunning

@@ -2,13 +2,13 @@
 public struct Vector2 {
     
     /// Component at index `0`
-    public var x: Scalar
+    public var x: Double
     
     /// Component at index `1`
-    public var y: Scalar
+    public var y: Double
     
     /// Creates a new `Vector2` instance.
-    public init(x: Scalar, y: Scalar) {
+    public init(x: Double, y: Double) {
         self.x = x
         self.y = y
     }
@@ -16,23 +16,23 @@ public struct Vector2 {
 
 extension Vector2: Vector {
     
-    /// Creates a vector for which all components are equal to the given scalar.
-    public init(scalar: Scalar) {
-        x = scalar
-        y = scalar
+    /// Creates a vector for which all components are equal to the given Double.
+    public init(Double: Double) {
+        x = Double
+        y = Double
     }
 
-    /// The number of scalar components in this vector type.
+    /// The number of Double components in this vector type.
     public static var length: Int {
         return 2
     }
     
-    /// The empty vector (all scalar components are equal to `0.0`).
+    /// The empty vector (all Double components are equal to `0.0`).
     public static var zero: Vector2 {
         return Vector2(x: 0.0, y: 0.0)
     }
     
-    public subscript(index: Int) -> Scalar {
+    public subscript(index: Int) -> Double {
         get {
             precondition(index >= 0)
             precondition(index < 2)
@@ -66,14 +66,14 @@ extension Vector2: Vector {
     }
     
     /// Interpolate between the given values.
-    public func interpolated(to otherValue: Vector2, alpha: Scalar) -> Vector2 {
+    public func interpolated(to otherValue: Vector2, alpha: Double) -> Vector2 {
         var result = self
         result.interpolate(to: otherValue, alpha: alpha)
         return result
     }
     
     /// Interpolate between the given values.
-    public mutating func interpolate(to otherValue: Vector2, alpha: Scalar) {
+    public mutating func interpolate(to otherValue: Vector2, alpha: Double) {
         x += alpha * (otherValue.x - x)
         y += alpha * (otherValue.y - y)
     }
@@ -124,8 +124,8 @@ extension Vector2: Vector {
         lhs = lhs - rhs
     }
     
-    /// Scalar-Vector product.
-    public static func *(lhs: Scalar, rhs: Vector2) -> Vector2 {
+    /// Double-Vector product.
+    public static func *(lhs: Double, rhs: Vector2) -> Vector2 {
         return Vector2(x: lhs*rhs.x, y: lhs*rhs.y)
     }
 }

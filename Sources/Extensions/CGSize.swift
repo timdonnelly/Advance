@@ -10,6 +10,6 @@ extension CGSize: VectorConvertible {
     
     /// Returns the vector representation.
     public var vector: Vector2 {
-        return Vector2(x: Scalar(width), y: Scalar(height))
+        return Vector2(x: Double(width), y: Double(height))
     }
 }
