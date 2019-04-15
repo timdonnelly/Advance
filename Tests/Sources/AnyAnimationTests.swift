@@ -18,7 +18,7 @@ class AnyAnimationTests : XCTestCase {
     func testValues() {
         
         let wrappedAnimation = SimulatedAnimation(
-            function: SpringFunction(target: Vector2(Double: 100)),
+            function: SpringFunction(target: Vector2(repeating: 100)),
             value: CGPoint.zero,
             velocity: CGPoint.zero)
         

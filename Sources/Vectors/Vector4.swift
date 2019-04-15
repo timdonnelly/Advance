@@ -25,15 +25,15 @@ public struct Vector4 {
 extension Vector4: Vector {
     
     /// Creates a vector for which all components are equal to the given Double.
-    public init(Double: Double) {
-        x = Double
-        y = Double
-        z = Double
-        w = Double
+    public init(repeating value: Double) {
+        x = value
+        y = value
+        z = value
+        w = value
     }
     
     /// The number of Double components in this vector type.
-    public static var length: Int {
+    public static var scalarCount: Int {
         return 4
     }
     
@@ -75,14 +75,6 @@ extension Vector4: Vector {
                 break
             }
         }
-    }
-    
-    public func clamped(min: Vector4, max: Vector4) -> Vector4 {
-        return Vector4(
-            x: x.clamped(min: min.x, max: max.x),
-            y: y.clamped(min: min.y, max: max.y),
-            z: z.clamped(min: min.z, max: max.z),
-            w: w.clamped(min: min.w, max: max.w))
     }
     
     /// Interpolate between the given values.

@@ -17,8 +17,8 @@ public struct DecayFunction<T>: SimulationFunction where T: Vector {
     }
     
     public func convergence(for state: SimulationState<T>) -> Convergence<T> {
-        let min = T(Double: -threshold)
-        let max = T(Double: threshold)
+        let min = T(repeating: -threshold)
+        let max = T(repeating: threshold)
         if state.velocity.clamped(min: min, max: max) == state.velocity {
             return .converge(atValue: state.value)
         } else {

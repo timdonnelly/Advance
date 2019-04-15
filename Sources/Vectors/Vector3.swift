@@ -21,14 +21,14 @@ public struct Vector3 {
 extension Vector3: Vector {
     
     /// Creates a vector for which all components are equal to the given Double.
-    public init(Double: Double) {
-        x = Double
-        y = Double
-        z = Double
+    public init(repeating value: Double) {
+        x = value
+        y = value
+        z = value
     }
     
     /// The number of Double components in this vector type.
-    public static var length: Int {
+    public static var scalarCount: Int {
         return 3
     }
     
@@ -80,13 +80,6 @@ extension Vector3: Vector {
         x += alpha * (otherValue.x - x)
         y += alpha * (otherValue.y - y)
         z += alpha * (otherValue.z - z)
-    }
-    
-    public func clamped(min: Vector3, max: Vector3) -> Vector3 {
-        return Vector3(
-            x: x.clamped(min: min.x, max: max.x),
-            y: y.clamped(min: min.y, max: max.y),
-            z: z.clamped(min: min.z, max: max.z))
     }
     
     /// Equatable.
