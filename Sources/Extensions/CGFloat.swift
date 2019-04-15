@@ -4,12 +4,12 @@ import CoreGraphics
 extension CGFloat: VectorConvertible {
     
     /// Creates a new instance from a vector.
-    public init(vector: Vector1) {
-        self.init(vector)
+    public init(vector: Vector2) {
+        self.init(vector.x)
     }
     
     /// Returns the vector representation.
-    public var vector: Vector1 {
-        return Vector1(self)
+    public var vector: Vector2 {
+        return Vector2(x: Double(self), y: 0.0)
     }
 }

@@ -85,9 +85,6 @@
 		22A466B722063CDC00C0FEA1 /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667D22063CDC00C0FEA1 /* Vector4.swift */; };
 		22A466B822063CDC00C0FEA1 /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667D22063CDC00C0FEA1 /* Vector4.swift */; };
 		22A466B922063CDC00C0FEA1 /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667D22063CDC00C0FEA1 /* Vector4.swift */; };
-		22A466BA22063CDC00C0FEA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667E22063CDC00C0FEA1 /* Vector1.swift */; };
-		22A466BB22063CDC00C0FEA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667E22063CDC00C0FEA1 /* Vector1.swift */; };
-		22A466BC22063CDC00C0FEA1 /* Vector1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667E22063CDC00C0FEA1 /* Vector1.swift */; };
 		22A466BD22063CDC00C0FEA1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667F22063CDC00C0FEA1 /* Vector3.swift */; };
 		22A466BE22063CDC00C0FEA1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667F22063CDC00C0FEA1 /* Vector3.swift */; };
 		22A466BF22063CDC00C0FEA1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667F22063CDC00C0FEA1 /* Vector3.swift */; };
@@ -115,9 +112,6 @@
 		22A466D822063CDD00C0FEA1 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668922063CDC00C0FEA1 /* Double.swift */; };
 		22A466D922063CDD00C0FEA1 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668922063CDC00C0FEA1 /* Double.swift */; };
 		22A466DA22063CDD00C0FEA1 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668922063CDC00C0FEA1 /* Double.swift */; };
-		22A466DB22063CDD00C0FEA1 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668A22063CDC00C0FEA1 /* Bool.swift */; };
-		22A466DC22063CDD00C0FEA1 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668A22063CDC00C0FEA1 /* Bool.swift */; };
-		22A466DD22063CDD00C0FEA1 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668A22063CDC00C0FEA1 /* Bool.swift */; };
 		22A466DE22063CDD00C0FEA1 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668B22063CDC00C0FEA1 /* CGRect.swift */; };
 		22A466DF22063CDD00C0FEA1 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668B22063CDC00C0FEA1 /* CGRect.swift */; };
 		22A466E022063CDD00C0FEA1 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4668B22063CDC00C0FEA1 /* CGRect.swift */; };
@@ -270,7 +264,6 @@
 		22A4667A22063CDC00C0FEA1 /* Sink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sink.swift; sourceTree = "<group>"; };
 		22A4667C22063CDC00C0FEA1 /* Vector2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
 		22A4667D22063CDC00C0FEA1 /* Vector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector4.swift; sourceTree = "<group>"; };
-		22A4667E22063CDC00C0FEA1 /* Vector1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector1.swift; sourceTree = "<group>"; };
 		22A4667F22063CDC00C0FEA1 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		22A4668022063CDC00C0FEA1 /* AnimationRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationRunner.swift; sourceTree = "<group>"; };
 		22A4668222063CDC00C0FEA1 /* UIOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOffset.swift; sourceTree = "<group>"; };
@@ -280,7 +273,6 @@
 		22A4668722063CDC00C0FEA1 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		22A4668822063CDC00C0FEA1 /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		22A4668922063CDC00C0FEA1 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		22A4668A22063CDC00C0FEA1 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		22A4668B22063CDC00C0FEA1 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		22A4668C22063CDC00C0FEA1 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		22A4668D22063CDC00C0FEA1 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
@@ -579,7 +571,6 @@
 			children = (
 				22A4667C22063CDC00C0FEA1 /* Vector2.swift */,
 				22A4667D22063CDC00C0FEA1 /* Vector4.swift */,
-				22A4667E22063CDC00C0FEA1 /* Vector1.swift */,
 				22A4667F22063CDC00C0FEA1 /* Vector3.swift */,
 			);
 			path = Vectors;
@@ -595,7 +586,6 @@
 				22A4668722063CDC00C0FEA1 /* CGPoint.swift */,
 				22A4668822063CDC00C0FEA1 /* CGFloat.swift */,
 				22A4668922063CDC00C0FEA1 /* Double.swift */,
-				22A4668A22063CDC00C0FEA1 /* Bool.swift */,
 				22A4668B22063CDC00C0FEA1 /* CGRect.swift */,
 				22A4668C22063CDC00C0FEA1 /* UIEdgeInsets.swift */,
 			);
@@ -1089,12 +1079,10 @@
 				22A466F322063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
 				22A466B722063CDC00C0FEA1 /* Vector4.swift in Sources */,
 				22A4670522063CDD00C0FEA1 /* BasicAnimation.swift in Sources */,
-				22A466BA22063CDC00C0FEA1 /* Vector1.swift in Sources */,
 				22A466FF22063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466D822063CDD00C0FEA1 /* Double.swift in Sources */,
 				22A466E722063CDD00C0FEA1 /* Vector.swift in Sources */,
 				22A466AB22063CDC00C0FEA1 /* Interpolatable.swift in Sources */,
-				22A466DB22063CDD00C0FEA1 /* Bool.swift in Sources */,
 				22A4670222063CDD00C0FEA1 /* AnyAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1132,12 +1120,10 @@
 				22A466F422063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
 				22A466B822063CDC00C0FEA1 /* Vector4.swift in Sources */,
 				22A4670622063CDD00C0FEA1 /* BasicAnimation.swift in Sources */,
-				22A466BB22063CDC00C0FEA1 /* Vector1.swift in Sources */,
 				22A4670022063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466D922063CDD00C0FEA1 /* Double.swift in Sources */,
 				22A466E822063CDD00C0FEA1 /* Vector.swift in Sources */,
 				22A466AC22063CDC00C0FEA1 /* Interpolatable.swift in Sources */,
-				22A466DC22063CDD00C0FEA1 /* Bool.swift in Sources */,
 				22A4670322063CDD00C0FEA1 /* AnyAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1175,12 +1161,10 @@
 				22A466F522063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
 				22A466B922063CDC00C0FEA1 /* Vector4.swift in Sources */,
 				22A4670722063CDD00C0FEA1 /* BasicAnimation.swift in Sources */,
-				22A466BC22063CDC00C0FEA1 /* Vector1.swift in Sources */,
 				22A4670122063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466DA22063CDD00C0FEA1 /* Double.swift in Sources */,
 				22A466E922063CDD00C0FEA1 /* Vector.swift in Sources */,
 				22A466AD22063CDC00C0FEA1 /* Interpolatable.swift in Sources */,
-				22A466DD22063CDD00C0FEA1 /* Bool.swift in Sources */,
 				22A4670422063CDD00C0FEA1 /* AnyAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
