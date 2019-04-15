@@ -13,7 +13,7 @@ extension CGPoint: VectorConvertible {
     /// Returns the vector representation.
     public var vector: Vector2 {
         return Vector2(
-            x: Scalar(x),
-            y: Scalar(y))
+            x: Double(x),
+            y: Double(y))
     }
 }

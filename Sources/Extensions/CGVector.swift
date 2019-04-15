@@ -10,6 +10,6 @@ extension CGVector: VectorConvertible {
     
     /// Returns the vector representation.
     public var vector: Vector2 {
-        return Vector2(x: Scalar(dx), y: Scalar(dy))
+        return Vector2(x: Double(dx), y: Double(dy))
     }
 }

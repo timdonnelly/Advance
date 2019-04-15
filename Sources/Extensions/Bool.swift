@@ -1,6 +1,6 @@
 extension Bool: Interpolatable {
     
-    public func interpolated(to otherValue: Bool, alpha: Scalar) -> Bool {
+    public func interpolated(to otherValue: Bool, alpha: Double) -> Bool {
         switch (self, otherValue) {
         case (true, true):
             return true

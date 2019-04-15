@@ -9,6 +9,6 @@ public protocol Interpolatable {
     ///   where 0.0 is fully weighted toward `from`, and 1.0 is fully weighted
     ///   toward `to`.
     /// - Returns: The interpolated result.
-    func interpolated(to otherValue: Self, alpha: Scalar) -> Self
+    func interpolated(to otherValue: Self, alpha: Double) -> Self
     
 }

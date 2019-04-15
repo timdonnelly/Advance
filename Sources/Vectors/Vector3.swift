@@ -2,16 +2,16 @@
 public struct Vector3 {
     
     /// Component at index `0`
-    public var x: Scalar
+    public var x: Double
     
     /// Component at index `1`
-    public var y: Scalar
+    public var y: Double
     
     /// Component at index `2`
-    public var z: Scalar
+    public var z: Double
     
     /// Creates a new `Vector3` instance.
-    public init(x: Scalar, y: Scalar, z: Scalar) {
+    public init(x: Double, y: Double, z: Double) {
         self.x = x
         self.y = y
         self.z = z
@@ -20,24 +20,24 @@ public struct Vector3 {
 
 extension Vector3: Vector {
     
-    /// Creates a vector for which all components are equal to the given scalar.
-    public init(scalar: Scalar) {
-        x = scalar
-        y = scalar
-        z = scalar
+    /// Creates a vector for which all components are equal to the given Double.
+    public init(Double: Double) {
+        x = Double
+        y = Double
+        z = Double
     }
     
-    /// The number of scalar components in this vector type.
+    /// The number of Double components in this vector type.
     public static var length: Int {
         return 3
     }
     
-    /// The empty vector (all scalar components are equal to `0.0`).
+    /// The empty vector (all Double components are equal to `0.0`).
     public static var zero: Vector3 {
         return Vector3(x: 0.0, y: 0.0, z: 0.0)
     }
     
-    public subscript(index: Int) -> Scalar {
+    public subscript(index: Int) -> Double {
         get {
             precondition(index >= 0)
             precondition(index < 3)
@@ -69,14 +69,14 @@ extension Vector3: Vector {
     }
     
     /// Interpolate between the given values.
-    public func interpolated(to otherValue: Vector3, alpha: Scalar) -> Vector3 {
+    public func interpolated(to otherValue: Vector3, alpha: Double) -> Vector3 {
         var result = self
         result.interpolate(to: otherValue, alpha: alpha)
         return result
     }
     
     /// Interpolate between the given values.
-    public mutating func interpolate(to otherValue: Vector3, alpha: Scalar) {
+    public mutating func interpolate(to otherValue: Vector3, alpha: Double) {
         x += alpha * (otherValue.x - x)
         y += alpha * (otherValue.y - y)
         z += alpha * (otherValue.z - z)
@@ -136,8 +136,8 @@ extension Vector3: Vector {
         lhs = lhs - rhs
     }
     
-    /// Scalar-Vector product.
-    public static func *(lhs: Scalar, rhs: Vector3) -> Vector3 {
+    /// Double-Vector product.
+    public static func *(lhs: Double, rhs: Vector3) -> Vector3 {
         return Vector3(x: lhs*rhs.x, y: lhs*rhs.y, z: lhs*rhs.z)
     }
 }

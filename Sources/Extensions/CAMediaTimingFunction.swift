@@ -3,7 +3,7 @@ import QuartzCore
 extension CAMediaTimingFunction: TimingFunction {
     
     /// Solves for the given time with the specified precision.
-    public func solve(at time: Scalar, epsilon: Scalar) -> Scalar {
+    public func solve(at time: Double, epsilon: Double) -> Double {
         return unitBezier.solve(x: time, epsilon: epsilon)
     }
     
@@ -16,13 +16,13 @@ extension CAMediaTimingFunction: TimingFunction {
                           secondY: controlPoints[2].y)
     }
     
-    private var controlPoints: [(x: Scalar, y: Scalar)] {
+    private var controlPoints: [(x: Double, y: Double)] {
         return (0...3).lazy.map { (index) in
             
             var rawValues: [Float] = [0.0, 0.0]
             getControlPoint(at: index, values: &rawValues)
             
-            return (x: Scalar(rawValues[0]), y: Scalar(rawValues[1]))
+            return (x: Double(rawValues[0]), y: Double(rawValues[1]))
         }
     }
     

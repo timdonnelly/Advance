@@ -117,7 +117,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
             // `previousState` and `simulationState`, and interpolate. This
             // will let us provide a more accurate value to the outside world,
             // while maintaining a consistent time step internally.
-            let alpha = Scalar((tickTime + timeAccumulator) / tickTime)
+            let alpha = Double((tickTime + timeAccumulator) / tickTime)
             interpolatedState = previousState
             interpolatedState.value = interpolatedState.value.interpolated(to: simulationState.value, alpha: alpha)
             interpolatedState.velocity = interpolatedState.velocity.interpolated(to: simulationState.velocity, alpha: alpha)

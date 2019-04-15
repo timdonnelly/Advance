@@ -14,7 +14,7 @@ public struct UnitBezier: Equatable {
         self.second = second
     }
     
-    public init(firstX: Scalar, firstY: Scalar, secondX: Scalar, secondY: Scalar) {
+    public init(firstX: Double, firstY: Double, secondX: Double, secondY: Double) {
         self.first = ControlPoint(x: firstX, y: firstY)
         self.second = ControlPoint(x: secondX, y: secondY)
     }
@@ -24,7 +24,7 @@ public struct UnitBezier: Equatable {
     /// - parameter x: The value to solve for.
     /// - parameter epsilon: The required precision of the result (where `x * epsilon` is the maximum time segment to be evaluated).
     /// - returns: The solved `y` value.
-    public func solve(x: Scalar, epsilon: Scalar) -> Scalar {
+    public func solve(x: Double, epsilon: Double) -> Double {
         return solver.solve(x: x, eps: epsilon)
     }
     
@@ -44,10 +44,10 @@ extension UnitBezier {
     
     public struct ControlPoint: Equatable {
         
-        public var x: Scalar
-        public var y: Scalar
+        public var x: Double
+        public var y: Double
         
-        public init(x: Scalar, y: Scalar) {
+        public init(x: Double, y: Double) {
             self.x = x
             self.y = y
         }
@@ -94,15 +94,15 @@ extension UnitBezier {
 
 fileprivate struct UnitBezierSolver {
     
-    private let ax: Scalar
-    private let bx: Scalar
-    private let cx: Scalar
+    private let ax: Double
+    private let bx: Double
+    private let cx: Double
     
-    private let ay: Scalar
-    private let by: Scalar
-    private let cy: Scalar
+    private let ay: Double
+    private let by: Double
+    private let cy: Double
     
-    init(p1x: Scalar, p1y: Scalar, p2x: Scalar, p2y: Scalar) {
+    init(p1x: Double, p1y: Double, p2x: Double, p2y: Double) {
         
         // Calculate the polynomial coefficients, implicit first and last control points are (0,0) and (1,1).
         cx = 3.0 * p1x
@@ -114,28 +114,28 @@ fileprivate struct UnitBezierSolver {
         ay = 1.0 - cy - by
     }
     
-    func solve(x: Scalar, eps: Scalar) -> Scalar {
+    func solve(x: Double, eps: Double) -> Double {
         return sampleCurveY(t: solveCurveX(x: x, eps: eps))
     }
     
-    private func sampleCurveX(t: Scalar) -> Scalar {
+    private func sampleCurveX(t: Double) -> Double {
         return ((ax * t + bx) * t + cx) * t
     }
     
-    private func sampleCurveY(t: Scalar) -> Scalar {
+    private func sampleCurveY(t: Double) -> Double {
         return ((ay * t + by) * t + cy) * t
     }
     
-    private func sampleCurveDerivativeX(t: Scalar) -> Scalar {
+    private func sampleCurveDerivativeX(t: Double) -> Double {
         return (3.0 * ax * t + 2.0 * bx) * t + cx
     }
     
-    private func solveCurveX(x: Scalar, eps: Scalar) -> Scalar {
-        var t0: Scalar = 0.0
-        var t1: Scalar = 0.0
-        var t2: Scalar = 0.0
-        var x2: Scalar = 0.0
-        var d2: Scalar = 0.0
+    private func solveCurveX(x: Double, eps: Double) -> Double {
+        var t0: Double = 0.0
+        var t1: Double = 0.0
+        var t2: Double = 0.0
+        var x2: Double = 0.0
+        var d2: Double = 0.0
         
         // First try a few iterations of Newton's method -- normally very fast.
         t2 = x

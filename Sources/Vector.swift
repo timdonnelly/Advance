@@ -1,18 +1,15 @@
-/// The underlying type of scalar quantities.
-public typealias Scalar = Double
-
-/// Conforming types can be operated on as vectors composed of `Scalar` components.
+/// Conforming types can be operated on as vectors composed of `Double` components.
 public protocol Vector: Equatable, Interpolatable {
     
-    /// Creates a vector for which all components are equal to the given scalar.
-    init(scalar: Scalar)
+    /// Creates a vector for which all components are equal to the given Double.
+    init(Double: Double)
     
     /// The length of this vector.
     static var length: Int { get }
 
     /// Direct component access. If the given `index` is >= `Self.length`, it
     /// is a programmer error.
-    subscript(index: Int) -> Scalar { get set }
+    subscript(index: Int) -> Double { get set }
     
     /// Returns a vector where each component is clamped by the corresponding
     /// components in `min` and `max`.
@@ -25,7 +22,7 @@ public protocol Vector: Equatable, Interpolatable {
     func clamped(min: Self, max: Self) -> Self
     
     
-    /// The empty vector (all scalar components are equal to `0.0`).
+    /// The empty vector (all Double components are equal to `0.0`).
     static var zero: Self { get }
     
     /// Product.
@@ -52,6 +49,6 @@ public protocol Vector: Equatable, Interpolatable {
     /// Difference (in place).
     static func -=(lhs: inout Self, rhs: Self)
     
-    /// Scalar-Vector product.
-    static func *(lhs: Scalar, rhs: Self) -> Self
+    /// Double-Vector product.
+    static func *(lhs: Double, rhs: Self) -> Self
 }

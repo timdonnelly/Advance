@@ -6,8 +6,8 @@ extension UIOffset: VectorConvertible {
     
     public var vector: Vector2 {
         return Vector2(
-            x: Scalar(horizontal),
-            y: Scalar(vertical))
+            x: Double(horizontal),
+            y: Double(vertical))
     }
     
     public init(vector: Vector2) {

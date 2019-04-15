@@ -4,7 +4,7 @@ import XCTest
 
 class BasicAnimationTests: XCTestCase {
     
-    let animation = BasicAnimation(from: Scalar(0.0), to: Scalar(10.0), duration: 2.0, timingFunction: LinearTimingFunction())
+    let animation = BasicAnimation(from: Double(0.0), to: Double(10.0), duration: 2.0, timingFunction: LinearTimingFunction())
 
     func testDuration() {
         var a = animation
