@@ -1,7 +1,14 @@
-language: objective-c
-osx_image: xcode10
-before_install: cd SampleApp
-script:
-  - xcodebuild -workspace SampleApp.xcworkspace -scheme 'Advance-iOS' -configuration Debug -sdk iphonesimulator test -destination 'platform=iOS Simulator,name=iPhone X,OS=11.2'
-  - xcodebuild -workspace SampleApp.xcworkspace -scheme 'Advance-tvOS' -configuration Debug -sdk appletvsimulator test -destination 'platform=tvOS Simulator,name=Apple TV 4K,OS=11.2'
-  - xcodebuild -workspace SampleApp.xcworkspace -scheme 'Advance-macOS' -configuration Debug test
+language: swift
+osx_image: xcode10.2
+xcode_project: Advance.xcodeproj
+
+matrix:
+  include:
+    - xcode_scheme: Advance-iOS
+      xcode_sdk: iphonesimulator12.1
+
+    - xcode_scheme: Advance-macOS
+      xcode_sdk: macosx10.14
+
+    - xcode_scheme: Advance-tvOS
+      xcode_sdk: appletvsimulator12.1
