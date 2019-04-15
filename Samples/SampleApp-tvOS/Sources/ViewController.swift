@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         dot.backgroundColor = UIColor(red: 0.0, green: 196.0/255.0, blue: 1.0, alpha: 1.0)
         view.addSubview(dot)
         
-        spring.bind(to: dot, keyPath: \.center)
+        spring.observe { dot.center = $0 }
         spring.reset(to: CGPoint(x: view.bounds.midX, y: view.bounds.midY))
     }
 

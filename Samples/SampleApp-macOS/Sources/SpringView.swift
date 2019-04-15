@@ -17,7 +17,7 @@ final class SpringView : NSView, CALayerDelegate {
         
         centerSpring.tension = Double(t)
         centerSpring.damping = Double(d)
-        centerSpring.bind(to: layer!, keyPath: \.position)
+        centerSpring.observe { [weak self] point in self?.layer!.position = point }
     }
     
     required init?(coder aDecoder: NSCoder) {

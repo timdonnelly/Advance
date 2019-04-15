@@ -1,7 +1,5 @@
 import Foundation
 
-
-
 /// Represents a changing stream of values that can be observed.
 public protocol Observable {
     
@@ -22,17 +20,4 @@ public protocol Observable {
 public protocol Subscription {
     /// Cancels the subscription.
     func unsubscribe()
-}
-
-
-
-extension Observable {
-    
-    @discardableResult
-    public func bind<R>(to object: R, keyPath: ReferenceWritableKeyPath<R, Value>) -> Subscription {
-        return observe({ (value) in
-            object[keyPath: keyPath] = value
-        })
-    }
-    
 }

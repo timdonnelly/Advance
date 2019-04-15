@@ -23,7 +23,7 @@ final class GesturesViewController: DemoViewController {
         centerSpring.threshold = 0.1
         centerSpring.tension = 40
         centerSpring.damping = 5
-        centerSpring.bind(to: gestureView, keyPath: \.center)
+        centerSpring.observe { [weak self] point in self?.gestureView.center = point }
         
         transformSpring.threshold = 0.001
         transformSpring.observe { [weak self] (transform) in
