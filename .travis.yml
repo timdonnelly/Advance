@@ -5,10 +5,10 @@ xcode_project: Advance.xcodeproj
 matrix:
   include:
     - xcode_scheme: Advance-iOS
-      xcode_sdk: iphonesimulator12.1
+      xcode_sdk: iphonesimulator12.2
 
     - xcode_scheme: Advance-macOS
       xcode_sdk: macosx10.14
 
     - xcode_scheme: Advance-tvOS
-      xcode_sdk: appletvsimulator12.1
+      xcode_sdk: appletvos12.2
