@@ -3,7 +3,7 @@ public protocol VectorConvertible: Equatable, Interpolatable {
     
     /// The concrete VectorType implementation that can represent the 
     /// conforming type.
-    associatedtype VectorType: Vector
+    associatedtype VectorType: SIMD where VectorType.Scalar == Double
     
     /// Creates a new instance from a vector.
     init(vector: VectorType)
