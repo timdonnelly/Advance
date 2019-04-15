@@ -3,10 +3,6 @@ import XCTest
 
 
 class VectorTests: XCTestCase {
-    func testVector1() {
-        XCTAssert(Vector1.scalarCount == 1)
-        VectorTester<Vector1>.runTests()
-    }
     
     func testVector2() {
         XCTAssert(Vector2.scalarCount == 2)

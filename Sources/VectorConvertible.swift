@@ -1,5 +1,5 @@
 /// Conforming types can be converted to and from vector types.
-public protocol VectorConvertible: Equatable {
+public protocol VectorConvertible: Equatable, Interpolatable {
     
     /// The concrete VectorType implementation that can represent the 
     /// conforming type.
