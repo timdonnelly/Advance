@@ -28,17 +28,5 @@ extension Vector1: Vector {
             self = newValue
         }
     }
-    
-    /// Interpolate between the given values.
-    public func interpolated(to otherValue: Vector1, alpha: Double) -> Vector1 {
-        var result = self
-        result.interpolate(to: otherValue, alpha: alpha)
-        return result
-    }
-    
-    /// Interpolate between the given values.
-    public mutating func interpolate(to otherValue: Vector1, alpha: Double) {
-        self += alpha * (otherValue - self)
-    }
 
 }

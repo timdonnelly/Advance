@@ -76,22 +76,7 @@ extension Vector4: Vector {
             }
         }
     }
-    
-    /// Interpolate between the given values.
-    public func interpolated(to otherValue: Vector4, alpha: Double) -> Vector4 {
-        var result = self
-        result.interpolate(to: otherValue, alpha: alpha)
-        return result
-    }
-    
-    /// Interpolate between the given values.
-    public mutating func interpolate(to otherValue: Vector4, alpha: Double) {
-        x += alpha * (otherValue.x - x)
-        y += alpha * (otherValue.y - y)
-        z += alpha * (otherValue.z - z)
-        w += alpha * (otherValue.w - w)
-    }
-    
+
     /// Equatable.
     public static func ==(lhs: Vector4, rhs: Vector4) -> Bool {
         return lhs.x == rhs.x

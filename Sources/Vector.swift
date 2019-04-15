@@ -1,5 +1,5 @@
 /// Conforming types can be operated on as vectors composed of `Double` components.
-public protocol Vector: Equatable, Interpolatable {
+public protocol Vector: Equatable {
     
     /// Creates a vector for which all components are equal to the given Double.
     init(repeating value: Double)
@@ -61,6 +61,14 @@ extension Vector {
             } else if result[componentIndex] > max[componentIndex] {
                 result[componentIndex] = max[componentIndex]
             }
+        }
+        return result
+    }
+    
+    public func interpolated(to otherValue: Self, alpha: Double) -> Self {
+        var result = self
+        for componentIndex in 0..<type(of: self).scalarCount {
+            result[componentIndex] += (alpha * (otherValue[componentIndex] - result[componentIndex]))
         }
         return result
     }
