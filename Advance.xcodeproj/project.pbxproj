@@ -7,33 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2279B8322264E42E001EEAB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2279B8302264E42E001EEAB0 /* LaunchScreen.storyboard */; };
-		2279B8532264E479001EEAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2279B8522264E479001EEAB0 /* Assets.xcassets */; };
-		2279B87A2264E51B001EEAB0 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8692264E4FC001EEAB0 /* ActivityView.swift */; };
-		2279B87B2264E51B001EEAB0 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8602264E4FC001EEAB0 /* ActivityViewController.swift */; };
-		2279B87C2264E51B001EEAB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8642264E4FC001EEAB0 /* AppDelegate.swift */; };
-		2279B87D2264E51B001EEAB0 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8632264E4FC001EEAB0 /* BrowserView.swift */; };
-		2279B87E2264E51B001EEAB0 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B86A2264E4FC001EEAB0 /* BrowserViewController.swift */; };
-		2279B87F2264E51B001EEAB0 /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8682264E4FC001EEAB0 /* CoverView.swift */; };
-		2279B8802264E51B001EEAB0 /* DecayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8622264E4FC001EEAB0 /* DecayViewController.swift */; };
-		2279B8812264E51B001EEAB0 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8672264E4FC001EEAB0 /* DemoViewController.swift */; };
-		2279B8822264E51B001EEAB0 /* DirectManipulationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8662264E4FC001EEAB0 /* DirectManipulationGestureRecognizer.swift */; };
-		2279B8832264E51B001EEAB0 /* GesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B86B2264E4FC001EEAB0 /* GesturesViewController.swift */; };
-		2279B8842264E51B001EEAB0 /* SimpleTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B85E2264E4FC001EEAB0 /* SimpleTransform.swift */; };
-		2279B8852264E51B001EEAB0 /* SpringConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B85F2264E4FC001EEAB0 /* SpringConfigurationView.swift */; };
-		2279B8862264E51B001EEAB0 /* SpringsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8652264E4FC001EEAB0 /* SpringsViewController.swift */; };
-		2279B8872264E51B001EEAB0 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8612264E4FC001EEAB0 /* SpringView.swift */; };
 		2279B8892264E524001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4665622063B4B00C0FEA1 /* Advance.framework */; };
-		2279B88F2264E592001EEAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2279B88E2264E592001EEAB0 /* Assets.xcassets */; };
-		2279B8A62264E93E001EEAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2279B85C2264E4E9001EEAB0 /* Assets.xcassets */; };
-		2279B8A72264E976001EEAB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B88B2264E586001EEAB0 /* AppDelegate.swift */; };
-		2279B8A82264E976001EEAB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B88A2264E586001EEAB0 /* ViewController.swift */; };
 		2279B8A92264E97E001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4666322063B6400C0FEA1 /* Advance.framework */; };
-		2279B8AD2264E9EA001EEAB0 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8AA2264E9EA001EEAB0 /* SpringView.swift */; };
-		2279B8AE2264E9EA001EEAB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8AB2264E9EA001EEAB0 /* AppDelegate.swift */; };
-		2279B8AF2264E9EA001EEAB0 /* SpringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B8AC2264E9EA001EEAB0 /* SpringContainerView.swift */; };
 		2279B8B02264EA03001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4664622063B0400C0FEA1 /* Advance.framework */; };
-		2279B8B32264EA2A001EEAB0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279B8B12264EA2A001EEAB0 /* MainMenu.xib */; };
 		2279B8BD2264EA89001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4665622063B4B00C0FEA1 /* Advance.framework */; };
 		2279B8E02264EB73001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4666322063B6400C0FEA1 /* Advance.framework */; };
 		2279B8FF2264EC15001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4664622063B0400C0FEA1 /* Advance.framework */; };
@@ -61,6 +37,27 @@
 		2279B9302264EE32001EEAB0 /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9182264EE02001EEAB0 /* VectorTests.swift */; };
 		2279B9312264EE32001EEAB0 /* SinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9192264EE02001EEAB0 /* SinkTests.swift */; };
 		2279B9322264EE32001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
+		2279B93C2265097C001EEAB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B93A22650975001EEAB0 /* ViewController.swift */; };
+		2279B93D2265097C001EEAB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B93B22650975001EEAB0 /* AppDelegate.swift */; };
+		2279B93E2265099F001EEAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2279B93722650975001EEAB0 /* Assets.xcassets */; };
+		2279B94922650A1E001EEAB0 /* SpringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B94022650A18001EEAB0 /* SpringContainerView.swift */; };
+		2279B94A22650A1E001EEAB0 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B94122650A18001EEAB0 /* SpringView.swift */; };
+		2279B94B22650A1E001EEAB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B94222650A18001EEAB0 /* AppDelegate.swift */; };
+		2279B96A22650AA9001EEAB0 /* SpringsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B95722650AA3001EEAB0 /* SpringsViewController.swift */; };
+		2279B96B22650AA9001EEAB0 /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B95822650AA3001EEAB0 /* CoverView.swift */; };
+		2279B96C22650AA9001EEAB0 /* DecayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B95922650AA3001EEAB0 /* DecayViewController.swift */; };
+		2279B96D22650AA9001EEAB0 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B95A22650AA3001EEAB0 /* ActivityViewController.swift */; };
+		2279B96E22650AA9001EEAB0 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B95B22650AA3001EEAB0 /* DemoViewController.swift */; };
+		2279B96F22650AA9001EEAB0 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B95C22650AA3001EEAB0 /* SpringView.swift */; };
+		2279B97022650AA9001EEAB0 /* SimpleTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B95D22650AA3001EEAB0 /* SimpleTransform.swift */; };
+		2279B97122650AA9001EEAB0 /* GesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B95E22650AA3001EEAB0 /* GesturesViewController.swift */; };
+		2279B97222650AA9001EEAB0 /* DirectManipulationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B95F22650AA3001EEAB0 /* DirectManipulationGestureRecognizer.swift */; };
+		2279B97322650AA9001EEAB0 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B96022650AA3001EEAB0 /* BrowserView.swift */; };
+		2279B97422650AA9001EEAB0 /* SpringConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B96122650AA3001EEAB0 /* SpringConfigurationView.swift */; };
+		2279B97522650AA9001EEAB0 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B96222650AA3001EEAB0 /* BrowserViewController.swift */; };
+		2279B97622650AA9001EEAB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B96322650AA3001EEAB0 /* AppDelegate.swift */; };
+		2279B97722650AA9001EEAB0 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B96422650AA3001EEAB0 /* ActivityView.swift */; };
+		2279B97822650ABA001EEAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2279B96622650AA3001EEAB0 /* Assets.xcassets */; };
 		22A4669F22063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
 		22A466A022063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
 		22A466A122063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
@@ -220,36 +217,8 @@
 
 /* Begin PBXFileReference section */
 		2279B8252264E42E001EEAB0 /* SampleApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2279B8312264E42E001EEAB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2279B8332264E42E001EEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2279B83B2264E453001EEAB0 /* SampleApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2279B8462264E454001EEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2279B84E2264E479001EEAB0 /* SampleApp-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2279B8522264E479001EEAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2279B8572264E479001EEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2279B8582264E479001EEAB0 /* SampleApp_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleApp_macOS.entitlements; sourceTree = "<group>"; };
-		2279B85C2264E4E9001EEAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SampleApp/Sources/iOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		2279B85E2264E4FC001EEAB0 /* SimpleTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleTransform.swift; path = SampleApp/Sources/iOS/SimpleTransform.swift; sourceTree = SOURCE_ROOT; };
-		2279B85F2264E4FC001EEAB0 /* SpringConfigurationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringConfigurationView.swift; path = SampleApp/Sources/iOS/SpringConfigurationView.swift; sourceTree = SOURCE_ROOT; };
-		2279B8602264E4FC001EEAB0 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = SampleApp/Sources/iOS/ActivityViewController.swift; sourceTree = SOURCE_ROOT; };
-		2279B8612264E4FC001EEAB0 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringView.swift; path = SampleApp/Sources/iOS/SpringView.swift; sourceTree = SOURCE_ROOT; };
-		2279B8622264E4FC001EEAB0 /* DecayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecayViewController.swift; path = SampleApp/Sources/iOS/DecayViewController.swift; sourceTree = SOURCE_ROOT; };
-		2279B8632264E4FC001EEAB0 /* BrowserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowserView.swift; path = SampleApp/Sources/iOS/BrowserView.swift; sourceTree = SOURCE_ROOT; };
-		2279B8642264E4FC001EEAB0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SampleApp/Sources/iOS/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		2279B8652264E4FC001EEAB0 /* SpringsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringsViewController.swift; path = SampleApp/Sources/iOS/SpringsViewController.swift; sourceTree = SOURCE_ROOT; };
-		2279B8662264E4FC001EEAB0 /* DirectManipulationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectManipulationGestureRecognizer.swift; path = SampleApp/Sources/iOS/DirectManipulationGestureRecognizer.swift; sourceTree = SOURCE_ROOT; };
-		2279B8672264E4FC001EEAB0 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoViewController.swift; path = SampleApp/Sources/iOS/DemoViewController.swift; sourceTree = SOURCE_ROOT; };
-		2279B8682264E4FC001EEAB0 /* CoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverView.swift; path = SampleApp/Sources/iOS/CoverView.swift; sourceTree = SOURCE_ROOT; };
-		2279B8692264E4FC001EEAB0 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityView.swift; path = SampleApp/Sources/iOS/ActivityView.swift; sourceTree = SOURCE_ROOT; };
-		2279B86A2264E4FC001EEAB0 /* BrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowserViewController.swift; path = SampleApp/Sources/iOS/BrowserViewController.swift; sourceTree = SOURCE_ROOT; };
-		2279B86B2264E4FC001EEAB0 /* GesturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GesturesViewController.swift; path = SampleApp/Sources/iOS/GesturesViewController.swift; sourceTree = SOURCE_ROOT; };
-		2279B88A2264E586001EEAB0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SampleApp/Sources/tvOS/ViewController.swift; sourceTree = SOURCE_ROOT; };
-		2279B88B2264E586001EEAB0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SampleApp/Sources/tvOS/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		2279B88E2264E592001EEAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SampleApp/Sources/tvOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		2279B8AA2264E9EA001EEAB0 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringView.swift; path = SampleApp/Sources/macOS/SpringView.swift; sourceTree = SOURCE_ROOT; };
-		2279B8AB2264E9EA001EEAB0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SampleApp/Sources/macOS/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		2279B8AC2264E9EA001EEAB0 /* SpringContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringContainerView.swift; path = SampleApp/Sources/macOS/SpringContainerView.swift; sourceTree = SOURCE_ROOT; };
-		2279B8B22264EA2A001EEAB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = SampleApp/Sources/macOS/Base.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		2279B8B82264EA89001EEAB0 /* Advance-UnitTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Advance-UnitTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2279B8DB2264EB73001EEAB0 /* Advance-UnitTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Advance-UnitTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2279B8FA2264EC15001EEAB0 /* Advance-UnitTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Advance-UnitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +233,34 @@
 		2279B9182264EE02001EEAB0 /* VectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorTests.swift; sourceTree = "<group>"; };
 		2279B9192264EE02001EEAB0 /* SinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinkTests.swift; sourceTree = "<group>"; };
 		2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorConvenienceTests.swift; sourceTree = "<group>"; };
+		2279B93722650975001EEAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2279B93822650975001EEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2279B93A22650975001EEAB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2279B93B22650975001EEAB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2279B94022650A18001EEAB0 /* SpringContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringContainerView.swift; sourceTree = "<group>"; };
+		2279B94122650A18001EEAB0 /* SpringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		2279B94222650A18001EEAB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2279B94422650A18001EEAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2279B94622650A18001EEAB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2279B94722650A18001EEAB0 /* SampleApp_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleApp_macOS.entitlements; sourceTree = "<group>"; };
+		2279B94822650A18001EEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2279B95722650AA3001EEAB0 /* SpringsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringsViewController.swift; sourceTree = "<group>"; };
+		2279B95822650AA3001EEAB0 /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
+		2279B95922650AA3001EEAB0 /* DecayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecayViewController.swift; sourceTree = "<group>"; };
+		2279B95A22650AA3001EEAB0 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		2279B95B22650AA3001EEAB0 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		2279B95C22650AA3001EEAB0 /* SpringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		2279B95D22650AA3001EEAB0 /* SimpleTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTransform.swift; sourceTree = "<group>"; };
+		2279B95E22650AA3001EEAB0 /* GesturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesViewController.swift; sourceTree = "<group>"; };
+		2279B95F22650AA3001EEAB0 /* DirectManipulationGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectManipulationGestureRecognizer.swift; sourceTree = "<group>"; };
+		2279B96022650AA3001EEAB0 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
+		2279B96122650AA3001EEAB0 /* SpringConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringConfigurationView.swift; sourceTree = "<group>"; };
+		2279B96222650AA3001EEAB0 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
+		2279B96322650AA3001EEAB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2279B96422650AA3001EEAB0 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		2279B96622650AA3001EEAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2279B96822650AA3001EEAB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2279B96922650AA3001EEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22A4664622063B0400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4665622063B4B00C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4666322063B6400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -393,23 +390,8 @@
 		2279B8262264E42E001EEAB0 /* SampleApp-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				2279B8692264E4FC001EEAB0 /* ActivityView.swift */,
-				2279B8602264E4FC001EEAB0 /* ActivityViewController.swift */,
-				2279B8642264E4FC001EEAB0 /* AppDelegate.swift */,
-				2279B8632264E4FC001EEAB0 /* BrowserView.swift */,
-				2279B86A2264E4FC001EEAB0 /* BrowserViewController.swift */,
-				2279B8682264E4FC001EEAB0 /* CoverView.swift */,
-				2279B8622264E4FC001EEAB0 /* DecayViewController.swift */,
-				2279B8672264E4FC001EEAB0 /* DemoViewController.swift */,
-				2279B8662264E4FC001EEAB0 /* DirectManipulationGestureRecognizer.swift */,
-				2279B86B2264E4FC001EEAB0 /* GesturesViewController.swift */,
-				2279B85E2264E4FC001EEAB0 /* SimpleTransform.swift */,
-				2279B85F2264E4FC001EEAB0 /* SpringConfigurationView.swift */,
-				2279B8652264E4FC001EEAB0 /* SpringsViewController.swift */,
-				2279B8612264E4FC001EEAB0 /* SpringView.swift */,
-				2279B85C2264E4E9001EEAB0 /* Assets.xcassets */,
-				2279B8302264E42E001EEAB0 /* LaunchScreen.storyboard */,
-				2279B8332264E42E001EEAB0 /* Info.plist */,
+				2279B96522650AA3001EEAB0 /* Resources */,
+				2279B95622650AA3001EEAB0 /* Sources */,
 			);
 			path = "SampleApp-iOS";
 			sourceTree = "<group>";
@@ -417,10 +399,8 @@
 		2279B83C2264E453001EEAB0 /* SampleApp-tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				2279B88B2264E586001EEAB0 /* AppDelegate.swift */,
-				2279B88A2264E586001EEAB0 /* ViewController.swift */,
-				2279B88E2264E592001EEAB0 /* Assets.xcassets */,
-				2279B8462264E454001EEAB0 /* Info.plist */,
+				2279B93622650975001EEAB0 /* Resources */,
+				2279B93922650975001EEAB0 /* Sources */,
 			);
 			path = "SampleApp-tvOS";
 			sourceTree = "<group>";
@@ -428,13 +408,8 @@
 		2279B84F2264E479001EEAB0 /* SampleApp-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				2279B8B12264EA2A001EEAB0 /* MainMenu.xib */,
-				2279B8AB2264E9EA001EEAB0 /* AppDelegate.swift */,
-				2279B8AC2264E9EA001EEAB0 /* SpringContainerView.swift */,
-				2279B8AA2264E9EA001EEAB0 /* SpringView.swift */,
-				2279B8522264E479001EEAB0 /* Assets.xcassets */,
-				2279B8572264E479001EEAB0 /* Info.plist */,
-				2279B8582264E479001EEAB0 /* SampleApp_macOS.entitlements */,
+				2279B94322650A18001EEAB0 /* Resources */,
+				2279B93F22650A18001EEAB0 /* Sources */,
 			);
 			path = "SampleApp-macOS";
 			sourceTree = "<group>";
@@ -478,6 +453,76 @@
 				2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		2279B93622650975001EEAB0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2279B93722650975001EEAB0 /* Assets.xcassets */,
+				2279B93822650975001EEAB0 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2279B93922650975001EEAB0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2279B93A22650975001EEAB0 /* ViewController.swift */,
+				2279B93B22650975001EEAB0 /* AppDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2279B93F22650A18001EEAB0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2279B94022650A18001EEAB0 /* SpringContainerView.swift */,
+				2279B94122650A18001EEAB0 /* SpringView.swift */,
+				2279B94222650A18001EEAB0 /* AppDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2279B94322650A18001EEAB0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2279B94422650A18001EEAB0 /* Assets.xcassets */,
+				2279B94522650A18001EEAB0 /* MainMenu.xib */,
+				2279B94722650A18001EEAB0 /* SampleApp_macOS.entitlements */,
+				2279B94822650A18001EEAB0 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2279B95622650AA3001EEAB0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2279B95722650AA3001EEAB0 /* SpringsViewController.swift */,
+				2279B95822650AA3001EEAB0 /* CoverView.swift */,
+				2279B95922650AA3001EEAB0 /* DecayViewController.swift */,
+				2279B95A22650AA3001EEAB0 /* ActivityViewController.swift */,
+				2279B95B22650AA3001EEAB0 /* DemoViewController.swift */,
+				2279B95C22650AA3001EEAB0 /* SpringView.swift */,
+				2279B95D22650AA3001EEAB0 /* SimpleTransform.swift */,
+				2279B95E22650AA3001EEAB0 /* GesturesViewController.swift */,
+				2279B95F22650AA3001EEAB0 /* DirectManipulationGestureRecognizer.swift */,
+				2279B96022650AA3001EEAB0 /* BrowserView.swift */,
+				2279B96122650AA3001EEAB0 /* SpringConfigurationView.swift */,
+				2279B96222650AA3001EEAB0 /* BrowserViewController.swift */,
+				2279B96322650AA3001EEAB0 /* AppDelegate.swift */,
+				2279B96422650AA3001EEAB0 /* ActivityView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2279B96522650AA3001EEAB0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2279B96622650AA3001EEAB0 /* Assets.xcassets */,
+				2279B96722650AA3001EEAB0 /* LaunchScreen.storyboard */,
+				2279B96922650AA3001EEAB0 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		22A4663C22063B0400C0FEA1 = {
@@ -867,8 +912,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2279B8A62264E93E001EEAB0 /* Assets.xcassets in Resources */,
-				2279B8322264E42E001EEAB0 /* LaunchScreen.storyboard in Resources */,
+				2279B97822650ABA001EEAB0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +920,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2279B93E2265099F001EEAB0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,8 +928,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2279B8532264E479001EEAB0 /* Assets.xcassets in Resources */,
-				2279B8B32264EA2A001EEAB0 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,7 +970,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2279B88F2264E592001EEAB0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,20 +980,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2279B87A2264E51B001EEAB0 /* ActivityView.swift in Sources */,
-				2279B87B2264E51B001EEAB0 /* ActivityViewController.swift in Sources */,
-				2279B87C2264E51B001EEAB0 /* AppDelegate.swift in Sources */,
-				2279B87D2264E51B001EEAB0 /* BrowserView.swift in Sources */,
-				2279B87E2264E51B001EEAB0 /* BrowserViewController.swift in Sources */,
-				2279B87F2264E51B001EEAB0 /* CoverView.swift in Sources */,
-				2279B8802264E51B001EEAB0 /* DecayViewController.swift in Sources */,
-				2279B8812264E51B001EEAB0 /* DemoViewController.swift in Sources */,
-				2279B8822264E51B001EEAB0 /* DirectManipulationGestureRecognizer.swift in Sources */,
-				2279B8832264E51B001EEAB0 /* GesturesViewController.swift in Sources */,
-				2279B8842264E51B001EEAB0 /* SimpleTransform.swift in Sources */,
-				2279B8852264E51B001EEAB0 /* SpringConfigurationView.swift in Sources */,
-				2279B8862264E51B001EEAB0 /* SpringsViewController.swift in Sources */,
-				2279B8872264E51B001EEAB0 /* SpringView.swift in Sources */,
+				2279B97122650AA9001EEAB0 /* GesturesViewController.swift in Sources */,
+				2279B97522650AA9001EEAB0 /* BrowserViewController.swift in Sources */,
+				2279B97222650AA9001EEAB0 /* DirectManipulationGestureRecognizer.swift in Sources */,
+				2279B96B22650AA9001EEAB0 /* CoverView.swift in Sources */,
+				2279B97322650AA9001EEAB0 /* BrowserView.swift in Sources */,
+				2279B97422650AA9001EEAB0 /* SpringConfigurationView.swift in Sources */,
+				2279B96C22650AA9001EEAB0 /* DecayViewController.swift in Sources */,
+				2279B96A22650AA9001EEAB0 /* SpringsViewController.swift in Sources */,
+				2279B97622650AA9001EEAB0 /* AppDelegate.swift in Sources */,
+				2279B97022650AA9001EEAB0 /* SimpleTransform.swift in Sources */,
+				2279B96D22650AA9001EEAB0 /* ActivityViewController.swift in Sources */,
+				2279B97722650AA9001EEAB0 /* ActivityView.swift in Sources */,
+				2279B96E22650AA9001EEAB0 /* DemoViewController.swift in Sources */,
+				2279B96F22650AA9001EEAB0 /* SpringView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,8 +1001,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2279B8A72264E976001EEAB0 /* AppDelegate.swift in Sources */,
-				2279B8A82264E976001EEAB0 /* ViewController.swift in Sources */,
+				2279B93D2265097C001EEAB0 /* AppDelegate.swift in Sources */,
+				2279B93C2265097C001EEAB0 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,9 +1010,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2279B8AF2264E9EA001EEAB0 /* SpringContainerView.swift in Sources */,
-				2279B8AE2264E9EA001EEAB0 /* AppDelegate.swift in Sources */,
-				2279B8AD2264E9EA001EEAB0 /* SpringView.swift in Sources */,
+				2279B94B22650A1E001EEAB0 /* AppDelegate.swift in Sources */,
+				2279B94922650A1E001EEAB0 /* SpringContainerView.swift in Sources */,
+				2279B94A22650A1E001EEAB0 /* SpringView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,20 +1219,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2279B8302264E42E001EEAB0 /* LaunchScreen.storyboard */ = {
+		2279B94522650A18001EEAB0 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2279B8312264E42E001EEAB0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		2279B8B12264EA2A001EEAB0 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2279B8B22264EA2A001EEAB0 /* Base */,
+				2279B94622650A18001EEAB0 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		2279B96722650AA3001EEAB0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2279B96822650AA3001EEAB0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1203,7 +1245,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1224,7 +1266,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1245,7 +1287,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-tvOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1265,7 +1307,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-tvOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1285,11 +1327,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Samples/SampleApp-macOS/SampleApp_macOS.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-macOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-macOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1306,11 +1347,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Samples/SampleApp-macOS/SampleApp_macOS.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-macOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Samples/SampleApp-macOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
