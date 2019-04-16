@@ -32,14 +32,12 @@ public struct DecayFunction<T>: SimulationFunction where T: SIMD, T.Scalar == Do
 extension Animator {
 
     /// Starts a decay animation with the current velocity of the property animator.
-    @discardableResult
-    public func decay(drag: Double = 3.0, threshold: Double = 0.1) -> AnimationRunner<Value> {
-        return decay(initialVelocity: velocity, drag: drag, threshold: threshold)
+    public func decay(drag: Double = 3.0, threshold: Double = 0.1) {
+        decay(initialVelocity: velocity, drag: drag, threshold: threshold)
     }
     
     /// Starts a decay animation with the given initial velocity.
-    @discardableResult
-    public func decay(initialVelocity: Value, drag: Double = 3.0, threshold: Double = 0.1) -> AnimationRunner<Value> {
+    public func decay(initialVelocity: Value, drag: Double = 3.0, threshold: Double = 0.1) {
 
         let animation = value
             .decayAnimation(
@@ -47,7 +45,7 @@ extension Animator {
                 drag: drag,
                 threshold: threshold)
         
-        return animate(with: animation)
+        animate(with: animation)
         
     }
 }

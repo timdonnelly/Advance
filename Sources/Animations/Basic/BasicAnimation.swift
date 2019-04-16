@@ -68,10 +68,9 @@ public struct BasicAnimation<Value>: Animation where Value: VectorConvertible {
 
 extension Animator {
     
-    @discardableResult
-    public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) -> AnimationRunner<Value> {
+    public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
         let animation = BasicAnimation(from: value, to: finalValue, duration: duration, timingFunction: timingFunction)
-        return animate(with: animation)
+        animate(with: animation)
     }
     
 }

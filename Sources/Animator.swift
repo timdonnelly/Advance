@@ -35,8 +35,7 @@ public final class Animator<Value> where Value: VectorConvertible {
     }
     
     /// Animates the property using the given animation.
-    @discardableResult
-    public func animate<T>(with animation: T) -> AnimationRunner<Value> where T: Animation, T.Value == Value {
+    public func animate<T>(with animation: T)where T: Animation, T.Value == Value {
         
         cancelRunningAnimation()
         let runner = AnimationRunner(animation: animation)
@@ -52,8 +51,7 @@ public final class Animator<Value> where Value: VectorConvertible {
         self.currentAnimationRunner = runner
         
         runner.start()
-        
-        return runner
+
     }
     
     private func runnerDidFinish(_ runner: AnimationRunner<Value>) {

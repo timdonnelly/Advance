@@ -186,17 +186,6 @@ extension AnimationRunner: Observable {
 
 extension AnimationRunner {
     
-    public func bound<T>(to object: T, keyPath: ReferenceWritableKeyPath<T, Value>) -> AnimationRunner<Value> {
-        observe { (nextValue) in
-            object[keyPath: keyPath] = nextValue
-        }
-        return self
-    }
-    
-}
-
-extension AnimationRunner {
-    
     /// Represents the current state of an animation runner.
     public enum State: Equatable {
         
