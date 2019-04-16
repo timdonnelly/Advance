@@ -17,14 +17,16 @@
 ///
 public final class Animator<Value> where Value: VectorConvertible {
     
-    fileprivate let valueSink = Sink<Value>()
+    public var onChange: ((Value) -> Void)? = nil
     
     private let displayLink = DisplayLink()
     
     private var state: State {
         didSet {
             displayLink.isPaused = state.isAtRest
-            valueSink.send(value: state.value)
+            if state.value != oldValue.value {
+                onChange?(state.value)
+            }
         }
     }
     
@@ -126,17 +128,6 @@ extension Animator {
     public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
         let animation = TimedAnimation(from: value, to: finalValue, duration: duration, timingFunction: timingFunction)
         animate(with: animation)
-    }
-    
-}
-
-
-
-extension Animator: Observable {
-    
-    @discardableResult
-    public func observe(_ observer: @escaping (Value) -> Void) -> Subscription {
-        return valueSink.observe(observer)
     }
     
 }

@@ -47,17 +47,17 @@ class BrowserItem: NSObject {
         center.threshold = 0.1
         center.tension = 120.0
         center.damping = 27.0
-        center.observe { [unowned self] (p) -> Void in
+        center.onChange = { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
         transform.threshold = 0.001
-        transform.observe { [unowned self] (p) -> Void in
+        transform.onChange = { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
         size.threshold = 0.1
-        size.observe { [unowned self] (p) -> Void in
+        size.onChange = { [unowned self] (p) -> Void in
             self.browserView?.setNeedsLayout()
         }
         
@@ -259,12 +259,12 @@ class BrowserView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        index.observe { [unowned self] (idx) -> Void in
+        index.onChange = { [unowned self] (idx) -> Void in
             self.setNeedsLayout()
             self.delegate?.browserViewDidScroll(self)
         }
         
-        coverVisibilty.observe { [unowned self] (v) in
+        coverVisibilty.onChange = { [unowned self] (v) in
             self.setNeedsLayout()
         }
         
@@ -320,8 +320,10 @@ class BrowserView: UIView {
             
             let initialCenter = CGPoint(x: bounds.midX, y: bounds.midY)
             let finalCenter = CGPoint(x: bounds.midX, y: bounds.height * 0.3 * 0.25)
-            cv.center = initialCenter.interpolated(to: finalCenter, alpha: 1.0-Double(cvVis))
             
+            cv.center.x = initialCenter.x + ((finalCenter.x - initialCenter.x) * (1.0-cvVis))
+            cv.center.y = initialCenter.y + ((finalCenter.y - initialCenter.y) * (1.0-cvVis))
+                        
             let t = CGAffineTransform(scaleX: 0.7 + cvVis*0.3, y: 0.7 + cvVis*0.3)
             cv.transform = t
             

@@ -15,9 +15,9 @@
 ///
 public class Simulator<Value, Function> where Value: VectorConvertible, Function: SimulationFunction, Value.VectorType == Function.VectorType {
     
-    private let displayLink: DisplayLink
+    public var onChange: ((Value) -> Void)? = nil
     
-    fileprivate let valueSink = Sink<Value>()
+    private let displayLink: DisplayLink
     
     private var simulation: SimulationState<Function> {
         didSet {
@@ -29,7 +29,7 @@ public class Simulator<Value, Function> where Value: VectorConvertible, Function
     private var lastNotifiedValue: Value {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
-            valueSink.send(value: lastNotifiedValue)
+            onChange?(lastNotifiedValue)
         }
     }
     
@@ -68,13 +68,4 @@ public class Simulator<Value, Function> where Value: VectorConvertible, Function
         set { simulation.velocity = newValue.vector }
     }
 
-}
-
-extension Simulator: Observable {
-    
-    @discardableResult
-    public func observe(_ observer: @escaping (Value) -> Void) -> Subscription {
-        return valueSink.observe(observer)
-    }
-    
 }

@@ -18,7 +18,7 @@ class SpringsViewController: DemoViewController {
         
         super.init(nibName: nil, bundle:    nil)
         
-        spring.observe { [weak self] point in
+        spring.onChange = { [weak self] point in
             self?.springView.center = point
         }
         

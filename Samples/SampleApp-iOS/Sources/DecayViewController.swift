@@ -15,7 +15,7 @@ final class DecayViewController: DemoViewController {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        centerAnimator.observe { [weak self] center in
+        centerAnimator.onChange = { [weak self] center in
             self?.draggableView.center = center
         }
     }
