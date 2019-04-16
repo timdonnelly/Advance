@@ -12,11 +12,11 @@ public protocol SimulationFunction {
     /// - parameter velocity: The current velocity of the simulation.
     /// - returns: A vector containing the acceleration (in units per second)
     ///   based on `value` and `velocity`.
-    func acceleration(for state: SimulationState<VectorType>) -> VectorType
+    func acceleration(value: VectorType, velocity: VectorType) -> VectorType
     
     /// Determines whether the simulation can converge (come to rest) for the
     /// given state.
-    func convergence(for state: SimulationState<VectorType>) -> Convergence<VectorType>
+    func convergence(value: VectorType, velocity: VectorType) -> Convergence<VectorType>
 
 }
 
@@ -34,20 +34,20 @@ public enum Convergence<T> where T: SIMD, T.Scalar == Double {
 
 extension SimulationFunction {
     
-    fileprivate typealias Derivative = SimulationState
+    private typealias Derivative = (value: VectorType, velocity: VectorType)
     
     /// Integrates time into an existing simulation state, returning the resulting
     /// simulation state.
     ///
     /// The integration is done via RK4.
-    public func integrate(state: SimulationState<VectorType>, time: Double) -> SimulationState<VectorType> {
+    public func integrate(value: VectorType, velocity: VectorType, time: Double) -> (value: VectorType, velocity: VectorType) {
         
-        let initial = Derivative(value:VectorType.zero, velocity: VectorType.zero)
+        let initial = Derivative(value: .zero, velocity: .zero)
         
-        let a = evaluate(state: state, time: 0.0, derivative: initial)
-        let b = evaluate(state: state, time: time * 0.5, derivative: a)
-        let c = evaluate(state: state, time: time * 0.5, derivative: b)
-        let d = evaluate(state: state, time: time, derivative: c)
+        let a = evaluate(value: value, velocity: velocity, time: 0.0, derivative: initial)
+        let b = evaluate(value: value, velocity: velocity, time: time * 0.5, derivative: a)
+        let c = evaluate(value: value, velocity: velocity, time: time * 0.5, derivative: b)
+        let d = evaluate(value: value, velocity: velocity, time: time, derivative: c)
         
         var dxdt = a.value
         dxdt += (2.0 * (b.value + c.value)) + d.value
@@ -57,20 +57,19 @@ extension SimulationFunction {
         dvdt += (2.0 * (b.velocity + c.velocity)) + d.velocity
         dvdt = Double(1.0/6.0) * dvdt
         
+        return (
+            value: value + (time * dxdt),
+            velocity: velocity + (time * dvdt)
+        )
         
-        let val = state.value + Double(time) * dxdt
-        let vel = state.velocity + Double(time) * dvdt
-        
-        return SimulationState(value: val, velocity: vel)
     }
     
-    private func evaluate(state: SimulationState<VectorType>, time: Double, derivative: Derivative<VectorType>) -> Derivative<VectorType> {
-        var nextState = state
-        nextState.value += Double(time) * derivative.value
-        nextState.velocity += Double(time) * derivative.velocity
+    private func evaluate(value: VectorType, velocity: VectorType, time: Double, derivative: Derivative) -> Derivative {
+        let nextValue = value + (time * derivative.value)
+        let nextVelocity = velocity + (time * derivative.velocity)
         return Derivative(
-            value: nextState.velocity,
-            velocity: acceleration(for: nextState))
+            value: nextVelocity,
+            velocity: acceleration(value: nextValue, velocity: nextVelocity))
     }
     
 }

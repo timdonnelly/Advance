@@ -19,7 +19,7 @@ public class Simulator<Value, Function> where Value: VectorConvertible, Function
     
     fileprivate let valueSink = Sink<Value>()
     
-    private var simulation: Simulation<Function> {
+    private var simulation: SimulationState<Function> {
         didSet {
             lastNotifiedValue = Value(vector: simulation.value)
             displayLink.isPaused = simulation.hasConverged
@@ -39,7 +39,7 @@ public class Simulator<Value, Function> where Value: VectorConvertible, Function
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
     public init(function: Function, value: Value, velocity: Value = Value.zero) {
-        simulation = Simulation(function: function, value: value.vector, velocity: velocity.vector)
+        simulation = SimulationState(function: function, value: value.vector, velocity: velocity.vector)
         lastNotifiedValue = value
         displayLink = DisplayLink()
         

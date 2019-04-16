@@ -65,6 +65,73 @@ public final class Animator<Value> where Value: VectorConvertible {
 
 }
 
+extension Animator {
+    
+    public func simulate<T>(function: T, initialValue: Value, initialVelocity: Value) where T: SimulationFunction, T.VectorType == Value.VectorType {
+        let animation = SimulationAnimation(
+            function: function,
+            value: initialValue,
+            velocity: initialVelocity)
+        animate(with: animation)
+    }
+    
+    public func simulate<T>(function: T) where T: SimulationFunction, T.VectorType == Value.VectorType {
+        let animation = SimulationAnimation(
+            function: function, value:
+            self.value, velocity:
+            self.velocity)
+        animate(with: animation)
+    }
+    
+}
+
+extension Animator {
+    
+    /// Starts a spring animation with the given properties, adopting the property's
+    /// current velocity as `initialVelocity`.
+    public func spring(to target: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) {
+        self.spring(to: target, initialVelocity: velocity, tension: tension, damping: damping, threshold: threshold)
+    }
+    
+    /// Starts a spring animation with the given properties.
+    public func spring(to target: Value, initialVelocity: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) {
+        var function = SpringFunction(target: target.vector)
+        function.tension = tension
+        function.damping = damping
+        function.threshold = threshold
+        
+        simulate(function: function, initialValue: self.value, initialVelocity: initialVelocity)
+    }
+    
+}
+
+extension Animator {
+    
+    /// Starts a decay animation with the current velocity of the property animator.
+    public func decay(drag: Double = 3.0, threshold: Double = 0.1) {
+        decay(initialVelocity: velocity, drag: drag, threshold: threshold)
+    }
+    
+    /// Starts a decay animation with the given initial velocity.
+    public func decay(initialVelocity: Value, drag: Double = 3.0, threshold: Double = 0.1) {
+        var function = DecayFunction<Value.VectorType>()
+        function.drag = drag
+        function.threshold = threshold
+        simulate(function: function, initialValue: value, initialVelocity: initialVelocity)
+    }
+}
+
+extension Animator {
+    
+    public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
+        let animation = TimedAnimation(from: value, to: finalValue, duration: duration, timingFunction: timingFunction)
+        animate(with: animation)
+    }
+    
+}
+
+
+
 extension Animator: Observable {
     
     @discardableResult
@@ -119,5 +186,3 @@ extension Animator {
     }
     
 }
-
-

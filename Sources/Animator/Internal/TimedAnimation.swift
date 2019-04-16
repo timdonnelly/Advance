@@ -1,25 +1,25 @@
 /// Interpolates between values over a specified duration.
 ///
 /// - parameter Value: The type of value to be animated.
-public struct BasicAnimation<Value>: Animation where Value: VectorConvertible {
+struct TimedAnimation<Value>: Animation where Value: VectorConvertible {
     
     /// The initial value at time 0.
-    fileprivate (set) public var from: Value
+    private (set) var from: Value
     
     /// The final value when the animation is finished.
-    fileprivate (set) public var to: Value
+    private (set) var to: Value
     
     /// The duration of the animation in seconds.
-    fileprivate (set) public var duration: Double
+    private (set) var duration: Double
     
     /// The timing function that is used to map elapsed time to an
     /// interpolated value.
-    fileprivate (set) public var timingFunction: TimingFunction
+    private (set) var timingFunction: TimingFunction
     
     /// The current value.
-    private (set) public var value: Value
+    private (set) var value: Value
     
-    private (set) public var velocity: Value
+    private (set) var velocity: Value
     
     private var elapsed: Double = 0.0
     
@@ -29,7 +29,7 @@ public struct BasicAnimation<Value>: Animation where Value: VectorConvertible {
     /// - parameter to: The value at the end of the animation.
     /// - parameter duration: How long (in seconds) the animation should last.
     /// - parameter timingFunction: The timing function to use.
-    public init(from: Value, to: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
+    init(from: Value, to: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
         self.from = from
         self.to = to
         self.duration = duration
@@ -39,16 +39,15 @@ public struct BasicAnimation<Value>: Animation where Value: VectorConvertible {
     }
     
 
-    
     /// Returns `true` if the advanced time is `>=` duration.
-    public var isFinished: Bool {
+    var isFinished: Bool {
         return elapsed >= duration
     }
     
     /// Advances the animation.
     ///
     /// - parameter elapsed: The time (in seconds) to advance the animation.
-    public mutating func advance(by time: Double) {
+    mutating func advance(by time: Double) {
         
         let starting = value
         
@@ -62,23 +61,6 @@ public struct BasicAnimation<Value>: Animation where Value: VectorConvertible {
         
         let vel = Double(1.0/time) * (value.vector - starting.vector)
         velocity = Value(vector: vel)
-    }
-    
-}
-
-extension Animator {
-    
-    public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
-        let animation = BasicAnimation(from: value, to: finalValue, duration: duration, timingFunction: timingFunction)
-        animate(with: animation)
-    }
-    
-}
-
-extension VectorConvertible {
-    
-    public func animation(to finalValue: Self, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) -> BasicAnimation<Self> {
-        return BasicAnimation(from: self, to: finalValue, duration: duration, timingFunction: timingFunction)
     }
     
 }
