@@ -5,8 +5,8 @@ final class GesturesViewController: DemoViewController {
     
     private let gestureView = UIView()
     
-    private let centerSpring = Spring(value: CGPoint.zero)
-    private let transformSpring = Spring(value: SimpleTransform())
+    private let centerSpring = Spring(initialValue: CGPoint.zero)
+    private let transformSpring = Spring(initialValue: SimpleTransform())
     
     private let recognizer = DirectManipulationGestureRecognizer()
     

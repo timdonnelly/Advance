@@ -3,9 +3,9 @@ import Advance
 
 class BrowserItem: NSObject {
     
-    let center = Spring(value: CGPoint.zero)
-    let transform = Spring(value: SimpleTransform())
-    let size = Spring(value: CGSize.zero)
+    let center = Spring(initialValue: CGPoint.zero)
+    let transform = Spring(initialValue: SimpleTransform())
+    let size = Spring(initialValue: CGSize.zero)
     
     let tapRecognizer = UITapGestureRecognizer()
 
@@ -199,7 +199,7 @@ class BrowserView: UIView {
     
     fileprivate let paginationRatio: CGFloat = 0.68
     
-    fileprivate let index = Spring(value: CGFloat(0))
+    fileprivate let index = Spring(initialValue: CGFloat(0))
     
     fileprivate var panInProgress = false
     fileprivate var indexWhenPanBegan: CGFloat = 0.0
@@ -213,7 +213,7 @@ class BrowserView: UIView {
     fileprivate var fullScreenItem: BrowserItem? = nil
     
     fileprivate let coverVisibilty: Spring<CGFloat> = {
-        let s = Spring(value: CGFloat(1.0))
+        let s = Spring(initialValue: CGFloat(1.0))
         s.threshold = 0.001
         s.tension = 220.0
         s.damping = 28.0
