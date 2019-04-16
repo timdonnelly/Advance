@@ -1,8 +1,5 @@
-import Foundation
-
-
 /// Implements a simple spring acceleration function.
-public struct SpringFunction<T>: SimulationFunction where T: SIMD, T.Scalar == Double {
+public struct SpringFunction<T>: SimulationFunction where T: VectorConvertible {
     
     /// The target of the spring.
     public var target: T
@@ -27,26 +24,26 @@ public struct SpringFunction<T>: SimulationFunction where T: SIMD, T.Scalar == D
     }
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(value: T, velocity: T) -> T {
-        let delta = value - target
+    public func acceleration(value: T.VectorType, velocity: T.VectorType) -> T.VectorType {
+        let delta = value - target.vector
         let accel = (-tension * delta) - (damping * velocity)
         return accel
     }
     
-    public func convergence(value: T, velocity: T) -> Convergence<T> {
-        let min = T(repeating: -threshold)
-        let max = T(repeating: threshold)
+    public func convergence(value: T.VectorType, velocity: T.VectorType) -> Convergence<T> {
+        let min = T.VectorType(repeating: -threshold)
+        let max = T.VectorType(repeating: threshold)
         
         if clamp(value: velocity, min: min, max: max) != velocity {
             return .keepRunning
         }
         
-        let valueDelta = value - target
+        let valueDelta = value - target.vector
         if clamp(value: valueDelta, min: min, max: max) != valueDelta {
             return .keepRunning
         }
         
-        return .converge(atValue: target)
+        return .converge(atValue: target.vector)
     }
     
 }

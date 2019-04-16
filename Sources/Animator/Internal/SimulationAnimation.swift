@@ -1,23 +1,23 @@
 /// An animation that is powered by a simulation function (e.g. a spring or decay function).
-struct SimulationAnimation<Value, T>: Animation where Value: VectorConvertible, T: SimulationFunction, Value.VectorType == T.VectorType {
+struct SimulationAnimation<Function>: Animation where Function: SimulationFunction {
     
-    private var simulation: SimulationState<T>
+    private var simulation: SimulationState<Function>
     
     /// Initializes a new animation with given initial state.
-    init(function: T, value: Value, velocity: Value) {
-        self.simulation = SimulationState(function: function, value: value.vector, velocity: velocity.vector)
+    init(function: Function, initialValue: Function.Value, initialVelocity: Function.Value) {
+        self.simulation = SimulationState(function: function, initialValue: initialValue.vector, initialVelocity: initialVelocity.vector)
     }
     
     mutating func advance(by time: Double) {
         simulation.advance(by: time)
     }
     
-    var value: Value {
-        return Value(vector: simulation.value)
+    var value: Function.Value {
+        return Function.Value(vector: simulation.value)
     }
     
-    var velocity: Value {
-        return Value(vector: simulation.velocity)
+    var velocity: Function.Value {
+        return Function.Value(vector: simulation.velocity)
     }
     
     var isFinished: Bool {
