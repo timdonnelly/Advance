@@ -42,20 +42,20 @@ struct SimulationState<F: SimulationFunction> {
     fileprivate (set) public var hasConverged: Bool = false
     
     // The current state of the solver.
-    private var current: (value: F.VectorType, velocity: F.VectorType)
+    private var current: (value: F.Value.VectorType, velocity: F.Value.VectorType)
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    private var interpolated: (value: F.VectorType, velocity: F.VectorType)
+    private var interpolated: (value: F.Value.VectorType, velocity: F.Value.VectorType)
     
     /// Creates a new `DynamicSolver` instance.
     ///
     /// - parameter function: The function that will drive the simulation.
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
-    init(function: F, value: F.VectorType, velocity: F.VectorType = F.VectorType.zero) {
+    init(function: F, initialValue: F.Value.VectorType, initialVelocity: F.Value.VectorType = .zero) {
         self.function = function
-        current = (value: value, velocity: velocity)
+        current = (value: initialValue, velocity: initialVelocity)
         interpolated = current
         convergeIfPossible()
     }
@@ -124,7 +124,7 @@ struct SimulationState<F: SimulationFunction> {
     }
     
     /// The current value.
-    var value: F.VectorType {
+    var value: F.Value.VectorType {
         get { return interpolated.value }
         set {
             interpolated.value = newValue
@@ -135,7 +135,7 @@ struct SimulationState<F: SimulationFunction> {
     }
     
     /// The current velocity.
-    var velocity: F.VectorType {
+    var velocity: F.Value.VectorType {
         get { return interpolated.velocity }
         set {
             interpolated.velocity = newValue
@@ -149,13 +149,13 @@ struct SimulationState<F: SimulationFunction> {
 
 extension SimulationFunction {
     
-    private typealias Derivative = (value: VectorType, velocity: VectorType)
+    private typealias Derivative = (value: Value.VectorType, velocity: Value.VectorType)
     
     /// Integrates time into an existing simulation state, returning the resulting
     /// simulation state.
     ///
     /// The integration is done via RK4.
-    fileprivate func integrate(value: VectorType, velocity: VectorType, time: Double) -> (value: VectorType, velocity: VectorType) {
+    fileprivate func integrate(value: Value.VectorType, velocity: Value.VectorType, time: Double) -> (value: Value.VectorType, velocity: Value.VectorType) {
         
         let initial = Derivative(value: .zero, velocity: .zero)
         
@@ -179,7 +179,7 @@ extension SimulationFunction {
         
     }
     
-    private func evaluate(value: VectorType, velocity: VectorType, time: Double, derivative: Derivative) -> Derivative {
+    private func evaluate(value: Value.VectorType, velocity: Value.VectorType, time: Double, derivative: Derivative) -> Derivative {
         let nextValue = value + (time * derivative.value)
         let nextVelocity = velocity + (time * derivative.velocity)
         return Derivative(

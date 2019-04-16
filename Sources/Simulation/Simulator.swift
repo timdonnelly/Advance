@@ -5,20 +5,20 @@
 /// `function` property (containing the underlying function that is driving the
 /// simulation), along with the current state of the simulation (value and
 /// velocity).
-public class Simulator<Value, Function> where Value: VectorConvertible, Function: SimulationFunction, Value.VectorType == Function.VectorType {
+public class Simulator<Function> where Function: SimulationFunction {
     
-    public var onChange: ((Value) -> Void)? = nil
+    public var onChange: ((Function.Value) -> Void)? = nil
     
     private let displayLink: DisplayLink
     
     private var simulation: SimulationState<Function> {
         didSet {
-            lastNotifiedValue = Value(vector: simulation.value)
+            lastNotifiedValue = Function.Value(vector: simulation.value)
             displayLink.isPaused = simulation.hasConverged
         }
     }
 
-    private var lastNotifiedValue: Value {
+    private var lastNotifiedValue: Function.Value {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
             onChange?(lastNotifiedValue)
@@ -30,9 +30,9 @@ public class Simulator<Value, Function> where Value: VectorConvertible, Function
     /// - parameter function: The function that will drive the simulation.
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
-    public init(function: Function, value: Value, velocity: Value = Value.zero) {
-        simulation = SimulationState(function: function, value: value.vector, velocity: velocity.vector)
-        lastNotifiedValue = value
+    public init(function: Function, initialValue: Function.Value, initialVelocity: Function.Value = Function.Value.zero) {
+        simulation = SimulationState(function: function, initialValue: initialValue.vector, initialVelocity: initialVelocity.vector)
+        lastNotifiedValue = initialValue
         displayLink = DisplayLink()
         
         displayLink.onFrame = { [unowned self] (frame) in
@@ -49,14 +49,14 @@ public class Simulator<Value, Function> where Value: VectorConvertible, Function
     }
     
     /// The current value of the spring.
-    public final var value: Value {
-        get { return Value(vector: simulation.value) }
+    public final var value: Function.Value {
+        get { return Function.Value(vector: simulation.value) }
         set { simulation.value = newValue.vector }
     }
     
     /// The current velocity of the simulation.
-    public final var velocity: Value {
-        get { return Value(vector: simulation.velocity) }
+    public final var velocity: Function.Value {
+        get { return Function.Value(vector: simulation.velocity) }
         set { simulation.velocity = newValue.vector }
     }
 

@@ -69,19 +69,19 @@ public final class Animator<Value> where Value: VectorConvertible {
 
 extension Animator {
     
-    public func simulate<T>(function: T, initialValue: Value, initialVelocity: Value) where T: SimulationFunction, T.VectorType == Value.VectorType {
+    public func simulate<T>(function: T, initialValue: Value, initialVelocity: Value) where T: SimulationFunction, T.Value == Value {
         let animation = SimulationAnimation(
             function: function,
-            value: initialValue,
-            velocity: initialVelocity)
+            initialValue: initialValue,
+            initialVelocity: initialVelocity)
         animate(with: animation)
     }
     
-    public func simulate<T>(function: T) where T: SimulationFunction, T.VectorType == Value.VectorType {
+    public func simulate<T>(function: T) where T: SimulationFunction, T.Value == Value {
         let animation = SimulationAnimation(
-            function: function, value:
-            self.value, velocity:
-            self.velocity)
+            function: function,
+            initialValue: self.value,
+            initialVelocity: self.velocity)
         animate(with: animation)
     }
     
@@ -97,7 +97,7 @@ extension Animator {
     
     /// Starts a spring animation with the given properties.
     public func spring(to target: Value, initialVelocity: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) {
-        var function = SpringFunction(target: target.vector)
+        var function = SpringFunction(target: target)
         function.tension = tension
         function.damping = damping
         function.threshold = threshold
@@ -116,9 +116,7 @@ extension Animator {
     
     /// Starts a decay animation with the given initial velocity.
     public func decay(initialVelocity: Value, drag: Double = 3.0, threshold: Double = 0.1) {
-        var function = DecayFunction<Value.VectorType>()
-        function.drag = drag
-        function.threshold = threshold
+        let function = DecayFunction<Value>(threshold: threshold, drag: drag)
         simulate(function: function, initialValue: value, initialVelocity: initialVelocity)
     }
 }

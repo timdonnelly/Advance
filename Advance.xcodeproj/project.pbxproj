@@ -16,6 +16,9 @@
 		2236A0DF226648060026E213 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236A0DE226648060026E213 /* Math.swift */; };
 		2236A0E0226648060026E213 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236A0DE226648060026E213 /* Math.swift */; };
 		2236A0E1226648060026E213 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236A0DE226648060026E213 /* Math.swift */; };
+		2236A0E3226659420026E213 /* AnySimulationFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236A0E2226659420026E213 /* AnySimulationFunction.swift */; };
+		2236A0E4226659420026E213 /* AnySimulationFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236A0E2226659420026E213 /* AnySimulationFunction.swift */; };
+		2236A0E5226659420026E213 /* AnySimulationFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236A0E2226659420026E213 /* AnySimulationFunction.swift */; };
 		2279B8892264E524001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4665622063B4B00C0FEA1 /* Advance.framework */; };
 		2279B8A92264E97E001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4666322063B6400C0FEA1 /* Advance.framework */; };
 		2279B8B02264EA03001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4664622063B0400C0FEA1 /* Advance.framework */; };
@@ -151,6 +154,7 @@
 		2236A0CE22662DE90026E213 /* AnyAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAnimation.swift; sourceTree = "<group>"; };
 		2236A0D222663D780026E213 /* SimulationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationAnimation.swift; sourceTree = "<group>"; };
 		2236A0DE226648060026E213 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		2236A0E2226659420026E213 /* AnySimulationFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnySimulationFunction.swift; sourceTree = "<group>"; };
 		2279B8252264E42E001EEAB0 /* SampleApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2279B83B2264E453001EEAB0 /* SampleApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2279B84E2264E479001EEAB0 /* SampleApp-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -519,6 +523,7 @@
 				22A4669122063CDC00C0FEA1 /* SimulationFunction.swift */,
 				22A4669322063CDC00C0FEA1 /* DecayFunction.swift */,
 				22A4669422063CDC00C0FEA1 /* SpringFunction.swift */,
+				2236A0E2226659420026E213 /* AnySimulationFunction.swift */,
 			);
 			path = Simulation;
 			sourceTree = "<group>";
@@ -945,6 +950,7 @@
 				22A4670B22063CDD00C0FEA1 /* TimingFunction.swift in Sources */,
 				22A466AE22063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E422063CDD00C0FEA1 /* Animator.swift in Sources */,
+				2236A0E3226659420026E213 /* AnySimulationFunction.swift in Sources */,
 				22A466F622063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
 				22A4669F22063CDC00C0FEA1 /* Simulator.swift in Sources */,
 				2236A0D322663D780026E213 /* SimulationAnimation.swift in Sources */,
@@ -968,6 +974,7 @@
 				22A4670C22063CDD00C0FEA1 /* TimingFunction.swift in Sources */,
 				22A466AF22063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E522063CDD00C0FEA1 /* Animator.swift in Sources */,
+				2236A0E4226659420026E213 /* AnySimulationFunction.swift in Sources */,
 				22A466F722063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
 				22A466A022063CDC00C0FEA1 /* Simulator.swift in Sources */,
 				2236A0D422663D780026E213 /* SimulationAnimation.swift in Sources */,
@@ -991,6 +998,7 @@
 				22A4670D22063CDD00C0FEA1 /* TimingFunction.swift in Sources */,
 				22A466B022063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E622063CDD00C0FEA1 /* Animator.swift in Sources */,
+				2236A0E5226659420026E213 /* AnySimulationFunction.swift in Sources */,
 				22A466F822063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
 				22A466A122063CDC00C0FEA1 /* Simulator.swift in Sources */,
 				2236A0D522663D780026E213 /* SimulationAnimation.swift in Sources */,

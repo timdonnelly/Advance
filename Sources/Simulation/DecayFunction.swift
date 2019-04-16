@@ -1,5 +1,5 @@
 /// Gradually reduces velocity until it equals `Vector.zero`.
-public struct DecayFunction<T>: SimulationFunction where T: SIMD, T.Scalar == Double {
+public struct DecayFunction<T>: SimulationFunction where T: VectorConvertible {
     
     /// How close to 0 each component of the velocity must be before the
     /// simulation is allowed to converge.
@@ -15,13 +15,13 @@ public struct DecayFunction<T>: SimulationFunction where T: SIMD, T.Scalar == Do
     }
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(value: T, velocity: T) -> T {
+    public func acceleration(value: T.VectorType, velocity: T.VectorType) -> T.VectorType {
         return -drag * velocity
     }
     
-    public func convergence(value: T, velocity: T) -> Convergence<T> {
-        let min = T(repeating: -threshold)
-        let max = T(repeating: threshold)
+    public func convergence(value: T.VectorType, velocity: T.VectorType) -> Convergence<T> {
+        let min = T.VectorType(repeating: -threshold)
+        let max = T.VectorType(repeating: threshold)
         if clamp(value: velocity, min: min, max: max) == velocity {
             return .converge(atValue: value)
         } else {

@@ -5,24 +5,24 @@
 /// spring.target = CGPoint(x: 300, y: 200)
 ///
 /// ```
-public final class Spring<T: VectorConvertible>: Simulator<T, SpringFunction<T.VectorType>> {
+public final class Spring<Value: VectorConvertible>: Simulator<SpringFunction<Value>> {
     
     /// Initializes a new spring converged at the given value, using default configuration options for the spring function.
-    public init(initialValue: T) {
-        let spring = SpringFunction(target: initialValue.vector)
-        super.init(function: spring, value: initialValue, velocity: .zero)
+    public init(initialValue: Value) {
+        let spring = SpringFunction(target: initialValue)
+        super.init(function: spring, initialValue: initialValue, initialVelocity: .zero)
     }
     
     /// The spring's target.
-    public var target: T {
-        get { return T(vector: function.target) }
-        set { function.target = newValue.vector }
+    public var target: Value {
+        get { return function.target }
+        set { function.target = newValue }
     }
     
     /// Removes any current velocity and snaps the spring directly to the given value.
     /// - Parameter value: The new value that the spring will be reset to.
-    public func reset(to value: T) {
-        function.target = value.vector
+    public func reset(to value: Value) {
+        function.target = value
         self.value = value
         self.velocity = .zero
     }
