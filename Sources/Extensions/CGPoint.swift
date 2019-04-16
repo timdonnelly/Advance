@@ -1,3 +1,5 @@
+#if canImport(CoreGraphics)
+
 import CoreGraphics
 
 /// Adds `VectorConvertible` conformance.
@@ -17,3 +19,5 @@ extension CGPoint: VectorConvertible {
             y: Double(y))
     }
 }
+
+#endif

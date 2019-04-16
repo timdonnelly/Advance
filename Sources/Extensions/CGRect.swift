@@ -1,3 +1,5 @@
+#if canImport(CoreGraphics)
+
 import CoreGraphics
 
 /// Adds `VectorConvertible` conformance.
@@ -21,3 +23,5 @@ extension CGRect: VectorConvertible {
             w: Double(size.height))
     }
 }
+
+#endif

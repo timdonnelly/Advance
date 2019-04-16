@@ -1,4 +1,3 @@
-/// Adds `VectorConvertible` conformance.
 extension Double: VectorConvertible {
     
     /// The underlying vector type.

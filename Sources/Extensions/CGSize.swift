@@ -1,3 +1,5 @@
+#if canImport(CoreGraphics)
+
 import CoreGraphics
 
 /// Adds `VectorConvertible` conformance.
@@ -13,3 +15,5 @@ extension CGSize: VectorConvertible {
         return Vector2(x: Double(width), y: Double(height))
     }
 }
+
+#endif

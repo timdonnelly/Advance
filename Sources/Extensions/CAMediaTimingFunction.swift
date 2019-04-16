@@ -1,3 +1,5 @@
+#if canImport(QuartzCore)
+
 import QuartzCore
 
 extension CAMediaTimingFunction: TimingFunction {
@@ -27,3 +29,5 @@ extension CAMediaTimingFunction: TimingFunction {
     }
     
 }
+
+#endif
