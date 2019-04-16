@@ -41,7 +41,7 @@ public final class ActivityView: UIView {
     
     fileprivate let visibilitySprings: [Spring<CGFloat>] = {
         return (0...13).map {_ in
-            let s = Spring(value: CGFloat(1.0))
+            let s = Spring(initialValue: CGFloat(1.0))
             s.threshold = 0.001
             s.tension = 220.0 + Double(arc4random() % 200);
             s.damping = 30.0 + Double(arc4random() % 10);

@@ -17,7 +17,7 @@ final class BrowserViewController: UIViewController {
     let blurredBackgroundImageView = UIImageView(frame: CGRect.zero)
     let backgroundDimmingView = UIView(frame: CGRect.zero)
     
-    let blurSpring = Spring(value: CGFloat(0))
+    let blurSpring = Spring(initialValue: CGFloat(0))
     
     let browserView = BrowserView(frame: CGRect.zero)
     

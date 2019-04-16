@@ -14,7 +14,7 @@ class SpringsViewController: DemoViewController {
     
     required init() {
         springView = SpringView()
-        spring = Spring(value: springView.center)
+        spring = Spring(initialValue: springView.center)
         
         super.init(nibName: nil, bundle:    nil)
         

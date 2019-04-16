@@ -8,9 +8,9 @@
 public final class Spring<T: VectorConvertible>: Simulator<T, SpringFunction<T.VectorType>> {
     
     /// Initializes a new spring converged at the given value, using default configuration options for the spring function.
-    public init(value: T) {
-        let spring = SpringFunction(target: value.vector)
-        super.init(function: spring, value: value, velocity: .zero)
+    public init(initialValue: T) {
+        let spring = SpringFunction(target: initialValue.vector)
+        super.init(function: spring, value: initialValue, velocity: .zero)
     }
     
     /// The spring's target.

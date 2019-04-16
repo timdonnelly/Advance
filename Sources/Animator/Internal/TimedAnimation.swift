@@ -4,17 +4,17 @@
 struct TimedAnimation<Value>: Animation where Value: VectorConvertible {
     
     /// The initial value at time 0.
-    private let from: Value
+    let from: Value
     
     /// The final value when the animation is finished.
-    private let to: Value
+    let to: Value
     
     /// The duration of the animation in seconds.
-    private let duration: Double
+    let duration: Double
     
     /// The timing function that is used to map elapsed time to an
     /// interpolated value.
-    private let timingFunction: TimingFunction
+    let timingFunction: TimingFunction
     
     /// The current value.
     private (set) var value: Value
