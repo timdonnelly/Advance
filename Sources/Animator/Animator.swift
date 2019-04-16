@@ -132,6 +132,7 @@ extension Animator {
     
 }
 
+
 extension Animator {
     
     fileprivate enum State {

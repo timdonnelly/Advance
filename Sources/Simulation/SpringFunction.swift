@@ -19,11 +19,11 @@ public struct SpringFunction<T>: SimulationFunction where T: SIMD, T.Scalar == D
     /// Creates a new `SpringFunction` instance.
     ///
     /// - parameter target: The target of the new instance.
-    public init(target: T = T.zero) {
+    public init(target: T, tension: Double = 120.0, damping: Double = 12.0, threshold: Double = 0.1) {
         self.target = target
-        self.tension = 120.0
-        self.damping = 12.0
-        self.threshold = 0.1
+        self.tension = tension
+        self.damping = damping
+        self.threshold = threshold
     }
     
     /// Calculates acceleration for a given state of the simulation.
