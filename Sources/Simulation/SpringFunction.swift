@@ -37,12 +37,12 @@ public struct SpringFunction<T>: SimulationFunction where T: SIMD, T.Scalar == D
         let min = T(repeating: -threshold)
         let max = T(repeating: threshold)
         
-        if velocity.clamped(min: min, max: max) != velocity {
+        if clamp(value: velocity, min: min, max: max) != velocity {
             return .keepRunning
         }
         
         let valueDelta = value - target
-        if valueDelta.clamped(min: min, max: max) != valueDelta {
+        if clamp(value: valueDelta, min: min, max: max) != valueDelta {
             return .keepRunning
         }
         

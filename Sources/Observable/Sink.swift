@@ -31,10 +31,10 @@ internal final class Sink<T>: Observable {
     
 }
 
-fileprivate extension Sink {
+extension Sink {
     
     /// Represents a subscription to an `Observable`.
-    final class _Subscription: Subscription {
+    fileprivate final class _Subscription: Subscription {
         
         private var hasUnsubscribed: Bool
         private let unsubscribeAction: () -> Void

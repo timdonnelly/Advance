@@ -143,7 +143,7 @@ extension Animator: Observable {
 
 extension Animator {
     
-    fileprivate enum State: Advanceable {
+    fileprivate enum State {
         case atRest(value: Value)
         case animating(animation: AnyAnimation<Value>)
         

@@ -16,7 +16,7 @@ import Foundation
 /// up" to the outside time. It then uses linear interpolation to match the
 /// internal state to the required external time in order to return the most
 /// precise calculations.
-struct SimulationState<F: SimulationFunction>: Advanceable {
+struct SimulationState<F: SimulationFunction> {
     
     // The internal time step. 0.008 == 120fps (double the typical screen refresh
     // rate). The math required to solve most functions is easy for modern
@@ -118,8 +118,8 @@ struct SimulationState<F: SimulationFunction>: Advanceable {
             // will let us provide a more accurate value to the outside world,
             // while maintaining a consistent time step internally.
             let alpha = Double((tickTime + timeAccumulator) / tickTime)
-            interpolated.value = previous.value.interpolated(to: current.value, alpha: alpha)
-            interpolated.velocity = previous.velocity.interpolated(to: current.velocity, alpha: alpha)
+            interpolated.value = interpolate(from: previous.value, to: current.value, alpha: alpha)
+            interpolated.velocity = interpolate(from: previous.velocity, to: current.velocity, alpha: alpha)
         }
     }
     

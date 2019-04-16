@@ -182,8 +182,8 @@ extension DisplayLink {
     }
 }
     
-fileprivate extension CVTimeStamp {
-    var timeInterval: TimeInterval {
+extension CVTimeStamp {
+    fileprivate var timeInterval: TimeInterval {
         return TimeInterval(videoTime) / TimeInterval(self.videoTimeScale)
     }
 }

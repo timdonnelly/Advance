@@ -19,7 +19,7 @@ public struct DecayFunction<T>: SimulationFunction where T: SIMD, T.Scalar == Do
     public func convergence(value: T, velocity: T) -> Convergence<T> {
         let min = T(repeating: -threshold)
         let max = T(repeating: threshold)
-        if velocity.clamped(min: min, max: max) == velocity {
+        if clamp(value: velocity, min: min, max: max) == velocity {
             return .converge(atValue: value)
         } else {
             return .keepRunning
