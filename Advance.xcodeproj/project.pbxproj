@@ -55,6 +55,9 @@
 		2279B97622650AA9001EEAB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B96322650AA3001EEAB0 /* AppDelegate.swift */; };
 		2279B97722650AA9001EEAB0 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B96422650AA3001EEAB0 /* ActivityView.swift */; };
 		2279B97822650ABA001EEAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2279B96622650AA3001EEAB0 /* Assets.xcassets */; };
+		2279B97A2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
+		2279B97B2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
+		2279B97C2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
 		22A4669F22063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
 		22A466A022063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
 		22A466A122063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
@@ -239,6 +242,7 @@
 		2279B96622650AA3001EEAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2279B96822650AA3001EEAB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2279B96922650AA3001EEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2279B9792265A4CA001EEAB0 /* Spring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
 		22A4664622063B0400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4665622063B4B00C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4666322063B6400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -528,6 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				22A4667422063CDC00C0FEA1 /* Simulator.swift */,
+				2279B9792265A4CA001EEAB0 /* Spring.swift */,
 				22A4667522063CDC00C0FEA1 /* Animation.swift */,
 				22A4667622063CDC00C0FEA1 /* Simulation.swift */,
 				22A4667722063CDC00C0FEA1 /* SimulationState.swift */,
@@ -1045,6 +1050,7 @@
 				22A4670822063CDD00C0FEA1 /* UnitBezier.swift in Sources */,
 				22A466F322063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
 				22A4670522063CDD00C0FEA1 /* BasicAnimation.swift in Sources */,
+				2279B97A2265A4CA001EEAB0 /* Spring.swift in Sources */,
 				22A466FF22063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466D822063CDD00C0FEA1 /* Double.swift in Sources */,
 				22A466E722063CDD00C0FEA1 /* Vector.swift in Sources */,
@@ -1083,6 +1089,7 @@
 				22A4670922063CDD00C0FEA1 /* UnitBezier.swift in Sources */,
 				22A466F422063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
 				22A4670622063CDD00C0FEA1 /* BasicAnimation.swift in Sources */,
+				2279B97B2265A4CA001EEAB0 /* Spring.swift in Sources */,
 				22A4670022063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466D922063CDD00C0FEA1 /* Double.swift in Sources */,
 				22A466E822063CDD00C0FEA1 /* Vector.swift in Sources */,
@@ -1121,6 +1128,7 @@
 				22A4670A22063CDD00C0FEA1 /* UnitBezier.swift in Sources */,
 				22A466F522063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
 				22A4670722063CDD00C0FEA1 /* BasicAnimation.swift in Sources */,
+				2279B97C2265A4CA001EEAB0 /* Spring.swift in Sources */,
 				22A4670122063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466DA22063CDD00C0FEA1 /* Double.swift in Sources */,
 				22A466E922063CDD00C0FEA1 /* Vector.swift in Sources */,

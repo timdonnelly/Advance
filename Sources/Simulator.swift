@@ -26,12 +26,7 @@ public class Simulator<Value, Function> where Value: VectorConvertible, Function
     
     private let loop: Loop
     
-    /// The function driving the simulation.
-    public var function: Function {
-        get { return simulation.function }
-        set { simulation.function = newValue }
-    }
-    
+
     private var lastNotifiedValue: Value {
         didSet {
             guard lastNotifiedValue != oldValue else { return }
@@ -56,14 +51,20 @@ public class Simulator<Value, Function> where Value: VectorConvertible, Function
         loop.paused = simulation.hasConverged
     }
     
+    /// The function driving the simulation.
+    public final var function: Function {
+        get { return simulation.function }
+        set { simulation.function = newValue }
+    }
+    
     /// The current value of the spring.
-    public var value: Value {
+    public final var value: Value {
         get { return Value(vector: simulation.value) }
         set { simulation.value = newValue.vector }
     }
     
     /// The current velocity of the simulation.
-    public var velocity: Value {
+    public final var velocity: Value {
         get { return Value(vector: simulation.velocity) }
         set { simulation.velocity = newValue.vector }
     }
@@ -78,56 +79,3 @@ extension Simulator: Observable {
     }
     
 }
-
-extension Simulator where Function == SpringFunction<Value.VectorType> {
-    
-    /// Initializes a new spring converged at the given value, using default configuration options for the spring function.
-    public convenience init(value: Value) {
-        let spring = SpringFunction(target: value.vector)
-        self.init(function: spring, value: value)
-    }
-    
-    /// The spring's target.
-    public var target: Value {
-        get { return Value(vector: function.target) }
-        set { function.target = newValue.vector }
-    }
-    
-    /// Removes any current velocity and snaps the spring directly to the given value.
-    /// - Parameter value: The new value that the spring will be reset to.
-    public func reset(to value: Value) {
-        function.target = value.vector
-        self.value = value
-        self.velocity = Value.zero
-    }
-    
-    /// How strongly the spring will pull the value toward the target,
-    public var tension: Double {
-        get { return function.tension }
-        set { function.tension = newValue }
-    }
-    
-    /// The resistance that the spring encounters while moving the value.
-    public var damping: Double {
-        get { return function.damping }
-        set { function.damping = newValue }
-    }
-    
-    /// The minimum distance from the target value (for each component) that the
-    /// current value can be in order to ender a converged (settled) state.
-    public var threshold: Double {
-        get { return function.threshold }
-        set { function.threshold = newValue }
-    }
-    
-}
-
-/// A specialized simulator that uses a spring function.
-///
-/// ```
-/// let spring = Spring(value: CGPoint.zero)
-/// spring.bind(to: view, keyPath: \.center)
-/// spring.target = CGPoint(x: 300, y: 200)
-///
-/// ```
-public typealias Spring<T> = Simulator<T, SpringFunction<T.VectorType>> where T: VectorConvertible
