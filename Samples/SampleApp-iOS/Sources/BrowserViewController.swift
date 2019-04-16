@@ -64,7 +64,7 @@ final class BrowserViewController: UIViewController {
             return DemoItem(viewController: vc)
         })
         
-        blurSpring.observe { [unowned self] (b) in
+        blurSpring.onChange = { [unowned self] (b) in
             self.blurredBackgroundImageView.alpha = b
         }
     }

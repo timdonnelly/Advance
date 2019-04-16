@@ -24,7 +24,7 @@ public final class Spring<T: VectorConvertible>: Simulator<T, SpringFunction<T.V
     public func reset(to value: T) {
         function.target = value.vector
         self.value = value
-        self.velocity = Value.zero
+        self.velocity = .zero
     }
     
     /// How strongly the spring will pull the value toward the target,

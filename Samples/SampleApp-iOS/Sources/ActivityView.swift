@@ -111,9 +111,9 @@ public final class ActivityView: UIView {
         layer.allowsGroupOpacity = false
         
         for vs in visibilitySprings {
-            vs.observe({ [weak self] (vis) in
+            vs.onChange = { [weak self] (vis) in
                 self?.setNeedsLayout()
-            })
+            }
         }
         
         for sl in segmentLayers {
@@ -232,10 +232,10 @@ private struct ActivitySegment {
         var p1 = initialPosition
         var p2 = initialPosition
         
-        p1 = p1.interpolated(to: firstPoint, alpha: Double(visibility))
-        p2 = p2.interpolated(to: secondPoint, alpha: Double(visibility))
+        p1 = interpolate(from: p1, to: firstPoint, alpha: visibility)
+        p2 = interpolate(from: p2, to: secondPoint, alpha: visibility)
         
-        let rotation = initialRotation.interpolated(to: 0.0, alpha: Double(visibility))
+        let rotation = initialRotation * (1.0 - visibility)
         let midX = p1.x + (p2.x - p1.x) * 0.5
         let midY = p1.y + (p2.y - p1.y) * 0.5
         
@@ -269,4 +269,10 @@ private struct ActivitySegment {
         self.firstPoint = firstPoint
         self.secondPoint = secondPoint
     }
+}
+
+fileprivate func interpolate(from fromPoint: CGPoint, to toPoint: CGPoint, alpha: CGFloat) -> CGPoint {
+    return CGPoint(
+        x: fromPoint.x + ((toPoint.x - fromPoint.x) * alpha),
+        y: fromPoint.y + ((toPoint.y - fromPoint.y) * alpha))
 }
