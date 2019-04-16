@@ -18,7 +18,7 @@ internal final class Loop {
     /// Creates a new loop.
     ///
     /// The newly instantiated loop begins in a paused state.
-    public init() {
+    init() {
         frameSink = Sink()
         driver = Driver()
         driver.callback = { [unowned self] frame in
@@ -27,7 +27,7 @@ internal final class Loop {
     }
     
     /// Pauses the loop (no frames will be produced while paused is `true`).
-    public var paused: Bool {
+    var paused: Bool {
         get { return driver.paused }
         set { driver.paused = newValue }
     }
@@ -37,7 +37,7 @@ internal final class Loop {
 extension Loop: Observable {
     
     @discardableResult
-    public func observe(_ observer: @escaping (Frame) -> Void) -> Subscription {
+    func observe(_ observer: @escaping (Frame) -> Void) -> Subscription {
         return frameSink.observe(observer)
     }
     

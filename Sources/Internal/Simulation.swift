@@ -16,7 +16,7 @@ import Foundation
 /// up" to the outside time. It then uses linear interpolation to match the
 /// internal state to the required external time in order to return the most
 /// precise calculations.
-public struct Simulation<F: SimulationFunction>: Advanceable {
+struct Simulation<F: SimulationFunction>: Advanceable {
     
     // The internal time step. 0.008 == 120fps (double the typical screen refresh
     // rate). The math required to solve most functions is easy for modern
@@ -25,7 +25,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     fileprivate let tickTime: Double = 0.008
     
     /// The function driving the simulation.
-    public var function: F {
+    var function: F {
         didSet {
             // If the function changes, we need to make sure that its new state 
             // will allow the simulation to converge.
@@ -53,7 +53,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     /// - parameter function: The function that will drive the simulation.
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
-    public init(function: F, value: F.VectorType, velocity: F.VectorType = F.VectorType.zero) {
+    init(function: F, value: F.VectorType, velocity: F.VectorType = F.VectorType.zero) {
         self.function = function
         simulationState = SimulationState(value: value, velocity: velocity)
         interpolatedState = simulationState
@@ -79,7 +79,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     ///
     /// - parameter elapsed: The duration by which to advance the simulation
     ///   in seconds.
-    public mutating func advance(by time: Double) {
+    mutating func advance(by time: Double) {
         guard hasConverged == false else { return }
         
         // Limit to 10 physics ticks per update, should never come close.
@@ -125,7 +125,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     }
     
     /// The current value.
-    public var value: F.VectorType {
+    var value: F.VectorType {
         get { return interpolatedState.value }
         set {
             interpolatedState.value = newValue
@@ -136,7 +136,7 @@ public struct Simulation<F: SimulationFunction>: Advanceable {
     }
     
     /// The current velocity.
-    public var velocity: F.VectorType {
+    var velocity: F.VectorType {
         get { return interpolatedState.velocity }
         set {
             interpolatedState.velocity = newValue

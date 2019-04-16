@@ -17,75 +17,52 @@
 ///
 public final class Animator<Value> where Value: VectorConvertible {
     
-    internal let valueSink: Sink<Value>
+    fileprivate let valueSink = Sink<Value>()
     
-    private var currentValue: Value {
+    private let loop = Loop()
+    
+    private var state: State {
         didSet {
-            guard currentValue != oldValue else { return }
-            valueSink.send(value: currentValue)
+            loop.paused = state.isAtRest
+            valueSink.send(value: state.value)
         }
     }
     
-    private var currentAnimationRunner: AnimationRunner<Value>? = nil
-    
-    /// Initializes a new property animator with the given target and keypath.
-    public init(value: Value = Value.zero) {
-        self.valueSink = Sink()
-        self.currentValue = value
-    }
-    
-    /// Animates the property using the given animation.
-    public func animate<T>(with animation: T)where T: Animation, T.Value == Value {
+    public init(value: Value) {
+        state = .atRest(value: value)
         
-        cancelRunningAnimation()
-        let runner = AnimationRunner(animation: animation)
-        
-        runner.observe { [weak self] value in
-            self?.currentValue = value
-        }
-        
-        runner.onCompletion({ [weak self] (_) in
-            self?.runnerDidFinish(runner)
-        })
-
-        self.currentAnimationRunner = runner
-        
-        runner.start()
-
-    }
-    
-    private func runnerDidFinish(_ runner: AnimationRunner<Value>) {
-        if runner === currentAnimationRunner {
-            currentAnimationRunner = nil
+        loop.observe { [weak self] (frame) in
+            self?.advance(by: frame.duration)
         }
     }
     
-    /// Returns true if an animation is in progress.
-    public var isAnimating: Bool {
-        return currentAnimationRunner != nil
-    }
-    
-    /// Cancels any running animation.
-    public func cancelRunningAnimation() {
-        currentAnimationRunner?.cancel()
-        currentAnimationRunner = nil
+    private func advance(by time: Double) {
+        state.advance(by: time)
     }
     
     /// assigning to this value will remove any running animation.
     public var value: Value {
         get {
-            return currentValue
+            return state.value
         }
         set {
-            cancelRunningAnimation()
-            currentValue = newValue
+            state = .atRest(value: newValue)
         }
     }
     
-    /// The current velocity of the value. Returns `Value.zero` if no animation is in progress.
     public var velocity: Value {
-        return currentAnimationRunner?.velocity ?? .zero
+        return state.velocity
     }
+    
+    /// Animates the property using the given animation.
+    public func animate<T>(with animation: T) where T: Animation, T.Value == Value {
+        state = .animating(animation: AnyAnimation(animation))
+    }
+    
+    public func cancelRunningAnimation() {
+        state = .atRest(value: state.value)
+    }
+
 }
 
 extension Animator: Observable {
@@ -96,4 +73,53 @@ extension Animator: Observable {
     }
     
 }
+
+extension Animator {
+    
+    fileprivate enum State: Advanceable {
+        case atRest(value: Value)
+        case animating(animation: AnyAnimation<Value>)
+        
+        
+        mutating func advance(by time: Double) {
+            switch self {
+            case .atRest: break
+            case .animating(var animation):
+                animation.advance(by: time)
+                if animation.isFinished {
+                    self = .atRest(value: animation.value)
+                } else {
+                    self = .animating(animation: animation)
+                }
+            }
+        }
+        
+        
+        var isAtRest: Bool {
+            switch self {
+            case .atRest: return true
+            case .animating: return false
+            }
+        }
+        
+        var value: Value {
+            switch self {
+            case .atRest(let value): return value
+            case .animating(let animation): return animation.value
+            }
+        }
+        
+        var velocity: Value {
+            switch self {
+            case .atRest(_): return .zero
+            case .animating(let animation): return animation.velocity
+            }
+        }
+        
+        
+        
+    }
+    
+}
+
 
