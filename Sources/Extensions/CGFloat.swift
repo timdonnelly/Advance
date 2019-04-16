@@ -1,3 +1,5 @@
+#if canImport(CoreGraphics)
+
 import CoreGraphics
 
 /// Adds `VectorConvertible` conformance.
@@ -13,3 +15,5 @@ extension CGFloat: VectorConvertible {
         return Vector2(x: Double(self), y: 0.0)
     }
 }
+
+#endif
