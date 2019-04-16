@@ -15,17 +15,16 @@
 ///
 public class Simulator<Value, Function> where Value: VectorConvertible, Function: SimulationFunction, Value.VectorType == Function.VectorType {
     
+    private let displayLink: DisplayLink
+    
     fileprivate let valueSink = Sink<Value>()
     
     private var simulation: Simulation<Function> {
         didSet {
             lastNotifiedValue = Value(vector: simulation.value)
-            loop.paused = simulation.hasConverged
+            displayLink.isPaused = simulation.hasConverged
         }
     }
-    
-    private let loop: Loop
-    
 
     private var lastNotifiedValue: Value {
         didSet {
@@ -42,13 +41,13 @@ public class Simulator<Value, Function> where Value: VectorConvertible, Function
     public init(function: Function, value: Value, velocity: Value = Value.zero) {
         simulation = Simulation(function: function, value: value.vector, velocity: velocity.vector)
         lastNotifiedValue = value
-        loop = Loop()
+        displayLink = DisplayLink()
         
-        loop.observe { [unowned self] (frame) in
+        displayLink.onFrame = { [unowned self] (frame) in
             self.simulation.advance(by: frame.duration)
         }
 
-        loop.paused = simulation.hasConverged
+        displayLink.isPaused = simulation.hasConverged
     }
     
     /// The function driving the simulation.

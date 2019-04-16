@@ -2,16 +2,16 @@ import XCTest
 @testable import Advance
 
 
-class LoopTests : XCTestCase {
+class DisplayLinkTests : XCTestCase {
     
-    var loop: Loop! = nil
+    var link: DisplayLink! = nil
     
     override func setUp() {
-        loop = Loop()
+        link = DisplayLink()
     }
     
     override func tearDown() {
-        loop = nil
+        link = nil
     }
     
     func testCallback() {
@@ -19,13 +19,13 @@ class LoopTests : XCTestCase {
         
         var fulfilled = false
         
-        loop.observe { (frame) in
+        link.onFrame = { (frame) in
             guard fulfilled == false else { return }
             fulfilled = true
             exp.fulfill()
         }
         
-        loop.paused = false
+        link.isPaused = false
         
         waitForExpectations(timeout: 0.5) { (error) -> Void in
             guard error == nil else { XCTFail(); return }
@@ -33,13 +33,13 @@ class LoopTests : XCTestCase {
     }
     
     func testPausing() {
-        loop.paused = false
+        link.isPaused = false
         
         var gotCallback = false
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
-            self.loop.paused = true
-            self.loop.observe { (frame) in
+            self.link.isPaused = true
+            self.link.onFrame = { (frame) in
                 gotCallback = true
             }
         }
@@ -62,7 +62,7 @@ class LoopTests : XCTestCase {
         var callbacks = 0
         var lastTimestamp: Double = 0
         
-        loop.observe { (frame) in
+        link.onFrame = { (frame) in
             XCTAssertTrue(frame.timestamp > lastTimestamp, "timestamp \(frame.timestamp) was not larger than \(lastTimestamp) (frame #\(callbacks))")
             lastTimestamp = frame.timestamp
             
@@ -73,7 +73,7 @@ class LoopTests : XCTestCase {
             callbacks += 1
         }
         
-        loop.paused = false
+        link.isPaused = false
         
         waitForExpectations(timeout: 0.5) { (error) -> Void in
             guard error == nil else { XCTFail(); return }
