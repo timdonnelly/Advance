@@ -1,4 +1,7 @@
 /// Conforming types can be converted to and from vector types.
+///
+/// This is the single requirement for any type that is to be animated
+/// by `Animator`, `Simulator`, or `Spring`.
 public protocol VectorConvertible: Equatable {
     
     /// The concrete VectorType implementation that can represent the 

@@ -1,18 +1,10 @@
 /// Animates changes to a value using a simulation function.
 ///
-/// In most scenarios, physics-based animations are simply run to completion.
-/// For those situations, `Animator` makes it easy to run and use the results of
-/// an animation.
-///
-/// In contrast, `Simulator` is useful for scenarios where you need direct access
-/// to a running simulation. This might occur in a UI where the user's scroll
-/// position drives changes to a spring's tension, for example. It would be
-/// impractical to create and start a new animation every time the simulation
-/// needs to change. A `Simulator` instance provides mutable access to the
+/// `Simulator` is useful for scenarios where you need direct access
+/// to a running simulation. A `Simulator` instance provides mutable access to the
 /// `function` property (containing the underlying function that is driving the
 /// simulation), along with the current state of the simulation (value and
 /// velocity).
-///
 public class Simulator<Value, Function> where Value: VectorConvertible, Function: SimulationFunction, Value.VectorType == Function.VectorType {
     
     public var onChange: ((Value) -> Void)? = nil
