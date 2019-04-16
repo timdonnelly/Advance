@@ -10,7 +10,11 @@ In contrast to standard `UIView` animations, Advance animations are applied on e
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
 /// Animators coordinate animations to drive changes to a value.
-let sizeAnimator = Animator(boundTo: view, keyPath: \.bounds.size)
+let sizeAnimator = Animator(initialValue: view.bounds.size)
+
+sizeAnimator.onChange = { [view] newSize in
+    view.bounds.size = newSize
+}
 
 /// Spring physics will move the view's size to the new value.
 sizeAnimator.spring(to: CGSize(width: 300, height: 300))
