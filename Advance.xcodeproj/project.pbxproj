@@ -68,6 +68,9 @@
 		2279B97B2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
 		2279B97C2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
 		2279B97D2266262B001EEAB0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279B94522650A18001EEAB0 /* MainMenu.xib */; };
+		2281193722666F4700D7D3DB /* AnimatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281193622666F4700D7D3DB /* AnimatorState.swift */; };
+		2281193822666F4700D7D3DB /* AnimatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281193622666F4700D7D3DB /* AnimatorState.swift */; };
+		2281193922666F4700D7D3DB /* AnimatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281193622666F4700D7D3DB /* AnimatorState.swift */; };
 		22A4669F22063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
 		22A466A022063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
 		22A466A122063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
@@ -199,6 +202,7 @@
 		2279B96822650AA3001EEAB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2279B96922650AA3001EEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2279B9792265A4CA001EEAB0 /* Spring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		2281193622666F4700D7D3DB /* AnimatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorState.swift; sourceTree = "<group>"; };
 		22A4664622063B0400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4665622063B4B00C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4666322063B6400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +312,7 @@
 				2236A0D222663D780026E213 /* SimulationAnimation.swift */,
 				2236A0CE22662DE90026E213 /* AnyAnimation.swift */,
 				22A4669C22063CDC00C0FEA1 /* TimedAnimation.swift */,
+				2281193622666F4700D7D3DB /* AnimatorState.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -947,6 +952,7 @@
 				22A466A222063CDC00C0FEA1 /* Animation.swift in Sources */,
 				22A466A522063CDC00C0FEA1 /* SimulationState.swift in Sources */,
 				22A466F022063CDD00C0FEA1 /* SimulationFunction.swift in Sources */,
+				2281193722666F4700D7D3DB /* AnimatorState.swift in Sources */,
 				22A4670B22063CDD00C0FEA1 /* TimingFunction.swift in Sources */,
 				22A466AE22063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E422063CDD00C0FEA1 /* Animator.swift in Sources */,
@@ -971,6 +977,7 @@
 				22A466A322063CDC00C0FEA1 /* Animation.swift in Sources */,
 				22A466A622063CDC00C0FEA1 /* SimulationState.swift in Sources */,
 				22A466F122063CDD00C0FEA1 /* SimulationFunction.swift in Sources */,
+				2281193822666F4700D7D3DB /* AnimatorState.swift in Sources */,
 				22A4670C22063CDD00C0FEA1 /* TimingFunction.swift in Sources */,
 				22A466AF22063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E522063CDD00C0FEA1 /* Animator.swift in Sources */,
@@ -995,6 +1002,7 @@
 				22A466A422063CDC00C0FEA1 /* Animation.swift in Sources */,
 				22A466A722063CDC00C0FEA1 /* SimulationState.swift in Sources */,
 				22A466F222063CDD00C0FEA1 /* SimulationFunction.swift in Sources */,
+				2281193922666F4700D7D3DB /* AnimatorState.swift in Sources */,
 				22A4670D22063CDD00C0FEA1 /* TimingFunction.swift in Sources */,
 				22A466B022063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E622063CDD00C0FEA1 /* Animator.swift in Sources */,

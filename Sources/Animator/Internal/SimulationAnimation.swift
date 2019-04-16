@@ -1,11 +1,14 @@
 /// An animation that is powered by a simulation function (e.g. a spring or decay function).
 struct SimulationAnimation<Function>: Animation where Function: SimulationFunction {
     
-    private var simulation: SimulationState<Function>
+    private var simulation: SimulationState<Function.Value>
     
     /// Initializes a new animation with given initial state.
     init(function: Function, initialValue: Function.Value, initialVelocity: Function.Value) {
-        self.simulation = SimulationState(function: function, initialValue: initialValue.vector, initialVelocity: initialVelocity.vector)
+        self.simulation = SimulationState(
+            function: function,
+            initialValue: initialValue.vector,
+            initialVelocity: initialVelocity.vector)
     }
     
     mutating func advance(by time: Double) {
