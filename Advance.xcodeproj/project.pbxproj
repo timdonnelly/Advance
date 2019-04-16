@@ -19,21 +19,21 @@
 		2279B91B2264EE31001EEAB0 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */; };
 		2279B91C2264EE31001EEAB0 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */; };
 		2279B91D2264EE31001EEAB0 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */; };
-		2279B91E2264EE31001EEAB0 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* LoopTests.swift */; };
+		2279B91E2264EE31001EEAB0 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */; };
 		2279B91F2264EE31001EEAB0 /* AnyAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */; };
 		2279B9212264EE31001EEAB0 /* SinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9192264EE02001EEAB0 /* SinkTests.swift */; };
 		2279B9222264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
 		2279B9232264EE31001EEAB0 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */; };
 		2279B9242264EE31001EEAB0 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */; };
 		2279B9252264EE31001EEAB0 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */; };
-		2279B9262264EE31001EEAB0 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* LoopTests.swift */; };
+		2279B9262264EE31001EEAB0 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */; };
 		2279B9272264EE31001EEAB0 /* AnyAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */; };
 		2279B9292264EE31001EEAB0 /* SinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9192264EE02001EEAB0 /* SinkTests.swift */; };
 		2279B92A2264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
 		2279B92B2264EE32001EEAB0 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */; };
 		2279B92C2264EE32001EEAB0 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */; };
 		2279B92D2264EE32001EEAB0 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */; };
-		2279B92E2264EE32001EEAB0 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* LoopTests.swift */; };
+		2279B92E2264EE32001EEAB0 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */; };
 		2279B92F2264EE32001EEAB0 /* AnyAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */; };
 		2279B9312264EE32001EEAB0 /* SinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9192264EE02001EEAB0 /* SinkTests.swift */; };
 		2279B9322264EE32001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
@@ -74,9 +74,9 @@
 		22A466A822063CDC00C0FEA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667722063CDC00C0FEA1 /* SimulationState.swift */; };
 		22A466A922063CDC00C0FEA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667722063CDC00C0FEA1 /* SimulationState.swift */; };
 		22A466AA22063CDC00C0FEA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667722063CDC00C0FEA1 /* SimulationState.swift */; };
-		22A466AE22063CDC00C0FEA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667922063CDC00C0FEA1 /* Loop.swift */; };
-		22A466AF22063CDC00C0FEA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667922063CDC00C0FEA1 /* Loop.swift */; };
-		22A466B022063CDC00C0FEA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667922063CDC00C0FEA1 /* Loop.swift */; };
+		22A466AE22063CDC00C0FEA1 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667922063CDC00C0FEA1 /* DisplayLink.swift */; };
+		22A466AF22063CDC00C0FEA1 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667922063CDC00C0FEA1 /* DisplayLink.swift */; };
+		22A466B022063CDC00C0FEA1 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667922063CDC00C0FEA1 /* DisplayLink.swift */; };
 		22A466B122063CDC00C0FEA1 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667A22063CDC00C0FEA1 /* Sink.swift */; };
 		22A466B222063CDC00C0FEA1 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667A22063CDC00C0FEA1 /* Sink.swift */; };
 		22A466B322063CDC00C0FEA1 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667A22063CDC00C0FEA1 /* Sink.swift */; };
@@ -200,7 +200,7 @@
 		2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAnimationTests.swift; sourceTree = "<group>"; };
 		2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAMediaTimingFunctionTests.swift; sourceTree = "<group>"; };
 		2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitBezierTests.swift; sourceTree = "<group>"; };
-		2279B9162264EE02001EEAB0 /* LoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopTests.swift; sourceTree = "<group>"; };
+		2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLinkTests.swift; sourceTree = "<group>"; };
 		2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAnimationTests.swift; sourceTree = "<group>"; };
 		2279B9192264EE02001EEAB0 /* SinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinkTests.swift; sourceTree = "<group>"; };
 		2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorConvenienceTests.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 		22A4667522063CDC00C0FEA1 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		22A4667622063CDC00C0FEA1 /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		22A4667722063CDC00C0FEA1 /* SimulationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulationState.swift; sourceTree = "<group>"; };
-		22A4667922063CDC00C0FEA1 /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
+		22A4667922063CDC00C0FEA1 /* DisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
 		22A4667A22063CDC00C0FEA1 /* Sink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sink.swift; sourceTree = "<group>"; };
 		22A4668222063CDC00C0FEA1 /* UIOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOffset.swift; sourceTree = "<group>"; };
 		22A4668322063CDC00C0FEA1 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
@@ -416,7 +416,7 @@
 				2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */,
 				2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */,
 				2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */,
-				2279B9162264EE02001EEAB0 /* LoopTests.swift */,
+				2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */,
 				2279B9172264EE02001EEAB0 /* AnyAnimationTests.swift */,
 				2279B9192264EE02001EEAB0 /* SinkTests.swift */,
 				2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */,
@@ -540,7 +540,7 @@
 				2279B9792265A4CA001EEAB0 /* Spring.swift */,
 				22A4667522063CDC00C0FEA1 /* Animation.swift */,
 				22A4667722063CDC00C0FEA1 /* SimulationState.swift */,
-				22A4667922063CDC00C0FEA1 /* Loop.swift */,
+				22A4667922063CDC00C0FEA1 /* DisplayLink.swift */,
 				22A4668122063CDC00C0FEA1 /* Extensions */,
 				22A4668D22063CDC00C0FEA1 /* Animator.swift */,
 				22A4668F22063CDC00C0FEA1 /* Advanceable.swift */,
@@ -986,7 +986,7 @@
 				2279B9212264EE31001EEAB0 /* SinkTests.swift in Sources */,
 				2279B91D2264EE31001EEAB0 /* UnitBezierTests.swift in Sources */,
 				2279B91F2264EE31001EEAB0 /* AnyAnimationTests.swift in Sources */,
-				2279B91E2264EE31001EEAB0 /* LoopTests.swift in Sources */,
+				2279B91E2264EE31001EEAB0 /* DisplayLinkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,7 +1000,7 @@
 				2279B9292264EE31001EEAB0 /* SinkTests.swift in Sources */,
 				2279B9252264EE31001EEAB0 /* UnitBezierTests.swift in Sources */,
 				2279B9272264EE31001EEAB0 /* AnyAnimationTests.swift in Sources */,
-				2279B9262264EE31001EEAB0 /* LoopTests.swift in Sources */,
+				2279B9262264EE31001EEAB0 /* DisplayLinkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1014,7 +1014,7 @@
 				2279B9312264EE32001EEAB0 /* SinkTests.swift in Sources */,
 				2279B92D2264EE32001EEAB0 /* UnitBezierTests.swift in Sources */,
 				2279B92F2264EE32001EEAB0 /* AnyAnimationTests.swift in Sources */,
-				2279B92E2264EE32001EEAB0 /* LoopTests.swift in Sources */,
+				2279B92E2264EE32001EEAB0 /* DisplayLinkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,7 +1034,7 @@
 				22A466F022063CDD00C0FEA1 /* SimulationFunction.swift in Sources */,
 				22A466CC22063CDD00C0FEA1 /* CGVector.swift in Sources */,
 				22A4670B22063CDD00C0FEA1 /* TimingFunction.swift in Sources */,
-				22A466AE22063CDC00C0FEA1 /* Loop.swift in Sources */,
+				22A466AE22063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E422063CDD00C0FEA1 /* Animator.swift in Sources */,
 				22A466F622063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
 				22A466ED22063CDD00C0FEA1 /* Observable.swift in Sources */,
@@ -1069,7 +1069,7 @@
 				22A466F122063CDD00C0FEA1 /* SimulationFunction.swift in Sources */,
 				22A466CD22063CDD00C0FEA1 /* CGVector.swift in Sources */,
 				22A4670C22063CDD00C0FEA1 /* TimingFunction.swift in Sources */,
-				22A466AF22063CDC00C0FEA1 /* Loop.swift in Sources */,
+				22A466AF22063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E522063CDD00C0FEA1 /* Animator.swift in Sources */,
 				22A466F722063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
 				22A466EE22063CDD00C0FEA1 /* Observable.swift in Sources */,
@@ -1104,7 +1104,7 @@
 				22A466F222063CDD00C0FEA1 /* SimulationFunction.swift in Sources */,
 				22A466CE22063CDD00C0FEA1 /* CGVector.swift in Sources */,
 				22A4670D22063CDD00C0FEA1 /* TimingFunction.swift in Sources */,
-				22A466B022063CDC00C0FEA1 /* Loop.swift in Sources */,
+				22A466B022063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E622063CDD00C0FEA1 /* Animator.swift in Sources */,
 				22A466F822063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
 				22A466EF22063CDD00C0FEA1 /* Observable.swift in Sources */,

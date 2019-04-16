@@ -19,11 +19,11 @@ public final class Animator<Value> where Value: VectorConvertible {
     
     fileprivate let valueSink = Sink<Value>()
     
-    private let loop = Loop()
+    private let displayLink = DisplayLink()
     
     private var state: State {
         didSet {
-            loop.paused = state.isAtRest
+            displayLink.isPaused = state.isAtRest
             valueSink.send(value: state.value)
         }
     }
@@ -31,7 +31,7 @@ public final class Animator<Value> where Value: VectorConvertible {
     public init(value: Value) {
         state = .atRest(value: value)
         
-        loop.observe { [weak self] (frame) in
+        displayLink.onFrame = { [weak self] (frame) in
             self?.advance(by: frame.duration)
         }
     }
@@ -115,8 +115,6 @@ extension Animator {
             case .animating(let animation): return animation.velocity
             }
         }
-        
-        
         
     }
     

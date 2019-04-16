@@ -8,43 +8,33 @@ import CoreVideo
 
 
 /// An object that produces an observable sequence of frames that are synchronized
-/// to the device's display refresh rate.
-internal final class Loop {
+/// to the device's display refresh rate. Provides a layer of abstraction to allow
+/// for a consistent API between platforms.
+internal final class DisplayLink {
+
+    private let driver: Driver = Driver()
     
-    fileprivate let frameSink: Sink<Frame>
-    
-    private let driver: Driver
-    
-    /// Creates a new loop.
+    /// Creates a new `DisplayLink` instance.
     ///
-    /// The newly instantiated loop begins in a paused state.
-    init() {
-        frameSink = Sink()
-        driver = Driver()
-        driver.callback = { [unowned self] frame in
-            self.frameSink.send(value: frame)
-        }
+    /// The newly instantiated display link begins in a paused state.
+    init() {}
+    
+    var onFrame: ((Frame) -> Void)? {
+        get { return driver.onFrame }
+        set { driver.onFrame = newValue }
     }
     
-    /// Pauses the loop (no frames will be produced while paused is `true`).
-    var paused: Bool {
-        get { return driver.paused }
-        set { driver.paused = newValue }
-    }
     
-}
-
-extension Loop: Observable {
-    
-    @discardableResult
-    func observe(_ observer: @escaping (Frame) -> Void) -> Subscription {
-        return frameSink.observe(observer)
+    /// Pauses the display link (no frames will be produced while paused is `true`).
+    var isPaused: Bool {
+        get { return driver.isPaused }
+        set { driver.isPaused = newValue }
     }
     
 }
 
-
-extension Loop {
+extension DisplayLink {
+    
     /// Info about a particular frame.
     struct Frame : Equatable {
         
@@ -57,8 +47,9 @@ extension Loop {
         var duration: Double {
             return timestamp - previousTimestamp
         }
-        
+    
     }
+    
 }
 
 
@@ -67,15 +58,15 @@ extension Loop {
 #if os(iOS) || os(tvOS) // iOS support using CADisplayLink --------------------------------------------------------
 
 /// DisplayLink is used to hook into screen refreshes.
-extension Loop {
+extension DisplayLink {
     
     fileprivate final class Driver {
     
         /// The callback to call for each frame.
-        var callback: ((Frame) -> Void)? = nil
+        var onFrame: ((Frame) -> Void)? = nil
         
         /// If the display link is paused or not.
-        var paused: Bool {
+        var isPaused: Bool {
             get {
                 return displayLink.isPaused
             }
@@ -97,7 +88,7 @@ extension Loop {
             displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
             
             target.callback = { [unowned self] (frame) in
-                self.callback?(frame)
+                self.onFrame?(frame)
             }
         }
         
@@ -109,7 +100,7 @@ extension Loop {
         final class DisplayLinkTarget {
             
             /// The callback to call for each frame.
-            var callback: ((Loop.Frame) -> Void)? = nil
+            var callback: ((DisplayLink.Frame) -> Void)? = nil
             
             /// Called for each frame from the CADisplayLink.
             @objc dynamic func frame(_ displayLink: CADisplayLink) {
@@ -135,19 +126,19 @@ extension Loop {
 
 #elseif os(macOS) // macOS support using CVDisplayLink --------------------------------------------------
 
-extension Loop {
+extension DisplayLink {
     
     /// DisplayLink is used to hook into screen refreshes.
     fileprivate final class Driver {
     
         /// The callback to call for each frame.
-        var callback: ((Frame) -> Void)? = nil
+        var onFrame: ((Frame) -> Void)? = nil
         
         /// If the display link is paused or not.
-        var paused: Bool = true {
+        var isPaused: Bool = true {
             didSet {
-                guard paused != oldValue else { return }
-                if paused == true {
+                guard isPaused != oldValue else { return }
+                if isPaused == true {
                     CVDisplayLinkStop(self.displayLink)
                 } else {
                     CVDisplayLinkStart(self.displayLink)
@@ -165,7 +156,7 @@ extension Loop {
         init() {
             
             CVDisplayLinkSetOutputHandler(self.displayLink, { [weak self] (displayLink, inNow, inOutputTime, flageIn, flagsOut) -> CVReturn in
-                let frame = Loop.Frame(
+                let frame = DisplayLink.Frame(
                     previousTimestamp: inNow.pointee.timeInterval,
                     timestamp: inOutputTime.pointee.timeInterval)
                 
@@ -179,13 +170,13 @@ extension Loop {
         }
         
         deinit {
-            paused = true
+            isPaused = true
         }
         
         /// Called for each CVDisplayLink frame callback.
         func frame(_ frame: Frame) {
-            guard paused == false else { return }
-            callback?(frame)
+            guard isPaused == false else { return }
+            onFrame?(frame)
         }
     
     }
