@@ -16,7 +16,7 @@ import Foundation
 /// up" to the outside time. It then uses linear interpolation to match the
 /// internal state to the required external time in order to return the most
 /// precise calculations.
-struct SimulationState<F: SimulationFunction> {
+struct SimulationState<Value: VectorConvertible> {
     
     // The internal time step. 0.008 == 120fps (double the typical screen refresh
     // rate). The math required to solve most functions is easy for modern
@@ -25,7 +25,7 @@ struct SimulationState<F: SimulationFunction> {
     fileprivate let tickTime: Double = 0.008
     
     /// The function driving the simulation.
-    var function: F {
+    private var function: AnySimulationFunction<Value> {
         didSet {
             // If the function changes, we need to make sure that its new state 
             // will allow the simulation to converge.
@@ -42,19 +42,19 @@ struct SimulationState<F: SimulationFunction> {
     fileprivate (set) public var hasConverged: Bool = false
     
     // The current state of the solver.
-    private var current: (value: F.Value.VectorType, velocity: F.Value.VectorType)
+    private var current: (value: Value.VectorType, velocity: Value.VectorType)
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    private var interpolated: (value: F.Value.VectorType, velocity: F.Value.VectorType)
+    private var interpolated: (value: Value.VectorType, velocity: Value.VectorType)
     
     /// Creates a new `DynamicSolver` instance.
     ///
     /// - parameter function: The function that will drive the simulation.
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
-    init(function: F, initialValue: F.Value.VectorType, initialVelocity: F.Value.VectorType = .zero) {
-        self.function = function
+    init<T>(function: T, initialValue: Value.VectorType, initialVelocity: Value.VectorType = .zero) where T: SimulationFunction, T.Value == Value {
+        self.function = AnySimulationFunction(function)
         current = (value: initialValue, velocity: initialVelocity)
         interpolated = current
         convergeIfPossible()
@@ -73,6 +73,10 @@ struct SimulationState<F: SimulationFunction> {
             hasConverged = true
         }
 
+    }
+    
+    mutating func use<T>(function: T) where T: SimulationFunction, T.Value == Value {
+        self.function = AnySimulationFunction(function)
     }
     
     /// Advances the simulation.
@@ -124,7 +128,7 @@ struct SimulationState<F: SimulationFunction> {
     }
     
     /// The current value.
-    var value: F.Value.VectorType {
+    var value: Value.VectorType {
         get { return interpolated.value }
         set {
             interpolated.value = newValue
@@ -135,7 +139,7 @@ struct SimulationState<F: SimulationFunction> {
     }
     
     /// The current velocity.
-    var velocity: F.Value.VectorType {
+    var velocity: Value.VectorType {
         get { return interpolated.velocity }
         set {
             interpolated.velocity = newValue
@@ -188,3 +192,26 @@ extension SimulationFunction {
     }
     
 }
+
+
+
+fileprivate struct AnySimulationFunction<Value>: SimulationFunction where Value: VectorConvertible {
+    
+    private let _acceleration: (Value.VectorType, Value.VectorType) -> Value.VectorType
+    private let _convergence: (Value.VectorType, Value.VectorType) -> Convergence<Value>
+    
+    public init<T: SimulationFunction>(_ wrapped: T) where T.Value == Value {
+        _acceleration = wrapped.acceleration
+        _convergence = wrapped.convergence
+    }
+    
+    public func acceleration(value: Value.VectorType, velocity: Value.VectorType) -> Value.VectorType {
+        return _acceleration(value, velocity)
+    }
+    
+    public func convergence(value: Value.VectorType, velocity: Value.VectorType) -> Convergence<Value> {
+        return _convergence(value, velocity)
+    }
+    
+}
+
