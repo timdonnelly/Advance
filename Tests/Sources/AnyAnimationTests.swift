@@ -5,7 +5,7 @@ import XCTest
 class AnyAnimationTests : XCTestCase {
 
     func testFinishing() {
-        let basicAnimation = 1.animation(to: 250, duration: 1.0)
+        let basicAnimation = TimedAnimation(from: 1, to: 250, duration: 1.0)
         var anyAnimation = AnyAnimation(basicAnimation)
         
         XCTAssertFalse(anyAnimation.isFinished)
@@ -17,7 +17,7 @@ class AnyAnimationTests : XCTestCase {
     
     func testValues() {
         
-        let wrappedAnimation = SimulatedAnimation(
+        let wrappedAnimation = SimulationAnimation(
             function: SpringFunction(target: Vector2(repeating: 100)),
             value: CGPoint.zero,
             velocity: CGPoint.zero)
