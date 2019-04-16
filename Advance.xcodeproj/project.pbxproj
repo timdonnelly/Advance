@@ -58,6 +58,7 @@
 		2279B97A2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
 		2279B97B2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
 		2279B97C2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
+		2279B97D2266262B001EEAB0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279B94522650A18001EEAB0 /* MainMenu.xib */; };
 		22A4669F22063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
 		22A466A022063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
 		22A466A122063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
@@ -70,9 +71,6 @@
 		22A466A822063CDC00C0FEA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667722063CDC00C0FEA1 /* SimulationState.swift */; };
 		22A466A922063CDC00C0FEA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667722063CDC00C0FEA1 /* SimulationState.swift */; };
 		22A466AA22063CDC00C0FEA1 /* SimulationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667722063CDC00C0FEA1 /* SimulationState.swift */; };
-		22A466AB22063CDC00C0FEA1 /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667822063CDC00C0FEA1 /* Interpolatable.swift */; };
-		22A466AC22063CDC00C0FEA1 /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667822063CDC00C0FEA1 /* Interpolatable.swift */; };
-		22A466AD22063CDC00C0FEA1 /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667822063CDC00C0FEA1 /* Interpolatable.swift */; };
 		22A466AE22063CDC00C0FEA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667922063CDC00C0FEA1 /* Loop.swift */; };
 		22A466AF22063CDC00C0FEA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667922063CDC00C0FEA1 /* Loop.swift */; };
 		22A466B022063CDC00C0FEA1 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667922063CDC00C0FEA1 /* Loop.swift */; };
@@ -247,7 +245,6 @@
 		22A4667522063CDC00C0FEA1 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		22A4667622063CDC00C0FEA1 /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		22A4667722063CDC00C0FEA1 /* SimulationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulationState.swift; sourceTree = "<group>"; };
-		22A4667822063CDC00C0FEA1 /* Interpolatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpolatable.swift; sourceTree = "<group>"; };
 		22A4667922063CDC00C0FEA1 /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		22A4667A22063CDC00C0FEA1 /* Sink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sink.swift; sourceTree = "<group>"; };
 		22A4668022063CDC00C0FEA1 /* AnimationRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationRunner.swift; sourceTree = "<group>"; };
@@ -532,7 +529,6 @@
 				22A4667522063CDC00C0FEA1 /* Animation.swift */,
 				22A4667622063CDC00C0FEA1 /* Simulation.swift */,
 				22A4667722063CDC00C0FEA1 /* SimulationState.swift */,
-				22A4667822063CDC00C0FEA1 /* Interpolatable.swift */,
 				22A4667922063CDC00C0FEA1 /* Loop.swift */,
 				22A4667A22063CDC00C0FEA1 /* Sink.swift */,
 				22A4668022063CDC00C0FEA1 /* AnimationRunner.swift */,
@@ -885,6 +881,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2279B97D2266262B001EEAB0 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,7 +1045,6 @@
 				2279B97A2265A4CA001EEAB0 /* Spring.swift in Sources */,
 				22A466FF22063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466D822063CDD00C0FEA1 /* Double.swift in Sources */,
-				22A466AB22063CDC00C0FEA1 /* Interpolatable.swift in Sources */,
 				22A4670222063CDD00C0FEA1 /* AnyAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1086,7 +1082,6 @@
 				2279B97B2265A4CA001EEAB0 /* Spring.swift in Sources */,
 				22A4670022063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466D922063CDD00C0FEA1 /* Double.swift in Sources */,
-				22A466AC22063CDC00C0FEA1 /* Interpolatable.swift in Sources */,
 				22A4670322063CDD00C0FEA1 /* AnyAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1124,7 +1119,6 @@
 				2279B97C2265A4CA001EEAB0 /* Spring.swift in Sources */,
 				22A4670122063CDD00C0FEA1 /* SimulatedAnimation.swift in Sources */,
 				22A466DA22063CDD00C0FEA1 /* Double.swift in Sources */,
-				22A466AD22063CDC00C0FEA1 /* Interpolatable.swift in Sources */,
 				22A4670422063CDD00C0FEA1 /* AnyAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
