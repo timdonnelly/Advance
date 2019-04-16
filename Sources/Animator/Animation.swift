@@ -2,10 +2,16 @@
 /// time-advancable animation.
 ///
 /// Conforming types can be used to animate values.
-public protocol Animation: Advanceable {
+public protocol Animation {
     
     /// The type of value to be animated.
     associatedtype Value: VectorConvertible
+    
+    /// Advance the state of the receiver by the given time interval in seconds.
+    ///
+    /// - parameter elapsed: The length of time that the animation should
+    ///   be advanced by.
+    mutating func advance(by time: Double)
     
     /// Returns `true` if the animation has completed.
     var isFinished: Bool { get }

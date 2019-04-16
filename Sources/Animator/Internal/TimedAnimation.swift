@@ -55,11 +55,11 @@ struct TimedAnimation<Value>: Animation where Value: VectorConvertible {
         var progress = elapsed / duration
         progress = max(progress, 0.0)
         progress = min(progress, 1.0)
-        let adjustedProgress = timingFunction.solve(at: Double(progress), epsilon: 1.0 / Double(duration * 1000.0))
+        let adjustedProgress = timingFunction.solve(at: progress, epsilon: 1.0 / (duration * 1000.0))
         
-        value = from.interpolated(to: to, alpha: Double(adjustedProgress))
+        value = Value(vector: interpolate(from: from.vector, to: to.vector, alpha: adjustedProgress))
         
-        let vel = Double(1.0/time) * (value.vector - starting.vector)
+        let vel = (1.0/time) * (value.vector - starting.vector)
         velocity = Value(vector: vel)
     }
     
