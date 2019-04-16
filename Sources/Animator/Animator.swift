@@ -30,8 +30,8 @@ public final class Animator<Value> where Value: VectorConvertible {
         }
     }
     
-    public init(value: Value) {
-        state = .atRest(value: value)
+    public init(initialValue: Value) {
+        state = .atRest(value: initialValue)
         
         displayLink.onFrame = { [weak self] (frame) in
             self?.advance(by: frame.duration)

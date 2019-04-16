@@ -11,7 +11,7 @@ final class DecayViewController: DemoViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         
         draggableView = UIView()
-        centerAnimator = Animator(value: CGPoint.zero)
+        centerAnimator = Animator(initialValue: CGPoint.zero)
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
