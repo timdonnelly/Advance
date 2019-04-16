@@ -56,14 +56,12 @@ extension Animator {
     
     /// Starts a spring animation with the given properties, adopting the property's
     /// current velocity as `initialVelocity`.
-    @discardableResult
-    public func spring(to target: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) -> AnimationRunner<Value> {
-        return self.spring(to: target, initialVelocity: velocity, tension: tension, damping: damping, threshold: threshold)
+    public func spring(to target: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) {
+        self.spring(to: target, initialVelocity: velocity, tension: tension, damping: damping, threshold: threshold)
     }
     
     /// Starts a spring animation with the given properties.
-    @discardableResult
-    public func spring(to target: Value, initialVelocity: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) -> AnimationRunner<Value> {
+    public func spring(to target: Value, initialVelocity: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) {
         let animation = value
             .springAnimation(
                 to: target,
@@ -72,7 +70,7 @@ extension Animator {
                 damping: damping,
                 threshold: threshold)
         
-        return self.animate(with: animation)
+        self.animate(with: animation)
     }
 
 }
