@@ -7,11 +7,11 @@
 /// velocity).
 public class Simulator<Function> where Function: SimulationFunction {
     
-    public var onChange: ((Function.Value) -> Void)? = nil
+    public final var onChange: ((Function.Value) -> Void)? = nil
     
     private let displayLink: DisplayLink
     
-    public var function: Function {
+    public final var function: Function {
         didSet {
             simulation.use(function: function)
         }
