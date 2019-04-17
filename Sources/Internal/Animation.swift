@@ -1,7 +1,7 @@
 /// Interpolates between values over a specified duration.
 ///
 /// - parameter Value: The type of value to be animated.
-struct TimedAnimation<Value>: Animation where Value: VectorConvertible {
+struct Animation<Value: VectorConvertible> {
     
     /// The initial value at time 0.
     let from: Value

@@ -16,7 +16,7 @@ import Foundation
 /// up" to the outside time. It then uses linear interpolation to match the
 /// internal state to the required external time in order to return the most
 /// precise calculations.
-struct SimulationState<Value: VectorConvertible> {
+struct Simulation<Value: VectorConvertible> {
     
     // The internal time step. 0.008 == 120fps (double the typical screen refresh
     // rate). The math required to solve most functions is easy for modern
@@ -39,7 +39,7 @@ struct SimulationState<Value: VectorConvertible> {
     
     /// Returns `true` if the solver has converged and does not currently
     /// need to be advanced on each frame.
-    fileprivate (set) public var hasConverged: Bool = false
+    fileprivate (set) var hasConverged: Bool = false
     
     // The current state of the solver.
     private var current: (value: Value.VectorType, velocity: Value.VectorType)
@@ -53,9 +53,9 @@ struct SimulationState<Value: VectorConvertible> {
     /// - parameter function: The function that will drive the simulation.
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
-    init<T>(function: T, initialValue: Value.VectorType, initialVelocity: Value.VectorType = .zero) where T: SimulationFunction, T.Value == Value {
+    init<T>(function: T, initialValue: Value, initialVelocity: Value = .zero) where T: SimulationFunction, T.Value == Value {
         self.function = AnySimulationFunction(function)
-        current = (value: initialValue, velocity: initialVelocity)
+        current = (value: initialValue.vector, velocity: initialVelocity.vector)
         interpolated = current
         convergeIfPossible()
     }
@@ -128,22 +128,22 @@ struct SimulationState<Value: VectorConvertible> {
     }
     
     /// The current value.
-    var value: Value.VectorType {
-        get { return interpolated.value }
+    var value: Value {
+        get { return Value(vector: interpolated.value) }
         set {
-            interpolated.value = newValue
-            current.value = newValue
+            interpolated.value = newValue.vector
+            current.value = newValue.vector
             hasConverged = false
             convergeIfPossible()
         }
     }
     
     /// The current velocity.
-    var velocity: Value.VectorType {
-        get { return interpolated.velocity }
+    var velocity: Value {
+        get { return Value(vector: interpolated.velocity) }
         set {
-            interpolated.velocity = newValue
-            current.velocity = newValue
+            interpolated.velocity = newValue.vector
+            current.velocity = newValue.vector
             hasConverged = false
             convergeIfPossible()
         }
