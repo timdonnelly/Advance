@@ -17,9 +17,9 @@ public class Simulator<Function> where Function: SimulationFunction {
         }
     }
     
-    private var simulation: SimulationState<Function.Value> {
+    private var simulation: Simulation<Function.Value> {
         didSet {
-            lastNotifiedValue = Function.Value(vector: simulation.value)
+            lastNotifiedValue = simulation.value
             displayLink.isPaused = simulation.hasConverged
         }
     }
@@ -38,7 +38,7 @@ public class Simulator<Function> where Function: SimulationFunction {
     /// - parameter velocity: The initial velocity of the simulation.
     public init(function: Function, initialValue: Function.Value, initialVelocity: Function.Value = Function.Value.zero) {
         self.function = function
-        simulation = SimulationState(function: function, initialValue: initialValue.vector, initialVelocity: initialVelocity.vector)
+        simulation = Simulation(function: function, initialValue: initialValue, initialVelocity: initialVelocity)
         lastNotifiedValue = initialValue
         displayLink = DisplayLink()
         
@@ -51,14 +51,14 @@ public class Simulator<Function> where Function: SimulationFunction {
     
     /// The current value of the spring.
     public final var value: Function.Value {
-        get { return Function.Value(vector: simulation.value) }
-        set { simulation.value = newValue.vector }
+        get { return simulation.value }
+        set { simulation.value = newValue }
     }
     
     /// The current velocity of the simulation.
     public final var velocity: Function.Value {
-        get { return Function.Value(vector: simulation.velocity) }
-        set { simulation.velocity = newValue.vector }
+        get { return simulation.velocity }
+        set { simulation.velocity = newValue }
     }
 
 }
