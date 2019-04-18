@@ -1,4 +1,4 @@
-/// A specialized simulator that uses a spring function.
+/// Animates values using a spring function.
 ///
 /// ```
 /// let spring = Spring(value: CGPoint.zero)
@@ -7,38 +7,42 @@
 /// ```
 public final class Spring<Value: VectorConvertible> {
     
-    public var onChange: ((Value) -> Void)? {
-        get { return animator.onChange }
-        set { animator.onChange = newValue }
-    }
-    
-    private let animator: Animator<Value>
+    private let displayLink = DisplayLink()
     
     private var function: SpringFunction<Value> {
         didSet {
-            animator.simulate(using: function)
+            simulation.use(function: function)
+        }
+    }
+    
+    private var simulation: Simulation<Value> {
+        didSet {
+            displayLink.isPaused = simulation.hasConverged
+            if simulation.value != oldValue.value {
+                onChange?(simulation.value)
+            }
         }
     }
     
     /// Initializes a new spring converged at the given value, using default configuration options for the spring function.
     public init(initialValue: Value) {
         function = SpringFunction(target: initialValue)
-        animator = Animator(initialValue: initialValue)
+        simulation = Simulation(function: function, initialValue: initialValue)
+        displayLink.onFrame = { [weak self] frame in
+            self?.simulation.advance(by: frame.duration)
+        }
     }
     
+    public var onChange: ((Value) -> Void)?
+    
     public var value: Value {
-        get { return animator.value }
-        set {
-            animator.value = newValue
-            animator.simulate(using: function)
-        }
+        get { return simulation.value }
+        set { simulation.value = newValue }
     }
     
     public var velocity: Value {
-        get { return animator.velocity }
-        set {
-            animator.simulate(using: function, initialVelocity: newValue)
-        }
+        get { return simulation.velocity }
+        set { simulation.velocity = newValue }
     }
     
     /// The spring's target.
@@ -51,7 +55,7 @@ public final class Spring<Value: VectorConvertible> {
     /// - Parameter value: The new value that the spring will be reset to.
     public func reset(to value: Value) {
         function.target = value
-        animator.value = value
+        simulation.value = value
     }
     
     /// How strongly the spring will pull the value toward the target,
