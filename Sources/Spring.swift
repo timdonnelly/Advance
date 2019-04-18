@@ -63,7 +63,7 @@ public final class Spring<Value: VectorConvertible> {
     }
     
     /// The minimum distance from the target value (for each component) that the
-    /// current value can be in order to ender a converged (settled) state.
+    /// current value can be in order to enter a converged (settled) state.
     public var threshold: Double {
         get { return function.threshold }
         set { function.threshold = newValue }
