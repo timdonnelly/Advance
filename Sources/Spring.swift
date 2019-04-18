@@ -12,18 +12,18 @@ public final class Spring<Value: VectorConvertible> {
         set { simulator.onChange = newValue }
     }
     
-    private let simulator: Simulator<Value>
+    private let simulator: Animator<Value>
     
     private var function: SpringFunction<Value> {
         didSet {
-            simulator.use(function: function)
+            simulator.simulate(using: function)
         }
     }
     
     /// Initializes a new spring converged at the given value, using default configuration options for the spring function.
     public init(initialValue: Value) {
         function = SpringFunction(target: initialValue)
-        simulator = Simulator(function: function, initialValue: initialValue)
+        simulator = Animator(initialValue: initialValue)
     }
     
     public var value: Value {
@@ -33,7 +33,9 @@ public final class Spring<Value: VectorConvertible> {
     
     public var velocity: Value {
         get { return simulator.velocity }
-        set { simulator.velocity = newValue }
+        set {
+            simulator.simulate(using: function, initialVelocity: newValue)
+        }
     }
     
     /// The spring's target.
@@ -47,7 +49,6 @@ public final class Spring<Value: VectorConvertible> {
     public func reset(to value: Value) {
         function.target = value
         simulator.value = value
-        simulator.velocity = .zero
     }
     
     /// How strongly the spring will pull the value toward the target,

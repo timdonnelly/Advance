@@ -59,9 +59,6 @@
 		2281193722666F4700D7D3DB /* AnimatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281193622666F4700D7D3DB /* AnimatorState.swift */; };
 		2281193822666F4700D7D3DB /* AnimatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281193622666F4700D7D3DB /* AnimatorState.swift */; };
 		2281193922666F4700D7D3DB /* AnimatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281193622666F4700D7D3DB /* AnimatorState.swift */; };
-		22A4669F22063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
-		22A466A022063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
-		22A466A122063CDC00C0FEA1 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667422063CDC00C0FEA1 /* Simulator.swift */; };
 		22A466A522063CDC00C0FEA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667622063CDC00C0FEA1 /* Simulation.swift */; };
 		22A466A622063CDC00C0FEA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667622063CDC00C0FEA1 /* Simulation.swift */; };
 		22A466A722063CDC00C0FEA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667622063CDC00C0FEA1 /* Simulation.swift */; };
@@ -187,7 +184,6 @@
 		22A4664622063B0400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4665622063B4B00C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4666322063B6400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22A4667422063CDC00C0FEA1 /* Simulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
 		22A4667622063CDC00C0FEA1 /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		22A4667922063CDC00C0FEA1 /* DisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
 		22A4668D22063CDC00C0FEA1 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
@@ -464,7 +460,6 @@
 			children = (
 				2236A0D7226642280026E213 /* Internal */,
 				2279B9792265A4CA001EEAB0 /* Spring.swift */,
-				22A4667422063CDC00C0FEA1 /* Simulator.swift */,
 				22A4669122063CDC00C0FEA1 /* SimulationFunction.swift */,
 				22A4669322063CDC00C0FEA1 /* DecayFunction.swift */,
 				22A4669422063CDC00C0FEA1 /* SpringFunction.swift */,
@@ -896,7 +891,6 @@
 				22A466AE22063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E422063CDD00C0FEA1 /* Animator.swift in Sources */,
 				22A466F622063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
-				22A4669F22063CDC00C0FEA1 /* Simulator.swift in Sources */,
 				22A4670822063CDD00C0FEA1 /* UnitBezier.swift in Sources */,
 				2236A0DF226648060026E213 /* Math.swift in Sources */,
 				22A466F322063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
@@ -917,7 +911,6 @@
 				22A466AF22063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E522063CDD00C0FEA1 /* Animator.swift in Sources */,
 				22A466F722063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
-				22A466A022063CDC00C0FEA1 /* Simulator.swift in Sources */,
 				22A4670922063CDD00C0FEA1 /* UnitBezier.swift in Sources */,
 				2236A0E0226648060026E213 /* Math.swift in Sources */,
 				22A466F422063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
@@ -938,7 +931,6 @@
 				22A466B022063CDC00C0FEA1 /* DisplayLink.swift in Sources */,
 				22A466E622063CDD00C0FEA1 /* Animator.swift in Sources */,
 				22A466F822063CDD00C0FEA1 /* SpringFunction.swift in Sources */,
-				22A466A122063CDC00C0FEA1 /* Simulator.swift in Sources */,
 				22A4670A22063CDD00C0FEA1 /* UnitBezier.swift in Sources */,
 				2236A0E1226648060026E213 /* Math.swift in Sources */,
 				22A466F522063CDD00C0FEA1 /* DecayFunction.swift in Sources */,
