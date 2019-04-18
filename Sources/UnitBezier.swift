@@ -25,17 +25,7 @@ public struct UnitBezier: Equatable {
     /// - parameter epsilon: The required precision of the result (where `x * epsilon` is the maximum time segment to be evaluated).
     /// - returns: The solved `y` value.
     public func solve(x: Double, epsilon: Double) -> Double {
-        return solver.solve(x: x, eps: epsilon)
-    }
-    
-    /// Equatable.
-    public static func ==(lhs: UnitBezier, rhs: UnitBezier) -> Bool {
-        return lhs.first == rhs.first
-            && lhs.second == rhs.second
-    }
-    
-    fileprivate var solver: UnitBezierSolver {
-        return UnitBezierSolver(p1x: first.x, p1y: first.y, p2x: second.x, p2y: second.y)
+        return UnitBezierSolver(p1x: first.x, p1y: first.y, p2x: second.x, p2y: second.y).solve(x: x, eps: epsilon)
     }
 
 }
@@ -51,11 +41,7 @@ extension UnitBezier {
             self.x = x
             self.y = y
         }
-        
-        public static func ==(lhs: ControlPoint, rhs: ControlPoint) -> Bool {
-            return lhs.x == rhs.x
-                && lhs.y == rhs.y
-        }
+
     }
     
 }

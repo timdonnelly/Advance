@@ -60,7 +60,7 @@ public final class Animator<Value: VectorConvertible> {
     }
     
     /// Animates the property using the given animation.
-    public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
+    public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = .swiftOut) {
         state.animate(to: finalValue, duration: duration, timingFunction: timingFunction)
     }
 
