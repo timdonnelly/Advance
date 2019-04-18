@@ -177,10 +177,7 @@ extension BrowserItem: UIGestureRecognizerDelegate {
         }
         return true
     }
-    
-    static func ==(lhs: BrowserItem, rhs: BrowserItem) -> Bool {
-        return lhs === rhs
-    }
+
 }
 
 

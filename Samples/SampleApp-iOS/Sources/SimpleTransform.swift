@@ -32,11 +32,7 @@ extension SimpleTransform: VectorConvertible {
         scale = CGFloat(vector.x)
         rotation = CGFloat(vector.y)
     }
-    
-    static func ==(lhs: SimpleTransform, rhs: SimpleTransform) -> Bool {
-        return lhs.scale == rhs.scale
-            && lhs.rotation == rhs.rotation
-    }
+
 }
 
 

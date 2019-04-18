@@ -29,7 +29,7 @@ struct Animation<Value: VectorConvertible> {
     /// - parameter to: The value at the end of the animation.
     /// - parameter duration: How long (in seconds) the animation should last.
     /// - parameter timingFunction: The timing function to use.
-    init(from: Value, to: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
+    init(from: Value, to: Value, duration: Double, timingFunction: TimingFunction) {
         self.from = from
         self.to = to
         self.duration = duration
