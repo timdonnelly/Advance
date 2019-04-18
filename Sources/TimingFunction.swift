@@ -82,7 +82,7 @@ extension CAMediaTimingFunction: TimingFunction {
     }
     
     private var controlPoints: [(x: Double, y: Double)] {
-        return (0...3).lazy.map { (index) in
+        return (0...3).map { (index) in
             
             var rawValues: [Float] = [0.0, 0.0]
             getControlPoint(at: index, values: &rawValues)
