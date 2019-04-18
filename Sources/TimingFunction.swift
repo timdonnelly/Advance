@@ -1,11 +1,12 @@
 import Foundation
 import CoreGraphics
 
-/// Conforming types can be used to convert linear input time (`0.0 -> 1.0`) to transformed output time (also `0.0 -> 1.0`).
+/// Timing functions are used to convert linear input time (`0.0 -> 1.0`) to transformed output time (also `0.0 -> 1.0`).
 public enum TimingFunction {
     case linear
     case bezier(UnitBezier)
     
+    /// Initializes a bezier timing function with the given control points.
     public init(x1: Double, y1: Double, x2: Double, y2: Double) {
         self = .bezier(UnitBezier(firstX: x1, firstY: y1, secondX: x2, secondY: y2))
     }
@@ -55,6 +56,7 @@ import QuartzCore
 
 extension TimingFunction {
     
+    /// Initializes a timing function with a unit bezier derived from the given Core Animation timing function.
     public init(coreAnimationTimingFunction: CAMediaTimingFunction) {
         let controlPoints: [(x: Double, y: Double)] = (0...3).map { (index) in
             var rawValues: [Float] = [0.0, 0.0]
