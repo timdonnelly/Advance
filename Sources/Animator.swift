@@ -58,24 +58,17 @@ public final class Animator<Value: VectorConvertible> {
     
     /// Animates the property using the given animation.
     public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = UnitBezier.swiftOut) {
-        let animation = Animation(from: value, to: finalValue, duration: duration, timingFunction: timingFunction)
-        state = .animating(animation: animation)
+        state.animate(to: finalValue, duration: duration, timingFunction: timingFunction)
     }
 
     /// Animates the property using the given animation.
-    public func simulate<T>(with function: T, initialValue: T.Value, initialVelocity: T.Value) where T: SimulationFunction, T.Value == Value {
-
-        let simulation = Simulation(
-            function: function,
-            initialValue: initialValue,
-            initialVelocity: initialVelocity)
-
-        state = .simulating(simulation: simulation)
+    public func simulate<T>(using function: T, initialVelocity: T.Value) where T: SimulationFunction, T.Value == Value {
+        state.simulate(using: function, initialVelocity: initialVelocity)
     }
     
     /// Animates the property using the given animation.
-    public func simulate<T>(with function: T) where T: SimulationFunction, T.Value == Value {
-        self.simulate(with: function, initialValue: self.value, initialVelocity: self.velocity)
+    public func simulate<T>(using function: T) where T: SimulationFunction, T.Value == Value {
+        state.simulate(using: function)
     }
 
     public func cancelRunningAnimation() {
@@ -100,7 +93,7 @@ extension Animator {
         function.damping = damping
         function.threshold = threshold
 
-        simulate(with: function, initialValue: self.value, initialVelocity: initialVelocity)
+        simulate(using: function, initialVelocity: initialVelocity)
     }
 
 }
@@ -115,7 +108,7 @@ extension Animator {
     /// Starts a decay animation with the given initial velocity.
     public func decay(initialVelocity: Value, drag: Double = 3.0, threshold: Double = 0.1) {
         let function = DecayFunction<Value>(threshold: threshold, drag: drag)
-        simulate(with: function, initialValue: value, initialVelocity: initialVelocity)
+        simulate(using: function, initialVelocity: initialVelocity)
     }
 }
 

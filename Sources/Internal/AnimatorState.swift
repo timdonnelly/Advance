@@ -49,6 +49,33 @@ extension Animator {
             }
         }
         
+        mutating func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction) {
+            let animation = Animation(
+                from: self.value,
+                to: finalValue,
+                duration: duration,
+                timingFunction: timingFunction)
+            self = .animating(animation: animation)
+        }
+        
+        mutating func simulate<T>(using function: T, initialVelocity: Value) where T: SimulationFunction, T.Value == Value {
+            let simulation = Simulation(
+                function: function,
+                initialValue: self.value,
+                initialVelocity: initialVelocity)
+            
+            self = .simulating(simulation: simulation)
+        }
+        
+        mutating func simulate<T>(using function: T) where T: SimulationFunction, T.Value == Value {
+            switch self {
+            case .atRest, .animating:
+                self.simulate(using: function, initialVelocity: self.velocity)
+            case .simulating(var simulation):
+                simulation.use(function: function)
+                self = .simulating(simulation: simulation)
+            }
+        }
     }
     
 }
