@@ -16,18 +16,18 @@
 		2279B8BD2264EA89001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4665622063B4B00C0FEA1 /* Advance.framework */; };
 		2279B8E02264EB73001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4666322063B6400C0FEA1 /* Advance.framework */; };
 		2279B8FF2264EC15001EEAB0 /* Advance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4664622063B0400C0FEA1 /* Advance.framework */; };
-		2279B91B2264EE31001EEAB0 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */; };
-		2279B91C2264EE31001EEAB0 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */; };
+		2279B91B2264EE31001EEAB0 /* AnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* AnimationTests.swift */; };
+		2279B91C2264EE31001EEAB0 /* TimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9142264EE02001EEAB0 /* TimingFunctionTests.swift */; };
 		2279B91D2264EE31001EEAB0 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */; };
 		2279B91E2264EE31001EEAB0 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */; };
 		2279B9222264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
-		2279B9232264EE31001EEAB0 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */; };
-		2279B9242264EE31001EEAB0 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */; };
+		2279B9232264EE31001EEAB0 /* AnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* AnimationTests.swift */; };
+		2279B9242264EE31001EEAB0 /* TimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9142264EE02001EEAB0 /* TimingFunctionTests.swift */; };
 		2279B9252264EE31001EEAB0 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */; };
 		2279B9262264EE31001EEAB0 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */; };
 		2279B92A2264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
-		2279B92B2264EE32001EEAB0 /* BasicAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */; };
-		2279B92C2264EE32001EEAB0 /* CAMediaTimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */; };
+		2279B92B2264EE32001EEAB0 /* AnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9132264EE02001EEAB0 /* AnimationTests.swift */; };
+		2279B92C2264EE32001EEAB0 /* TimingFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9142264EE02001EEAB0 /* TimingFunctionTests.swift */; };
 		2279B92D2264EE32001EEAB0 /* UnitBezierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */; };
 		2279B92E2264EE32001EEAB0 /* DisplayLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */; };
 		2279B9322264EE32001EEAB0 /* VectorConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */; };
@@ -146,8 +146,8 @@
 		2279B90F2264EE02001EEAB0 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		2279B9102264EE02001EEAB0 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		2279B9112264EE02001EEAB0 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
-		2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAnimationTests.swift; sourceTree = "<group>"; };
-		2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAMediaTimingFunctionTests.swift; sourceTree = "<group>"; };
+		2279B9132264EE02001EEAB0 /* AnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTests.swift; sourceTree = "<group>"; };
+		2279B9142264EE02001EEAB0 /* TimingFunctionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingFunctionTests.swift; sourceTree = "<group>"; };
 		2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitBezierTests.swift; sourceTree = "<group>"; };
 		2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLinkTests.swift; sourceTree = "<group>"; };
 		2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorConvenienceTests.swift; sourceTree = "<group>"; };
@@ -348,8 +348,8 @@
 		2279B9122264EE02001EEAB0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2279B9132264EE02001EEAB0 /* BasicAnimationTests.swift */,
-				2279B9142264EE02001EEAB0 /* CAMediaTimingFunctionTests.swift */,
+				2279B9132264EE02001EEAB0 /* AnimationTests.swift */,
+				2279B9142264EE02001EEAB0 /* TimingFunctionTests.swift */,
 				2279B9152264EE02001EEAB0 /* UnitBezierTests.swift */,
 				2279B9162264EE02001EEAB0 /* DisplayLinkTests.swift */,
 				2279B91A2264EE02001EEAB0 /* VectorConvenienceTests.swift */,
@@ -847,8 +847,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2279B91C2264EE31001EEAB0 /* CAMediaTimingFunctionTests.swift in Sources */,
-				2279B91B2264EE31001EEAB0 /* BasicAnimationTests.swift in Sources */,
+				2279B91C2264EE31001EEAB0 /* TimingFunctionTests.swift in Sources */,
+				2279B91B2264EE31001EEAB0 /* AnimationTests.swift in Sources */,
 				2279B9222264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */,
 				2279B91D2264EE31001EEAB0 /* UnitBezierTests.swift in Sources */,
 				2279B91E2264EE31001EEAB0 /* DisplayLinkTests.swift in Sources */,
@@ -859,8 +859,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2279B9242264EE31001EEAB0 /* CAMediaTimingFunctionTests.swift in Sources */,
-				2279B9232264EE31001EEAB0 /* BasicAnimationTests.swift in Sources */,
+				2279B9242264EE31001EEAB0 /* TimingFunctionTests.swift in Sources */,
+				2279B9232264EE31001EEAB0 /* AnimationTests.swift in Sources */,
 				2279B92A2264EE31001EEAB0 /* VectorConvenienceTests.swift in Sources */,
 				2279B9252264EE31001EEAB0 /* UnitBezierTests.swift in Sources */,
 				2279B9262264EE31001EEAB0 /* DisplayLinkTests.swift in Sources */,
@@ -871,8 +871,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2279B92C2264EE32001EEAB0 /* CAMediaTimingFunctionTests.swift in Sources */,
-				2279B92B2264EE32001EEAB0 /* BasicAnimationTests.swift in Sources */,
+				2279B92C2264EE32001EEAB0 /* TimingFunctionTests.swift in Sources */,
+				2279B92B2264EE32001EEAB0 /* AnimationTests.swift in Sources */,
 				2279B9322264EE32001EEAB0 /* VectorConvenienceTests.swift in Sources */,
 				2279B92D2264EE32001EEAB0 /* UnitBezierTests.swift in Sources */,
 				2279B92E2264EE32001EEAB0 /* DisplayLinkTests.swift in Sources */,

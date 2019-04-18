@@ -2,7 +2,7 @@ import XCTest
 @testable import Advance
 
 
-class CAMediaTimingFunctionTests : XCTestCase {
+class TimingFunctionTests : XCTestCase {
     func testConversion() {
         let p1x: Float = 0.42
         let p1y: Float = 0.0
