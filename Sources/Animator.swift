@@ -83,43 +83,6 @@ public final class Animator<Value: VectorConvertible> {
 
 
 extension Animator {
-
-    /// Starts a spring animation with the given properties, adopting the property's
-    /// current velocity as `initialVelocity`.
-    public func spring(to target: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) {
-        self.spring(to: target, initialVelocity: velocity, tension: tension, damping: damping, threshold: threshold)
-    }
-
-    /// Starts a spring animation with the given properties.
-    public func spring(to target: Value, initialVelocity: Value, tension: Double = 30.0, damping: Double = 5.0, threshold: Double = 0.1) {
-        var function = SpringFunction(target: target)
-        function.tension = tension
-        function.damping = damping
-        function.threshold = threshold
-
-        simulate(using: function, initialVelocity: initialVelocity)
-    }
-
-}
-
-extension Animator {
-
-    /// Starts a decay animation with the current velocity of the property animator.
-    public func decay(drag: Double = 3.0, threshold: Double = 0.1) {
-        decay(initialVelocity: velocity, drag: drag, threshold: threshold)
-    }
-
-    /// Starts a decay animation with the given initial velocity.
-    public func decay(initialVelocity: Value, drag: Double = 3.0, threshold: Double = 0.1) {
-        let function = DecayFunction<Value>(threshold: threshold, drag: drag)
-        simulate(using: function, initialVelocity: initialVelocity)
-    }
-}
-
-
-
-
-extension Animator {
     
     fileprivate enum State {
         case atRest(value: Value)
