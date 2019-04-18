@@ -30,3 +30,18 @@ public struct DecayFunction<T>: SimulationFunction where T: VectorConvertible {
     }
     
 }
+
+
+extension Animator {
+    
+    /// Starts a decay animation with the current velocity of the property animator.
+    public func decay(drag: Double = 3.0, threshold: Double = 0.1) {
+        decay(initialVelocity: velocity, drag: drag, threshold: threshold)
+    }
+    
+    /// Starts a decay animation with the given initial velocity.
+    public func decay(initialVelocity: Value, drag: Double = 3.0, threshold: Double = 0.1) {
+        let function = DecayFunction<Value>(threshold: threshold, drag: drag)
+        simulate(using: function, initialVelocity: initialVelocity)
+    }
+}
