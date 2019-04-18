@@ -2,7 +2,7 @@ import XCTest
 @testable import Advance
 
 
-class BasicAnimationTests: XCTestCase {
+class AnimationTests: XCTestCase {
     
     let animation = Animation(from: Double(0.0), to: Double(10.0), duration: 2.0, timingFunction: .linear)
 
