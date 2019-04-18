@@ -1,7 +1,4 @@
-import Foundation
-
-
-/// `SimulationState` simulates changes to a value over time, based on
+/// `Simulation` simulates changes to a value over time, based on
 /// a function that calculates acceleration after each time step.
 ///
 /// [The RK4 method](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods) 

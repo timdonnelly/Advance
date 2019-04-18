@@ -8,33 +8,36 @@
 public final class Spring<Value: VectorConvertible> {
     
     public var onChange: ((Value) -> Void)? {
-        get { return simulator.onChange }
-        set { simulator.onChange = newValue }
+        get { return animator.onChange }
+        set { animator.onChange = newValue }
     }
     
-    private let simulator: Animator<Value>
+    private let animator: Animator<Value>
     
     private var function: SpringFunction<Value> {
         didSet {
-            simulator.simulate(using: function)
+            animator.simulate(using: function)
         }
     }
     
     /// Initializes a new spring converged at the given value, using default configuration options for the spring function.
     public init(initialValue: Value) {
         function = SpringFunction(target: initialValue)
-        simulator = Animator(initialValue: initialValue)
+        animator = Animator(initialValue: initialValue)
     }
     
     public var value: Value {
-        get { return simulator.value }
-        set { simulator.value = newValue }
+        get { return animator.value }
+        set {
+            animator.value = newValue
+            animator.simulate(using: function)
+        }
     }
     
     public var velocity: Value {
-        get { return simulator.velocity }
+        get { return animator.velocity }
         set {
-            simulator.simulate(using: function, initialVelocity: newValue)
+            animator.simulate(using: function, initialVelocity: newValue)
         }
     }
     
@@ -48,7 +51,7 @@ public final class Spring<Value: VectorConvertible> {
     /// - Parameter value: The new value that the spring will be reset to.
     public func reset(to value: Value) {
         function.target = value
-        simulator.value = value
+        animator.value = value
     }
     
     /// How strongly the spring will pull the value toward the target,
