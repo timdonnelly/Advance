@@ -3,7 +3,8 @@
 /// ```
 /// let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 ///
-/// let sizeAnimator = Animator(boundTo: view, keyPath: \.bounds.size)
+/// let sizeAnimator = Animator(initialValue: view.bounds.size)
+/// sizeAnimator.onChange = { view.bounds.size = $0 }
 ///
 /// /// Spring physics will move the view's size to the new value.
 /// sizeAnimator.spring(to: CGSize(width: 300, height: 300))
@@ -17,6 +18,7 @@
 ///
 public final class Animator<Value: VectorConvertible> {
     
+    /// Called every time the animator's `value` changes.
     public var onChange: ((Value) -> Void)? = nil
     
     private let displayLink = DisplayLink()
@@ -30,6 +32,7 @@ public final class Animator<Value: VectorConvertible> {
         }
     }
     
+    /// Initializes a new animator with the given value.
     public init(initialValue: Value) {
         state = .atRest(value: initialValue)
         
@@ -61,16 +64,17 @@ public final class Animator<Value: VectorConvertible> {
         state.animate(to: finalValue, duration: duration, timingFunction: timingFunction)
     }
 
-    /// Animates the property using the given animation.
+    /// Animates the property using the given simulation function.
     public func simulate<T>(using function: T, initialVelocity: T.Value) where T: SimulationFunction, T.Value == Value {
         state.simulate(using: function, initialVelocity: initialVelocity)
     }
     
-    /// Animates the property using the given animation.
+    /// Animates the property using the given simulation function.
     public func simulate<T>(using function: T) where T: SimulationFunction, T.Value == Value {
         state.simulate(using: function)
     }
 
+    /// Removes any active animation, freezing the animator at the current value.
     public func cancelRunningAnimation() {
         state = .atRest(value: state.value)
     }
