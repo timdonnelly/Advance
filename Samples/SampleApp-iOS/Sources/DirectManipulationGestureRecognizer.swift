@@ -253,8 +253,9 @@ public final class DirectManipulationGestureRecognizer: UIGestureRecognizer {
 }
 
 
-private extension DirectManipulationGestureRecognizer {
-    struct GestureState {
+extension DirectManipulationGestureRecognizer {
+
+    fileprivate struct GestureState {
         var firstTouchState: TouchState = TouchState()
         var secondTouchState: TouchState = TouchState()
         
@@ -290,7 +291,7 @@ private extension DirectManipulationGestureRecognizer {
         }
     }
     
-    struct TouchState {
+    fileprivate struct TouchState {
         var location: CGPoint = CGPoint.zero
         var phase: UITouch.Phase = UITouch.Phase.began
         
@@ -315,13 +316,13 @@ private extension DirectManipulationGestureRecognizer {
     }
 }
 
-private extension CGPoint {
+extension CGPoint {
     
-    var angle: CGFloat {
+    fileprivate var angle: CGFloat {
         return atan2(y, x);
     }
     
-    var distance: CGFloat {
+    fileprivate var distance: CGFloat {
         return sqrt((x*x) + (y*y))
     }
     

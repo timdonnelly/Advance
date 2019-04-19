@@ -10,7 +10,7 @@ import CoreVideo
 /// An object that produces an observable sequence of frames that are synchronized
 /// to the device's display refresh rate. Provides a layer of abstraction to allow
 /// for a consistent API between platforms.
-internal final class DisplayLink {
+final class DisplayLink {
 
     private let driver: Driver = Driver()
     
