@@ -56,6 +56,8 @@
 		2279B97B2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
 		2279B97C2265A4CA001EEAB0 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279B9792265A4CA001EEAB0 /* Spring.swift */; };
 		2279B97D2266262B001EEAB0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279B94522650A18001EEAB0 /* MainMenu.xib */; };
+		22881EEC226A430A00309FEF /* Advance.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22A4665622063B4B00C0FEA1 /* Advance.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22881EEE226A432000309FEF /* Advance.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22A4666322063B6400C0FEA1 /* Advance.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22A466A522063CDC00C0FEA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667622063CDC00C0FEA1 /* Simulation.swift */; };
 		22A466A622063CDC00C0FEA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667622063CDC00C0FEA1 /* Simulation.swift */; };
 		22A466A722063CDC00C0FEA1 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4667622063CDC00C0FEA1 /* Simulation.swift */; };
@@ -126,8 +128,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				22881EEC226A430A00309FEF /* Advance.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22881EED226A431000309FEF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				22881EEE226A432000309FEF /* Advance.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -527,6 +540,7 @@
 				2279B8372264E453001EEAB0 /* Sources */,
 				2279B8382264E453001EEAB0 /* Frameworks */,
 				2279B8392264E453001EEAB0 /* Resources */,
+				22881EED226A431000309FEF /* CopyFiles */,
 			);
 			buildRules = (
 			);
