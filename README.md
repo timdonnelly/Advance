@@ -2,38 +2,47 @@
 
 Physics-based animations for iOS, tvOS, and macOS.
 
-## Usage
-
-In contrast to standard `UIView` animations, Advance animations are applied on every frame (using `CADisplayLink` on iOS).
-
 
 ```swift
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-/// Springs are... springs. That's all they do.
+// Springs animate changes to a value
 let spring = Spring(initialValue: view.center)
 
+// The `onChange` closure will be called every time the spring updates
 spring.onChange = { [view] newCenter in
     view.center = newCenter
 }
 
-/// The view's center will realistically animate to the new value.
+/// The view's center will realistically animate to the new target value.
 spring.target = CGPoint(x: 300, y: 200)
 ```
 
 
-## Spring
+## Usage
 
-`Spring` covers the common case in which a value should be driven by spring physics. It implements a specific
-`Simulator` subclass (using a `SpringFunction`) that provides convenient API when working with a spring.
 
-Convenience extensions provide full access to the underlying spring simulation (target, tension, damping, velocity, etc) at any time: even while the simulation is in progress.
+In contrast to standard `UIView` animations, Advance animations are applied on every frame (using `CADisplayLink` on iOS/tvOS, and `CVDisplayLink` on macOS).
+
+
+### `Spring`
+
+`Spring` instances animate changes to a value over time, using spring physics.
 
 
 ```swift
 let spring = Spring(initialValue: 0.0)
-spring.onChange = { [view] newAlpha in view.alpha = newAlpha }
+spring.onChange = { [view] newAlpha in 
+    view.alpha = newAlpha 
+}
+
+// Off it goes!
 spring.target = 0.5
+```
+
+#### Configuring a spring
+
+```swift
 
 /// Spring values can be adjusted at any time.
 spring.tension = 30.0 /// The strength of the spring
@@ -49,31 +58,12 @@ spring.reset(to: 0.5)
 
 ```
 
-## Simulator
 
-`Simulator` uses a physics-based simulation to realistically model changes to a value over time. It is the superclass of `Spring`, and may be used to power any `SimulationFunction` implementation, inclusing custom types.
-
-A `Simulator` instance provides mutable access to the `function` property (containing the underlying function that is driving the simulation), along with the current state of the simulation (value and velocity).
-
-Simulations are powered by a **Simulation Function**. These functions compute the forces that should effect the value for every frame, and control *convergence* (or: when the simulation should come to rest). The included simulation functions are:
-- `SpringFunction`
-- `DecayFunction`
-
-```swift
-let function = DecayFunction(drag: 20.0)
-let simulator = Simulator(function: function, initialValue: CGPoint.zero)
-simulator.onChange = { value in
-    /// Apply the new value.
-}
-
-simulator.velocity = CGPoint(x: 100, y: 100)
-```
-
-## Animator
+### `Animator`
 
 `Animator` allows for more flexibility in the types of animation that can be performed, but gives up some convenience
 in order to do so. Specifically, animators allow for *any* type of animation or simulation to be performed for a single
-animator, but they do not allow access to the underlying physics state.
+value.
 
 ```swift
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -85,31 +75,65 @@ sizeAnimator.onChange = { [view] newSize in
     view.bounds.size = newSize
 }
 
-/// Spring physics will move the view's size to the new value.
+/// A simple timed animation
+sizeAnimator.animate(to: CGSize(width: 123, height: 456), duration: 0.25, timingFunction: .easeInOut)
+
+/// Some time in the future (before the previous timed animation was complete)...
+
+/// Spring physics will move the view's size to the new value, maintaining the velocity from the timed animation.
 sizeAnimator.spring(to: CGSize(width: 300, height: 300))
 
-/// Some time in the future...
+/// Some time in the future (before the previous spring animation was complete)...
 
-/// The value will keep the same velocity that it had from the preceeding
+/// The value will keep the same velocity that it had from the preceeding spring
 /// animation, and a decay function will slowly bring movement to a stop.
 sizeAnimator.decay(drag: 2.0)
 
-/// or...
-
-sizeAnimator.spring(to: CGSize(width: 100, height: 500))
-
 ```
 
-##### Timing Functions
+Animators support two fundamentally different types of animations: timed and simulated.
 
-Basic animations use a timing function to control the pacing of the value's change over the course of the animation. Timing functions are types conforming to the `TimingFunction` protocol. Advance includes the following timing function implementations.
+#### Timed animations
 
-- `LinearTimingFunction` 
-- `UnitBezier`
-- `CAMediaTimingFunction` (`TimingFunction` conformance via an extension)
+Timed animations are, well, timed: they have a fixed duration, and they animate to a final value in a predictable manner.
 
+```swift
+animator.animate(to: CGSize(width: 123, height: 456), duration: 0.25, timingFunction: .easeInOut)
+```
 
+`TimingFunction` described the pacing of a timed animation. 
 
+`TimingFunction` comes with a standard set of functions:
+
+```swift
+TimingFunction.linear // No easing
+TimingFunction.easeIn
+TimingFunction.easeOut
+TimingFunction.easeInOut
+TimingFunction.swiftOut // Similar to Material Design's default curve
+```
+
+Custom timing functions can be expressed as unit beziers ([described here](https://www.w3.org/TR/css-easing-1/#cubic-bzier-timing-function)).
+
+```swift
+let customTimingFunction = TimingFunction(x1: 0.1, y1: 0.2, x2: 0.6, y2: 0.0)
+```
+
+#### Simulated animations
+
+Simulated animations use a *simulation function* to power a physics-based transition. Simulation functions are types conforming to the `SimulationFunction` protocol.
+
+Simulated animations may be started using two different methods:
+
+```swift
+// Begins animating with the custom simulation function, maintaining the previous velocity of the animator.
+animator.simulate(using: MyCustomFunction())
+
+// or...
+
+// Begins animating with the custom simulation function, imparting the specified velocity into the simulation.
+animator.simulate(using: DecayFunction(), initialVelocity: dragGestureRecognizer.velocity(in: view))
+```
 
 ### Animating Custom Types
 

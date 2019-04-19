@@ -50,7 +50,7 @@ final class DecayViewController: DemoViewController {
 
     override func didLeaveFullScreen() {
         super.didLeaveFullScreen()
-        centerAnimator.spring(to: CGPoint(x: view.bounds.midX, y: view.bounds.midY))
+        centerAnimator.simulate(using: SpringFunction(target: CGPoint(x: view.bounds.midX, y: view.bounds.midY)))
     }
     
     
@@ -66,7 +66,7 @@ final class DecayViewController: DemoViewController {
             centerAnimator.value.y += translation.y
         case .ended, .cancelled:
             let velocity = recognizer.velocity(in: contentView)
-            centerAnimator.decay(initialVelocity: velocity)
+            centerAnimator.simulate(using: DecayFunction(), initialVelocity: velocity)
         default:
             break
         }
@@ -76,7 +76,7 @@ final class DecayViewController: DemoViewController {
     @objc private func tapped(recognizer: UITapGestureRecognizer) {
         let tapLocation = recognizer.location(in: contentView)
         guard !draggableView.frame.contains(tapLocation) else { return }
-        centerAnimator.spring(to: tapLocation)
+        centerAnimator.simulate(using: SpringFunction(target: tapLocation))
     }
     
 }
