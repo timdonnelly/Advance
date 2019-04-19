@@ -1,3 +1,5 @@
+import Foundation
+
 /// Manages the application of animations to a value.
 ///
 /// ```
@@ -19,12 +21,17 @@
 public final class Animator<Value: VectorConvertible> {
     
     /// Called every time the animator's `value` changes.
-    public var onChange: ((Value) -> Void)? = nil
+    public var onChange: ((Value) -> Void)? = nil {
+        didSet {
+            dispatchPrecondition(condition: .onQueue(.main))
+        }
+    }
     
     private let displayLink = DisplayLink()
     
     private var state: State {
         didSet {
+            dispatchPrecondition(condition: .onQueue(.main))
             displayLink.isPaused = state.isAtRest
             if state.value != oldValue.value {
                 onChange?(state.value)
@@ -34,48 +41,56 @@ public final class Animator<Value: VectorConvertible> {
     
     /// Initializes a new animator with the given value.
     public init(initialValue: Value) {
+        dispatchPrecondition(condition: .onQueue(.main))
         state = .atRest(value: initialValue)
-        
         displayLink.onFrame = { [weak self] (frame) in
             self?.advance(by: frame.duration)
         }
     }
     
     private func advance(by time: Double) {
+        dispatchPrecondition(condition: .onQueue(.main))
         state.advance(by: time)
     }
     
     /// assigning to this value will remove any running animation.
     public var value: Value {
         get {
+            dispatchPrecondition(condition: .onQueue(.main))
             return state.value
         }
         set {
+            dispatchPrecondition(condition: .onQueue(.main))
             state = .atRest(value: newValue)
         }
     }
     
     public var velocity: Value {
+        dispatchPrecondition(condition: .onQueue(.main))
         return state.velocity
     }
     
     /// Animates the property using the given animation.
     public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = .swiftOut) {
+        dispatchPrecondition(condition: .onQueue(.main))
         state.animate(to: finalValue, duration: duration, timingFunction: timingFunction)
     }
 
     /// Animates the property using the given simulation function.
     public func simulate<T>(using function: T, initialVelocity: T.Value) where T: SimulationFunction, T.Value == Value {
+        dispatchPrecondition(condition: .onQueue(.main))
         state.simulate(using: function, initialVelocity: initialVelocity)
     }
     
     /// Animates the property using the given simulation function.
     public func simulate<T>(using function: T) where T: SimulationFunction, T.Value == Value {
+        dispatchPrecondition(condition: .onQueue(.main))
         state.simulate(using: function)
     }
 
     /// Removes any active animation, freezing the animator at the current value.
     public func cancelRunningAnimation() {
+        dispatchPrecondition(condition: .onQueue(.main))
         state = .atRest(value: state.value)
     }
 

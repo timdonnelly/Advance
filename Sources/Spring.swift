@@ -1,3 +1,5 @@
+import Foundation
+
 /// Animates values using a spring function.
 ///
 /// ```
@@ -13,6 +15,7 @@ public final class Spring<Value: VectorConvertible> {
     
     /// Initializes a new spring converged at the given value, using default configuration options for the spring function.
     public init(initialValue: Value) {
+        dispatchPrecondition(condition: .onQueue(.main))
         function = SpringFunction(target: initialValue)
         animator = Animator(initialValue: initialValue)
     }
