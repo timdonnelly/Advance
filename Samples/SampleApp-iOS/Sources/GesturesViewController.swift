@@ -5,6 +5,8 @@ final class GesturesViewController: DemoViewController {
     
     private let gestureView = UIView()
     
+    private var previousLayoutSize: CGSize? = nil
+    
     private let centerSpring = Spring(initialValue: CGPoint.zero)
     private let transformSpring = Spring(initialValue: SimpleTransform())
     
@@ -54,8 +56,13 @@ final class GesturesViewController: DemoViewController {
         b.size.width = min(view.bounds.width, view.bounds.height) - 64.0
         b.size.height = b.size.width
         gestureView.bounds = b
-        centerSpring.reset(to: CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY))
-        transformSpring.reset(to: SimpleTransform())
+        
+        if previousLayoutSize != view.bounds.size {
+            centerSpring.reset(to: CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY))
+            transformSpring.reset(to: SimpleTransform())
+            previousLayoutSize = view.bounds.size
+        }
+        
     }
     
     @objc private func gesture(recognizer: DirectManipulationGestureRecognizer) {
