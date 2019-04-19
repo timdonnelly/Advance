@@ -2,20 +2,11 @@
 
 rm -rf ./Docs
 
-cd SampleApp
-
-bundle install
-
-bundle exec pod install
-
 jazzy \
-  --config ../.jazzy.yaml \
-  --xcodebuild-arguments -workspace,SampleApp.xcworkspace,-scheme,Advance-iOS \
+  --config .jazzy.yaml \
+  --xcodebuild-arguments -project,Advance.xcodeproj,-scheme,Advance-iOS \
   --clean \
-  --readme ../README.md \
-  --output ../Docs
-
-
-cd ..
+  --readme ./README.md \
+  --output ./Docs
 
 open "Docs/index.html"

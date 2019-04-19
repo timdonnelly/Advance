@@ -32,11 +32,16 @@ public struct UnitBezier: Equatable {
 
 extension UnitBezier {
     
+    /// A control point for a unit bezier.
     public struct ControlPoint: Equatable {
         
+        /// The x component
         public var x: Double
+        
+        /// The y component
         public var y: Double
         
+        /// Initializes a new control point.
         public init(x: Double, y: Double) {
             self.x = x
             self.y = y

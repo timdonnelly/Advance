@@ -5,54 +5,28 @@ github_file_prefix: https://github.com/timdonnelly/Advance/tree/master
 root_url: https://timdonnelly.github.io/Advance
 exclude: []
 
-copyright: '© 2018 Tim Donnelly'
+copyright: '© 2019 Tim Donnelly'
 
 
 custom_categories:
 
-  - name: Animation
+  - name: Animator
     children:
     - Animator
-    - AnimationRunner
-    - Animation
-    - BasicAnimation
-    - AnyAnimation
-    - SimulatedAnimation
-
-  - name: Simulation
-    children:
-    - Simulator
-    - Spring
-    - Simulation
-    - SimulationFunction
-    - SimulationState
-    - Convergence
-    - SpringFunction
-    - DecayFunction
-    - GravityFunction
-
-  - name: Timing Functions
-    children:
     - TimingFunction
-    - LinearTimingFunction
     - UnitBezier
 
-  - name: Loop
+  - name: Physics
     children:
-    - Loop
-
-  - name: Events
-    children:
-    - Observable
-    - Subscription
+    - Spring
+    - SpringFunction
+    - DecayFunction
+    - SimulationFunction
+    - Convergence
 
   - name: Vectors
     children:
-    - Vector
     - VectorConvertible
-    - Interpolatable
-    - Scalar
-    - Vector1
     - Vector2
     - Vector3
     - Vector4
@@ -60,17 +34,11 @@ custom_categories:
   - name: Extensions
     children:
     - Double
-    - CAMediaTimingFunction
+    - Float
     - CGFloat
     - CGPoint
     - CGRect
     - CGSize
     - CGVector
-    - Bool
-    - Int
     - UIEdgeInsets
     - UIOffset
-
-  - name: Advanceable
-    children:
-    - Advanceable

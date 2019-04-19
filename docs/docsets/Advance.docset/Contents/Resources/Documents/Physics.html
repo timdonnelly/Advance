@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Vectors  Reference</title>
+    <title>Physics  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Vectors" class="dashAnchor"></a>
-    <a title="Vectors  Reference"></a>
+    <a name="//apple_ref/swift/Section/Physics" class="dashAnchor"></a>
+    <a title="Physics  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">Advance Docs</a> (91% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="index.html">Advance Reference</a>
         <img id="carat" src="img/carat.png" />
-        Vectors  Reference
+        Physics  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -120,7 +120,7 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Vectors</h1>
+            <h1>Physics</h1>
             
           </section>
           <section class="section task-group-section">
@@ -129,9 +129,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance17VectorConvertibleP"></a>
-                    <a name="//apple_ref/swift/Protocol/VectorConvertible" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance17VectorConvertibleP">VectorConvertible</a>
+                    <a name="/s:7Advance6SpringC"></a>
+                    <a name="//apple_ref/swift/Class/Spring" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance6SpringC">Spring</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -139,23 +139,130 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Conforming types can be converted to and from vector types.</p>
+                        <p>Animates values using a spring function.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
 
-<p>This is the single requirement for any type that is to be animated
-by <code><a href="Classes/Animator.html">Animator</a></code>, <code>Simulator</code>, or <code><a href="Classes/Spring.html">Spring</a></code>.</p>
+</code></pre>
 
-                        <a href="Protocols/VectorConvertible.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/Spring.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">VectorConvertible</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Spring</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/VectorConvertible.swift#L5-L17">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L10-L97">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance14SpringFunctionV"></a>
+                    <a name="//apple_ref/swift/Struct/SpringFunction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14SpringFunctionV">SpringFunction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implements a simple spring acceleration function.</p>
+
+                        <a href="Structs/SpringFunction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SpringFunction</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/SimulationFunction.html">SimulationFunction</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/SpringFunction.swift#L2-L49">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance13DecayFunctionV"></a>
+                    <a name="//apple_ref/swift/Struct/DecayFunction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance13DecayFunctionV">DecayFunction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gradually reduces velocity until it equals <code>Vector.zero</code>.</p>
+
+                        <a href="Structs/DecayFunction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DecayFunction</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/SimulationFunction.html">SimulationFunction</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/DecayFunction.swift#L2-L32">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance18SimulationFunctionP"></a>
+                    <a name="//apple_ref/swift/Protocol/SimulationFunction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance18SimulationFunctionP">SimulationFunction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Conforming types implement a dynamic function that models changes to
+a vector over time.</p>
+
+                        <a href="Protocols/SimulationFunction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SimulationFunction</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/SimulationFunction.swift#L3-L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -163,9 +270,9 @@ by <code><a href="Classes/Animator.html">Animator</a></code>, <code>Simulator</c
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance7Vector2a"></a>
-                    <a name="//apple_ref/swift/Alias/Vector2" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance7Vector2a">Vector2</a>
+                    <a name="/s:7Advance11ConvergenceO"></a>
+                    <a name="//apple_ref/swift/Enum/Convergence" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance11ConvergenceO">Convergence</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -173,79 +280,21 @@ by <code><a href="Classes/Animator.html">Animator</a></code>, <code>Simulator</c
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returned by a simulation function to indicate whether a simulation should
+converge (come to rest) for a given state.</p>
 
+                        <a href="Enums/Convergence.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Vector2</span> <span class="o">=</span> <span class="kt">SIMD2</span><span class="o">&lt;</span><span class="kt">Double</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Convergence</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/VectorConvertible.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance7Vector3a"></a>
-                    <a name="//apple_ref/swift/Alias/Vector3" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance7Vector3a">Vector3</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Vector3</span> <span class="o">=</span> <span class="kt">SIMD3</span><span class="o">&lt;</span><span class="kt">Double</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/VectorConvertible.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance7Vector4a"></a>
-                    <a name="//apple_ref/swift/Alias/Vector4" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance7Vector4a">Vector4</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Vector4</span> <span class="o">=</span> <span class="kt">SIMD4</span><span class="o">&lt;</span><span class="kt">Double</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/VectorConvertible.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/SimulationFunction.swift#L24-L31">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

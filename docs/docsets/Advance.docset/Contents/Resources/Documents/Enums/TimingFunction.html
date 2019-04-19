@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Animator Class Reference</title>
+    <title>TimingFunction Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/Animator" class="dashAnchor"></a>
-    <a title="Animator Class Reference"></a>
+    <a name="//apple_ref/swift/Enum/TimingFunction" class="dashAnchor"></a>
+    <a title="TimingFunction Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Advance Docs</a> (91% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Advance Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Animator Class Reference
+        TimingFunction Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -120,28 +120,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Animator</h1>
+            <h1>TimingFunction</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">TimingFunction</span></code></pre>
 
                 </div>
               </div>
-            <p>Manages the application of animations to a value.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
-
-<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-<span class="n">sizeAnimator</span><span class="o">.</span><span class="n">onChange</span> <span class="o">=</span> <span class="p">{</span> <span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="nv">$0</span> <span class="p">}</span>
-
-<span class="c1">/// Spring physics will move the view's size to the new value.</span>
-<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">spring</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">))</span>
-
-<span class="c1">/// Some time in the future...</span>
-
-<span class="c1">/// The value will keep the same velocity that it had from the preceeding</span>
-<span class="c1">/// animation, and a decay function will slowly bring movement to a stop.</span>
-<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">decay</span><span class="p">(</span><span class="nv">drag</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">)</span>
-</code></pre>
+            <p>Timing functions are used to convert linear input time (<code>0.0 -&gt; 1.0</code>) to transformed output time (also <code>0.0 -&gt; 1.0</code>).</p>
 
           </section>
           <section class="section task-group-section">
@@ -150,9 +136,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8onChangeyxcSgvp"></a>
-                    <a name="//apple_ref/swift/Property/onChange" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8onChangeyxcSgvp">onChange</a>
+                    <a name="/s:7Advance14TimingFunctionO6linearyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/linear" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO6linearyA2CmF">linear</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -160,19 +146,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Called every time the animator&rsquo;s <code><a href="../Classes/Animator.html#/s:7Advance8AnimatorC5valuexvp">value</a></code> changes.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">onChange</span><span class="p">:</span> <span class="p">((</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">linear</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L24-L28">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -180,9 +166,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC12initialValueACyxGx_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(initialValue:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC12initialValueACyxGx_tcfc">init(initialValue:)</a>
+                    <a name="/s:7Advance14TimingFunctionO6bezieryAcA10UnitBezierVcACmF"></a>
+                    <a name="//apple_ref/swift/Element/bezier(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO6bezieryAcA10UnitBezierVcACmF">bezier(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -190,19 +176,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializes a new animator with the given value.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">bezier</span><span class="p">(</span><span class="kt"><a href="../Structs/UnitBezier.html">UnitBezier</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L43-L49">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -210,9 +196,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC5valuexvp"></a>
-                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC5valuexvp">value</a>
+                    <a name="/s:7Advance14TimingFunctionO2x12y12x22y2ACSd_S3dtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(x1:y1:x2:y2:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO2x12y12x22y2ACSd_S3dtcfc">init(x1:y1:x2:y2:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -220,19 +206,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>assigning to this value will remove any running animation.</p>
+                        <p>Initializes a bezier timing function with the given control points.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">x1</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">y1</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">x2</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">y2</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L57-L66">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L10-L12">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -240,9 +226,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8velocityxvp"></a>
-                    <a name="//apple_ref/swift/Property/velocity" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8velocityxvp">velocity</a>
+                    <a name="/s:7Advance14TimingFunctionO5solve2at7epsilonS2d_SdtF"></a>
+                    <a name="//apple_ref/swift/Method/solve(at:epsilon:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO5solve2at7epsilonS2d_SdtF">solve(at:epsilon:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -250,19 +236,88 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The current velocity of the animator.</p>
+                        <p>Transforms the given time.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">solve</span><span class="p">(</span><span class="n">at</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">epsilon</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>x</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The input time (ranges between 0.0 and 1.0).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>epsilon</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The required precision of the result (where <code>x * epsilon</code> is the maximum time segment to be evaluated).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The resulting output time.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L19-L26">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance14TimingFunctionO6easeInACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/easeIn" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO6easeInACvpZ">easeIn</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Equivalent to <code>kCAMediaTimingFunctionEaseIn</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">easeIn</span><span class="p">:</span> <span class="kt">TimingFunction</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L69-L72">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L32-L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -270,9 +325,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC7animate2to8duration14timingFunctionyx_SdAA06TimingG0OtF"></a>
-                    <a name="//apple_ref/swift/Method/animate(to:duration:timingFunction:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC7animate2to8duration14timingFunctionyx_SdAA06TimingG0OtF">animate(to:duration:timingFunction:)</a>
+                    <a name="/s:7Advance14TimingFunctionO7easeOutACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/easeOut" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO7easeOutACvpZ">easeOut</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -280,19 +335,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Animates the property using the given animation.</p>
+                        <p>Equivalent to <code>kCAMediaTimingFunctionEaseOut</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">to</span> <span class="nv">finalValue</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">timingFunction</span><span class="p">:</span> <span class="kt"><a href="../Enums/TimingFunction.html">TimingFunction</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">swiftOut</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">easeOut</span><span class="p">:</span> <span class="kt">TimingFunction</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L75-L78">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L37-L39">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -300,9 +355,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8simulate5using15initialVelocityyqd___xt5ValueQyd__RszAA18SimulationFunctionRd__lF"></a>
-                    <a name="//apple_ref/swift/Method/simulate(using:initialVelocity:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8simulate5using15initialVelocityyqd___xt5ValueQyd__RszAA18SimulationFunctionRd__lF">simulate(using:initialVelocity:)</a>
+                    <a name="/s:7Advance14TimingFunctionO13easeInEaseOutACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/easeInEaseOut" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO13easeInEaseOutACvpZ">easeInEaseOut</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -310,19 +365,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Animates the property using the given simulation function, imparting the specified initial velocity into the simulation.</p>
+                        <p>Equivalent to <code>kCAMediaTimingFunctionEaseInEaseOut</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">simulate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">using</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">initialVelocity</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Value</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Value</span> <span class="o">==</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SimulationFunction.html">SimulationFunction</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">easeInEaseOut</span><span class="p">:</span> <span class="kt">TimingFunction</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L81-L84">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L42-L44">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -330,9 +385,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8simulate5usingyqd___t5ValueQyd__RszAA18SimulationFunctionRd__lF"></a>
-                    <a name="//apple_ref/swift/Method/simulate(using:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8simulate5usingyqd___t5ValueQyd__RszAA18SimulationFunctionRd__lF">simulate(using:)</a>
+                    <a name="/s:7Advance14TimingFunctionO8swiftOutACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/swiftOut" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO8swiftOutACvpZ">swiftOut</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -340,29 +395,33 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Animates the property using the given simulation function.</p>
+                        <p>Inspired by the default curve in Google Material Design.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">simulate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">using</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Value</span> <span class="o">==</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SimulationFunction.html">SimulationFunction</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">swiftOut</span><span class="p">:</span> <span class="kt">TimingFunction</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L87-L90">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L47-L49">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC22cancelRunningAnimationyyF"></a>
-                    <a name="//apple_ref/swift/Method/cancelRunningAnimation()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC22cancelRunningAnimationyyF">cancelRunningAnimation()</a>
+                    <a name="/s:7Advance14TimingFunctionO013coreAnimationbC0ACSo07CAMediabC0C_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(coreAnimationTimingFunction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO013coreAnimationbC0ACSo07CAMediabC0C_tcfc">init(coreAnimationTimingFunction:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -370,19 +429,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Removes any active animation, freezing the animator at the current value.</p>
+                        <p>Initializes a timing function with a unit bezier derived from the given Core Animation timing function.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">cancelRunningAnimation</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">coreAnimationTimingFunction</span><span class="p">:</span> <span class="kt">CAMediaTimingFunction</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L93-L96">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L60-L72">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

@@ -65,6 +65,7 @@ public final class Animator<Value: VectorConvertible> {
         }
     }
     
+    /// The current velocity of the animator.
     public var velocity: Value {
         dispatchPrecondition(condition: .onQueue(.main))
         return state.velocity
@@ -76,7 +77,7 @@ public final class Animator<Value: VectorConvertible> {
         state.animate(to: finalValue, duration: duration, timingFunction: timingFunction)
     }
 
-    /// Animates the property using the given simulation function.
+    /// Animates the property using the given simulation function, imparting the specified initial velocity into the simulation.
     public func simulate<T>(using function: T, initialVelocity: T.Value) where T: SimulationFunction, T.Value == Value {
         dispatchPrecondition(condition: .onQueue(.main))
         state.simulate(using: function, initialVelocity: initialVelocity)

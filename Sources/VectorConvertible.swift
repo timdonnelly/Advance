@@ -33,6 +33,7 @@ public typealias Vector4 = SIMD4<Double>
 /// VectorConvertible conformance extensions
 /// ********************************************************************************
 
+/// Adds `VectorConvertible` conformance
 extension Double: VectorConvertible {
 
     public init(vector: Vector2) {
@@ -45,6 +46,7 @@ extension Double: VectorConvertible {
     
 }
 
+/// Adds `VectorConvertible` conformance
 extension Float: VectorConvertible {
     
     public init(vector: Vector2) {
@@ -61,6 +63,7 @@ extension Float: VectorConvertible {
 
 import UIKit
 
+/// Adds `VectorConvertible` conformance
 extension UIOffset: VectorConvertible {
     
     public var vector: Vector2 {
@@ -77,6 +80,7 @@ extension UIOffset: VectorConvertible {
     
 }
 
+/// Adds `VectorConvertible` conformance
 extension UIEdgeInsets: VectorConvertible {
     
     public var vector: Vector4 {
@@ -104,6 +108,7 @@ extension UIEdgeInsets: VectorConvertible {
 
 import CoreGraphics
 
+/// Adds `VectorConvertible` conformance
 extension CGSize: VectorConvertible {
     
     public init(vector: Vector2) {
@@ -115,6 +120,7 @@ extension CGSize: VectorConvertible {
     }
 }
 
+/// Adds `VectorConvertible` conformance
 extension CGVector: VectorConvertible {
     
     public init(vector: Vector2) {
@@ -126,6 +132,7 @@ extension CGVector: VectorConvertible {
     }
 }
 
+/// Adds `VectorConvertible` conformance
 extension CGPoint: VectorConvertible {
     
     public init(vector: Vector2) {
@@ -141,6 +148,7 @@ extension CGPoint: VectorConvertible {
     }
 }
 
+/// Adds `VectorConvertible` conformance
 extension CGFloat: VectorConvertible {
     
     public init(vector: Vector2) {
@@ -152,6 +160,7 @@ extension CGFloat: VectorConvertible {
     }
 }
 
+/// Adds `VectorConvertible` conformance
 extension CGRect: VectorConvertible {
     
     public init(vector: Vector4) {

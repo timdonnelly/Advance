@@ -20,11 +20,13 @@ public final class Spring<Value: VectorConvertible> {
         animator = Animator(initialValue: initialValue)
     }
     
+    /// Invoked every time the spring updates.
     public var onChange: ((Value) -> Void)? {
         get { return animator.onChange }
         set { animator.onChange = newValue }
     }
     
+    /// The current value of the spring.
     public var value: Value {
         get { return animator.value }
         set {
@@ -34,6 +36,7 @@ public final class Spring<Value: VectorConvertible> {
         }
     }
     
+    /// The current velocity of the spring.
     public var velocity: Value {
         get { return animator.velocity }
         set { applyFunction(impartingVelocity: newValue) }

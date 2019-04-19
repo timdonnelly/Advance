@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Animator Class Reference</title>
+    <title>Spring Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/Animator" class="dashAnchor"></a>
-    <a title="Animator Class Reference"></a>
+    <a name="//apple_ref/swift/Class/Spring" class="dashAnchor"></a>
+    <a title="Spring Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Advance Docs</a> (91% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Advance Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Animator Class Reference
+        Spring Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -120,27 +120,17 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Animator</h1>
+            <h1>Spring</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Spring</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
 
                 </div>
               </div>
-            <p>Manages the application of animations to a value.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+            <p>Animates values using a spring function.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
 
-<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-<span class="n">sizeAnimator</span><span class="o">.</span><span class="n">onChange</span> <span class="o">=</span> <span class="p">{</span> <span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="nv">$0</span> <span class="p">}</span>
-
-<span class="c1">/// Spring physics will move the view's size to the new value.</span>
-<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">spring</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">))</span>
-
-<span class="c1">/// Some time in the future...</span>
-
-<span class="c1">/// The value will keep the same velocity that it had from the preceeding</span>
-<span class="c1">/// animation, and a decay function will slowly bring movement to a stop.</span>
-<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">decay</span><span class="p">(</span><span class="nv">drag</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">)</span>
 </code></pre>
 
           </section>
@@ -150,39 +140,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8onChangeyxcSgvp"></a>
-                    <a name="//apple_ref/swift/Property/onChange" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8onChangeyxcSgvp">onChange</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Called every time the animator&rsquo;s <code><a href="../Classes/Animator.html#/s:7Advance8AnimatorC5valuexvp">value</a></code> changes.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">onChange</span><span class="p">:</span> <span class="p">((</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L24-L28">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7Advance8AnimatorC12initialValueACyxGx_tcfc"></a>
+                    <a name="/s:7Advance6SpringC12initialValueACyxGx_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(initialValue:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC12initialValueACyxGx_tcfc">init(initialValue:)</a>
+                    <a class="token" href="#/s:7Advance6SpringC12initialValueACyxGx_tcfc">init(initialValue:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -190,7 +150,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializes a new animator with the given value.</p>
+                        <p>Initializes a new spring converged at the given value, using default configuration options for the spring function.</p>
 
                       </div>
                       <div class="declaration">
@@ -202,7 +162,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L43-L49">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L17-L21">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -210,9 +170,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC5valuexvp"></a>
-                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC5valuexvp">value</a>
+                    <a name="/s:7Advance6SpringC8onChangeyxcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/onChange" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance6SpringC8onChangeyxcSgvp">onChange</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -220,7 +180,37 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>assigning to this value will remove any running animation.</p>
+                        <p>Invoked every time the spring updates.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">onChange</span><span class="p">:</span> <span class="p">((</span><span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L24-L27">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance6SpringC5valuexvp"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance6SpringC5valuexvp">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current value of the spring.</p>
 
                       </div>
                       <div class="declaration">
@@ -232,7 +222,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L57-L66">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L30-L37">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -240,9 +230,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8velocityxvp"></a>
+                    <a name="/s:7Advance6SpringC8velocityxvp"></a>
                     <a name="//apple_ref/swift/Property/velocity" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8velocityxvp">velocity</a>
+                    <a class="token" href="#/s:7Advance6SpringC8velocityxvp">velocity</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -250,19 +240,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The current velocity of the animator.</p>
+                        <p>The current velocity of the spring.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">Value</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L69-L72">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L40-L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -270,9 +260,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC7animate2to8duration14timingFunctionyx_SdAA06TimingG0OtF"></a>
-                    <a name="//apple_ref/swift/Method/animate(to:duration:timingFunction:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC7animate2to8duration14timingFunctionyx_SdAA06TimingG0OtF">animate(to:duration:timingFunction:)</a>
+                    <a name="/s:7Advance6SpringC6targetxvp"></a>
+                    <a name="//apple_ref/swift/Property/target" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance6SpringC6targetxvp">target</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -280,19 +270,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Animates the property using the given animation.</p>
+                        <p>The spring&rsquo;s target.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">to</span> <span class="nv">finalValue</span><span class="p">:</span> <span class="kt">Value</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">timingFunction</span><span class="p">:</span> <span class="kt"><a href="../Enums/TimingFunction.html">TimingFunction</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">swiftOut</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Value</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L75-L78">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L46-L52">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -300,9 +290,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8simulate5using15initialVelocityyqd___xt5ValueQyd__RszAA18SimulationFunctionRd__lF"></a>
-                    <a name="//apple_ref/swift/Method/simulate(using:initialVelocity:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8simulate5using15initialVelocityyqd___xt5ValueQyd__RszAA18SimulationFunctionRd__lF">simulate(using:initialVelocity:)</a>
+                    <a name="/s:7Advance6SpringC5reset2toyx_tF"></a>
+                    <a name="//apple_ref/swift/Method/reset(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance6SpringC5reset2toyx_tF">reset(to:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -310,19 +300,38 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Animates the property using the given simulation function, imparting the specified initial velocity into the simulation.</p>
+                        <p>Removes any current velocity and snaps the spring directly to the given value.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">simulate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">using</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">initialVelocity</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Value</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Value</span> <span class="o">==</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SimulationFunction.html">SimulationFunction</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">(</span><span class="n">to</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The new value that the spring will be reset to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L81-L84">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L56-L59">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -330,9 +339,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC8simulate5usingyqd___t5ValueQyd__RszAA18SimulationFunctionRd__lF"></a>
-                    <a name="//apple_ref/swift/Method/simulate(using:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC8simulate5usingyqd___t5ValueQyd__RszAA18SimulationFunctionRd__lF">simulate(using:)</a>
+                    <a name="/s:7Advance6SpringC7tensionSdvp"></a>
+                    <a name="//apple_ref/swift/Property/tension" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance6SpringC7tensionSdvp">tension</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -340,19 +349,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Animates the property using the given simulation function.</p>
+                        <p>How strongly the spring will pull the value toward the target,</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">simulate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">using</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Value</span> <span class="o">==</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/SimulationFunction.html">SimulationFunction</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">tension</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L87-L90">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L62-L68">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -360,9 +369,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Advance8AnimatorC22cancelRunningAnimationyyF"></a>
-                    <a name="//apple_ref/swift/Method/cancelRunningAnimation()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Advance8AnimatorC22cancelRunningAnimationyyF">cancelRunningAnimation()</a>
+                    <a name="/s:7Advance6SpringC7dampingSdvp"></a>
+                    <a name="//apple_ref/swift/Property/damping" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance6SpringC7dampingSdvp">damping</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -370,19 +379,50 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Removes any active animation, freezing the animator at the current value.</p>
+                        <p>The resistance that the spring encounters while moving the value.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">cancelRunningAnimation</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">damping</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L93-L96">Show on GitHub</a>
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L71-L77">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance6SpringC9thresholdSdvp"></a>
+                    <a name="//apple_ref/swift/Property/threshold" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance6SpringC9thresholdSdvp">threshold</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The minimum distance from the target value (for each component) that the
+current value can be in order to enter a converged (settled) state.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">threshold</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Spring.swift#L81-L87">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
