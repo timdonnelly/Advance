@@ -3,7 +3,7 @@ import Advance
 
 
 final class SpringView : NSView, CALayerDelegate {
-    let centerSpring = Spring(value: CGPoint.zero)
+    let centerSpring = Spring(initialValue: CGPoint.zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

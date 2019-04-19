@@ -12,7 +12,6 @@ final class SpringContainerView : NSView, CALayerDelegate {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         wantsLayer = true
-        layer?.backgroundColor = NSColor.white.cgColor
         layer?.delegate = self
         
         addSubview(springView)
