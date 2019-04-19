@@ -81,13 +81,13 @@ sizeAnimator.animate(to: CGSize(width: 123, height: 456), duration: 0.25, timing
 /// Some time in the future (before the previous timed animation was complete)...
 
 /// Spring physics will move the view's size to the new value, maintaining the velocity from the timed animation.
-sizeAnimator.spring(to: CGSize(width: 300, height: 300))
+sizeAnimator.simulate(using: SpringFunction(target: CGSize(width: 300, height: 300)))
 
 /// Some time in the future (before the previous spring animation was complete)...
 
 /// The value will keep the same velocity that it had from the preceeding spring
 /// animation, and a decay function will slowly bring movement to a stop.
-sizeAnimator.decay(drag: 2.0)
+sizeAnimator.simulate(using: DecayFunction(drag: 2.0))
 
 ```
 
