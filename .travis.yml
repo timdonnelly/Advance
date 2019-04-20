@@ -6,21 +6,26 @@ xcode_project: Advance.xcodeproj
 
 jobs:
   include:
-    - xcode_scheme: Advance-iOS
+    - name: "iOS (xcodeproj)"
+      xcode_scheme: Advance-iOS
       xcode_sdk: iphonesimulator12.2
       xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone Xs
 
-    - xcode_scheme: Advance-macOS
+    - name: "macOS (xcodeproj)"
+      xcode_scheme: Advance-macOS
       xcode_sdk: macosx10.14
 
-    - xcode_scheme: Advance-tvOS
+    - name: "tvOS (xcodeproj)"
+      xcode_scheme: Advance-tvOS
       xcode_sdk: appletvos12.2
       xcode_destination: platform=tvOS Simulator,OS=12.2,name=Apple TV 4K
 
-    - script:
+    - name: "macOS (SPM)"
+      script:
       - swift test
 
     - stage: deploy
+      name: "Deploy documentation"
       script: skip
       after_success:
         - ./build_docs.sh
