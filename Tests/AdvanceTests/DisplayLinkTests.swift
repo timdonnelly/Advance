@@ -79,4 +79,10 @@ class DisplayLinkTests : XCTestCase {
             guard error == nil else { XCTFail(); return }
         }
     }
+    
+    static var allTests = [
+        ("testCallback", testCallback),
+        ("testPausing", testPausing),
+        ("testTimestamp", testTimestamp),
+    ]
 }

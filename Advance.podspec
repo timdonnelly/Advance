@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/timdonnelly/Advance.git", :tag => "v3.0.0" }
 
-  s.source_files = "Sources/**/*.swift"
+  s.source_files = "Sources/Advance/**/*.swift"
 
   s.swift_version = '5.0'
 
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
 
   s.test_spec 'Tests' do |test_spec|
-    test_spec.source_files = 'Tests/Sources/**/*.swift'
+    test_spec.source_files = 'Tests/AdvanceTests/**/*.swift'
   end  
 
 end

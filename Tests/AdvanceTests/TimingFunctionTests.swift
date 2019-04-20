@@ -3,6 +3,7 @@ import XCTest
 
 
 class TimingFunctionTests : XCTestCase {
+    
     func testConversion() {
         let p1x: Float = 0.42
         let p1y: Float = 0.0
@@ -24,4 +25,8 @@ class TimingFunctionTests : XCTestCase {
         
 
     }
+    
+    static var allTests = [
+        ("testConversion", testConversion),
+    ]
 }

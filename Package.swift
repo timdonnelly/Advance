@@ -19,12 +19,10 @@ let package = Package(
     targets: [
         .target(
             name: "Advance",
-            dependencies: [],
-            path: "Sources"),
+            dependencies: []),
         .testTarget(
             name: "AdvanceTests",
-            dependencies: ["Advance"],
-            path: "Tests/Sources"),
+            dependencies: ["Advance"]),
     ],
     swiftLanguageVersions: [.v5]
 )

@@ -44,4 +44,13 @@ class VectorConvenienceTests : XCTestCase {
         let r2 = CGRect(vector: v)
         XCTAssert(r == r2)
     }
+    
+    static var allTests = [
+        ("testCGFloatConversion", testCGFloatConversion),
+        ("testDoubleConversion", testDoubleConversion),
+        ("testCGPointConversion", testCGPointConversion),
+        ("testCGSizeConversion", testCGSizeConversion),
+        ("testCGVectorConversion", testCGVectorConversion),
+        ("testCGRectConversion", testCGRectConversion),
+    ]
 }
