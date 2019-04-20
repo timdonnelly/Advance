@@ -1,5 +1,4 @@
 import Foundation
-import CoreGraphics
 
 
 /// A bezier curve, often used to calculate timing functions.

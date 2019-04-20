@@ -1,7 +1,10 @@
+osx_image: xcode10.2
+
 jobs:
   include:
     - name: "iOS (xcodeproj)"
       language: swift
+      os: osx
       osx_image: xcode10.2
       xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-iOS
@@ -10,6 +13,7 @@ jobs:
 
     - name: "macOS (xcodeproj)"
       language: swift
+      os: osx
       osx_image: xcode10.2
       xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-macOS
@@ -17,6 +21,7 @@ jobs:
 
     - name: "tvOS (xcodeproj)"
       language: swift
+      os: osx
       osx_image: xcode10.2
       xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-tvOS
@@ -25,6 +30,7 @@ jobs:
 
     - name: "macOS (SPM)"
       language: swift
+      os: osx
       osx_image: xcode10.2
       script:
         - swift --version
@@ -47,6 +53,7 @@ jobs:
     - stage: deploy
       name: "Deploy documentation"
       language: swift
+      os: osx
       osx_image: xcode10.2
       script: skip
       after_success:
