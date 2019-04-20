@@ -3,7 +3,11 @@ import CoreGraphics
 
 /// Timing functions are used to convert linear input time (`0.0 -> 1.0`) to transformed output time (also `0.0 -> 1.0`).
 public enum TimingFunction {
+    
+    /// No easing
     case linear
+    
+    /// The given unit bezier will be used to drive the timing function
     case bezier(UnitBezier)
     
     /// Initializes a bezier timing function with the given control points.
