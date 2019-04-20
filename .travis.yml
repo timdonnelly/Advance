@@ -2,6 +2,8 @@ language: swift
 osx_image: xcode10.2
 xcode_project: Advance.xcodeproj
 
+
+
 matrix:
   include:
     - xcode_scheme: Advance-iOS
@@ -14,3 +16,15 @@ matrix:
     - xcode_scheme: Advance-tvOS
       xcode_sdk: appletvos12.2
       xcode_destination: platform=tvOS Simulator,OS=12.2,name=Apple TV 4K
+
+after_success:
+  - ./build_docs.sh
+      
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: ./docs
+  on:
+    branch: master

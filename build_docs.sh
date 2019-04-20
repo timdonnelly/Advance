@@ -1,12 +1,12 @@
 #!/bin/sh
 
-rm -rf ./Docs
+rm -rf ./docs
+
+gem install jazzy
 
 jazzy \
   --config .jazzy.yaml \
   --xcodebuild-arguments -project,Advance.xcodeproj,-scheme,Advance-iOS \
   --clean \
   --readme ./README.md \
-  --output ./Docs
-
-open "Docs/index.html"
+  --output ./docs
