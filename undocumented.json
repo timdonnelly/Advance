@@ -1,42 +1,42 @@
 {
   "warnings": [
     {
-      "file": "/Users/travis/build/timdonnelly/Advance/Sources/UnitBezier.swift",
-      "line": 8,
+      "file": "/Users/travis/build/timdonnelly/Advance/Sources/Advance/UnitBezier.swift",
+      "line": 7,
       "symbol": "UnitBezier.first",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/travis/build/timdonnelly/Advance/Sources/UnitBezier.swift",
-      "line": 9,
+      "file": "/Users/travis/build/timdonnelly/Advance/Sources/Advance/UnitBezier.swift",
+      "line": 8,
       "symbol": "UnitBezier.second",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/travis/build/timdonnelly/Advance/Sources/UnitBezier.swift",
-      "line": 17,
+      "file": "/Users/travis/build/timdonnelly/Advance/Sources/Advance/UnitBezier.swift",
+      "line": 16,
       "symbol": "UnitBezier.init(firstX:firstY:secondX:secondY:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/travis/build/timdonnelly/Advance/Sources/VectorConvertible.swift",
+      "file": "/Users/travis/build/timdonnelly/Advance/Sources/Advance/VectorConvertible.swift",
       "line": 27,
       "symbol": "Vector2",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/travis/build/timdonnelly/Advance/Sources/VectorConvertible.swift",
+      "file": "/Users/travis/build/timdonnelly/Advance/Sources/Advance/VectorConvertible.swift",
       "line": 28,
       "symbol": "Vector3",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/travis/build/timdonnelly/Advance/Sources/VectorConvertible.swift",
+      "file": "/Users/travis/build/timdonnelly/Advance/Sources/Advance/VectorConvertible.swift",
       "line": 29,
       "symbol": "Vector4",
       "symbol_kind": "source.lang.swift.decl.typealias",
