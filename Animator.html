@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animator  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Animator" class="dashAnchor"></a>
+    <a title="Animator  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Advance Docs</a> (91% documented)</p>
+        <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Advance Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Animator  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Animator.html">Animator</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Animator.html">Animator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TimingFunction.html">TimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/UnitBezier.html">UnitBezier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/UnitBezier/ControlPoint.html">– ControlPoint</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Physics.html">Physics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Spring.html">Spring</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpringFunction.html">SpringFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DecayFunction.html">DecayFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/SimulationFunction.html">SimulationFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Convergence.html">Convergence</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Vectors.html">Vectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/VectorConvertible.html">VectorConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Vectors.html#/s:7Advance7Vector2a">Vector2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Vectors.html#/s:7Advance7Vector3a">Vector3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Vectors.html#/s:7Advance7Vector4a">Vector4</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Float.html">Float</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGVector.html">CGVector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIEdgeInsets.html">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIOffset.html">UIOffset</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Animator</h1>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance8AnimatorC"></a>
+                    <a name="//apple_ref/swift/Class/Animator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance8AnimatorC">Animator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Manages the application of animations to a value.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="n">onChange</span> <span class="o">=</span> <span class="p">{</span> <span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="nv">$0</span> <span class="p">}</span>
+
+<span class="c1">/// Spring physics will move the view's size to the new value.</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">spring</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">))</span>
+
+<span class="c1">/// Some time in the future...</span>
+
+<span class="c1">/// The value will keep the same velocity that it had from the preceeding</span>
+<span class="c1">/// animation, and a decay function will slowly bring movement to a stop.</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">decay</span><span class="p">(</span><span class="nv">drag</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">)</span>
+</code></pre>
+
+                        <a href="Classes/Animator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Animator</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Value</span> <span class="p">:</span> <span class="kt"><a href="Protocols/VectorConvertible.html">VectorConvertible</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/Animator.swift#L21-L98">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance14TimingFunctionO"></a>
+                    <a name="//apple_ref/swift/Enum/TimingFunction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance14TimingFunctionO">TimingFunction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Timing functions are used to convert linear input time (<code>0.0 -&gt; 1.0</code>) to transformed output time (also <code>0.0 -&gt; 1.0</code>).</p>
+
+                        <a href="Enums/TimingFunction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">TimingFunction</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/TimingFunction.swift#L5-L27">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Advance10UnitBezierV"></a>
+                    <a name="//apple_ref/swift/Struct/UnitBezier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Advance10UnitBezierV">UnitBezier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A bezier curve, often used to calculate timing functions.</p>
+
+                        <a href="Structs/UnitBezier.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">UnitBezier</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/timdonnelly/Advance/tree/master/Sources/UnitBezier.swift#L6-L31">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2019 Tim Donnelly</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

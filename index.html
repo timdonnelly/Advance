@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Advance  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Advance  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Advance Docs</a> (91% documented)</p>
+        <p class="header-right"><a href="https://github.com/timdonnelly/Advance"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Ftimdonnelly%2Egithub%2Eio%2Fdocsets%2FAdvance%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Advance Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Advance  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Animator.html">Animator</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Animator.html">Animator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TimingFunction.html">TimingFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/UnitBezier.html">UnitBezier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/UnitBezier/ControlPoint.html">– ControlPoint</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Physics.html">Physics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Spring.html">Spring</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SpringFunction.html">SpringFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DecayFunction.html">DecayFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/SimulationFunction.html">SimulationFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Convergence.html">Convergence</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Vectors.html">Vectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/VectorConvertible.html">VectorConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Vectors.html#/s:7Advance7Vector2a">Vector2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Vectors.html#/s:7Advance7Vector3a">Vector3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Vectors.html#/s:7Advance7Vector4a">Vector4</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Float.html">Float</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/CGVector.html">CGVector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIEdgeInsets.html">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIOffset.html">UIOffset</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='advance' class='heading'>Advance</h1>
+
+<p>Physics-based animations for iOS, tvOS, and macOS.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="c1">// Springs animate changes to a value</span>
+<span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+
+<span class="c1">// The `onChange` closure will be called every time the spring updates</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">onChange</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="n">view</span><span class="p">]</span> <span class="n">newCenter</span> <span class="k">in</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">newCenter</span>
+<span class="p">}</span>
+
+<span class="c1">/// The view's center will realistically animate to the new target value.</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+</code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>In contrast to standard <code>UIView</code> animations, Advance animations are applied on every frame (using <code>CADisplayLink</code> on iOS/tvOS, and <code>CVDisplayLink</code> on macOS).</p>
+<h3 id='code-spring-code' class='heading'><code><a href="Classes/Spring.html">Spring</a></code></h3>
+
+<p><code><a href="Classes/Spring.html">Spring</a></code> instances animate changes to a value over time, using spring physics.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">spring</span> <span class="o">=</span> <span class="kt">Spring</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">onChange</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="n">view</span><span class="p">]</span> <span class="n">newAlpha</span> <span class="k">in</span> 
+    <span class="n">view</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">newAlpha</span> 
+<span class="p">}</span>
+
+<span class="c1">// Off it goes!</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="mf">0.5</span>
+</code></pre>
+<h4 id='configuring-a-spring' class='heading'>Configuring a spring</h4>
+<pre class="highlight swift"><code>
+<span class="c1">/// Spring values can be adjusted at any time.</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">tension</span> <span class="o">=</span> <span class="mf">30.0</span> <span class="c1">/// The strength of the spring</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">damping</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c1">/// The resistance (drag) that the spring encounters</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1">/// The maximum delta between the current value and the spring's target (for each component) for which the simulation can enter a converged state.</span>
+
+<span class="c1">/// Update the simulation state at any time.</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="mf">6.5</span>
+<span class="n">spring</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+<span class="c1">/// Sets the spring's target and the current simulation value, and removes all velocity. This causes the spring to converge at the given value.</span>
+<span class="n">spring</span><span class="o">.</span><span class="nf">reset</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">)</span>
+
+</code></pre>
+<h3 id='code-animator-code' class='heading'><code><a href="Classes/Animator.html">Animator</a></code></h3>
+
+<p><code><a href="Classes/Animator.html">Animator</a></code> allows for more flexibility in the types of animation that can be performed, but gives up some convenience
+in order to do so. Specifically, animators allow for <em>any</em> type of animation or simulation to be performed for a single
+value.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="c1">/// Animators coordinate animations to drive changes to a value.</span>
+<span class="k">let</span> <span class="nv">sizeAnimator</span> <span class="o">=</span> <span class="kt">Animator</span><span class="p">(</span><span class="nv">initialValue</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="n">onChange</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="n">view</span><span class="p">]</span> <span class="n">newSize</span> <span class="k">in</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">newSize</span>
+<span class="p">}</span>
+
+<span class="c1">/// A simple timed animation</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">456</span><span class="p">),</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span> <span class="nv">timingFunction</span><span class="p">:</span> <span class="o">.</span><span class="n">easeInOut</span><span class="p">)</span>
+
+<span class="c1">/// Some time in the future (before the previous timed animation was complete)...</span>
+
+<span class="c1">/// Spring physics will move the view's size to the new value, maintaining the velocity from the timed animation.</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">simulate</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="kt">SpringFunction</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">)))</span>
+
+<span class="c1">/// Some time in the future (before the previous spring animation was complete)...</span>
+
+<span class="c1">/// The value will keep the same velocity that it had from the preceeding spring</span>
+<span class="c1">/// animation, and a decay function will slowly bring movement to a stop.</span>
+<span class="n">sizeAnimator</span><span class="o">.</span><span class="nf">simulate</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="kt">DecayFunction</span><span class="p">(</span><span class="nv">drag</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">))</span>
+
+</code></pre>
+
+<p>Animators support two fundamentally different types of animations: timed and simulated.</p>
+<h4 id='timed-animations' class='heading'>Timed animations</h4>
+
+<p>Timed animations are, well, timed: they have a fixed duration, and they animate to a final value in a predictable manner.</p>
+<pre class="highlight swift"><code><span class="n">animator</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">456</span><span class="p">),</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span> <span class="nv">timingFunction</span><span class="p">:</span> <span class="o">.</span><span class="n">easeInOut</span><span class="p">)</span>
+</code></pre>
+
+<p><code><a href="Enums/TimingFunction.html">TimingFunction</a></code> described the pacing of a timed animation. </p>
+
+<p><code><a href="Enums/TimingFunction.html">TimingFunction</a></code> comes with a standard set of functions:</p>
+<pre class="highlight swift"><code><span class="kt">TimingFunction</span><span class="o">.</span><span class="n">linear</span> <span class="c1">// No easing</span>
+<span class="kt">TimingFunction</span><span class="o">.</span><span class="n">easeIn</span>
+<span class="kt">TimingFunction</span><span class="o">.</span><span class="n">easeOut</span>
+<span class="kt">TimingFunction</span><span class="o">.</span><span class="n">easeInOut</span>
+<span class="kt">TimingFunction</span><span class="o">.</span><span class="n">swiftOut</span> <span class="c1">// Similar to Material Design's default curve</span>
+</code></pre>
+
+<p>Custom timing functions can be expressed as unit beziers (<a href="https://www.w3.org/TR/css-easing-1/#cubic-bzier-timing-function">described here</a>).</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">customTimingFunction</span> <span class="o">=</span> <span class="kt">TimingFunction</span><span class="p">(</span><span class="nv">x1</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="nv">y1</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="nv">x2</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="nv">y2</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">)</span>
+</code></pre>
+<h4 id='simulated-animations' class='heading'>Simulated animations</h4>
+
+<p>Simulated animations use a <em>simulation function</em> to power a physics-based transition. Simulation functions are types conforming to the <code><a href="Protocols/SimulationFunction.html">SimulationFunction</a></code> protocol.</p>
+
+<p>Simulated animations may be started using two different methods:</p>
+<pre class="highlight swift"><code><span class="c1">// Begins animating with the custom simulation function, maintaining the previous velocity of the animator.</span>
+<span class="n">animator</span><span class="o">.</span><span class="nf">simulate</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="kt">MyCustomFunction</span><span class="p">())</span>
+
+<span class="c1">// or...</span>
+
+<span class="c1">// Begins animating with the custom simulation function, imparting the specified velocity into the simulation.</span>
+<span class="n">animator</span><span class="o">.</span><span class="nf">simulate</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="kt">DecayFunction</span><span class="p">(),</span> <span class="nv">initialVelocity</span><span class="p">:</span> <span class="n">dragGestureRecognizer</span><span class="o">.</span><span class="nf">velocity</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">view</span><span class="p">))</span>
+</code></pre>
+<h3 id='animating-custom-types' class='heading'>Animating Custom Types</h3>
+
+<p>Values conforming to the <code><a href="Protocols/VectorConvertible.html">VectorConvertible</a></code> protocol can be animated by Advance. Conforming types can be converted to and from a <code>Vector</code> implementation.</p>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">VectorConvertible</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Interpolatable</span> <span class="p">{</span>
+    <span class="kd">associatedtype</span> <span class="kt">VectorType</span><span class="p">:</span> <span class="kt">SIMD</span> <span class="k">where</span> <span class="kt">VectorType</span><span class="o">.</span><span class="kt">Scalar</span> <span class="o">==</span> <span class="kt">Double</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">vector</span><span class="p">:</span> <span class="kt">VectorType</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">vector</span><span class="p">:</span> <span class="kt">VectorType</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The library adds conformance for many common types through extensions.</p>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p><strong>The best contribution you can provide is feedback.</strong> This library was designed in the context of a specific product – I&rsquo;d love to hear more about your project and how Advance can be improved to meet your needs.</p>
+
+<p><em>(Of course, pull requests are always welcome)</em></p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>There are several ways to integrate Advance into your project.</p>
+
+<ul>
+<li><p>Manually, as a framework: simply add the <code>Advance.xcodeproj</code> to your project and add <code>Advance-{iOS|macOS|tvOS}.framework</code> as an <q>Embedded Binary</q> to your application target (under General in target settings). From there, add <code>import Advance</code> to your code and you&rsquo;re good to go.</p></li>
+<li><p>Carthage: add <code>github &quot;timdonnelly/Advance&quot;</code> to your <code>Cartfile</code>.</p></li>
+<li><p>CocoaPods: add <code>pod &#39;Advance&#39;</code> to your <code>Podfile</code>.</p></li>
+</ul>
+<h5 id='requirements' class='heading'>Requirements</h5>
+
+<ul>
+<li>iOS 10+, tvOS 10+, or macOS 10.12+</li>
+<li>Swift 5.0 (Xcode 10.2 or higher)</li>
+</ul>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>API documentation is <a href="http://timdonnelly.github.io/Advance/">available here</a>.</p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>This project is released under the <a href="https://github.com/timdonnelly/Advance/blob/master/LICENSE">BSD 2-clause license</a>.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2019 Tim Donnelly</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
