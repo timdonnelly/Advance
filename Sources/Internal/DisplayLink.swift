@@ -1,12 +1,3 @@
-import Foundation
-
-#if os(iOS) || os(tvOS)
-import QuartzCore
-#elseif os(macOS)
-import CoreVideo
-#endif
-
-
 /// An object that produces an observable sequence of frames that are synchronized
 /// to the device's display refresh rate. Provides a layer of abstraction to allow
 /// for a consistent API between platforms.
@@ -55,7 +46,9 @@ extension DisplayLink {
 
 
 
-#if os(iOS) || os(tvOS) // iOS support using CADisplayLink --------------------------------------------------------
+#if os(iOS) || os(tvOS) // iOS/tvOS support using CADisplayLink --------------------------------------------------------
+
+import QuartzCore
 
 /// DisplayLink is used to hook into screen refreshes.
 extension DisplayLink {
@@ -105,17 +98,9 @@ extension DisplayLink {
             /// Called for each frame from the CADisplayLink.
             @objc dynamic func frame(_ displayLink: CADisplayLink) {
 
-                let timestamp: TimeInterval
-
-                if #available(iOS 10.0, *) {
-                    timestamp = displayLink.targetTimestamp
-                } else {
-                    timestamp = displayLink.timestamp + displayLink.duration
-                }
-
                 let frame = Frame(
                     previousTimestamp: displayLink.timestamp,
-                    timestamp: timestamp)
+                    timestamp: displayLink.targetTimestamp)
 
                 callback?(frame)
             }
@@ -125,6 +110,8 @@ extension DisplayLink {
 }
 
 #elseif os(macOS) // macOS support using CVDisplayLink --------------------------------------------------
+
+import CoreVideo
 
 extension DisplayLink {
     
@@ -161,7 +148,7 @@ extension DisplayLink {
                     timestamp: inOutputTime.pointee.timeInterval)
                 
                 DispatchQueue.main.async {
-                    self?.frame(frame)
+                    self?.handle(frame: frame)
                 }
                 
                 return kCVReturnSuccess
@@ -174,7 +161,7 @@ extension DisplayLink {
         }
         
         /// Called for each CVDisplayLink frame callback.
-        func frame(_ frame: Frame) {
+        func handle(frame: Frame) {
             guard isPaused == false else { return }
             onFrame?(frame)
         }
@@ -185,6 +172,72 @@ extension DisplayLink {
 extension CVTimeStamp {
     fileprivate var timeInterval: TimeInterval {
         return TimeInterval(videoTime) / TimeInterval(self.videoTimeScale)
+    }
+}
+
+#else // Linux support using a simple timer --------------------------------------------------
+
+private let frameDuration: TimeInterval = 1.0/120.0
+
+extension DisplayLink {
+    
+    /// DisplayLink is used to hook into screen refreshes.
+    fileprivate final class Driver {
+        
+        private var timer: Timer? = nil
+        
+        /// The callback to call for each frame.
+        var onFrame: ((Frame) -> Void)? = nil
+        
+        /// If the display link is paused or not.
+        var isPaused: Bool = true {
+            didSet {
+                guard isPaused != oldValue else { return }
+                if isPaused {
+                    stop()
+                } else {
+                    start()
+                }
+            }
+        }
+        
+
+        init() {
+            
+        }
+        
+        deinit {
+            isPaused = true
+        }
+        
+        private func start() {
+            guard timer == nil else { return }
+            let timer = Timer(
+                fire: Date(),
+                interval: frameDuration,
+                repeats: true,
+                block: { [weak self] timer in
+                    let timestamp = Date().timeIntervalSince1970
+                    let frame = Frame(
+                        previousTimestamp: timestamp-frameDuration,
+                        timestamp: timestamp)
+                    self?.handle(frame: frame)
+                })
+            self.timer = timer
+            RunLoop.main.add(timer, forMode: .common)
+        }
+        
+        private func stop() {
+            guard let timer = timer else { return }
+            timer.invalidate()
+            self.timer = nil
+        }
+        
+        func handle(frame: Frame) {
+            guard isPaused == false else { return }
+            onFrame?(frame)
+        }
+        
     }
 }
 
