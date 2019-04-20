@@ -1,20 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/travis/build/timdonnelly/Advance/Sources/TimingFunction.swift",
-      "line": 6,
-      "symbol": "TimingFunction.linear",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/travis/build/timdonnelly/Advance/Sources/TimingFunction.swift",
-      "line": 7,
-      "symbol": "TimingFunction.bezier(_:)",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/travis/build/timdonnelly/Advance/Sources/UnitBezier.swift",
       "line": 8,
       "symbol": "UnitBezier.first",
