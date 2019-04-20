@@ -26,4 +26,9 @@ class UnitBezierTests : XCTestCase {
             XCTAssertEqual(v, expected, accuracy: eps)
         }
     }
+    
+    static var allTests = [
+        ("testLinear", testLinear),
+        ("testCurve", testCurve),
+    ]
 }

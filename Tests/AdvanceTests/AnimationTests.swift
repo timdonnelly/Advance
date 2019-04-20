@@ -30,5 +30,10 @@ class AnimationTests: XCTestCase {
         }
         XCTAssert(a.value == a.to)
     }
+    
+    static var allTests = [
+        ("testDuration", testDuration),
+        ("testInterpolation", testInterpolation),
+    ]
 
 }
