@@ -8,7 +8,7 @@
 
 # Advance
 
-An animation library for iOS, tvOS, and macOS that uses physics-based animations (including springs) to enable UI that moves and responds realistically.
+An animation library for iOS, tvOS, and macOS that uses physics-based animations (including springs) to power interactions that move and respond realistically.
 
 
 ```swift
