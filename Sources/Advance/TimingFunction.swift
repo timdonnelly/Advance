@@ -1,5 +1,5 @@
 import Foundation
-import CoreGraphics
+
 
 /// Timing functions are used to convert linear input time (`0.0 -> 1.0`) to transformed output time (also `0.0 -> 1.0`).
 public enum TimingFunction {
