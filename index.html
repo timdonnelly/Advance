@@ -127,7 +127,7 @@
 <a href="#cocoapods"><img src="https://img.shields.io/cocoapods/v/Advance.svg" alt="CocoaPods compatible"></a> </p>
 <h1 id='advance' class='heading'>Advance</h1>
 
-<p>An animation library for iOS, tvOS, and macOS that uses physics-based animations (including springs) to enable UI that moves and responds realistically.</p>
+<p>An animation library for iOS, tvOS, and macOS that uses physics-based animations (including springs) to power interactions that move and respond realistically.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
 
 <span class="c1">// Springs animate changes to a value</span>
@@ -141,6 +141,21 @@
 <span class="c1">/// The view's center will realistically animate to the new target value.</span>
 <span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
 </code></pre>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>There are several ways to integrate Advance into your project.</p>
+
+<ul>
+<li><p>Manually, as a framework: simply add the <code>Advance.xcodeproj</code> to your project and add <code>Advance-{iOS|macOS|tvOS}.framework</code> as an <q>Embedded Binary</q> to your application target (under General in target settings). From there, add <code>import Advance</code> to your code and you&rsquo;re good to go.</p></li>
+<li><p>Carthage: add <code>github &quot;timdonnelly/Advance&quot;</code> to your <code>Cartfile</code>.</p></li>
+<li><p>CocoaPods: add <code>pod &#39;Advance&#39;</code> to your <code>Podfile</code>.</p></li>
+</ul>
+<h5 id='requirements' class='heading'>Requirements</h5>
+
+<ul>
+<li>iOS 10+, tvOS 10+, or macOS 10.12+</li>
+<li>Swift 5.0 (Xcode 10.2 or higher)</li>
+</ul>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
 <p>API documentation is <a href="http://timdonnelly.github.io/Advance/">available here</a>.</p>
@@ -252,21 +267,6 @@ value.</p>
 <p><strong>The best contribution you can provide is feedback.</strong> This library was designed in the context of a specific product – I&rsquo;d love to hear more about your project and how Advance can be improved to meet your needs.</p>
 
 <p><em>(Of course, pull requests are always welcome)</em></p>
-<h2 id='usage' class='heading'>Usage</h2>
-
-<p>There are several ways to integrate Advance into your project.</p>
-
-<ul>
-<li><p>Manually, as a framework: simply add the <code>Advance.xcodeproj</code> to your project and add <code>Advance-{iOS|macOS|tvOS}.framework</code> as an <q>Embedded Binary</q> to your application target (under General in target settings). From there, add <code>import Advance</code> to your code and you&rsquo;re good to go.</p></li>
-<li><p>Carthage: add <code>github &quot;timdonnelly/Advance&quot;</code> to your <code>Cartfile</code>.</p></li>
-<li><p>CocoaPods: add <code>pod &#39;Advance&#39;</code> to your <code>Podfile</code>.</p></li>
-</ul>
-<h5 id='requirements' class='heading'>Requirements</h5>
-
-<ul>
-<li>iOS 10+, tvOS 10+, or macOS 10.12+</li>
-<li>Swift 5.0 (Xcode 10.2 or higher)</li>
-</ul>
 <h2 id='license' class='heading'>License</h2>
 
 <p>This project is released under the <a href="https://github.com/timdonnelly/Advance/blob/master/LICENSE">BSD 2-clause license</a>.</p>
