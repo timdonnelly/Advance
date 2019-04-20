@@ -17,6 +17,9 @@ jobs:
       xcode_sdk: appletvos12.2
       xcode_destination: platform=tvOS Simulator,OS=12.2,name=Apple TV 4K
 
+    - script:
+      - swift test
+
     - stage: deploy
       script: skip
       after_success:
