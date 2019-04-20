@@ -1,6 +1,14 @@
+[![Build Status](https://travis-ci.org/timdonnelly/Advance.svg?branch=master)](https://travis-ci.org/timdonnelly/Advance)
+![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg)
+![GitHub release](https://img.shields.io/github/release/timdonnelly/Advance.svg)
+[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-orange.svg)](#swift-package-manager)
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/Advance.svg)](#cocoapods) 
+
+
+
 # Advance
 
-Physics-based animations for iOS, tvOS, and macOS.
+An animation library for iOS, tvOS, and macOS that uses physics-based animations (including springs) to enable UI that moves and responds realistically.
 
 
 ```swift
@@ -18,11 +26,12 @@ spring.onChange = { [view] newCenter in
 spring.target = CGPoint(x: 300, y: 200)
 ```
 
+## Documentation
+API documentation is [available here](http://timdonnelly.github.io/Advance/).
 
 ## Usage
 
-
-In contrast to standard `UIView` animations, Advance animations are applied on every frame (using `CADisplayLink` on iOS/tvOS, and `CVDisplayLink` on macOS).
+Advance animations are applied on every frame (using `CADisplayLink` on iOS/tvOS, and `CVDisplayLink` on macOS), allowing for fine-grained control at any time.
 
 
 ### `Spring`
@@ -169,8 +178,7 @@ There are several ways to integrate Advance into your project.
 * iOS 10+, tvOS 10+, or macOS 10.12+
 * Swift 5.0 (Xcode 10.2 or higher)
 
-## Documentation
-API documentation is [available here](http://timdonnelly.github.io/Advance/).
+
 
 ## License
 This project is released under the [BSD 2-clause license](https://github.com/timdonnelly/Advance/blob/master/LICENSE).
