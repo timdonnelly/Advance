@@ -1,31 +1,53 @@
-language: swift
-osx_image: xcode10.2
-xcode_project: Advance.xcodeproj
-
-
-
 jobs:
   include:
     - name: "iOS (xcodeproj)"
+      language: swift
+      osx_image: xcode10.2
+      xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-iOS
       xcode_sdk: iphonesimulator12.2
       xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone Xs
 
     - name: "macOS (xcodeproj)"
+      language: swift
+      osx_image: xcode10.2
+      xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-macOS
       xcode_sdk: macosx10.14
 
     - name: "tvOS (xcodeproj)"
+      language: swift
+      osx_image: xcode10.2
+      xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-tvOS
       xcode_sdk: appletvos12.2
       xcode_destination: platform=tvOS Simulator,OS=12.2,name=Apple TV 4K
 
     - name: "macOS (SPM)"
+      language: swift
+      osx_image: xcode10.2
       script:
-      - swift test
+        - swift --version
+        - swift build
+        - swift test
+
+    - name: "Linux (SPM)"
+      sudo: required
+      dist: trusty
+      os: linux
+      language: generic
+      before_install:
+        - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
+      script:
+        - swift --version
+        - swift build
+        - swift test
+
 
     - stage: deploy
       name: "Deploy documentation"
+      language: swift
+      osx_image: xcode10.2
       script: skip
       after_success:
         - ./build_docs.sh

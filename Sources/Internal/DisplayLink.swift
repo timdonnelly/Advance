@@ -177,7 +177,9 @@ extension CVTimeStamp {
 
 #else // Linux support using a simple timer --------------------------------------------------
 
-private let frameDuration: TimeInterval = 1.0/120.0
+import Foundation
+
+private let frameDuration: Double = 1.0/120.0
 
 extension DisplayLink {
     
