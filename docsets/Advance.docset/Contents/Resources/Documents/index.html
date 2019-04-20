@@ -120,9 +120,14 @@
         <section>
           <section class="section">
             
-            <h1 id='advance' class='heading'>Advance</h1>
+            <p><a href="https://travis-ci.org/timdonnelly/Advance"><img src="https://travis-ci.org/timdonnelly/Advance.svg?branch=master" alt="Build Status"></a>
+<img src="https://img.shields.io/badge/Swift-5.0-orange.svg" alt="Swift 5.0">
+<img src="https://img.shields.io/github/release/timdonnelly/Advance.svg" alt="GitHub release">
+<a href="#swift-package-manager"><img src="https://img.shields.io/badge/SwiftPM-compatible-orange.svg" alt="SwiftPM compatible"></a>
+<a href="#cocoapods"><img src="https://img.shields.io/cocoapods/v/Advance.svg" alt="CocoaPods compatible"></a> </p>
+<h1 id='advance' class='heading'>Advance</h1>
 
-<p>Physics-based animations for iOS, tvOS, and macOS.</p>
+<p>An animation library for iOS, tvOS, and macOS that uses physics-based animations (including springs) to enable UI that moves and responds realistically.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
 
 <span class="c1">// Springs animate changes to a value</span>
@@ -136,9 +141,12 @@
 <span class="c1">/// The view's center will realistically animate to the new target value.</span>
 <span class="n">spring</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
 </code></pre>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>API documentation is <a href="http://timdonnelly.github.io/Advance/">available here</a>.</p>
 <h2 id='usage' class='heading'>Usage</h2>
 
-<p>In contrast to standard <code>UIView</code> animations, Advance animations are applied on every frame (using <code>CADisplayLink</code> on iOS/tvOS, and <code>CVDisplayLink</code> on macOS).</p>
+<p>Advance animations are applied on every frame (using <code>CADisplayLink</code> on iOS/tvOS, and <code>CVDisplayLink</code> on macOS), allowing for fine-grained control at any time.</p>
 <h3 id='code-spring-code' class='heading'><code><a href="Classes/Spring.html">Spring</a></code></h3>
 
 <p><code><a href="Classes/Spring.html">Spring</a></code> instances animate changes to a value over time, using spring physics.</p>
@@ -259,9 +267,6 @@ value.</p>
 <li>iOS 10+, tvOS 10+, or macOS 10.12+</li>
 <li>Swift 5.0 (Xcode 10.2 or higher)</li>
 </ul>
-<h2 id='documentation' class='heading'>Documentation</h2>
-
-<p>API documentation is <a href="http://timdonnelly.github.io/Advance/">available here</a>.</p>
 <h2 id='license' class='heading'>License</h2>
 
 <p>This project is released under the <a href="https://github.com/timdonnelly/Advance/blob/master/LICENSE">BSD 2-clause license</a>.</p>
