@@ -42,10 +42,9 @@ There are several ways to integrate Advance into your project.
 * iOS 10+, tvOS 10+, or macOS 10.12+
 * Swift 5.0 (Xcode 10.2 or higher)
 
-## Documentation
-API documentation is [available here](http://timdonnelly.github.io/Advance/).
-
 ## Usage
+
+**API documentation is [available here](http://timdonnelly.github.io/Advance/).**
 
 Advance animations are applied on every frame (using `CADisplayLink` on iOS/tvOS, and `CVDisplayLink` on macOS), allowing for fine-grained control at any time.
 
