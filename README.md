@@ -158,13 +158,7 @@ public protocol VectorConvertible: Equatable, Interpolatable {
 The library adds conformance for many common types through extensions.
 
 
-## Contributing
-
-**The best contribution you can provide is feedback.** This library was designed in the context of a specific product – I'd love to hear more about your project and how Advance can be improved to meet your needs.
-
-*(Of course, pull requests are always welcome)*
-
-## Usage
+## Installation
 
 There are several ways to integrate Advance into your project.
 
@@ -173,6 +167,13 @@ There are several ways to integrate Advance into your project.
 * Carthage: add `github "timdonnelly/Advance"` to your `Cartfile`.
 
 * CocoaPods: add `pod 'Advance'` to your `Podfile`.
+
+
+## Contributing
+
+**The best contribution you can provide is feedback.** This library was designed in the context of a specific product – I'd love to hear more about your project and how Advance can be improved to meet your needs.
+
+*(Of course, pull requests are always welcome)*
 
 ##### Requirements
 * iOS 10+, tvOS 10+, or macOS 10.12+
