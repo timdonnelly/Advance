@@ -1,6 +1,10 @@
 import XCTest
 @testable import Advance
 
+#if canImport(QuartsCore)
+
+import QuartzCore
+
 
 class TimingFunctionTests : XCTestCase {
     
@@ -29,4 +33,15 @@ class TimingFunctionTests : XCTestCase {
     static var allTests = [
         ("testConversion", testConversion),
     ]
+    
 }
+
+
+#else
+
+class TimingFunctionTests : XCTestCase {
+    static var allTests: [(String, (XCTestCase) -> () -> Void)] = []
+}
+
+
+#endif

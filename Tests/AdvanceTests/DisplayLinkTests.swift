@@ -37,7 +37,7 @@ class DisplayLinkTests : XCTestCase {
         
         var gotCallback = false
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { () -> Void in
             self.link.isPaused = true
             self.link.onFrame = { (frame) in
                 gotCallback = true
@@ -47,7 +47,7 @@ class DisplayLinkTests : XCTestCase {
         let timeoutDate = Date(timeIntervalSinceNow: 1.0)
         
         repeat {
-            RunLoop.current.run(mode: RunLoop.Mode.default, before: timeoutDate)
+            _ = RunLoop.current.run(mode: RunLoop.Mode.default, before: timeoutDate)
             if timeoutDate.timeIntervalSinceNow <= 0.0 {
                 break
             }

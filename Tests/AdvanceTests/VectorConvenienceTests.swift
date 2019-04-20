@@ -3,6 +3,35 @@ import XCTest
 
 
 class VectorConvenienceTests : XCTestCase {
+
+    func testDoubleConversion() {
+        let d = Double(12.0)
+        let v = d.vector
+        let d2 = Double(vector: v)
+        XCTAssert(d == d2)
+    }
+    
+    #if canImport(CoreGraphics)
+    static var allTests = [
+        ("testDoubleConversion", testDoubleConversion),
+        ("testCGFloatConversion", testCGFloatConversion),
+        ("testCGPointConversion", testCGPointConversion),
+        ("testCGSizeConversion", testCGSizeConversion),
+        ("testCGVectorConversion", testCGVectorConversion),
+        ("testCGRectConversion", testCGRectConversion),
+    ]
+    #else
+    static var allTests = [
+        ("testDoubleConversion", testDoubleConversion),
+    ]
+    #endif
+}
+
+#if canImport(CoreGraphics)
+
+import CoreGraphics
+
+extension VectorConvenienceTests {
     func testCGFloatConversion() {
         let f = CGFloat(12.0)
         let v = f.vector
@@ -10,12 +39,6 @@ class VectorConvenienceTests : XCTestCase {
         XCTAssert(f == f2)
     }
     
-    func testDoubleConversion() {
-        let d = Double(12.0)
-        let v = d.vector
-        let d2 = Double(vector: v)
-        XCTAssert(d == d2)
-    }
     
     func testCGPointConversion() {
         let p = CGPoint(x: 12.0, y: 60.0)
@@ -45,12 +68,6 @@ class VectorConvenienceTests : XCTestCase {
         XCTAssert(r == r2)
     }
     
-    static var allTests = [
-        ("testCGFloatConversion", testCGFloatConversion),
-        ("testDoubleConversion", testDoubleConversion),
-        ("testCGPointConversion", testCGPointConversion),
-        ("testCGSizeConversion", testCGSizeConversion),
-        ("testCGVectorConversion", testCGVectorConversion),
-        ("testCGRectConversion", testCGRectConversion),
-    ]
 }
+
+#endif
