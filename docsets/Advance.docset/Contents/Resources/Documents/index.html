@@ -146,9 +146,10 @@
 <p>There are several ways to integrate Advance into your project.</p>
 
 <ul>
-<li><p>Manually, as a framework: simply add the <code>Advance.xcodeproj</code> to your project and add <code>Advance-{iOS|macOS|tvOS}.framework</code> as an <q>Embedded Binary</q> to your application target (under General in target settings). From there, add <code>import Advance</code> to your code and you&rsquo;re good to go.</p></li>
-<li><p>Carthage: add <code>github &quot;timdonnelly/Advance&quot;</code> to your <code>Cartfile</code>.</p></li>
-<li><p>CocoaPods: add <code>pod &#39;Advance&#39;</code> to your <code>Podfile</code>.</p></li>
+<li><p><strong>Manually:</strong> add  <code>Advance.xcodeproj</code> to your project, then add <code>Advance-{iOS|macOS|tvOS}.framework</code> as an <q>Embedded Binary</q> to your application target (under General in target settings). From there, add <code>import Advance</code> to your code and you&rsquo;re good to go.</p></li>
+<li><p><strong>Carthage:</strong> add <code>github &quot;timdonnelly/Advance&quot;</code> to your <code>Cartfile</code>.</p></li>
+<li><p><strong>CocoaPods:</strong> add <code>pod &#39;Advance&#39;</code> to your <code>Podfile</code>.</p></li>
+<li><p><strong>Swift Package Manager:</strong> add a dependency to your <code>Project.swift</code>: <code>.package(url: &quot;http://github.com/timdonnelly/Advance&quot;, from: &quot;3.0.0&quot;)</code></p></li>
 </ul>
 <h5 id='requirements' class='heading'>Requirements</h5>
 
@@ -156,10 +157,9 @@
 <li>iOS 10+, tvOS 10+, or macOS 10.12+</li>
 <li>Swift 5.0 (Xcode 10.2 or higher)</li>
 </ul>
-<h2 id='documentation' class='heading'>Documentation</h2>
-
-<p>API documentation is <a href="http://timdonnelly.github.io/Advance/">available here</a>.</p>
 <h2 id='usage' class='heading'>Usage</h2>
+
+<p><strong>API documentation is <a href="http://timdonnelly.github.io/Advance/">available here</a>.</strong></p>
 
 <p>Advance animations are applied on every frame (using <code>CADisplayLink</code> on iOS/tvOS, and <code>CVDisplayLink</code> on macOS), allowing for fine-grained control at any time.</p>
 <h3 id='code-spring-code' class='heading'><code><a href="Classes/Spring.html">Spring</a></code></h3>
