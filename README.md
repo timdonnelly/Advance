@@ -30,11 +30,13 @@ spring.target = CGPoint(x: 300, y: 200)
 
 There are several ways to integrate Advance into your project.
 
-* Manually, as a framework: simply add the `Advance.xcodeproj` to your project and add `Advance-{iOS|macOS|tvOS}.framework` as an "Embedded Binary" to your application target (under General in target settings). From there, add `import Advance` to your code and you're good to go.
+* **Manually:** add  `Advance.xcodeproj` to your project, then add `Advance-{iOS|macOS|tvOS}.framework` as an "Embedded Binary" to your application target (under General in target settings). From there, add `import Advance` to your code and you're good to go.
 
-* Carthage: add `github "timdonnelly/Advance"` to your `Cartfile`.
+* **Carthage:** add `github "timdonnelly/Advance"` to your `Cartfile`.
 
-* CocoaPods: add `pod 'Advance'` to your `Podfile`.
+* **CocoaPods:** add `pod 'Advance'` to your `Podfile`.
+
+* **Swift Package Manager:** add a dependency to your `Project.swift`: `.package(url: "http://github.com/timdonnelly/Advance", from: "3.0.0")`
 
 ##### Requirements
 * iOS 10+, tvOS 10+, or macOS 10.12+
