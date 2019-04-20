@@ -175,9 +175,9 @@ The library adds conformance for many common types through extensions.
 
 ## Contributing
 
-**The best contribution you can provide is feedback.** This library was designed in the context of a specific product – I'd love to hear more about your project and how Advance can be improved to meet your needs.
+If you encounter any issues or surprises, please open an issue.
 
-*(Of course, pull requests are always welcome)*
+For suggestions or new features, please consider opening a PR with a functional implementation. Issues may be used if you aren't sure how to implement the change, but working code is typically easier to evaluate.
 
 ## License
 This project is released under the [BSD 2-clause license](https://github.com/timdonnelly/Advance/blob/master/LICENSE).
