@@ -26,6 +26,20 @@ spring.onChange = { [view] newCenter in
 spring.target = CGPoint(x: 300, y: 200)
 ```
 
+## Installation
+
+There are several ways to integrate Advance into your project.
+
+* Manually, as a framework: simply add the `Advance.xcodeproj` to your project and add `Advance-{iOS|macOS|tvOS}.framework` as an "Embedded Binary" to your application target (under General in target settings). From there, add `import Advance` to your code and you're good to go.
+
+* Carthage: add `github "timdonnelly/Advance"` to your `Cartfile`.
+
+* CocoaPods: add `pod 'Advance'` to your `Podfile`.
+
+##### Requirements
+* iOS 10+, tvOS 10+, or macOS 10.12+
+* Swift 5.0 (Xcode 10.2 or higher)
+
 ## Documentation
 API documentation is [available here](http://timdonnelly.github.io/Advance/).
 
@@ -158,28 +172,11 @@ public protocol VectorConvertible: Equatable, Interpolatable {
 The library adds conformance for many common types through extensions.
 
 
-## Installation
-
-There are several ways to integrate Advance into your project.
-
-* Manually, as a framework: simply add the `Advance.xcodeproj` to your project and add `Advance-{iOS|macOS|tvOS}.framework` as an "Embedded Binary" to your application target (under General in target settings). From there, add `import Advance` to your code and you're good to go.
-
-* Carthage: add `github "timdonnelly/Advance"` to your `Cartfile`.
-
-* CocoaPods: add `pod 'Advance'` to your `Podfile`.
-
-
 ## Contributing
 
 **The best contribution you can provide is feedback.** This library was designed in the context of a specific product – I'd love to hear more about your project and how Advance can be improved to meet your needs.
 
 *(Of course, pull requests are always welcome)*
-
-##### Requirements
-* iOS 10+, tvOS 10+, or macOS 10.12+
-* Swift 5.0 (Xcode 10.2 or higher)
-
-
 
 ## License
 This project is released under the [BSD 2-clause license](https://github.com/timdonnelly/Advance/blob/master/LICENSE).
