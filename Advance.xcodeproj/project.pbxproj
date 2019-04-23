@@ -97,6 +97,9 @@
 		228A676C226F77CB0086A37C /* SimulationFunction+Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */; };
 		228A676D226F77CB0086A37C /* SimulationFunction+Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */; };
 		228A676E226F77CB0086A37C /* SimulationFunction+Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */; };
+		228A677A226F7B3C0086A37C /* SpringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A6779226F7B3C0086A37C /* SpringTests.swift */; };
+		228A677B226F7B3C0086A37C /* SpringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A6779226F7B3C0086A37C /* SpringTests.swift */; };
+		228A677C226F7B3C0086A37C /* SpringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A6779226F7B3C0086A37C /* SpringTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +216,7 @@
 		22881F35226AE9D900309FEF /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		228A6755226F72E40086A37C /* AnimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorTests.swift; sourceTree = "<group>"; };
 		228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SimulationFunction+Integration.swift"; sourceTree = "<group>"; };
+		228A6779226F7B3C0086A37C /* SpringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringTests.swift; sourceTree = "<group>"; };
 		22A4664622063B0400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4665622063B4B00C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4666322063B6400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -425,6 +429,7 @@
 				22881F14226AE99D00309FEF /* AnimationTests.swift */,
 				22881F15226AE99D00309FEF /* VectorConvenienceTests.swift */,
 				228A6755226F72E40086A37C /* AnimatorTests.swift */,
+				228A6779226F7B3C0086A37C /* SpringTests.swift */,
 			);
 			path = AdvanceTests;
 			sourceTree = "<group>";
@@ -433,14 +438,14 @@
 			isa = PBXGroup;
 			children = (
 				22881F2C226AE9D900309FEF /* Internal */,
-				22881F29226AE9D900309FEF /* Spring.swift */,
-				22881F2A226AE9D900309FEF /* DecayFunction.swift */,
-				22881F2B226AE9D900309FEF /* SpringFunction.swift */,
 				22881F31226AE9D900309FEF /* Animator.swift */,
+				22881F2A226AE9D900309FEF /* DecayFunction.swift */,
 				22881F32226AE9D900309FEF /* SimulationFunction.swift */,
+				22881F29226AE9D900309FEF /* Spring.swift */,
+				22881F2B226AE9D900309FEF /* SpringFunction.swift */,
+				22881F35226AE9D900309FEF /* TimingFunction.swift */,
 				22881F33226AE9D900309FEF /* UnitBezier.swift */,
 				22881F34226AE9D900309FEF /* VectorConvertible.swift */,
-				22881F35226AE9D900309FEF /* TimingFunction.swift */,
 			);
 			path = Advance;
 			sourceTree = "<group>";
@@ -448,10 +453,10 @@
 		22881F2C226AE9D900309FEF /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				22881F2D226AE9D900309FEF /* Math.swift */,
 				22881F2E226AE9D900309FEF /* Animation.swift */,
-				22881F2F226AE9D900309FEF /* Simulation.swift */,
 				22881F30226AE9D900309FEF /* DisplayLink.swift */,
+				22881F2D226AE9D900309FEF /* Math.swift */,
+				22881F2F226AE9D900309FEF /* Simulation.swift */,
 				228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */,
 			);
 			path = Internal;
@@ -878,6 +883,7 @@
 			files = (
 				22881F25226AE99D00309FEF /* VectorConvenienceTests.swift in Sources */,
 				22881F1F226AE99D00309FEF /* DisplayLinkTests.swift in Sources */,
+				228A677A226F7B3C0086A37C /* SpringTests.swift in Sources */,
 				228A6756226F72E40086A37C /* AnimatorTests.swift in Sources */,
 				22881F19226AE99D00309FEF /* UnitBezierTests.swift in Sources */,
 				22881F22226AE99D00309FEF /* AnimationTests.swift in Sources */,
@@ -892,6 +898,7 @@
 			files = (
 				22881F26226AE99D00309FEF /* VectorConvenienceTests.swift in Sources */,
 				22881F20226AE99D00309FEF /* DisplayLinkTests.swift in Sources */,
+				228A677B226F7B3C0086A37C /* SpringTests.swift in Sources */,
 				228A6757226F72E40086A37C /* AnimatorTests.swift in Sources */,
 				22881F1A226AE99D00309FEF /* UnitBezierTests.swift in Sources */,
 				22881F23226AE99D00309FEF /* AnimationTests.swift in Sources */,
@@ -906,6 +913,7 @@
 			files = (
 				22881F27226AE99D00309FEF /* VectorConvenienceTests.swift in Sources */,
 				22881F21226AE99D00309FEF /* DisplayLinkTests.swift in Sources */,
+				228A677C226F7B3C0086A37C /* SpringTests.swift in Sources */,
 				228A6758226F72E40086A37C /* AnimatorTests.swift in Sources */,
 				22881F1B226AE99D00309FEF /* UnitBezierTests.swift in Sources */,
 				22881F24226AE99D00309FEF /* AnimationTests.swift in Sources */,

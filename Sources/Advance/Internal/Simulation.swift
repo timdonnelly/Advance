@@ -12,11 +12,7 @@
 /// precise calculations.
 struct Simulation<Value: VectorConvertible> {
     
-    // The internal time step. 0.008 == 120fps (double the typical screen refresh
-    // rate). The math required to solve most functions is easy for modern
-    // CPUs, but it's worth experimenting with this value if solver calculations
-    // ever become a performance bottleneck.
-    fileprivate let tickTime: Double = 0.008
+
     
     /// The function driving the simulation.
     private var function: AnySimulationFunction<Value> {
@@ -81,7 +77,7 @@ struct Simulation<Value: VectorConvertible> {
         guard hasConverged == false else { return }
         
         // Limit to 10 physics ticks per update, should never come close.
-        let t = min(time, tickTime * 10.0)
+        let t = min(time, simulationFrameDuration * 10.0)
         
         // Add the new time to the accumulator. This can be thought of as the
         // delta between the time of the current physics state, and the time
@@ -98,12 +94,12 @@ struct Simulation<Value: VectorConvertible> {
                 break
             }
             previous = current
-            current = function.integrate(value: current.value, velocity: current.velocity, time: tickTime)
-            timeAccumulator -= tickTime
+            current = function.integrate(value: current.value, velocity: current.velocity, time: simulationFrameDuration)
+            timeAccumulator -= simulationFrameDuration
         }
         
         assert(timeAccumulator <= 0.0)
-        assert(timeAccumulator > -tickTime)
+        assert(timeAccumulator > -simulationFrameDuration)
         
         // If convergence is possible, we can just do that and avoid interpolation.
         convergeIfPossible()
@@ -115,7 +111,7 @@ struct Simulation<Value: VectorConvertible> {
             // `previousState` and `simulationState`, and interpolate. This
             // will let us provide a more accurate value to the outside world,
             // while maintaining a consistent time step internally.
-            let alpha = Double((tickTime + timeAccumulator) / tickTime)
+            let alpha = Double((simulationFrameDuration + timeAccumulator) / simulationFrameDuration)
             interpolated.value = interpolate(from: previous.value, to: current.value, alpha: alpha)
             interpolated.velocity = interpolate(from: previous.velocity, to: current.velocity, alpha: alpha)
         }
