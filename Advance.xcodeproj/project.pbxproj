@@ -91,6 +91,9 @@
 		22881F57226AE9D900309FEF /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22881F35226AE9D900309FEF /* TimingFunction.swift */; };
 		22881F58226AE9D900309FEF /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22881F35226AE9D900309FEF /* TimingFunction.swift */; };
 		22881F59226AE9D900309FEF /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22881F35226AE9D900309FEF /* TimingFunction.swift */; };
+		228A6756226F72E40086A37C /* AnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A6755226F72E40086A37C /* AnimatorTests.swift */; };
+		228A6757226F72E40086A37C /* AnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A6755226F72E40086A37C /* AnimatorTests.swift */; };
+		228A6758226F72E40086A37C /* AnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A6755226F72E40086A37C /* AnimatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +208,7 @@
 		22881F33226AE9D900309FEF /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		22881F34226AE9D900309FEF /* VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorConvertible.swift; sourceTree = "<group>"; };
 		22881F35226AE9D900309FEF /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
+		228A6755226F72E40086A37C /* AnimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorTests.swift; sourceTree = "<group>"; };
 		22A4664622063B0400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4665622063B4B00C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4666322063B6400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -416,6 +420,7 @@
 				22881F13226AE99D00309FEF /* DisplayLinkTests.swift */,
 				22881F14226AE99D00309FEF /* AnimationTests.swift */,
 				22881F15226AE99D00309FEF /* VectorConvenienceTests.swift */,
+				228A6755226F72E40086A37C /* AnimatorTests.swift */,
 			);
 			path = AdvanceTests;
 			sourceTree = "<group>";
@@ -868,6 +873,7 @@
 			files = (
 				22881F25226AE99D00309FEF /* VectorConvenienceTests.swift in Sources */,
 				22881F1F226AE99D00309FEF /* DisplayLinkTests.swift in Sources */,
+				228A6756226F72E40086A37C /* AnimatorTests.swift in Sources */,
 				22881F19226AE99D00309FEF /* UnitBezierTests.swift in Sources */,
 				22881F22226AE99D00309FEF /* AnimationTests.swift in Sources */,
 				22881F16226AE99D00309FEF /* TimingFunctionTests.swift in Sources */,
@@ -881,6 +887,7 @@
 			files = (
 				22881F26226AE99D00309FEF /* VectorConvenienceTests.swift in Sources */,
 				22881F20226AE99D00309FEF /* DisplayLinkTests.swift in Sources */,
+				228A6757226F72E40086A37C /* AnimatorTests.swift in Sources */,
 				22881F1A226AE99D00309FEF /* UnitBezierTests.swift in Sources */,
 				22881F23226AE99D00309FEF /* AnimationTests.swift in Sources */,
 				22881F17226AE99D00309FEF /* TimingFunctionTests.swift in Sources */,
@@ -894,6 +901,7 @@
 			files = (
 				22881F27226AE99D00309FEF /* VectorConvenienceTests.swift in Sources */,
 				22881F21226AE99D00309FEF /* DisplayLinkTests.swift in Sources */,
+				228A6758226F72E40086A37C /* AnimatorTests.swift in Sources */,
 				22881F1B226AE99D00309FEF /* UnitBezierTests.swift in Sources */,
 				22881F24226AE99D00309FEF /* AnimationTests.swift in Sources */,
 				22881F18226AE99D00309FEF /* TimingFunctionTests.swift in Sources */,
