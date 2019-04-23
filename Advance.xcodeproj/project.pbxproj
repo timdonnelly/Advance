@@ -94,6 +94,9 @@
 		228A6756226F72E40086A37C /* AnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A6755226F72E40086A37C /* AnimatorTests.swift */; };
 		228A6757226F72E40086A37C /* AnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A6755226F72E40086A37C /* AnimatorTests.swift */; };
 		228A6758226F72E40086A37C /* AnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A6755226F72E40086A37C /* AnimatorTests.swift */; };
+		228A676C226F77CB0086A37C /* SimulationFunction+Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */; };
+		228A676D226F77CB0086A37C /* SimulationFunction+Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */; };
+		228A676E226F77CB0086A37C /* SimulationFunction+Integration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +212,7 @@
 		22881F34226AE9D900309FEF /* VectorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorConvertible.swift; sourceTree = "<group>"; };
 		22881F35226AE9D900309FEF /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		228A6755226F72E40086A37C /* AnimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorTests.swift; sourceTree = "<group>"; };
+		228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SimulationFunction+Integration.swift"; sourceTree = "<group>"; };
 		22A4664622063B0400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4665622063B4B00C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4666322063B6400C0FEA1 /* Advance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Advance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -448,6 +452,7 @@
 				22881F2E226AE9D900309FEF /* Animation.swift */,
 				22881F2F226AE9D900309FEF /* Simulation.swift */,
 				22881F30226AE9D900309FEF /* DisplayLink.swift */,
+				228A676B226F77CB0086A37C /* SimulationFunction+Integration.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -916,6 +921,7 @@
 				22881F39226AE9D900309FEF /* DecayFunction.swift in Sources */,
 				22881F57226AE9D900309FEF /* TimingFunction.swift in Sources */,
 				22881F48226AE9D900309FEF /* DisplayLink.swift in Sources */,
+				228A676C226F77CB0086A37C /* SimulationFunction+Integration.swift in Sources */,
 				22881F4E226AE9D900309FEF /* SimulationFunction.swift in Sources */,
 				22881F36226AE9D900309FEF /* Spring.swift in Sources */,
 				22881F3C226AE9D900309FEF /* SpringFunction.swift in Sources */,
@@ -935,6 +941,7 @@
 				22881F3A226AE9D900309FEF /* DecayFunction.swift in Sources */,
 				22881F58226AE9D900309FEF /* TimingFunction.swift in Sources */,
 				22881F49226AE9D900309FEF /* DisplayLink.swift in Sources */,
+				228A676D226F77CB0086A37C /* SimulationFunction+Integration.swift in Sources */,
 				22881F4F226AE9D900309FEF /* SimulationFunction.swift in Sources */,
 				22881F37226AE9D900309FEF /* Spring.swift in Sources */,
 				22881F3D226AE9D900309FEF /* SpringFunction.swift in Sources */,
@@ -954,6 +961,7 @@
 				22881F3B226AE9D900309FEF /* DecayFunction.swift in Sources */,
 				22881F59226AE9D900309FEF /* TimingFunction.swift in Sources */,
 				22881F4A226AE9D900309FEF /* DisplayLink.swift in Sources */,
+				228A676E226F77CB0086A37C /* SimulationFunction+Integration.swift in Sources */,
 				22881F50226AE9D900309FEF /* SimulationFunction.swift in Sources */,
 				22881F38226AE9D900309FEF /* Spring.swift in Sources */,
 				22881F3E226AE9D900309FEF /* SpringFunction.swift in Sources */,
