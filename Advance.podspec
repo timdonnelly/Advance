@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.authors      = "Tim Donnelly"
   s.social_media_url = 'http://twitter.com/timdonnelly'
 
-  s.source       = { :git => "https://github.com/timdonnelly/Advance.git", :tag => "v3.0.0" }
+  s.source       = { :git => "https://github.com/timdonnelly/Advance.git", :tag => "3.1.0" }
 
   s.source_files = "Sources/Advance/**/*.swift"
 
