@@ -9,7 +9,7 @@ jobs:
       xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-iOS
       xcode_sdk: iphonesimulator13.1
-      xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone Xs
+      xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 11
 
     - name: "macOS (xcodeproj)"
       language: swift
@@ -17,7 +17,7 @@ jobs:
       osx_image: xcode11.1
       xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-macOS
-      xcode_sdk: macosx10.14
+      xcode_sdk: macosx10.15
 
     - name: "tvOS (xcodeproj)"
       language: swift
@@ -25,8 +25,8 @@ jobs:
       osx_image: xcode11.1
       xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-tvOS
-      xcode_sdk: appletvos13.1
-      xcode_destination: platform=tvOS Simulator,OS=12.2,name=Apple TV 4K
+      xcode_sdk: appletvos13.0
+      xcode_destination: platform=tvOS Simulator,OS=13.0,name=Apple TV 4K
 
     - name: "macOS (SPM)"
       language: swift
