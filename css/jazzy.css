@@ -219,7 +219,10 @@ header {
   .item .token, .item .direct-link {
     padding-left: 3px;
     margin-left: 15px;
-    font-size: 11.9px; }
+    font-size: 11.9px;
+    transition: all 300ms; }
+  .item .token-open {
+    margin-left: 0px; }
   .item .discouraged {
     text-decoration: line-through; }
   .item .declaration-note {
@@ -323,6 +326,7 @@ header {
 
 html.dash header, html.dash #breadcrumbs, html.dash .sidebar {
   display: none; }
+
 html.dash .main-content {
   width: 980px;
   margin-left: 0;
@@ -330,11 +334,15 @@ html.dash .main-content {
   width: 100%;
   top: 0;
   padding-bottom: 0; }
+
 html.dash .height-container {
   display: block; }
+
 html.dash .item .token {
   margin-left: 0; }
+
 html.dash .content-wrapper {
   width: auto; }
+
 html.dash #footer {
   position: static; }
