@@ -22,15 +22,14 @@ struct SimpleTransform {
 }
 
 extension SimpleTransform: VectorConvertible {
-    typealias Vector = Vector2
-    
-    var vector: Vector {
-        return Vector2(x: Double(scale), y: Double(rotation))
+        
+    var vector: AnimatablePair<CGFloat, CGFloat> {
+        AnimatablePair(first: scale, second: rotation)
     }
     
-    init(vector: Vector) {
-        scale = CGFloat(vector.x)
-        rotation = CGFloat(vector.y)
+    init(vector: AnimatablePair<CGFloat, CGFloat>) {
+        scale = vector.first
+        rotation = vector.second
     }
 
 }

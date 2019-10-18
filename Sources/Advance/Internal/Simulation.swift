@@ -32,11 +32,11 @@ struct Simulation<Value: VectorConvertible> {
     fileprivate (set) var hasConverged: Bool = false
     
     // The current state of the solver.
-    private var current: (value: Value.VectorType, velocity: Value.VectorType)
+    private var current: (value: Value.Vector, velocity: Value.Vector)
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    private var interpolated: (value: Value.VectorType, velocity: Value.VectorType)
+    private var interpolated: (value: Value.Vector, velocity: Value.Vector)
     
     /// Creates a new `DynamicSolver` instance.
     ///
@@ -143,19 +143,19 @@ struct Simulation<Value: VectorConvertible> {
 
 fileprivate struct AnySimulationFunction<Value>: SimulationFunction where Value: VectorConvertible {
     
-    private let _acceleration: (Value.VectorType, Value.VectorType) -> Value.VectorType
-    private let _convergence: (Value.VectorType, Value.VectorType) -> Convergence<Value>
+    private let _acceleration: (Value.Vector, Value.Vector) -> Value.Vector
+    private let _convergence: (Value.Vector, Value.Vector) -> Convergence<Value>
     
     public init<T: SimulationFunction>(_ wrapped: T) where T.Value == Value {
         _acceleration = wrapped.acceleration
         _convergence = wrapped.convergence
     }
     
-    public func acceleration(value: Value.VectorType, velocity: Value.VectorType) -> Value.VectorType {
+    public func acceleration(value: Value.Vector, velocity: Value.Vector) -> Value.Vector {
         return _acceleration(value, velocity)
     }
     
-    public func convergence(value: Value.VectorType, velocity: Value.VectorType) -> Convergence<Value> {
+    public func convergence(value: Value.Vector, velocity: Value.Vector) -> Convergence<Value> {
         return _convergence(value, velocity)
     }
     

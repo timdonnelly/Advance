@@ -17,7 +17,6 @@ class VectorConvenienceTests : XCTestCase {
         ("testCGFloatConversion", testCGFloatConversion),
         ("testCGPointConversion", testCGPointConversion),
         ("testCGSizeConversion", testCGSizeConversion),
-        ("testCGVectorConversion", testCGVectorConversion),
         ("testCGRectConversion", testCGRectConversion),
     ]
     #else
@@ -52,13 +51,6 @@ extension VectorConvenienceTests {
         let v = s.vector
         let s2 = CGSize(vector: v)
         XCTAssert(s == s2)
-    }
-    
-    func testCGVectorConversion() {
-        let cg = CGVector(dx: 12.0, dy: 60.0)
-        let v = cg.vector
-        let cg2 = CGVector(vector: v)
-        XCTAssert(cg == cg2)
     }
     
     func testCGRectConversion() {

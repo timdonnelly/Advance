@@ -59,7 +59,9 @@ struct Animation<Value: VectorConvertible> {
         
         value = Value(vector: interpolate(from: from.vector, to: to.vector, alpha: adjustedProgress))
         
-        let vel = (1.0/time) * (value.vector - starting.vector)
+        var vel = value.vector - starting.vector
+        vel.scale(by: 1.0/time)
+        
         velocity = Value(vector: vel)
     }
     

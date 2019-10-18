@@ -9,13 +9,13 @@ let simulationFrameDuration: Double = 0.008
 /// is used to integrate the acceleration function.
 extension SimulationFunction {
     
-    private typealias Derivative = (value: Value.VectorType, velocity: Value.VectorType)
+    private typealias Derivative = (value: Value.Vector, velocity: Value.Vector)
     
     /// Integrates time into an existing simulation state, returning the resulting
     /// simulation state.
     ///
     /// The integration is done via RK4.
-    func integrate(value: Value.VectorType, velocity: Value.VectorType, time: Double) -> (value: Value.VectorType, velocity: Value.VectorType) {
+    func integrate(value: Value.Vector, velocity: Value.Vector, time: Double) -> (value: Value.Vector, velocity: Value.Vector) {
         
         let initial = Derivative(value: .zero, velocity: .zero)
         
@@ -24,24 +24,35 @@ extension SimulationFunction {
         let c = evaluate(value: value, velocity: velocity, time: time * 0.5, derivative: b)
         let d = evaluate(value: value, velocity: velocity, time: time, derivative: c)
         
-        var dxdt = a.value
-        dxdt += (2.0 * (b.value + c.value)) + d.value
-        dxdt = Double(1.0/6.0) * dxdt
+        var dxdt = b.value + c.value
+        dxdt.scale(by: 2.0)
+        dxdt += d.value
+        dxdt.scale(by: 1.0/6.0)
         
-        var dvdt = a.velocity
-        dvdt += (2.0 * (b.velocity + c.velocity)) + d.velocity
-        dvdt = Double(1.0/6.0) * dvdt
+        var dvdt = b.velocity + c.velocity
+        dvdt.scale(by: 2.0)
+        dvdt += d.velocity
+        dvdt.scale(by: 1.0/6.0)
+        
+        dxdt.scale(by: time)
+        dvdt.scale(by: time)
         
         return (
-            value: value + (time * dxdt),
-            velocity: velocity + (time * dvdt)
+            value: value + dxdt,
+            velocity: velocity + dvdt
         )
         
     }
     
-    private func evaluate(value: Value.VectorType, velocity: Value.VectorType, time: Double, derivative: Derivative) -> Derivative {
-        let nextValue = value + (time * derivative.value)
-        let nextVelocity = velocity + (time * derivative.velocity)
+    private func evaluate(value: Value.Vector, velocity: Value.Vector, time: Double, derivative: Derivative) -> Derivative {
+        var nextValue = derivative.value
+        nextValue.scale(by: time)
+        nextValue += value
+        
+        var nextVelocity = derivative.velocity
+        nextVelocity.scale(by: time)
+        nextVelocity += velocity
+        
         return Derivative(
             value: nextVelocity,
             velocity: acceleration(value: nextValue, velocity: nextVelocity))

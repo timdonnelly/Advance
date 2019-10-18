@@ -6,13 +6,13 @@ public protocol VectorConvertible: Equatable {
     
     /// The concrete VectorType implementation that can represent the 
     /// conforming type.
-    associatedtype VectorType: SIMD where VectorType.Scalar == Double
+    associatedtype Vector: VectorArithmetic
     
     /// Creates a new instance from a vector.
-    init(vector: VectorType)
+    init(vector: Vector)
     
     /// The vector representation of this instance.
-    var vector: VectorType { get }
+    var vector: Vector { get }
     
 }
 
@@ -20,13 +20,101 @@ extension VectorConvertible {
     
     /// Returns an instance initialized using the zero vector.
     public static var zero: Self {
-        return Self(vector: VectorType.zero)
+        return Self(vector: Vector.zero)
     }
 }
 
-public typealias Vector2 = SIMD2<Double>
-public typealias Vector3 = SIMD3<Double>
-public typealias Vector4 = SIMD4<Double>
+extension VectorConvertible where Vector == Self {
+    
+    public var vector: Self {
+        self
+    }
+    
+    public init(vector: Self) {
+        self = vector
+    }
+    
+}
+
+// This protocol is intentionally similar to `VectorArithmetic` from SwiftUI, which
+// may be added as a dependency in a future release.
+public protocol VectorArithmetic: AdditiveArithmetic {
+    var magnitudeSquared: Double { get }
+    mutating func scale(by magnitude: Double)
+}
+
+extension Double: VectorArithmetic {
+    
+    public var magnitudeSquared: Double {
+        self * self
+    }
+    
+    public mutating func scale(by magnitude: Double) {
+        self *= magnitude
+    }
+    
+}
+
+extension CGFloat: VectorArithmetic {
+    
+    public var magnitudeSquared: Double {
+        Double(self * self)
+    }
+    
+    public mutating func scale(by magnitude: Double) {
+        self *= CGFloat(magnitude)
+    }
+    
+}
+
+public struct VectorPair<First: VectorArithmetic, Second: VectorArithmetic>: VectorArithmetic {
+
+    public var first: First
+    public var second: Second
+    
+    public init(first: First, second: Second) {
+        self.first = first
+        self.second = second
+    }
+    
+    public var magnitudeSquared: Double {
+        first.magnitudeSquared + second.magnitudeSquared
+    }
+    
+    public mutating func scale(by magnitude: Double) {
+        first.scale(by: magnitude)
+        second.scale(by: magnitude)
+    }
+    
+    public static var zero: VectorPair<First, Second> {
+        VectorPair(
+            first: .zero,
+            second: .zero)
+    }
+    
+    public static func - (lhs: VectorPair<First, Second>, rhs: VectorPair<First, Second>) -> VectorPair<First, Second> {
+        VectorPair(
+            first: lhs.first - rhs.first,
+            second: lhs.second - rhs.second)
+    }
+    
+    public static func -= (lhs: inout VectorPair<First, Second>, rhs: VectorPair<First, Second>) {
+        lhs.first -= rhs.first
+        lhs.second -= rhs.second
+    }
+    
+    public static func + (lhs: VectorPair<First, Second>, rhs: VectorPair<First, Second>) -> VectorPair<First, Second> {
+        VectorPair(
+            first: lhs.first + rhs.first,
+            second: lhs.second + rhs.second)
+    }
+    
+    public static func += (lhs: inout VectorPair<First, Second>, rhs: VectorPair<First, Second>) {
+        lhs.first += rhs.first
+        lhs.second += rhs.second
+    }
+    
+}
 
 
 /// ********************************************************************************
@@ -34,75 +122,7 @@ public typealias Vector4 = SIMD4<Double>
 /// ********************************************************************************
 
 /// Adds `VectorConvertible` conformance
-extension Double: VectorConvertible {
-
-    public init(vector: Vector2) {
-        self.init(vector.x)
-    }
-    
-    public var vector: Vector2 {
-        return Vector2(x: self, y: 0.0)
-    }
-    
-}
-
-/// Adds `VectorConvertible` conformance
-extension Float: VectorConvertible {
-    
-    public init(vector: Vector2) {
-        self.init(vector.x)
-    }
-    
-    public var vector: Vector2 {
-        return Vector2(x: Double(self), y: 0.0)
-    }
-    
-}
-
-#if canImport(UIKit)
-
-import UIKit
-
-/// Adds `VectorConvertible` conformance
-extension UIOffset: VectorConvertible {
-    
-    public var vector: Vector2 {
-        return Vector2(
-            x: Double(horizontal),
-            y: Double(vertical))
-    }
-    
-    public init(vector: Vector2) {
-        self.init(
-            horizontal: CGFloat(vector.x),
-            vertical: CGFloat(vector.y))
-    }
-    
-}
-
-/// Adds `VectorConvertible` conformance
-extension UIEdgeInsets: VectorConvertible {
-    
-    public var vector: Vector4 {
-        return Vector4(
-            x: Double(top),
-            y: Double(left),
-            z: Double(bottom),
-            w: Double(right))
-    }
-    
-    public init(vector: Vector4) {
-        self.init(
-            top: CGFloat(vector.x),
-            left: CGFloat(vector.y),
-            bottom: CGFloat(vector.z),
-            right: CGFloat(vector.w))
-    }
-    
-}
-
-#endif
-
+extension Double: VectorConvertible {}
 
 #if canImport(CoreGraphics)
 
@@ -111,72 +131,62 @@ import CoreGraphics
 /// Adds `VectorConvertible` conformance
 extension CGSize: VectorConvertible {
     
-    public init(vector: Vector2) {
-        self.init(width: CGFloat(vector.x), height: CGFloat(vector.y))
+    public var vector: VectorPair<CGFloat, CGFloat> {
+        VectorPair(
+            first: width,
+            second: height)
     }
     
-    public var vector: Vector2 {
-        return Vector2(x: Double(width), y: Double(height))
-    }
-}
-
-/// Adds `VectorConvertible` conformance
-extension CGVector: VectorConvertible {
-    
-    public init(vector: Vector2) {
-        self.init(dx: CGFloat(vector.x), dy: CGFloat(vector.y))
+    public init(vector: VectorPair<CGFloat, CGFloat>) {
+        self.init(
+            width: vector.first,
+            height: vector.second)
     }
     
-    public var vector: Vector2 {
-        return Vector2(x: Double(dx), y: Double(dy))
-    }
 }
 
 /// Adds `VectorConvertible` conformance
 extension CGPoint: VectorConvertible {
     
-    public init(vector: Vector2) {
-        self.init(
-            x: CGFloat(vector.x),
-            y: CGFloat(vector.y))
+    public var vector: VectorPair<CGFloat, CGFloat> {
+        VectorPair(
+            first: x,
+            second: y)
     }
     
-    public var vector: Vector2 {
-        return Vector2(
-            x: Double(x),
-            y: Double(y))
+    public init(vector: VectorPair<CGFloat, CGFloat>) {
+        self.init(
+            x: vector.first,
+            y: vector.second)
     }
+    
 }
 
 /// Adds `VectorConvertible` conformance
 extension CGFloat: VectorConvertible {
     
-    public init(vector: Vector2) {
-        self.init(vector.x)
+    public init(vector: CGFloat) {
+        self = vector
     }
     
-    public var vector: Vector2 {
-        return Vector2(x: Double(self), y: 0.0)
+    public var vector: CGFloat {
+        return self
     }
 }
 
 /// Adds `VectorConvertible` conformance
 extension CGRect: VectorConvertible {
     
-    public init(vector: Vector4) {
+    public init(vector: VectorPair<CGPoint.Vector, CGSize.Vector>) {
         self.init(
-            x: CGFloat(vector.x),
-            y: CGFloat(vector.y),
-            width: CGFloat(vector.z),
-            height: CGFloat(vector.w))
+            origin: CGPoint(vector: vector.first),
+            size: CGSize(vector: vector.second))
     }
     
-    public var vector: Vector4 {
-        return Vector4(
-            x: Double(origin.x),
-            y: Double(origin.y),
-            z: Double(size.width),
-            w: Double(size.height))
+    public var vector: VectorPair<CGPoint.Vector, CGSize.Vector> {
+        VectorPair(
+            first: origin.vector,
+            second: size.vector)
     }
 }
 

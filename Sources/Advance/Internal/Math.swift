@@ -11,10 +11,12 @@ func clamp<T>(value: T, min: T, max: T) -> T where T: SIMD, T.Scalar == Double {
     return result
 }
 
-func interpolate<T>(from fromValue: T, to toValue: T, alpha: Double) -> T where T: SIMD, T.Scalar == Double {
-    var result = fromValue
-    for componentIndex in 0..<fromValue.scalarCount {
-        result[componentIndex] += (alpha * (toValue[componentIndex] - result[componentIndex]))
-    }
-    return result
+func interpolate<T>(from fromValue: T, to toValue: T, alpha: Double) -> T where T: VectorArithmetic {
+    var from = fromValue
+    from.scale(by: 1.0 - alpha)
+    
+    var to = toValue
+    to.scale(by: alpha)
+    
+    return from + to
 }
