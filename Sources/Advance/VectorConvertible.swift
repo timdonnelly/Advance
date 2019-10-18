@@ -55,18 +55,6 @@ extension Double: VectorArithmetic {
     
 }
 
-extension CGFloat: VectorArithmetic {
-    
-    public var magnitudeSquared: Double {
-        Double(self * self)
-    }
-    
-    public mutating func scale(by magnitude: Double) {
-        self *= CGFloat(magnitude)
-    }
-    
-}
-
 public struct VectorPair<First: VectorArithmetic, Second: VectorArithmetic>: VectorArithmetic {
 
     public var first: First
@@ -128,6 +116,18 @@ extension Double: VectorConvertible {}
 
 import CoreGraphics
 
+extension CGFloat: VectorArithmetic, VectorConvertible {
+    
+    public var magnitudeSquared: Double {
+        Double(self * self)
+    }
+    
+    public mutating func scale(by magnitude: Double) {
+        self *= CGFloat(magnitude)
+    }
+    
+}
+
 /// Adds `VectorConvertible` conformance
 extension CGSize: VectorConvertible {
     
@@ -160,18 +160,6 @@ extension CGPoint: VectorConvertible {
             y: vector.second)
     }
     
-}
-
-/// Adds `VectorConvertible` conformance
-extension CGFloat: VectorConvertible {
-    
-    public init(vector: CGFloat) {
-        self = vector
-    }
-    
-    public var vector: CGFloat {
-        return self
-    }
 }
 
 /// Adds `VectorConvertible` conformance
