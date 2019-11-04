@@ -1,20 +1,20 @@
-osx_image: xcode10.2
+osx_image: xcode11.2
 
 jobs:
   include:
     - name: "iOS (xcodeproj)"
       language: swift
       os: osx
-      osx_image: xcode11.1
+      osx_image: xcode11.2
       xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-iOS
-      xcode_sdk: iphonesimulator13.1
-      xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 11
+      xcode_sdk: iphonesimulator13.2
+      xcode_destination: platform=iOS Simulator,OS=13.2,name=iPhone 11
 
     - name: "macOS (xcodeproj)"
       language: swift
       os: osx
-      osx_image: xcode11.1
+      osx_image: xcode11.2
       xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-macOS
       xcode_sdk: macosx10.15
@@ -22,16 +22,16 @@ jobs:
     - name: "tvOS (xcodeproj)"
       language: swift
       os: osx
-      osx_image: xcode11.1
+      osx_image: xcode11.2
       xcode_project: Advance.xcodeproj
       xcode_scheme: Advance-tvOS
-      xcode_sdk: appletvos13.0
-      xcode_destination: platform=tvOS Simulator,OS=13.0,name=Apple TV 4K
+      xcode_sdk: appletvos13.2
+      xcode_destination: platform=tvOS Simulator,OS=13.2,name=Apple TV 4K
 
     - name: "macOS (SPM)"
       language: swift
       os: osx
-      osx_image: xcode11.1
+      osx_image: xcode11.2
       script:
         - swift --version
         - swift build
@@ -56,7 +56,7 @@ jobs:
       name: "Deploy documentation"
       language: swift
       os: osx
-      osx_image: xcode11.1
+      osx_image: xcode11.2
       script: skip
       after_success:
         - ./build_docs.sh
