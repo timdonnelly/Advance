@@ -2,40 +2,26 @@ osx_image: xcode11.2
 
 jobs:
   include:
-    - name: "iOS (xcodeproj)"
+    - name: "iOS (SPM)"
       language: swift
       os: osx
       osx_image: xcode11.2
-      xcode_project: Advance.xcodeproj
-      xcode_scheme: Advance-iOS
-      xcode_sdk: iphonesimulator13.2
-      xcode_destination: platform=iOS Simulator,OS=13.2,name=iPhone 11
-
-    - name: "macOS (xcodeproj)"
-      language: swift
-      os: osx
-      osx_image: xcode11.2
-      xcode_project: Advance.xcodeproj
-      xcode_scheme: Advance-macOS
-      xcode_sdk: macosx10.15
-
-    - name: "tvOS (xcodeproj)"
-      language: swift
-      os: osx
-      osx_image: xcode11.2
-      xcode_project: Advance.xcodeproj
-      xcode_scheme: Advance-tvOS
-      xcode_sdk: appletvos13.2
-      xcode_destination: platform=tvOS Simulator,OS=13.2,name=Apple TV 4K
+      script:
+        - xcodebuild -scheme "Advance" test -destination "name=iPhone 11"
 
     - name: "macOS (SPM)"
       language: swift
       os: osx
       osx_image: xcode11.2
       script:
-        - swift --version
-        - swift build
-        - swift test
+        - xcodebuild -scheme "Advance" test
+
+    - name: "tvOS (SPM)"
+      language: swift
+      os: osx
+      osx_image: xcode11.2
+      script:
+        - xcodebuild -scheme "Advance" test -destination "name=Apple TV 4K"
 
     - name: "Linux (SPM)"
       sudo: required
@@ -50,24 +36,5 @@ jobs:
         - swift --version
         - swift build
         - swift test
-
-
-    - stage: deploy
-      name: "Deploy documentation"
-      language: swift
-      os: osx
-      osx_image: xcode11.2
-      script: skip
-      after_success:
-        - ./build_docs.sh
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_TOKEN
-        keep_history: true
-        local_dir: docs
-        on:
-          branch: master
-
 
       
