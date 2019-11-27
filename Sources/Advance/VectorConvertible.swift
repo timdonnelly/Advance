@@ -2,36 +2,30 @@
 ///
 /// This is the single requirement for any type that is to be animated
 /// by `Animator`, `Simulator`, or `Spring`.
-public protocol VectorConvertible: Equatable {
+public protocol VectorConvertible {
     
     /// The concrete VectorType implementation that can represent the 
     /// conforming type.
-    associatedtype Vector: VectorArithmetic
-    
-    /// Creates a new instance from a vector.
-    init(vector: Vector)
+    associatedtype AnimatableData: VectorArithmetic
     
     /// The vector representation of this instance.
-    var vector: Vector { get }
+    var animatableData: AnimatableData { get set }
     
 }
 
-extension VectorConvertible {
+extension VectorConvertible where AnimatableData == Self {
     
-    /// Returns an instance initialized using the zero vector.
-    public static var zero: Self {
-        return Self(vector: Vector.zero)
-    }
-}
-
-extension VectorConvertible where Vector == Self {
-    
-    public var vector: Self {
-        self
+    public var animatableData: Self {
+        get {
+            self
+        }
+        set {
+            self = newValue
+        }
     }
     
-    public init(vector: Self) {
-        self = vector
+    public init(animatableData: Self) {
+        self = animatableData
     }
     
 }
@@ -117,7 +111,7 @@ extension Double: VectorConvertible {}
 import CoreGraphics
 
 extension CGFloat: VectorArithmetic, VectorConvertible {
-    
+        
     public var magnitudeSquared: Double {
         Double(self * self)
     }
@@ -131,33 +125,46 @@ extension CGFloat: VectorArithmetic, VectorConvertible {
 /// Adds `VectorConvertible` conformance
 extension CGSize: VectorConvertible {
     
-    public var vector: VectorPair<CGFloat, CGFloat> {
-        VectorPair(
-            first: width,
-            second: height)
+    public var animatableData: VectorPair<CGFloat, CGFloat> {
+        get {
+            VectorPair(
+                first: width,
+                second: height)
+        }
+        set {
+            width = newValue.first
+            height = newValue.second
+        }
     }
     
-    public init(vector: VectorPair<CGFloat, CGFloat>) {
+    public init(animatableData: VectorPair<CGFloat, CGFloat>) {
         self.init(
-            width: vector.first,
-            height: vector.second)
+            width: animatableData.first,
+            height: animatableData.second)
     }
     
 }
 
 /// Adds `VectorConvertible` conformance
-extension CGPoint: VectorConvertible {
+extension CGPoint: VectorConvertible {    
     
-    public var vector: VectorPair<CGFloat, CGFloat> {
-        VectorPair(
-            first: x,
-            second: y)
+    public var animatableData: VectorPair<CGFloat, CGFloat> {
+        get {
+            VectorPair(
+                first: x,
+                second: y)
+        }
+        set {
+            x = newValue.first
+            y = newValue.second
+        }
+
     }
     
-    public init(vector: VectorPair<CGFloat, CGFloat>) {
+    public init(animatableData: VectorPair<CGFloat, CGFloat>) {
         self.init(
-            x: vector.first,
-            y: vector.second)
+            x: animatableData.first,
+            y: animatableData.second)
     }
     
 }
@@ -165,16 +172,23 @@ extension CGPoint: VectorConvertible {
 /// Adds `VectorConvertible` conformance
 extension CGRect: VectorConvertible {
     
-    public init(vector: VectorPair<CGPoint.Vector, CGSize.Vector>) {
+    public init(animatableData: VectorPair<CGPoint.AnimatableData, CGSize.AnimatableData>) {
         self.init(
-            origin: CGPoint(vector: vector.first),
-            size: CGSize(vector: vector.second))
+            origin: CGPoint(animatableData: animatableData.first),
+            size: CGSize(animatableData: animatableData.second))
     }
     
-    public var vector: VectorPair<CGPoint.Vector, CGSize.Vector> {
-        VectorPair(
-            first: origin.vector,
-            second: size.vector)
+    public var animatableData: VectorPair<CGPoint.AnimatableData, CGSize.AnimatableData> {
+        get {
+            VectorPair(
+                first: origin.animatableData,
+                second: size.animatableData)
+        }
+        set {
+            origin.animatableData = newValue.first
+            size.animatableData = newValue.second
+        }
+
     }
 }
 

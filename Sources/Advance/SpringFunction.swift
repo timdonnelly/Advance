@@ -24,8 +24,8 @@ public struct SpringFunction<T>: SimulationFunction where T: VectorConvertible {
     }
     
     /// Calculates acceleration for a given state of the simulation.
-    public func acceleration(value: T.Vector, velocity: T.Vector) -> T.Vector {
-        let delta = value - target.vector
+    public func acceleration(value: T.AnimatableData, velocity: T.AnimatableData) -> T.AnimatableData {
+        let delta = value - target.animatableData
         
         var deltaAccel = delta
         deltaAccel.scale(by: -tension)
@@ -36,17 +36,17 @@ public struct SpringFunction<T>: SimulationFunction where T: VectorConvertible {
         return deltaAccel - dampingAccel
     }
     
-    public func convergence(value: T.Vector, velocity: T.Vector) -> Convergence<T> {
+    public func convergence(value: T.AnimatableData, velocity: T.AnimatableData) -> Convergence<T> {
         if velocity.magnitudeSquared > threshold*threshold {
             return .keepRunning
         }
         
-        let valueDelta = value - target.vector
+        let valueDelta = value - target.animatableData
         if valueDelta.magnitudeSquared > threshold*threshold {
             return .keepRunning
         }
         
-        return .converge(atValue: target.vector)
+        return .converge(atValue: target.animatableData)
     }
     
 }
