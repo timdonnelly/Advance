@@ -18,7 +18,7 @@ import Foundation
 /// sizeAnimator.decay(drag: 2.0)
 /// ```
 ///
-public final class Animator<Value: VectorConvertible> {
+public final class Simulation<Value: VectorConvertible> {
     
     /// Called every time the animator's `value` changes.
     public var onChange: ((Value) -> Void)? = nil {
@@ -70,12 +70,6 @@ public final class Animator<Value: VectorConvertible> {
         dispatchPrecondition(condition: .onQueue(.main))
         return state.velocity
     }
-    
-    /// Animates the property using the given animation.
-    public func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction = .swiftOut) {
-        dispatchPrecondition(condition: .onQueue(.main))
-        state.animate(to: finalValue, duration: duration, timingFunction: timingFunction)
-    }
 
     /// Animates the property using the given simulation function, imparting the specified initial velocity into the simulation.
     public func simulate<T>(using function: T, initialVelocity: T.Value) where T: SimulationFunction, T.Value == Value {
@@ -98,23 +92,15 @@ public final class Animator<Value: VectorConvertible> {
 }
 
 
-extension Animator {
+extension Simulation {
     
     fileprivate enum State {
         case atRest(value: Value)
-        case animating(animation: Animation<Value>)
-        case simulating(simulation: Simulation<Value>)
+        case simulating(simulation: SimulationState<Value>)
         
         mutating func advance(by time: Double) {
             switch self {
             case .atRest: break
-            case .animating(var animation):
-                animation.advance(by: time)
-                if animation.isFinished {
-                    self = .atRest(value: animation.value)
-                } else {
-                    self = .animating(animation: animation)
-                }
             case .simulating(var simulation):
                 simulation.advance(by: time)
                 if simulation.hasConverged {
@@ -128,7 +114,6 @@ extension Animator {
         var isAtRest: Bool {
             switch self {
             case .atRest: return true
-            case .animating: return false
             case .simulating: return false
             }
         }
@@ -136,7 +121,6 @@ extension Animator {
         var value: Value {
             switch self {
             case .atRest(let value): return value
-            case .animating(let animation): return animation.value
             case .simulating(let simulation): return simulation.value
             }
         }
@@ -147,22 +131,12 @@ extension Animator {
                 var result = value
                 result.animatableData = .zero
                 return result
-            case .animating(let animation): return animation.velocity
             case .simulating(let simulation): return simulation.velocity
             }
         }
         
-        mutating func animate(to finalValue: Value, duration: Double, timingFunction: TimingFunction) {
-            let animation = Animation(
-                from: self.value,
-                to: finalValue,
-                duration: duration,
-                timingFunction: timingFunction)
-            self = .animating(animation: animation)
-        }
-        
         mutating func simulate<T>(using function: T, initialVelocity: Value) where T: SimulationFunction, T.Value == Value {
-            let simulation = Simulation(
+            let simulation = SimulationState(
                 function: function,
                 initialValue: self.value,
                 initialVelocity: initialVelocity)
@@ -172,7 +146,7 @@ extension Animator {
         
         mutating func simulate<T>(using function: T) where T: SimulationFunction, T.Value == Value {
             switch self {
-            case .atRest, .animating:
+            case .atRest:
                 self.simulate(using: function, initialVelocity: self.velocity)
             case .simulating(var simulation):
                 simulation.use(function: function)

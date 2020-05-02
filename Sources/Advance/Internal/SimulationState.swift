@@ -10,7 +10,7 @@
 /// up" to the outside time. It then uses linear interpolation to match the
 /// internal state to the required external time in order to return the most
 /// precise calculations.
-struct Simulation<Value: VectorConvertible> {
+struct SimulationState<Value: VectorConvertible> {
     
 
     

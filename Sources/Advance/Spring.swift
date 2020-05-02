@@ -9,7 +9,7 @@ import Foundation
 /// ```
 public final class Spring<Value: VectorConvertible> {
     
-    private let animator: Animator<Value>
+    private let animator: Simulation<Value>
     
     private var function: SpringFunction<Value>
     
@@ -17,7 +17,7 @@ public final class Spring<Value: VectorConvertible> {
     public init(initialValue: Value) {
         dispatchPrecondition(condition: .onQueue(.main))
         function = SpringFunction(target: initialValue)
-        animator = Animator(initialValue: initialValue)
+        animator = Simulation(initialValue: initialValue)
     }
     
     /// Invoked every time the spring updates.
