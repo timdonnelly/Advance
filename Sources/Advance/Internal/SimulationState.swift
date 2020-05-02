@@ -12,12 +12,12 @@ import SwiftUI
 /// up" to the outside time. It then uses linear interpolation to match the
 /// internal state to the required external time in order to return the most
 /// precise calculations.
-struct SimulationState<Value: Animatable> {
+struct SimulationState<Function: SimulationFunction> {
     
 
     
     /// The function driving the simulation.
-    private var function: AnySimulationFunction<Value> {
+    var function: Function {
         didSet {
             // If the function changes, we need to make sure that its new state 
             // will allow the simulation to converge.
@@ -34,19 +34,19 @@ struct SimulationState<Value: Animatable> {
     fileprivate (set) var hasConverged: Bool = false
     
     // The current state of the solver.
-    private var current: (value: Value, velocity: Value)
+    private var current: (value: Function.Value, velocity: Function.Value)
     
     // The latest interpolated state that we use to return values to the outside
     // world.
-    private var interpolated: (value: Value, velocity: Value)
+    private var interpolated: (value: Function.Value, velocity: Function.Value)
     
     /// Creates a new `DynamicSolver` instance.
     ///
     /// - parameter function: The function that will drive the simulation.
     /// - parameter value: The initial value of the simulation.
     /// - parameter velocity: The initial velocity of the simulation.
-    init<T>(function: T, initialValue: Value, initialVelocity: Value) where T: SimulationFunction, T.Value == Value {
-        self.function = AnySimulationFunction(function)
+    init(function: Function, initialValue: Function.Value, initialVelocity: Function.Value) {
+        self.function = function
         current = (value: initialValue, velocity: initialVelocity)
         interpolated = current
         convergeIfPossible()
@@ -65,10 +65,6 @@ struct SimulationState<Value: Animatable> {
             hasConverged = true
         }
 
-    }
-    
-    mutating func use<T>(function: T) where T: SimulationFunction, T.Value == Value {
-        self.function = AnySimulationFunction(function)
     }
     
     /// Advances the simulation.
@@ -126,7 +122,7 @@ struct SimulationState<Value: Animatable> {
     }
     
     /// The current value.
-    var value: Value {
+    var value: Function.Value {
         get {
             interpolated.value
         }
@@ -139,7 +135,7 @@ struct SimulationState<Value: Animatable> {
     }
     
     /// The current velocity.
-    var velocity: Value {
+    var velocity: Function.Value {
         get {
             interpolated.velocity
         }
@@ -151,25 +147,3 @@ struct SimulationState<Value: Animatable> {
         }
     }
 }
-
-
-fileprivate struct AnySimulationFunction<Value>: SimulationFunction where Value: Animatable {
-    
-    private let _acceleration: (Value.AnimatableData, Value.AnimatableData) -> Value.AnimatableData
-    private let _convergence: (Value.AnimatableData, Value.AnimatableData) -> Convergence<Value>
-    
-    public init<T: SimulationFunction>(_ wrapped: T) where T.Value == Value {
-        _acceleration = wrapped.acceleration
-        _convergence = wrapped.convergence
-    }
-    
-    public func acceleration(value: Value.AnimatableData, velocity: Value.AnimatableData) -> Value.AnimatableData {
-        return _acceleration(value, velocity)
-    }
-    
-    public func convergence(value: Value.AnimatableData, velocity: Value.AnimatableData) -> Convergence<Value> {
-        return _convergence(value, velocity)
-    }
-    
-}
-

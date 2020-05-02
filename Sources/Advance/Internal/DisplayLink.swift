@@ -175,7 +175,7 @@ extension CVTimeStamp {
     }
 }
 
-#else // Linux support using a simple timer --------------------------------------------------
+#else // watchOS support using a simple timer --------------------------------------------------
 
 import Foundation
 

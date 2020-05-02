@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 /// Manages the application of animations to a value.
 ///
@@ -18,34 +19,24 @@ import SwiftUI
 /// sizeAnimator.decay(drag: 2.0)
 /// ```
 ///
-public final class Simulation<Value: Animatable> {
+public final class Simulation<Function: SimulationFunction>: ObservableObject {
     
-    /// Called every time the animator's `value` changes.
-    public var onChange: ((Value) -> Void)? = nil {
+    @Published private var state: SimulationState<Function> {
         didSet {
-            dispatchPrecondition(condition: .onQueue(.main))
+            updateDisplayLink()
         }
     }
     
     private let displayLink = DisplayLink()
     
-    private var state: State {
-        didSet {
-            dispatchPrecondition(condition: .onQueue(.main))
-            displayLink.isPaused = state.isAtRest
-            if state.value.animatableData != oldValue.value.animatableData {
-                onChange?(state.value)
-            }
-        }
-    }
-    
     /// Initializes a new animator with the given value.
-    public init(initialValue: Value) {
+    public init(function: Function, initialValue: Function.Value) {
         dispatchPrecondition(condition: .onQueue(.main))
-        state = .atRest(value: initialValue)
-        displayLink.onFrame = { [weak self] (frame) in
-            self?.advance(by: frame.duration)
-        }
+        
+        var velocity = initialValue
+        velocity.animatableData = .zero
+        
+        state = SimulationState(function: function, initialValue: initialValue, initialVelocity: velocity)
     }
     
     private func advance(by time: Double) {
@@ -53,105 +44,42 @@ public final class Simulation<Value: Animatable> {
         state.advance(by: time)
     }
     
+    private func updateDisplayLink() {
+        displayLink.isPaused = state.hasConverged
+    }
+    
+    public var function: Function {
+        get {
+            dispatchPrecondition(condition: .onQueue(.main))
+            return state.function
+        }
+        set {
+            dispatchPrecondition(condition: .onQueue(.main))
+            state.function = newValue
+        }
+    }
+    
     /// assigning to this value will remove any running animation.
-    public var value: Value {
+    public var value: Function.Value {
         get {
             dispatchPrecondition(condition: .onQueue(.main))
             return state.value
         }
         set {
             dispatchPrecondition(condition: .onQueue(.main))
-            state = .atRest(value: newValue)
+            state.value = newValue
         }
     }
     
     /// The current velocity of the animator.
-    public var velocity: Value {
-        dispatchPrecondition(condition: .onQueue(.main))
-        return state.velocity
-    }
-
-    /// Animates the property using the given simulation function, imparting the specified initial velocity into the simulation.
-    public func simulate<T>(using function: T, initialVelocity: T.Value) where T: SimulationFunction, T.Value == Value {
-        dispatchPrecondition(condition: .onQueue(.main))
-        state.simulate(using: function, initialVelocity: initialVelocity)
-    }
-    
-    /// Animates the property using the given simulation function.
-    public func simulate<T>(using function: T) where T: SimulationFunction, T.Value == Value {
-        dispatchPrecondition(condition: .onQueue(.main))
-        state.simulate(using: function)
-    }
-
-    /// Removes any active animation, freezing the animator at the current value.
-    public func cancelRunningAnimation() {
-        dispatchPrecondition(condition: .onQueue(.main))
-        state = .atRest(value: state.value)
-    }
-
-}
-
-
-extension Simulation {
-    
-    fileprivate enum State {
-        case atRest(value: Value)
-        case simulating(simulation: SimulationState<Value>)
-        
-        mutating func advance(by time: Double) {
-            switch self {
-            case .atRest: break
-            case .simulating(var simulation):
-                simulation.advance(by: time)
-                if simulation.hasConverged {
-                    self = .atRest(value: simulation.value)
-                } else {
-                    self = .simulating(simulation: simulation)
-                }
-            }
+    public var velocity: Function.Value {
+        get {
+            dispatchPrecondition(condition: .onQueue(.main))
+            return state.velocity
         }
-        
-        var isAtRest: Bool {
-            switch self {
-            case .atRest: return true
-            case .simulating: return false
-            }
-        }
-        
-        var value: Value {
-            switch self {
-            case .atRest(let value): return value
-            case .simulating(let simulation): return simulation.value
-            }
-        }
-        
-        var velocity: Value {
-            switch self {
-            case .atRest(let value):
-                var result = value
-                result.animatableData = .zero
-                return result
-            case .simulating(let simulation): return simulation.velocity
-            }
-        }
-        
-        mutating func simulate<T>(using function: T, initialVelocity: Value) where T: SimulationFunction, T.Value == Value {
-            let simulation = SimulationState(
-                function: function,
-                initialValue: self.value,
-                initialVelocity: initialVelocity)
-            
-            self = .simulating(simulation: simulation)
-        }
-        
-        mutating func simulate<T>(using function: T) where T: SimulationFunction, T.Value == Value {
-            switch self {
-            case .atRest:
-                self.simulate(using: function, initialVelocity: self.velocity)
-            case .simulating(var simulation):
-                simulation.use(function: function)
-                self = .simulating(simulation: simulation)
-            }
+        set {
+            dispatchPrecondition(condition: .onQueue(.main))
+            state.velocity = newValue
         }
     }
     
