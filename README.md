@@ -8,7 +8,7 @@
 
 # Advance
 
-An animation library for iOS, tvOS, and macOS that uses physics-based animations (including springs) to power interactions that move and respond realistically.
+A Swift animation library that uses physics-based animations (including springs) to power interactions that move and respond realistically.
 
 
 ```swift
@@ -39,8 +39,8 @@ There are several ways to integrate Advance into your project.
 * **Swift Package Manager:** add a dependency to your `Project.swift`: `.package(url: "http://github.com/timdonnelly/Advance", from: "3.0.0")`
 
 ##### Requirements
-* iOS 10+, tvOS 10+, or macOS 10.12+
-* Swift 5.0 (Xcode 10.2 or higher)
+* iOS 13+, tvOS 13+, macOS 10.15+, or watchOS 13+
+* Swift 5.2 (Xcode 11.4 or higher)
 
 ## Usage
 
