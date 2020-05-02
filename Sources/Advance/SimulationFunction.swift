@@ -1,9 +1,11 @@
+import SwiftUI
+
 /// Conforming types implement a dynamic function that models changes to
 /// a vector over time.
 public protocol SimulationFunction {
     
     /// The type of vector driven by the simulation
-    associatedtype Value: VectorConvertible
+    associatedtype Value: Animatable
     
     /// The computed acceleration for a given simulation state.
     ///
@@ -21,7 +23,7 @@ public protocol SimulationFunction {
 
 /// Returned by a simulation function to indicate whether a simulation should
 /// converge (come to rest) for a given state.
-public enum Convergence<T> where T: VectorConvertible {
+public enum Convergence<T> where T: Animatable {
     
     /// The simulation should keep running.
     case keepRunning

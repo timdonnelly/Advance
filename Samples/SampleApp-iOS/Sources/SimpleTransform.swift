@@ -21,7 +21,7 @@ struct SimpleTransform {
     }
 }
 
-extension SimpleTransform: VectorConvertible {
+extension SimpleTransform: Animatable {
         
     var vector: AnimatablePair<CGFloat, CGFloat> {
         AnimatablePair(first: scale, second: rotation)

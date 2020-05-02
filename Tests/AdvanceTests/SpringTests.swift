@@ -1,18 +1,23 @@
 import XCTest
+import SwiftUI
 @testable import Advance
 
 
 class SpringTests: XCTestCase {
     
+    struct TestValue: Equatable, Animatable {
+        var animatableData: CGFloat
+    }
+    
     
     func testReachesTargetValue() {
         
-        let spring = Spring(initialValue: 0.0)
+        let spring = Spring(initialValue: TestValue(animatableData: 0))
         spring.tension = 500.0
         spring.damping = 40.0
         spring.threshold = 0.01
         
-        let toValue = 10.0
+        let toValue = TestValue(animatableData: 10.0)
         
         let finalValueExpectation = expectation(description: "Spring reaches the correct value")
         
@@ -28,8 +33,8 @@ class SpringTests: XCTestCase {
             damping: spring.damping,
             threshold: spring.threshold)
             .estimatedConvergence(
-                initialValue: 0.0,
-                initialVelocity: 10.0,
+                initialValue: TestValue(animatableData: 0.0),
+                initialVelocity: .init(animatableData: 10.0),
                 maximumDuration: 10.0)!
         
         spring.target = toValue

@@ -161,17 +161,7 @@ animator.simulate(using: DecayFunction(), initialVelocity: dragGestureRecognizer
 
 ### Animating Custom Types
 
-Values conforming to the `VectorConvertible` protocol can be animated by Advance. Conforming types can be converted to and from a `Vector` implementation.
-```swift
-public protocol VectorConvertible: Equatable, Interpolatable {
-    associatedtype VectorType: SIMD where VectorType.Scalar == Double
-    init(vector: VectorType)
-    var vector: VectorType { get }
-}
-```
-
-The library adds conformance for many common types through extensions.
-
+Any value conforming to SwiftUI's `Animatable` protocol can be used (including custom conforming types).
 
 ## Contributing
 

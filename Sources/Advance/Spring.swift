@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 
 /// Animates values using a spring function.
 ///
@@ -7,7 +7,7 @@ import Foundation
 /// spring.target = CGPoint(x: 300, y: 200)
 ///
 /// ```
-public final class Spring<Value: VectorConvertible> {
+public final class Spring<Value: Animatable> {
     
     private let animator: Simulation<Value>
     

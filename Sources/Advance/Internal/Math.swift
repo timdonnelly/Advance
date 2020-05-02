@@ -1,3 +1,5 @@
+import SwiftUI
+
 func clamp<T>(value: T, min: T, max: T) -> T where T: SIMD, T.Scalar == Double {
     var result = value
     for componentIndex in 0..<value.scalarCount {
