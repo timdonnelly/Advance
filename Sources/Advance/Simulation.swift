@@ -37,6 +37,9 @@ public final class Simulation<Function: SimulationFunction>: ObservableObject {
         velocity.animatableData = .zero
         
         state = SimulationState(function: function, initialValue: initialValue, initialVelocity: velocity)
+        displayLink.onFrame = { [weak self] (frame) in
+            self?.advance(by: frame.duration)
+        }
         updateDisplayLink()
     }
     
