@@ -37,11 +37,13 @@ public final class Simulation<Function: SimulationFunction>: ObservableObject {
         velocity.animatableData = .zero
         
         state = SimulationState(function: function, initialValue: initialValue, initialVelocity: velocity)
+        updateDisplayLink()
     }
     
     private func advance(by time: Double) {
         dispatchPrecondition(condition: .onQueue(.main))
         state.advance(by: time)
+        updateDisplayLink()
     }
     
     private func updateDisplayLink() {
@@ -56,6 +58,7 @@ public final class Simulation<Function: SimulationFunction>: ObservableObject {
         set {
             dispatchPrecondition(condition: .onQueue(.main))
             state.function = newValue
+            updateDisplayLink()
         }
     }
     
@@ -68,6 +71,7 @@ public final class Simulation<Function: SimulationFunction>: ObservableObject {
         set {
             dispatchPrecondition(condition: .onQueue(.main))
             state.value = newValue
+            updateDisplayLink()
         }
     }
     
@@ -80,6 +84,7 @@ public final class Simulation<Function: SimulationFunction>: ObservableObject {
         set {
             dispatchPrecondition(condition: .onQueue(.main))
             state.velocity = newValue
+            updateDisplayLink()
         }
     }
     
