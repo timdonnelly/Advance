@@ -25,8 +25,8 @@ extension SimpleTransform {
 
     var affineTransform: CGAffineTransform {
         var t = CGAffineTransform.identity
-        t = t.rotated(by: second)
-        t = t.scaledBy(x: first, y: first)
+        t = t.rotated(by: rotation)
+        t = t.scaledBy(x: scale, y: scale)
         return t
     }
 }
