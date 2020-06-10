@@ -2,36 +2,35 @@ import Foundation
 import CoreGraphics
 import Advance
 
-struct SimpleTransform {
-    var scale: CGFloat = 1.0
-    var rotation: CGFloat = 0.0
-    
-    init() {}
-    
-    init(scale: CGFloat, rotation: CGFloat) {
-        self.scale = scale
-        self.rotation = rotation
+typealias SimpleTransform = VectorPair<CGFloat, CGFloat>
+
+extension SimpleTransform {
+    init() {
+        self.init(scale: 1, rotation: 0)
     }
-    
+
+    init(scale: CGFloat, rotation: CGFloat) {
+        self.init(first: scale, second: rotation)
+    }
+
+    var scale: CGFloat {
+        get { first }
+        set { first = newValue }
+    }
+
+    var rotation: CGFloat {
+        get { second }
+        set { second = newValue }
+    }
+
     var affineTransform: CGAffineTransform {
         var t = CGAffineTransform.identity
-        t = t.rotated(by: rotation)
-        t = t.scaledBy(x: scale, y: scale)
+        t = t.rotated(by: second)
+        t = t.scaledBy(x: first, y: first)
         return t
     }
 }
 
 extension SimpleTransform: VectorConvertible {
-        
-    var vector: AnimatablePair<CGFloat, CGFloat> {
-        AnimatablePair(first: scale, second: rotation)
-    }
-    
-    init(vector: AnimatablePair<CGFloat, CGFloat>) {
-        scale = vector.first
-        rotation = vector.second
-    }
-
+    public typealias AnimatableData = VectorPair<CGFloat, CGFloat>
 }
-
-
